@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>FinLab 量化實驗室</title>
+  <title>FinLab 財經量化實驗室</title>
   
   <subtitle>金融理財量化學習網站</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
