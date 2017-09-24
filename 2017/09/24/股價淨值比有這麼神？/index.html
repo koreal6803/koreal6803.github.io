@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>股價淨值比有這麼神？ | FinLab 量化實驗室</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="股價淨值比" />
+    
+    <meta name="description" content="股價淨值比(PB)，是用來判斷一個究竟公司是被高估還是低估的指標，可以參考介紹 股價淨值比真的越低越好嗎？我們來看看。">
+<meta name="keywords" content="股價淨值比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="股價淨值比有這麼神？">
+<meta property="og:url" content="https://koreal6803.github.io/blog/2017/09/24/股價淨值比有這麼神？/index.html">
+<meta property="og:site_name" content="FinLab 量化實驗室">
+<meta property="og:description" content="股價淨值比(PB)，是用來判斷一個究竟公司是被高估還是低估的指標，可以參考介紹 股價淨值比真的越低越好嗎？我們來看看。">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://koreal6803.github.io/blog/2017/09/24/股價淨值比有這麼神？/equality.png">
+<meta property="og:updated_time" content="2017-09-24T15:07:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="股價淨值比有這麼神？">
+<meta name="twitter:description" content="股價淨值比(PB)，是用來判斷一個究竟公司是被高估還是低估的指標，可以參考介紹 股價淨值比真的越低越好嗎？我們來看看。">
+<meta name="twitter:image" content="https://koreal6803.github.io/blog/2017/09/24/股價淨值比有這麼神？/equality.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/blog/css/images/favicon.png# path to favicon" />
+    
+
+    <link rel="stylesheet" href="/blog/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/blog/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/blog/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <script src="/blog/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/blog/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/blog/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/blog/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">金融理財量化學習網站</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/blog/">首頁</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/生活/">生活</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/量化投資/">量化投資</a></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字(股票,量化...)" />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/blog/',
+        CONTENT_URL: '/blog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/blog/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/blog/categories/量化投資/">量化投資</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-股價淨值比有這麼神？" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        股價淨值比有這麼神？
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/blog/2017/09/24/股價淨值比有這麼神？/" class="article-date">
+            <time datetime="2017-09-24T11:09:52.000Z" itemprop="datePublished">2017-09-24</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/blog/tags/股價淨值比/">股價淨值比</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>股價淨值比(PB)，是用來判斷一個究竟公司是被高估還是低估的指標，可以參考<a href="https://www.cmoney.tw/notes/note-detail.aspx?nid=6355" target="_blank" rel="external">介紹</a></p>
+<p>股價淨值比真的越低越好嗎？我們來看看。</p>
+<a id="more"></a>
+<p>設計以下實驗：<br>每半年（125天）換一次持股，從2010年到2017年選取台股上市公司所有 PB &lt; N 的公司，並將資產平均作分配，持有半年。</p>
+<center><img src="/blog/2017/09/24/股價淨值比有這麼神？/equality.png" alt="不同的PB回測結果" title="不同的PB回測結果"></center>
+
+<p>這張圖的Y軸是從2010年開始投資，資產的倍數變化圖，可以發現PB小的股票真的有比大盤好，原本我以為PB不能越低越好，但最後發現，PB越小，報酬率真的越高（只限於這個簡單策略），但我這邊說的是一群股票的整體結果，不代表單一股票PB越小就一定越好喔！<br>可以看出 PB&lt;0.5 的時候，回測結果大起大落，我們來仔細看其中到底怎麼回事：</p>
+<center><img src="/blog/2017/09/24/股價淨值比有這麼神？/pb-detail1.png" alt="PB<0.5 回測結果" title="PB<0.5 回測結果"></center>
+
+<p>這個是 PB &lt; 0.5 的歷史績效圖，藍色是不考慮手續費跟稅，且資產可以完全平均分散買入所選的股票；紅色是起始100萬，也是盡量平均分散，但最小張數是一張，不能買零股，並且會放棄太貴的股票。可以發現紅色跟藍色差滿多的，最後結果可以差到50萬元，其中手續費佔了不少，為什麼2015～2016年下滑這麼大呢？我們接著來看一下手中持股數量：</p>
+<center><img src="/blog/2017/09/24/股價淨值比有這麼神？/pb-detail2.png" alt="PB<0.5 持股數" title="PB<0.5 持股數"></center>
+
+<p>此圖的Y軸是手上持股的數量，可以發現，2015～2016年只買了非常少張股票，可能才2～3張。這就像是把雞蛋都放在同一個籃子很危險，造成鉅額損失。另外可以觀察到，買入的股票數量似乎跟大盤成反比，大盤漲，手上股票就變少，大盤跌，手上股票就變多，是不是PB 小的股票變少，反過來想是大部分股票被高估，整體台股過於樂觀，泡沫即將破滅？之後可以來研究看看。</p>
+<p>最後我們來看一下最大的下滑損失了多少%的總資產：</p>
+<center><img src="/blog/2017/09/24/股價淨值比有這麼神？/pb-detail3.png" alt="PB<0.5 持股數" title="PB<0.5 持股數"></center>
+
+<p>此圖的Y軸為下跌百分比，可以發現在2015～2016年，損失了40%的總資產，假如我們剛好在那時候投資，100萬就只剩60萬，實在有點可怕。</p>
+<p>於是我們總結一下：</p>
+<blockquote><p><strong>選擇PB越小的一群標的（PB &lt; 0.6~0.8），半年更新一次還不錯，但一定要做好風險管理，千萬別將全部的雞蛋放在通一個籃子裡！也可以配合其它的財報選出優質股～</strong></p>
+</blockquote>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://koreal6803.github.io/blog/2017/09/24/股價淨值比有這麼神？/" data-id="cj7yuxdho0009ti9k81qntg88" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>作者的相關連結 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin-square" href="https://linkedin.com/in/cheng-yu-han-4b845aa2" target="_blank">
+                        <i class="icon fa fa-linkedin-square"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100000709225894" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/blog/2017/09/23/策略狗。績優股獵犬3。簡單回測/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">策略狗。績優股獵犬3。簡單回測</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2017/09/24/股價淨值比有這麼神？/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2017/09/24/股價淨值比有這麼神？/equality.png)" alt="股價淨值比有這麼神？" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/量化投資/">量化投資</a></p>
+                            <p class="item-title"><a href="/blog/2017/09/24/股價淨值比有這麼神？/" class="title">股價淨值比有這麼神？</a></p>
+                            <p class="item-date"><time datetime="2017-09-24T11:09:52.000Z" itemprop="datePublished">2017-09-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2017/09/23/策略狗。績優股獵犬3。簡單回測/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2017/09/23/策略狗。績優股獵犬3。簡單回測/backtest.png)" alt="策略狗。績優股獵犬3。簡單回測" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/量化投資/">量化投資</a></p>
+                            <p class="item-title"><a href="/blog/2017/09/23/策略狗。績優股獵犬3。簡單回測/" class="title">策略狗。績優股獵犬3。簡單回測</a></p>
+                            <p class="item-date"><time datetime="2017-09-23T09:34:35.000Z" itemprop="datePublished">2017-09-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2017/09/22/策略狗。績優股獵犬2。何時買股才對？/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/09/22/策略狗。績優股獵犬2。何時買股才對？/correlation-ndays.png)" alt="策略狗。績優股獵犬2。何時買股才對？" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/量化投資/">量化投資</a></p>
+                            <p class="item-title"><a href="/blog/2017/09/22/策略狗。績優股獵犬2。何時買股才對？/" class="title">策略狗。績優股獵犬2。何時買股才對？</a></p>
+                            <p class="item-date"><time datetime="2017-09-22T13:47:06.000Z" itemprop="datePublished">2017-09-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2017/09/21/策略狗。績優股獵犬1。如何找到優質股？/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2017/09/21/策略狗。績優股獵犬1。如何找到優質股？/correlation.png)" alt="策略狗。績優股獵犬1。如何找到優質股？" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/量化投資/">量化投資</a></p>
+                            <p class="item-title"><a href="/blog/2017/09/21/策略狗。績優股獵犬1。如何找到優質股？/" class="title">策略狗。績優股獵犬1。如何找到優質股？</a></p>
+                            <p class="item-date"><time datetime="2017-09-21T13:47:06.000Z" itemprop="datePublished">2017-09-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2017/09/20/每天至少寫一行/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://images.unsplash.com/photo-1466155443295-01c6fe2f72d2?dpr=1&auto=compress,format&fit=crop&w=1050&h=&q=80&cs=tinysrgb&crop=)" alt="如何戰勝惰性？" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/生活/">生活</a></p>
+                            <p class="item-title"><a href="/blog/2017/09/20/每天至少寫一行/" class="title">如何戰勝惰性？</a></p>
+                            <p class="item-date"><time datetime="2017-09-20T11:09:42.000Z" itemprop="datePublished">2017-09-20</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/生活/">生活</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/量化投資/">量化投資</a><span class="category-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">記錄</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">九月 2017</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/一行/">一行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/生活/">生活</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/策略狗/">策略狗</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/股價淨值比/">股價淨值比</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/自由現金報酬率/">自由現金報酬率</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/blog/tags/一行/" style="font-size: 10px;">一行</a> <a href="/blog/tags/生活/" style="font-size: 15px;">生活</a> <a href="/blog/tags/策略狗/" style="font-size: 20px;">策略狗</a> <a href="/blog/tags/股價淨值比/" style="font-size: 10px;">股價淨值比</a> <a href="/blog/tags/自由現金報酬率/" style="font-size: 20px;">自由現金報酬率</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/blog/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 koreal6803</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'koreal6803';
+    
+    
+    var disqus_url = 'https://koreal6803.github.io/blog/2017/09/24/股價淨值比有這麼神？/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/blog/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/blog/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/blog/js/main.js"></script>
+
+    </div>
+</body>
+</html>
