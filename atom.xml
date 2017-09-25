@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-09-24T15:07:25.000Z</updated>
+  <updated>2017-09-25T20:52:10.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用股價淨值比來判斷大盤漲跌</title>
+    <link href="https://koreal6803.github.io/%E7%94%A8%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E4%BE%86%E5%88%A4%E6%96%B7%E5%A4%A7%E7%9B%A4%E6%BC%B2%E8%B7%8C/"/>
+    <id>https://koreal6803.github.io/用股價淨值比來判斷大盤漲跌/</id>
+    <published>2017-09-25T18:52:40.000Z</published>
+    <updated>2017-09-25T20:52:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>股價淨值比(PB)真的能夠判斷台股大盤漲跌嗎？<br>今天做了一張gif動圖，讓各位用眼睛觀察台股是否漲多了，是否有泡沫要破的跡象，甚至讓你有雞會可以買在大盤低點。</p><p>股價淨值比(PB)，可以拿來判斷股民對這某家公司的看法，假如大家覺得這家公司未來會壯大，則淨值比會大於1，如果這家公司會衰退，則淨值比會小於1。那剛好我們就可以做出一張分佈圖，來看一下全體投資人對每一家公司看好看衰的分佈圖，跟大盤之間的變化（這張圖稍大可能要等久一點…）。結果發現，當大盤大跌之前，會有類似的前兆，想知道前兆是什麼？請接著看這張圖：</p><center><img src="/用股價淨值比來判斷大盤漲跌/pb-min.gif" alt="不同的PB回測結果" title="不同的PB回測結果"></center><p>這張圖的上半部，是用來看多少個企業被看好，多少企業被看衰。x軸分成左右兩邊，大於零代表樂觀，小於零代表悲觀。其實x軸就是股價淨值比取log(PB)的分佈，為什麼要用log呢？是為了讓分佈圖更接近高斯，也讓多空變成在0的對稱位置。此圖的每一根bar代表有多少支股票，其股價淨值比為log(PB)。此圖有五條垂直線，代表著中值加減兩個標準差。</p><p>大部分的時候，投資人基本上看好台灣的市場，所以分佈普遍偏向右邊，而且事實發現，近來台股加權指數破萬，並不是大泡泡，而是台灣的企業真的慢慢隨著時間在壯大，因為當2017年的時候雖然大盤<br>破萬點，但分佈圖並沒有超級偏右邊，代表台灣的企業是真的有跟上投資人的期待。然而最近還是有點太過樂觀的氣氛瀰漫，還是得懂得居高思危才行XD。</p><p>下圖則是大盤的走勢，我們從2010年統計到2015年，每20天計算一次股價淨值比分佈圖，可以發現一些有趣的現象：</p><blockquote><ol><li>中值平常都待在log(PB) = 0 ~ 1 之間，當大盤跌到最低點時，會回到0附近（可以當作大盤買點），</li><li>大盤在高點時，標準差會比其它時候略小，而中值最大約在 log(PB) = 0.5 左右</li><li>當大盤要大跌前的前兆是分佈的標準差會明顯變大，且伴隨中值變低</li></ol></blockquote><p>當然這也有雞生蛋，蛋生雞的感覺，也就是究竟是大跌造成了這些反應，還是這些反應造成了大跌，還是都有，之後再來繼續研究這個課題！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;股價淨值比(PB)真的能夠判斷台股大盤漲跌嗎？&lt;br&gt;今天做了一張gif動圖，讓各位用眼睛觀察台股是否漲多了，是否有泡沫要破的跡象，甚至讓你有雞會可以買在大盤低點。&lt;/p&gt;
+&lt;p&gt;股價淨值比(PB)，可以拿來判斷股民對這某家公司的看法，假如大家覺得這家公司未來會壯大，則淨值
+      
+    
+    </summary>
+    
+      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+    
+    
+      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
+    
+      <category term="泡沫" scheme="https://koreal6803.github.io/tags/%E6%B3%A1%E6%B2%AB/"/>
+    
+      <category term="大盤" scheme="https://koreal6803.github.io/tags/%E5%A4%A7%E7%9B%A4/"/>
+    
+      <category term="買點" scheme="https://koreal6803.github.io/tags/%E8%B2%B7%E9%BB%9E/"/>
+    
+  </entry>
   
   <entry>
     <title>股價淨值比有這麼神？</title>
