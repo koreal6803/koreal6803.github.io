@@ -13,11 +13,11 @@
         
         <tag>本益比</tag>
          
-        <tag>簡易策略</tag>
-         
         <tag>歷史回測</tag>
          
         <tag>股價淨值比</tag>
+         
+        <tag>簡易策略</tag>
          
          
            
@@ -111,9 +111,9 @@
         
         <tag>本益比</tag>
          
-        <tag>大盤</tag>
-         
         <tag>簡易策略</tag>
+         
+        <tag>大盤</tag>
          
          
            
@@ -133,11 +133,11 @@
         <title>用股價淨值比來判斷大盤漲跌</title>
         <pubTime>2017-09-25T18:52:40.000Z</pubTime>
         
-        <tag>大盤</tag>
+        <tag>股價淨值比</tag>
          
         <tag>簡易策略</tag>
          
-        <tag>股價淨值比</tag>
+        <tag>大盤</tag>
          
          
            

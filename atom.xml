@@ -40,11 +40,11 @@
     
       <category term="本益比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
     
-      <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
+    
+      <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
   </entry>
   
@@ -72,9 +72,9 @@
     
       <category term="本益比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
     
-      <category term="大盤" scheme="https://koreal6803.github.io/tags/%E5%A4%A7%E7%9B%A4/"/>
-    
       <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="大盤" scheme="https://koreal6803.github.io/tags/%E5%A4%A7%E7%9B%A4/"/>
     
   </entry>
   
@@ -132,11 +132,11 @@
       <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
-      <category term="大盤" scheme="https://koreal6803.github.io/tags/%E5%A4%A7%E7%9B%A4/"/>
+      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
     
       <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
-      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
+      <category term="大盤" scheme="https://koreal6803.github.io/tags/%E5%A4%A7%E7%9B%A4/"/>
     
   </entry>
   
