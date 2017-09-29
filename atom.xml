@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>FinLab 財經量化實驗室</title>
+  <title>FinLab 量化實驗室</title>
   
-  <subtitle>金融理財量化學習網站</subtitle>
+  <subtitle>用統計、回測的方式教你如何買股票</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-09-29T00:05:08.000Z</updated>
+  <updated>2017-09-29T13:07:17.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -17,13 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>比策略狗還要安全的選股策略！</title>
-    <link href="https://koreal6803.github.io/%E6%AF%94%E7%AD%96%E7%95%A5%E7%8B%97%E9%82%84%E8%A6%81%E5%AE%89%E5%85%A8%E7%9A%84%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5%EF%BC%81/"/>
-    <id>https://koreal6803.github.io/比策略狗還要安全的選股策略！/</id>
-    <published>2017-09-28T12:05:16.000Z</published>
-    <updated>2017-09-29T00:05:08.000Z</updated>
+    <title>EPS跟ROE哪個比較好用？</title>
+    <link href="https://koreal6803.github.io/EPS%E8%B7%9FROE%E5%93%AA%E5%80%8B%E6%AF%94%E8%BC%83%E5%A5%BD%E7%94%A8%EF%BC%9F/"/>
+    <id>https://koreal6803.github.io/EPS跟ROE哪個比較好用？/</id>
+    <published>2017-09-29T11:51:12.000Z</published>
+    <updated>2017-09-29T13:07:17.000Z</updated>
     
-    <content type="html"><![CDATA[<p>用超簡單的財經指標就可以有14年約獲利14倍的策略，重點是可以躲過致命的金融海嘯、大盤崩跌！半年只要調動一次持股，甚至偶爾叫你半年不碰股票去放個假。當然此策略主要是教學用，建議自行調整後再真實投入市場。</p><h3 id="從統計的角度帶你一步一步設計量化策略"><a href="#從統計的角度帶你一步一步設計量化策略" class="headerlink" title="從統計的角度帶你一步一步設計量化策略"></a>從統計的角度帶你一步一步設計量化策略</h3><p>一般的財經文章都是講講理論，算算公式，套幾張單一股票的例子，就結束了。</p><p>問題是，你怎麼知道那個例子是湊巧還是真的有用？</p><p>FinLab跟一般的財經部落格不一樣，我們把全台灣所有的公司做統計整理給大家，讓大家瞭解如何從股市中獲利，透過長時間的投資，為自己增加點買菜錢。</p><h3 id="此篇是前幾篇的一個小統整"><a href="#此篇是前幾篇的一個小統整" class="headerlink" title="此篇是前幾篇的一個小統整"></a>此篇是前幾篇的一個小統整</h3><p>在<a href="/股價淨值比有這麼神？/">股價淨值比有這麼神？</a>跟<a href="/本益比能幫你選出優質股？/">本益比能幫你選出優質股？</a>中，裡面介紹了用不同的本益比和股價淨值比跑歷史回測</p><p>於是今天來總結一下這兩個指標，寫一個策略，讓大家瞭解股價淨值比跟本益比合在一起迸出什麼樣的火花！</p><h3 id="策略就是這麼簡單：找便宜且會賺錢的公司"><a href="#策略就是這麼簡單：找便宜且會賺錢的公司" class="headerlink" title="策略就是這麼簡單：找便宜且會賺錢的公司"></a>策略就是這麼簡單：找便宜且會賺錢的公司</h3><p>簡單來說這個就是一個雞蛋水餃股策略～</p><p>先用以下條件篩選出雞蛋水餃股：</p><ul><li>股價淨值比 &lt; 0.7 的股票 （被嚴重低估股票）</li><li>本益比 &lt; 13 的股票 （還算會賺點錢的公司）</li></ul><p>我們先把它們定義為”便宜股”</p><h3 id="還必須去除大盤大跌的時刻"><a href="#還必須去除大盤大跌的時刻" class="headerlink" title="還必須去除大盤大跌的時刻"></a>還必須去除大盤大跌的時刻</h3><p>這種便宜股在股市大跌的時候，跌得非常驚人，一定要避開！</p><p>還記得在<a href="/股價淨值比有這麼神？/">股價淨值比有這麼神？</a> 這篇中，有介紹<strong>當大盤大跌後，便宜股會變多！反之，當大盤過熱時，便宜股會很少</strong>。就是利用這個原理，來進行對大盤時間的過濾：</p><ul><li><p>假如便宜股太少（上市上櫃小於100家公司），代表大盤處於漲多的狀態，清空所有股票，不持股半年！可以去放放假，陪陪家人，休息一下！</p></li><li><p>假如便宜股夠多，則買收盤價在10元以上的上市股票 (畢竟太便宜的股票還是會怕怕的XDD)</p></li></ul><p>每半年換一次股，選擇滿足以上條件的所有股票，本金100萬元台幣，手續費不打折，交易稅0.3％</p><center><img src="/比策略狗還要安全的選股策略！/eq.png" alt="歷史績效圖" title="歷史績效圖"></center><p>事實上十萬本金就可以了，只是獲利從25倍減少到8倍左右</p><h3 id="常常休息的策略，卻可以有如此高的績效！"><a href="#常常休息的策略，卻可以有如此高的績效！" class="headerlink" title="常常休息的策略，卻可以有如此高的績效！"></a>常常休息的策略，卻可以有如此高的績效！</h3><p>這個策略常常休息，甚至在2010~2011這兩年完全沒買股票！真的很扯！</p><p>大盤緊張之際完全不用盯盤，不用每天提心吊膽的，你說這種輕鬆的策略，怎麼可能賺到什麼錢？</p><p>但，這就是一個跟財報狗的績優股獵犬不相上下的交易策略，不鳴則已，一鳴驚人，平常不買股票，等到台股崩跌時，能夠快速的獲利！</p><h3 id="策略是否持股也是一種指標～"><a href="#策略是否持股也是一種指標～" class="headerlink" title="策略是否持股也是一種指標～"></a>策略是否持股也是一種指標～</h3><p>這個策略躲過了從2004年來<strong>每一次</strong>的台股慘案，所以也可以用這個策略持股數來看出大盤現在是否漲過頭。持股數0代表大盤漲過頭了：</p><center><img src="/比策略狗還要安全的選股策略！/holdings.png" alt="每日持股" title="每日持股"></center><p>最近股票會崩跌嗎？針對這個問題，到今天為止，這個策略還在持股，所以我認為現在談崩跌的機率不大，然而歷史真的會跟未來相似嗎？沒有人可以說的准。</p><p>當市場受到大盤洗禮，許多好公司都跌回雞蛋水餃股之際，就是這個策略出動的好時機！</p><h3 id="比績優股獵犬的虧損還小，但還是要注意虧損！"><a href="#比績優股獵犬的虧損還小，但還是要注意虧損！" class="headerlink" title="比績優股獵犬的虧損還小，但還是要注意虧損！"></a>比績優股獵犬的虧損還小，但還是要注意虧損！</h3><p>其實，虧損還是有的，2012年有點慘，一直盤整，沒有繼續突破新高，最大的虧損來到了25%：</p><center><img src="/比策略狗還要安全的選股策略！/drop.png" alt="下跌百分比" title="下跌百分比"></center><p>你絕對不能輕易使用這個策略！</p><p>當你決定採用這個策略時，代表你已經檢驗過它數百遍，你相信這個策略，也代表當這個策略產生了25%的虧損時，你都必須視之理所當然，不動於衷，繼續相信它。</p><p>我不保證這邊的績效是否正確，也不保證之後這個策略不會失效<br>但你可以參考這邊的方法，實際模擬半年，甚至去實現自己的策略，把它修改的更好！</p><h3 id="光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！"><a href="#光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！" class="headerlink" title="光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！"></a>光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！</h3><p>目前介紹了本益比、股價淨值比，並且用這兩個數值當作買賣標準，就能得到這樣的策略！</p><p>更別提後續介紹更多種的基本面、技術面、甚至是籌碼面的選股方式，來讓大家對於股市更有感覺，更輕鬆的選擇股票標的！</p><p>你知道為何我有勇氣把自己覺得賺錢的策略免費分享給大家嗎？因為更猛的在後面～XD</p><p>我盡量每天都會發一篇，假如你覺得到目前為止還喜歡的話，可以繼續關注這個blog，或是留言給我一點建議，接下來想做的主題：</p><ul><li>更多的財經指標、回測</li><li>Machine Learning 選股</li><li>python 完全新手股市分析（包含歷史財經數據包及其研究方法）</li></ul><p>請問哪個你會比較有興趣呢？</p>]]></content>
+    <content type="html"><![CDATA[<p>投資人最喜歡看每股盈餘（EPS）來決定股票的好壞，股票雜誌也喜歡說某家公司EPS多好，但今天所做的回測發現，根據每季EPS選擇股票並不好！</p><h3 id="EPS-介紹"><a href="#EPS-介紹" class="headerlink" title="EPS 介紹"></a>EPS 介紹</h3><p>EPS = 稅後淨利 / 在外流通股數</p><p>間單來講就是投資人每投入一股，一個月可以賺多少錢回來。<br>公司賺的錢越多，其EPS越大<br>公司發行了很多股票，EPS越小</p><p>但是這樣有個問題：公司賺多少錢不等於公司經營的好壞！<br>例如：大公司掙錢肯定要比小公司多，但我們買股票的重點不在誰獲利較高，而是在哪家公司成長比較快速！</p><p>所以只比較不同股票當季EPS，其實是有弊端的，我們用實驗來舉例給你看：</p><h3 id="EPS低到高的歷史回測"><a href="#EPS低到高的歷史回測" class="headerlink" title="EPS低到高的歷史回測"></a>EPS低到高的歷史回測</h3><p>我們將EPS由低到高分成五組，每一組的股票大約是一樣多的，每60天調整一次，選擇EPS在範圍內的股票，同樣假設資產可以平均分散，不算手續費：</p><center><img src="/EPS跟ROE哪個比較好用？/eps.png" alt="歷史績效圖" title="歷史績效圖"></center><p>我們發現，買EPS大於0的股票獲利會高於EPS小於0的組別。</p><p>但，是假如EPS大於0的組別之間並沒有太大的關係。</p><p>代表假如你的買股票時，假如平均是買2～3個月的話，可以稍微看一下當季EPS<br>只要不要小於0就可以了，就算很高也不一樣定有用，但小於0的話就要注意了！</p><h3 id="跟ROE做比較"><a href="#跟ROE做比較" class="headerlink" title="跟ROE做比較"></a>跟ROE做比較</h3><p>ROE就是一個考慮了公司可用資金與報酬的指標：</p><p>股東權益 = 總資產 - 總負債<br>ROE = 稅後盈餘 / 股東權益 * 100%</p><p>ROE就變成，公司投入了一些資產，可以賺多少錢回來的指標！</p><h3 id="ROE歷史回測"><a href="#ROE歷史回測" class="headerlink" title="ROE歷史回測"></a>ROE歷史回測</h3><p>我們同樣將ROE從高到低分成五組，每60天換股，取全台灣上市公司介於某一組ROE之間的股票：</p><center><img src="/EPS跟ROE哪個比較好用？/roe.png" alt="歷史績效圖" title="歷史績效圖"></center><p>可以發現，用ROE來跑歷史回測，真的比較不一樣，獲利跟ROE成很漂亮的正比！<br>買ROE越高的公司，比買EPS高的公司更容易挑到優質股！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;投資人最喜歡看每股盈餘（EPS）來決定股票的好壞，股票雜誌也喜歡說某家公司EPS多好，但今天所做的回測發現，根據每季EPS選擇股票並不好！&lt;/p&gt;
+&lt;h3 id=&quot;EPS-介紹&quot;&gt;&lt;a href=&quot;#EPS-介紹&quot; class=&quot;headerlink&quot; title=&quot;EPS
+      
+    
+    </summary>
+    
+    
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="EPS" scheme="https://koreal6803.github.io/tags/EPS/"/>
+    
+      <category term="每股盈餘" scheme="https://koreal6803.github.io/tags/%E6%AF%8F%E8%82%A1%E7%9B%88%E9%A4%98/"/>
+    
+      <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>14年14倍的選股策略！</title>
+    <link href="https://koreal6803.github.io/14%E5%B9%B414%E5%80%8D%E7%9A%84%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5%EF%BC%81/"/>
+    <id>https://koreal6803.github.io/14年14倍的選股策略！/</id>
+    <published>2017-09-28T12:05:16.000Z</published>
+    <updated>2017-09-29T13:10:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>用超簡單的財經指標就可以有14年約獲利14倍的策略，重點是可以躲過致命的金融海嘯、大盤崩跌！半年只要調動一次持股，甚至偶爾叫你半年不碰股票去放個假。當然此策略主要是教學用，建議自行調整後再真實投入市場。</p><h3 id="從統計的角度帶你一步一步設計量化策略"><a href="#從統計的角度帶你一步一步設計量化策略" class="headerlink" title="從統計的角度帶你一步一步設計量化策略"></a>從統計的角度帶你一步一步設計量化策略</h3><p>一般的財經文章都是講講理論，算算公式，套幾個例子，就結束了。</p><p>問題是，你怎麼知道那個例子是湊巧還是真的有用？</p><p>FinLab跟一般的財經部落格不一樣，我們把全台灣所有的公司做統計整理給大家，讓大家瞭解如何從股市中獲利，透過長時間的投資，為自己增加買菜錢。</p><h3 id="此篇是前幾篇的一個小統整"><a href="#此篇是前幾篇的一個小統整" class="headerlink" title="此篇是前幾篇的一個小統整"></a>此篇是前幾篇的一個小統整</h3><p>在<a href="/股價淨值比有這麼神？/">股價淨值比有這麼神？</a>跟<a href="/本益比能幫你選出優質股？/">本益比能幫你選出優質股？</a>中，裡面介紹了用不同的本益比和股價淨值比跑歷史回測</p><p>於是今天來總結一下這兩個指標，寫一個策略，讓大家瞭解股價淨值比跟本益比合在一起迸出什麼樣的火花！</p><h3 id="策略就是這麼簡單：找便宜且會賺錢的公司"><a href="#策略就是這麼簡單：找便宜且會賺錢的公司" class="headerlink" title="策略就是這麼簡單：找便宜且會賺錢的公司"></a>策略就是這麼簡單：找便宜且會賺錢的公司</h3><p>簡單來說這個就是一個雞蛋水餃股策略～</p><p>先用以下條件篩選出雞蛋水餃股：</p><ul><li>股價淨值比 &lt; 0.7 的股票 （被嚴重低估股票）</li><li>本益比 &lt; 13 的股票 （還算會賺點錢的公司）</li></ul><p>我們先把它們定義為”便宜股”</p><h3 id="還必須去除大盤大跌的時刻"><a href="#還必須去除大盤大跌的時刻" class="headerlink" title="還必須去除大盤大跌的時刻"></a>還必須去除大盤大跌的時刻</h3><p>這種便宜股在股市大跌的時候，跌得非常驚人，一定要避開！</p><p>還記得在<a href="/股價淨值比有這麼神？/">股價淨值比有這麼神？</a> 這篇中，有介紹<strong>當大盤大跌後，便宜股會變多！反之，當大盤過熱時，便宜股會很少</strong>。就是利用這個原理，來進行對大盤時間的過濾：</p><ul><li><p>假如便宜股太少（上市上櫃小於100家公司），代表大盤處於漲多的狀態，清空所有股票，不持股半年！可以去放放假，陪陪家人，休息一下！</p></li><li><p>假如便宜股夠多，則買收盤價在10元以上的上市股票 (畢竟太便宜的股票還是會怕怕的XDD)</p></li></ul><p>每半年換一次股，選擇滿足以上條件的所有股票，本金100萬元台幣，手續費不打折，交易稅0.3％</p><center><img src="/14年14倍的選股策略！/eq.png" alt="歷史績效圖" title="歷史績效圖"></center><p>事實上十萬本金就可以了，只是獲利從14倍減少到8倍左右</p><h3 id="常常休息的策略，卻可以有如此高的績效！"><a href="#常常休息的策略，卻可以有如此高的績效！" class="headerlink" title="常常休息的策略，卻可以有如此高的績效！"></a>常常休息的策略，卻可以有如此高的績效！</h3><p>這個策略常常休息，甚至在2010~2011這兩年完全沒買股票！真的很扯！</p><p>大盤緊張之際完全不用盯盤，不用每天提心吊膽的，你說這種輕鬆的策略，怎麼可能賺到什麼錢？</p><p>但，這就是一個跟財報狗的績優股獵犬不相上下的交易策略，不鳴則已，一鳴驚人，平常不買股票，等到台股崩跌時，能夠快速的獲利！</p><h3 id="策略是否持股也是一種指標～"><a href="#策略是否持股也是一種指標～" class="headerlink" title="策略是否持股也是一種指標～"></a>策略是否持股也是一種指標～</h3><p>這個策略躲過了從2004年來<strong>每一次</strong>的台股慘案，所以也可以用這個策略持股數來看出大盤現在是否漲過頭。持股數0代表大盤漲過頭了：</p><center><img src="/14年14倍的選股策略！/holdings.png" alt="每日持股" title="每日持股"></center><p>最近股票會崩跌嗎？針對這個問題，到今天為止，這個策略還在持股，所以我認為現在崩跌的機率不大，然而歷史真的會跟未來相似嗎？沒有人可以說的准。</p><p>當市場受到大盤洗禮，許多好公司都跌回雞蛋水餃股之際，就是這個策略出動的好時機！</p><h3 id="比績優股獵犬的虧損還小，但還是要注意虧損！"><a href="#比績優股獵犬的虧損還小，但還是要注意虧損！" class="headerlink" title="比績優股獵犬的虧損還小，但還是要注意虧損！"></a>比績優股獵犬的虧損還小，但還是要注意虧損！</h3><p>其實，虧損還是有的，2012年有點慘，一直盤整，沒有繼續突破新高，最大的虧損來到了25%：</p><center><img src="/14年14倍的選股策略！/drop.png" alt="下跌百分比" title="下跌百分比"></center><p>你絕對不能輕易使用這個策略！</p><p>當你決定採用這個策略時，代表你已經檢驗過它數百遍，你相信這個策略，也代表當這個策略產生了25%的虧損時，你都必須視之理所當然，不動於衷，繼續相信它。</p><p>我不保證這邊的績效是否正確，也不保證之後這個策略不會失效<br>但你可以參考這邊的方法，實際模擬半年，甚至去實現自己的策略，把它修改的更好！</p><h3 id="光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！"><a href="#光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！" class="headerlink" title="光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！"></a>光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！</h3><p>目前介紹了本益比、股價淨值比，並且用這兩個數值當作買賣標準，就能得到這樣的策略！</p><p>更別提後續介紹更多種的基本面、技術面、甚至是籌碼面的選股方式，來讓大家對於股市更有感覺，更輕鬆的選擇股票標的！</p><p>你知道為何我有勇氣把自己覺得賺錢的策略免費分享給大家嗎？因為更猛的在後面～XD</p><p>我盡量每天都會發一篇，假如你覺得到目前為止還喜歡的話，可以繼續關注這個blog，或是留言給我一點建議，接下來想做的主題：</p><ul><li>更多的財經指標、回測</li><li>Machine Learning 選股</li><li>python 完全新手股市分析（包含歷史財經數據包及其研究方法）</li></ul><p>請問哪個你會比較有興趣呢？</p>]]></content>
     
     <summary type="html">
     
@@ -38,13 +68,15 @@
       <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
       <category term="本益比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
     
-      <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
     
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
-      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
+      <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
   </entry>
   
@@ -83,7 +115,7 @@
     <link href="https://koreal6803.github.io/%E6%9C%AC%E7%9B%8A%E6%AF%94%E8%83%BD%E5%B9%AB%E4%BD%A0%E9%81%B8%E5%87%BA%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/"/>
     <id>https://koreal6803.github.io/本益比能幫你選出優質股？/</id>
     <published>2017-09-26T13:32:28.000Z</published>
-    <updated>2017-09-28T17:54:04.000Z</updated>
+    <updated>2017-09-29T13:07:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>本文用統計的方式讓大家感受本益比（PE）的高低究竟跟股價有多少的影響？是否選擇低本益比（PE）的股票就沒問題？這些都是我自己入門股票買賣最想問的問題，究竟一家公司的PE要看得多重才對。</p><p>網路上已經一堆網站都在<a href="http://www.cmoney.tw/learn/course/0520/topic/689" rel="external nofollow noopener noreferrer" target="_blank">介紹PE了</a>，今天做一些別的統計給大家看，常常聽別人說PE約在10～20之間，但是我們還是來看一張讓你很有感覺且非常新鮮（昨天的）的台股每間公司的PE分佈圖：</p><center><img src="/本益比能幫你選出優質股？/distribution.png" alt="台股PE分佈圖" title="台股PE分佈圖"></center><p>就像大家說的，真的集中在10～20之間，然而我們可以看到此分佈的兩個標準差來到了5～37左右，而更大一部份的PE市集中在10~15之間。</p><p>接下來我們就來做個小實驗，把2005年～2017年所有的台股上市公司都拿來回測，每隔半年選入本益比符合條件的全體公司，並且平均費配現有資金，當然實際這樣玩你得身價好幾個億，但我們這邊只是假設一個理想的狀態，手續費也是0，我們一共有七組不同的實驗：</p><ol><li>本益比介於 05 ~ 10 之間</li><li>介於 10 ~ 15 之間</li><li>介於 15 ~ 20 之間</li><li>介於 20 ~ 25 之間</li><li>介於 25 ~ 30 之間</li><li>介於 30 ~ 35 之間</li><li>介於 35 ~ 40 之間</li></ol><p>每一組都模擬12年看一下投資報酬會如何：</p><center><img src="/本益比能幫你選出優質股？/equality.png" alt="七組不同本益比策略的權益曲線" title="七組不同本益比策略的權益曲線"></center><br>Y軸是獲利的倍數，可以發現定10~15普遍比其它組還要好，證明在市場上買低本益比的股票是可以長期看多的，那為何最低本益比的5~10這組，會比較差呢？我個人認為可能是股票的多樣性不足導致的，因為本益比介於5～10的股票本來就比較少，沒有足夠的分散風險。另外也有可能是，某家爛公司突然大量的業外收入，讓我們以為它賺很多，但體質還是很差導致的。<br><br>來看一下這七組12年的獲利倍數：<br><br><center><img src="/本益比能幫你選出優質股？/performance.png" alt="七組策略的12年總報酬" title="七組策略的12年總報酬"></center><p>這邊的Y軸一樣是獲利的倍數，可以發現本益比越大，獲益就越差，跟報酬呈現反比。也證實了本益比越小的股票，是越值得投資的！</p><p>但！</p><p>這邊指的是投資風險足夠分散的情況下得到的結論，假如你的金額不大，只看本益比買股票會發生什麼事情呢？以下我們再做兩組實驗：</p><ol><li>本益比介於12.9~13.1</li><li>本益比介於12.5~13.5</li></ol><center><img src="/本益比能幫你選出優質股？/amount-equality.png" alt="權益曲線，藍色為第1組，紅色為地2組" title="權益曲線，藍色為第1組，紅色為地2組"></center><p>這兩種不同的組合，其平均本益比都在13左右，但為何獲利差這麼多呢？答案是因為選股的數量不一樣，第一組實驗每次都選了30支左右的股票，而第二組實驗每次都只選了小貓兩三隻：</p><center><img src="/本益比能幫你選出優質股？/amount-amount.png" alt="持有股票的數目，藍色為第1組，紅色為地2組" title="持有股票的數目，藍色為第1組，紅色為地2組"></center><p>可以發現，當你只選了兩三支本益比很小的股票時，根本一點用都沒有用！財經數據就像超級大雜訊，100支股票是可以簡單找到規律性的，但挑一支說會漲，一定是在騙自己。</p><p>總結：</p><ul><li>本益比重看不重用（XD），不是啦，應該說本益比平常買股票參考用，但絕對不能當作唯一的指標！</li><li>像巴菲特一樣看準了重壓一家公司，實在是很有難度，像我這種散戶，假如資本夠，還是好好的分散風險吧！</li><li>資本不夠的話，得配合其它條件篩選出更好的股票，盡量平均分配，是比較恰當的。</li></ul>]]></content>
     
@@ -100,13 +132,15 @@
       <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
       <category term="本益比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="分佈圖" scheme="https://koreal6803.github.io/tags/%E5%88%86%E4%BD%88%E5%9C%96/"/>
     
       <category term="統計" scheme="https://koreal6803.github.io/tags/%E7%B5%B1%E8%A8%88/"/>
-    
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
   </entry>
   
@@ -132,11 +166,11 @@
       <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
+      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
+    
       <category term="大盤" scheme="https://koreal6803.github.io/tags/%E5%A4%A7%E7%9B%A4/"/>
     
       <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
     
   </entry>
   
@@ -145,7 +179,7 @@
     <link href="https://koreal6803.github.io/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/"/>
     <id>https://koreal6803.github.io/股價淨值比有這麼神？/</id>
     <published>2017-09-24T11:09:52.000Z</published>
-    <updated>2017-09-28T17:54:21.000Z</updated>
+    <updated>2017-09-29T13:07:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>股價淨值比(PB)，是用來判斷一個究竟公司是被高估還是低估的指標，可以參考<a href="https://www.cmoney.tw/notes/note-detail.aspx?nid=6355" rel="external nofollow noopener noreferrer" target="_blank">介紹</a></p><p>股價淨值比真的越低越好嗎？我們來看看。</p><a id="more"></a><p>設計以下實驗：<br>每半年（125天）換一次持股，從2010年到2017年選取台股上市公司所有 PB &lt; N 的公司，並將資產平均作分配，持有半年。</p><center><img src="/股價淨值比有這麼神？/equality.png" alt="不同的PB回測結果" title="不同的PB回測結果"></center><p>這張圖的Y軸是從2010年開始投資，資產的倍數變化圖，可以發現PB小的股票真的有比大盤好，原本我以為PB不能越低越好，但最後發現，PB越小，報酬率真的越高（只限於這個簡單策略），但我這邊說的是一群股票的整體結果，不代表單一股票PB越小就一定越好喔！<br>可以看出 PB&lt;0.5 的時候，回測結果大起大落，我們來仔細看其中到底怎麼回事：</p><center><img src="/股價淨值比有這麼神？/pb-detail1.png" alt="PB<0.5 回測結果" title="PB<0.5 回測結果"></center><p>這個是 PB &lt; 0.5 的歷史績效圖，藍色是不考慮手續費跟稅，且資產可以完全平均分散買入所選的股票；紅色是起始100萬，也是盡量平均分散，但最小張數是一張，不能買零股，並且會放棄太貴的股票。可以發現紅色跟藍色差滿多的，最後結果可以差到50萬元，其中手續費佔了不少，為什麼2015～2016年下滑這麼大呢？我們接著來看一下手中持股數量：</p><center><img src="/股價淨值比有這麼神？/pb-detail2.png" alt="PB<0.5 持股數" title="PB<0.5 持股數"></center><p>此圖的Y軸是手上持股的數量，可以發現，2015～2016年只買了非常少張股票，可能才2～3張。這就像是把雞蛋都放在同一個籃子很危險，造成鉅額損失。另外可以觀察到，買入的股票數量似乎跟大盤成反比，大盤漲，手上股票就變少，大盤跌，手上股票就變多，是不是PB 小的股票變少，反過來想是大部分股票被高估，整體台股過於樂觀，泡沫即將破滅？之後可以來研究看看。</p><p>最後我們來看一下最大的下滑損失了多少%的總資產：</p><center><img src="/股價淨值比有這麼神？/pb-detail3.png" alt="PB<0.5 持股數" title="PB<0.5 持股數"></center><p>此圖的Y軸為下跌百分比，可以發現在2015～2016年，損失了40%的總資產，假如我們剛好在那時候投資，100萬就只剩60萬，實在有點可怕。</p><p>於是我們總結一下：</p><blockquote><p><strong>選擇PB越小的一群標的（PB &lt; 0.6~0.8），半年更新一次還不錯，但一定要做好風險管理，千萬別將全部的雞蛋放在通一個籃子裡！也可以配合其它的財報選出優質股～</strong></p></blockquote>]]></content>
     
@@ -159,9 +193,11 @@
       <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
       <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
   </entry>
   
@@ -256,7 +292,7 @@
     <link href="https://koreal6803.github.io/%E6%AF%8F%E5%A4%A9%E8%87%B3%E5%B0%91%E5%AF%AB%E4%B8%80%E8%A1%8C/"/>
     <id>https://koreal6803.github.io/每天至少寫一行/</id>
     <published>2017-09-20T11:09:42.000Z</published>
-    <updated>2017-09-22T22:58:52.000Z</updated>
+    <updated>2017-09-29T12:56:11.000Z</updated>
     
     <content type="html"><![CDATA[<p>如何持續運動不中斷？跨年的願望完成了沒？說好每天背英文單字呢？</p><p>這些都需要毅力，我所沒有的毅力。</p><p>然而，最近聽到好友說的話，讓我有點頓悟！</p><a id="more"></a><p>其實我們不需要有毅力，我們需要拆解任務的能力。</p><p>讓我來說明一下，通常一個任務(task)，跟我的毅力(willpower)可以量化的話，會是這樣子：<br><figure class="highlight python"><figcaption><span>任務與毅力</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">task = <span class="number">100</span>     <span class="comment"># 任務</span></div><div class="line">willpower = <span class="number">5</span>  <span class="comment"># 毅力</span></div></pre></td></tr></table></figure><br>別懷疑，我的毅力真的很薄弱。</p><p>但沒關係，我們將任務分解成很小塊的子任務(subtask)：<br><figure class="highlight python"><figcaption><span>分解任務</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">subtask = task</div><div class="line"><span class="keyword">while</span> (subtask &gt; willpower)</div><div class="line">    subtask /= <span class="number">2</span></div></pre></td></tr></table></figure><br>秘訣就在這！要分解到一個你覺得可笑的地步，例如：</p><ul><li>一天一下仰臥起做</li><li>一天寫一行部落格</li><li><strike>一天花一小時研究<strike></strike></strike></li></ul><p>一定要夠可笑，才會成功。</p><p>重點不在於做的多或少，而是在於你是否開始做。<br>很多事情痛苦的是靜摩擦力，後面就輕鬆了！</p><ul><li>一天一下仰臥起做：都做一下了怎麼可能不多做幾下。</li><li>一天寫一行部落格：你看我今天都寫多少行了。</li><li>一天作一小時研究：<strike>0.0 聽起來不錯<strike></strike></strike></li></ul><p>每天會有額外的動力去多做一點，甚至很多點<br><figure class="highlight python"><figcaption><span>每天的任務</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">progress = <span class="number">0</span></div><div class="line"><span class="keyword">while</span>(progress &lt; task)</div><div class="line">    progress += subtask + random.randint(<span class="number">0</span>, <span class="number">10</span>*subtask)</div></pre></td></tr></table></figure></p><p>所以，我給自己的標準是：每天寫一行部落格，就好了！</p>]]></content>
     
