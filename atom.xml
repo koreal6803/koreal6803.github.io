@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-09-29T13:07:17.000Z</updated>
+  <updated>2017-09-30T13:29:31.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>買股票只考慮ROE是不夠的！</title>
+    <link href="https://koreal6803.github.io/%E8%B2%B7%E8%82%A1%E7%A5%A8%E5%8F%AA%E8%80%83%E6%85%AEROE%E6%98%AF%E4%B8%8D%E5%A4%A0%E7%9A%84%EF%BC%81/"/>
+    <id>https://koreal6803.github.io/買股票只考慮ROE是不夠的！/</id>
+    <published>2017-09-30T11:28:20.000Z</published>
+    <updated>2017-09-30T13:29:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="/EPS跟ROE哪個比較好用？/">昨天的文章</a>介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。</p><p>但這樣會有問題！<br>因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了</p><h3 id="公式推導"><a href="#公式推導" class="headerlink" title="公式推導"></a>公式推導</h3><p>為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下：</p><p>$$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益}}{\text{市值/淨利}}=\frac{\text{股價淨值比}\text{PB}}{\text{本益比PE}}$$</p><p>由上述公式可以發現，ROE又可以跟PB、PE扯上關係。首先先來看PE：</p><p>PE 越小造成 ROE 越大，而兩者都代表公司的獲利很好，可以買入！很好的現象</p><p>但接下來看到PB的時候，奇妙的是情就發生了：</p><p>PB越大會影響ROE也會越大，前者大說明股票被高估，後者越大說明公司投資報酬率很好，於是我們可以得到一個結論：</p><blockquote><p><strong>ROE高並不代表其價格值得買入！</strong></p></blockquote><h3 id="歷史回測"><a href="#歷史回測" class="headerlink" title="歷史回測"></a>歷史回測</h3><p>由以上結論我們可以發現，除了用ROE來選擇投資報酬率高的公司外，我們還必須利用PB選擇便宜股。</p><table><thead><tr><th>策略名稱</th><th>策略一（只考慮ROE）</th><th>策略二（考慮ROE跟PB）</th></tr></thead><tbody><tr><td>選股條件</td><td>ROE  &gt; 5</td><td>同策略一</td></tr><tr><td></td><td>收盤價 &gt; 10</td><td>PB &lt; 1.2</td></tr></tbody></table><p>每60天更新一次持股，不計算手續費：</p><center><img src="/買股票只考慮ROE是不夠的！/eq.png" alt="獲利，策略一為紅色，策略二為藍色，大盤為灰色" title="獲利，策略一為紅色，策略二為藍色，大盤為灰色"></center><p>其中策略一每次都把資產分散在100支股票左右，而策略二把資產分散在平均為10支股票左右。</p><center><img src="/買股票只考慮ROE是不夠的！/nstock.png" alt="股票持有數量，策略一為紅色，策略二為藍色" title="股票持有數量，策略一為紅色，策略二為藍色"></center><p>策略二每次持有的股票非常少且獲利更勝策略一！</p><p>每次買入個位數股票，小資族會比較好投資，當然我真的不知道有沒有做錯，所以我將策略二的持股歷史紀錄供大家下載：<a href="/買股票只考慮ROE是不夠的！/history_roe_pb.csv">csv檔</a></p><h3 id="金融海嘯資產少60％！"><a href="#金融海嘯資產少60％！" class="headerlink" title="金融海嘯資產少60％！"></a>金融海嘯資產少60％！</h3><p>但這個策略也是教學用，大家不要輕易使用，畢竟在金融海嘯時，其虧所來到了非常驚人的60％。如何判斷大盤是否大跌，可以參考之前很多篇的介紹。</p><h3 id="策略二今天持股"><a href="#策略二今天持股" class="headerlink" title="策略二今天持股"></a>策略二今天持股</h3><p>策略二目前持股為：</p><p><center><img src="/買股票只考慮ROE是不夠的！/stocks.png" alt="策略二目前持股" title="策略二目前持股"></center><br>第一個column是股票代號，第二個column是買入價格，約60個交易日後，我們再來看一下這幾支股票是賺錢還是賠錢。有興趣可以追蹤一下！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;/EPS跟ROE哪個比較好用？/&quot;&gt;昨天的文章&lt;/a&gt;介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。&lt;/p&gt;
+&lt;p&gt;但這樣會有問題！&lt;br&gt;因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+    
+    
+      <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
+    
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
+    
+      <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>EPS跟ROE哪個比較好用？</title>

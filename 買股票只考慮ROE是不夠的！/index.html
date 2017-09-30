@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>大盤要跌了嗎？利用企業本益比分佈來判斷！ | FinLab 量化實驗室</title>
+    <title>買股票只考慮ROE是不夠的！ | FinLab 量化實驗室</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="本益比,大盤,簡易策略">
+        <meta name="keywords" content="ROE,如何買股票,歷史回測,股價淨值比,選股策略">
     
-    <meta name="description" content="最近大盤一直跌，大家都不禁懷疑是否開始大崩盤了？因為前幾天寫了一篇用淨值比判斷大盤漲跌，想說本益比是不是也可以這樣如法炮製呢？於是做了台股企業本益比中位數隨時間的變化圖。 在看圖之前不免俗的先講講本益比（PE） 本益比中位數介紹本益比的簡單公式是：本益比 = 每股市價／每股盈利。 本益比越高，代表你用較多錢買一間盈利小的公司股票本益比越低，代表你用較少錢買一間盈利大的公司股票 利用本益比中位數來判">
-<meta name="keywords" content="本益比,大盤,簡易策略">
+    <meta name="description" content="昨天的文章介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。 但這樣會有問題！因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了 公式推導為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下： $$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益">
+<meta name="keywords" content="ROE,如何買股票,歷史回測,股價淨值比,選股策略">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大盤要跌了嗎？利用企業本益比分佈來判斷！">
-<meta property="og:url" content="https://koreal6803.github.io/大盤要跌了嗎？利用企業本益比分佈來判斷！/index.html">
+<meta property="og:title" content="買股票只考慮ROE是不夠的！">
+<meta property="og:url" content="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="最近大盤一直跌，大家都不禁懷疑是否開始大崩盤了？因為前幾天寫了一篇用淨值比判斷大盤漲跌，想說本益比是不是也可以這樣如法炮製呢？於是做了台股企業本益比中位數隨時間的變化圖。 在看圖之前不免俗的先講講本益比（PE） 本益比中位數介紹本益比的簡單公式是：本益比 = 每股市價／每股盈利。 本益比越高，代表你用較多錢買一間盈利小的公司股票本益比越低，代表你用較少錢買一間盈利大的公司股票 利用本益比中位數來判">
+<meta property="og:description" content="昨天的文章介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。 但這樣會有問題！因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了 公式推導為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下： $$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://koreal6803.github.io/大盤要跌了嗎？利用企業本益比分佈來判斷！/pe-mid.png">
-<meta property="og:updated_time" content="2017-09-27T14:47:55.000Z">
+<meta property="og:image" content="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/eq.png">
+<meta property="og:updated_time" content="2017-09-30T13:29:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大盤要跌了嗎？利用企業本益比分佈來判斷！">
-<meta name="twitter:description" content="最近大盤一直跌，大家都不禁懷疑是否開始大崩盤了？因為前幾天寫了一篇用淨值比判斷大盤漲跌，想說本益比是不是也可以這樣如法炮製呢？於是做了台股企業本益比中位數隨時間的變化圖。 在看圖之前不免俗的先講講本益比（PE） 本益比中位數介紹本益比的簡單公式是：本益比 = 每股市價／每股盈利。 本益比越高，代表你用較多錢買一間盈利小的公司股票本益比越低，代表你用較少錢買一間盈利大的公司股票 利用本益比中位數來判">
-<meta name="twitter:image" content="https://koreal6803.github.io/大盤要跌了嗎？利用企業本益比分佈來判斷！/pe-mid.png">
+<meta name="twitter:title" content="買股票只考慮ROE是不夠的！">
+<meta name="twitter:description" content="昨天的文章介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。 但這樣會有問題！因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了 公式推導為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下： $$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益">
+<meta name="twitter:image" content="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/eq.png">
     
 
     
@@ -148,14 +148,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-大盤要跌了嗎？利用企業本益比分佈來判斷！" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-買股票只考慮ROE是不夠的！" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        大盤要跌了嗎？利用企業本益比分佈來判斷！
+        買股票只考慮ROE是不夠的！
         </h1>
     
 
@@ -165,55 +165,74 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/大盤要跌了嗎？利用企業本益比分佈來判斷！/" class="article-date">
-            <time datetime="2017-09-27T12:52:52.000Z" itemprop="datePublished">2017-09-27</time>
+        <a href="/買股票只考慮ROE是不夠的！/" class="article-date">
+            <time datetime="2017-09-30T11:28:20.000Z" itemprop="datePublished">2017-09-30</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/大盤/">大盤</a>, <a class="tag-link" href="/tags/本益比/">本益比</a>, <a class="tag-link" href="/tags/簡易策略/">簡易策略</a>
+        <a class="tag-link" href="/tags/ROE/">ROE</a>, <a class="tag-link" href="/tags/如何買股票/">如何買股票</a>, <a class="tag-link" href="/tags/歷史回測/">歷史回測</a>, <a class="tag-link" href="/tags/股價淨值比/">股價淨值比</a>, <a class="tag-link" href="/tags/選股策略/">選股策略</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>最近大盤一直跌，大家都不禁懷疑是否開始大崩盤了？因為前幾天寫了一篇<a href="/用股價淨值比來判斷大盤漲跌/">用淨值比判斷大盤漲跌</a>，想說本益比是不是也可以這樣如法炮製呢？於是做了台股企業本益比中位數隨時間的變化圖。</p>
-<p>在看圖之前不免俗的先講講本益比（PE）</p>
-<h3 id="本益比中位數介紹"><a href="#本益比中位數介紹" class="headerlink" title="本益比中位數介紹"></a>本益比中位數介紹</h3><p>本益比的簡單公式是：本益比 = 每股市價／每股盈利。</p>
-<p>本益比越高，代表你用較多錢買一間盈利小的公司股票<br>本益比越低，代表你用較少錢買一間盈利大的公司股票</p>
-<h3 id="利用本益比中位數來判斷大盤大趨勢"><a href="#利用本益比中位數來判斷大盤大趨勢" class="headerlink" title="利用本益比中位數來判斷大盤大趨勢"></a>利用本益比中位數來判斷大盤大趨勢</h3><p>下圖紅線是是每天大盤上市上櫃股票的本益比中位數（取過對數的）隨時間變化圖，藍線是2個標準差，灰色是大盤：</p>
-<center><img src="/大盤要跌了嗎？利用企業本益比分佈來判斷！/pe-mid.png" alt="台股PE中位數的變化，紅色為中位數，藍色為2個標準差" title="台股PE中位數的變化，紅色為中位數，藍色為2個標準差"></center>
-
-<p>大家可以觀察一下，以下是我發現有趣的點：</p>
-<ul>
-<li>假如我們現在有個策略在紅線為2.5左右買進大盤，而3左右出清，感覺獲利會滿可觀的！（然而金融海嘯還是得凹一下單就是了XD）</li>
-<li>用本益比中位數台股2000年上萬點為3.5，而今年上萬點只有2.6，代表兩次上萬點意義不太一樣，2000年那次比較像是泡沫，破了後來很慘烈；而今年是大盤破新高，而紅線沒破新高，代表企業的盈利目前來講還算是跟的上股價的漲幅，沒有太誇張，所以這幾天雖然都慘慘的，我個人還是保持平常心。</li>
-</ul>
-<p>大家可以搭配之前<a href="/用股價淨值比來判斷大盤漲跌/">用淨值比判斷大盤漲跌</a>的文章看，雖然股價淨值比的中位數有點偏高，但目前都沒有大暴跌的明顯徵兆，但我真的不是叫你相信這些指標，因為每個指標的結論很有可能不一樣，例如下面就是一個例子：</p>
-<h3 id="反面例子：GOOGLE-TREND"><a href="#反面例子：GOOGLE-TREND" class="headerlink" title="反面例子：GOOGLE TREND"></a>反面例子：GOOGLE TREND</h3><p>這個指標已經被Mr.Market在<a href="https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwiQ3be9wsXWAhVGvBoKHWDjBV4QFggnMAA&amp;url=http%3A%2F%2Fwww.rich01.com%2F2014%2F11%2Fgoogle-trend.html&amp;usg=AFQjCNEx4wbBR0ycvg-GFcB5SZUS7K3IeQ" rel="external nofollow noopener noreferrer" target="_blank">這篇文中</a>介紹過了，簡而言之：<br>google trend 指標就是 “台股” 這個關鍵字的熱門程度，是反指標。</p>
-<p>事隔多年看一下，發現最近有點散戶真的是灌入台股這樣：</p>
-<center><img src="/大盤要跌了嗎？利用企業本益比分佈來判斷！/trend.png" alt="紅色是大盤，藍色是Google Trend 股票的熱門程度" title="紅色是大盤，藍色是Google Trend 股票的熱門程度"></center>
-
-
-<p>最近”股票”的搜尋人氣已經達到歷史新高更勝2008金融海嘯前…</p>
-<p>為什麼”股票”關鍵字人氣越高，股票越容易跌？因為用google搜”股票”這兩個字的，大部分都是新手散戶，有人把股市當做是一種心裡學的競技場，新手往往沒有交易的心裡素質，容易買高賣低。引用巴菲特的名言：</p>
-<blockquote><p>We simply attempt to be fearful when others are greedy and to be greedy only when others are fearful.</p>
+            <p><a href="/EPS跟ROE哪個比較好用？/">昨天的文章</a>介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。</p>
+<p>但這樣會有問題！<br>因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了</p>
+<h3 id="公式推導"><a href="#公式推導" class="headerlink" title="公式推導"></a>公式推導</h3><p>為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下：</p>
+<p>$$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益}}{\text{市值/淨利}}=\frac{\text{股價淨值比}\text{PB}}{\text{本益比PE}}$$</p>
+<p>由上述公式可以發現，ROE又可以跟PB、PE扯上關係。首先先來看PE：</p>
+<p>PE 越小造成 ROE 越大，而兩者都代表公司的獲利很好，可以買入！很好的現象</p>
+<p>但接下來看到PB的時候，奇妙的是情就發生了：</p>
+<p>PB越大會影響ROE也會越大，前者大說明股票被高估，後者越大說明公司投資報酬率很好，於是我們可以得到一個結論：</p>
+<blockquote><p><strong>ROE高並不代表其價格值得買入！</strong></p>
 </blockquote>
-<p>總結：雖然淨值比來看，企業的盈利目前來講還算是跟的上股價的漲幅，但投資時還是得參考更多的指標再做決定，並自行負責！</p>
-<p>我喜歡跑一些歷史數據找一些規律性，但絕對不做預測，希望可以用最中性、較科學的方式來跟大家一起研究投資這門學問。</p>
+<h3 id="歷史回測"><a href="#歷史回測" class="headerlink" title="歷史回測"></a>歷史回測</h3><p>由以上結論我們可以發現，除了用ROE來選擇投資報酬率高的公司外，我們還必須利用PB選擇便宜股。</p>
+<table>
+<thead>
+<tr>
+<th>策略名稱</th>
+<th>策略一（只考慮ROE）</th>
+<th>策略二（考慮ROE跟PB）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>選股條件</td>
+<td>ROE  &gt; 5</td>
+<td>同策略一</td>
+</tr>
+<tr>
+<td></td>
+<td>收盤價 &gt; 10</td>
+<td>PB &lt; 1.2</td>
+</tr>
+</tbody>
+</table>
+<p>每60天更新一次持股，不計算手續費：</p>
+<center><img src="/買股票只考慮ROE是不夠的！/eq.png" alt="獲利，策略一為紅色，策略二為藍色，大盤為灰色" title="獲利，策略一為紅色，策略二為藍色，大盤為灰色"></center>
+
+<p>其中策略一每次都把資產分散在100支股票左右，而策略二把資產分散在平均為10支股票左右。</p>
+<center><img src="/買股票只考慮ROE是不夠的！/nstock.png" alt="股票持有數量，策略一為紅色，策略二為藍色" title="股票持有數量，策略一為紅色，策略二為藍色"></center>
+
+<p>策略二每次持有的股票非常少且獲利更勝策略一！</p>
+<p>每次買入個位數股票，小資族會比較好投資，當然我真的不知道有沒有做錯，所以我將策略二的持股歷史紀錄供大家下載：<a href="/買股票只考慮ROE是不夠的！/history_roe_pb.csv">csv檔</a></p>
+<h3 id="金融海嘯資產少60％！"><a href="#金融海嘯資產少60％！" class="headerlink" title="金融海嘯資產少60％！"></a>金融海嘯資產少60％！</h3><p>但這個策略也是教學用，大家不要輕易使用，畢竟在金融海嘯時，其虧所來到了非常驚人的60％。如何判斷大盤是否大跌，可以參考之前很多篇的介紹。</p>
+<h3 id="策略二今天持股"><a href="#策略二今天持股" class="headerlink" title="策略二今天持股"></a>策略二今天持股</h3><p>策略二目前持股為：</p>
+<p><center><img src="/買股票只考慮ROE是不夠的！/stocks.png" alt="策略二目前持股" title="策略二目前持股"></center><br>第一個column是股票代號，第二個column是買入價格，約60個交易日後，我們再來看一下這幾支股票是賺錢還是賠錢。有興趣可以追蹤一下！</p>
 
             <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
-            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用股價淨值比來判斷大盤漲跌/" title="用股價淨值比來判斷大盤漲跌" rel="bookmark">用股價淨值比來判斷大盤漲跌</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/本益比能幫你選出優質股？/" title="本益比能幫你選出優質股？" rel="bookmark">本益比能幫你選出優質股？</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/比策略狗還要安全的選股策略！/" title="14年14倍的選股策略！" rel="bookmark">14年14倍的選股策略！</a></h3></div></li></ul>
+            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/比策略狗還要安全的選股策略！/" title="14年14倍的選股策略！" rel="bookmark">14年14倍的選股策略！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/股價淨值比有這麼神？/" title="股價淨值比有這麼神？" rel="bookmark">股價淨值比有這麼神？</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/EPS跟ROE哪個比較好用？/" title="EPS跟ROE哪個比較好用？" rel="bookmark">EPS跟ROE哪個比較好用？</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/本益比能幫你選出優質股？/" title="本益比能幫你選出優質股？" rel="bookmark">本益比能幫你選出優質股？</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/策略狗。績優股獵犬3。簡單回測/" title="策略狗。績優股獵犬3。簡單回測" rel="bookmark">策略狗。績優股獵犬3。簡單回測</a></h3></div></li></ul>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://koreal6803.github.io/大盤要跌了嗎？利用企業本益比分佈來判斷！/" data-id="cj87cwjdt00010h9k7kfn9nwg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/" data-id="cj87cwjj1000o0h9k9xa3d80l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -334,20 +353,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/比策略狗還要安全的選股策略！/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            14年14倍的選股策略！
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/本益比能幫你選出優質股？/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/EPS跟ROE哪個比較好用？/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">本益比能幫你選出優質股？</p>
+        <p class="article-nav-title">EPS跟ROE哪個比較好用？</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -550,7 +559,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'koreal6803';
     
     
-    var disqus_url = 'https://koreal6803.github.io/大盤要跌了嗎？利用企業本益比分佈來判斷！/';
+    var disqus_url = 'https://koreal6803.github.io/買股票只考慮ROE是不夠的！/';
     
     (function() {
     var dsq = document.createElement('script');
