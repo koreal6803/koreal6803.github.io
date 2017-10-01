@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-09-30T13:34:07.000Z</updated>
+  <updated>2017-10-01T14:26:01.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用杜邦分析加強你的選股技巧（上）</title>
+    <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
+    <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（上）/</id>
+    <published>2017-10-01T14:01:09.000Z</published>
+    <updated>2017-10-01T14:26:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>前幾篇，我們連講了PE、PB、ROE，這些是價值型選股最重要、最最簡單的幾個要素，也寫了一些還不賴的歷史回測，10萬起始資金也能有模有樣。這篇將會更深入一層，介紹杜邦分析！</p><h3 id="學習回顧"><a href="#學習回顧" class="headerlink" title="學習回顧"></a>學習回顧</h3><p>我們瞭解了幾個元素：</p><ol><li>投資人的錢</li><li>企業的收益</li><li>企業的股價</li></ol><p>3/1=PB、3/2=PE、2/1=ROE。<br>（這邊是很大概的講，用詞比較不精確，請多包涵！）</p><p>然而真正的企業有麼簡單嗎？應該不置於吧？</p><h3 id="更深入一點點"><a href="#更深入一點點" class="headerlink" title="更深入一點點"></a>更深入一點點</h3><p>今天介紹比較複雜名詞：杜邦分析（DuPont Analysis）！杜邦分析將財務報表上的精華濃縮成三個數字，分別代表：</p><ul><li>企業的槓桿</li><li>企業銷售能力</li><li>企業賣出一樣商品是否賺錢</li></ul><p>這東西有沒有用？我還不知道XD，想說一邊介紹，一邊做回測給大家看。</p><h3 id="杜邦分析超無腦介紹"><a href="#杜邦分析超無腦介紹" class="headerlink" title="杜邦分析超無腦介紹"></a>杜邦分析超無腦介紹</h3><p>企業的金流，跟個人金流是一樣的道理，所以我用一個很簡單的例子介紹：</p><p>假如你有2萬元，跟爸媽借了1萬元買了熱賣的iphone X（3萬），再用4萬元的高價賣給別人，淨賺1萬。</p><p>例子結束了！就是這麼簡單。</p><p>首先我們先來計算一下ROE，因為你投入了2萬，淨賺1萬，所以ROE是1/2，但ROE像是故事的開頭跟結尾相除，中間的過程完全被省略了，杜邦分析可以補足：</p><p>首先，因為你原本有2萬借了1萬，槓桿是(2+1)/2 = 3/2倍，通常命名為<strong>權益乘數</strong><br>再來，你用3萬換4萬，<strong>總資產轉換率</strong>是4/3倍<br>最後，獲得的4萬中，其實只賺了其中的1萬，所以<strong>淨利率</strong>是1/4</p><p>所以最後$\text{ROC}=\frac{1}{4}\times\frac{4}{3}\times\frac{3}{2}=\frac{1}{2}$</p><p>當然這只是個超簡單的例子，稅呀什麼都通通沒管，將以上的數值寫成公式：</p><p>$$\text{ROE}=\text{淨利率}\times\text{總資產週轉率}\times\text{權益乘數}=\frac{\text{稅後淨利}}{\text{營收}}\times\frac{\text{營收}}{\text{總資產}}\times\frac{\text{總資產}}{\text{股東權益}}$$</p><p>股東權益，就是所有投資人的錢，在這個例子中就是你自己的錢(2萬)<br>而總資產最主要包含：借貸的錢（1萬）、你本來的錢（2萬）<br>營收則是（4萬），稅後淨利是你真正真正獲利的部分（1萬）</p><p>明天就來回測給大家看～明天見吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前幾篇，我們連講了PE、PB、ROE，這些是價值型選股最重要、最最簡單的幾個要素，也寫了一些還不賴的歷史回測，10萬起始資金也能有模有樣。這篇將會更深入一層，介紹杜邦分析！&lt;/p&gt;
+&lt;h3 id=&quot;學習回顧&quot;&gt;&lt;a href=&quot;#學習回顧&quot; class=&quot;headerlin
+      
+    
+    </summary>
+    
+    
+      <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
+    
+      <category term="入門教學" scheme="https://koreal6803.github.io/tags/%E5%85%A5%E9%96%80%E6%95%99%E5%AD%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>買股票只考慮ROE是不夠的！</title>
