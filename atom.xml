@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-10-02T14:09:50.000Z</updated>
+  <updated>2017-10-03T13:22:14.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用杜邦分析加強你的選股技巧（中）總資產轉換率</title>
+    <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%AD%EF%BC%89%E7%B8%BD%E8%B3%87%E7%94%A2%E8%BD%89%E6%8F%9B%E7%8E%87/"/>
+    <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）總資產轉換率/</id>
+    <published>2017-10-03T10:42:44.000Z</published>
+    <updated>2017-10-03T13:22:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>總資產轉換率，是一個很有用的指標，可以觀察企業的營運能力，管理階層運用總資產創造營收的能力，也就是代表管理能力。複習一下公式：</p><p>$$總資產轉換率=\frac{營收}{總資產}$$</p><h3 id="分佈圖"><a href="#分佈圖" class="headerlink" title="分佈圖"></a>分佈圖</h3><p>這張分佈圖x軸是總資產轉換率，Y軸是有多少公司</p><center><img src="/用杜邦分析加強你的選股技巧（中）總資產轉換率/totalassetturnover-d.png" alt="總資產轉換率分佈圖" title="總資產轉換率分佈圖"></center><table><thead><tr><th>數量</th><th>平均</th><th>標準差</th><th>0%</th><th>25%</th><th>50%</th><th>75%</th><th>100%</th></tr></thead><tbody><tr><td>1696</td><td>0.19</td><td>0.15</td><td>0</td><td>0.10</td><td>0.17</td><td>0.24</td><td>3.11</td></tr></tbody></table><p>可以發現大部分的公司的總資產轉換率，落在17％左右，可以用這個值來判斷公司的營運是否有效率。<br>我們之後的回測，會利用總資產轉換率來找出優質股，在大盤下跌時，優質股比較不容易下跌。</p><h3 id="回測"><a href="#回測" class="headerlink" title="回測"></a>回測</h3><p>我們把全台灣企業，大致上分成5組來做歷史回測，每60天換一次股票，黑色到黃色代表總資產報酬率由低到高，看他們的平均漲跌幅：</p><center><img src="/用杜邦分析加強你的選股技巧（中）總資產轉換率/totalassetturnover.png" alt="總資產轉換率分佈圖" title="總資產轉換率分佈圖"></center><p>投資淺色會比深色組別的股票還要好，代表投資體質好的公司，真的比差的公司還要穩定很多！下次買股票前不妨看一下總資產轉換率，來決定該股票適不適合買入！尤其適合同產業的公司互相比較，更能看出好壞！</p><p>另外也有一個有趣的現象，深黑色有時候也會意外變成第一，這方面我至又不知到為什麼了XD，是因為有些公司還沒開始盈利但前景看好？ 除了深黑色那條線以外，大致上還算符合深到淺，低到高的一個走勢。</p><h3 id="人即是公司"><a href="#人即是公司" class="headerlink" title="人即是公司"></a>人即是公司</h3><p>總資產轉換率也可以拿來評量一個人，想像某人資產有100萬，而他每個月的開銷是：</p><p>吃飯、水電生活等，花了3萬元，而每天上班月入6萬元</p><p>看起來生活水平還算優渥！</p><p>但假如把他當作一家公司，則他的總資產轉換率是6/100每個月，就這麼讓97萬躺在銀行裡任由通貨膨脹摧殘，要是他可以利用存款，投資自己來幫自己的人生滾雪球，那一定會產生很厲害的複利效應！</p><p>我自己是沒有辦法忍受存款在那裡閒涼，所以才編寫投資程式：利用已有資產來提高資產轉換率！</p><h3 id="從總資產轉換率看買房這件事"><a href="#從總資產轉換率看買房這件事" class="headerlink" title="從總資產轉換率看買房這件事"></a>從總資產轉換率看買房這件事</h3><p>要怎麼決定你要不要買房子呢？也可以從資產轉換率來思考，首先第一個迷思就是<strong>買了房，總資產會變少</strong>。</p><p>其實資產不會變少的，因為我們只是拿錢換房子，房子也算資產的一部份（假如不貸款）。</p><p>但假如你很會投資，那買了房，會變得沒錢理財，會導致總資產轉換率會瞬間大減，任憑你投資技巧再好，投資淨利率在高，乘以總資產轉換率後，到頭來你的個人ROE還是會大衰退！</p><p>有人說房租那麼貴，還不如直接買房，每月繳貸款也比房租高一點點而已。</p><p>但對於善於投資的人來說，傷害最大的，不是房貸，而是頭期款！將你的金錢瞬間換成磚頭！XD</p><p>滾雪球是很驚人的，然而從一個大雪球開始滾跟小雪球開始滾，會差很多，可以參考<a href="http://www.rich01.com/2017/07/5-422.html" rel="external nofollow noopener noreferrer" target="_blank">Mr. Market的文章</a>算一下自己什麼時候買房合適。</p><p>當然假如買房也是一種投資，那就另當別論！</p><p>有點離題了…拉回來一下</p><h3 id="總之提高個人總資產轉換率的好方法"><a href="#總之提高個人總資產轉換率的好方法" class="headerlink" title="總之提高個人總資產轉換率的好方法"></a>總之提高個人總資產轉換率的好方法</h3><p><strong>投資自己</strong>也是很好的選擇，例如增進第一專長，學第二專長，學習如何創業，都是我正在努力的目標！大家有什麼好方法提高自己的總資產轉換率呢？每天來看一下FinLab也是一個很好的投資喔！（自己打廣告XD）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;總資產轉換率，是一個很有用的指標，可以觀察企業的營運能力，管理階層運用總資產創造營收的能力，也就是代表管理能力。複習一下公式：&lt;/p&gt;
+&lt;p&gt;$$總資產轉換率=\frac{營收}{總資產}$$&lt;/p&gt;
+&lt;h3 id=&quot;分佈圖&quot;&gt;&lt;a href=&quot;#分佈圖&quot; class=&quot;h
+      
+    
+    </summary>
+    
+    
+      <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
+    
+      <category term="入門教學" scheme="https://koreal6803.github.io/tags/%E5%85%A5%E9%96%80%E6%95%99%E5%AD%B8/"/>
+    
+      <category term="總資產轉換率" scheme="https://koreal6803.github.io/tags/%E7%B8%BD%E8%B3%87%E7%94%A2%E8%BD%89%E6%8F%9B%E7%8E%87/"/>
+    
+  </entry>
   
   <entry>
     <title>拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數</title>
