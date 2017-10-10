@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-10-09T16:05:09.000Z</updated>
+  <updated>2017-10-10T22:58:43.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>教你用財報狗巴菲特免費選股</title>
+    <link href="https://koreal6803.github.io/%E6%95%99%E4%BD%A0%E7%94%A8%E8%B2%A1%E5%A0%B1%E7%8B%97%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%85%8D%E8%B2%BB%E9%81%B8%E8%82%A1/"/>
+    <id>https://koreal6803.github.io/教你用財報狗巴菲特免費選股/</id>
+    <published>2017-10-10T21:51:50.000Z</published>
+    <updated>2017-10-10T22:58:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天來試試看<a href="https://statementdog.com/pick/tpe" rel="external nofollow noopener noreferrer" target="_blank">財報狗的巴菲特選股條件</a>，由於是免費的，任何人都可以使用他們的工具來篩選股票喔！用起來很方便，但是沒有歷史回測，不知道要怎麼選才好？繼續往下看吧！</p><h3 id="總共有九種條件、三個三個一組"><a href="#總共有九種條件、三個三個一組" class="headerlink" title="總共有九種條件、三個三個一組"></a>總共有九種條件、三個三個一組</h3><center><img src="/教你用財報狗巴菲特免費選股/conditions.png" alt="所有的條件" title="所有的條件"></center><p>但一眼看過去就知道，就算這九個全選，還是會有問題：無法選出便宜股！</p><p>沒差，今天就是給大家一個感覺，想說將 3 x 3 x 3 = 27種 回測都跑一遍，來看一下哪些條件適合幾年！</p><h3 id="回測方法"><a href="#回測方法" class="headerlink" title="回測方法"></a>回測方法</h3><p>回測每60天重新篩選一次股票，當即將減資時，會賣出股票，等到減資完才買回（方便做回測），假設資產平均分散，不計算手續費，以下是2010年到現在的獲利：</p><table><thead><tr><th>負債比率n年小於30％</th><th>ROE近n年大於15%</th><th>自由現金流n年大於0</th><th>2010到至今結果</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>1</td><td>1.81</td></tr><tr><td>1</td><td>1</td><td>3</td><td>1.74</td></tr><tr><td>1</td><td>1</td><td>5</td><td>1.76</td></tr><tr><td>1</td><td>3</td><td>1</td><td>1.83</td></tr><tr><td>1</td><td>3</td><td>3</td><td>1.80</td></tr><tr><td>1</td><td>3</td><td>5</td><td>1.76</td></tr><tr><td>1</td><td>5</td><td>1</td><td>1.99</td></tr><tr><td>1</td><td>5</td><td>3</td><td>1.97</td></tr><tr><td>1</td><td>5</td><td>5</td><td>1.91</td></tr><tr><td>3</td><td>1</td><td>1</td><td>1.98</td></tr><tr><td>3</td><td>1</td><td>3</td><td>1.93</td></tr><tr><td>3</td><td>1</td><td>5</td><td>1.92</td></tr><tr><td>3</td><td>3</td><td>1</td><td>2.04</td></tr><tr><td>3</td><td>3</td><td>3</td><td>2.00</td></tr><tr><td>3</td><td>3</td><td>5</td><td>1.94</td></tr><tr><td>3</td><td>5</td><td>1</td><td>1.84</td></tr><tr><td>3</td><td>5</td><td>3</td><td>1.82</td></tr><tr><td>3</td><td>5</td><td>5</td><td>1.75</td></tr><tr><td>5</td><td>1</td><td>1</td><td>2.00</td></tr><tr><td>5</td><td>1</td><td>3</td><td>1.95</td></tr><tr><td>5</td><td>1</td><td>5</td><td>1.94</td></tr><tr><td>5</td><td>3</td><td>1</td><td>2.07</td></tr><tr><td>5</td><td>3</td><td>3</td><td>2.12</td></tr><tr><td>5</td><td>3</td><td>5</td><td>2.06</td></tr><tr><td>5</td><td>5</td><td>1</td><td>1.80</td></tr><tr><td>5</td><td>5</td><td>3</td><td>1.83</td></tr><tr><td>5</td><td>5</td><td>5</td><td>1.77</td></tr></tbody></table><p>同期大盤 1.26倍</p><h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>以下是我的觀察：</p><ul><li>負債比率：越多年越有效</li><li>ROE：沒有趨勢</li><li>自由現金流：越多年越有效，但效果較不明顯</li></ul><p>然而只看這三種不同類型的條件，還是很難找到好的策略。<br>明天來看看其它的條件，能不能幫大家組合出好策略！<br>不知道大家有什麼想法？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天來試試看&lt;a href=&quot;https://statementdog.com/pick/tpe&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;財報狗的巴菲特選股條件&lt;/a&gt;，由於是免費的，任何人都
+      
+    
+    </summary>
+    
+    
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>價值股策略</title>
     <link href="https://koreal6803.github.io/%E5%83%B9%E5%80%BC%E8%82%A1%E5%9B%9E%E6%B8%AC/"/>
     <id>https://koreal6803.github.io/價值股回測/</id>
     <published>2017-10-09T14:31:56.000Z</published>
-    <updated>2017-10-09T16:05:09.000Z</updated>
+    <updated>2017-10-10T16:39:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天剛結束期中口試（資格考），在法國99％的博士班，都可以通過，但重點是通過成績如何。<br>今天總算是落幕了！可以好好來寫網誌，但今天還是有點想要休息一下，所以把網路上的方法拿來回測XD</p><h3 id="富貴滿盈價值股"><a href="#富貴滿盈價值股" class="headerlink" title="富貴滿盈價值股"></a>富貴滿盈價值股</h3><p>今天回測了 <a href="http://www.cmoney.tw/app/ItemContent.aspx?id=2032" rel="external nofollow noopener noreferrer" target="_blank">富貴滿盈價值股</a> 這個方法，名稱有點俗氣，但是回測效果算還不錯。</p><p>以下是此策略的選股條件：</p><ul><li>本益比 &lt; 15 </li><li>股價淨值比 &lt; 2</li><li>殖利率 &gt; 4</li><li>成交量大於50％的股票</li><li>收盤價 &gt; 60日均線</li><li>收盤價 &gt; 120日均線</li><li>EPS &gt; 前季EPS</li><li>月營收 &gt; 前年同月月營收</li></ul><h3 id="廢話不多說，看結果"><a href="#廢話不多說，看結果" class="headerlink" title="廢話不多說，看結果"></a>廢話不多說，看結果</h3><center><img src="/價值股回測/eq.png" alt="回測結果" title="回測結果"></center><p>紅色線跟藍色線，感覺已經講到爛了XD，下次乾脆直接寫一篇教學，以後都直接連到那個教學…。</p><center><img src="/價值股回測/ns.png" alt="不同種股票數量" title="不同種股票數量"></center><p>這個策略適用於200萬以上的股票池，比較小的我沒有試過，有人有興趣的話，可以留言給我，我會試試看假如最多選5個公司買，會有怎樣的結果。</p><center><img src="/價值股回測/dp.png" alt="下跌幅度" title="下跌幅度"></center><p>下跌幅度還算是滿大的，但下跌情況在2013年以後好很多，是因為改用IFRS的關係嗎？這個就不清楚啦！XD</p><h3 id="回測好，沒辦法用，看這個blog做啥？"><a href="#回測好，沒辦法用，看這個blog做啥？" class="headerlink" title="回測好，沒辦法用，看這個blog做啥？"></a>回測好，沒辦法用，看這個blog做啥？</h3><p>大家可以看，用怎樣的條件選股，可以產生好策略，看越多會發現，好用的數據就那些！</p><p>而且等之後有空，會有個平台放上免費的策略，且每天更新，就跟財報狗一樣。</p><p>為何跟財報狗一樣還要做？恩～因為無聊吧～證明自己的能力。</p><p>要是我一個人可以做出跟策略狗平台不相上下，那不是很猛嗎！？可以當作自己能力記錄的證明。</p><h3 id="希望能做友善且功能強大的平台"><a href="#希望能做友善且功能強大的平台" class="headerlink" title="希望能做友善且功能強大的平台"></a>希望能做友善且功能強大的平台</h3><p>不僅限於基本面，還有籌碼面跟技術面！還有行動助手幫忙提醒該換股了！<br>另外有些厲害的策略還是得收點錢，畢竟這個平台是我吃飯的傢伙呀XD</p><h3 id="之後再寫跟machine-learning有關的策略"><a href="#之後再寫跟machine-learning有關的策略" class="headerlink" title="之後再寫跟machine learning有關的策略"></a>之後再寫跟machine learning有關的策略</h3><p>根據我們現在的介紹，本人真的覺得 machine learning 在分析財報上，有很大的潛力，之後有時間來試試看！</p>]]></content>
     
