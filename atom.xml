@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-10-10T22:58:43.000Z</updated>
+  <updated>2017-10-11T18:20:11.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>財報狗選股讓你免費取得價值4000元/年的策略</title>
+    <link href="https://koreal6803.github.io/%E8%B2%A1%E5%A0%B1%E7%8B%97%E9%81%B8%E8%82%A1%E6%A2%9D%E4%BB%B6%E6%9C%80%E4%BD%B3%E5%8C%96/"/>
+    <id>https://koreal6803.github.io/財報狗選股條件最佳化/</id>
+    <published>2017-10-11T17:17:45.000Z</published>
+    <updated>2017-10-11T18:20:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天滿認真的，幫大家排列組合選股條件，這些選股條件都可以從<a href="https://statementdog.com/pick/tpe" rel="external nofollow noopener noreferrer" target="_blank">財報狗的網站</a>免費取得。</p><p>基本上這個策略，結果跟CMoney的<a href="http://www.cmoney.tw/app/ItemContent.aspx?id=2032" rel="external nofollow noopener noreferrer" target="_blank">富貴滿盈價值股</a>差不多，但是人家一年要將近4000元，而財報狗是完全不用錢！</p><p>財報狗的選股條件，自己排列組合可能會很慘，我用程式幫大家找，可以看到歷史績效，可能會比較可靠一點！</p><p>分享目前自己發現最好，且可以用財報狗選股網站，免費選出股票的策略～</p><h3 id="免費的東西最貴？"><a href="#免費的東西最貴？" class="headerlink" title="免費的東西最貴？"></a>免費的東西最貴？</h3><p>今天就來打破這個概念，從免費垃圾中挖出寶！</p><p>事實上免費的東西真的很貴，假如你不靠任何投資老師，不靠長輩指導，短時間學會如何買股票，並能穩定獲利，基本上不太可能。（除非你也寫程式XD）</p><p>除了靠長輩教，另外一個方式就是多來這晃晃XDDD（推銷）<br>我們今天就是要來看，自己窮盡財報狗所有排列組合，產生的最好回測，重點是免費！</p><h3 id="回測的心得"><a href="#回測的心得" class="headerlink" title="回測的心得"></a>回測的心得</h3><p>我發現，財報狗條件，最主要就是選擇好公司，然而好公司股價不一定便宜，所以另外要用<strong>本益比</strong>跟<strong>股價淨值比</strong>來篩選出便宜股。</p><h3 id="選股撇步"><a href="#選股撇步" class="headerlink" title="選股撇步"></a>選股撇步</h3><p>另外，我測試了60天跟120天的，發現差不多，所以大約半年換股一次，也就夠了～</p><p>發現<strong>本益比</strong>不是越小越好，這個策略調成15倍以下，再低就不行了，會造成波動變大，但是<strong>股價淨值比</strong>，可以調到1以下，結果還是不錯！</p><p>假如股票數目太多，可先挑<strong>股價淨值比</strong>小的，可能會比較好！（只是推測）<br><strong>但假如不想要深入研究每支股票，大前提一定是盡量分散，不然就得認真研究公司的體質！</strong></p><h3 id="回測方法"><a href="#回測方法" class="headerlink" title="回測方法"></a>回測方法</h3><p>這個策略所用到的條件（財報狗都有）：</p><ul><li>EPS近五年成長率 &gt; 1.1</li><li>ROE近四季總和 &gt; 0</li><li>流動比率1年 &gt; 200</li><li>近5年EPS &gt; 0</li><li>本益比 &lt; 15</li><li>股價淨值比 &lt; 1.5</li></ul><p>以下是回測結果，紅色是用100萬當起始資金，並考慮手續費、減資、利息，主要是以逼近藍色的選股策略為準，盡量平均分散，最小單位1張：</p><center><img src="/財報狗選股條件最佳化/eq.png" alt="回測結果" title="回測結果"></center><p>可以發現金融海嘯的時候，還是很可怕，海嘯完反彈也很猛！但是照這樣投資，2009年心臟要夠大顆，因為100萬就這麼沒了…</p><p>除非你的策略天生可以躲避大盤，不然一定要做大盤的篩選！之後也想寫一些預測大盤的策略，大家不妨偶爾來拜訪一下這個部落格。</p><p>接下來來看股票數：</p><center><img src="/財報狗選股條件最佳化/ns.png" alt="買股數目" title="買股數目"></center><p>有時候要買到75張不同的股票，大家應該都沒有這麼多財力吧XD，有時候覺得自己的blog根本是為了有錢人寫的？XD其實我也不想…但本金夠真的比較好買股票。</p><h3 id="小提醒"><a href="#小提醒" class="headerlink" title="小提醒"></a>小提醒</h3><p>有些地方我好像定義的跟財報狗不太一樣，例如：一年ROE，我是用4季去加總的，可能會有點誤差，畢竟我也不在財報狗裡面上班XDD，但結果應該差不了太多。</p><h3 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h3><p>那！今天終於分享了一個大家可以模仿的策略了，歡迎其它人來檢查一下，這樣的策略是否能夠獲利，畢竟我是工程師，工程師的程式裡，一定會有bug。。。歡迎大家來找碴！</p><p>今天從頭到尾，花了2個小時才寫完的！假如喜歡我的部落格，可以加一下我的最愛，每個禮拜都有兩三篇新文章喔！（不敢再說每天，上週末已破功XDD）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天滿認真的，幫大家排列組合選股條件，這些選股條件都可以從&lt;a href=&quot;https://statementdog.com/pick/tpe&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;財報狗的
+      
+    
+    </summary>
+    
+    
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>教你用財報狗巴菲特免費選股</title>
@@ -582,34 +607,6 @@
       <category term="生活" scheme="https://koreal6803.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
       <category term="一行" scheme="https://koreal6803.github.io/tags/%E4%B8%80%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>立誓：每天都寫吧！</title>
-    <link href="https://koreal6803.github.io/%E7%AB%8B%E8%AA%93%EF%BC%9A%E6%AF%8F%E5%A4%A9%E9%83%BD%E5%AF%AB%E5%90%A7%EF%BC%81/"/>
-    <id>https://koreal6803.github.io/立誓：每天都寫吧！/</id>
-    <published>2017-09-19T18:14:58.000Z</published>
-    <updated>2017-09-22T22:56:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>橘色的夕陽說明今天又結束了。</p><p>還有一年365個夜晚可以浪費，但就這麼浪費太可惜了，還是來做些什麼吧！</p><p>於是開始了，希望不要半途而廢的旅程！</p><figure class="highlight python"><figcaption><span>Hello World</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"Hello world!"</span>)</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;橘色的夕陽說明今天又結束了。&lt;/p&gt;
-&lt;p&gt;還有一年365個夜晚可以浪費，但就這麼浪費太可惜了，還是來做些什麼吧！&lt;/p&gt;
-&lt;p&gt;於是開始了，希望不要半途而廢的旅程！&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;figcaption&gt;&lt;spa
-      
-    
-    </summary>
-    
-      <category term="生活" scheme="https://koreal6803.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="生活" scheme="https://koreal6803.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
