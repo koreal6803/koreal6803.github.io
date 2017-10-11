@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-10-11T18:20:11.000Z</updated>
+  <updated>2017-10-11T23:40:57.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://koreal6803.github.io/%E8%B2%A1%E5%A0%B1%E7%8B%97%E9%81%B8%E8%82%A1%E6%A2%9D%E4%BB%B6%E6%9C%80%E4%BD%B3%E5%8C%96/"/>
     <id>https://koreal6803.github.io/財報狗選股條件最佳化/</id>
     <published>2017-10-11T17:17:45.000Z</published>
-    <updated>2017-10-11T18:20:11.000Z</updated>
+    <updated>2017-10-11T23:40:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天滿認真的，幫大家排列組合選股條件，這些選股條件都可以從<a href="https://statementdog.com/pick/tpe" rel="external nofollow noopener noreferrer" target="_blank">財報狗的網站</a>免費取得。</p><p>基本上這個策略，結果跟CMoney的<a href="http://www.cmoney.tw/app/ItemContent.aspx?id=2032" rel="external nofollow noopener noreferrer" target="_blank">富貴滿盈價值股</a>差不多，但是人家一年要將近4000元，而財報狗是完全不用錢！</p><p>財報狗的選股條件，自己排列組合可能會很慘，我用程式幫大家找，可以看到歷史績效，可能會比較可靠一點！</p><p>分享目前自己發現最好，且可以用財報狗選股網站，免費選出股票的策略～</p><h3 id="免費的東西最貴？"><a href="#免費的東西最貴？" class="headerlink" title="免費的東西最貴？"></a>免費的東西最貴？</h3><p>今天就來打破這個概念，從免費垃圾中挖出寶！</p><p>事實上免費的東西真的很貴，假如你不靠任何投資老師，不靠長輩指導，短時間學會如何買股票，並能穩定獲利，基本上不太可能。（除非你也寫程式XD）</p><p>除了靠長輩教，另外一個方式就是多來這晃晃XDDD（推銷）<br>我們今天就是要來看，自己窮盡財報狗所有排列組合，產生的最好回測，重點是免費！</p><h3 id="回測的心得"><a href="#回測的心得" class="headerlink" title="回測的心得"></a>回測的心得</h3><p>我發現，財報狗條件，最主要就是選擇好公司，然而好公司股價不一定便宜，所以另外要用<strong>本益比</strong>跟<strong>股價淨值比</strong>來篩選出便宜股。</p><h3 id="選股撇步"><a href="#選股撇步" class="headerlink" title="選股撇步"></a>選股撇步</h3><p>另外，我測試了60天跟120天的，發現差不多，所以大約半年換股一次，也就夠了～</p><p>發現<strong>本益比</strong>不是越小越好，這個策略調成15倍以下，再低就不行了，會造成波動變大，但是<strong>股價淨值比</strong>，可以調到1以下，結果還是不錯！</p><p>假如股票數目太多，可先挑<strong>股價淨值比</strong>小的，可能會比較好！（只是推測）<br><strong>但假如不想要深入研究每支股票，大前提一定是盡量分散，不然就得認真研究公司的體質！</strong></p><h3 id="回測方法"><a href="#回測方法" class="headerlink" title="回測方法"></a>回測方法</h3><p>這個策略所用到的條件（財報狗都有）：</p><ul><li>EPS近五年成長率 &gt; 1.1</li><li>ROE近四季總和 &gt; 0</li><li>流動比率1年 &gt; 200</li><li>近5年EPS &gt; 0</li><li>本益比 &lt; 15</li><li>股價淨值比 &lt; 1.5</li></ul><p>以下是回測結果，紅色是用100萬當起始資金，並考慮手續費、減資、利息，主要是以逼近藍色的選股策略為準，盡量平均分散，最小單位1張：</p><center><img src="/財報狗選股條件最佳化/eq.png" alt="回測結果" title="回測結果"></center><p>可以發現金融海嘯的時候，還是很可怕，海嘯完反彈也很猛！但是照這樣投資，2009年心臟要夠大顆，因為100萬就這麼沒了…</p><p>除非你的策略天生可以躲避大盤，不然一定要做大盤的篩選！之後也想寫一些預測大盤的策略，大家不妨偶爾來拜訪一下這個部落格。</p><p>接下來來看股票數：</p><center><img src="/財報狗選股條件最佳化/ns.png" alt="買股數目" title="買股數目"></center><p>有時候要買到75張不同的股票，大家應該都沒有這麼多財力吧XD，有時候覺得自己的blog根本是為了有錢人寫的？XD其實我也不想…但本金夠真的比較好買股票。</p><h3 id="小提醒"><a href="#小提醒" class="headerlink" title="小提醒"></a>小提醒</h3><p>有些地方我好像定義的跟財報狗不太一樣，例如：一年ROE，我是用4季去加總的，可能會有點誤差，畢竟我也不在財報狗裡面上班XDD，但結果應該差不了太多。</p><h3 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h3><p>那！今天終於分享了一個大家可以模仿的策略了，歡迎其它人來檢查一下，這樣的策略是否能夠獲利，畢竟我是工程師，工程師的程式裡，一定會有bug。。。歡迎大家來找碴！</p><p>今天從頭到尾，花了2個小時才寫完的！假如喜歡我的部落格，可以加一下我的最愛，每個禮拜都有兩三篇新文章喔！（不敢再說每天，上週末已破功XDD）</p>]]></content>
     
@@ -33,6 +33,8 @@
       
     
     </summary>
+    
+      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
@@ -46,7 +48,7 @@
     <link href="https://koreal6803.github.io/%E6%95%99%E4%BD%A0%E7%94%A8%E8%B2%A1%E5%A0%B1%E7%8B%97%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%85%8D%E8%B2%BB%E9%81%B8%E8%82%A1/"/>
     <id>https://koreal6803.github.io/教你用財報狗巴菲特免費選股/</id>
     <published>2017-10-10T21:51:50.000Z</published>
-    <updated>2017-10-10T22:58:43.000Z</updated>
+    <updated>2017-10-11T23:41:12.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天來試試看<a href="https://statementdog.com/pick/tpe" rel="external nofollow noopener noreferrer" target="_blank">財報狗的巴菲特選股條件</a>，由於是免費的，任何人都可以使用他們的工具來篩選股票喔！用起來很方便，但是沒有歷史回測，不知道要怎麼選才好？繼續往下看吧！</p><h3 id="總共有九種條件、三個三個一組"><a href="#總共有九種條件、三個三個一組" class="headerlink" title="總共有九種條件、三個三個一組"></a>總共有九種條件、三個三個一組</h3><center><img src="/教你用財報狗巴菲特免費選股/conditions.png" alt="所有的條件" title="所有的條件"></center><p>但一眼看過去就知道，就算這九個全選，還是會有問題：無法選出便宜股！</p><p>沒差，今天就是給大家一個感覺，想說將 3 x 3 x 3 = 27種 回測都跑一遍，來看一下哪些條件適合幾年！</p><h3 id="回測方法"><a href="#回測方法" class="headerlink" title="回測方法"></a>回測方法</h3><p>回測每60天重新篩選一次股票，當即將減資時，會賣出股票，等到減資完才買回（方便做回測），假設資產平均分散，不計算手續費，以下是2010年到現在的獲利：</p><table><thead><tr><th>負債比率n年小於30％</th><th>ROE近n年大於15%</th><th>自由現金流n年大於0</th><th>2010到至今結果</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>1</td><td>1.81</td></tr><tr><td>1</td><td>1</td><td>3</td><td>1.74</td></tr><tr><td>1</td><td>1</td><td>5</td><td>1.76</td></tr><tr><td>1</td><td>3</td><td>1</td><td>1.83</td></tr><tr><td>1</td><td>3</td><td>3</td><td>1.80</td></tr><tr><td>1</td><td>3</td><td>5</td><td>1.76</td></tr><tr><td>1</td><td>5</td><td>1</td><td>1.99</td></tr><tr><td>1</td><td>5</td><td>3</td><td>1.97</td></tr><tr><td>1</td><td>5</td><td>5</td><td>1.91</td></tr><tr><td>3</td><td>1</td><td>1</td><td>1.98</td></tr><tr><td>3</td><td>1</td><td>3</td><td>1.93</td></tr><tr><td>3</td><td>1</td><td>5</td><td>1.92</td></tr><tr><td>3</td><td>3</td><td>1</td><td>2.04</td></tr><tr><td>3</td><td>3</td><td>3</td><td>2.00</td></tr><tr><td>3</td><td>3</td><td>5</td><td>1.94</td></tr><tr><td>3</td><td>5</td><td>1</td><td>1.84</td></tr><tr><td>3</td><td>5</td><td>3</td><td>1.82</td></tr><tr><td>3</td><td>5</td><td>5</td><td>1.75</td></tr><tr><td>5</td><td>1</td><td>1</td><td>2.00</td></tr><tr><td>5</td><td>1</td><td>3</td><td>1.95</td></tr><tr><td>5</td><td>1</td><td>5</td><td>1.94</td></tr><tr><td>5</td><td>3</td><td>1</td><td>2.07</td></tr><tr><td>5</td><td>3</td><td>3</td><td>2.12</td></tr><tr><td>5</td><td>3</td><td>5</td><td>2.06</td></tr><tr><td>5</td><td>5</td><td>1</td><td>1.80</td></tr><tr><td>5</td><td>5</td><td>3</td><td>1.83</td></tr><tr><td>5</td><td>5</td><td>5</td><td>1.77</td></tr></tbody></table><p>同期大盤 1.26倍</p><h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>以下是我的觀察：</p><ul><li>負債比率：越多年越有效</li><li>ROE：沒有趨勢</li><li>自由現金流：越多年越有效，但效果較不明顯</li></ul><p>然而只看這三種不同類型的條件，還是很難找到好的策略。<br>明天來看看其它的條件，能不能幫大家組合出好策略！<br>不知道大家有什麼想法？</p>]]></content>
     
@@ -58,6 +60,8 @@
       
     
     </summary>
+    
+      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
