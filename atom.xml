@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-10-12T10:26:23.000Z</updated>
+  <updated>2017-10-12T14:34:19.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回測框架介紹</title>
+    <link href="https://koreal6803.github.io/%E5%9B%9E%E6%B8%AC%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%B4%B9/"/>
+    <id>https://koreal6803.github.io/回測框架介紹/</id>
+    <published>2017-10-12T11:39:12.000Z</published>
+    <updated>2017-10-12T14:34:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。</p><p>首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數：</p><p>$$d=1,…,n^{d}$$ </p><p>另外還有一群股票，是我們可能買入的對象</p><p>$$s=1,…,n^{s}$$</p><p>另外，而選股條件(constraints)叫做</p>$$c(d,s)\in\{0,1\}$$<p>假如某日 $d$ ，我們發現 $s$ 股票符合條件，那我們可以說$c(d,s)=1$，假如不符合條件，就是$c(d,s)=0$</p><p>為了方便，我們用一個向量來表示第 $d$ 天每支股票是否符合條件：</p><p>$$\boldsymbol{c}_{d}=[c(d, 1),…,c(d, n^s)]^T$$</p><p>然而我們只希望每 $n$ 天換一次手上的持股，不要每天都換，不然會花太多手續費，所以我們定義一個過 $n$ 天才檢查一次股票是否符合條件：</p>$$\boldsymbol{c}_{d}^{*}=\boldsymbol{c}_{\left\lfloor d/n\right\rfloor +1}$$<p>於是，我們在$d$天晚上，用 $\boldsymbol{c}_{d}^{*}$ 來決定明天如何買股：</p>$$\boldsymbol{h}_{d+1} = \left(\frac{m+\boldsymbol{h}_{d}^{*T}\boldsymbol{p}_{d}}{\text{sum}(\boldsymbol{c}_{d}^{*})}\boldsymbol{c}_{d}^{*}\right)^T$$其中，$\boldsymbol{h}_{d+1}$ 代表明天每支股票要分多少錢， $\boldsymbol{h}_{d}^{*T}$ 代表今晚持股（單位為一張），而 $m$ 為帳戶資金 $\boldsymbol{p}_{d}$ 代表收盤價乘以1000。其實它只是看起來醜了點，概念很簡單，計算所有的資產，並且將資產平均分配給符合條件的股票。<p>以上的持股方式，就是一種完美分散的概念，是美好的想像，通常是blog中回測權益曲線的<strong>藍線</strong>，但現實生活中，資產不可能分散得如此完美，所以還必須算出可以買幾張股票：</p>$$\boldsymbol{h}_{d+1}^{*}=\left\lfloor\frac{\boldsymbol{h}_{d+1}}{1.1\boldsymbol{p}_{d}}\right\rfloor$$這邊有點要注意，$\boldsymbol{h}_{d+1}^{*}$ 的單位是張數，而原本的 $\boldsymbol{h}_{d+1}$ 的單位是投資金額。乘以 1.1 是為了在開盤時用漲停板買入。然而這條公式每天都會計算，所以在歷史回測中，每天的張數是浮動的，也就是說，某天我買了6張某股，隔天我可能會變成5張、或7張某股，都是有可能的。<p>考慮了張數的，更貼近真實情況，通常是blog中回測權益曲線的<strong>紅線</strong>。</p><h3 id="目前所知道的缺點"><a href="#目前所知道的缺點" class="headerlink" title="目前所知道的缺點"></a>目前所知道的缺點</h3><ol><li>長線還算堪用，但短線上這種直接平分資產的方式，手續費還是太高了，到底要怎麼降低手續費呢？有沒有辦法不要單純平均分散？可以做到智慧型的平均分散？</li><li>這個方法並沒有資產利用最大化（因為無條件捨去法），有沒有讓資產最大化、又可以考慮手續費的選股函數呢？</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。&lt;/p&gt;
+&lt;p&gt;首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數：&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>財報狗選股讓你免費取得價值4000元/年的策略</title>
@@ -585,32 +609,6 @@
       <category term="策略狗" scheme="https://koreal6803.github.io/tags/%E7%AD%96%E7%95%A5%E7%8B%97/"/>
     
       <category term="自由現金報酬率" scheme="https://koreal6803.github.io/tags/%E8%87%AA%E7%94%B1%E7%8F%BE%E9%87%91%E5%A0%B1%E9%85%AC%E7%8E%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何戰勝惰性？</title>
-    <link href="https://koreal6803.github.io/%E6%AF%8F%E5%A4%A9%E8%87%B3%E5%B0%91%E5%AF%AB%E4%B8%80%E8%A1%8C/"/>
-    <id>https://koreal6803.github.io/每天至少寫一行/</id>
-    <published>2017-09-20T11:09:42.000Z</published>
-    <updated>2017-09-29T12:56:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如何持續運動不中斷？跨年的願望完成了沒？說好每天背英文單字呢？</p><p>這些都需要毅力，我所沒有的毅力。</p><p>然而，最近聽到好友說的話，讓我有點頓悟！</p><a id="more"></a><p>其實我們不需要有毅力，我們需要拆解任務的能力。</p><p>讓我來說明一下，通常一個任務(task)，跟我的毅力(willpower)可以量化的話，會是這樣子：<br><figure class="highlight python"><figcaption><span>任務與毅力</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">task = <span class="number">100</span>     <span class="comment"># 任務</span></div><div class="line">willpower = <span class="number">5</span>  <span class="comment"># 毅力</span></div></pre></td></tr></table></figure><br>別懷疑，我的毅力真的很薄弱。</p><p>但沒關係，我們將任務分解成很小塊的子任務(subtask)：<br><figure class="highlight python"><figcaption><span>分解任務</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">subtask = task</div><div class="line"><span class="keyword">while</span> (subtask &gt; willpower)</div><div class="line">    subtask /= <span class="number">2</span></div></pre></td></tr></table></figure><br>秘訣就在這！要分解到一個你覺得可笑的地步，例如：</p><ul><li>一天一下仰臥起做</li><li>一天寫一行部落格</li><li><strike>一天花一小時研究<strike></strike></strike></li></ul><p>一定要夠可笑，才會成功。</p><p>重點不在於做的多或少，而是在於你是否開始做。<br>很多事情痛苦的是靜摩擦力，後面就輕鬆了！</p><ul><li>一天一下仰臥起做：都做一下了怎麼可能不多做幾下。</li><li>一天寫一行部落格：你看我今天都寫多少行了。</li><li>一天作一小時研究：<strike>0.0 聽起來不錯<strike></strike></strike></li></ul><p>每天會有額外的動力去多做一點，甚至很多點<br><figure class="highlight python"><figcaption><span>每天的任務</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">progress = <span class="number">0</span></div><div class="line"><span class="keyword">while</span>(progress &lt; task)</div><div class="line">    progress += subtask + random.randint(<span class="number">0</span>, <span class="number">10</span>*subtask)</div></pre></td></tr></table></figure></p><p>所以，我給自己的標準是：每天寫一行部落格，就好了！</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如何持續運動不中斷？跨年的願望完成了沒？說好每天背英文單字呢？&lt;/p&gt;
-&lt;p&gt;這些都需要毅力，我所沒有的毅力。&lt;/p&gt;
-&lt;p&gt;然而，最近聽到好友說的話，讓我有點頓悟！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="https://koreal6803.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="生活" scheme="https://koreal6803.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="一行" scheme="https://koreal6803.github.io/tags/%E4%B8%80%E8%A1%8C/"/>
     
   </entry>
   

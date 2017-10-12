@@ -3,21 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>記錄: 2017 | FinLab 量化實驗室</title>
+    <title>回測框架介紹 | FinLab 量化實驗室</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+        <meta name="keywords" content="">
+    
+    <meta name="description" content="每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。 首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數： $$d=1,…,n^{d}$$  另外還有一群股票，是我們可能買入的對象 $$s=1,…,n^{s}$$ 另外，而選股條件(constraints">
 <meta name="keywords" content="股市,投資,股票,選股,分析,策略,財報,stock,finance,market,公司體質,策略,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FinLab 量化實驗室">
-<meta property="og:url" content="https://koreal6803.github.io/archives/2017/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="回測框架介紹">
+<meta property="og:url" content="https://koreal6803.github.io/回測框架介紹/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta property="og:description" content="每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。 首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數： $$d=1,…,n^{d}$$  另外還有一群股票，是我們可能買入的對象 $$s=1,…,n^{s}$$ 另外，而選股條件(constraints">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://koreal6803.github.io/回測框架介紹/images/eq.png">
+<meta property="og:updated_time" content="2017-10-12T14:34:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FinLab 量化實驗室">
-<meta name="twitter:description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta name="twitter:title" content="回測框架介紹">
+<meta name="twitter:description" content="每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。 首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數： $$d=1,…,n^{d}$$  另外還有一群股票，是我們可能買入的對象 $$s=1,…,n^{s}$$ 另外，而選股條件(constraints">
+<meta name="twitter:image" content="https://koreal6803.github.io/回測框架介紹/images/eq.png">
     
 
     
@@ -141,636 +146,154 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>記錄: 2017
+    <a class="page-title-link" href="/categories/量化投資/">量化投資</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-回測框架介紹" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/回測框架介紹/" class="thumbnail">
-    
-    
-        <span style="background-image:url(images/eq.png)" alt="回測框架介紹" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/回測框架介紹/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
-            </div>
-            <div class="date"><time datetime="2017-10-12T11:39:12.000Z" itemprop="datePublished">2017-10-12</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/回測框架介紹/">回測框架介紹</a>
+        回測框架介紹
         </h1>
     
 
-        <p class="article-excerpt">
-            每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。
-首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數：
-$$d=1,…,n^{d}$$ 
-另外還有一群股票，是我們可能買入的對象
-$$s=1,…,n^{s}$$
-另外，而選股條件(constraints
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/回測框架介紹/" class="article-date">
+            <time datetime="2017-10-12T11:39:12.000Z" itemprop="datePublished">2017-10-12</time>
+        </a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/財報狗選股條件最佳化/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/財報狗選股條件最佳化/eq.png)" alt="財報狗選股讓你免費取得價值4000元/年的策略" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/財報狗選股條件最佳化/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
+                
             </div>
-            <div class="date"><time datetime="2017-10-11T17:17:45.000Z" itemprop="datePublished">2017-10-11</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/財報狗選股條件最佳化/">財報狗選股讓你免費取得價值4000元/年的策略</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天滿認真的，幫大家排列組合選股條件，這些選股條件都可以從財報狗的網站免費取得。
-基本上這個策略，結果跟CMoney的富貴滿盈價值股差不多，但是人家一年要將近4000元，而財報狗是完全不用錢！
-財報狗的選股條件，自己排列組合可能會很慘，我用程式幫大家找，可以看到歷史績效，可能會比較可靠一點！
-分享目前自己發現最好，且可以用財報狗選股網站，免費選出股票的策略～
-免費的東西最貴？免費的東西真的很貴，假
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/教你用財報狗巴菲特免費選股/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/教你用財報狗巴菲特免費選股/conditions.png)" alt="教你用財報狗巴菲特免費選股" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/教你用財報狗巴菲特免費選股/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <p>每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。</p>
+<p>首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數：</p>
+<p>$$d=1,…,n^{d}$$ </p>
+<p>另外還有一群股票，是我們可能買入的對象</p>
+<p>$$s=1,…,n^{s}$$</p>
+<p>另外，而選股條件(constraints)叫做</p>
+
+$$c(d,s)\in\{0,1\}$$
+
+<p>假如某日 $d$ ，我們發現 $s$ 股票符合條件，那我們可以說$c(d,s)=1$，假如不符合條件，就是$c(d,s)=0$</p>
+<p>為了方便，我們用一個向量來表示第 $d$ 天每支股票是否符合條件：</p>
+<p>$$\boldsymbol{c}_{d}=[c(d, 1),…,c(d, n^s)]^T$$</p>
+<p>然而我們只希望每 $n$ 天換一次手上的持股，不要每天都換，不然會花太多手續費，所以我們定義一個過 $n$ 天才檢查一次股票是否符合條件：</p>
+
+$$\boldsymbol{c}_{d}^{*}=\boldsymbol{c}_{\left\lfloor d/n\right\rfloor +1}$$
+
+<p>於是，我們在$d$天晚上，用 $\boldsymbol{c}_{d}^{*}$ 來決定明天如何買股：</p>
+
+$$\boldsymbol{h}_{d+1} = \left(\frac{m+\boldsymbol{h}_{d}^{*T}\boldsymbol{p}_{d}}{\text{sum}(\boldsymbol{c}_{d}^{*})}\boldsymbol{c}_{d}^{*}\right)^T$$
 
 
-    
-</a>
+其中，$\boldsymbol{h}_{d+1}$ 代表明天每支股票要分多少錢， $\boldsymbol{h}_{d}^{*T}$ 代表今晚持股（單位為一張），而 $m$ 為帳戶資金 $\boldsymbol{p}_{d}$ 代表收盤價乘以1000。其實它只是看起來醜了點，概念很簡單，計算所有的資產，並且將資產平均分配給符合條件的股票。
 
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
-            </div>
-            <div class="date"><time datetime="2017-10-10T21:51:50.000Z" itemprop="datePublished">2017-10-10</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/教你用財報狗巴菲特免費選股/">教你用財報狗巴菲特免費選股</a>
-        </h1>
-    
+<p>以上的持股方式，就是一種完美分散的概念，是美好的想像，通常是blog中回測權益曲線的<strong>藍線</strong>，但現實生活中，資產不可能分散得如此完美，所以還必須算出可以買幾張股票：</p>
 
-        <p class="article-excerpt">
-            今天來試試看財報狗的巴菲特選股條件，由於是免費的，任何人都可以使用他們的工具來篩選股票喔！用起來很方便，但是沒有歷史回測，不知道要怎麼選才好？繼續往下看吧！
-總共有九種條件、三個三個一組
-
-但一眼看過去就知道，就算這九個全選，還是會有問題：無法選出便宜股！
-沒差，今天就是給大家一個感覺，想說將 3 x 3 x 3 = 27種 回測都跑一遍，來看一下哪些條件適合幾年！
-回測方法回測每60天重新篩選一
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/價值股回測/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/價值股回測/eq.png)" alt="價值股策略" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/價值股回測/">0</span>
-    
-</span>
+$$\boldsymbol{h}_{d+1}^{*}=\left\lfloor\frac{\boldsymbol{h}_{d+1}}{1.1\boldsymbol{p}_{d}}\right\rfloor$$
 
 
-    
-</a>
+這邊有點要注意，$\boldsymbol{h}_{d+1}^{*}$ 的單位是張數，而原本的 $\boldsymbol{h}_{d+1}$ 的單位是投資金額。乘以 1.1 是為了在開盤時用漲停板買入。然而這條公式每天都會計算，所以在歷史回測中，每天的張數是浮動的，也就是說，某天我買了6張某股，隔天我可能會變成5張、或7張某股，都是有可能的。
 
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
-            </div>
-            <div class="date"><time datetime="2017-10-09T14:31:56.000Z" itemprop="datePublished">2017-10-09</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/價值股回測/">價值股策略</a>
-        </h1>
-    
+<p>考慮了張數的，更貼近真實情況，通常是blog中回測權益曲線的<strong>紅線</strong>。</p>
+<h3 id="目前所知道的缺點"><a href="#目前所知道的缺點" class="headerlink" title="目前所知道的缺點"></a>目前所知道的缺點</h3><ol>
+<li>長線還算堪用，但短線上這種直接平分資產的方式，手續費還是太高了，到底要怎麼降低手續費呢？有沒有辦法不要單純平均分散？可以做到智慧型的平均分散？</li>
+<li>這個方法並沒有資產利用最大化（因為無條件捨去法），有沒有讓資產最大化、又可以考慮手續費的選股函數呢？</li>
+</ol>
 
-        <p class="article-excerpt">
-            今天剛結束期中口試（資格考），在法國99％的博士班，都可以通過，但重點是通過成績如何。今天總算是落幕了！可以好好來寫網誌，但今天還是有點想要休息一下，所以把網路上的方法拿來回測XD
-富貴滿盈價值股今天回測了 富貴滿盈價值股 這個方法，名稱有點俗氣，但是回測效果算還不錯。
-以下是此策略的選股條件：
-
-本益比 &lt; 15 
-股價淨值比 &lt; 2
-殖利率 &gt; 4
-成交量大於50％的股票
-收
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（下）回測/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/用杜邦分析加強你的選股技巧（下）回測/eq.png)" alt="用杜邦分析加強你的選股技巧（下）回測" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（下）回測/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
+            <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
             
-            </div>
-            <div class="date"><time datetime="2017-10-07T02:45:40.000Z" itemprop="datePublished">2017-10-07</time></div>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（下）回測/">用杜邦分析加強你的選股技巧（下）回測</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天介紹一個簡單至少近7年有效的方法，考慮杜邦分析的指標，排列組合後，我能得出的最好結果。
-選股條件：
-總資產轉換率 &gt; 0.3 （選擇獲利高的公司）
-ROE &gt; 5 （選擇能真正盈利的公司）
-PB &lt; 3 （選便宜一點的公司）
-
-發現 淨利率 莫名的失效，較難拿來選一小群股票，而 權益乘數 較也是，畢竟一家公司的槓桿程度，不代表公司體質好不好。我發現 總資產轉換率，是一個很好的
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（中）淨利率/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/用杜邦分析加強你的選股技巧（中）淨利率/netprofitmargin-d.png)" alt="用杜邦分析加強你的選股技巧（中）淨利率" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）淨利率/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
+        <footer class="article-footer">
             
-            </div>
-            <div class="date"><time datetime="2017-10-05T21:07:14.000Z" itemprop="datePublished">2017-10-05</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（中）淨利率/">用杜邦分析加強你的選股技巧（中）淨利率</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            淨利率就是指企業從營業收入，真正收進口袋的錢：
-分佈圖以下是淨利率的分佈圖：
 
 
 
+    <a data-url="https://koreal6803.github.io/回測框架介紹/" data-id="cj8okfr5y0004n69kojdcmuau" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
 
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
 
-數量
-平均
-標準差
-0%
-25%
-50%
-75%
-100%
+            if ($('#' + id).length) {
+                box = $('#' + id);
 
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
 
+              box = $(html);
 
+              $('body').append(box);
+            }
 
-1693
--100
-2234
--76488.52
-0.24
-5.09
-11.56
-5458.2
+            $('.article-share-box.on').hide();
 
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
 
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-台灣有滿多企業沒有辦法賺錢！但有少數公司獲利滿驚人的，然而接近0的地方會產生一個很明顯的突波，看來滿多企業盡量讓自己的淨利大於0的，讓財報好看
-        </p>
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/小資族也可以使用的選股法！/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/小資族也可以使用的選股法！/distri.png)" alt="小資族也可以使用的選股法！" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/小資族也可以使用的選股法！/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
-            </div>
-            <div class="date"><time datetime="2017-10-04T09:40:42.000Z" itemprop="datePublished">2017-10-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/小資族也可以使用的選股法！/">小資族也可以使用的選股法！</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            其實這篇還是14年14倍的選股策略！一模一樣的方法XD，建議先複習一下，這篇只用本金10萬元開始，看會發生什麼問題！
-原諒今天我比較混水摸魚，下禮拜要博士班資格考～～
-附上每天操作紀錄，證明沒在虎爛XD會寫這篇是因為有人問上次那個14年14倍選股法，怎麼可能一次買50張股票，太扯了吧！被他這麼一說，突然我也覺得有點扯，該不會是回測寫錯，有bug吧！？
-目前又檢查了一次，應該是沒找到什麼問題。策略都
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（中）總資產轉換率/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/用杜邦分析加強你的選股技巧（中）總資產轉換率/totalassetturnover-d.png)" alt="用杜邦分析加強你的選股技巧（中）總資產轉換率" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）總資產轉換率/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2017-10-03T10:42:44.000Z" itemprop="datePublished">2017-10-03</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（中）總資產轉換率/">用杜邦分析加強你的選股技巧（中）總資產轉換率</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            總資產轉換率，是一個很有用的指標，可以觀察企業的營運能力，管理階層運用總資產創造營收的能力，也就是代表管理能力。複習一下公式：
-$$總資產轉換率=\frac{營收}{總資產}$$
-分佈圖這張分佈圖x軸是總資產轉換率，Y軸是有多少公司
-
-
-
-
-
-數量
-平均
-標準差
-0%
-25%
-50%
-75%
-100%
-
-
-
-
-1696
-0.19
-0.15
-0
-0.10
-0.17
-0.24
-3.11
-
-
-
-可以發現
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（中）權益乘數/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/用杜邦分析加強你的選股技巧（中）權益乘數/em-d.png)" alt="拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）權益乘數/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2017-10-02T13:53:41.000Z" itemprop="datePublished">2017-10-02</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（中）權益乘數/">拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天這篇繼續討論杜邦分析，其中的三個最重要的數字
-
-權益乘數
-總資產轉換率
-淨利率
-
-今天就來看一下台灣的公司在權益乘數是如何分佈的！
-權益乘數權益乘數，也就是企業負債的比率！負債是一個兩面刃，有很多錢的話，企業可以將錢轉化成自己的產品，並將產品賣出去，但風險隨之升高，萬一還不出錢可是會瞬間破產。
-
-
-
-
-
-數量
-平均
-標準差
-0%
-25%
-50%
-75%
-100%
-
-
-
-
-1703
-2.35
-2
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（上）/" class="thumbnail">
-    
-    
-        <span style="background-image:url(images/thumbnail.jpeg)" alt="用杜邦分析加強你的選股技巧（上）" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（上）/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2017-10-01T14:01:09.000Z" itemprop="datePublished">2017-10-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（上）/">用杜邦分析加強你的選股技巧（上）</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            前幾篇，我們連講了PE、PB、ROE，這些是價值型選股最重要、最最簡單的幾個要素，也寫了一些還不賴的歷史回測，10萬起始資金也能有模有樣。這篇將會更深入一層，介紹杜邦分析！
-學習回顧我們瞭解了幾個元素：
-
-投資人的錢
-企業的收益
-企業的股價
-
-3/1=PB、3/2=PE、2/1=ROE。（這邊是很大概的講，用詞比較不精確，請多包涵！）
-然而真正的企業有麼簡單嗎？應該不置於吧？
-更深入一點點今天介紹
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">第 1 頁，共 3 頁</span>
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/page/2/">&raquo;</a>
-    </nav>
+    </section>
 
 
                         </div>
@@ -815,6 +338,19 @@ $$總資產轉換率=\frac{營收}{總資產}$$
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/財報狗選股條件最佳化/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">財報狗選股讓你免費取得價值4000元/年的策略</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -1017,11 +553,13 @@ $$總資產轉換率=\frac{營收}{總資產}$$
     var disqus_shortname = 'koreal6803';
     
     
+    var disqus_url = 'https://koreal6803.github.io/回測框架介紹/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
