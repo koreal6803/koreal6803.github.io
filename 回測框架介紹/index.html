@@ -18,7 +18,7 @@
 <meta property="og:description" content="每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。 首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數： $$d=1,…,n^{d}$$  另外還有一群股票，是我們可能買入的對象 $$s=1,…,n^{s}$$ 另外，而選股條件(constraints">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/回測框架介紹/images/eq.png">
-<meta property="og:updated_time" content="2017-10-12T14:34:19.000Z">
+<meta property="og:updated_time" content="2017-10-12T18:45:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回測框架介紹">
 <meta name="twitter:description" content="每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。 首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數： $$d=1,…,n^{d}$$  另外還有一群股票，是我們可能買入的對象 $$s=1,…,n^{s}$$ 另外，而選股條件(constraints">
@@ -202,7 +202,7 @@ $$\boldsymbol{h}_{d+1} = \left(\frac{m+\boldsymbol{h}_{d}^{*T}\boldsymbol{p}_{d}
 
 <p>以上的持股方式，就是一種完美分散的概念，是美好的想像，通常是blog中回測權益曲線的<strong>藍線</strong>，但現實生活中，資產不可能分散得如此完美，所以還必須算出可以買幾張股票：</p>
 
-$$\boldsymbol{h}_{d+1}^{*}=\left\lfloor\frac{\boldsymbol{h}_{d+1}}{1.1\boldsymbol{p}_{d}}\right\rfloor$$
+$$\boldsymbol{h}_{d+1}^{*}=\left[\left\lfloor \frac{h_{d+1,1}}{1.1p_{d,1}}\right\rfloor ,...,\left\lfloor \frac{h_{d+1,n^{s}}}{1.1p_{d,n^{s}}}\right\rfloor \right]^{T}$$
 
 
 這邊有點要注意，$\boldsymbol{h}_{d+1}^{*}$ 的單位是張數，而原本的 $\boldsymbol{h}_{d+1}$ 的單位是投資金額。乘以 1.1 是為了在開盤時用漲停板買入。然而這條公式每天都會計算，所以在歷史回測中，每天的張數是浮動的，也就是說，某天我買了6張某股，隔天我可能會變成5張、或7張某股，都是有可能的。
@@ -221,7 +221,7 @@ $$\boldsymbol{h}_{d+1}^{*}=\left\lfloor\frac{\boldsymbol{h}_{d+1}}{1.1\boldsymbo
 
 
 
-    <a data-url="https://koreal6803.github.io/回測框架介紹/" data-id="cj8okfr5y0004n69kojdcmuau" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koreal6803.github.io/回測框架介紹/" data-id="cj8otfciq00008l9ks8g4xkbj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
