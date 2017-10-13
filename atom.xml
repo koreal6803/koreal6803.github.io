@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-10-12T18:45:37.000Z</updated>
+  <updated>2017-10-13T12:08:58.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>讓Machine Learning幫你看財報！</title>
+    <link href="https://koreal6803.github.io/%E8%AE%93Machine-Learning%E5%B9%AB%E4%BD%A0%E7%9C%8B%E8%B2%A1%E5%A0%B1%EF%BC%81/"/>
+    <id>https://koreal6803.github.io/讓Machine-Learning幫你看財報！/</id>
+    <published>2017-10-13T10:07:13.000Z</published>
+    <updated>2017-10-13T12:08:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>機器學習不是我很專攻的領域，但幸好現在很多強大的package，可以直接使用，假如你不想深入開發model的話，只要把它當作黑箱子就好了，把它插上插頭，讓資料流進去、流出來。論應用方面，很簡單！但要最佳化結果，又是另外一回事了。</p><p>可以私下聯絡我，或留言給我email來拿到訓練資料，在坊間一定是要賣錢的，甚至連課程一起賣，一定會打著python、財經、大數據、機器學習、神經網路 等名號開課，一堂課5000元之類的。</p><p>但我想說算了啦，反正我就是個草根碼農XDD，希望大家可以一起互相切磋。</p><p>之前寫的策略，選股方式都是用條件拼湊的：</p>$$\mathbb{S}=\left\{ s\mid\text{ROE}_{s}>3\text{ and }\text{PB}_{s}<1.5\right\}$$ <p="">但是現在用machine learning的話，就會寫成這樣：<p></p>$$\mathbb{S}=\left\{ s\mid f(\text{ROE}_{s},\text{PB}_{s})=1\right\}$$<p>這邊用的是分類（classification），假如覺得會上漲，就是1，會下跌就是0。<br>上面的$f$ 就是機器學習的model，我們不太知道這個是個怎樣的函數，因為這個model不是一個公式，而是經過資料訓練而來的。這個簡單的範例只有2個features：ROE、PB。只是一個例子而已，下面會有更多的features：</p><h3 id="資料"><a href="#資料" class="headerlink" title="資料"></a>資料</h3><p>資料是從2010年底，到2017年，每次財報截止的隔天買入，並在下次財報截止前賣出。<br>至於features就是用<a href="/tags/歷史回測/">之前寫文章</a>，有用過覺得好用的：</p><ul><li>月營收 買入前12個月</li><li>ROE 買入前12季財報</li><li>本益比 買入前一天</li><li>股價淨值比 買入前一天</li><li>殖利率 最近一期</li><li>股價是否大於季線</li><li>股價是否大於半年線</li><li>負債比率 買入前12季財報</li></ul><p>可以到這裡下載歷史資料，假如有人訓練的比我的好的話（應該滿簡單的），歡迎一起討論，我們可以一起合作建構一個初版的平台，或是有人想要train不同的feature，也歡迎留言給我。</p><p>除了上述的features，每筆資料還包含：</p><ul><li>stock_ID 股票的代號</li><li>buy_date 買入日期</li><li>buy_price 買入開盤價</li><li>sell_date 賣出開盤價</li><li>sell_price 賣出價格</li><li>gain 賣出價/買入價</li></ul><p>不確定這些歷史數據，有沒有錯，假如不放心，可以幫我稍微檢驗一下，另外，關於買賣日期，我是參考IFRS制度上市前後不同的財報截止日，然而有些企業遲交財報，就沒辦法了…所以會包含一點未來數據。</p><p><a href="http://www.rich01.com/2015/11/blog-post_28.html" rel="external nofollow noopener noreferrer" target="_blank">這篇文章</a>有講到財報遲交的公司，還是別買的好，而每年大約只有100檔家公司會遲交財報，以整體資料而言，未來數據應該不會太多（我覺得啦XD，但不知道資料科學家們怎麼看就是了）。</p><p>資料僅供學術發展，請勿用於商業用途！</p><h3 id="訓練model的方式"><a href="#訓練model的方式" class="headerlink" title="訓練model的方式"></a>訓練model的方式</h3><p>由於我想要弄一個快速的prototype，所以先使用random forest model，這樣就不用proprocessing了XDD</p><figure class="highlight python"><figcaption><span>Model</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div><div class="line">rf = RandomForestClassifier(n_estimators=<span class="number">500</span>, max_leaf_nodes=<span class="keyword">None</span>, class_weight=<span class="string">'balanced'</span>)</div></pre></td></tr></table></figure><p>以上是用sklearn裡的模型，連參數什麼都沒給，這樣的效果還OK了。訓練時，training data使用2014年以前的資料，而test data是2015年以後的資料</p><h3 id="結果太好了，我不敢相信…"><a href="#結果太好了，我不敢相信…" class="headerlink" title="結果太好了，我不敢相信…"></a>結果太好了，我不敢相信…</h3><p>以下是還沒篩選前的獲利分佈圖，這邊的獲利是用倍數來衡量，也就是 賣出價格/買入價格。可以看到，這是一個對稱於1的分佈圖，大於1（賺）跟小於1（賠）其實很接近，其平均值是在1.005左右，你有看到一藍藍的地方嗎？那就是篩選後的標的：</p><center><img src="/讓Machine-Learning幫你看財報！/dis1.png" alt="2015年後獲利分佈" title="2015年後獲利分佈"></center><p>下面我們把藍色的地方直接畫一張圖，可以發現篩選後，發現結果好很多，分佈偏向大於1，也就是很多的選擇是有獲利的！</p><center><img src="/讓Machine-Learning幫你看財報！/dis2.png" alt="2015年後篩選後獲利分佈" title="2015年後篩選後獲利分佈"></center><p>平均來到了1.10左右，代表每季買一群股票，平均來說會賺10％左右。且勝率來到了70.2%</p><p>對於這樣的結果，我感到有點難過，因為成果太好代表裡面一定有什麼問題，我還是抱著懷疑的態度，各位可以做最嚴格的檢驗，機器學習不是我的範疇，願意虛心受教，或是你還希望有什麼額外的features呢？我幾乎都可以幫你生成客製的test data喔！</p></1.5\right\}$$>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;機器學習不是我很專攻的領域，但幸好現在很多強大的package，可以直接使用，假如你不想深入開發model的話，只要把它當作黑箱子就好了，把它插上插頭，讓資料流進去、流出來。論應用方面，很簡單！但要最佳化結果，又是另外一回事了。&lt;/p&gt;
+&lt;p&gt;可以私下聯絡我，或留言給我em
+      
+    
+    </summary>
+    
+    
+      <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
+    
+      <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
+    
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>回測框架介紹</title>
@@ -329,13 +357,13 @@
       <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
+      <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
+    
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
     
       <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
     
@@ -361,13 +389,13 @@
     </summary>
     
     
-      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
       <category term="EPS" scheme="https://koreal6803.github.io/tags/EPS/"/>
     
       <category term="每股盈餘" scheme="https://koreal6803.github.io/tags/%E6%AF%8F%E8%82%A1%E7%9B%88%E9%A4%98/"/>
     
       <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
+    
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
   </entry>
   
@@ -491,11 +519,11 @@
       <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
-      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
-    
       <category term="大盤" scheme="https://koreal6803.github.io/tags/%E5%A4%A7%E7%9B%A4/"/>
     
       <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
     
   </entry>
   
@@ -575,31 +603,6 @@
     
       &lt;p&gt;&lt;a href=&quot;/策略狗：績優股獵犬（１）自由現金報酬率/&quot;&gt;上一篇&lt;/a&gt;介紹了”自由現金報酬率”高的股票，不容易大起大落。&lt;/p&gt;
 &lt;p&gt;這篇就來分析一下，”自由現金報酬率” 每隔多少天重新買一次，獲利比較好。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
-    
-    
-      <category term="策略狗" scheme="https://koreal6803.github.io/tags/%E7%AD%96%E7%95%A5%E7%8B%97/"/>
-    
-      <category term="自由現金報酬率" scheme="https://koreal6803.github.io/tags/%E8%87%AA%E7%94%B1%E7%8F%BE%E9%87%91%E5%A0%B1%E9%85%AC%E7%8E%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>策略狗。績優股獵犬1。如何找到優質股？</title>
-    <link href="https://koreal6803.github.io/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/"/>
-    <id>https://koreal6803.github.io/策略狗。績優股獵犬1。如何找到優質股？/</id>
-    <published>2017-09-21T13:47:06.000Z</published>
-    <updated>2017-10-03T14:59:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近財報狗出了一個新的功能：<a href="https://quant.statementdog.com/" rel="external nofollow noopener noreferrer" target="_blank">策略狗</a>。</p><p>來研究一下它最新公開的指標～</p><a id="more"></a><p>財報狗教大家如何打敗大盤，但滿貴的400＊12元要4800每年，優點是可以每年操作一次就好了，缺點是你一次就得買12個月！</p><p>針對績優股的”自由現金報酬率”這個比較不常見的指標，想來做個研究。</p><p>什麼是自由現金呢？這邊我就直接複製策略狗的教學：</p><blockquote><p><strong>投資資本 = 股東權益 + 長短期金融借款</strong><br><strong>自由現金流 = 營業現金流 - 資本支出</strong><br><strong>自由現金報酬率 = 自由現金流 / 投資資本</strong></p></blockquote><p>既然策略狗告訴我：取”自由現金報酬率”高的股票，買一年會漲的機率較高。<br>我進一步想要分析的是，假如只買一個月會如何呢？</p><p>於是做了一個相關性的比較</p><center><img src="/策略狗。績優股獵犬1。如何找到優質股？/correlation.png" alt="自由現金流報酬率 vs 單月股價漲跌" title="自由現金流報酬率 vs 單月股價漲跌"></center><p>以原點(0,0)可以將這張圖表分成上下左右四個象現，此圖的左右，代表任意買入一個月是否獲利，正的是股價上漲，負的是下跌。此圖的上下，代表”自由現金流報酬率”的高低。</p><p>很對稱…沒什麼相關性，可以能是一個月還太快，畢竟這個指標是用於長期投資，一個月的漲跌還太短了。但可以發現，在圖的下半部，股價比較容易發散，而上半部股價比較集中，這是一個有趣的現象：</p><p>“自由現金流報酬率”高的股票，似乎短時間（單月）內不易大起大落。</p><p>那把一個月調整一季、半年、一年，對獲利又帶來什麼影響呢？下一篇再告訴大家。</p><p>我每天都會放一篇跟選股有關的新文章，假如你覺得FinLab對你有幫助，可以偶爾來追蹤一下～</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近財報狗出了一個新的功能：&lt;a href=&quot;https://quant.statementdog.com/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;策略狗&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;來研究一下它最新公開的指標～&lt;/p&gt;
     
     </summary>
     

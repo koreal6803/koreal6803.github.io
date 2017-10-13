@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>https://koreal6803.github.io/%E8%AE%93Machine-Learning%E5%B9%AB%E4%BD%A0%E7%9C%8B%E8%B2%A1%E5%A0%B1%EF%BC%81/</loc>
+    <lastmod>2017-10-13T12:08:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>讓Machine Learning幫你看財報！</title>
+        <pubTime>2017-10-13T10:07:13.000Z</pubTime>
+        
+        <tag>機器學習</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://koreal6803.github.io/%E5%9B%9E%E6%B8%AC%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%B4%B9/</loc>
     <lastmod>2017-10-12T18:45:37.000Z</lastmod>
     <data>
@@ -377,13 +398,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T11:28:20.000Z</pubTime>
         
+        <tag>ROE</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>歷史回測</tag>
          
         <tag>選股策略</tag>
-         
-        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -405,13 +426,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T11:51:12.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
@@ -474,11 +495,11 @@
         <title>用股價淨值比來判斷大盤漲跌</title>
         <pubTime>2017-09-25T18:52:40.000Z</pubTime>
         
-        <tag>股價淨值比</tag>
-         
         <tag>大盤</tag>
          
         <tag>簡易策略</tag>
+         
+        <tag>股價淨值比</tag>
          
          
            
