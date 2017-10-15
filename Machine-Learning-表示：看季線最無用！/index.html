@@ -9,20 +9,20 @@
     
         <meta name="keywords" content="機器學習,Machine Learning,python">
     
-    <meta name="description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。發現了一個很有趣的狀況，就是 “股價在季線上” 這個條件，權重超低！ 假如你買賣股票也跟我的模型一樣，是根據每一季財報來決定，那機器學習的結果，表示不用看">
+    <meta name="description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新近界，機器學習中學習到一些它判斷財報的方法，今天就是來剖開上一篇教學中，機器學習的大腦，來看一下機器人在想什麼！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權">
 <meta name="keywords" content="機器學習,Machine Learning,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine Learning 表示：看季線最無用！">
 <meta property="og:url" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。發現了一個很有趣的狀況，就是 “股價在季線上” 這個條件，權重超低！ 假如你買賣股票也跟我的模型一樣，是根據每一季財報來決定，那機器學習的結果，表示不用看">
+<meta property="og:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新近界，機器學習中學習到一些它判斷財報的方法，今天就是來剖開上一篇教學中，機器學習的大腦，來看一下機器人在想什麼！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/dis.png">
-<meta property="og:updated_time" content="2017-10-15T17:12:20.000Z">
+<meta property="og:image" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg">
+<meta property="og:updated_time" content="2017-10-15T20:56:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning 表示：看季線最無用！">
-<meta name="twitter:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。發現了一個很有趣的狀況，就是 “股價在季線上” 這個條件，權重超低！ 假如你買賣股票也跟我的模型一樣，是根據每一季財報來決定，那機器學習的結果，表示不用看">
-<meta name="twitter:image" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/dis.png">
+<meta name="twitter:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新近界，機器學習中學習到一些它判斷財報的方法，今天就是來剖開上一篇教學中，機器學習的大腦，來看一下機器人在想什麼！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權">
+<meta name="twitter:image" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg">
     
 
     
@@ -183,6 +183,9 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <p>最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。</p>
+<p>Alpha Go 讓人類的圍棋可以到達新近界，機器學習中學習到一些它判斷財報的方法，今天就是來剖開上一篇教學中，機器學習的大腦，來看一下機器人在想什麼！</p>
+<center><img src="/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg" alt="機器學習" title="機器學習"></center>
+
 <h3 id="Machine-Learning：季線無用！"><a href="#Machine-Learning：季線無用！" class="headerlink" title="Machine Learning：季線無用！"></a>Machine Learning：季線無用！</h3><p>機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。發現了一個很有趣的狀況，就是 “股價在季線上” 這個條件，權重超低！</p>
 <p>假如你買賣股票也跟我的模型一樣，是根據每一季財報來決定，那機器學習的結果，表示不用看季線，因為幾乎沒啥用。</p>
 <p>看季線還不如看近10週收盤價！發現把週收盤價納入參考，也可以增進效果。代表長線的技術指標是有用的！</p>
@@ -220,7 +223,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/" data-id="cj8szwmru00031e9ka9w8tg01" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/" data-id="cj8t8l60h0001zh9kafujt68q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -366,7 +369,7 @@ ga('send', 'pageview');
                             <a href="/Machine-Learning-表示：看季線最無用！/" class="thumbnail">
     
     
-        <span style="background-image:url(/Machine-Learning-表示：看季線最無用！/dis.png)" alt="Machine Learning 表示：看季線最無用！" class="thumbnail-image"></span>
+        <span style="background-image:url(/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg)" alt="Machine Learning 表示：看季線最無用！" class="thumbnail-image"></span>
     
     
 </a>
@@ -386,7 +389,7 @@ ga('send', 'pageview');
                             <a href="/讓Machine-Learning幫你看財報！/" class="thumbnail">
     
     
-        <span style="background-image:url(/讓Machine-Learning幫你看財報！/dis1.png)" alt="讓Machine Learning幫你看財報！" class="thumbnail-image"></span>
+        <span style="background-image:url(/讓Machine-Learning幫你看財報！/thumbnail.jpeg)" alt="讓Machine Learning幫你看財報！" class="thumbnail-image"></span>
     
     
 </a>
@@ -426,7 +429,7 @@ ga('send', 'pageview');
                             <a href="/財報狗選股條件最佳化/" class="thumbnail">
     
     
-        <span style="background-image:url(/財報狗選股條件最佳化/eq.png)" alt="財報狗選股讓你免費取得價值4000元/年的策略" class="thumbnail-image"></span>
+        <span style="background-image:url(/財報狗選股條件最佳化/thumbnail.jpeg)" alt="財報狗選股讓你免費取得價值4000元/年的策略" class="thumbnail-image"></span>
     
     
 </a>
