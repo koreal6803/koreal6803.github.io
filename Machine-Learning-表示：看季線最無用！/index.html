@@ -7,21 +7,21 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="機器學習,Machine Learning,python">
+        <meta name="keywords" content="機器學習,Machine Learning,python,選股">
     
-    <meta name="description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新近界，機器學習中學習到一些它判斷財報的方法，今天就是來剖開上一篇教學中，機器學習的大腦，來看一下機器人在想什麼！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權">
-<meta name="keywords" content="機器學習,Machine Learning,python">
+    <meta name="description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新境界，機器學習中學習到一些它判斷財報的方法，今天來剖開上一篇教學中，機器學習的大腦，來看一下機器人如何選股！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。">
+<meta name="keywords" content="機器學習,Machine Learning,python,選股">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine Learning 表示：看季線最無用！">
 <meta property="og:url" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新近界，機器學習中學習到一些它判斷財報的方法，今天就是來剖開上一篇教學中，機器學習的大腦，來看一下機器人在想什麼！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權">
+<meta property="og:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新境界，機器學習中學習到一些它判斷財報的方法，今天來剖開上一篇教學中，機器學習的大腦，來看一下機器人如何選股！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg">
-<meta property="og:updated_time" content="2017-10-15T20:56:52.000Z">
+<meta property="og:updated_time" content="2017-10-16T13:18:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning 表示：看季線最無用！">
-<meta name="twitter:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新近界，機器學習中學習到一些它判斷財報的方法，今天就是來剖開上一篇教學中，機器學習的大腦，來看一下機器人在想什麼！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權">
+<meta name="twitter:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新境界，機器學習中學習到一些它判斷財報的方法，今天來剖開上一篇教學中，機器學習的大腦，來看一下機器人如何選股！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。">
 <meta name="twitter:image" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg">
     
 
@@ -175,7 +175,7 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Machine-Learning/">Machine Learning</a>, <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/機器學習/">機器學習</a>
+        <a class="tag-link" href="/tags/Machine-Learning/">Machine Learning</a>, <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/機器學習/">機器學習</a>, <a class="tag-link" href="/tags/選股/">選股</a>
     </div>
 
             </div>
@@ -183,7 +183,7 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <p>最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。</p>
-<p>Alpha Go 讓人類的圍棋可以到達新近界，機器學習中學習到一些它判斷財報的方法，今天就是來剖開上一篇教學中，機器學習的大腦，來看一下機器人在想什麼！</p>
+<p>Alpha Go 讓人類的圍棋可以到達新境界，機器學習中學習到一些它判斷財報的方法，今天來剖開上一篇教學中，機器學習的大腦，來看一下機器人如何選股！</p>
 <center><img src="/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg" alt="機器學習" title="機器學習"></center>
 
 <h3 id="Machine-Learning：季線無用！"><a href="#Machine-Learning：季線無用！" class="headerlink" title="Machine Learning：季線無用！"></a>Machine Learning：季線無用！</h3><p>機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。發現了一個很有趣的狀況，就是 “股價在季線上” 這個條件，權重超低！</p>
@@ -223,7 +223,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/" data-id="cj8t8qtg00001069ksoa1aylw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/" data-id="cj8u7haho00010v9kmewilu9l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -492,7 +492,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/EPS/">EPS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROE/">ROE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一行/">一行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/價值股/">價值股</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/入門教學/">入門教學</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分佈圖/">分佈圖</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大盤/">大盤</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/如何買股票/">如何買股票</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/本益比/">本益比</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杜邦分析/">杜邦分析</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/機器學習/">機器學習</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/歷史回測/">歷史回測</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每股盈餘/">每股盈餘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/策略狗/">策略狗</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/簡易策略/">簡易策略</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/統計/">統計</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/總資產轉換率/">總資產轉換率</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/股價淨值比/">股價淨值比</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自由現金報酬率/">自由現金報酬率</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/選股策略/">選股策略</a><span class="tag-list-count">7</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/EPS/">EPS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROE/">ROE</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/一行/">一行</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/價值股/">價值股</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/入門教學/">入門教學</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分佈圖/">分佈圖</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大盤/">大盤</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/如何買股票/">如何買股票</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/本益比/">本益比</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杜邦分析/">杜邦分析</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/機器學習/">機器學習</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/歷史回測/">歷史回測</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/每股盈餘/">每股盈餘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/策略狗/">策略狗</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/簡易策略/">簡易策略</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/統計/">統計</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/總資產轉換率/">總資產轉換率</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/股價淨值比/">股價淨值比</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自由現金報酬率/">自由現金報酬率</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/選股/">選股</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/選股策略/">選股策略</a><span class="tag-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -502,7 +502,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">標籤雲</h3>
         <div class="widget tagcloud">
-            <a href="/tags/EPS/" style="font-size: 10px;">EPS</a> <a href="/tags/Machine-Learning/" style="font-size: 11.43px;">Machine Learning</a> <a href="/tags/ROE/" style="font-size: 11.43px;">ROE</a> <a href="/tags/python/" style="font-size: 11.43px;">python</a> <a href="/tags/一行/" style="font-size: 10px;">一行</a> <a href="/tags/價值股/" style="font-size: 10px;">價值股</a> <a href="/tags/入門教學/" style="font-size: 14.29px;">入門教學</a> <a href="/tags/分佈圖/" style="font-size: 10px;">分佈圖</a> <a href="/tags/大盤/" style="font-size: 11.43px;">大盤</a> <a href="/tags/如何買股票/" style="font-size: 20px;">如何買股票</a> <a href="/tags/本益比/" style="font-size: 14.29px;">本益比</a> <a href="/tags/杜邦分析/" style="font-size: 15.71px;">杜邦分析</a> <a href="/tags/機器學習/" style="font-size: 11.43px;">機器學習</a> <a href="/tags/歷史回測/" style="font-size: 18.57px;">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size: 10px;">每股盈餘</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/策略狗/" style="font-size: 12.86px;">策略狗</a> <a href="/tags/簡易策略/" style="font-size: 11.43px;">簡易策略</a> <a href="/tags/統計/" style="font-size: 10px;">統計</a> <a href="/tags/總資產轉換率/" style="font-size: 10px;">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size: 15.71px;">股價淨值比</a> <a href="/tags/自由現金報酬率/" style="font-size: 12.86px;">自由現金報酬率</a> <a href="/tags/選股策略/" style="font-size: 17.14px;">選股策略</a>
+            <a href="/tags/EPS/" style="font-size: 10px;">EPS</a> <a href="/tags/Machine-Learning/" style="font-size: 11.43px;">Machine Learning</a> <a href="/tags/ROE/" style="font-size: 11.43px;">ROE</a> <a href="/tags/python/" style="font-size: 11.43px;">python</a> <a href="/tags/一行/" style="font-size: 10px;">一行</a> <a href="/tags/價值股/" style="font-size: 10px;">價值股</a> <a href="/tags/入門教學/" style="font-size: 14.29px;">入門教學</a> <a href="/tags/分佈圖/" style="font-size: 10px;">分佈圖</a> <a href="/tags/大盤/" style="font-size: 11.43px;">大盤</a> <a href="/tags/如何買股票/" style="font-size: 20px;">如何買股票</a> <a href="/tags/本益比/" style="font-size: 14.29px;">本益比</a> <a href="/tags/杜邦分析/" style="font-size: 15.71px;">杜邦分析</a> <a href="/tags/機器學習/" style="font-size: 11.43px;">機器學習</a> <a href="/tags/歷史回測/" style="font-size: 18.57px;">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size: 10px;">每股盈餘</a> <a href="/tags/生活/" style="font-size: 11.43px;">生活</a> <a href="/tags/策略狗/" style="font-size: 12.86px;">策略狗</a> <a href="/tags/簡易策略/" style="font-size: 11.43px;">簡易策略</a> <a href="/tags/統計/" style="font-size: 10px;">統計</a> <a href="/tags/總資產轉換率/" style="font-size: 10px;">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size: 15.71px;">股價淨值比</a> <a href="/tags/自由現金報酬率/" style="font-size: 12.86px;">自由現金報酬率</a> <a href="/tags/選股/" style="font-size: 10px;">選股</a> <a href="/tags/選股策略/" style="font-size: 17.14px;">選股策略</a>
         </div>
     </div>
 
