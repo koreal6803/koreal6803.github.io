@@ -18,7 +18,7 @@
 <meta property="og:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新境界，機器學習中學習到一些它判斷財報的方法，今天來剖開上一篇教學中，機器學習的大腦，來看一下機器人如何選股！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg">
-<meta property="og:updated_time" content="2017-10-16T13:18:23.000Z">
+<meta property="og:updated_time" content="2017-10-16T13:23:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning 表示：看季線最無用！">
 <meta name="twitter:description" content="最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。 Alpha Go 讓人類的圍棋可以到達新境界，機器學習中學習到一些它判斷財報的方法，今天來剖開上一篇教學中，機器學習的大腦，來看一下機器人如何選股！   Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。">
@@ -199,7 +199,8 @@ ga('send', 'pageview');
 <li><strong>週收盤價</strong>比上面的難用，但好像可以判斷一些東西，但一定是非線性的，所以不知道其中原理XD</li>
 <li>重要程度趨近於0的：<strong>收盤 &gt; 季線</strong></li>
 </ol>
-<p>真的很少網站可以向這裡一樣，告訴你哪些是比較有用的數據，哪些比較難用。然而這樣做的用意只是給大家一個概念，也不代表機器學習的結果就得奉為聖旨。</p>
+<p>真的很少網站可以像這裡一樣，告訴你哪些是比較有用的數據，哪些比較難用，我們真的要跟機器來學習，一般人都會認為股價淨值比、本益比是最重要的，但是這邊做出了一個不一樣的結論：<strong>營收是否增加</strong>才是股票漲跌的關鍵。</p>
+<p>這樣做的用意只是給大家一個概念，也不代表機器學習的結果就得奉為聖旨。</p>
 <h3 id="機器學習評分財報"><a href="#機器學習評分財報" class="headerlink" title="機器學習評分財報"></a>機器學習評分財報</h3><p>機器學習模型最後會幫每個股票評分，總共100分，最低0分，50分就是他覺得股票不漲不跌，所以我們將每季評分分成四組，由低到高：</p>
 <center><img src="/Machine-Learning-表示：看季線最無用！/dis.png" alt="歷史所有財報的評分" title="歷史所有財報的評分"></center>
 
@@ -223,7 +224,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/" data-id="cj8u7haho00010v9kmewilu9l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/" data-id="cj8u7nwu20003279kfgsg3c31" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
