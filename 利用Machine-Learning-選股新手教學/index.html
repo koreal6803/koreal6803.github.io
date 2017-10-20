@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>買股票只考慮ROE是不夠的！ | FinLab 量化實驗室</title>
+    <title>利用Machine Learning 選股新手教學 | FinLab 量化實驗室</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="ROE,如何買股票,歷史回測,選股策略,股價淨值比">
+        <meta name="keywords" content="機器學習,Machine Learning,python">
     
-    <meta name="description" content="昨天的文章介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。 但這樣會有問題！因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了 公式推導為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下： $$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益">
-<meta name="keywords" content="ROE,如何買股票,歷史回測,選股策略,股價淨值比">
+    <meta name="description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！ 1. 取得資料只要寄到我的信箱，就會還傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。 為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？">
+<meta name="keywords" content="機器學習,Machine Learning,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="買股票只考慮ROE是不夠的！">
-<meta property="og:url" content="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/index.html">
+<meta property="og:title" content="利用Machine Learning 選股新手教學">
+<meta property="og:url" content="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="昨天的文章介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。 但這樣會有問題！因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了 公式推導為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下： $$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益">
+<meta property="og:description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！ 1. 取得資料只要寄到我的信箱，就會還傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。 為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/eq.png">
-<meta property="og:updated_time" content="2017-09-30T13:34:07.000Z">
+<meta property="og:image" content="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/result.png">
+<meta property="og:updated_time" content="2017-10-20T13:10:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="買股票只考慮ROE是不夠的！">
-<meta name="twitter:description" content="昨天的文章介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。 但這樣會有問題！因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了 公式推導為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下： $$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益">
-<meta name="twitter:image" content="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/eq.png">
+<meta name="twitter:title" content="利用Machine Learning 選股新手教學">
+<meta name="twitter:description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！ 1. 取得資料只要寄到我的信箱，就會還傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。 為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？">
+<meta name="twitter:image" content="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/result.png">
     
 
     
@@ -146,18 +146,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/量化投資/">量化投資</a>
+    未分類
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-買股票只考慮ROE是不夠的！" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-利用Machine-Learning-選股新手教學" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        買股票只考慮ROE是不夠的！
+        利用Machine Learning 選股新手教學
         </h1>
     
 
@@ -167,74 +167,69 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/買股票只考慮ROE是不夠的！/" class="article-date">
-            <time datetime="2017-09-30T11:28:20.000Z" itemprop="datePublished">2017-09-30</time>
+        <a href="/利用Machine-Learning-選股新手教學/" class="article-date">
+            <time datetime="2017-10-20T10:58:23.000Z" itemprop="datePublished">2017-10-20</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/ROE/">ROE</a>, <a class="tag-link" href="/tags/如何買股票/">如何買股票</a>, <a class="tag-link" href="/tags/歷史回測/">歷史回測</a>, <a class="tag-link" href="/tags/股價淨值比/">股價淨值比</a>, <a class="tag-link" href="/tags/選股策略/">選股策略</a>
+        <a class="tag-link" href="/tags/Machine-Learning/">Machine Learning</a>, <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/機器學習/">機器學習</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><a href="/EPS跟ROE哪個比較好用？/">昨天的文章</a>介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。</p>
-<p>但這樣會有問題！<br>因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了</p>
-<h3 id="公式推導"><a href="#公式推導" class="headerlink" title="公式推導"></a>公式推導</h3><p>為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下：</p>
-<p>$$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益}}{\text{市值/淨利}}=\frac{\text{股價淨值比}\text{PB}}{\text{本益比PE}}$$</p>
-<p>由上述公式可以發現，ROE又可以跟PB、PE扯上關係。首先先來看PE：</p>
-<p>PE 越小造成 ROE 越大，而兩者都代表公司的獲利很好，可以買入！很好的現象</p>
-<p>但接下來看到PB的時候，奇妙的是情就發生了：</p>
-<p>PB越大會影響ROE也會越大，前者大說明股票被高估，後者越大說明公司投資報酬率很好，於是我們可以得到一個結論：</p>
-<blockquote><p><strong>ROE高並不代表其價格值得買入！</strong></p>
-</blockquote>
-<h3 id="歷史回測"><a href="#歷史回測" class="headerlink" title="歷史回測"></a>歷史回測</h3><p>由以上結論我們可以發現，除了用ROE來選擇投資報酬率高的公司外，我們還必須利用PB選擇便宜股。</p>
-<table>
-<thead>
-<tr>
-<th>策略名稱</th>
-<th>策略一（只考慮ROE）</th>
-<th>策略二（考慮ROE跟PB）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>選股條件</td>
-<td>ROE  &gt; 5</td>
-<td>同策略一</td>
-</tr>
-<tr>
-<td></td>
-<td>收盤價 &gt; 10</td>
-<td>PB &lt; 1.2</td>
-</tr>
-</tbody>
-</table>
-<p>每60天更新一次持股，不計算手續費：</p>
-<center><img src="/買股票只考慮ROE是不夠的！/eq.png" alt="獲利，策略一為紅色，策略二為藍色，大盤為灰色" title="獲利，策略一為紅色，策略二為藍色，大盤為灰色"></center>
+            <p>最近一直在弄Machine Learning，都快忘記寫blog了，哈！</p>
+<p>其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！</p>
+<h3 id="1-取得資料"><a href="#1-取得資料" class="headerlink" title="1. 取得資料"></a>1. 取得資料</h3><p>只要寄到我的信箱，就會還傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。</p>
+<p>為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？絕對沒有要收集email的意思，最主要是因為，這資料的來源比較複雜。</p>
+<h3 id="2-架設環境"><a href="#2-架設環境" class="headerlink" title="2. 架設環境"></a>2. 架設環境</h3><p>假如你已經會使用python了，那可以直接跳過這個步驟，假如不會的話，可以照著下面的步驟完成：</p>
+<ol>
+<li>到<a href="https://www.python.org/downloads/" rel="external nofollow noopener noreferrer" target="_blank">官網</a>下載<strong>Python3</strong>，並且安裝</li>
+<li>安裝<a href="https://pip.pypa.io/en/stable/" rel="external nofollow noopener noreferrer" target="_blank">pip</a></li>
+<li>安裝<a href="https://virtualenv.pypa.io/en/stable/" rel="external nofollow noopener noreferrer" target="_blank">virtualenv</a></li>
+</ol>
+<h4 id="為何要安裝pip呢？"><a href="#為何要安裝pip呢？" class="headerlink" title="為何要安裝pip呢？"></a>為何要安裝pip呢？</h4><p>pip可以幫我們下載Machine Learning所需要的package（也就是python的libraries）。</p>
+<h4 id="為何要安裝-virtualenv-呢？"><a href="#為何要安裝-virtualenv-呢？" class="headerlink" title="為何要安裝 virtualenv 呢？"></a>為何要安裝 <strong>virtualenv</strong> 呢？</h4><p><strong>virtualenv</strong>可以幫你產生project的環境，每一個project用自己的libraries，這樣比較不容易有衝突。</p>
+<h3 id="3-建置project"><a href="#3-建置project" class="headerlink" title="3. 建置project"></a>3. 建置project</h3><p>首先，先用<strong>virtualenv</strong>創建project<br><figure class="highlight bash"><figcaption><span>create project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">virtualenv finance_ml</div><div class="line"><span class="built_in">cd</span> finance_ml</div></pre></td></tr></table></figure></p>
+<p>接下來必須要開啟工作環境，<br><figure class="highlight plain"><figcaption><span>activate and deactivate project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">source bin/activate</div><div class="line">deactivate</div></pre></td></tr></table></figure></p>
+<p>這邊有兩行，一行是開啟環境，一行是結束環境！假如你還要繼續，先不要輸入第二行。<br>將data.csv複製到當前資料夾，並且安裝python packages</p>
+<figure class="highlight plain"><figcaption><span>install python packages</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pip install jupyter</div><div class="line">pip install pandas</div><div class="line">pip install sklearn</div><div class="line">pip install matplotlib</div></pre></td></tr></table></figure>
+<h3 id="4-開工！"><a href="#4-開工！" class="headerlink" title="4. 開工！"></a>4. 開工！</h3><p>首先就是開啟jupyter notebook，並開一個python的環境<br><figure class="highlight plain"><figcaption><span>start notebook</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook</div></pre></td></tr></table></figure><br>這樣會開啟一個網頁版的GUI介面，只要新增python的notebook就可以用了！<br>接下來進入我們的主題：機器學習程式碼！</p>
+<h4 id="A-讀入資料"><a href="#A-讀入資料" class="headerlink" title="A. 讀入資料"></a>A. 讀入資料</h4><p>這邊我們用 pandas 讀入所需要的資料，index_col可以設定要哪一個columns當作index。這邊的index選擇在 data.csv 中，第一個未命名的column。<br><figure class="highlight python"><figcaption><span>read data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line">data = pd.read_csv(<span class="string">'data.csv'</span>, index_col=<span class="string">'Unnamed: 0'</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="B-處理資料"><a href="#B-處理資料" class="headerlink" title="B.處理資料"></a>B.處理資料</h4><p>我們將資料分成三類，一類是跑回測用的dbacktest，另一類是機器學習用的dtraning，另外一個是traning完用來評估的dtest。</p>
+<figure class="highlight python"><figcaption><span>process data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</div><div class="line"></div><div class="line"><span class="comment"># clear data 將爛資料去掉</span></div><div class="line">data.dropna(how=<span class="string">'any'</span>, inplace=<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="comment"># 選擇2015年以後的資料作為回測用</span></div><div class="line">dbacktest = data[data[<span class="string">'buy_date'</span>] &gt; <span class="string">'2015'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 將其於的資料再分成兩類：dtrain 跟 dtest</span></div><div class="line">dataTrainTest = data[data[<span class="string">'sell_date'</span>] &lt; <span class="string">'2015'</span>]</div><div class="line">dtrain, dtest = train_test_split(dataTrainTest, test_size=<span class="number">0.10</span>, random_state=<span class="number">42</span>)</div><div class="line"></div><div class="line"><span class="comment"># 設定我們的feature要用哪些</span></div><div class="line">features = data.columns[<span class="number">5</span>:<span class="number">-1</span>]</div></pre></td></tr></table></figure>
+<h4 id="C-機器學習訓練資料"><a href="#C-機器學習訓練資料" class="headerlink" title="C. 機器學習訓練資料"></a>C. 機器學習訓練資料</h4><p>這邊我們用很簡單的<a href="https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm" rel="external nofollow noopener noreferrer" target="_blank">隨機森林</a>，來完成的，可以參考連結來學習怎麼樣調整參數，這應該算是機器學習中，前製作業模型了！</p>
+<figure class="highlight python"><figcaption><span>learning</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div><div class="line"></div><div class="line"><span class="comment"># 創建機器學習的model</span></div><div class="line">rf = RandomForestClassifier(n_estimators=<span class="number">10</span>, criterion=<span class="string">'gini'</span>, </div><div class="line">                            max_depth=<span class="keyword">None</span>, min_samples_split=<span class="number">2</span>, </div><div class="line">                            min_samples_leaf=<span class="number">1</span>, min_weight_fraction_leaf=<span class="number">0.0</span>, </div><div class="line">                            max_features=<span class="string">'auto'</span>, max_leaf_nodes=<span class="keyword">None</span>, </div><div class="line">                            bootstrap=<span class="keyword">True</span>, oob_score=<span class="keyword">False</span>, n_jobs=<span class="number">1</span>, </div><div class="line">                            random_state=<span class="keyword">None</span>, verbose=<span class="number">0</span>, warm_start=<span class="keyword">False</span>, </div><div class="line">                            class_weight=<span class="keyword">None</span>)</div><div class="line"><span class="comment"># 分類能 獲利 &gt; 10％ 的股票</span></div><div class="line">rf.fit(dtrain[features], dtrain[<span class="string">'獲利'</span>] &gt; <span class="number">1.1</span>)</div><div class="line"></div></pre></td></tr></table></figure>
+<h4 id="D-結果"><a href="#D-結果" class="headerlink" title="D. 結果"></a>D. 結果</h4><p>你說這樣就結束了！？對呀結束了。其實machine learning要簡單真的就只是這樣而已！<br>接下來我們來看一下它預測的准不準：</p>
+<figure class="highlight python"><figcaption><span>predict</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">result = rf.predict(dtest[features])</div><div class="line"></div><div class="line">print(<span class="string">'test data'</span>)</div><div class="line">print(<span class="string">'gain before filtered'</span>, dtest[<span class="string">'獲利'</span>].mean())</div><div class="line">print(<span class="string">'gain after filtered'</span>, dtest[<span class="string">'獲利'</span>][result].mean())</div><div class="line">print(<span class="string">'num stocks'</span>, sum(result), <span class="string">'/'</span>, len(dtest))</div><div class="line"></div><div class="line">result = rf.predict(dbacktest[features])</div><div class="line"></div><div class="line">print(<span class="string">'backtest data'</span>)</div><div class="line">print(<span class="string">'gain before filtered'</span>, dbacktest[<span class="string">'獲利'</span>].mean())</div><div class="line">print(<span class="string">'gain after filtered'</span>, dbacktest[<span class="string">'獲利'</span>][result].mean())</div><div class="line">print(<span class="string">'num stocks'</span>, sum(result), <span class="string">'/'</span>, len(dbacktest))</div><div class="line"></div></pre></td></tr></table></figure>
+<p>假如一切順利就會看到以下結果：</p>
+<center><img src="/利用Machine-Learning-選股新手教學/result.png" alt="結果" title="結果"></center><br>這邊的gain是指平均的報酬率，也就是所有股票的價格在賣出時是否賺錢，小於一就是虧，大於一就是賺。<br><br>結果看起來還滿猛的！竟然有接近7%的報酬率！<br><br>但真的是如此嗎？我們把它畫成隨著時間，本金成長的圖：<br><br><figure class="highlight python"><figcaption><span>backtest</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">%matplotlib inline</div><div class="line"></div><div class="line">dbacktest[<span class="string">'預測'</span>] = pd.Series(result, index=dbacktest.index)</div><div class="line">dates = list(set(dbacktest[<span class="string">'buy_date'</span>]))</div><div class="line">dates.sort()</div><div class="line"></div><div class="line">history = []</div><div class="line"><span class="keyword">for</span> d <span class="keyword">in</span> dates:</div><div class="line">    history.append(dbacktest[dbacktest[<span class="string">'buy_date'</span>] == d][<span class="string">'獲利'</span>].mean())</div><div class="line">    </div><div class="line">pd.Series(history, index=dates).cumprod().plot()</div></pre></td></tr></table></figure><br><br><center><img src="/利用Machine-Learning-選股新手教學/eq.png" alt="權益曲線" title="權益曲線"></center>
 
-<p>其中策略一每次都把資產分散在100支股票左右，而策略二把資產分散在平均為10支股票左右。</p>
-<center><img src="/買股票只考慮ROE是不夠的！/nstock.png" alt="股票持有數量，策略一為紅色，策略二為藍色" title="股票持有數量，策略一為紅色，策略二為藍色"></center>
-
-<p>策略二每次持有的股票非常少且獲利更勝策略一！</p>
-<p>每次買入個位數股票，小資族會比較好投資，當然我真的不知道有沒有做錯，所以我將策略二的持股歷史紀錄供大家下載：<a href="/買股票只考慮ROE是不夠的！/history_roe_pb.csv">csv檔</a></p>
-<h3 id="金融海嘯資產少60％！"><a href="#金融海嘯資產少60％！" class="headerlink" title="金融海嘯資產少60％！"></a>金融海嘯資產少60％！</h3><p>但這個策略也是教學用，大家不要輕易使用，畢竟在金融海嘯時，其虧所來到了非常驚人的60％。如何判斷大盤是否大跌，可以參考之前很多篇的介紹。</p>
-<h3 id="策略二今天持股"><a href="#策略二今天持股" class="headerlink" title="策略二今天持股"></a>策略二今天持股</h3><p>策略二目前持股為：</p>
-<p><center><img src="/買股票只考慮ROE是不夠的！/stocks.png" alt="策略二目前持股" title="策略二目前持股"></center><br>第一個column是股票代號，第二個column是買入日期，第三個columns為價格，約60個交易日後，我們再來看一下這幾支股票是賺錢還是賠錢。有興趣可以追蹤一下！</p>
+<p>發現其實沒有想像中那麼好。這是意料之中的結果，畢竟我們的learning時間才幾秒鐘，假如增加n_estimator這個變數，是否可以讓結果更好？假如使用Regression會不會更好？假如改變一下機器學習的參數、或修改一下features，是否可以選到更好的股票呢？就留給各位慢慢玩！以下是可以改進的地方：</p>
+<ol>
+<li>feature engineering：將features做修正、刪除、normalize等</li>
+<li>篩選能獲利X%的股票</li>
+<li>classification vs regression：可以兩種都試試看</li>
+<li>不同的model，可以試試SVM、NN、XGBoost等等</li>
+<li>不同的model都有可以調整超多參數來達到優化</li>
+<li>利用early stop 來預防overfitting。</li>
+</ol>
+<p>我只是列出最基本的，還有很多可以玩的，這也是我這禮拜正在弄的東西，害我都沒時間寫網誌XDD</p>
+<p>假如你有意外的發現，可以聯絡我，我可以幫你架設一個選股平台，我們再來討論怎麼分潤之類的，但前提是結果必須要比我的好才行XDDD。</p>
 
             <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
-            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/比策略狗還要安全的選股策略！/" title="14年14倍的選股策略！" rel="bookmark">14年14倍的選股策略！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/小資族也可以使用的選股法！/" title="小資族也可以使用的選股法！" rel="bookmark">小資族也可以使用的選股法！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/價值股回測/" title="價值股策略" rel="bookmark">價值股策略</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用杜邦分析加強你的選股技巧（下）回測/" title="用杜邦分析加強你的選股技巧（下）回測" rel="bookmark">用杜邦分析加強你的選股技巧（下）回測</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/股價淨值比有這麼神？/" title="股價淨值比有這麼神？" rel="bookmark">股價淨值比有這麼神？</a></h3></div></li></ul>
+            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Machine-Learning-表示：看季線最無用！/" title="Machine Learning 表示：看季線最無用！" rel="bookmark">Machine Learning 表示：看季線最無用！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/讓Machine-Learning幫你看財報！/" title="讓Machine Learning幫你看財報！" rel="bookmark">讓Machine Learning幫你看財報！</a></h3></div></li></ul>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/" data-id="cj8zx04pz001mmz9kiippcmuh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/" data-id="cj8zx04ht0004mz9kddatufs8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -355,20 +350,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/用杜邦分析加強你的選股技巧（上）/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            用杜邦分析加強你的選股技巧（上）
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/EPS跟ROE哪個比較好用？/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/Machine-Learning-表示：看季線最無用！/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">EPS跟ROE哪個比較好用？</p>
+        <p class="article-nav-title">Machine Learning 表示：看季線最無用！</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -576,7 +561,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'koreal6803';
     
     
-    var disqus_url = 'https://koreal6803.github.io/買股票只考慮ROE是不夠的！/';
+    var disqus_url = 'https://koreal6803.github.io/利用Machine-Learning-選股新手教學/';
     
     (function() {
     var dsq = document.createElement('script');
