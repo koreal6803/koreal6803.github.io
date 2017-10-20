@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="機器學習,Machine Learning,python">
     
-    <meta name="description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！ 1. 取得資料只要寄到我的信箱，就會還傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。 為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？">
+    <meta name="description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！這邊只是給大家一個簡單的架構，可以自己去嘗試優化，讓它更聰明！ 1. 取得資料只要寄到我的信箱，就會免費傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業">
 <meta name="keywords" content="機器學習,Machine Learning,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用Machine Learning 選股新手教學">
 <meta property="og:url" content="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！ 1. 取得資料只要寄到我的信箱，就會還傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。 為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？">
+<meta property="og:description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！這邊只是給大家一個簡單的架構，可以自己去嘗試優化，讓它更聰明！ 1. 取得資料只要寄到我的信箱，就會免費傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/result.png">
-<meta property="og:updated_time" content="2017-10-20T13:10:09.000Z">
+<meta property="og:updated_time" content="2017-10-20T13:15:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Machine Learning 選股新手教學">
-<meta name="twitter:description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！ 1. 取得資料只要寄到我的信箱，就會還傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。 為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？">
+<meta name="twitter:description" content="最近一直在弄Machine Learning，都快忘記寫blog了，哈！ 其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！這邊只是給大家一個簡單的架構，可以自己去嘗試優化，讓它更聰明！ 1. 取得資料只要寄到我的信箱，就會免費傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業">
 <meta name="twitter:image" content="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/result.png">
     
 
@@ -183,9 +183,9 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <p>最近一直在弄Machine Learning，都快忘記寫blog了，哈！</p>
-<p>其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！</p>
-<h3 id="1-取得資料"><a href="#1-取得資料" class="headerlink" title="1. 取得資料"></a>1. 取得資料</h3><p>只要寄到我的信箱，就會還傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。</p>
-<p>為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？絕對沒有要收集email的意思，最主要是因為，這資料的來源比較複雜。</p>
+<p>其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！這邊只是給大家一個簡單的架構，可以自己去嘗試優化，讓它更聰明！</p>
+<h3 id="1-取得資料"><a href="#1-取得資料" class="headerlink" title="1. 取得資料"></a>1. 取得資料</h3><p>只要寄到我的信箱，就會免費傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。</p>
+<p>為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？絕對沒有要收集email的意思，最主要是因為這資料的來源比較複雜。</p>
 <h3 id="2-架設環境"><a href="#2-架設環境" class="headerlink" title="2. 架設環境"></a>2. 架設環境</h3><p>假如你已經會使用python了，那可以直接跳過這個步驟，假如不會的話，可以照著下面的步驟完成：</p>
 <ol>
 <li>到<a href="https://www.python.org/downloads/" rel="external nofollow noopener noreferrer" target="_blank">官網</a>下載<strong>Python3</strong>，並且安裝</li>
@@ -195,7 +195,7 @@ ga('send', 'pageview');
 <h4 id="為何要安裝pip呢？"><a href="#為何要安裝pip呢？" class="headerlink" title="為何要安裝pip呢？"></a>為何要安裝pip呢？</h4><p>pip可以幫我們下載Machine Learning所需要的package（也就是python的libraries）。</p>
 <h4 id="為何要安裝-virtualenv-呢？"><a href="#為何要安裝-virtualenv-呢？" class="headerlink" title="為何要安裝 virtualenv 呢？"></a>為何要安裝 <strong>virtualenv</strong> 呢？</h4><p><strong>virtualenv</strong>可以幫你產生project的環境，每一個project用自己的libraries，這樣比較不容易有衝突。</p>
 <h3 id="3-建置project"><a href="#3-建置project" class="headerlink" title="3. 建置project"></a>3. 建置project</h3><p>首先，先用<strong>virtualenv</strong>創建project<br><figure class="highlight bash"><figcaption><span>create project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">virtualenv finance_ml</div><div class="line"><span class="built_in">cd</span> finance_ml</div></pre></td></tr></table></figure></p>
-<p>接下來必須要開啟工作環境，<br><figure class="highlight plain"><figcaption><span>activate and deactivate project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">source bin/activate</div><div class="line">deactivate</div></pre></td></tr></table></figure></p>
+<p>接下來必須要開啟工作環境：<br><figure class="highlight plain"><figcaption><span>activate and deactivate project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">source bin/activate</div><div class="line">deactivate</div></pre></td></tr></table></figure></p>
 <p>這邊有兩行，一行是開啟環境，一行是結束環境！假如你還要繼續，先不要輸入第二行。<br>將data.csv複製到當前資料夾，並且安裝python packages</p>
 <figure class="highlight plain"><figcaption><span>install python packages</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pip install jupyter</div><div class="line">pip install pandas</div><div class="line">pip install sklearn</div><div class="line">pip install matplotlib</div></pre></td></tr></table></figure>
 <h3 id="4-開工！"><a href="#4-開工！" class="headerlink" title="4. 開工！"></a>4. 開工！</h3><p>首先就是開啟jupyter notebook，並開一個python的環境<br><figure class="highlight plain"><figcaption><span>start notebook</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook</div></pre></td></tr></table></figure><br>這樣會開啟一個網頁版的GUI介面，只要新增python的notebook就可以用了！<br>接下來進入我們的主題：機器學習程式碼！</p>
@@ -207,7 +207,7 @@ ga('send', 'pageview');
 <h4 id="D-結果"><a href="#D-結果" class="headerlink" title="D. 結果"></a>D. 結果</h4><p>你說這樣就結束了！？對呀結束了。其實machine learning要簡單真的就只是這樣而已！<br>接下來我們來看一下它預測的准不準：</p>
 <figure class="highlight python"><figcaption><span>predict</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">result = rf.predict(dtest[features])</div><div class="line"></div><div class="line">print(<span class="string">'test data'</span>)</div><div class="line">print(<span class="string">'gain before filtered'</span>, dtest[<span class="string">'獲利'</span>].mean())</div><div class="line">print(<span class="string">'gain after filtered'</span>, dtest[<span class="string">'獲利'</span>][result].mean())</div><div class="line">print(<span class="string">'num stocks'</span>, sum(result), <span class="string">'/'</span>, len(dtest))</div><div class="line"></div><div class="line">result = rf.predict(dbacktest[features])</div><div class="line"></div><div class="line">print(<span class="string">'backtest data'</span>)</div><div class="line">print(<span class="string">'gain before filtered'</span>, dbacktest[<span class="string">'獲利'</span>].mean())</div><div class="line">print(<span class="string">'gain after filtered'</span>, dbacktest[<span class="string">'獲利'</span>][result].mean())</div><div class="line">print(<span class="string">'num stocks'</span>, sum(result), <span class="string">'/'</span>, len(dbacktest))</div><div class="line"></div></pre></td></tr></table></figure>
 <p>假如一切順利就會看到以下結果：</p>
-<center><img src="/利用Machine-Learning-選股新手教學/result.png" alt="結果" title="結果"></center><br>這邊的gain是指平均的報酬率，也就是所有股票的價格在賣出時是否賺錢，小於一就是虧，大於一就是賺。<br><br>結果看起來還滿猛的！竟然有接近7%的報酬率！<br><br>但真的是如此嗎？我們把它畫成隨著時間，本金成長的圖：<br><br><figure class="highlight python"><figcaption><span>backtest</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">%matplotlib inline</div><div class="line"></div><div class="line">dbacktest[<span class="string">'預測'</span>] = pd.Series(result, index=dbacktest.index)</div><div class="line">dates = list(set(dbacktest[<span class="string">'buy_date'</span>]))</div><div class="line">dates.sort()</div><div class="line"></div><div class="line">history = []</div><div class="line"><span class="keyword">for</span> d <span class="keyword">in</span> dates:</div><div class="line">    history.append(dbacktest[dbacktest[<span class="string">'buy_date'</span>] == d][<span class="string">'獲利'</span>].mean())</div><div class="line">    </div><div class="line">pd.Series(history, index=dates).cumprod().plot()</div></pre></td></tr></table></figure><br><br><center><img src="/利用Machine-Learning-選股新手教學/eq.png" alt="權益曲線" title="權益曲線"></center>
+<center><img src="/利用Machine-Learning-選股新手教學/result.png" alt="結果" title="結果"></center><br>這邊的gain是指平均的報酬率，也就是所有股票的價格在賣出時是否賺錢，小於一就是虧，大於一就是賺。<br><br>結果看起來還滿猛的！竟然有接近7%的報酬率！<br><br>但真的是如此嗎？我們把它畫成隨著時間，本金成長的獲利圖：<br><br><figure class="highlight python"><figcaption><span>backtest</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">%matplotlib inline</div><div class="line"></div><div class="line">dbacktest[<span class="string">'預測'</span>] = pd.Series(result, index=dbacktest.index)</div><div class="line">dates = list(set(dbacktest[<span class="string">'buy_date'</span>]))</div><div class="line">dates.sort()</div><div class="line"></div><div class="line">history = []</div><div class="line"><span class="keyword">for</span> d <span class="keyword">in</span> dates:</div><div class="line">    history.append(dbacktest[dbacktest[<span class="string">'buy_date'</span>] == d][<span class="string">'獲利'</span>].mean())</div><div class="line">    </div><div class="line">pd.Series(history, index=dates).cumprod().plot()</div></pre></td></tr></table></figure><br><br><center><img src="/利用Machine-Learning-選股新手教學/eq.png" alt="權益曲線" title="權益曲線"></center>
 
 <p>發現其實沒有想像中那麼好。這是意料之中的結果，畢竟我們的learning時間才幾秒鐘，假如增加n_estimator這個變數，是否可以讓結果更好？假如使用Regression會不會更好？假如改變一下機器學習的參數、或修改一下features，是否可以選到更好的股票呢？就留給各位慢慢玩！以下是可以改進的地方：</p>
 <ol>
@@ -229,7 +229,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/" data-id="cj8zx04ht0004mz9kddatufs8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/" data-id="cj8zx4y5e0003pj9kqmqv2zpc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
