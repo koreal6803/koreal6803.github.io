@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-10-24T23:10:27.000Z</updated>
+  <updated>2017-10-26T15:48:18.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本益成長比真的越低越好！？</title>
+    <link href="https://koreal6803.github.io/%E6%AF%94%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%88%90%E9%95%B7%E7%8E%87%EF%BC%81/"/>
+    <id>https://koreal6803.github.io/比本益比更好用的本益比成長率！/</id>
+    <published>2017-10-26T13:58:56.000Z</published>
+    <updated>2017-10-26T15:48:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>很久之前有寫過 <strong>本益比</strong> 如何使用，<strong>本益比</strong> 就是看企業股價和獲利之間的關係，選擇小一點的本益比是可以幫助我們選到好股票的，但是每一家公司的本益比都有著天壤之別，所以必須要校正， <strong>本益成長比</strong> 就是一個本益比的進化版。<strong>本益成長比</strong> 不只可以看當下，還考慮了一家公司未來是否能繼續盈利一個指標。</p><p>以下是 <strong>本益成長比</strong> 的公式：</p><p>近4季稅後淨利年增率：(近4季稅後淨利總和 / 去年同期近4季稅後淨利總和 - 1) * 100%<br>本益成長比（PEG）：本益比/近4季稅後淨利年增率</p><p>看起來考慮了公司的成長，所以當PEG越小，代表 <strong>本益比</strong> 越小或是 <strong>淨利年增率</strong> 越大，對投資人來講都是好事情！</p><p>理論上是這樣，而實際上真的是這樣嗎？我們不妨接著看！</p><p>首先我們先算出當前所有上市上櫃其PEG的分佈圖：</p><center><img src="/比本益比更好用的本益比成長率！/dis.png" alt="PEG分佈圖" title="PEG分佈圖"></center><p>可以發現越接近0的越多公司，這種分佈還滿奇特的，我以為接近0的公司會很少才對，沒想到事實竟然跟我想像的相反，感覺好像很多公司的淨利年增率很猛！然而假如我哪裡做錯了，可以直接留言糾正我。</p><p>我們就將公司分成好幾組，每60天選擇PEG在只定範圍內的股票，就可以畫成下圖：</p><center><img src="/比本益比更好用的本益比成長率！/eq.png" alt="每組總資產隨時間變化圖" title="每組總資產隨時間變化圖"></center><p>簡直有夠亂…這說明了PEG難道無效？！感覺是真的很難分辨出越小越好，還是越大越好…，所以我們再畫另一張圖，更好的判斷PEG大小跟獲利的高低：</p><center><img src="/比本益比更好用的本益比成長率！/peg.png" alt="每組總資產隨時間變化圖" title="每組總資產隨時間變化圖"></center><p>我們發現，當PEG太大獲利真的很差。但當PEG非常小的時候，效果也非常不好。<br>PEG約等於0.5的時候，會有最好的獲利。</p><p>只能說PEG在台股可能不是非常的好用，PEG不能一味的追求越小越好，最好選擇PEG等於 0.5 左右的股票，歷史回測會有比較好的結果。</p><p>總之以統計的結果來看，PEG並沒有特別顯著的功能，相較於其它介紹過的指標。也有可能是我實驗那裡做錯了，可以留言跟我討論，我會儘速更改！確保大家獲得正確的內容～！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;很久之前有寫過 &lt;strong&gt;本益比&lt;/strong&gt; 如何使用，&lt;strong&gt;本益比&lt;/strong&gt; 就是看企業股價和獲利之間的關係，選擇小一點的本益比是可以幫助我們選到好股票的，但是每一家公司的本益比都有著天壤之別，所以必須要校正， &lt;strong&gt;本益成長比&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="本益比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
+    
+      <category term="指標" scheme="https://koreal6803.github.io/tags/%E6%8C%87%E6%A8%99/"/>
+    
+      <category term="PEG" scheme="https://koreal6803.github.io/tags/PEG/"/>
+    
+      <category term="本益成長比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%88%90%E9%95%B7%E6%AF%94/"/>
+    
+  </entry>
   
   <entry>
     <title>超簡單台股每日爬蟲教學</title>
@@ -472,13 +503,13 @@
       <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
     
-      <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
-    
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
     
       <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
     
@@ -504,13 +535,13 @@
     </summary>
     
     
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
       <category term="EPS" scheme="https://koreal6803.github.io/tags/EPS/"/>
     
       <category term="每股盈餘" scheme="https://koreal6803.github.io/tags/%E6%AF%8F%E8%82%A1%E7%9B%88%E9%A4%98/"/>
     
       <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
-    
-      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
   </entry>
   
@@ -575,40 +606,6 @@
       <category term="大盤" scheme="https://koreal6803.github.io/tags/%E5%A4%A7%E7%9B%A4/"/>
     
       <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>本益比能幫你選出優質股？</title>
-    <link href="https://koreal6803.github.io/%E6%9C%AC%E7%9B%8A%E6%AF%94%E8%83%BD%E5%B9%AB%E4%BD%A0%E9%81%B8%E5%87%BA%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/"/>
-    <id>https://koreal6803.github.io/本益比能幫你選出優質股？/</id>
-    <published>2017-09-26T13:32:28.000Z</published>
-    <updated>2017-09-30T22:32:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>如何買到好股票呢？本文用統計的方式讓大家感受本益比（PE）的高低究竟跟股價有多少的影響？是否選擇低本益比（PE）的股票就沒問題？這些都是我自己入門股票買賣最想問的問題，究竟一家公司的PE要看得多重才對。</p><p>網路上已經一堆網站都在<a href="http://www.cmoney.tw/learn/course/0520/topic/689" rel="external nofollow noopener noreferrer" target="_blank">介紹PE了</a>，今天做一些別的統計給大家看，常常聽別人說PE約在10～20之間，但是我們還是來看一張讓你很有感覺且非常新鮮（昨天的）的台股每間公司的PE分佈圖：</p><center><img src="/本益比能幫你選出優質股？/distribution.png" alt="台股PE分佈圖" title="台股PE分佈圖"></center><p>就像大家說的，真的集中在10～20之間，然而我們可以看到此分佈的兩個標準差來到了5～37左右，而更大一部份的PE市集中在10~15之間。</p><p>接下來我們就來做個小實驗，把2005年～2017年所有的台股上市公司都拿來回測，每隔半年選入本益比符合條件的全體公司，並且平均費配現有資金，當然實際這樣玩你得身價好幾個億，但我們這邊只是假設一個理想的狀態，手續費也是0，我們一共有七組不同的實驗：</p><ol><li>本益比介於 05 ~ 10 之間</li><li>介於 10 ~ 15 之間</li><li>介於 15 ~ 20 之間</li><li>介於 20 ~ 25 之間</li><li>介於 25 ~ 30 之間</li><li>介於 30 ~ 35 之間</li><li>介於 35 ~ 40 之間</li></ol><p>每一組都模擬12年看一下投資報酬會如何：</p><center><img src="/本益比能幫你選出優質股？/equality.png" alt="七組不同本益比策略的權益曲線" title="七組不同本益比策略的權益曲線"></center><br>Y軸是獲利的倍數，可以發現定10~15普遍比其它組還要好，證明在市場上買低本益比的股票是可以長期看多的，那為何最低本益比的5~10這組，會比較差呢？我個人認為可能是股票的多樣性不足導致的，因為本益比介於5～10的股票本來就比較少，沒有足夠的分散風險。另外也有可能是，某家爛公司突然大量的業外收入，讓我們以為它賺很多，但體質還是很差導致的。<br><br>來看一下這七組12年的獲利倍數：<br><br><center><img src="/本益比能幫你選出優質股？/performance.png" alt="七組策略的12年總報酬" title="七組策略的12年總報酬"></center><p>這邊的Y軸一樣是獲利的倍數，可以發現本益比越大，獲益就越差，跟報酬呈現反比。也證實了本益比越小的股票，是越值得投資的！</p><p>但！</p><p>這邊指的是投資風險足夠分散的情況下得到的結論，假如你的金額不大，只看本益比買股票會發生什麼事情呢？以下我們再做兩組實驗：</p><ol><li>本益比介於12.9~13.1</li><li>本益比介於12.5~13.5</li></ol><center><img src="/本益比能幫你選出優質股？/amount-equality.png" alt="權益曲線，藍色為第1組，紅色為地2組" title="權益曲線，藍色為第1組，紅色為地2組"></center><p>這兩種不同的組合，其平均本益比都在13左右，但為何獲利差這麼多呢？答案是因為選股的數量不一樣，第一組實驗每次都選了30支左右的股票，而第二組實驗每次都只選了小貓兩三隻：</p><center><img src="/本益比能幫你選出優質股？/amount-amount.png" alt="持有股票的數目，藍色為第1組，紅色為地2組" title="持有股票的數目，藍色為第1組，紅色為地2組"></center><p>可以發現，當你只選了兩三支本益比很小的股票時，根本一點用都沒有用！財經數據就像超級大雜訊，100支股票是可以簡單找到規律性的，但挑一支說會漲，一定是在騙自己。</p><p>總結：</p><ul><li>本益比重看不重用（XD），不是啦，應該說本益比平常買股票參考用，但絕對不能當作唯一的指標！</li><li>像巴菲特一樣看準了重壓一家公司，實在是很有難度，像我這種散戶，假如資本夠，還是好好的分散風險吧！</li><li>資本不夠的話，得配合其它條件篩選出更好的股票，盡量平均分配，是比較恰當的。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;如何買到好股票呢？本文用統計的方式讓大家感受本益比（PE）的高低究竟跟股價有多少的影響？是否選擇低本益比（PE）的股票就沒問題？這些都是我自己入門股票買賣最想問的問題，究竟一家公司的PE要看得多重才對。&lt;/p&gt;
-&lt;p&gt;網路上已經一堆網站都在&lt;a href=&quot;http://w
-      
-    
-    </summary>
-    
-      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
-    
-    
-      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="本益比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
-    
-      <category term="分佈圖" scheme="https://koreal6803.github.io/tags/%E5%88%86%E4%BD%88%E5%9C%96/"/>
-    
-      <category term="統計" scheme="https://koreal6803.github.io/tags/%E7%B5%B1%E8%A8%88/"/>
     
   </entry>
   
