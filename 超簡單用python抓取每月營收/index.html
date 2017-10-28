@@ -3,21 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>記錄 | FinLab 量化實驗室</title>
+    <title>超簡單用python抓取每月營收 | FinLab 量化實驗室</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
-<meta name="keywords" content="股市,投資,股票,選股,分析,策略,財報,stock,finance,market,公司體質,策略,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FinLab 量化實驗室">
-<meta property="og:url" content="https://koreal6803.github.io/archives/page/2/index.html">
+        <meta name="keywords" content="python,選股,程式設計">
+    
+    <meta name="description" content="今天承接上次的超簡單python系列，教大家如何得到每家企業每個月的營收。這個系列的最終目的就是讓大家可以創造自己的投資自動化程式，甚至擁有自己的看盤軟體。 真的不要把程式設計想像的很難，感覺爬2000多支股票，並整理資料，好像是一件很累很痛苦的是情，但真的只需要30行，你可能會覺得這些代碼真的太短了，但真的就是這麼短，然而這必須係建立在python或是R，這些package豐富的腳本語言才有可能">
+<meta name="keywords" content="python,選股,程式設計">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超簡單用python抓取每月營收">
+<meta property="og:url" content="https://koreal6803.github.io/超簡單用python抓取每月營收/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta property="og:description" content="今天承接上次的超簡單python系列，教大家如何得到每家企業每個月的營收。這個系列的最終目的就是讓大家可以創造自己的投資自動化程式，甚至擁有自己的看盤軟體。 真的不要把程式設計想像的很難，感覺爬2000多支股票，並整理資料，好像是一件很累很痛苦的是情，但真的只需要30行，你可能會覺得這些代碼真的太短了，但真的就是這麼短，然而這必須係建立在python或是R，這些package豐富的腳本語言才有可能">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://koreal6803.github.io/超簡單用python抓取每月營收/table.png">
+<meta property="og:updated_time" content="2017-10-28T18:52:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FinLab 量化實驗室">
-<meta name="twitter:description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta name="twitter:title" content="超簡單用python抓取每月營收">
+<meta name="twitter:description" content="今天承接上次的超簡單python系列，教大家如何得到每家企業每個月的營收。這個系列的最終目的就是讓大家可以創造自己的投資自動化程式，甚至擁有自己的看盤軟體。 真的不要把程式設計想像的很難，感覺爬2000多支股票，並整理資料，好像是一件很累很痛苦的是情，但真的只需要30行，你可能會覺得這些代碼真的太短了，但真的就是這麼短，然而這必須係建立在python或是R，這些package豐富的腳本語言才有可能">
+<meta name="twitter:image" content="https://koreal6803.github.io/超簡單用python抓取每月營收/table.png">
     
 
     
@@ -141,631 +146,137 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>記錄
+    未分類
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-超簡單用python抓取每月營收" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/價值股回測/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/價值股回測/eq.png)" alt="價值股策略" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/價值股回測/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
-            </div>
-            <div class="date"><time datetime="2017-10-09T14:31:56.000Z" itemprop="datePublished">2017-10-09</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/價值股回測/">價值股策略</a>
+        超簡單用python抓取每月營收
         </h1>
     
 
-        <p class="article-excerpt">
-            今天剛結束期中口試（資格考），在法國99％的博士班，都可以通過，但重點是通過成績如何。今天總算是落幕了！可以好好來寫網誌，但今天還是有點想要休息一下，所以把網路上的方法拿來回測XD
-富貴滿盈價值股今天回測了 富貴滿盈價值股 這個方法，名稱有點俗氣，但是回測效果算還不錯。
-以下是此策略的選股條件：
-
-本益比 &lt; 15 
-股價淨值比 &lt; 2
-殖利率 &gt; 4
-成交量大於50％的股票
-收
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/超簡單用python抓取每月營收/" class="article-date">
+            <time datetime="2017-10-28T18:30:39.000Z" itemprop="datePublished">2017-10-28</time>
+        </a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>, <a class="tag-link" href="/tags/程式設計/">程式設計</a>, <a class="tag-link" href="/tags/選股/">選股</a>
+    </div>
+
+            </div>
         
-        <a href="/用杜邦分析加強你的選股技巧（下）回測/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/用杜邦分析加強你的選股技巧（下）回測/eq.png)" alt="用杜邦分析加強你的選股技巧（下）回測" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（下）回測/">0</span>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <p>今天承接上次的超簡單python系列，教大家如何得到每家企業每個月的營收。這個系列的最終目的就是讓大家可以創造自己的投資自動化程式，甚至擁有自己的看盤軟體。</p>
+<p>真的不要把程式設計想像的很難，感覺爬2000多支股票，並整理資料，好像是一件很累很痛苦的是情，但真的只需要30行，你可能會覺得這些代碼真的太短了，但真的就是這麼短，然而這必須係建立在python或是R，這些package豐富的腳本語言才有可能辦到，這兩個語言都不錯，但我比較喜歡寫python就是了XD，因為python還可以做很多酷炫的是情，例如寫server，或是一些自動化工具，然而R好像沒有這麼多功能？</p>
+<p>那我們就來爬取吧！首先先決定要爬哪個網頁，我選擇的是<a href="http://mops.twse.com.tw/nas/t21/sii/t21sc03_103_2_0.html" rel="external nofollow noopener noreferrer" target="_blank">TWSE官方網頁</a><br>它的網址是<br><a href="http://mops.twse.com.tw/nas/t21/sii/t21sc03_103_2_0.html" rel="external nofollow noopener noreferrer" target="_blank">http://mops.twse.com.tw/nas/t21/sii/t21sc03_103_2_0.html</a></p>
+<p>各位有看到103這個數字嗎？其實這個就是年份，而緊接在後面的 “2” 就是月份，所以只要改動這兩個值，我們就可以下載不同年月的歷史資訊：</p>
+<figure class="highlight python"><figcaption><span>月爬蟲</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">monthly_report</span><span class="params">(year, month)</span>:</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> year &gt; <span class="number">1990</span>:</div><div class="line">        year -= <span class="number">1911</span></div><div class="line"></div><div class="line">    html_df = pd.read_html(<span class="string">'http://mops.twse.com.tw/nas/t21/sii/t21sc03_'</span>+str(year)+<span class="string">'_'</span>+str(month)+<span class="string">'_0.html'</span>)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean_df</span><span class="params">(df)</span>:</span></div><div class="line">        df = df.copy()</div><div class="line">        df = df.drop([<span class="number">0</span>,<span class="number">1</span>, <span class="number">2</span>], axis=<span class="number">0</span>, errors=<span class="keyword">False</span>)</div><div class="line">        df = df[list(range(<span class="number">0</span>,<span class="number">10</span>))]</div><div class="line"></div><div class="line">        <span class="keyword">return</span> df</div><div class="line"></div><div class="line">    dfs = []</div><div class="line">    <span class="keyword">for</span> i, df <span class="keyword">in</span> enumerate(html_df):</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            dfs.append(clean_df(df))</div><div class="line">        <span class="keyword">except</span>:</div><div class="line">            print(<span class="string">'**WARRN: cannot process DataFrame:\n'</span>, df)</div><div class="line"></div><div class="line">    df = pd.concat(dfs)</div><div class="line">    df = df.set_index(<span class="number">0</span>).drop([<span class="string">'合計'</span>,<span class="string">'公司代號'</span>], axis=<span class="number">0</span>)</div><div class="line">    df.columns = dfs[<span class="number">0</span>].loc[<span class="number">3</span>][<span class="number">1</span>:]</div><div class="line">    <span class="keyword">return</span> df</div><div class="line"></div></pre></td></tr></table></figure>
+<p>以上這段程式碼就是一個function可以在其它地方隨時呼叫，code真的超短，但這樣就夠了！</p>
+<p>接下來我們隨意讀取任意年月份（可以用民國或是西元都支援）：</p>
+<figure class="highlight python"><figcaption><span>月爬蟲</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 民國100年1月</span></div><div class="line">monthly_report(<span class="number">100</span>,<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># 西元2011年1月</span></div><div class="line">monthly_report(<span class="number">1991</span>,<span class="number">1</span>)</div><div class="line"></div></pre></td></tr></table></figure>
+<p>就會跑出以下的表格：</p>
+<center><img src="/超簡單用python抓取每月營收/table.png" alt="月營收狀況" title="月營收狀況"></center>
 
+<p>其實寫程式真的好簡單XDD，坊間財經軟體都好貴，不就是幾行code而已，是不是！<br>目前已經交完 日、月 的資料爬取了，下一次就是一季囉！</p>
+<p>當然還有各式各樣可以爬的東西，有時間再跟大家介紹～</p>
 
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
+            <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
+            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/超簡單台股每日爬蟲教學/" title="超簡單台股每日爬蟲教學" rel="bookmark">超簡單台股每日爬蟲教學</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Machine-Learning-表示：看季線最無用！/" title="Machine Learning 表示：看季線最無用！" rel="bookmark">Machine Learning 表示：看季線最無用！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/利用Machine-Learning-選股新手教學/" title="利用Machine Learning 選股新手教學" rel="bookmark">利用Machine Learning 選股新手教學</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/讓Machine-Learning幫你看財報！/" title="讓Machine Learning幫你看財報！" rel="bookmark">讓Machine Learning幫你看財報！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/比本益比更好用的本益比成長率！/" title="本益成長比真的越低越好！？" rel="bookmark">本益成長比真的越低越好！？</a></h3></div></li></ul>
+        </div>
+        <footer class="article-footer">
             
-            </div>
-            <div class="date"><time datetime="2017-10-07T02:45:40.000Z" itemprop="datePublished">2017-10-07</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（下）回測/">用杜邦分析加強你的選股技巧（下）回測</a>
-        </h1>
-    
 
-        <p class="article-excerpt">
-            今天介紹一個簡單至少近7年有效的方法，考慮杜邦分析的指標，排列組合後，我能得出的最好結果。
-選股條件：
-總資產轉換率 &gt; 0.3 （選擇獲利高的公司）
-ROE &gt; 5 （選擇能真正盈利的公司）
-PB &lt; 3 （選便宜一點的公司）
 
-發現 淨利率 莫名的失效，較難拿來選一小群股票，而 權益乘數 較也是，畢竟一家公司的槓桿程度，不代表公司體質好不好。我發現 總資產轉換率，是一個很好的
-        </p>
+
+    <a data-url="https://koreal6803.github.io/超簡單用python抓取每月營收/" data-id="cj9boj3ci001wfu9kvl3xn3sm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（中）淨利率/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/用杜邦分析加強你的選股技巧（中）淨利率/netprofitmargin-d.png)" alt="用杜邦分析加強你的選股技巧（中）淨利率" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）淨利率/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2017-10-05T21:07:14.000Z" itemprop="datePublished">2017-10-05</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（中）淨利率/">用杜邦分析加強你的選股技巧（中）淨利率</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            淨利率就是指企業從營業收入，真正收進口袋的錢：
-分佈圖以下是淨利率的分佈圖：
-
-
-
-
-
-數量
-平均
-標準差
-0%
-25%
-50%
-75%
-100%
-
-
-
-
-1693
--100
-2234
--76488.52
-0.24
-5.09
-11.56
-5458.2
-
-
-
-台灣有滿多企業沒有辦法賺錢！但有少數公司獲利滿驚人的，然而接近0的地方會產生一個很明顯的突波，看來滿多企業盡量讓自己的淨利大於0的，讓財報好看
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/小資族也可以使用的選股法！/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/小資族也可以使用的選股法！/distri.png)" alt="小資族也可以使用的選股法！" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/小資族也可以使用的選股法！/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
-            </div>
-            <div class="date"><time datetime="2017-10-04T09:40:42.000Z" itemprop="datePublished">2017-10-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/小資族也可以使用的選股法！/">小資族也可以使用的選股法！</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            其實這篇還是14年14倍的選股策略！一模一樣的方法XD，建議先複習一下，這篇只用本金10萬元開始，看會發生什麼問題！
-原諒今天我比較混水摸魚，下禮拜要博士班資格考～～
-附上每天操作紀錄，證明沒在虎爛XD會寫這篇是因為有人問上次那個14年14倍選股法，怎麼可能一次買50張股票，太扯了吧！被他這麼一說，突然我也覺得有點扯，該不會是回測寫錯，有bug吧！？
-目前又檢查了一次，應該是沒找到什麼問題。策略都
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（中）總資產轉換率/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/用杜邦分析加強你的選股技巧（中）總資產轉換率/totalassetturnover-d.png)" alt="用杜邦分析加強你的選股技巧（中）總資產轉換率" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）總資產轉換率/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2017-10-03T10:42:44.000Z" itemprop="datePublished">2017-10-03</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（中）總資產轉換率/">用杜邦分析加強你的選股技巧（中）總資產轉換率</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            總資產轉換率，是一個很有用的指標，可以觀察企業的營運能力，管理階層運用總資產創造營收的能力，也就是代表管理能力。複習一下公式：
-$$總資產轉換率=\frac{營收}{總資產}$$
-分佈圖這張分佈圖x軸是總資產轉換率，Y軸是有多少公司
-
-
-
-
-
-數量
-平均
-標準差
-0%
-25%
-50%
-75%
-100%
-
-
-
-
-1696
-0.19
-0.15
-0
-0.10
-0.17
-0.24
-3.11
-
-
-
-可以發現
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（中）權益乘數/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/用杜邦分析加強你的選股技巧（中）權益乘數/em-d.png)" alt="拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）權益乘數/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2017-10-02T13:53:41.000Z" itemprop="datePublished">2017-10-02</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（中）權益乘數/">拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天這篇繼續討論杜邦分析，其中的三個最重要的數字
-
-權益乘數
-總資產轉換率
-淨利率
-
-今天就來看一下台灣的公司在權益乘數是如何分佈的！
-權益乘數權益乘數，也就是企業負債的比率！負債是一個兩面刃，有很多錢的話，企業可以將錢轉化成自己的產品，並將產品賣出去，但風險隨之升高，萬一還不出錢可是會瞬間破產。
-
-
-
-
-
-數量
-平均
-標準差
-0%
-25%
-50%
-75%
-100%
-
-
-
-
-1703
-2.35
-2
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/用杜邦分析加強你的選股技巧（上）/" class="thumbnail">
-    
-    
-        <span style="background-image:url(images/thumbnail.jpeg)" alt="用杜邦分析加強你的選股技巧（上）" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（上）/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2017-10-01T14:01:09.000Z" itemprop="datePublished">2017-10-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/用杜邦分析加強你的選股技巧（上）/">用杜邦分析加強你的選股技巧（上）</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            前幾篇，我們連講了PE、PB、ROE，這些是價值型選股最重要、最最簡單的幾個要素，也寫了一些還不賴的歷史回測，10萬起始資金也能有模有樣。這篇將會更深入一層，介紹杜邦分析！
-學習回顧我們瞭解了幾個元素：
-
-投資人的錢
-企業的收益
-企業的股價
-
-3/1=PB、3/2=PE、2/1=ROE。（這邊是很大概的講，用詞比較不精確，請多包涵！）
-然而真正的企業有麼簡單嗎？應該不置於吧？
-更深入一點點今天介紹
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/買股票只考慮ROE是不夠的！/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/買股票只考慮ROE是不夠的！/eq.png)" alt="買股票只考慮ROE是不夠的！" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/買股票只考慮ROE是不夠的！/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
-            </div>
-            <div class="date"><time datetime="2017-09-30T11:28:20.000Z" itemprop="datePublished">2017-09-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/買股票只考慮ROE是不夠的！/">買股票只考慮ROE是不夠的！</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            昨天的文章介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。
-但這樣會有問題！因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了
-公式推導為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下：
-$$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/EPS跟ROE哪個比較好用？/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/EPS跟ROE哪個比較好用？/eps.png)" alt="EPS跟ROE哪個比較好用？" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/EPS跟ROE哪個比較好用？/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2017-09-29T11:51:12.000Z" itemprop="datePublished">2017-09-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/EPS跟ROE哪個比較好用？/">EPS跟ROE哪個比較好用？</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            投資人最喜歡看每股盈餘（EPS）來決定股票的好壞，股票雜誌也喜歡說某家公司EPS多好，但今天所做的回測發現，根據每季EPS選擇股票並不好！
-EPS 介紹EPS = 稅後淨利 / 在外流通股數
-間單來講就是投資人每投入一股，一個月可以賺多少錢回來。公司賺的錢越多，其EPS越大公司發行了很多股票，EPS越小
-但是這樣有個問題：公司賺多少錢不等於公司經營的好壞！例如：大公司掙錢肯定要比小公司多，但我們買
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/比策略狗還要安全的選股策略！/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/比策略狗還要安全的選股策略！/eq.png)" alt="14年14倍的選股策略！" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/比策略狗還要安全的選股策略！/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/量化投資/">量化投資</a>
-            </div>
-            <div class="date"><time datetime="2017-09-28T12:05:16.000Z" itemprop="datePublished">2017-09-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/比策略狗還要安全的選股策略！/">14年14倍的選股策略！</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            究竟如何買到好股票呢？用超簡單的財經指標就可以有14年約獲利14倍的策略，重點是可以躲過致命的金融海嘯、大盤崩跌！半年只要調動一次持股，甚至偶爾叫你半年不碰股票去放個假。當然此策略主要是教學用，建議自行調整後再真實投入市場。
-從統計的角度帶你一步一步設計量化策略一般的財經文章都是講講理論，算算公式，套幾個例子，就結束了。
-問題是，你怎麼知道那個例子是湊巧還是真的有用？
-FinLab跟一般的財經部落
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">第 2 頁，共 3 頁</span>
-        <a class="extend prev" rel="prev" href="/archives/">&laquo;</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">&raquo;</a>
-    </nav>
+    </section>
 
 
                         </div>
@@ -810,6 +321,19 @@ FinLab跟一般的財經部落
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/比本益比更好用的本益比成長率！/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">本益成長比真的越低越好！？</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -1012,11 +536,13 @@ FinLab跟一般的財經部落
     var disqus_shortname = 'koreal6803';
     
     
+    var disqus_url = 'https://koreal6803.github.io/超簡單用python抓取每月營收/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
