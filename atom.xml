@@ -49,7 +49,7 @@
     <link href="https://koreal6803.github.io/%E6%AF%94%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%88%90%E9%95%B7%E7%8E%87%EF%BC%81/"/>
     <id>https://koreal6803.github.io/比本益比更好用的本益比成長率！/</id>
     <published>2017-10-26T13:58:56.000Z</published>
-    <updated>2017-10-26T16:45:17.000Z</updated>
+    <updated>2017-10-28T19:31:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>很久之前有寫過 <strong>本益比</strong> 如何使用，<strong>本益比</strong> 就是看企業股價和獲利之間的關係，選擇小一點的本益比是可以幫助我們選到好股票的，但是每一家公司的本益比都有著天壤之別，所以必須要校正， <strong>本益成長比</strong> 就是一個本益比的進化版。<strong>本益成長比</strong> 不只可以看當下，還考慮了一家公司未來是否能繼續盈利一個指標。</p><p>以下是 <strong>本益成長比</strong> 的公式：</p><p>近4季稅後淨利年增率：(近4季稅後淨利總和 / 去年同期近4季稅後淨利總和 - 1) * 100%<br>本益成長比（PEG）：本益比/近4季稅後淨利年增率</p><p>看起來考慮了公司的成長，所以當PEG越小，代表 <strong>本益比</strong> 越小或是 <strong>淨利年增率</strong> 越大，對投資人來講都是好事情！</p><p>理論上是這樣，而實際上真的是這樣嗎？我們不妨接著看！</p><p>首先我們先算出當前所有上市上櫃其PEG的分佈圖：</p><center><img src="/比本益比更好用的本益比成長率！/dis.png" alt="PEG分佈圖" title="PEG分佈圖"></center><p>可以發現越接近0的越多公司，這種分佈還滿奇特的，我以為接近0的公司會很少才對，沒想到事實竟然跟我想像的相反，感覺好像很多公司的淨利年增率很猛！然而假如我哪裡做錯了，可以直接留言糾正我。</p><p>我們就將公司分成好幾組，每60天選擇PEG在只定範圍內的股票，就可以畫成下圖：</p><center><img src="/比本益比更好用的本益比成長率！/eq.png" alt="每組總資產隨時間變化圖" title="每組總資產隨時間變化圖"></center><p>簡直有夠亂…這說明了PEG難道無效？！感覺是真的很難分辨出越小越好，還是越大越好…，所以我們再畫另一張圖，更好的判斷PEG大小跟獲利的高低：</p><center><img src="/比本益比更好用的本益比成長率！/peg.png" alt="PEG變化與報酬率" title="PEG變化與報酬率"></center><p>圖中的X軸是PEG從小到大，而Y軸是平均獲利，我們發現，當PEG太大獲利真的很差。但當PEG非常小的時候，效果也非常不好。<br>PEG約等於0.5的時候，會有最好的獲利。</p><p>只能說PEG在台股可能不是非常的好用，PEG不能一味的追求越小越好，最好選擇PEG等於 0.5 左右的股票，歷史回測會有比較好的結果。</p><p>我覺得另一個可能的原因是，當PEG過小的時候，可能選入了一些短期內獲利爆起爆落的公司，其公司股價可能先盛後衰，造成投資上的虧損。但我不太確定，還必須做更多功課才能釐清。</p><p>總之以統計的結果來看，PEG並沒有特別顯著的功能，相較於其它介紹過的指標。也有可能是我實驗那裡做錯了，可以留言跟我討論，我會儘速更改！確保大家獲得正確的內容～！</p>]]></content>
     
@@ -61,6 +61,10 @@
       
     
     </summary>
+    
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
     
     
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
@@ -110,7 +114,7 @@
     <link href="https://koreal6803.github.io/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/"/>
     <id>https://koreal6803.github.io/絕無僅有的超強指標！/</id>
     <published>2017-10-23T18:24:24.000Z</published>
-    <updated>2017-10-23T22:34:41.000Z</updated>
+    <updated>2017-10-28T19:33:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天介紹一個滿常使用的指標，這套指標是我個人發明的，外面絕對看不到，然而我只講個大概，可以自己去實做，或是去拿來衡量個股。</p><p>上一篇中，機器學習發現月收入是一個很好的指標，而且不能只看最近一個月，要一次看好幾個月，其實跟我做出來的實驗結論一致。月收入真的非常好用！</p><p>今天介紹的這個指標，其概念是：希望某股月營收越來越高，之後股價越容易上漲。<br>但是很難定義越來越高，因為有時候會有一些不規則的地方，我們必須要先做一道手續讓它看起來是一個升冪排列，如下圖：</p><center><img src="/絕無僅有的超強指標！/example.png" alt="橘色為某某公司的月營收，藍色為平均之後的月營收" title="橘色為某某公司的月營收，藍色為平均之後的月營收"></center><p>原本的月營收為橘色，雖然看起來有上漲的趨勢，但是參差不齊，所以很難寫成程式判斷條件。<br>可以看到我們把每三個月做一次平均，可以發現曲線變得更平滑了，而且變成升冪排列！</p><p>所以我們就可以寫一個條件，叫做：藍色線段連續N個月越來越大。</p><p>這樣篩選出來的股票真的很猛！</p><p>下圖可以看出，假如我們持有這個方法篩選出來的股票，光是這個單一指標從2008年到現在有5倍的績效，我們可是只用了這個指標而已！算是滿難能可貴的。</p><center><img src="/絕無僅有的超強指標！/eq.png" alt="橘色為指標選股的歷史回測，藍色是大盤" title="橘色為指標選股的歷史回測，藍色是大盤"></center><p>而且選出來很多股票，還有很多過濾的空間！可以從中再繼續篩選股票，這個是我動不動就會幫策略加上的一個條件！</p><center><img src="/絕無僅有的超強指標！/ns.png" alt="橘色為指標選股的歷史回測，藍色是大盤" title="橘色為指標選股的歷史回測，藍色是大盤"></center><p>其中還可以再篩選，例如本益比、股價淨值比等等，可以自由搭配！</p><p>這個指標有兩個參數：</p><ol><li>當我們要平滑月營收曲線時，取最近的 M 個值平均，產生新的曲線</li><li>新的曲線連續 N 個月不斷變高。</li></ol><p>M 跟 N 是很難決定的，我這邊所使用的參數是 M=4 跟 N=5，是試過所有參數的結果。<br>當然大家不一定要用這麼數學的方式，每一支股票拿來慢慢算。最簡單的方法就是用眼睛感覺，股票月營收從大趨勢看，有沒有越來越高，偶爾的參差不齊可以忽略。</p><p>以上就是個人覺得超好用的，且網路上沒人在分享的方法！</p>]]></content>
     
@@ -124,6 +128,10 @@
     
     </summary>
     
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+    
     
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
@@ -136,7 +144,7 @@
     <link href="https://koreal6803.github.io/%E5%88%A9%E7%94%A8Machine-Learning-%E9%81%B8%E8%82%A1%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/"/>
     <id>https://koreal6803.github.io/利用Machine-Learning-選股新手教學/</id>
     <published>2017-10-20T10:58:23.000Z</published>
-    <updated>2017-10-21T16:09:24.000Z</updated>
+    <updated>2017-10-28T19:36:41.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近一直在弄Machine Learning，都快忘記寫blog了，哈！</p><p>其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！這邊只是給大家一個簡單的架構，可以自己去嘗試優化，讓它更聰明！以下是用mac或是linux的command line完成的，假如有任何錯誤或不懂的地方歡迎聯絡我喔～</p><center><img src="/利用Machine-Learning-選股新手教學/thumbnail.png" alt="我們今天用的是random forest model!" title="我們今天用的是random forest model!"></center><h3 id="1-取得資料"><a href="#1-取得資料" class="headerlink" title="1. 取得資料"></a>1. 取得資料</h3><p>只要寄到我的信箱，就會免費傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。</p><p>為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？絕對沒有要收集email的意思，最主要是因為這資料的來源比較複雜。</p><h3 id="2-架設環境"><a href="#2-架設環境" class="headerlink" title="2. 架設環境"></a>2. 架設環境</h3><p>假如你已經會使用python了，那可以直接跳過這個步驟，假如不會的話，可以照著下面的步驟完成：</p><ol><li>到<a href="https://www.python.org/downloads/" rel="external nofollow noopener noreferrer" target="_blank">官網</a>下載<strong>Python3</strong>，並且安裝</li><li>安裝<a href="https://pip.pypa.io/en/stable/" rel="external nofollow noopener noreferrer" target="_blank">pip</a></li><li>安裝<a href="https://virtualenv.pypa.io/en/stable/" rel="external nofollow noopener noreferrer" target="_blank">virtualenv</a></li></ol><h4 id="為何要安裝pip呢？"><a href="#為何要安裝pip呢？" class="headerlink" title="為何要安裝pip呢？"></a>為何要安裝pip呢？</h4><p>pip可以幫我們下載Machine Learning所需要的package（也就是python的libraries）。</p><h4 id="為何要安裝-virtualenv-呢？"><a href="#為何要安裝-virtualenv-呢？" class="headerlink" title="為何要安裝 virtualenv 呢？"></a>為何要安裝 <strong>virtualenv</strong> 呢？</h4><p><strong>virtualenv</strong>可以幫你產生project的環境，每一個project用自己的libraries，這樣比較不容易有衝突。</p><h3 id="3-建置project"><a href="#3-建置project" class="headerlink" title="3. 建置project"></a>3. 建置project</h3><p>首先，先用<strong>virtualenv</strong>創建project<br><figure class="highlight bash"><figcaption><span>create project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">virtualenv finance_ml</div><div class="line"><span class="built_in">cd</span> finance_ml</div></pre></td></tr></table></figure></p><p>接下來必須要開啟工作環境：<br><figure class="highlight plain"><figcaption><span>activate and deactivate project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">source bin/activate</div><div class="line">deactivate</div></pre></td></tr></table></figure></p><p>這邊有兩行，一行是開啟環境，一行是結束環境！假如你還要繼續，先不要輸入第二行。<br>將data.csv複製到當前資料夾，並且安裝python packages</p><figure class="highlight plain"><figcaption><span>install python packages</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pip install jupyter</div><div class="line">pip install pandas</div><div class="line">pip install sklearn</div><div class="line">pip install matplotlib</div></pre></td></tr></table></figure><h3 id="4-開工！"><a href="#4-開工！" class="headerlink" title="4. 開工！"></a>4. 開工！</h3><p>首先就是開啟jupyter notebook，並開一個python的環境<br><figure class="highlight plain"><figcaption><span>start notebook</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook</div></pre></td></tr></table></figure><br>這樣會開啟一個網頁版的GUI介面，只要新增python的notebook就可以用了！<br>接下來進入我們的主題：機器學習程式碼！</p><h4 id="A-讀入資料"><a href="#A-讀入資料" class="headerlink" title="A. 讀入資料"></a>A. 讀入資料</h4><p>這邊我們用 pandas 讀入所需要的資料，index_col可以設定要哪一個columns當作index。這邊的index選擇在 data.csv 中，第一個未命名的column。<br><figure class="highlight python"><figcaption><span>read data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line">data = pd.read_csv(<span class="string">'data.csv'</span>, index_col=<span class="string">'Unnamed: 0'</span>)</div></pre></td></tr></table></figure></p><h4 id="B-處理資料"><a href="#B-處理資料" class="headerlink" title="B.處理資料"></a>B.處理資料</h4><p>我們將資料分成三類，一類是跑回測用的dbacktest，另一類是機器學習用的dtraning，另外一個是traning完用來評估的dtest。</p><figure class="highlight python"><figcaption><span>process data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</div><div class="line"></div><div class="line"><span class="comment"># clear data 將爛資料去掉</span></div><div class="line">data.dropna(how=<span class="string">'any'</span>, inplace=<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="comment"># 選擇2015年以後的資料作為回測用</span></div><div class="line">dbacktest = data[data[<span class="string">'buy_date'</span>] &gt; <span class="string">'2015'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 將其於的資料再分成兩類：dtrain 跟 dtest</span></div><div class="line">dataTrainTest = data[data[<span class="string">'sell_date'</span>] &lt; <span class="string">'2015'</span>]</div><div class="line">dtrain, dtest = train_test_split(dataTrainTest, test_size=<span class="number">0.10</span>, random_state=<span class="number">42</span>)</div><div class="line"></div><div class="line"><span class="comment"># 設定我們的feature要用哪些</span></div><div class="line">features = data.columns[<span class="number">5</span>:<span class="number">-1</span>]</div></pre></td></tr></table></figure><h4 id="C-機器學習訓練資料"><a href="#C-機器學習訓練資料" class="headerlink" title="C. 機器學習訓練資料"></a>C. 機器學習訓練資料</h4><p>這邊我們用很簡單的<a href="https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm" rel="external nofollow noopener noreferrer" target="_blank">隨機森林</a>，來完成的，可以參考連結來學習怎麼樣調整參數，這應該算是機器學習中，前製作業最少的模型了！</p><figure class="highlight python"><figcaption><span>learning</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div><div class="line"></div><div class="line"><span class="comment"># 創建機器學習的model</span></div><div class="line">rf = RandomForestClassifier(n_estimators=<span class="number">10</span>, criterion=<span class="string">'gini'</span>, </div><div class="line">                            max_depth=<span class="keyword">None</span>, min_samples_split=<span class="number">2</span>, </div><div class="line">                            min_samples_leaf=<span class="number">1</span>, min_weight_fraction_leaf=<span class="number">0.0</span>, </div><div class="line">                            max_features=<span class="string">'auto'</span>, max_leaf_nodes=<span class="keyword">None</span>, </div><div class="line">                            bootstrap=<span class="keyword">True</span>, oob_score=<span class="keyword">False</span>, n_jobs=<span class="number">1</span>, </div><div class="line">                            random_state=<span class="keyword">None</span>, verbose=<span class="number">0</span>, warm_start=<span class="keyword">False</span>, </div><div class="line">                            class_weight=<span class="keyword">None</span>)</div><div class="line"><span class="comment"># 分類能 獲利 &gt; 10％ 的股票</span></div><div class="line">rf.fit(dtrain[features], dtrain[<span class="string">'獲利'</span>] &gt; <span class="number">1</span>)</div><div class="line"></div></pre></td></tr></table></figure><h4 id="D-結果"><a href="#D-結果" class="headerlink" title="D. 結果"></a>D. 結果</h4><p>你說這樣就結束了！？對呀結束了。其實machine learning要簡單真的就只是這樣而已！<br>接下來我們來看一下它預測的准不準：</p><figure class="highlight python"><figcaption><span>predict</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">result = rf.predict(dtest[features])</div><div class="line"></div><div class="line">print(<span class="string">'test data'</span>)</div><div class="line">print(<span class="string">'gain before filtered'</span>, dtest[<span class="string">'獲利'</span>].mean())</div><div class="line">print(<span class="string">'gain after filtered'</span>, dtest[<span class="string">'獲利'</span>][result].mean())</div><div class="line">print(<span class="string">'num stocks'</span>, sum(result), <span class="string">'/'</span>, len(dtest))</div><div class="line"></div><div class="line">result = rf.predict(dbacktest[features])</div><div class="line"></div><div class="line">print(<span class="string">'backtest data'</span>)</div><div class="line">print(<span class="string">'gain before filtered'</span>, dbacktest[<span class="string">'獲利'</span>].mean())</div><div class="line">print(<span class="string">'gain after filtered'</span>, dbacktest[<span class="string">'獲利'</span>][result].mean())</div><div class="line">print(<span class="string">'num stocks'</span>, sum(result), <span class="string">'/'</span>, len(dbacktest))</div><div class="line"></div></pre></td></tr></table></figure><p>假如一切順利就會看到以下結果：</p><center><img src="/利用Machine-Learning-選股新手教學/result.png" alt="結果" title="結果"></center><br>這邊的gain是指平均的報酬率，也就是所有股票的價格在賣出時是否賺錢，小於一就是虧，大於一就是賺。<br><br>結果看起來還滿猛的！竟然有接近7%的報酬率！<br><br>但真的是如此嗎？我們把它畫成隨著時間，本金成長的獲利圖：<br><br><figure class="highlight python"><figcaption><span>backtest</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">%matplotlib inline</div><div class="line"></div><div class="line">dbacktest[<span class="string">'預測'</span>] = pd.Series(result, index=dbacktest.index)</div><div class="line">dates = list(set(dbacktest[<span class="string">'buy_date'</span>]))</div><div class="line">dates.sort()</div><div class="line"></div><div class="line">history = []</div><div class="line"><span class="keyword">for</span> d <span class="keyword">in</span> dates:</div><div class="line">    history.append(dbacktest[(dbacktest[<span class="string">'buy_date'</span>] == d) &amp; (dbacktest[<span class="string">'預測'</span>])][<span class="string">'獲利'</span>].mean())</div><div class="line">    </div><div class="line">pd.Series(history, index=dates).cumprod().plot()</div></pre></td></tr></table></figure><br><br><center><img src="/利用Machine-Learning-選股新手教學/eq.png" alt="權益曲線" title="權益曲線"></center><p>發現其實沒有想像中那麼好。這是意料之中的結果，畢竟我們的learning時間才幾秒鐘，假如增加n_estimator這個變數，是否可以讓結果更好？假如使用Regression會不會更好？假如改變一下機器學習的參數、或修改一下features，是否可以選到更好的股票呢？就留給各位慢慢玩！以下是可以改進的地方：</p><ol><li>feature engineering：將features做修正、刪除、normalize等</li><li>篩選能獲利X%的股票</li><li>classification vs regression：可以兩種都試試看</li><li>不同的model，可以試試SVM、NN、XGBoost等等</li><li>不同的model都有可以調整超多參數來達到優化</li><li>利用early stop 來預防overfitting。</li></ol><p>我只是列出最基本的，還有很多可以玩的，這也是我這禮拜正在弄的東西，害我都沒時間寫網誌XDD</p><p>假如你有意外的發現，可以聯絡我，我可以幫你架設一個選股平台，我們再來討論怎麼分潤之類的，但前提是結果必須要比我的好才行XDDD。</p>]]></content>
     
@@ -149,6 +157,8 @@
       
     
     </summary>
+    
+      <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
@@ -164,7 +174,7 @@
     <link href="https://koreal6803.github.io/Machine-Learning-%E8%A1%A8%E7%A4%BA%EF%BC%9A%E7%9C%8B%E5%AD%A3%E7%B7%9A%E6%9C%80%E7%84%A1%E7%94%A8%EF%BC%81/"/>
     <id>https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/</id>
     <published>2017-10-15T16:10:12.000Z</published>
-    <updated>2017-10-16T13:23:42.000Z</updated>
+    <updated>2017-10-28T19:36:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。</p><p>Alpha Go 讓人類的圍棋可以到達新境界，機器學習中學習到一些它判斷財報的方法，今天來剖開上一篇教學中，機器學習的大腦，來看一下機器人如何選股！</p><center><img src="/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg" alt="機器學習" title="機器學習"></center><h3 id="Machine-Learning：季線無用！"><a href="#Machine-Learning：季線無用！" class="headerlink" title="Machine Learning：季線無用！"></a>Machine Learning：季線無用！</h3><p>機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。發現了一個很有趣的狀況，就是 “股價在季線上” 這個條件，權重超低！</p><p>假如你買賣股票也跟我的模型一樣，是根據每一季財報來決定，那機器學習的結果，表示不用看季線，因為幾乎沒啥用。</p><p>看季線還不如看近10週收盤價！發現把週收盤價納入參考，也可以增進效果。代表長線的技術指標是有用的！</p><h3 id="重要的財報數據"><a href="#重要的財報數據" class="headerlink" title="重要的財報數據"></a>重要的財報數據</h3><p>以下features的重要程度按順序排列：</p><ol><li><strong>月營收增長率</strong>很重要，而且不能只看一個月！</li><li><strong>當季ROE</strong>跟<strong>去年同季ROE</strong>很重要！</li><li><strong>EPS季增長率</strong>也很重要！</li><li><strong>總資產轉換率</strong> 較不重要，但也不賴啦！</li><li>其它，重要程度：<strong>股價淨值比</strong> = <strong>負債比率</strong> &gt; <strong>本益比</strong> = <strong>殖利率</strong></li><li><strong>週收盤價</strong>比上面的難用，但好像可以判斷一些東西，但一定是非線性的，所以不知道其中原理XD</li><li>重要程度趨近於0的：<strong>收盤 &gt; 季線</strong></li></ol><p>真的很少網站可以像這裡一樣，告訴你哪些是比較有用的數據，哪些比較難用，我們真的要跟機器來學習，一般人都會認為股價淨值比、本益比是最重要的，但是這邊做出了一個不一樣的結論：<strong>營收是否增加</strong>才是股票漲跌的關鍵。</p><p>這樣做的用意只是給大家一個概念，也不代表機器學習的結果就得奉為聖旨。</p><h3 id="機器學習評分財報"><a href="#機器學習評分財報" class="headerlink" title="機器學習評分財報"></a>機器學習評分財報</h3><p>機器學習模型最後會幫每個股票評分，總共100分，最低0分，50分就是他覺得股票不漲不跌，所以我們將每季評分分成四組，由低到高：</p><center><img src="/Machine-Learning-表示：看季線最無用！/dis.png" alt="歷史所有財報的評分" title="歷史所有財報的評分"></center><p>可以看到有很多的評分都在0分跟100分，因為分數算法的關係，100分的部分可以想成超過一百分！（國軍online）</p><p>之後會在將 0 跟 100 分再區分清楚一點～</p><h3 id="回測！"><a href="#回測！" class="headerlink" title="回測！"></a>回測！</h3><p>接下來我們將分數由低到高分4組，分別回測：</p><center><img src="/Machine-Learning-表示：看季線最無用！/eq.png" alt="回測" title="回測"></center><p>報酬率由低到高很漂亮的一字排開！分數低果然很差，而分數高真的很好。<br>可以看到50分以上的兩組，其獲利贏過大盤（黃色），而50以下的兩組，其獲利小於大盤。</p><h3 id="財報好的公司，抗跌！"><a href="#財報好的公司，抗跌！" class="headerlink" title="財報好的公司，抗跌！"></a>財報好的公司，抗跌！</h3><p>資優生組別（灰色）幾乎每季都漲！唯一一次跌是在2015年中，當時大盤大跌，但資優生那組並沒有跌非常多。</p><h3 id="穩定的報酬率"><a href="#穩定的報酬率" class="headerlink" title="穩定的報酬率"></a>穩定的報酬率</h3><p>大盤三年1.05倍，而高分財報組1.75倍，平均報酬率20％每年。</p><h3 id="別用這個策略亂放空！"><a href="#別用這個策略亂放空！" class="headerlink" title="別用這個策略亂放空！"></a>別用這個策略亂放空！</h3><p>從上圖也可以看到一個現象：不要亂放空，不然會慘慘的。就算財報在爛，最差的那組還是沒辦法一直跌，但財報最好的那組可以漲很多！</p><p>這裡用2015年以前的資料訓練，2015年以後拿來回測，所以這個應該就會是實際策略上線的狀況！（理論上XDD）</p><p>接下來會閉關幾天，把這個策略放在雲端，大家都可以去使用！</p>]]></content>
     
@@ -178,6 +188,8 @@
       
     
     </summary>
+    
+      <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
@@ -195,7 +207,7 @@
     <link href="https://koreal6803.github.io/%E8%AE%93Machine-Learning%E5%B9%AB%E4%BD%A0%E7%9C%8B%E8%B2%A1%E5%A0%B1%EF%BC%81/"/>
     <id>https://koreal6803.github.io/讓Machine-Learning幫你看財報！/</id>
     <published>2017-10-13T10:07:13.000Z</published>
-    <updated>2017-10-15T21:12:33.000Z</updated>
+    <updated>2017-10-28T19:36:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>機器學習不是我很專攻的領域，但幸好現在很多強大的package，可以直接使用，假如你不想深入開發model的話，只要把它當作黑箱子就好了，把它插上插頭，讓資料流進去、流出來。很簡單！</p><center><img src="/讓Machine-Learning幫你看財報！/thumbnail.jpeg" alt="機器學習" title="機器學習"></center><p>可以私下聯絡我，或留言給我email來拿到訓練資料，在坊間一定是要賣錢的，甚至連課程一起賣，一定會打著python、財經、大數據、機器學習、神經網路 等名號開課，一堂課5000元之類的。</p><p>但我想說算了啦，反正我就是個草根碼農XDD，希望大家可以一起互相切磋。</p><p>之前寫的策略，選股方式都是用條件拼湊的：</p>$$\mathbb{S}=\left\{ s\mid\text{ROE}_{s}>3\text{ and }\text{PB}_{s}<1.5\right\}$$ <p="">但是現在用machine learning的話，就會寫成這樣：<p></p>$$\mathbb{S}=\left\{ s\mid f(\text{ROE}_{s},\text{PB}_{s})=1\right\}$$<p>這邊用的是分類（classification），假如覺得會上漲，就是1，會下跌就是0。<br>上面的$f$ 就是機器學習的model，我們不太知道這個是個怎樣的函數，因為這個model不是一個公式，而是經過資料訓練而來的。這個簡單的範例只有2個features：ROE、PB。只是一個例子而已，下面會有更多的features：</p><h3 id="資料"><a href="#資料" class="headerlink" title="資料"></a>資料</h3><p>資料是從2010年底，到2017年，每次財報截止的隔天買入，並在下次財報截止前賣出。<br>至於features就是用<a href="/tags/歷史回測/">之前寫文章</a>，覺得好用的：</p><ul><li><strong>月營收</strong> 買入前12個月</li><li><strong>ROE</strong> 買入前12季財報</li><li><strong>本益比</strong> 買入前一天</li><li><strong>股價淨值比</strong> 買入前一天</li><li><strong>殖利率</strong> 最近一期</li><li>股價是否大於季線</li><li>股價是否大於半年線</li><li><strong>負債比率</strong> 買入前12季財報</li></ul><p>可以到這裡下載歷史資料，假如有人訓練的比我的好的話（應該滿簡單的），歡迎一起討論，我們可以一起合作建構一個初版的平台，或是有人想要train不同的feature，也歡迎留言給我。</p><p>除了上述的features，每筆資料還包含：</p><ul><li>stock_ID 股票的代號</li><li>buy_date 買入日期</li><li>buy_price 買入開盤價</li><li>sell_date 賣出開盤價</li><li>sell_price 賣出價格</li><li>gain 賣出價/買入價</li></ul><p>不確定這些歷史數據，有沒有錯，假如不放心，可以幫我稍微檢驗一下，另外，關於買賣日期，我是參考IFRS制度上市前後不同的財報截止日，然而有些企業遲交財報，就沒辦法了…所以會包含一點未來數據。</p><p><a href="http://www.rich01.com/2015/11/blog-post_28.html" rel="external nofollow noopener noreferrer" target="_blank">這篇文章</a>有講到財報遲交的公司，還是別買的好，而每年大約只有100檔家公司會遲交財報，以整體資料而言，未來數據應該不會太多（我覺得啦XD，但不知道資料科學家們怎麼看就是了）。</p><p>資料僅供學術發展，請勿用於商業用途！</p><h3 id="訓練model的方式"><a href="#訓練model的方式" class="headerlink" title="訓練model的方式"></a>訓練model的方式</h3><p>由於我想要弄一個快速的prototype，所以先使用random forest model，這樣就不用proprocessing了XDD</p><figure class="highlight python"><figcaption><span>Model</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div><div class="line">rf = RandomForestClassifier(n_estimators=<span class="number">500</span>, max_leaf_nodes=<span class="keyword">None</span>, class_weight=<span class="string">'balanced'</span>)</div></pre></td></tr></table></figure><p>以上是用sklearn裡的模型，連參數什麼都沒給，這樣的效果還OK了。訓練時，training data使用2014年以前的資料，而test data是2015年以後的資料</p><h3 id="結果太好了，我不敢相信…"><a href="#結果太好了，我不敢相信…" class="headerlink" title="結果太好了，我不敢相信…"></a>結果太好了，我不敢相信…</h3><p>以下是還沒篩選前的獲利分佈圖，這邊的獲利是用倍數來衡量，也就是 賣出價格/買入價格。可以看到，這是一個對稱於1的分佈圖，大於1（賺）跟小於1（賠）其實很接近，其平均值是在1.005左右，你有看到一藍藍的地方嗎？那就是篩選後的標的：</p><center><img src="/讓Machine-Learning幫你看財報！/dis1.png" alt="2015年後獲利分佈" title="2015年後獲利分佈"></center><p>下面我們把藍色的地方直接畫一張圖，可以發現篩選後，發現結果好很多，分佈偏向大於1，也就是很多的選擇是有獲利的！</p><center><img src="/讓Machine-Learning幫你看財報！/dis2.png" alt="2015年後篩選後獲利分佈" title="2015年後篩選後獲利分佈"></center><p>平均來到了1.10左右，代表每季買一群股票，平均來說會賺10％左右。且勝率來到了70.2%</p><p>對於這樣的結果，我感到有點難過，因為成果太好代表裡面一定有什麼問題，我還是抱著懷疑的態度，各位可以做最嚴格的檢驗，機器學習不是我的範疇，願意虛心受教，或是你還希望有什麼額外的features呢？我幾乎都可以幫你生成客製的test data喔！</p></1.5\right\}$$>]]></content>
     
@@ -208,6 +220,8 @@
       
     
     </summary>
+    
+      <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
@@ -223,7 +237,7 @@
     <link href="https://koreal6803.github.io/%E5%9B%9E%E6%B8%AC%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%B4%B9/"/>
     <id>https://koreal6803.github.io/回測框架介紹/</id>
     <published>2017-10-12T11:39:12.000Z</published>
-    <updated>2017-10-20T17:01:00.000Z</updated>
+    <updated>2017-10-28T19:55:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。</p><p>首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數：</p><p>$$d=1,…,n^{d}$$ </p><p>另外還有一群股票，是我們可能買入的對象</p><p>$$s=1,…,n^{s}$$</p><p>另外，而選股條件(constraints)叫做</p>$$c(d,s)\in\{0,1\}$$<p>假如某日 $d$ ，我們發現 $s$ 股票符合條件，那我們可以說$c(d,s)=1$，假如不符合條件，就是$c(d,s)=0$</p><p>為了方便，我們用一個向量來表示第 $d$ 天每支股票是否符合條件：</p><p>$$\boldsymbol{c}_{d}=[c(d, 1),…,c(d, n^s)]^T$$</p><p>然而我們只希望每 $n$ 天換一次手上的持股，不要每天都換，不然會花太多手續費，所以我們定義一個過 $n$ 天才檢查一次股票是否符合條件：</p>$$\boldsymbol{c}_{d}^{*}=\boldsymbol{c}_{\left\lfloor (d-1)/n\right\rfloor n+1}$$<p>於是，我們在$d$天晚上，用 $\boldsymbol{c}_{d}^{*}$ 來決定明天如何買股：</p>$$\boldsymbol{h}_{d+1} = \left(\frac{m+\boldsymbol{h}_{d}^{*T}\boldsymbol{p}_{d}}{\text{sum}(\boldsymbol{c}_{d}^{*})}\boldsymbol{c}_{d}^{*}\right)^T$$其中，$\boldsymbol{h}_{d+1}$ 代表明天每支股票要分多少錢， $\boldsymbol{h}_{d}^{*T}$ 代表今晚持股（單位為一張），而 $m$ 為帳戶資金 $\boldsymbol{p}_{d}$ 代表收盤價乘以1000。其實它只是看起來醜了點，概念很簡單，計算所有的資產，並且將資產平均分配給符合條件的股票。<p>以上的持股方式，就是一種完美分散的概念，是美好的想像，通常是blog中回測權益曲線的<strong>藍線</strong>，但現實生活中，資產不可能分散得如此完美，所以還必須算出可以買幾張股票：</p>$$\boldsymbol{h}_{d+1}^{*}=\left[\left\lfloor \frac{h_{d+1,1}}{1.1p_{d,1}}\right\rfloor ,...,\left\lfloor \frac{h_{d+1,n^{s}}}{1.1p_{d,n^{s}}}\right\rfloor \right]^{T}$$這邊有點要注意，$\boldsymbol{h}_{d+1}^{*}$ 的單位是張數，而原本的 $\boldsymbol{h}_{d+1}$ 的單位是投資金額。乘以 1.1 是為了在開盤時用漲停板買入。然而這條公式每天都會計算，所以在歷史回測中，每天的張數是浮動的，也就是說，某天我買了6張某股，隔天我可能會變成5張、或7張某股，都是有可能的。<p>考慮了張數的，更貼近真實情況，通常是blog中回測權益曲線的<strong>紅線</strong>。</p><h3 id="目前所知道的缺點"><a href="#目前所知道的缺點" class="headerlink" title="目前所知道的缺點"></a>目前所知道的缺點</h3><ol><li>長線還算堪用，但短線上這種直接平分資產的方式，手續費還是太高了，到底要怎麼降低手續費呢？有沒有辦法不要單純平均分散？可以做到智慧型的平均分散？</li><li>這個方法並沒有資產利用最大化（因為無條件捨去法），有沒有讓資產最大化、又可以考慮手續費的選股函數呢？</li></ol>]]></content>
     
@@ -237,7 +251,7 @@
     
     </summary>
     
-      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+      <category term="選股策略" scheme="https://koreal6803.github.io/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
   </entry>
@@ -274,7 +288,7 @@
     <link href="https://koreal6803.github.io/%E6%95%99%E4%BD%A0%E7%94%A8%E8%B2%A1%E5%A0%B1%E7%8B%97%E5%B7%B4%E8%8F%B2%E7%89%B9%E5%85%8D%E8%B2%BB%E9%81%B8%E8%82%A1/"/>
     <id>https://koreal6803.github.io/教你用財報狗巴菲特免費選股/</id>
     <published>2017-10-10T21:51:50.000Z</published>
-    <updated>2017-10-11T23:41:12.000Z</updated>
+    <updated>2017-10-28T19:40:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天來試試看<a href="https://statementdog.com/pick/tpe" rel="external nofollow noopener noreferrer" target="_blank">財報狗的巴菲特選股條件</a>，由於是免費的，任何人都可以使用他們的工具來篩選股票喔！用起來很方便，但是沒有歷史回測，不知道要怎麼選才好？繼續往下看吧！</p><h3 id="總共有九種條件、三個三個一組"><a href="#總共有九種條件、三個三個一組" class="headerlink" title="總共有九種條件、三個三個一組"></a>總共有九種條件、三個三個一組</h3><center><img src="/教你用財報狗巴菲特免費選股/conditions.png" alt="所有的條件" title="所有的條件"></center><p>但一眼看過去就知道，就算這九個全選，還是會有問題：無法選出便宜股！</p><p>沒差，今天就是給大家一個感覺，想說將 3 x 3 x 3 = 27種 回測都跑一遍，來看一下哪些條件適合幾年！</p><h3 id="回測方法"><a href="#回測方法" class="headerlink" title="回測方法"></a>回測方法</h3><p>回測每60天重新篩選一次股票，當即將減資時，會賣出股票，等到減資完才買回（方便做回測），假設資產平均分散，不計算手續費，以下是2010年到現在的獲利：</p><table><thead><tr><th>負債比率n年小於30％</th><th>ROE近n年大於15%</th><th>自由現金流n年大於0</th><th>2010到至今結果</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>1</td><td>1.81</td></tr><tr><td>1</td><td>1</td><td>3</td><td>1.74</td></tr><tr><td>1</td><td>1</td><td>5</td><td>1.76</td></tr><tr><td>1</td><td>3</td><td>1</td><td>1.83</td></tr><tr><td>1</td><td>3</td><td>3</td><td>1.80</td></tr><tr><td>1</td><td>3</td><td>5</td><td>1.76</td></tr><tr><td>1</td><td>5</td><td>1</td><td>1.99</td></tr><tr><td>1</td><td>5</td><td>3</td><td>1.97</td></tr><tr><td>1</td><td>5</td><td>5</td><td>1.91</td></tr><tr><td>3</td><td>1</td><td>1</td><td>1.98</td></tr><tr><td>3</td><td>1</td><td>3</td><td>1.93</td></tr><tr><td>3</td><td>1</td><td>5</td><td>1.92</td></tr><tr><td>3</td><td>3</td><td>1</td><td>2.04</td></tr><tr><td>3</td><td>3</td><td>3</td><td>2.00</td></tr><tr><td>3</td><td>3</td><td>5</td><td>1.94</td></tr><tr><td>3</td><td>5</td><td>1</td><td>1.84</td></tr><tr><td>3</td><td>5</td><td>3</td><td>1.82</td></tr><tr><td>3</td><td>5</td><td>5</td><td>1.75</td></tr><tr><td>5</td><td>1</td><td>1</td><td>2.00</td></tr><tr><td>5</td><td>1</td><td>3</td><td>1.95</td></tr><tr><td>5</td><td>1</td><td>5</td><td>1.94</td></tr><tr><td>5</td><td>3</td><td>1</td><td>2.07</td></tr><tr><td>5</td><td>3</td><td>3</td><td>2.12</td></tr><tr><td>5</td><td>3</td><td>5</td><td>2.06</td></tr><tr><td>5</td><td>5</td><td>1</td><td>1.80</td></tr><tr><td>5</td><td>5</td><td>3</td><td>1.83</td></tr><tr><td>5</td><td>5</td><td>5</td><td>1.77</td></tr></tbody></table><p>同期大盤 1.26倍</p><h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>以下是我的觀察：</p><ul><li>負債比率：越多年越有效</li><li>ROE：沒有趨勢</li><li>自由現金流：越多年越有效，但效果較不明顯</li></ul><p>然而只看這三種不同類型的條件，還是很難找到好的策略。<br>明天來看看其它的條件，能不能幫大家組合出好策略！<br>不知道大家有什麼想法？</p>]]></content>
     
@@ -287,7 +301,7 @@
     
     </summary>
     
-      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+      <category term="財報狗分析" scheme="https://koreal6803.github.io/categories/%E8%B2%A1%E5%A0%B1%E7%8B%97%E5%88%86%E6%9E%90/"/>
     
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
@@ -301,7 +315,7 @@
     <link href="https://koreal6803.github.io/%E5%83%B9%E5%80%BC%E8%82%A1%E5%9B%9E%E6%B8%AC/"/>
     <id>https://koreal6803.github.io/價值股回測/</id>
     <published>2017-10-09T14:31:56.000Z</published>
-    <updated>2017-10-10T16:39:43.000Z</updated>
+    <updated>2017-10-28T19:38:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天剛結束期中口試（資格考），在法國99％的博士班，都可以通過，但重點是通過成績如何。<br>今天總算是落幕了！可以好好來寫網誌，但今天還是有點想要休息一下，所以把網路上的方法拿來回測XD</p><h3 id="富貴滿盈價值股"><a href="#富貴滿盈價值股" class="headerlink" title="富貴滿盈價值股"></a>富貴滿盈價值股</h3><p>今天回測了 <a href="http://www.cmoney.tw/app/ItemContent.aspx?id=2032" rel="external nofollow noopener noreferrer" target="_blank">富貴滿盈價值股</a> 這個方法，名稱有點俗氣，但是回測效果算還不錯。</p><p>以下是此策略的選股條件：</p><ul><li>本益比 &lt; 15 </li><li>股價淨值比 &lt; 2</li><li>殖利率 &gt; 4</li><li>成交量大於50％的股票</li><li>收盤價 &gt; 60日均線</li><li>收盤價 &gt; 120日均線</li><li>EPS &gt; 前季EPS</li><li>月營收 &gt; 前年同月月營收</li></ul><h3 id="廢話不多說，看結果"><a href="#廢話不多說，看結果" class="headerlink" title="廢話不多說，看結果"></a>廢話不多說，看結果</h3><center><img src="/價值股回測/eq.png" alt="回測結果" title="回測結果"></center><p>紅色線跟藍色線，感覺已經講到爛了XD，下次乾脆直接寫一篇教學，以後都直接連到那個教學…。</p><center><img src="/價值股回測/ns.png" alt="不同種股票數量" title="不同種股票數量"></center><p>這個策略適用於200萬以上的股票池，比較小的我沒有試過，有人有興趣的話，可以留言給我，我會試試看假如最多選5個公司買，會有怎樣的結果。</p><center><img src="/價值股回測/dp.png" alt="下跌幅度" title="下跌幅度"></center><p>下跌幅度還算是滿大的，但下跌情況在2013年以後好很多，是因為改用IFRS的關係嗎？這個就不清楚啦！XD</p><h3 id="回測好，沒辦法用，看這個blog做啥？"><a href="#回測好，沒辦法用，看這個blog做啥？" class="headerlink" title="回測好，沒辦法用，看這個blog做啥？"></a>回測好，沒辦法用，看這個blog做啥？</h3><p>大家可以看，用怎樣的條件選股，可以產生好策略，看越多會發現，好用的數據就那些！</p><p>而且等之後有空，會有個平台放上免費的策略，且每天更新，就跟財報狗一樣。</p><p>為何跟財報狗一樣還要做？恩～因為無聊吧～證明自己的能力。</p><p>要是我一個人可以做出跟策略狗平台不相上下，那不是很猛嗎！？可以當作自己能力記錄的證明。</p><h3 id="希望能做友善且功能強大的平台"><a href="#希望能做友善且功能強大的平台" class="headerlink" title="希望能做友善且功能強大的平台"></a>希望能做友善且功能強大的平台</h3><p>不僅限於基本面，還有籌碼面跟技術面！還有行動助手幫忙提醒該換股了！<br>另外有些厲害的策略還是得收點錢，畢竟這個平台是我吃飯的傢伙呀XD</p><h3 id="之後再寫跟machine-learning有關的策略"><a href="#之後再寫跟machine-learning有關的策略" class="headerlink" title="之後再寫跟machine learning有關的策略"></a>之後再寫跟machine learning有關的策略</h3><p>根據我們現在的介紹，本人真的覺得 machine learning 在分析財報上，有很大的潛力，之後有時間來試試看！</p>]]></content>
     
@@ -315,7 +329,7 @@
     
     </summary>
     
-      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+      <category term="選股策略" scheme="https://koreal6803.github.io/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
@@ -333,7 +347,7 @@
     <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%8B%EF%BC%89%E5%9B%9E%E6%B8%AC/"/>
     <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（下）回測/</id>
     <published>2017-10-07T02:45:40.000Z</published>
-    <updated>2017-10-07T14:13:34.000Z</updated>
+    <updated>2017-10-28T19:32:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天介紹一個簡單至少近7年有效的方法，考慮杜邦分析的指標，排列組合後，我能得出的最好結果。</p><h3 id="選股條件："><a href="#選股條件：" class="headerlink" title="選股條件："></a>選股條件：</h3><ul><li>總資產轉換率 &gt; 0.3 （選擇獲利高的公司）</li><li>ROE &gt; 5 （選擇能真正盈利的公司）</li><li>PB &lt; 3 （選便宜一點的公司）</li></ul><p>發現 <strong>淨利率</strong> 莫名的失效，較難拿來選一小群股票，而 <strong>權益乘數</strong> 較也是，畢竟一家公司的槓桿程度，不代表公司體質好不好。我發現 <strong>總資產轉換率</strong>，是一個很好的條件，看企業是否有妥善運用自己的資產，能夠有盈利，回測的效果也比較穩定。</p><h3 id="歷史績效"><a href="#歷史績效" class="headerlink" title="歷史績效"></a>歷史績效</h3><center><img src="/用杜邦分析加強你的選股技巧（下）回測/eq.png" alt="權益曲線" title="權益曲線"></center><p>藍色是投資完美分配的狀況，而紅色是用100萬當作起始資金，考慮買賣張數。用此策略投資，資產穩定成長。</p><h3 id="適用於IFRS制度開始後"><a href="#適用於IFRS制度開始後" class="headerlink" title="適用於IFRS制度開始後"></a>適用於IFRS制度開始後</h3><center><img src="/用杜邦分析加強你的選股技巧（下）回測/ns.png" alt="每日持股數目" title="每日持股數目"></center><p>這個策略在2013之前，一次會買很多張股票，且獲利比較不穩定。我個人覺得可能是2013年時改為 IFRSs 後的關係。因為2013年後，企業可以用 “公允” 價值入帳。所以許多有很多資產的公司，淨值大幅成長。實際擁有的東西沒變，只因為遊戲規則改變，產生”看起來好像改善的”現象。</p><p>雖然淨值大幅成長，但假如營運狀況沒趕善，則<strong>總資產轉換率</strong>反而會降低，因此總資產轉換率高的公司，2013年後才被真正的篩選出來，也是此策略歷史績效開始變好的時機。</p>]]></content>
     
@@ -347,6 +361,10 @@
       
     
     </summary>
+    
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
     
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
@@ -364,7 +382,7 @@
     <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%AD%EF%BC%89%E6%B7%A8%E5%88%A9%E7%8E%87/"/>
     <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）淨利率/</id>
     <published>2017-10-05T21:07:14.000Z</published>
-    <updated>2017-10-06T01:42:20.000Z</updated>
+    <updated>2017-10-28T19:32:25.000Z</updated>
     
     <content type="html"><![CDATA[<p>淨利率就是指企業從營業收入，真正收進口袋的錢：</p><h3 id="分佈圖"><a href="#分佈圖" class="headerlink" title="分佈圖"></a>分佈圖</h3><p>以下是淨利率的分佈圖：</p><center><img src="/用杜邦分析加強你的選股技巧（中）淨利率/netprofitmargin-d.png" alt="淨利率分佈圖" title="淨利率分佈圖"></center><table><thead><tr><th>數量</th><th>平均</th><th>標準差</th><th>0%</th><th>25%</th><th>50%</th><th>75%</th><th>100%</th></tr></thead><tbody><tr><td>1693</td><td>-100</td><td>2234</td><td>-76488.52</td><td>0.24</td><td>5.09</td><td>11.56</td><td>5458.2</td></tr></tbody></table><p>台灣有滿多企業沒有辦法賺錢！但有少數公司獲利滿驚人的，然而接近0的地方會產生一個很明顯的突波，看來滿多企業盡量讓自己的淨利大於0的，讓財報好看一點。</p><h3 id="淨利率高的企業股價更容易成長！"><a href="#淨利率高的企業股價更容易成長！" class="headerlink" title="淨利率高的企業股價更容易成長！"></a>淨利率高的企業股價更容易成長！</h3><p>我們將淨利率分五組，由低到高，低的是深色，高的是黃色，每60天重新選擇一次，每一條曲線，代表我們長期投入，買入其中一組的股票，所獲得的報酬：</p><center><img src="/用杜邦分析加強你的選股技巧（中）淨利率/netprofitmargin.png" alt="淨利率分佈圖" title="淨利率分佈圖"></center><p>我們發現，投資淨利率高的公司，比較容易獲利！</p><h3 id="杜邦分析的指標終於說完了！"><a href="#杜邦分析的指標終於說完了！" class="headerlink" title="杜邦分析的指標終於說完了！"></a>杜邦分析的指標終於說完了！</h3><p>總結一下，目前杜邦分析的系列文章中，我們講了三個重要的指標：</p><ul><li>淨利率</li><li>總資產轉換率</li><li>權益乘數</li></ul><p>目前看起來，是<strong>淨利率</strong>跟<strong>總資產轉換率</strong>比較好用，可以利用這兩個指標選股！<br>而<strong>權益乘數</strong>其實是比較難用的，因為很難斷定會借貸的公司到底好不好。</p><p>而下一篇，我們會能不能整合三個指標，找出比較好的優質股～</p>]]></content>
     
@@ -379,6 +397,10 @@
     
     </summary>
     
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+    
     
       <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
     
@@ -391,7 +413,7 @@
     <link href="https://koreal6803.github.io/%E5%B0%8F%E8%B3%87%E6%97%8F%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%9A%84%E9%81%B8%E8%82%A1%E6%B3%95%EF%BC%81/"/>
     <id>https://koreal6803.github.io/小資族也可以使用的選股法！/</id>
     <published>2017-10-04T09:40:42.000Z</published>
-    <updated>2017-10-04T23:44:02.000Z</updated>
+    <updated>2017-10-28T19:38:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>其實這篇還是<a href="/比策略狗還要安全的選股策略！/">14年14倍的選股策略！</a>一模一樣的方法XD，建議先複習一下，這篇只用本金10萬元開始，看會發生什麼問題！</p><p>原諒今天我比較混水摸魚，下禮拜要博士班資格考～～</p><h3 id="附上每天操作紀錄，證明沒在虎爛XD"><a href="#附上每天操作紀錄，證明沒在虎爛XD" class="headerlink" title="附上每天操作紀錄，證明沒在虎爛XD"></a>附上每天操作紀錄，證明沒在虎爛XD</h3><p>會寫這篇是因為有人問上次那個14年14倍選股法，怎麼可能一次買50張股票，太扯了吧！<br>被他這麼一說，突然我也覺得有點扯，該不會是回測寫錯，有bug吧！？</p><p>目前又檢查了一次，應該是沒找到什麼問題。<br><strong>策略都是考慮真實買賣（本金、張數、手續費都考慮）</strong>，至於怎麼考慮，下面會更詳細的跟大家介紹。</p><p>拉到文章下方，有歷史回測的每天操作紀錄，以示我真的沒在虎爛XD，但交易這種東西，還是自己對自己負責。</p><p>假如歷史紀錄有問題，也歡迎隨時聯絡我喔（左上角有信箱和FB），很樂意跟大家討論。</p><h3 id="為何一次買這麼多股票？"><a href="#為何一次買這麼多股票？" class="headerlink" title="為何一次買這麼多股票？"></a>為何一次買這麼多股票？</h3><p>因為我想利用空間與時間選股！</p><p>做回測到現在的心得是，自己真的是凡人，無法預測股票是漲是跌，要用時間跟空間來換取你的零用錢！</p><p>時間，就是指長線，利用一兩個月，讓基本面很好的股票發酵。<br>空間，就是指分散風險，投資多支股票，買到雷股時，才不致於太慘。</p><h3 id="Q-amp-A-時間"><a href="#Q-amp-A-時間" class="headerlink" title="Q&amp;A 時間"></a>Q&amp;A 時間</h3><h4 id="1-這個策略是上市上櫃大於100家時，只挑選上市收盤大於10元的買，上櫃的不考慮對嗎"><a href="#1-這個策略是上市上櫃大於100家時，只挑選上市收盤大於10元的買，上櫃的不考慮對嗎" class="headerlink" title="1.這個策略是上市上櫃大於100家時，只挑選上市收盤大於10元的買，上櫃的不考慮對嗎?"></a>1.這個策略是上市上櫃大於100家時，只挑選上市收盤大於10元的買，上櫃的不考慮對嗎?</h4><p>YES</p><h4 id="2-假設上市上櫃的便宜股大於100家公司，選擇收盤價10元以上的上市公司，100萬真的夠嗎"><a href="#2-假設上市上櫃的便宜股大於100家公司，選擇收盤價10元以上的上市公司，100萬真的夠嗎" class="headerlink" title="2.假設上市上櫃的便宜股大於100家公司，選擇收盤價10元以上的上市公司，100萬真的夠嗎?"></a>2.假設上市上櫃的便宜股大於100家公司，選擇收盤價10元以上的上市公司，100萬真的夠嗎?</h4><p>這些雞蛋水餃股特別便宜，下面圖一是該策略所有買入股票的價格分佈圖</p><center><img src="/小資族也可以使用的選股法！/distri.png" alt="歷史績效圖" title="歷史績效圖"></center><p>幾乎都是在10～20元，然而程式沒有設定最低買入手續費20元，但低頻率的投資應該不會造成太大的影響</p><h4 id="3-若是像2008年一樣，一堆便宜股票100萬如何足以購買符合條件的股票呢"><a href="#3-若是像2008年一樣，一堆便宜股票100萬如何足以購買符合條件的股票呢" class="headerlink" title="3.若是像2008年一樣，一堆便宜股票100萬如何足以購買符合條件的股票呢?"></a>3.若是像2008年一樣，一堆便宜股票100萬如何足以購買符合條件的股票呢?</h4><p>上一篇起始資金100萬，但到2008年已經有200萬了，這個時候買50支雞蛋水餃股是沒問題的！</p><p>為了體現買不動這個問題，另外跑了只用10萬元投資的回測：</p><center><img src="/小資族也可以使用的選股法！/eq.png" alt="歷史績效圖" title="歷史績效圖"></center><p>紅色是用10萬起始資金，並考慮手續費；而藍色則是資產完美平均、不算手續費。結論是：用10萬買當起始資金也行，但獲利倍數會減少：</p><ul><li>原本100萬起始的話，參考上篇文章，到今天可以有14倍獲利；</li><li>然而現在用10萬當起始資金，考慮真實情況（上圖紅線），到今天只有8倍，但權益曲線很相似！</li><li>假如可以完美平均分散，不真實情況（上圖藍線），不管起始資金多少，都能有近16倍獲利。</li></ul><h4 id="接下來就回答關鍵問題：2009年這麼多股票，錢那麼少，怎麼買呢？"><a href="#接下來就回答關鍵問題：2009年這麼多股票，錢那麼少，怎麼買呢？" class="headerlink" title="接下來就回答關鍵問題：2009年這麼多股票，錢那麼少，怎麼買呢？"></a>接下來就回答關鍵問題：2009年這麼多股票，錢那麼少，怎麼買呢？</h4><p>這邊的策略是：假設n張股票要買，將總資產分成n份，買不起就不買！</p><p>就這麼簡單，所以接下來，用十萬當起始資金，看每日持股數目，就會更瞭解：</p><center><img src="/小資族也可以使用的選股法！/ns.png" alt="歷史績效圖" title="歷史績效圖"></center><p>上圖可以發現，在2009年時，因為股票太多，藍色線建議購買超過50支股票，而紅線因為本金不足幾乎沒有購買任何股票。</p><p><strong>策略都是考慮真實買賣（本金、張數、手續費都考慮）</strong>，個人覺得這個策略，是有機會真倉使用，然而我自己沒在用就是了XD，這是某天好玩做出來的結果。</p><p>所以十萬理論上也是可以的，無論多少錢，回測程式都會將資產分n份，再等比例買入每一支不同的股票！</p><h4 id="4-能否列出在符合條件的年度，各買一張需要多少本金，根據此策略計算結果是符合條件的上市公司各買一張嗎-或是根據您的統計是以資金平均分配在各家公司的結果"><a href="#4-能否列出在符合條件的年度，各買一張需要多少本金，根據此策略計算結果是符合條件的上市公司各買一張嗎-或是根據您的統計是以資金平均分配在各家公司的結果" class="headerlink" title="4.能否列出在符合條件的年度，各買一張需要多少本金，根據此策略計算結果是符合條件的上市公司各買一張嗎?或是根據您的統計是以資金平均分配在各家公司的結果?"></a>4.能否列出在符合條件的年度，各買一張需要多少本金，根據此策略計算結果是符合條件的上市公司各買一張嗎?或是根據您的統計是以資金平均分配在各家公司的結果?</h4><p>附上歷史操作數據</p><p>連結一，買股票歷史紀錄：<br><a href="https://drive.google.com/file/d/0B440aEV9RNPTX2xTWUd0ZVF6Unc/view" rel="external nofollow noopener noreferrer" target="_blank">https://drive.google.com/file/d/0B440aEV9RNPTX2xTWUd0ZVF6Unc/view</a><br>連結二，每天操作的詳細記錄：<br><a href="https://drive.google.com/file/d/0B440aEV9RNPTMGpuZFNfLURwa0k/view" rel="external nofollow noopener noreferrer" target="_blank">https://drive.google.com/file/d/0B440aEV9RNPTMGpuZFNfLURwa0k/view</a></p><p>這個策略只是我學習路上，有一點小成果，跟大家分享而已，我一定也有很多不足，要向大家學習的，有什麼問題歡迎留言一起討論喔～～</p>]]></content>
     
@@ -406,7 +428,7 @@
     
     </summary>
     
-      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+      <category term="選股策略" scheme="https://koreal6803.github.io/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
@@ -426,7 +448,7 @@
     <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%AD%EF%BC%89%E7%B8%BD%E8%B3%87%E7%94%A2%E8%BD%89%E6%8F%9B%E7%8E%87/"/>
     <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）總資產轉換率/</id>
     <published>2017-10-03T10:42:44.000Z</published>
-    <updated>2017-10-03T13:36:44.000Z</updated>
+    <updated>2017-10-28T19:32:30.000Z</updated>
     
     <content type="html"><![CDATA[<p>總資產轉換率，是一個很有用的指標，可以觀察企業的營運能力，管理階層運用總資產創造營收的能力，也就是代表管理能力。複習一下公式：</p><p>$$總資產轉換率=\frac{營收}{總資產}$$</p><h3 id="分佈圖"><a href="#分佈圖" class="headerlink" title="分佈圖"></a>分佈圖</h3><p>這張分佈圖x軸是總資產轉換率，Y軸是有多少公司</p><center><img src="/用杜邦分析加強你的選股技巧（中）總資產轉換率/totalassetturnover-d.png" alt="總資產轉換率分佈圖" title="總資產轉換率分佈圖"></center><table><thead><tr><th>數量</th><th>平均</th><th>標準差</th><th>0%</th><th>25%</th><th>50%</th><th>75%</th><th>100%</th></tr></thead><tbody><tr><td>1696</td><td>0.19</td><td>0.15</td><td>0</td><td>0.10</td><td>0.17</td><td>0.24</td><td>3.11</td></tr></tbody></table><p>可以發現大部分的公司的總資產轉換率，落在17％左右，可以用這個值來判斷公司的營運是否有效率。<br>我們之後的回測，會利用總資產轉換率來找出優質股，在大盤下跌時，優質股比較不容易下跌。</p><h3 id="回測"><a href="#回測" class="headerlink" title="回測"></a>回測</h3><p>我們把全台灣企業，大致上分成5組來做歷史回測，每60天換一次股票，黑色到黃色代表總資產報酬率由低到高，看他們的平均漲跌幅：</p><center><img src="/用杜邦分析加強你的選股技巧（中）總資產轉換率/totalassetturnover.png" alt="總資產轉換率分佈圖" title="總資產轉換率分佈圖"></center><p>投資淺色會比深色組別的股票還要好，代表投資體質好的公司，真的比差的公司還要穩定很多！下次選股前不妨看一下總資產轉換率，來決定該股票適不適合買入！尤其適合同產業的公司互相比較，更能看出好壞！</p><p>另外也有一個有趣的現象，深黑色有時候也會意外變成第一，這方面我至又不知到為什麼了XD，是因為有些公司還沒開始盈利但前景看好？ 除了深黑色那條線以外，大致上還算符合深到淺，低到高的一個走勢。</p><h3 id="人即是公司"><a href="#人即是公司" class="headerlink" title="人即是公司"></a>人即是公司</h3><p>總資產轉換率也可以拿來評量一個人，想像某人資產有100萬，而他每個月的開銷是：</p><p>吃飯、水電生活等，花了3萬元，而每天上班月入6萬元</p><p>看起來生活水平還算優渥！</p><p>但假如把他當作一家公司，則他的總資產轉換率是6/100每個月，就這麼讓97萬躺在銀行裡任由通貨膨脹摧殘，要是他可以利用存款，投資自己來幫自己的人生滾雪球，那一定會產生很厲害的複利效應！</p><p>我自己是沒有辦法忍受存款在那裡閒涼，所以才編寫投資程式：利用已有資產來提高資產轉換率！</p><h3 id="從總資產轉換率看買房這件事"><a href="#從總資產轉換率看買房這件事" class="headerlink" title="從總資產轉換率看買房這件事"></a>從總資產轉換率看買房這件事</h3><p>要怎麼決定你要不要買房子呢？也可以從資產轉換率來思考，首先第一個迷思就是<strong>買了房，總資產會變少</strong>。</p><p>其實資產不會變少的，因為我們只是拿錢換房子，房子也算資產的一部份（假如不貸款）。</p><p>但假如你很會投資，那買了房，會變得沒錢理財，會導致總資產轉換率會瞬間大減，任憑你投資技巧再好，投資淨利率在高，乘以總資產轉換率後，到頭來你的個人ROE還是會大衰退！</p><p>有人說房租那麼貴，還不如直接買房，每月繳貸款也比房租高一點點而已。</p><p>但對於善於投資的人來說，傷害最大的，不是房貸，而是頭期款！將你的金錢瞬間換成磚頭！XD</p><p>滾雪球是很驚人的，然而從一個大雪球開始滾跟小雪球開始滾，會差很多，可以參考<a href="http://www.rich01.com/2017/07/5-422.html" rel="external nofollow noopener noreferrer" target="_blank">Mr. Market的文章</a>算一下自己什麼時候買房合適。</p><p>當然假如買房也是一種投資，那就另當別論！</p><p>有點離題了…拉回來一下</p><h3 id="總之提高個人總資產轉換率的好方法"><a href="#總之提高個人總資產轉換率的好方法" class="headerlink" title="總之提高個人總資產轉換率的好方法"></a>總之提高個人總資產轉換率的好方法</h3><p><strong>投資自己</strong>也是很好的選擇，例如增進第一專長，學第二專長，學習如何創業，都是我正在努力的目標！大家有什麼好方法提高自己的總資產轉換率呢？每天來看一下FinLab也是一個很好的投資喔！（自己打廣告XD）</p>]]></content>
     
@@ -440,6 +462,10 @@
       
     
     </summary>
+    
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
     
     
       <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
@@ -455,7 +481,7 @@
     <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%AD%EF%BC%89%E6%AC%8A%E7%9B%8A%E4%B9%98%E6%95%B8/"/>
     <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）權益乘數/</id>
     <published>2017-10-02T13:53:41.000Z</published>
-    <updated>2017-10-03T21:43:59.000Z</updated>
+    <updated>2017-10-28T19:32:19.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天這篇繼續討論杜邦分析，其中的三個最重要的數字</p><ol><li>權益乘數</li><li>總資產轉換率</li><li>淨利率</li></ol><p>今天就來看一下台灣的公司在權益乘數是如何分佈的！</p><h3 id="權益乘數"><a href="#權益乘數" class="headerlink" title="權益乘數"></a>權益乘數</h3><p>權益乘數，也就是企業負債的比率！負債是一個兩面刃，有很多錢的話，企業可以將錢轉化成自己的產品，並將產品賣出去，但風險隨之升高，萬一還不出錢可是會瞬間破產。</p><center><img src="/用杜邦分析加強你的選股技巧（中）權益乘數/em-d.png" alt="權益乘數分佈圖" title="權益乘數分佈圖"></center><table><thead><tr><th>數量</th><th>平均</th><th>標準差</th><th>0%</th><th>25%</th><th>50%</th><th>75%</th><th>100%</th></tr></thead><tbody><tr><td>1703</td><td>2.35</td><td>2.78</td><td>-39.23</td><td>1.43</td><td>1.77</td><td>2.32</td><td>33.70</td></tr></tbody></table><p>仔細看一看竟然還有負數，哈哈也太誇張了吧！</p><p>還記得上次跟各位說明，權益乘數 = 總資產 / 股東權益</p><p>我更深入檢查下發現，台灣總共有8家公司的權益乘數是負數，其中並不是總資產是負的，而是股東權益是負的！代表全體投資人還必須多付一些錢才能把公司的債還清，滿可怕的XD！</p><h3 id="負債沒想像中的這麼不好！"><a href="#負債沒想像中的這麼不好！" class="headerlink" title="負債沒想像中的這麼不好！"></a>負債沒想像中的這麼不好！</h3><p>接下來我們一樣把所有的公司分成五組，去看看每季買入它們的歷史績效！</p><center><img src="/用杜邦分析加強你的選股技巧（中）權益乘數/em.png" alt="權益乘數回測，由黑到黃分別代表權益成數由低到高" title="權益乘數回測，由黑到黃分別代表權益成數由低到高"></center><p>可以發現負債越多的那組，其實並沒有想像中的那麼可怕，，在歷史績效中，算是高段班！畢竟會使用負債來增加自己的收入，也是公司的能力一部份，不是嗎？</p><p>反而可以看到，槓桿最小那組，都是吊車尾，就算去掉了負的那群，實驗結果還是吊車尾！代表不會用槓桿的公司，似乎在業績表現上也會比較無法那麼亮眼。</p><h3 id="會善用槓桿的人更厲害"><a href="#會善用槓桿的人更厲害" class="headerlink" title="會善用槓桿的人更厲害"></a>會善用槓桿的人更厲害</h3><p>人活在這個複雜的世界，本來就應該學會如何安全的運用槓桿，才能達到事半功倍之效果。這邊指的不是投資的槓桿，是指<a href="https://buzzorange.com/techorange/2017/07/21/life-leverage-get-more-done-in-less-time/" rel="external nofollow noopener noreferrer" target="_blank">生活中的各種槓桿</a>，阿基米德說：</p><blockquote><p>給我一個支點，我可以舉起整個地球。</p></blockquote>]]></content>
     
@@ -475,6 +501,10 @@
     
     </summary>
     
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+    
     
       <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
     
@@ -487,7 +517,7 @@
     <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
     <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（上）/</id>
     <published>2017-10-01T14:01:09.000Z</published>
-    <updated>2017-10-01T14:26:01.000Z</updated>
+    <updated>2017-10-28T19:32:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>前幾篇，我們連講了PE、PB、ROE，這些是價值型選股最重要、最最簡單的幾個要素，也寫了一些還不賴的歷史回測，10萬起始資金也能有模有樣。這篇將會更深入一層，介紹杜邦分析！</p><h3 id="學習回顧"><a href="#學習回顧" class="headerlink" title="學習回顧"></a>學習回顧</h3><p>我們瞭解了幾個元素：</p><ol><li>投資人的錢</li><li>企業的收益</li><li>企業的股價</li></ol><p>3/1=PB、3/2=PE、2/1=ROE。<br>（這邊是很大概的講，用詞比較不精確，請多包涵！）</p><p>然而真正的企業有麼簡單嗎？應該不置於吧？</p><h3 id="更深入一點點"><a href="#更深入一點點" class="headerlink" title="更深入一點點"></a>更深入一點點</h3><p>今天介紹比較複雜名詞：杜邦分析（DuPont Analysis）！杜邦分析將財務報表上的精華濃縮成三個數字，分別代表：</p><ul><li>企業的槓桿</li><li>企業銷售能力</li><li>企業賣出一樣商品是否賺錢</li></ul><p>這東西有沒有用？我還不知道XD，想說一邊介紹，一邊做回測給大家看。</p><h3 id="杜邦分析超無腦介紹"><a href="#杜邦分析超無腦介紹" class="headerlink" title="杜邦分析超無腦介紹"></a>杜邦分析超無腦介紹</h3><p>企業的金流，跟個人金流是一樣的道理，所以我用一個很簡單的例子介紹：</p><p>假如你有2萬元，跟爸媽借了1萬元買了熱賣的iphone X（3萬），再用4萬元的高價賣給別人，淨賺1萬。</p><p>例子結束了！就是這麼簡單。</p><p>首先我們先來計算一下ROE，因為你投入了2萬，淨賺1萬，所以ROE是1/2，但ROE像是故事的開頭跟結尾相除，中間的過程完全被省略了，杜邦分析可以補足：</p><p>首先，因為你原本有2萬借了1萬，槓桿是(2+1)/2 = 3/2倍，通常命名為<strong>權益乘數</strong><br>再來，你用3萬換4萬，<strong>總資產轉換率</strong>是4/3倍<br>最後，獲得的4萬中，其實只賺了其中的1萬，所以<strong>淨利率</strong>是1/4</p><p>所以最後$\text{ROC}=\frac{1}{4}\times\frac{4}{3}\times\frac{3}{2}=\frac{1}{2}$</p><p>當然這只是個超簡單的例子，稅呀什麼都通通沒管，將以上的數值寫成公式：</p><p>$$\text{ROE}=\text{淨利率}\times\text{總資產週轉率}\times\text{權益乘數}=\frac{\text{稅後淨利}}{\text{營收}}\times\frac{\text{營收}}{\text{總資產}}\times\frac{\text{總資產}}{\text{股東權益}}$$</p><p>股東權益，就是所有投資人的錢，在這個例子中就是你自己的錢(2萬)<br>而總資產最主要包含：借貸的錢（1萬）、你本來的錢（2萬）<br>營收則是（4萬），稅後淨利是你真正真正獲利的部分（1萬）</p><p>明天就來回測給大家看～明天見吧！</p>]]></content>
     
@@ -501,6 +531,10 @@
     
     </summary>
     
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+    
     
       <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
     
@@ -513,7 +547,7 @@
     <link href="https://koreal6803.github.io/%E8%B2%B7%E8%82%A1%E7%A5%A8%E5%8F%AA%E8%80%83%E6%85%AEROE%E6%98%AF%E4%B8%8D%E5%A4%A0%E7%9A%84%EF%BC%81/"/>
     <id>https://koreal6803.github.io/買股票只考慮ROE是不夠的！/</id>
     <published>2017-09-30T11:28:20.000Z</published>
-    <updated>2017-09-30T13:34:07.000Z</updated>
+    <updated>2017-10-28T19:33:34.000Z</updated>
     
     <content type="html"><![CDATA[<p><a href="/EPS跟ROE哪個比較好用？/">昨天的文章</a>介紹了ROE，是一個企業用資本賺錢的能力，可以用ROE找出會賺錢的公司，買入其股票。</p><p>但這樣會有問題！<br>因為ROE跟價格並沒有連動！也就是你無法確認這家公司股價漲過頭了</p><h3 id="公式推導"><a href="#公式推導" class="headerlink" title="公式推導"></a>公式推導</h3><p>為了更深入瞭解ROE，並且找一個適合的指標跟他搭配，我們再把ROE的公式拿出來討論一下：</p><p>$$\text{ROE}=\frac{\text{淨利}}{\text{股東權益}}=\frac{\text{市值/股東權益}}{\text{市值/淨利}}=\frac{\text{股價淨值比}\text{PB}}{\text{本益比PE}}$$</p><p>由上述公式可以發現，ROE又可以跟PB、PE扯上關係。首先先來看PE：</p><p>PE 越小造成 ROE 越大，而兩者都代表公司的獲利很好，可以買入！很好的現象</p><p>但接下來看到PB的時候，奇妙的是情就發生了：</p><p>PB越大會影響ROE也會越大，前者大說明股票被高估，後者越大說明公司投資報酬率很好，於是我們可以得到一個結論：</p><blockquote><p><strong>ROE高並不代表其價格值得買入！</strong></p></blockquote><h3 id="歷史回測"><a href="#歷史回測" class="headerlink" title="歷史回測"></a>歷史回測</h3><p>由以上結論我們可以發現，除了用ROE來選擇投資報酬率高的公司外，我們還必須利用PB選擇便宜股。</p><table><thead><tr><th>策略名稱</th><th>策略一（只考慮ROE）</th><th>策略二（考慮ROE跟PB）</th></tr></thead><tbody><tr><td>選股條件</td><td>ROE  &gt; 5</td><td>同策略一</td></tr><tr><td></td><td>收盤價 &gt; 10</td><td>PB &lt; 1.2</td></tr></tbody></table><p>每60天更新一次持股，不計算手續費：</p><center><img src="/買股票只考慮ROE是不夠的！/eq.png" alt="獲利，策略一為紅色，策略二為藍色，大盤為灰色" title="獲利，策略一為紅色，策略二為藍色，大盤為灰色"></center><p>其中策略一每次都把資產分散在100支股票左右，而策略二把資產分散在平均為10支股票左右。</p><center><img src="/買股票只考慮ROE是不夠的！/nstock.png" alt="股票持有數量，策略一為紅色，策略二為藍色" title="股票持有數量，策略一為紅色，策略二為藍色"></center><p>策略二每次持有的股票非常少且獲利更勝策略一！</p><p>每次買入個位數股票，小資族會比較好投資，當然我真的不知道有沒有做錯，所以我將策略二的持股歷史紀錄供大家下載：<a href="/買股票只考慮ROE是不夠的！/history_roe_pb.csv">csv檔</a></p><h3 id="金融海嘯資產少60％！"><a href="#金融海嘯資產少60％！" class="headerlink" title="金融海嘯資產少60％！"></a>金融海嘯資產少60％！</h3><p>但這個策略也是教學用，大家不要輕易使用，畢竟在金融海嘯時，其虧所來到了非常驚人的60％。如何判斷大盤是否大跌，可以參考之前很多篇的介紹。</p><h3 id="策略二今天持股"><a href="#策略二今天持股" class="headerlink" title="策略二今天持股"></a>策略二今天持股</h3><p>策略二目前持股為：</p><p><center><img src="/買股票只考慮ROE是不夠的！/stocks.png" alt="策略二目前持股" title="策略二目前持股"></center><br>第一個column是股票代號，第二個column是買入日期，第三個columns為價格，約60個交易日後，我們再來看一下這幾支股票是賺錢還是賠錢。有興趣可以追蹤一下！</p>]]></content>
     
@@ -528,7 +562,9 @@
     
     </summary>
     
-      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
     
     
       <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
@@ -548,7 +584,7 @@
     <link href="https://koreal6803.github.io/EPS%E8%B7%9FROE%E5%93%AA%E5%80%8B%E6%AF%94%E8%BC%83%E5%A5%BD%E7%94%A8%EF%BC%9F/"/>
     <id>https://koreal6803.github.io/EPS跟ROE哪個比較好用？/</id>
     <published>2017-09-29T11:51:12.000Z</published>
-    <updated>2017-09-29T13:07:17.000Z</updated>
+    <updated>2017-10-28T19:28:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>投資人最喜歡看每股盈餘（EPS）來決定股票的好壞，股票雜誌也喜歡說某家公司EPS多好，但今天所做的回測發現，根據每季EPS選擇股票並不好！</p><h3 id="EPS-介紹"><a href="#EPS-介紹" class="headerlink" title="EPS 介紹"></a>EPS 介紹</h3><p>EPS = 稅後淨利 / 在外流通股數</p><p>間單來講就是投資人每投入一股，一個月可以賺多少錢回來。<br>公司賺的錢越多，其EPS越大<br>公司發行了很多股票，EPS越小</p><p>但是這樣有個問題：公司賺多少錢不等於公司經營的好壞！<br>例如：大公司掙錢肯定要比小公司多，但我們買股票的重點不在誰獲利較高，而是在哪家公司成長比較快速！</p><p>所以只比較不同股票當季EPS，其實是有弊端的，我們用實驗來舉例給你看：</p><h3 id="EPS低到高的歷史回測"><a href="#EPS低到高的歷史回測" class="headerlink" title="EPS低到高的歷史回測"></a>EPS低到高的歷史回測</h3><p>我們將EPS由低到高分成五組，每一組的股票大約是一樣多的，每60天調整一次，選擇EPS在範圍內的股票，同樣假設資產可以平均分散，不算手續費：</p><center><img src="/EPS跟ROE哪個比較好用？/eps.png" alt="歷史績效圖" title="歷史績效圖"></center><p>我們發現，買EPS大於0的股票獲利會高於EPS小於0的組別。</p><p>但，是假如EPS大於0的組別之間並沒有太大的關係。</p><p>代表假如你的買股票時，假如平均是買2～3個月的話，可以稍微看一下當季EPS<br>只要不要小於0就可以了，就算很高也不一樣定有用，但小於0的話就要注意了！</p><h3 id="跟ROE做比較"><a href="#跟ROE做比較" class="headerlink" title="跟ROE做比較"></a>跟ROE做比較</h3><p>ROE就是一個考慮了公司可用資金與報酬的指標：</p><p>股東權益 = 總資產 - 總負債<br>ROE = 稅後盈餘 / 股東權益 * 100%</p><p>ROE就變成，公司投入了一些資產，可以賺多少錢回來的指標！</p><h3 id="ROE歷史回測"><a href="#ROE歷史回測" class="headerlink" title="ROE歷史回測"></a>ROE歷史回測</h3><p>我們同樣將ROE從高到低分成五組，每60天換股，取全台灣上市公司介於某一組ROE之間的股票：</p><center><img src="/EPS跟ROE哪個比較好用？/roe.png" alt="歷史績效圖" title="歷史績效圖"></center><p>可以發現，用ROE來跑歷史回測，真的比較不一樣，獲利跟ROE成很漂亮的正比！<br>買ROE越高的公司，比買EPS高的公司更容易挑到優質股！</p>]]></content>
     
@@ -561,6 +597,10 @@
       
     
     </summary>
+    
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
     
     
       <category term="EPS" scheme="https://koreal6803.github.io/tags/EPS/"/>
@@ -578,7 +618,7 @@
     <link href="https://koreal6803.github.io/%E6%AF%94%E7%AD%96%E7%95%A5%E7%8B%97%E9%82%84%E8%A6%81%E5%AE%89%E5%85%A8%E7%9A%84%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5%EF%BC%81/"/>
     <id>https://koreal6803.github.io/比策略狗還要安全的選股策略！/</id>
     <published>2017-09-28T12:05:16.000Z</published>
-    <updated>2017-09-30T22:32:56.000Z</updated>
+    <updated>2017-10-28T19:38:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>究竟如何買到好股票呢？用超簡單的財經指標就可以有14年約獲利14倍的策略，重點是可以躲過致命的金融海嘯、大盤崩跌！半年只要調動一次持股，甚至偶爾叫你半年不碰股票去放個假。當然此策略主要是教學用，建議自行調整後再真實投入市場。</p><h3 id="從統計的角度帶你一步一步設計量化策略"><a href="#從統計的角度帶你一步一步設計量化策略" class="headerlink" title="從統計的角度帶你一步一步設計量化策略"></a>從統計的角度帶你一步一步設計量化策略</h3><p>一般的財經文章都是講講理論，算算公式，套幾個例子，就結束了。</p><p>問題是，你怎麼知道那個例子是湊巧還是真的有用？</p><p>FinLab跟一般的財經部落格不一樣，我們把全台灣所有的公司做統計整理給大家，讓大家瞭解如何從股市中獲利，透過長時間的投資，為自己增加買菜錢。</p><h3 id="此篇是前幾篇的一個小統整"><a href="#此篇是前幾篇的一個小統整" class="headerlink" title="此篇是前幾篇的一個小統整"></a>此篇是前幾篇的一個小統整</h3><p>在<a href="/股價淨值比有這麼神？/">股價淨值比有這麼神？</a>跟<a href="/本益比能幫你選出優質股？/">本益比能幫你選出優質股？</a>中，裡面介紹了用不同的本益比和股價淨值比跑歷史回測</p><p>於是今天來總結一下這兩個指標，寫一個策略，讓大家瞭解股價淨值比跟本益比合在一起迸出什麼樣的火花！</p><h3 id="策略就是這麼簡單：找便宜且會賺錢的公司"><a href="#策略就是這麼簡單：找便宜且會賺錢的公司" class="headerlink" title="策略就是這麼簡單：找便宜且會賺錢的公司"></a>策略就是這麼簡單：找便宜且會賺錢的公司</h3><p>簡單來說這個就是一個雞蛋水餃股策略～</p><p>先用以下條件篩選出雞蛋水餃股：</p><ul><li>股價淨值比 &lt; 0.7 的股票 （被嚴重低估股票）</li><li>本益比 &lt; 13 的股票 （還算會賺點錢的公司）</li></ul><p>我們先把它們定義為”便宜股”</p><h3 id="還必須去除大盤大跌的時刻"><a href="#還必須去除大盤大跌的時刻" class="headerlink" title="還必須去除大盤大跌的時刻"></a>還必須去除大盤大跌的時刻</h3><p>這種便宜股在股市大跌的時候，跌得非常驚人，一定要避開！</p><p>還記得在<a href="/股價淨值比有這麼神？/">股價淨值比有這麼神？</a> 這篇中，有介紹<strong>當大盤大跌後，便宜股會變多！反之，當大盤過熱時，便宜股會很少</strong>。就是利用這個原理，來進行對大盤時間的過濾：</p><ul><li><p>假如便宜股太少（上市上櫃小於100家公司），代表大盤處於漲多的狀態，清空所有股票，不持股半年！可以去放放假，陪陪家人，休息一下！</p></li><li><p>假如便宜股夠多，則買收盤價在10元以上的上市股票 (畢竟太便宜的股票還是會怕怕的XDD)</p></li></ul><p>每半年換一次股，選擇滿足以上條件的所有股票，本金100萬元台幣，手續費不打折，交易稅0.3％</p><center><img src="/比策略狗還要安全的選股策略！/eq.png" alt="歷史績效圖" title="歷史績效圖"></center><p>事實上十萬本金就可以了，只是獲利從14倍減少到8倍左右</p><h3 id="常常休息的策略，卻可以有如此高的績效！"><a href="#常常休息的策略，卻可以有如此高的績效！" class="headerlink" title="常常休息的策略，卻可以有如此高的績效！"></a>常常休息的策略，卻可以有如此高的績效！</h3><p>這個策略常常休息，甚至在2010~2011這兩年完全沒買股票！真的很扯！</p><p>大盤緊張之際完全不用盯盤，不用每天提心吊膽的，你說這種輕鬆的策略，怎麼可能賺到什麼錢？</p><p>但，這就是一個跟財報狗的績優股獵犬不相上下的交易策略，不鳴則已，一鳴驚人，平常不買股票，等到台股崩跌時，能夠快速的獲利！</p><h3 id="策略是否持股也是一種指標～"><a href="#策略是否持股也是一種指標～" class="headerlink" title="策略是否持股也是一種指標～"></a>策略是否持股也是一種指標～</h3><p>這個策略躲過了從2004年來<strong>每一次</strong>的台股慘案，所以也可以用這個策略持股數來看出大盤現在是否漲過頭。持股數0代表大盤漲過頭了：</p><center><img src="/比策略狗還要安全的選股策略！/holdings.png" alt="每日持股" title="每日持股"></center><p>最近股票會崩跌嗎？針對這個問題，到今天為止，這個策略還在持股，所以我認為現在崩跌的機率不大，然而歷史真的會跟未來相似嗎？沒有人可以說的准。</p><p>當市場受到大盤洗禮，許多好公司都跌回雞蛋水餃股之際，就是這個策略出動的好時機！</p><h3 id="比績優股獵犬的虧損還小，但還是要注意虧損！"><a href="#比績優股獵犬的虧損還小，但還是要注意虧損！" class="headerlink" title="比績優股獵犬的虧損還小，但還是要注意虧損！"></a>比績優股獵犬的虧損還小，但還是要注意虧損！</h3><p>其實，虧損還是有的，2012年有點慘，一直盤整，沒有繼續突破新高，最大的虧損來到了25%：</p><center><img src="/比策略狗還要安全的選股策略！/drop.png" alt="下跌百分比" title="下跌百分比"></center><p>你絕對不能輕易使用這個策略！</p><p>當你決定採用這個策略時，代表你已經檢驗過它數百遍，你相信這個策略，也代表當這個策略產生了25%的虧損時，你都必須視之理所當然，不動於衷，繼續相信它。</p><p>我不保證這邊的績效是否正確，也不保證之後這個策略不會失效<br>但你可以參考這邊的方法，實際模擬半年，甚至去實現自己的策略，把它修改的更好！</p><h3 id="光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！"><a href="#光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！" class="headerlink" title="光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！"></a>光看這兩種數據，就有這樣的功效了，更何況是考慮更多因素！</h3><p>目前介紹了本益比、股價淨值比，並且用這兩個數值當作買賣標準，就能得到這樣的策略！</p><p>更別提後續介紹更多種的基本面、技術面、甚至是籌碼面的選股方式，來讓大家對於股市更有感覺，更輕鬆的選擇股票標的！</p><p>你知道為何我有勇氣把自己覺得賺錢的策略免費分享給大家嗎？因為更猛的在後面～XD</p><p>我盡量每天都會發一篇，假如你覺得到目前為止還喜歡的話，可以繼續關注這個blog，或是留言給我一點建議，接下來想做的主題：</p><ul><li>更多的財經指標、回測</li><li>Machine Learning 選股</li><li>python 完全新手股市分析（包含歷史財經數據包及其研究方法）</li></ul><p>請問哪個你會比較有興趣呢？</p>]]></content>
     
@@ -592,7 +632,7 @@
     
     </summary>
     
-      <category term="量化投資" scheme="https://koreal6803.github.io/categories/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+      <category term="選股策略" scheme="https://koreal6803.github.io/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
