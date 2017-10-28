@@ -4,6 +4,78 @@
 
     
   <url>
+    <loc>https://koreal6803.github.io/%E8%B6%85%E7%B0%A1%E5%96%AE%E7%94%A8python%E6%8A%93%E5%8F%96%E6%AF%8F%E6%9C%88%E7%87%9F%E6%94%B6/</loc>
+    <lastmod>2017-10-28T22:03:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>超簡單用python抓取每月營收</title>
+        <pubTime>2017-10-28T18:30:39.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>選股</tag>
+         
+        <tag>程式設計</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Pyhton教學" url="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://koreal6803.github.io/%E5%88%A9%E7%94%A8Machine-Learning-%E9%81%B8%E8%82%A1%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2017-10-28T22:03:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>利用Machine Learning 選股新手教學</title>
+        <pubTime>2017-10-20T10:58:23.000Z</pubTime>
+        
+        <tag>機器學習</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Pyhton教學" url="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://koreal6803.github.io/%E8%B6%85%E7%B0%A1%E5%96%AE%E5%8F%B0%E8%82%A1%E6%AF%8F%E6%97%A5%E7%88%AC%E8%9F%B2%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2017-10-28T22:03:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>超簡單台股每日爬蟲教學</title>
+        <pubTime>2017-10-24T22:17:06.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>選股</tag>
+         
+        <tag>程式設計</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Pyhton教學" url="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://koreal6803.github.io/%E8%B2%A1%E5%A0%B1%E7%8B%97%E9%81%B8%E8%82%A1%E6%A2%9D%E4%BB%B6%E6%9C%80%E4%BD%B3%E5%8C%96/</loc>
     <lastmod>2017-10-28T20:02:21.000Z</lastmod>
     <data>
@@ -293,30 +365,6 @@
            
              
               <breadCrumb title="大盤漲跌" url="https://koreal6803.github.io/categories/%E5%A4%A7%E7%9B%A4%E6%BC%B2%E8%B7%8C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://koreal6803.github.io/%E5%88%A9%E7%94%A8Machine-Learning-%E9%81%B8%E8%82%A1%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2017-10-28T19:36:41.000Z</lastmod>
-    <data>
-        <display>
-        <title>利用Machine Learning 選股新手教學</title>
-        <pubTime>2017-10-20T10:58:23.000Z</pubTime>
-        
-        <tag>機器學習</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="AI看股票" url="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
           
         </display>
     </data>
@@ -673,48 +721,6 @@
              
               <breadCrumb title="基本面" url="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://koreal6803.github.io/%E8%B6%85%E7%B0%A1%E5%96%AE%E7%94%A8python%E6%8A%93%E5%8F%96%E6%AF%8F%E6%9C%88%E7%87%9F%E6%94%B6/</loc>
-    <lastmod>2017-10-28T18:52:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>超簡單用python抓取每月營收</title>
-        <pubTime>2017-10-28T18:30:39.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>選股</tag>
-         
-        <tag>程式設計</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://koreal6803.github.io/%E8%B6%85%E7%B0%A1%E5%96%AE%E5%8F%B0%E8%82%A1%E6%AF%8F%E6%97%A5%E7%88%AC%E8%9F%B2%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2017-10-24T23:10:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>超簡單台股每日爬蟲教學</title>
-        <pubTime>2017-10-24T22:17:06.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>選股</tag>
-         
-        <tag>程式設計</tag>
-         
-         
-           
         </display>
     </data>
     </url>
