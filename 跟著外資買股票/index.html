@@ -18,7 +18,7 @@
 <meta property="og:description" content="外資近年來幾乎稱霸台股，每天台股上上下下，都得看它臉色，今天我們來進行簡單的參數優化，看看跟隨外資買賣有沒有搞頭！ 最佳化外資買賣策略假設 n 天內外資總買賣超超過 a 張，則買入，而低於 -a 張，就賣出，我們可以得到一下這張表：    在上圖中，跑了25種不同的回測，每一次回測，n跟a的值都不一樣，紅色代表獲利較多的策略，而藍色代表獲利較少的策略，我們發現 a = 0 的時候結果普遍比較好，另">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/跟著外資買股票/color.png">
-<meta property="og:updated_time" content="2017-10-30T23:23:02.000Z">
+<meta property="og:updated_time" content="2017-10-31T10:42:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="外資大賣，反而要買！？">
 <meta name="twitter:description" content="外資近年來幾乎稱霸台股，每天台股上上下下，都得看它臉色，今天我們來進行簡單的參數優化，看看跟隨外資買賣有沒有搞頭！ 最佳化外資買賣策略假設 n 天內外資總買賣超超過 a 張，則買入，而低於 -a 張，就賣出，我們可以得到一下這張表：    在上圖中，跑了25種不同的回測，每一次回測，n跟a的值都不一樣，紅色代表獲利較多的策略，而藍色代表獲利較少的策略，我們發現 a = 0 的時候結果普遍比較好，另">
@@ -202,26 +202,6 @@ ga('send', 'pageview');
 <center><img src="/跟著外資買股票/buysudden.png" alt="藍色為策略1號，橘色為策略2號" title="藍色為策略1號，橘色為策略2號"></center>
 
 <p>上圖可以看出，策略2比策略1的報酬好很多。其結論是外資大買，請不要跟著買，因為說不定是外資太多人看了，導致股票隔天衝很高，導致買在高點。相反，大家看到外資大賣，也會恐慌性賣出，造成隔天開盤價格異常低，而剛好被我們買到了！賺到了短線價差。只能說，股票就是人性呀！大家還是太依賴外資籌碼了。總之假如你沒有好策略的話，請不要直接看外資來決定買什麼。</p>
-<p>難道外資籌碼就真的是反指標嗎？不一定，請看下例：</p>
-<h3 id="簡單逆向策略"><a href="#簡單逆向策略" class="headerlink" title="簡單逆向策略"></a>簡單逆向策略</h3><p>外資籌碼有一個好用的點，就是某支股票某一天亂跌一把，但奇怪的是外資一直買，這就代表這個跌勢可能是大盤或是正常資金流動所造成的，但外資就趁這支股票在低檔時，猛買了一把，代表外資還是看好這支股票的前景的，當我們看到這個現象時，就可以馬上買入，跟上外資的順風車！</p>
-<p>買入條件：</p>
-<ol>
-<li>外資總買賣 +1000 張</li>
-<li>股價下跌 5%</li>
-</ol>
-<p>五天後賣出。</p>
-<center><img src="/跟著外資買股票/eq.png" alt="策略的權益曲線" title="策略的權益曲線"></center>
-
-
-<p>以上是總資產變化圖，這個策略有考慮手續費，假如上圖看不太懂，或不知道這個策略是用什麼方法買賣，可以參考<a href="/回測框架介紹/">之前寫的教學</a>。這個策略是我在寫文章做研究時突然發現的，回測還不錯XD，就放送給大家了，做策略最重要的靈感就是，兩個非常逆向的行為同時發生，例如股價大跌，外資大買，就是其中一個。</p>
-<p>光用外資籌碼，有時候報酬率可以很高，甚至超越價值型投資策略，然而風險就是，看外資籌碼容易失效，較不穩定，各有各的好，相輔相成，對於不同的策略，大家應該用開放的態度，不需要分派系，綜合使用，才能變成投資界高手中的的高手，希望大家都在那條路上邁進囉！</p>
-<p>總結一下這篇文章的重點：</p>
-<ol>
-<li>外資平常看10日總買賣，比較有用，但宜搭配其它指標</li>
-<li>外資大買-&gt;短線（1～2天）不一定會漲</li>
-<li>外資大賣-&gt;短線（1～2天）較有可能會有拉回</li>
-<li>股價大跌，外資大買，有內幕，短線可買入</li>
-</ol>
 
             <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
             <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用杜邦分析加強你的選股技巧（下）回測/" title="用杜邦分析加強你的選股技巧（下）回測" rel="bookmark">用杜邦分析加強你的選股技巧（下）回測</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/小資族也可以使用的選股法！/" title="小資族也可以使用的選股法！" rel="bookmark">小資族也可以使用的選股法！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/比策略狗還要安全的選股策略！/" title="14年14倍的選股策略！" rel="bookmark">14年14倍的選股策略！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/價值股回測/" title="價值股策略" rel="bookmark">價值股策略</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/買股票只考慮ROE是不夠的！/" title="買股票只考慮ROE是不夠的！" rel="bookmark">買股票只考慮ROE是不夠的！</a></h3></div></li></ul>
