@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-10-31T10:42:34.000Z</updated>
+  <updated>2017-11-02T22:14:18.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 財報爬蟲</title>
+    <link href="https://koreal6803.github.io/Python-%E8%B2%A1%E5%A0%B1%E7%88%AC%E8%9F%B2-1-%E7%B6%9C%E5%90%88%E6%90%8D%E7%9B%8A%E8%A1%A8/"/>
+    <id>https://koreal6803.github.io/Python-財報爬蟲-1-綜合損益表/</id>
+    <published>2017-11-02T21:19:27.000Z</published>
+    <updated>2017-11-02T22:14:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本系列已經介紹了各式各樣的爬蟲，從每天、每月，現在終於要季了，在尋找了各式各樣的網站，交叉比對之下，發現<a href="http://mops.twse.com.tw/mops/web/t163sb04" rel="external nofollow noopener noreferrer" target="_blank">公開資訊觀測站的總報表</a>還滿好抓的，所以就從這個網站下手。</p><center><img src="/Python-財報爬蟲-1-綜合損益表/thumbnail.png" alt="我爬我爬我爬爬爬" title="我爬我爬我爬爬爬"></center><p>Python中有個非常好用的package，叫做pandas，利用它我們就可以簡潔的把網頁上的表格，轉換成dataframe，也就是整理成程式看的懂的表格，我們幾乎不需要做太多的處理！這也是我喜歡用python一點。</p><p>這邊我用的是python3 喔～可能要注意一下，另外pandas的版本不一樣，可能會導致網頁轉dataframe的時候，有點小不一樣，可能要稍微檢查一下，我是用0.20.3這個版本。</p><figure class="highlight python"><figcaption><span>財報爬蟲</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">financial_statement</span><span class="params">(year, season, type=<span class="string">'綜合損益彙總表'</span>)</span>:</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> year &gt;= <span class="number">1000</span>:</div><div class="line">        year -= <span class="number">1911</span></div><div class="line">        </div><div class="line">    <span class="keyword">if</span> type == <span class="string">'綜合損益彙總表'</span>:</div><div class="line">        url = <span class="string">'http://mops.twse.com.tw/mops/web/ajax_t163sb04'</span></div><div class="line">    <span class="keyword">elif</span> type == <span class="string">'資產負債彙總表'</span>:</div><div class="line">        url = <span class="string">'http://mops.twse.com.tw/mops/web/ajax_t163sb05'</span></div><div class="line">    <span class="keyword">elif</span> type == <span class="string">'營益分析彙總表'</span>:</div><div class="line">        url = <span class="string">'http://mops.twse.com.tw/mops/web/ajax_t163sb06'</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        print(<span class="string">'type does not match'</span>)</div><div class="line"></div><div class="line">    r = requests.post(url, &#123;</div><div class="line">        <span class="string">'encodeURIComponent'</span>:<span class="number">1</span>,</div><div class="line">        <span class="string">'step'</span>:<span class="number">1</span>,</div><div class="line">        <span class="string">'firstin'</span>:<span class="number">1</span>,</div><div class="line">        <span class="string">'off'</span>:<span class="number">1</span>,</div><div class="line">        <span class="string">'TYPEK'</span>:<span class="string">'sii'</span>,</div><div class="line">        <span class="string">'year'</span>:<span class="string">'103'</span>,</div><div class="line">        <span class="string">'season'</span>:<span class="string">'01'</span>,</div><div class="line">    &#125;)</div><div class="line">    </div><div class="line">    r.encoding = <span class="string">'utf8'</span></div><div class="line">    dfs = pd.read_html(r.text)</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="keyword">for</span> i, df <span class="keyword">in</span> enumerate(dfs):</div><div class="line">        df.columns = df.iloc[<span class="number">0</span>]</div><div class="line">        dfs[i] = df.iloc[<span class="number">1</span>:]</div><div class="line">        </div><div class="line">    df = pd.concat(dfs).applymap(<span class="keyword">lambda</span> x: x <span class="keyword">if</span> x != <span class="string">'--'</span> <span class="keyword">else</span> np.nan)</div><div class="line">    df = df[df[<span class="string">'公司代號'</span>] != <span class="string">'公司代號'</span>]</div><div class="line">    df = df[~df[<span class="string">'公司代號'</span>].isnull()]</div><div class="line">    <span class="keyword">return</span> df</div><div class="line"></div></pre></td></tr></table></figure><p>這個function的用法，就跟月爬蟲是一樣的，可以直接輸入西元或國曆，然後第n季，只能輸入1～4季喔～不然會當掉，最後還要輸入哪一種財報：</p><ul><li>綜合損益彙總表</li><li>資產負債彙總表</li><li>營益分析彙總表</li></ul><p>都可以爬取喔！以下就是利用這個function所爬取的資料</p><center><img src="/Python-財報爬蟲-1-綜合損益表/result.png" alt="使用function的方法截圖" title="使用function的方法截圖"></center><p>大家可以看到有些columns怪怪的，例如 “合計：共 808 家” 這個是什麼鬼XDD，由於我一次爬了三個表，這一點小問題應該還好啦！XDD，可以再寫一行code刪除該列就好了。</p><p>基本上資料都是對齊的，不用太擔心。</p><p>爬完之後就交給大家自由發揮囉～～可以做很多事情。<br>總算各種股價、財報、月報的爬蟲都分享完了～</p><p>接下來就是真的利用這些資料來選股囉！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本系列已經介紹了各式各樣的爬蟲，從每天、每月，現在終於要季了，在尋找了各式各樣的網站，交叉比對之下，發現&lt;a href=&quot;http://mops.twse.com.tw/mops/web/t163sb04&quot; rel=&quot;external nofollow noopener n
+      
+    
+    </summary>
+    
+      <category term="財經Pyhton教學" scheme="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+  </entry>
   
   <entry>
     <title>外資大賣，反而要買！？</title>
@@ -199,11 +228,11 @@
       <category term="財經Pyhton教學" scheme="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
     
     
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
       <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
-    
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
   </entry>
   
@@ -230,13 +259,13 @@
       <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
-      <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
-    
-      <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
-    
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
+    
+      <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
     
   </entry>
   
@@ -262,11 +291,11 @@
       <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
       <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
-    
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
   </entry>
   
@@ -614,40 +643,6 @@
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="股價淨值比" scheme="https://koreal6803.github.io/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>EPS跟ROE哪個比較好用？</title>
-    <link href="https://koreal6803.github.io/EPS%E8%B7%9FROE%E5%93%AA%E5%80%8B%E6%AF%94%E8%BC%83%E5%A5%BD%E7%94%A8%EF%BC%9F/"/>
-    <id>https://koreal6803.github.io/EPS跟ROE哪個比較好用？/</id>
-    <published>2017-09-29T11:51:12.000Z</published>
-    <updated>2017-10-28T19:28:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>投資人最喜歡看每股盈餘（EPS）來決定股票的好壞，股票雜誌也喜歡說某家公司EPS多好，但今天所做的回測發現，根據每季EPS選擇股票並不好！</p><h3 id="EPS-介紹"><a href="#EPS-介紹" class="headerlink" title="EPS 介紹"></a>EPS 介紹</h3><p>EPS = 稅後淨利 / 在外流通股數</p><p>間單來講就是投資人每投入一股，一個月可以賺多少錢回來。<br>公司賺的錢越多，其EPS越大<br>公司發行了很多股票，EPS越小</p><p>但是這樣有個問題：公司賺多少錢不等於公司經營的好壞！<br>例如：大公司掙錢肯定要比小公司多，但我們買股票的重點不在誰獲利較高，而是在哪家公司成長比較快速！</p><p>所以只比較不同股票當季EPS，其實是有弊端的，我們用實驗來舉例給你看：</p><h3 id="EPS低到高的歷史回測"><a href="#EPS低到高的歷史回測" class="headerlink" title="EPS低到高的歷史回測"></a>EPS低到高的歷史回測</h3><p>我們將EPS由低到高分成五組，每一組的股票大約是一樣多的，每60天調整一次，選擇EPS在範圍內的股票，同樣假設資產可以平均分散，不算手續費：</p><center><img src="/EPS跟ROE哪個比較好用？/eps.png" alt="歷史績效圖" title="歷史績效圖"></center><p>我們發現，買EPS大於0的股票獲利會高於EPS小於0的組別。</p><p>但，是假如EPS大於0的組別之間並沒有太大的關係。</p><p>代表假如你的買股票時，假如平均是買2～3個月的話，可以稍微看一下當季EPS<br>只要不要小於0就可以了，就算很高也不一樣定有用，但小於0的話就要注意了！</p><h3 id="跟ROE做比較"><a href="#跟ROE做比較" class="headerlink" title="跟ROE做比較"></a>跟ROE做比較</h3><p>ROE就是一個考慮了公司可用資金與報酬的指標：</p><p>股東權益 = 總資產 - 總負債<br>ROE = 稅後盈餘 / 股東權益 * 100%</p><p>ROE就變成，公司投入了一些資產，可以賺多少錢回來的指標！</p><h3 id="ROE歷史回測"><a href="#ROE歷史回測" class="headerlink" title="ROE歷史回測"></a>ROE歷史回測</h3><p>我們同樣將ROE從高到低分成五組，每60天換股，取全台灣上市公司介於某一組ROE之間的股票：</p><center><img src="/EPS跟ROE哪個比較好用？/roe.png" alt="歷史績效圖" title="歷史績效圖"></center><p>可以發現，用ROE來跑歷史回測，真的比較不一樣，獲利跟ROE成很漂亮的正比！<br>買ROE越高的公司，比買EPS高的公司更容易挑到優質股！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;投資人最喜歡看每股盈餘（EPS）來決定股票的好壞，股票雜誌也喜歡說某家公司EPS多好，但今天所做的回測發現，根據每季EPS選擇股票並不好！&lt;/p&gt;
-&lt;h3 id=&quot;EPS-介紹&quot;&gt;&lt;a href=&quot;#EPS-介紹&quot; class=&quot;headerlink&quot; title=&quot;EPS
-      
-    
-    </summary>
-    
-      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-    
-      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
-    
-    
-      <category term="EPS" scheme="https://koreal6803.github.io/tags/EPS/"/>
-    
-      <category term="每股盈餘" scheme="https://koreal6803.github.io/tags/%E6%AF%8F%E8%82%A1%E7%9B%88%E9%A4%98/"/>
-    
-      <category term="ROE" scheme="https://koreal6803.github.io/tags/ROE/"/>
-    
-      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
   </entry>
   
