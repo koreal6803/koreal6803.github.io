@@ -18,7 +18,7 @@
 <meta property="og:description" content="上一篇的Python教學中，我們學會了怎麼爬財報，但是爬完的資料要怎麼運用呢？這篇會給大家一些方向。那篇有點不好意思，好像有兩個package沒有import，下次發現的話，可以在下方留言告訴我，我會盡快更正。 今天這篇的前置作業，請參考連結把當中的function給copy過來，然後就開始吧！ 資料處理首先，我們要先使用這個function，可以直接在jupyter視窗內輸入，來取得爬取今天的主">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/Python：利用Pandas輕鬆選股/df.png">
-<meta property="og:updated_time" content="2017-11-08T15:22:04.000Z">
+<meta property="og:updated_time" content="2017-11-08T15:38:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python：利用Pandas輕鬆選股">
 <meta name="twitter:description" content="上一篇的Python教學中，我們學會了怎麼爬財報，但是爬完的資料要怎麼運用呢？這篇會給大家一些方向。那篇有點不好意思，好像有兩個package沒有import，下次發現的話，可以在下方留言告訴我，我會盡快更正。 今天這篇的前置作業，請參考連結把當中的function給copy過來，然後就開始吧！ 資料處理首先，我們要先使用這個function，可以直接在jupyter視窗內輸入，來取得爬取今天的主">
@@ -194,9 +194,8 @@ ga('send', 'pageview');
 
 <p>我們觀察一下這張表，有一行真的詭異：”合計：共 808 家” ，這行完全沒有任何可以用的資料，所以我們將它刪除：</p>
 <figure class="highlight python"><figcaption><span>刪除其中一行</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = df.drop([<span class="string">'合計：共 808 家'</span>], axis=<span class="number">1</span>)</div></pre></td></tr></table></figure>
-<p>接下來我們發現 index （每一列）的命名很怪，怎麼用 1,2,3… 來命名呢，我們應該用股票的 index 來命名吧！？所以接下來，我們將股票的名稱當成新的 index：</p>
+<p>接下來我們發現 index （每一列）的命名很怪，怎麼用 1,2,3… 來命名呢，應該要用股票名稱！？<br>我們將股票的名稱當成新的 index：</p>
 <figure class="highlight python"><figcaption><span>將index換成股票名稱</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = df.set_index([<span class="string">'股票名稱'</span>])</div></pre></td></tr></table></figure>
-<p>沒錯，我們可以給它數個 index，都沒有關係。</p>
 <p>最後一步，我們希望資料欄位中，所有的元素都是 float ，所以要做一次轉換：</p>
 <figure class="highlight python"><figcaption><span>轉換成數值</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = df.astype(float)</div></pre></td></tr></table></figure>
 <center><img src="/Python：利用Pandas輕鬆選股/processed.png" alt="處理完後的資料" title="處理完後的資料"></center>
