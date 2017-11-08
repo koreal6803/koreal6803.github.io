@@ -18,7 +18,7 @@
 <meta property="og:description" content="上一篇的Python教學中，我們學會了怎麼爬財報，但是爬完的資料要怎麼運用呢？這篇會給大家一些方向。那篇有點不好意思，好像有兩個package沒有import，下次發現的話，可以在下方留言告訴我，我會盡快更正。 今天這篇的前置作業，請參考連結把當中的function給copy過來，然後就開始吧！ 資料處理首先，我們要先使用這個function，可以直接在jupyter視窗內輸入，來取得爬取今天的主">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/Python：利用Pandas輕鬆選股/df.png">
-<meta property="og:updated_time" content="2017-11-08T15:38:44.000Z">
+<meta property="og:updated_time" content="2017-11-08T15:40:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python：利用Pandas輕鬆選股">
 <meta name="twitter:description" content="上一篇的Python教學中，我們學會了怎麼爬財報，但是爬完的資料要怎麼運用呢？這篇會給大家一些方向。那篇有點不好意思，好像有兩個package沒有import，下次發現的話，可以在下方留言告訴我，我會盡快更正。 今天這篇的前置作業，請參考連結把當中的function給copy過來，然後就開始吧！ 資料處理首先，我們要先使用這個function，可以直接在jupyter視窗內輸入，來取得爬取今天的主">
@@ -211,16 +211,16 @@ ga('send', 'pageview');
 <p>假如今天我只想看 台積電 表現如何：</p>
 <figure class="highlight python"><figcaption><span>取得台積電資料</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.loc[<span class="string">'台積電'</span>]</div></pre></td></tr></table></figure>
 <p>取每一欄，跟取每一列，語法不太一樣喔！要小小注意一下。</p>
-<center><img src="/Python：利用Pandas輕鬆選股/tsmc.png" alt="單欄毛利率" title="單欄毛利率"></center>
+<center><img src="/Python：利用Pandas輕鬆選股/tsmc.png" alt="台積電資料" title="台積電資料"></center>
 
 
 <p>假如我想同時看 台積電 跟 聯發科：</p>
 <figure class="highlight python"><figcaption><span>取得TSMC跟MTK的資料</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.loc[[<span class="string">'台積電'</span>, <span class="string">'聯發科'</span>]]</div></pre></td></tr></table></figure>
-<center><img src="/Python：利用Pandas輕鬆選股/tsmcmtk.png" alt="單欄毛利率" title="單欄毛利率"></center>
+<center><img src="/Python：利用Pandas輕鬆選股/tsmcmtk.png" alt="台積電跟聯發科的資料" title="台積電跟聯發科的資料"></center>
 
 
 <h3 id="數值分析"><a href="#數值分析" class="headerlink" title="數值分析"></a>數值分析</h3><p>接下來我們稍微分析一下這個表中的數字：<br><figure class="highlight python"><figcaption><span>數值分析</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.discribe()</div></pre></td></tr></table></figure><br>這樣簡單一行，就可以得到每一欄的數值分析，當初我知道這個 df.describe() 也覺得很神。</p>
-<center><img src="/Python：利用Pandas輕鬆選股/describe.png" alt="成功取得報表" title="成功取得報表"></center>
+<center><img src="/Python：利用Pandas輕鬆選股/describe.png" alt="數值分析" title="數值分析"></center>
 
 
 <h3 id="毛利率分佈圖"><a href="#毛利率分佈圖" class="headerlink" title="毛利率分佈圖"></a>毛利率分佈圖</h3><p>只要簡單一行，我們就可以看到全台灣的上市公司，毛利率分佈圖：</p>
@@ -233,7 +233,7 @@ ga('send', 'pageview');
 <p>就是說 第一個欄位：毛利率，我們希望找出大於20的 股票<br>另外呢 第二個欄位：營業利益率，我們希望找出大於5的 股票</p>
 <p>那我們就可以用這兩個條件來選股：</p>
 <figure class="highlight python"><figcaption><span>選股</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df[cond1 &amp; cond2]</div></pre></td></tr></table></figure>
-<center><img src="/Python：利用Pandas輕鬆選股/select.png" alt="成功取得報表" title="成功取得報表"></center>
+<center><img src="/Python：利用Pandas輕鬆選股/select.png" alt="篩選出來的股票" title="篩選出來的股票"></center>
 
 <p>搭啦！其實外面的選股軟體也就這樣而已啦！還收費這麼貴XDD 如果你覺得觀賞這個blog有點收穫，記得存到我的最愛定期觀看喔！我每個禮拜都會有一些更新。</p>
 <p>這次教學的檔案：<a href="/Python：利用Pandas輕鬆選股/選股.ipynb" title="notebook.ipynb檔">notebook.ipynb檔</a></p>
