@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-11-08T15:40:44.000Z</updated>
+  <updated>2017-11-14T16:57:05.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何定義KD鈍化</title>
+    <link href="https://koreal6803.github.io/KD1/"/>
+    <id>https://koreal6803.github.io/KD1/</id>
+    <published>2017-11-14T14:22:16.000Z</published>
+    <updated>2017-11-14T16:57:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！</p><p>今天先來看一下KD值好了，畢竟都還沒有看到太多指標相關的文章，其實KD值是非常簡單的，但在這邊我不想要介紹公式，因為太無聊了，而且每次看每次忘，我只想介紹如何看KD，以及參數如何設定：</p><h3 id="KD-的意義"><a href="#KD-的意義" class="headerlink" title="KD 的意義"></a>KD 的意義</h3><p>KD就是像坊間說的，兩條線，K跟D，一條反應較快，一條慢，都介於0～100之間。其意義在於股票在n天之內的相對位置，相對位置就是指n天內的最高最低，將當前的股價做normalize。</p><p>給一個簡單的例子，例如今天全班考試，有人拿30分，請問他考的好不好？</p><p>答案是：不知道，因為沒有辦法比較，說不定考卷很難，30分就是全班最高分了！要是考卷出太難，大家的成績介於10～30之間，那老師就可以做 normalize 讓成績分佈好看一點：</p><p>新成績 = ( 成績 - 10 ) / (30 - 10)</p><p>這樣子，考最好的人就是100分，而考最爛的人就是0分，這個就是KD指標的意義，而每個學生的成績，就是每日的收盤價。</p><p>最後我們將 新成績 對時間平滑一次，變成K值，再對K值平滑一次，變成D值。</p><h3 id="KD-的參數"><a href="#KD-的參數" class="headerlink" title="KD 的參數"></a>KD 的參數</h3><p>介紹完之後，K D 指標的參數就很好理解了：</p><ol><li>9天：只考慮9天內的最高最低</li><li>3天：K的平滑</li><li>3天：D的平滑</li></ol><p>平滑數字越大，數字變動越慢，雜訊越少<br>平滑數字越小，數字變動越快，雜訊越多</p><p>我們用台積電為例子：</p><center><img src="/KD1/tsmc.png" alt="KD（9、3、3）" title="KD（9、3、3）"></center><p>以上就是用正統的參數：9、3、3的KD指標（橘色、綠色），紫色是股價，可以看到KD值低檔交叉，算是好買點，最近就等著台積點低於20 XDD，（隨便說的，不是投資建議），我們試著換一個參數（9、6、6）看看：</p><center><img src="/KD1/tsmc2.png" alt="KD（9、6、6）" title="KD（9、6、6）"></center><p>可以看到曲線比較平滑一點，且K跟D差距比較明顯，相較於第一張圖，8月初比較不會有雜訊，但是反應變慢很多。</p><h3 id="KD-坊間策略"><a href="#KD-坊間策略" class="headerlink" title="KD 坊間策略"></a>KD 坊間策略</h3><p>大家都說<br>K超越D時，代表黃金交叉，可以買進<br>K落於D時，代表死亡交叉，可以賣出</p><p>真的是這樣嗎？讓我們來看看：</p><p>黃金交叉買，死亡交叉賣：</p><p>參數（9,3,3）勝率：0.386<br>參數（45,15,15）勝率：0.407<br>參數（180,60,60）勝率：0.364</p><p>以下是這三個參數的獲利曲線：</p><center><img src="/KD1/summary.png" alt="坊間策略歷史績效圖" title="坊間策略歷史績效圖"></center><p>結果好像不太好，看來真的不太能直接用，尤其短週期的KD，進出太平凡，導致手續費飆高，根本就是一直賠錢（紅色），用長週期的KD才稍微好轉。而藍線（不考慮手續費），則是中間的（類似週KD）表現比較好，但總之效過都不太好XD。</p><h3 id="KD-鈍化"><a href="#KD-鈍化" class="headerlink" title="KD 鈍化"></a>KD 鈍化</h3><p>另外一個網路上的偏方：KD鈍化，但大家沒有定義什麼時候賣，也沒有數據顯示幾天賣比較好，於是我們就來做個實驗：</p><p>買入條件：k, d （參數為 9，9，3）都大於80，至少 n 天則買入<br>賣出條件：m 天賣出</p><p>當然還有很多種買法我沒測過，有興趣的話可以在下面留言，我幫你測！</p><center><img src="/KD1/kdbest.png" alt="獲利高低圖" title="獲利高低圖"></center><p>色溫越暖，代表10年獲利越高，這張圖的 x軸 為 m 天， y軸 為 KD大於80 至少 n 天，可以發現，幾乎十幾個交易日賣出是最保險的，而5~6天連續高檔，代表鈍化，會有比較好的效果，第十天突然異軍突起，超紅，可能有些股票末路狂飆吧。。。</p><p>然而上述是不考慮手續費的情況，所以當我們將最好的一組參數(10,12)拿來跑回測，會是這個樣子：</p><center><img src="/KD1/kdbesteq.png" alt="獲利高低圖" title="獲利高低圖"></center><p>藍線代表沒有考慮手續費，一飛沖天<br>紅現代表考慮手續費，完全沒賺到什麼錢</p><p>看來手續費真的差很大，短線選股真的是比較困難，但滿有潛力的就是了。</p><p>以下是我調整後覺得最好的參數：</p><p>KD（5、3、3）大於75時買進 30 天</p><center><img src="/KD1/bestforself.png" alt="最後的成果" title="最後的成果"></center><p>扣除手續費後終於贏過大盤！不知道KD拿來加入其它策略效果如何？<br>另外，也可以跟我說想要看到哪一類的文章，或有什麼技術上的問題，都歡迎留言喔！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="技術面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
+    
+    
+      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>Python：利用Pandas輕鬆選股</title>
@@ -292,11 +325,11 @@
       <category term="財經Pyhton教學" scheme="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
-    
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
       <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
+    
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
   </entry>
   
@@ -323,13 +356,13 @@
       <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
-    
-      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
       <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
+    
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
   </entry>
   
@@ -355,11 +388,11 @@
       <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
-    
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
       <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
+    
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
   </entry>
   
@@ -604,42 +637,6 @@
       <category term="入門教學" scheme="https://koreal6803.github.io/tags/%E5%85%A5%E9%96%80%E6%95%99%E5%AD%B8/"/>
     
       <category term="總資產轉換率" scheme="https://koreal6803.github.io/tags/%E7%B8%BD%E8%B3%87%E7%94%A2%E8%BD%89%E6%8F%9B%E7%8E%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數</title>
-    <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%AD%EF%BC%89%E6%AC%8A%E7%9B%8A%E4%B9%98%E6%95%B8/"/>
-    <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）權益乘數/</id>
-    <published>2017-10-02T13:53:41.000Z</published>
-    <updated>2017-10-28T19:32:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天這篇繼續討論杜邦分析，其中的三個最重要的數字</p><ol><li>權益乘數</li><li>總資產轉換率</li><li>淨利率</li></ol><p>今天就來看一下台灣的公司在權益乘數是如何分佈的！</p><h3 id="權益乘數"><a href="#權益乘數" class="headerlink" title="權益乘數"></a>權益乘數</h3><p>權益乘數，也就是企業負債的比率！負債是一個兩面刃，有很多錢的話，企業可以將錢轉化成自己的產品，並將產品賣出去，但風險隨之升高，萬一還不出錢可是會瞬間破產。</p><center><img src="/用杜邦分析加強你的選股技巧（中）權益乘數/em-d.png" alt="權益乘數分佈圖" title="權益乘數分佈圖"></center><table><thead><tr><th>數量</th><th>平均</th><th>標準差</th><th>0%</th><th>25%</th><th>50%</th><th>75%</th><th>100%</th></tr></thead><tbody><tr><td>1703</td><td>2.35</td><td>2.78</td><td>-39.23</td><td>1.43</td><td>1.77</td><td>2.32</td><td>33.70</td></tr></tbody></table><p>仔細看一看竟然還有負數，哈哈也太誇張了吧！</p><p>還記得上次跟各位說明，權益乘數 = 總資產 / 股東權益</p><p>我更深入檢查下發現，台灣總共有8家公司的權益乘數是負數，其中並不是總資產是負的，而是股東權益是負的！代表全體投資人還必須多付一些錢才能把公司的債還清，滿可怕的XD！</p><h3 id="負債沒想像中的這麼不好！"><a href="#負債沒想像中的這麼不好！" class="headerlink" title="負債沒想像中的這麼不好！"></a>負債沒想像中的這麼不好！</h3><p>接下來我們一樣把所有的公司分成五組，去看看每季買入它們的歷史績效！</p><center><img src="/用杜邦分析加強你的選股技巧（中）權益乘數/em.png" alt="權益乘數回測，由黑到黃分別代表權益成數由低到高" title="權益乘數回測，由黑到黃分別代表權益成數由低到高"></center><p>可以發現負債越多的那組，其實並沒有想像中的那麼可怕，，在歷史績效中，算是高段班！畢竟會使用負債來增加自己的收入，也是公司的能力一部份，不是嗎？</p><p>反而可以看到，槓桿最小那組，都是吊車尾，就算去掉了負的那群，實驗結果還是吊車尾！代表不會用槓桿的公司，似乎在業績表現上也會比較無法那麼亮眼。</p><h3 id="會善用槓桿的人更厲害"><a href="#會善用槓桿的人更厲害" class="headerlink" title="會善用槓桿的人更厲害"></a>會善用槓桿的人更厲害</h3><p>人活在這個複雜的世界，本來就應該學會如何安全的運用槓桿，才能達到事半功倍之效果。這邊指的不是投資的槓桿，是指<a href="https://buzzorange.com/techorange/2017/07/21/life-leverage-get-more-done-in-less-time/" rel="external nofollow noopener noreferrer" target="_blank">生活中的各種槓桿</a>，阿基米德說：</p><blockquote><p>給我一個支點，我可以舉起整個地球。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今天這篇繼續討論杜邦分析，其中的三個最重要的數字&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;權益乘數&lt;/li&gt;
-&lt;li&gt;總資產轉換率&lt;/li&gt;
-&lt;li&gt;淨利率&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;今天就來看一下台灣的公司在權益乘數是如何分佈的！&lt;/p&gt;
-&lt;h3 id=&quot;權益乘數&quot;&gt;&lt;a href=
-      
-    
-    </summary>
-    
-      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-    
-      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
-    
-    
-      <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
-    
-      <category term="入門教學" scheme="https://koreal6803.github.io/tags/%E5%85%A5%E9%96%80%E6%95%99%E5%AD%B8/"/>
     
   </entry>
   
