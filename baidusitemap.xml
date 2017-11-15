@@ -4,6 +4,54 @@
 
     
   <url>
+    <loc>https://koreal6803.github.io/Python-%E5%AE%A2%E8%A3%BD%E5%8C%96%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E5%AF%A6%E5%81%9A%EF%BC%81/</loc>
+    <lastmod>2017-11-15T16:46:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python 客製化技術指標實做！</title>
+        <pubTime>2017-11-15T13:03:03.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式設計</tag>
+         
+        <tag>KD</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Pyhton教學" url="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://koreal6803.github.io/%E8%B6%85%E7%B0%A1%E5%96%AE%E5%8F%B0%E8%82%A1%E6%AF%8F%E6%97%A5%E7%88%AC%E8%9F%B2%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2017-11-15T12:46:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>超簡單台股每日爬蟲教學</title>
+        <pubTime>2017-10-24T22:17:06.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>選股</tag>
+         
+        <tag>程式設計</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Pyhton教學" url="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://koreal6803.github.io/KD1/</loc>
     <lastmod>2017-11-15T01:38:34.000Z</lastmod>
     <data>
@@ -192,35 +240,11 @@
         <title>利用Machine Learning 選股新手教學</title>
         <pubTime>2017-10-20T10:58:23.000Z</pubTime>
         
+        <tag>python</tag>
+         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
-         
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Pyhton教學" url="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://koreal6803.github.io/%E8%B6%85%E7%B0%A1%E5%96%AE%E5%8F%B0%E8%82%A1%E6%AF%8F%E6%97%A5%E7%88%AC%E8%9F%B2%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2017-10-28T22:03:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>超簡單台股每日爬蟲教學</title>
-        <pubTime>2017-10-24T22:17:06.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>選股</tag>
-         
-        <tag>程式設計</tag>
          
          
            
@@ -514,11 +538,11 @@
         <title>讓Machine Learning幫你看財報！</title>
         <pubTime>2017-10-13T10:07:13.000Z</pubTime>
         
+        <tag>python</tag>
+         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
-         
-        <tag>python</tag>
          
          
            
@@ -538,13 +562,13 @@
         <title>Machine Learning 表示：看季線最無用！</title>
         <pubTime>2017-10-15T16:10:12.000Z</pubTime>
         
-        <tag>機器學習</tag>
-         
-        <tag>Machine Learning</tag>
-         
         <tag>python</tag>
          
         <tag>選股</tag>
+         
+        <tag>機器學習</tag>
+         
+        <tag>Machine Learning</tag>
          
          
            
