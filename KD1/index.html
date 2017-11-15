@@ -7,10 +7,10 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="如何買股票,歷史回測,選股策略,簡易策略">
+        <meta name="keywords" content="如何買股票,選股策略,歷史回測,簡易策略">
     
     <meta name="description" content="謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！ 今天先來看一下KD值好了，畢竟都還沒有看到太多指標相關的文章，其實KD值是非常簡單的，但在這邊我不想要介紹公式，因為太無聊了，而且每">
-<meta name="keywords" content="如何買股票,歷史回測,選股策略,簡易策略">
+<meta name="keywords" content="如何買股票,選股策略,歷史回測,簡易策略">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何定義KD鈍化">
 <meta property="og:url" content="https://koreal6803.github.io/KD1/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:description" content="謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！ 今天先來看一下KD值好了，畢竟都還沒有看到太多指標相關的文章，其實KD值是非常簡單的，但在這邊我不想要介紹公式，因為太無聊了，而且每">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/KD1/tsmc.png">
-<meta property="og:updated_time" content="2017-11-14T16:57:05.000Z">
+<meta property="og:updated_time" content="2017-11-15T01:38:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何定義KD鈍化">
 <meta name="twitter:description" content="謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！ 今天先來看一下KD值好了，畢竟都還沒有看到太多指標相關的文章，其實KD值是非常簡單的，但在這邊我不想要介紹公式，因為太無聊了，而且每">
@@ -213,7 +213,7 @@ ga('send', 'pageview');
 <p>以下是這三個參數的獲利曲線：</p>
 <center><img src="/KD1/summary.png" alt="坊間策略歷史績效圖" title="坊間策略歷史績效圖"></center>
 
-<p>結果好像不太好，看來真的不太能直接用，尤其短週期的KD，進出太平凡，導致手續費飆高，根本就是一直賠錢（紅色），用長週期的KD才稍微好轉。而藍線（不考慮手續費），則是中間的（類似週KD）表現比較好，但總之效過都不太好XD。</p>
+<p>結果好像不太好，看來真的不太能直接用，尤其短週期的KD，進出太平凡，導致手續費飆高，根本就是一直賠錢（紅色），用長週期的KD才稍微好轉。而藍線（不考慮手續費），則是中間的（類似週KD）表現比較好，但總之效果都不太好XD。</p>
 <h3 id="KD-鈍化"><a href="#KD-鈍化" class="headerlink" title="KD 鈍化"></a>KD 鈍化</h3><p>另外一個網路上的偏方：KD鈍化，但大家沒有定義什麼時候賣，也沒有數據顯示幾天賣比較好，於是我們就來做個實驗：</p>
 <p>買入條件：k, d （參數為 9，9，3）都大於80，至少 n 天則買入<br>賣出條件：m 天賣出</p>
 <p>當然還有很多種買法我沒測過，有興趣的話可以在下面留言，我幫你測！</p>
@@ -226,7 +226,7 @@ ga('send', 'pageview');
 <p>藍線代表沒有考慮手續費，一飛沖天<br>紅現代表考慮手續費，完全沒賺到什麼錢</p>
 <p>看來手續費真的差很大，短線選股真的是比較困難，但滿有潛力的就是了。</p>
 <p>以下是我調整後覺得最好的參數：</p>
-<p>KD（5、3、3）大於75時買進 30 天</p>
+<p>KD（5、3、3）連續10天大於75時買進 30 天</p>
 <center><img src="/KD1/bestforself.png" alt="最後的成果" title="最後的成果"></center>
 
 <p>扣除手續費後終於贏過大盤！不知道KD拿來加入其它策略效果如何？<br>另外，也可以跟我說想要看到哪一類的文章，或有什麼技術上的問題，都歡迎留言喔！</p>

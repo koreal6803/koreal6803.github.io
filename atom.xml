@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-11-14T16:57:05.000Z</updated>
+  <updated>2017-11-15T01:38:34.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://koreal6803.github.io/KD1/"/>
     <id>https://koreal6803.github.io/KD1/</id>
     <published>2017-11-14T14:22:16.000Z</published>
-    <updated>2017-11-14T16:57:05.000Z</updated>
+    <updated>2017-11-15T01:38:34.000Z</updated>
     
-    <content type="html"><![CDATA[<p>謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！</p><p>今天先來看一下KD值好了，畢竟都還沒有看到太多指標相關的文章，其實KD值是非常簡單的，但在這邊我不想要介紹公式，因為太無聊了，而且每次看每次忘，我只想介紹如何看KD，以及參數如何設定：</p><h3 id="KD-的意義"><a href="#KD-的意義" class="headerlink" title="KD 的意義"></a>KD 的意義</h3><p>KD就是像坊間說的，兩條線，K跟D，一條反應較快，一條慢，都介於0～100之間。其意義在於股票在n天之內的相對位置，相對位置就是指n天內的最高最低，將當前的股價做normalize。</p><p>給一個簡單的例子，例如今天全班考試，有人拿30分，請問他考的好不好？</p><p>答案是：不知道，因為沒有辦法比較，說不定考卷很難，30分就是全班最高分了！要是考卷出太難，大家的成績介於10～30之間，那老師就可以做 normalize 讓成績分佈好看一點：</p><p>新成績 = ( 成績 - 10 ) / (30 - 10)</p><p>這樣子，考最好的人就是100分，而考最爛的人就是0分，這個就是KD指標的意義，而每個學生的成績，就是每日的收盤價。</p><p>最後我們將 新成績 對時間平滑一次，變成K值，再對K值平滑一次，變成D值。</p><h3 id="KD-的參數"><a href="#KD-的參數" class="headerlink" title="KD 的參數"></a>KD 的參數</h3><p>介紹完之後，K D 指標的參數就很好理解了：</p><ol><li>9天：只考慮9天內的最高最低</li><li>3天：K的平滑</li><li>3天：D的平滑</li></ol><p>平滑數字越大，數字變動越慢，雜訊越少<br>平滑數字越小，數字變動越快，雜訊越多</p><p>我們用台積電為例子：</p><center><img src="/KD1/tsmc.png" alt="KD（9、3、3）" title="KD（9、3、3）"></center><p>以上就是用正統的參數：9、3、3的KD指標（橘色、綠色），紫色是股價，可以看到KD值低檔交叉，算是好買點，最近就等著台積點低於20 XDD，（隨便說的，不是投資建議），我們試著換一個參數（9、6、6）看看：</p><center><img src="/KD1/tsmc2.png" alt="KD（9、6、6）" title="KD（9、6、6）"></center><p>可以看到曲線比較平滑一點，且K跟D差距比較明顯，相較於第一張圖，8月初比較不會有雜訊，但是反應變慢很多。</p><h3 id="KD-坊間策略"><a href="#KD-坊間策略" class="headerlink" title="KD 坊間策略"></a>KD 坊間策略</h3><p>大家都說<br>K超越D時，代表黃金交叉，可以買進<br>K落於D時，代表死亡交叉，可以賣出</p><p>真的是這樣嗎？讓我們來看看：</p><p>黃金交叉買，死亡交叉賣：</p><p>參數（9,3,3）勝率：0.386<br>參數（45,15,15）勝率：0.407<br>參數（180,60,60）勝率：0.364</p><p>以下是這三個參數的獲利曲線：</p><center><img src="/KD1/summary.png" alt="坊間策略歷史績效圖" title="坊間策略歷史績效圖"></center><p>結果好像不太好，看來真的不太能直接用，尤其短週期的KD，進出太平凡，導致手續費飆高，根本就是一直賠錢（紅色），用長週期的KD才稍微好轉。而藍線（不考慮手續費），則是中間的（類似週KD）表現比較好，但總之效過都不太好XD。</p><h3 id="KD-鈍化"><a href="#KD-鈍化" class="headerlink" title="KD 鈍化"></a>KD 鈍化</h3><p>另外一個網路上的偏方：KD鈍化，但大家沒有定義什麼時候賣，也沒有數據顯示幾天賣比較好，於是我們就來做個實驗：</p><p>買入條件：k, d （參數為 9，9，3）都大於80，至少 n 天則買入<br>賣出條件：m 天賣出</p><p>當然還有很多種買法我沒測過，有興趣的話可以在下面留言，我幫你測！</p><center><img src="/KD1/kdbest.png" alt="獲利高低圖" title="獲利高低圖"></center><p>色溫越暖，代表10年獲利越高，這張圖的 x軸 為 m 天， y軸 為 KD大於80 至少 n 天，可以發現，幾乎十幾個交易日賣出是最保險的，而5~6天連續高檔，代表鈍化，會有比較好的效果，第十天突然異軍突起，超紅，可能有些股票末路狂飆吧。。。</p><p>然而上述是不考慮手續費的情況，所以當我們將最好的一組參數(10,12)拿來跑回測，會是這個樣子：</p><center><img src="/KD1/kdbesteq.png" alt="獲利高低圖" title="獲利高低圖"></center><p>藍線代表沒有考慮手續費，一飛沖天<br>紅現代表考慮手續費，完全沒賺到什麼錢</p><p>看來手續費真的差很大，短線選股真的是比較困難，但滿有潛力的就是了。</p><p>以下是我調整後覺得最好的參數：</p><p>KD（5、3、3）大於75時買進 30 天</p><center><img src="/KD1/bestforself.png" alt="最後的成果" title="最後的成果"></center><p>扣除手續費後終於贏過大盤！不知道KD拿來加入其它策略效果如何？<br>另外，也可以跟我說想要看到哪一類的文章，或有什麼技術上的問題，都歡迎留言喔！</p>]]></content>
+    <content type="html"><![CDATA[<p>謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！</p><p>今天先來看一下KD值好了，畢竟都還沒有看到太多指標相關的文章，其實KD值是非常簡單的，但在這邊我不想要介紹公式，因為太無聊了，而且每次看每次忘，我只想介紹如何看KD，以及參數如何設定：</p><h3 id="KD-的意義"><a href="#KD-的意義" class="headerlink" title="KD 的意義"></a>KD 的意義</h3><p>KD就是像坊間說的，兩條線，K跟D，一條反應較快，一條慢，都介於0～100之間。其意義在於股票在n天之內的相對位置，相對位置就是指n天內的最高最低，將當前的股價做normalize。</p><p>給一個簡單的例子，例如今天全班考試，有人拿30分，請問他考的好不好？</p><p>答案是：不知道，因為沒有辦法比較，說不定考卷很難，30分就是全班最高分了！要是考卷出太難，大家的成績介於10～30之間，那老師就可以做 normalize 讓成績分佈好看一點：</p><p>新成績 = ( 成績 - 10 ) / (30 - 10)</p><p>這樣子，考最好的人就是100分，而考最爛的人就是0分，這個就是KD指標的意義，而每個學生的成績，就是每日的收盤價。</p><p>最後我們將 新成績 對時間平滑一次，變成K值，再對K值平滑一次，變成D值。</p><h3 id="KD-的參數"><a href="#KD-的參數" class="headerlink" title="KD 的參數"></a>KD 的參數</h3><p>介紹完之後，K D 指標的參數就很好理解了：</p><ol><li>9天：只考慮9天內的最高最低</li><li>3天：K的平滑</li><li>3天：D的平滑</li></ol><p>平滑數字越大，數字變動越慢，雜訊越少<br>平滑數字越小，數字變動越快，雜訊越多</p><p>我們用台積電為例子：</p><center><img src="/KD1/tsmc.png" alt="KD（9、3、3）" title="KD（9、3、3）"></center><p>以上就是用正統的參數：9、3、3的KD指標（橘色、綠色），紫色是股價，可以看到KD值低檔交叉，算是好買點，最近就等著台積點低於20 XDD，（隨便說的，不是投資建議），我們試著換一個參數（9、6、6）看看：</p><center><img src="/KD1/tsmc2.png" alt="KD（9、6、6）" title="KD（9、6、6）"></center><p>可以看到曲線比較平滑一點，且K跟D差距比較明顯，相較於第一張圖，8月初比較不會有雜訊，但是反應變慢很多。</p><h3 id="KD-坊間策略"><a href="#KD-坊間策略" class="headerlink" title="KD 坊間策略"></a>KD 坊間策略</h3><p>大家都說<br>K超越D時，代表黃金交叉，可以買進<br>K落於D時，代表死亡交叉，可以賣出</p><p>真的是這樣嗎？讓我們來看看：</p><p>黃金交叉買，死亡交叉賣：</p><p>參數（9,3,3）勝率：0.386<br>參數（45,15,15）勝率：0.407<br>參數（180,60,60）勝率：0.364</p><p>以下是這三個參數的獲利曲線：</p><center><img src="/KD1/summary.png" alt="坊間策略歷史績效圖" title="坊間策略歷史績效圖"></center><p>結果好像不太好，看來真的不太能直接用，尤其短週期的KD，進出太平凡，導致手續費飆高，根本就是一直賠錢（紅色），用長週期的KD才稍微好轉。而藍線（不考慮手續費），則是中間的（類似週KD）表現比較好，但總之效果都不太好XD。</p><h3 id="KD-鈍化"><a href="#KD-鈍化" class="headerlink" title="KD 鈍化"></a>KD 鈍化</h3><p>另外一個網路上的偏方：KD鈍化，但大家沒有定義什麼時候賣，也沒有數據顯示幾天賣比較好，於是我們就來做個實驗：</p><p>買入條件：k, d （參數為 9，9，3）都大於80，至少 n 天則買入<br>賣出條件：m 天賣出</p><p>當然還有很多種買法我沒測過，有興趣的話可以在下面留言，我幫你測！</p><center><img src="/KD1/kdbest.png" alt="獲利高低圖" title="獲利高低圖"></center><p>色溫越暖，代表10年獲利越高，這張圖的 x軸 為 m 天， y軸 為 KD大於80 至少 n 天，可以發現，幾乎十幾個交易日賣出是最保險的，而5~6天連續高檔，代表鈍化，會有比較好的效果，第十天突然異軍突起，超紅，可能有些股票末路狂飆吧。。。</p><p>然而上述是不考慮手續費的情況，所以當我們將最好的一組參數(10,12)拿來跑回測，會是這個樣子：</p><center><img src="/KD1/kdbesteq.png" alt="獲利高低圖" title="獲利高低圖"></center><p>藍線代表沒有考慮手續費，一飛沖天<br>紅現代表考慮手續費，完全沒賺到什麼錢</p><p>看來手續費真的差很大，短線選股真的是比較困難，但滿有潛力的就是了。</p><p>以下是我調整後覺得最好的參數：</p><p>KD（5、3、3）連續10天大於75時買進 30 天</p><center><img src="/KD1/bestforself.png" alt="最後的成果" title="最後的成果"></center><p>扣除手續費後終於贏過大盤！不知道KD拿來加入其它策略效果如何？<br>另外，也可以跟我說想要看到哪一類的文章，或有什麼技術上的問題，都歡迎留言喔！</p>]]></content>
     
     <summary type="html">
     
@@ -41,9 +41,9 @@
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
@@ -105,9 +105,9 @@
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
@@ -168,9 +168,9 @@
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="簡易策略" scheme="https://koreal6803.github.io/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
@@ -498,11 +498,11 @@
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="價值股" scheme="https://koreal6803.github.io/tags/%E5%83%B9%E5%80%BC%E8%82%A1/"/>
+      <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
-      <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+      <category term="價值股" scheme="https://koreal6803.github.io/tags/%E5%83%B9%E5%80%BC%E8%82%A1/"/>
     
   </entry>
   
@@ -533,9 +533,9 @@
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
     
@@ -597,9 +597,9 @@
     
       <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="本益比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
     
