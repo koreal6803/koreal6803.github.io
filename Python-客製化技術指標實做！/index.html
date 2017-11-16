@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Python 客製化技術指標實做！ | FinLab 量化實驗室</title>
+    <title>Python 客製化技術指標實作！ | FinLab 量化實驗室</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="python,KD,程式設計">
     
-    <meta name="description" content="之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教兩個重點：  如何將爬下來的資料整理成 time series （時間序列） 如何計算各種指標（以KD指標舉例） 利用算出來的指標來選股  這篇基本上講完，我就不知道講什麼了哈哈，應該會幫大家完成你們想要的客製化選股程式吧！有興趣可以寄信給我～我衡量自己的能力免費幫你做。    每日爬蟲首先，我們將">
+    <meta name="description" content="之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教幾個重點：  如何將爬下來的資料整理成 time series （時間序列） 如何計算各種指標（以KD指標舉例） 利用算出來的指標來選股  這篇基本上講完，我就不知道講什麼了哈哈，應該會幫大家完成你們想要的客製化選股程式吧！有興趣可以寄信給我～我衡量自己的能力免費幫你做。    每日爬蟲首先，我們將">
 <meta name="keywords" content="python,KD,程式設計">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 客製化技術指標實做！">
+<meta property="og:title" content="Python 客製化技術指標實作！">
 <meta property="og:url" content="https://koreal6803.github.io/Python-客製化技術指標實做！/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教兩個重點：  如何將爬下來的資料整理成 time series （時間序列） 如何計算各種指標（以KD指標舉例） 利用算出來的指標來選股  這篇基本上講完，我就不知道講什麼了哈哈，應該會幫大家完成你們想要的客製化選股程式吧！有興趣可以寄信給我～我衡量自己的能力免費幫你做。    每日爬蟲首先，我們將">
+<meta property="og:description" content="之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教幾個重點：  如何將爬下來的資料整理成 time series （時間序列） 如何計算各種指標（以KD指標舉例） 利用算出來的指標來選股  這篇基本上講完，我就不知道講什麼了哈哈，應該會幫大家完成你們想要的客製化選股程式吧！有興趣可以寄信給我～我衡量自己的能力免費幫你做。    每日爬蟲首先，我們將">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/Python-客製化技術指標實做！/thumbnail.png">
-<meta property="og:updated_time" content="2017-11-15T16:46:14.000Z">
+<meta property="og:updated_time" content="2017-11-16T00:24:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 客製化技術指標實做！">
-<meta name="twitter:description" content="之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教兩個重點：  如何將爬下來的資料整理成 time series （時間序列） 如何計算各種指標（以KD指標舉例） 利用算出來的指標來選股  這篇基本上講完，我就不知道講什麼了哈哈，應該會幫大家完成你們想要的客製化選股程式吧！有興趣可以寄信給我～我衡量自己的能力免費幫你做。    每日爬蟲首先，我們將">
+<meta name="twitter:title" content="Python 客製化技術指標實作！">
+<meta name="twitter:description" content="之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教幾個重點：  如何將爬下來的資料整理成 time series （時間序列） 如何計算各種指標（以KD指標舉例） 利用算出來的指標來選股  這篇基本上講完，我就不知道講什麼了哈哈，應該會幫大家完成你們想要的客製化選股程式吧！有興趣可以寄信給我～我衡量自己的能力免費幫你做。    每日爬蟲首先，我們將">
 <meta name="twitter:image" content="https://koreal6803.github.io/Python-客製化技術指標實做！/thumbnail.png">
     
 
@@ -159,7 +159,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-        Python 客製化技術指標實做！
+        Python 客製化技術指標實作！
         </h1>
     
 
@@ -184,7 +184,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教兩個重點：</p>
+            <p>之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教幾個重點：</p>
 <ul>
 <li>如何將爬下來的資料整理成 time series （時間序列）</li>
 <li>如何計算各種指標（以KD指標舉例）</li>
@@ -393,7 +393,7 @@ ga('send', 'pageview');
                             <a href="/Python-客製化技術指標實做！/" class="thumbnail">
     
     
-        <span style="background-image:url(/Python-客製化技術指標實做！/thumbnail.png)" alt="Python 客製化技術指標實做！" class="thumbnail-image"></span>
+        <span style="background-image:url(/Python-客製化技術指標實做！/thumbnail.png)" alt="Python 客製化技術指標實作！" class="thumbnail-image"></span>
     
     
 </a>
@@ -402,7 +402,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/財經Pyhton教學/">財經Pyhton教學</a></p>
-                            <p class="item-title"><a href="/Python-客製化技術指標實做！/" class="title">Python 客製化技術指標實做！</a></p>
+                            <p class="item-title"><a href="/Python-客製化技術指標實做！/" class="title">Python 客製化技術指標實作！</a></p>
                             <p class="item-date"><time datetime="2017-11-15T13:03:03.000Z" itemprop="datePublished">2017-11-15</time></p>
                         </div>
                     </li>
