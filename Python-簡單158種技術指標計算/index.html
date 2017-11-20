@@ -18,7 +18,7 @@
 <meta property="og:description" content="這篇接續著上一篇，Python 時間序列實做！，先複習一下，上回合結束，我們有一個最重要的成果：close，它的columns是所有的股票代號，而index是日期。 123close = pd.DataFrame(&amp;#123;k:d[&apos;收盤價&apos;] for k,d in data.items()&amp;#125;).transpose()close.index = pd.to_datetime(close">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/Python-簡單158種技術指標計算/tsmc.png">
-<meta property="og:updated_time" content="2017-11-19T19:36:55.000Z">
+<meta property="og:updated_time" content="2017-11-20T17:55:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 簡單158種技術指標計算">
 <meta name="twitter:description" content="這篇接續著上一篇，Python 時間序列實做！，先複習一下，上回合結束，我們有一個最重要的成果：close，它的columns是所有的股票代號，而index是日期。 123close = pd.DataFrame(&amp;#123;k:d[&apos;收盤價&apos;] for k,d in data.items()&amp;#125;).transpose()close.index = pd.to_datetime(close">
@@ -204,11 +204,10 @@ ga('send', 'pageview');
 <figure class="highlight plain"><figcaption><span>MACD 計算</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">talib2df(talib.abstract.MACD(tsmc)).plot()</div><div class="line">tsmc[&apos;close&apos;].plot(secondary_y=True)</div></pre></td></tr></table></figure>
 <center><img src="/Python-簡單158種技術指標計算/macd.png" alt="成品：KD曲線" title="成品：KD曲線"></center>
 
-<p>完畢不解釋！</p>
-<h3 id="MACD計算"><a href="#MACD計算" class="headerlink" title="MACD計算"></a>MACD計算</h3><figure class="highlight plain"><figcaption><span>MACD 計算</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">talib2df(talib.abstract.OBV(tsmc)).plot()</div><div class="line">tsmc[&apos;close&apos;].plot(secondary_y=True)</div></pre></td></tr></table></figure>
+<p>只要把<code>STOCH</code>改成<code>MACD</code>就好了，各種指標隨便用：</p>
+<h3 id="OBV計算"><a href="#OBV計算" class="headerlink" title="OBV計算"></a>OBV計算</h3><figure class="highlight plain"><figcaption><span>OBV 計算</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">talib2df(talib.abstract.OBV(tsmc)).plot()</div><div class="line">tsmc[&apos;close&apos;].plot(secondary_y=True)</div></pre></td></tr></table></figure>
 <center><img src="/Python-簡單158種技術指標計算/obv.png" alt="成品：MACD曲線" title="成品：MACD曲線"></center>
 
-<p>只要把<code>STOCH</code>改成<code>MACD</code>就好了，各種指標隨便用：</p>
 <h3 id="威廉指數計算"><a href="#威廉指數計算" class="headerlink" title="威廉指數計算"></a>威廉指數計算</h3><figure class="highlight plain"><figcaption><span>WILLR 計算</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">talib2df(talib.abstract.WILLR(tsmc)).plot()</div><div class="line">tsmc[&apos;close&apos;].plot(secondary_y=True)</div></pre></td></tr></table></figure>
 <center><img src="/Python-簡單158種技術指標計算/willr.png" alt="成品：WILLR 曲線" title="成品：WILLR 曲線"></center>
 
