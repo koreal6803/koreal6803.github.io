@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2017-11-22T01:27:17.000Z</updated>
+  <updated>2017-11-24T11:36:14.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>市值營收比-幫你找到便宜獲利股</title>
+    <link href="https://koreal6803.github.io/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
+    <id>https://koreal6803.github.io/市值營收比/</id>
+    <published>2017-11-24T09:19:11.000Z</published>
+    <updated>2017-11-24T11:36:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我才疏學淺，最近才發現這個指標，一用之下大為驚嘆，回測的效果還滿好的，今天分享給大家。網路上有各種算法，究竟要用財報上的營收總額算，還是直接用月營收算？用月營收算的話，要加總幾個月比較好？在這篇做簡單的分析。</p><center><img src="/市值營收比/thumb.jpeg" alt="計算市值營收比" title="計算市值營收比"></center><p>市值營收比的計算方式如下：</p><p>$$ 市值營收比 = 市值 / n個月營收總和 $$</p><p>一般來說，我們都是希望 <strong>市值營收比</strong> 越小越好，因為 <strong>市值營收比</strong> 越小代表市值越小，而營收越高，也代表較便宜的高營收股。<strong>市值營收比</strong> 有很多好處，它的變化速度非常快，市值是每個交易日都會變動，而月營收也是每個月都有新的數字，讓它的反應速度比其它的基本面指數再快一些。</p><p>也有人會把分母換成每季的營收總額，但我實測後發現效果沒有用月營收好。</p><p>分母中的 n 是個使用者決定的數字，例如你想計算每一季的 <strong>市值營收比</strong>，那就帶入4，這邊以4為例子。</p><p>首先我們來看 <strong>市值營收比</strong> 分佈圖：</p><center><img src="/市值營收比/hist.png" alt="市值營收比分佈圖" title="市值營收比分佈圖"></center><p>可以發現這又是一個類似於1/x曲線的分佈圖，我們將其照高低分成四組去持有，每60天換一次股，不計算手續費：</p><center><img src="/市值營收比/pr-half-y.png" alt="半年市值營收比分佈圖" title="半年市值營收比分佈圖"></center><p>很漂亮的一字排開！我發現120天換一次股，效果比60天或是240天都還要好（無論n＝4，6，12，24，36）。<br>然而這邊的回測只是建立在一次持有幾百種不同股票的狀況下，真實的情況，我們沒有那麼多錢去分散投資時，不能只看 <strong>市值營收比</strong> 來選股，不然<strong>漲跌機率還是跟擲銅板的機率沒兩樣</strong>，還必須做更多的篩選。</p><p> <strong>市值營收比</strong> 的缺點是，營收不代表稅後淨利，可能有些公司表面上賣出很多產品，但都是賠本生意，這種公司沒辦法被過濾，所以下一篇我們就來看看 <strong>市值營收比</strong> 搭配其它指標來做回測吧！</p><ul><li>計算 <strong>市值營收比</strong> 時，用月營收計算獲利效果比較好！</li><li>市值營收比（季）還滿好用的，是我認為排名前十的基本面指標</li><li>市值營收比找出來的股票，小型股偏多</li><li>可以用 3.77（50％）當作 <strong>市值營收比</strong> 的中位數，作為選股的依據，越低越好。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我才疏學淺，最近才發現這個指標，一用之下大為驚嘆，回測的效果還滿好的，今天分享給大家。網路上有各種算法，究竟要用財報上的營收總額算，還是直接用月營收算？用月營收算的話，要加總幾個月比較好？在這篇做簡單的分析。&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/市值營收比/thu
+      
+    
+    </summary>
+    
+      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+    
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="市值營收比" scheme="https://koreal6803.github.io/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
+    
+      <category term="指標" scheme="https://koreal6803.github.io/tags/%E6%8C%87%E6%A8%99/"/>
+    
+  </entry>
   
   <entry>
     <title>避開大盤大跌的方法！</title>
@@ -159,9 +191,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
   </entry>
   
@@ -222,9 +254,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
   </entry>
   
@@ -286,9 +318,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
   </entry>
   
@@ -353,9 +385,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
   </entry>
   
@@ -411,11 +443,11 @@
       <category term="財經Pyhton教學" scheme="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
     
     
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
       <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
-    
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
   </entry>
   
@@ -442,11 +474,11 @@
       <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
       <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
-    
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
@@ -474,11 +506,11 @@
       <category term="AI看股票" scheme="https://koreal6803.github.io/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
     
     
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
       <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
       <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
-    
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
   </entry>
   
@@ -589,41 +621,6 @@
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="價值股" scheme="https://koreal6803.github.io/tags/%E5%83%B9%E5%80%BC%E8%82%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用杜邦分析加強你的選股技巧（下）回測</title>
-    <link href="https://koreal6803.github.io/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%8B%EF%BC%89%E5%9B%9E%E6%B8%AC/"/>
-    <id>https://koreal6803.github.io/用杜邦分析加強你的選股技巧（下）回測/</id>
-    <published>2017-10-07T02:45:40.000Z</published>
-    <updated>2017-10-28T19:32:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天介紹一個簡單至少近7年有效的方法，考慮杜邦分析的指標，排列組合後，我能得出的最好結果。</p><h3 id="選股條件："><a href="#選股條件：" class="headerlink" title="選股條件："></a>選股條件：</h3><ul><li>總資產轉換率 &gt; 0.3 （選擇獲利高的公司）</li><li>ROE &gt; 5 （選擇能真正盈利的公司）</li><li>PB &lt; 3 （選便宜一點的公司）</li></ul><p>發現 <strong>淨利率</strong> 莫名的失效，較難拿來選一小群股票，而 <strong>權益乘數</strong> 較也是，畢竟一家公司的槓桿程度，不代表公司體質好不好。我發現 <strong>總資產轉換率</strong>，是一個很好的條件，看企業是否有妥善運用自己的資產，能夠有盈利，回測的效果也比較穩定。</p><h3 id="歷史績效"><a href="#歷史績效" class="headerlink" title="歷史績效"></a>歷史績效</h3><center><img src="/用杜邦分析加強你的選股技巧（下）回測/eq.png" alt="權益曲線" title="權益曲線"></center><p>藍色是投資完美分配的狀況，而紅色是用100萬當作起始資金，考慮買賣張數。用此策略投資，資產穩定成長。</p><h3 id="適用於IFRS制度開始後"><a href="#適用於IFRS制度開始後" class="headerlink" title="適用於IFRS制度開始後"></a>適用於IFRS制度開始後</h3><center><img src="/用杜邦分析加強你的選股技巧（下）回測/ns.png" alt="每日持股數目" title="每日持股數目"></center><p>這個策略在2013之前，一次會買很多張股票，且獲利比較不穩定。我個人覺得可能是2013年時改為 IFRSs 後的關係。因為2013年後，企業可以用 “公允” 價值入帳。所以許多有很多資產的公司，淨值大幅成長。實際擁有的東西沒變，只因為遊戲規則改變，產生”看起來好像改善的”現象。</p><p>雖然淨值大幅成長，但假如營運狀況沒趕善，則<strong>總資產轉換率</strong>反而會降低，因此總資產轉換率高的公司，2013年後才被真正的篩選出來，也是此策略歷史績效開始變好的時機。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今天介紹一個簡單至少近7年有效的方法，考慮杜邦分析的指標，排列組合後，我能得出的最好結果。&lt;/p&gt;
-&lt;h3 id=&quot;選股條件：&quot;&gt;&lt;a href=&quot;#選股條件：&quot; class=&quot;headerlink&quot; title=&quot;選股條件：&quot;&gt;&lt;/a&gt;選股條件：&lt;/h3&gt;&lt;ul&gt;
-&lt;li
-      
-    
-    </summary>
-    
-      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-    
-      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
-    
-    
-      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
-      <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="杜邦分析" scheme="https://koreal6803.github.io/tags/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
