@@ -304,8 +304,8 @@ $$ 市值營收比 = 市值 / n個月營收總和 $$
     
 
         <p class="article-excerpt">
-            這篇接續著上一篇，Python 時間序列實做！，先複習一下，上回合結束，我們有一個最重要的成果：close，它的columns是所有的股票代號，而index是日期。
-123close = pd.DataFrame(&#123;k:d['收盤價'] for k,d in data.items()&#125;).transpose()close.index = pd.to_datetime(close
+            這篇接續著Python時間序列實做，先複習一下，上回合結束，我們有一個最重要的成果：close，它的columns是所有的股票代號，而index是日期。
+123close = pd.DataFrame(&#123;k:d['收盤價'] for k,d in data.items()&#125;).transpose()close.index = pd.to_datetime(close.index
         </p>
     </div>
 </article>
