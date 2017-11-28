@@ -18,7 +18,7 @@
 <meta property="og:description" content="最近偶然看到了TEJ網頁中，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。 今天要介紹的是裡面的 威廉．納葛維茲-價值型選股策略 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路： 營運合格的小市值股票這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/威廉．納葛維茲-價值型選股策略/eq.png">
-<meta property="og:updated_time" content="2017-11-28T23:25:50.000Z">
+<meta property="og:updated_time" content="2017-11-28T23:59:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="威廉．納葛維茲-價值型選股策略">
 <meta name="twitter:description" content="最近偶然看到了TEJ網頁中，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。 今天要介紹的是裡面的 威廉．納葛維茲-價值型選股策略 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路： 營運合格的小市值股票這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊">
@@ -199,12 +199,18 @@ ga('send', 'pageview');
 <li><a href="/本益比能幫你選出優質股？/">本益比</a> &lt; 20</li>
 <li><a href="http://ifund.tcbbank.com.tw/z/glossary/glexp_4902.djhtm" rel="external nofollow noopener noreferrer" target="_blank">營業利益成長率</a> &gt; 0</li>
 </ul>
-<p>市值營收比也是一個很好用的財物指標，可以參考<a href="/市值營收比/">我的文章</a>。</p>
-<h3 id="稅後淨利考慮！"><a href="#稅後淨利考慮！" class="headerlink" title="稅後淨利考慮！"></a>稅後淨利考慮！</h3><p>一家獲利良好的公司，獲利持續成長，固然是好事，但不能只是獲利表面上成長，而稅後淨利卻很少，那也不行！所以這邊就用了額外的一個指標，來判斷稅後淨利的大小：</p>
+<p>市值營收比也是一個很好用的財務指標，可以參考<a href="/市值營收比/">我的文章</a>。</p>
+<h3 id="稅後淨利要考慮！"><a href="#稅後淨利要考慮！" class="headerlink" title="稅後淨利要考慮！"></a>稅後淨利要考慮！</h3><p>一家獲利良好的公司，獲利持續成長，固然是好事，但不能只是獲利表面上成長，而稅後淨利卻很少，那也不行！所以這邊就用了額外的一個指標，來判斷稅後淨利的大小：</p>
 <ul>
 <li>股東權益報酬率 = 稅後淨利 / 股東權益總額 &gt; 市場均值</li>
 </ul>
 <p>這邊的 除 <strong>股東權益總額</strong> 是用來對整個市場做一個公平的比較，例如某公司發行很多股票，且股價很高，那就更應該有很好的 <strong>稅後淨利</strong> ，不然投資人為何要拿錢給你呢？</p>
+<h3 id="思路總結："><a href="#思路總結：" class="headerlink" title="思路總結："></a>思路總結：</h3><p>這個策略基本上就是找小巧、獲利高的股票，我覺得其中很棒的概念是</p>
+<ol>
+<li>用市值營收比，而不是單純的營收</li>
+<li>用股東權益報酬率，而不是單純的毛利率或稅後淨利</li>
+</ol>
+<p>利用上述兩個指標，讓才能將每家公司更公平的做比較，進而找出小而美的股票！</p>
 <h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>符合上述條件，持有60天，每60天換一輪股票：</p>
 <center><img src="/威廉．納葛維茲-價值型選股策略/eq.png" alt="權益曲線" title="權益曲線"></center>
 
