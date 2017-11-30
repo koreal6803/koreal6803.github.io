@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>用杜邦分析加強你的選股技巧（中）淨利率 | FinLab 量化實驗室</title>
+    <title>Python 簡單選股和回測 | FinLab 量化實驗室</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="杜邦分析,入門教學">
+        <meta name="keywords" content="">
     
-    <meta name="description" content="淨利率就是指企業從營業收入，真正收進口袋的錢： 分佈圖以下是淨利率的分佈圖：      數量 平均 標準差 0% 25% 50% 75% 100%     1693 -100 2234 -76488.52 0.24 5.09 11.56 5458.2    台灣有滿多企業沒有辦法賺錢！但有少數公司獲利滿驚人的，然而接近0的地方會產生一個很明顯的突波，看來滿多企業盡量讓自己的淨利大於0的，讓財報好看">
-<meta name="keywords" content="杜邦分析,入門教學">
+    <meta name="description" content="最近在看一些比較古典而學術的策略文章，雖然已經眾所皆知，但是好像很少人用，所以今天來介紹一下，如何利用 python 實做 portfolio trading。   Portfolio Trading 的意思就是選擇一籃子股票，並且照著一定的比例買入，今天我就不介紹太詳細，先用最簡單的篩選法，選出一些股票，並觀察買入一兩年後的變化。 首先，大家必須要把之前的 Python-時間序列實作！ 那一篇複">
+<meta name="keywords" content="股市,投資,股票,選股,分析,策略,財報,stock,finance,market,公司體質,策略,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用杜邦分析加強你的選股技巧（中）淨利率">
-<meta property="og:url" content="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）淨利率/index.html">
+<meta property="og:title" content="Python 簡單選股和回測">
+<meta property="og:url" content="https://koreal6803.github.io/Python-簡單選股和回測/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="淨利率就是指企業從營業收入，真正收進口袋的錢： 分佈圖以下是淨利率的分佈圖：      數量 平均 標準差 0% 25% 50% 75% 100%     1693 -100 2234 -76488.52 0.24 5.09 11.56 5458.2    台灣有滿多企業沒有辦法賺錢！但有少數公司獲利滿驚人的，然而接近0的地方會產生一個很明顯的突波，看來滿多企業盡量讓自己的淨利大於0的，讓財報好看">
+<meta property="og:description" content="最近在看一些比較古典而學術的策略文章，雖然已經眾所皆知，但是好像很少人用，所以今天來介紹一下，如何利用 python 實做 portfolio trading。   Portfolio Trading 的意思就是選擇一籃子股票，並且照著一定的比例買入，今天我就不介紹太詳細，先用最簡單的篩選法，選出一些股票，並觀察買入一兩年後的變化。 首先，大家必須要把之前的 Python-時間序列實作！ 那一篇複">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）淨利率/netprofitmargin-d.png">
-<meta property="og:updated_time" content="2017-10-28T19:32:25.000Z">
+<meta property="og:image" content="https://koreal6803.github.io/Python-簡單選股和回測/thumbnail.jpeg">
+<meta property="og:updated_time" content="2017-11-30T15:33:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用杜邦分析加強你的選股技巧（中）淨利率">
-<meta name="twitter:description" content="淨利率就是指企業從營業收入，真正收進口袋的錢： 分佈圖以下是淨利率的分佈圖：      數量 平均 標準差 0% 25% 50% 75% 100%     1693 -100 2234 -76488.52 0.24 5.09 11.56 5458.2    台灣有滿多企業沒有辦法賺錢！但有少數公司獲利滿驚人的，然而接近0的地方會產生一個很明顯的突波，看來滿多企業盡量讓自己的淨利大於0的，讓財報好看">
-<meta name="twitter:image" content="https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）淨利率/netprofitmargin-d.png">
+<meta name="twitter:title" content="Python 簡單選股和回測">
+<meta name="twitter:description" content="最近在看一些比較古典而學術的策略文章，雖然已經眾所皆知，但是好像很少人用，所以今天來介紹一下，如何利用 python 實做 portfolio trading。   Portfolio Trading 的意思就是選擇一籃子股票，並且照著一定的比例買入，今天我就不介紹太詳細，先用最簡單的篩選法，選出一些股票，並觀察買入一兩年後的變化。 首先，大家必須要把之前的 Python-時間序列實作！ 那一篇複">
+<meta name="twitter:image" content="https://koreal6803.github.io/Python-簡單選股和回測/thumbnail.jpeg">
     
 
     
@@ -148,18 +148,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/指標分析/基本面/">基本面</a>
+    未分類
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-用杜邦分析加強你的選股技巧（中）淨利率" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+                            <article id="post-Python-簡單選股和回測" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        用杜邦分析加強你的選股技巧（中）淨利率
+        Python 簡單選股和回測
         </h1>
     
 
@@ -169,67 +169,45 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/用杜邦分析加強你的選股技巧（中）淨利率/" class="article-date">
-            <time datetime="2017-10-05T21:07:14.000Z" itemprop="datePublished">2017-10-05</time>
+        <a href="/Python-簡單選股和回測/" class="article-date">
+            <time datetime="2017-11-30T12:21:38.000Z" itemprop="datePublished">2017-11-30</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/入門教學/">入門教學</a>, <a class="tag-link" href="/tags/杜邦分析/">杜邦分析</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>淨利率就是指企業從營業收入，真正收進口袋的錢：</p>
-<h3 id="分佈圖"><a href="#分佈圖" class="headerlink" title="分佈圖"></a>分佈圖</h3><p>以下是淨利率的分佈圖：</p>
-<center><img src="/用杜邦分析加強你的選股技巧（中）淨利率/netprofitmargin-d.png" alt="淨利率分佈圖" title="淨利率分佈圖"></center>
+            <p>最近在看一些比較古典而學術的策略文章，雖然已經眾所皆知，但是好像很少人用，所以今天來介紹一下，如何利用 python 實做 portfolio trading。</p>
+<center><img src="/Python-簡單選股和回測/thumbnail.jpeg" alt="動手做" title="動手做"></center>
 
-<table>
-<thead>
-<tr>
-<th>數量</th>
-<th>平均</th>
-<th>標準差</th>
-<th>0%</th>
-<th>25%</th>
-<th>50%</th>
-<th>75%</th>
-<th>100%</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1693</td>
-<td>-100</td>
-<td>2234</td>
-<td>-76488.52</td>
-<td>0.24</td>
-<td>5.09</td>
-<td>11.56</td>
-<td>5458.2</td>
-</tr>
-</tbody>
-</table>
-<p>台灣有滿多企業沒有辦法賺錢！但有少數公司獲利滿驚人的，然而接近0的地方會產生一個很明顯的突波，看來滿多企業盡量讓自己的淨利大於0的，讓財報好看一點。</p>
-<h3 id="淨利率高的企業股價更容易成長！"><a href="#淨利率高的企業股價更容易成長！" class="headerlink" title="淨利率高的企業股價更容易成長！"></a>淨利率高的企業股價更容易成長！</h3><p>我們將淨利率分五組，由低到高，低的是深色，高的是黃色，每60天重新選擇一次，每一條曲線，代表我們長期投入，買入其中一組的股票，所獲得的報酬：</p>
-<center><img src="/用杜邦分析加強你的選股技巧（中）淨利率/netprofitmargin.png" alt="淨利率分佈圖" title="淨利率分佈圖"></center>
-
-<p>我們發現，投資淨利率高的公司，比較容易獲利！</p>
-<h3 id="杜邦分析的指標終於說完了！"><a href="#杜邦分析的指標終於說完了！" class="headerlink" title="杜邦分析的指標終於說完了！"></a>杜邦分析的指標終於說完了！</h3><p>總結一下，目前杜邦分析的系列文章中，我們講了三個重要的指標：</p>
+<p>Portfolio Trading 的意思就是選擇一籃子股票，並且照著一定的比例買入，今天我就不介紹太詳細，先用最簡單的篩選法，選出一些股票，並觀察買入一兩年後的變化。</p>
+<p>首先，大家必須要把之前的 <a href="/Python-時間序列實作！/">Python-時間序列實作！</a> 那一篇複習下，我們會用到當中的 close 這個成品，最好是跑五年以上的資料，會比較有可靠性。</p>
+<h3 id="先寫好策略框架"><a href="#先寫好策略框架" class="headerlink" title="先寫好策略框架"></a>先寫好策略框架</h3><p>在開始寫策略時，先用簡單的兩三句話，來闡述所有的code在做什麼，並且逐段闊寫：</p>
+<figure class="highlight python"><figcaption><span>pseudo code</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> 每年:</div><div class="line">    <span class="number">1.</span> 先看前三年每個股票的表現</div><div class="line">    <span class="number">2.</span> 篩選股票</div><div class="line">    <span class="number">3.</span> 回測當年的狀況</div></pre></td></tr></table></figure>
+<p>於是接下來我們就依照這三點來建構回測。</p>
+<h3 id="前三年股票的狀況"><a href="#前三年股票的狀況" class="headerlink" title="前三年股票的狀況"></a>前三年股票的狀況</h3><p>假設我們目前在第<code>year</code>年，，我們把最近<code>lookback_period</code>年所有股票的股價選取出來</p>
+<figure class="highlight python"><figcaption><span>lookback three years</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 拿取近n年股票</span></div><div class="line">c = close.truncate(str(year-lookback_period), str(year))</div><div class="line"></div><div class="line"><span class="comment"># 計算近n年最大下跌幅度</span></div><div class="line">dropdown = (c.cummax() - c).max()/c.max()*<span class="number">100</span></div><div class="line"></div><div class="line"><span class="comment"># 計算近n年報酬率</span></div><div class="line">profit = (c.iloc[<span class="number">-1</span>] / c.iloc[<span class="number">0</span>] - <span class="number">1</span>) * <span class="number">100</span></div><div class="line"></div><div class="line"><span class="comment"># 計算近n年標準差(波動率)</span></div><div class="line">std = (c/c.shift()).std()</div></pre></td></tr></table></figure>
+<p>第5、8、11行是計算三個指標，當然你也可以建構自己的一些指標，我這邊就先舉這三個例子，這邊的每一行都很值得玩味，假如你都看不懂，建議你先去看 <a href="https://pandas.pydata.org/pandas-docs/stable/tutorials.html" rel="external nofollow noopener noreferrer" target="_blank">pandas 的新手教學</a>。</p>
+<h3 id="篩選股票"><a href="#篩選股票" class="headerlink" title="篩選股票"></a>篩選股票</h3><p>這邊我們就用剛剛計算的三個指標來選股：</p>
+<figure class="highlight python"><figcaption><span>select stocks</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">constraint = (std[std &lt; <span class="number">0.02</span>].index &amp; </div><div class="line">              profit[profit &gt; <span class="number">10</span>].index &amp; </div><div class="line">              dropdown[dropdown &lt; <span class="number">50</span>].index)</div></pre></td></tr></table></figure>
+<p>這邊顧名思義，我們希望選取：</p>
 <ul>
-<li>淨利率</li>
-<li>總資產轉換率</li>
-<li>權益乘數</li>
+<li>波動率 &lt; 0.2：波動率越大代表股價變化幅度越大，我們只選波動率小的股票</li>
+<li>獲利 &gt; 10%：近三年報酬率大於10的股票</li>
+<li>最大下跌幅度 &lt; 50%：下跌幅度也不能太大</li>
 </ul>
-<p>目前看起來，是<strong>淨利率</strong>跟<strong>總資產轉換率</strong>比較好用，可以利用這兩個指標選股！<br>而<strong>權益乘數</strong>其實是比較難用的，因為很難斷定會借貸的公司到底好不好。</p>
-<p>而下一篇，我們會能不能整合三個指標，找出比較好的優質股～</p>
+<h3 id="回測"><a href="#回測" class="headerlink" title="回測"></a>回測</h3><p>接著就是回測，這邊的回測只求簡單算算，跟實際情況一定不一樣，這邊我們將資產均勻分佈於選出來的股票，不計算手續費，也不計算除權息、減資等等。建議有餘力的人可以用 adjust close取代普通的 close price，結果會比較準確。</p>
+<figure class="highlight python"><figcaption><span>backtest</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 取出今年的股價</span></div><div class="line">c2 = stocks.close.truncate(str(year), str(year + <span class="number">1</span>))</div><div class="line"></div><div class="line"><span class="comment"># 依照剛剛的條件選取股票</span></div><div class="line">selected_stocks = constraint &amp; c2.columns</div><div class="line">print(year, <span class="string">'年買了'</span>,len(selected_stocks),<span class="string">'支股票'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 回測</span></div><div class="line">equality = c2[selected_stocks].dropna(axis=<span class="number">1</span>).mean(axis=<span class="number">1</span>)</div><div class="line">total_equality = (equality / equality[<span class="number">0</span>] * start_capital)</div><div class="line">total_equality.plot(color=<span class="string">'blue'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 今年底的資產，變成明年初的資產</span></div><div class="line">start_capital = total_equality[<span class="number">-1</span>]</div></pre></td></tr></table></figure>
+<p>什麼！回測竟然只要這麼少行！！是的因為我們是平均分散所有要買的股票，所以只要把選出來的股價做平均，買入這個平均指數就可以了。由於有了前面的假設，結果會是一樣的。</p>
+<h3 id="完整的範例"><a href="#完整的範例" class="headerlink" title="完整的範例"></a>完整的範例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line">%matplotlib inline</div><div class="line"></div><div class="line">lookback_period = <span class="number">3</span></div><div class="line">start_capital = <span class="number">1</span></div><div class="line"><span class="keyword">for</span> year <span class="keyword">in</span> range(<span class="number">2010</span>, <span class="number">2018</span>):</div><div class="line">    </div><div class="line">    <span class="comment"># calculate performance of stocks</span></div><div class="line">    <span class="comment"># -------------------------------</span></div><div class="line"></div><div class="line">    <span class="comment"># 拿取近n年股票</span></div><div class="line">    c = close.truncate(str(year-lookback_period), str(year))</div><div class="line"></div><div class="line">    <span class="comment"># 計算近n年最大下跌幅度</span></div><div class="line">    dropdown = (c.cummax() - c).max()/c.max()*<span class="number">100</span></div><div class="line"></div><div class="line">    <span class="comment"># 計算近n年報酬率</span></div><div class="line">    profit = (c.iloc[<span class="number">-1</span>] / c.iloc[<span class="number">0</span>] - <span class="number">1</span>) * <span class="number">100</span></div><div class="line"></div><div class="line">    <span class="comment"># 計算近n年標準差(波動率)</span></div><div class="line">    std = (c/c.shift()).std()</div><div class="line"></div><div class="line">    <span class="comment"># constraint</span></div><div class="line">    <span class="comment"># ----------</span></div><div class="line">    </div><div class="line">    constraint = (std[std &lt; <span class="number">0.02</span>].index &amp; </div><div class="line">                profit[profit &gt; <span class="number">10</span>].index &amp; </div><div class="line">                dropdown[dropdown &lt; <span class="number">50</span>].index) </div><div class="line"></div><div class="line">    <span class="comment"># backtest</span></div><div class="line">    <span class="comment"># --------</span></div><div class="line"></div><div class="line">    <span class="comment"># 取出今年的股價</span></div><div class="line">    c2 = stocks.close.truncate(str(year), str(year + <span class="number">1</span>))</div><div class="line"></div><div class="line">    <span class="comment"># 依照剛剛的條件選取股票</span></div><div class="line">    selected_stocks = constraint &amp; c2.columns</div><div class="line">    print(year, <span class="string">'年買了'</span>,len(selected_stocks),<span class="string">'支股票'</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 回測</span></div><div class="line">    equality = c2[selected_stocks].dropna(axis=<span class="number">1</span>).mean(axis=<span class="number">1</span>)</div><div class="line">    total_equality = (equality / equality[<span class="number">0</span>] * start_capital)</div><div class="line">    total_equality.plot(color=<span class="string">'blue'</span>)</div><div class="line"></div><div class="line">    <span class="comment"># 今年底的資產，變成明年初的資產</span></div><div class="line">    start_capital = total_equality[<span class="number">-1</span>]</div><div class="line"></div></pre></td></tr></table></figure>
+<center><img src="/Python-簡單選股和回測/eq.png" alt="權益曲線" title="權益曲線"></center>
+
+<p>這邊已知的問題是，假如你當年沒有任何股票的話，回測會有點問題喔！盡量讓每一年都持有一些股票吧！（或者debug一下XD）<br>可以看出前幾年獲利滿好的，近年來獲利普普，感覺還得加入其它的條件吧？<br>大家可以新增一些指標，並且用類似的方法做回測喔！</p>
 
             <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
-            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用杜邦分析加強你的選股技巧（上）/" title="用杜邦分析加強你的選股技巧（上）" rel="bookmark">用杜邦分析加強你的選股技巧（上）</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用杜邦分析加強你的選股技巧（中）權益乘數/" title="拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數" rel="bookmark">拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用杜邦分析加強你的選股技巧（中）總資產轉換率/" title="用杜邦分析加強你的選股技巧（中）總資產轉換率" rel="bookmark">用杜邦分析加強你的選股技巧（中）總資產轉換率</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用杜邦分析加強你的選股技巧（下）回測/" title="用杜邦分析加強你的選股技巧（下）回測" rel="bookmark">用杜邦分析加強你的選股技巧（下）回測</a></h3></div></li></ul>
+            
         </div>
         <footer class="article-footer">
             
@@ -350,20 +328,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/用杜邦分析加強你的選股技巧（下）回測/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            用杜邦分析加強你的選股技巧（下）回測
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/小資族也可以使用的選股法！/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/威廉．納葛維茲-價值型選股策略/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">小資族也可以使用的選股法！</p>
+        <p class="article-nav-title">威廉．納葛維茲-價值型選股策略</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -561,7 +529,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'koreal6803';
     
     
-    var disqus_url = 'https://koreal6803.github.io/用杜邦分析加強你的選股技巧（中）淨利率/';
+    var disqus_url = 'https://koreal6803.github.io/Python-簡單選股和回測/';
     
     (function() {
     var dsq = document.createElement('script');
