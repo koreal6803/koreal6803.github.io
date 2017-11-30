@@ -65,11 +65,11 @@
       <category term="選股策略" scheme="https://koreal6803.github.io/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="市值營收比" scheme="https://koreal6803.github.io/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
@@ -187,9 +187,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="KD" scheme="https://koreal6803.github.io/tags/KD/"/>
-    
       <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+      <category term="KD" scheme="https://koreal6803.github.io/tags/KD/"/>
     
   </entry>
   
