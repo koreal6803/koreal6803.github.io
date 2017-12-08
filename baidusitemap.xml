@@ -4,6 +4,53 @@
 
     
   <url>
+    <loc>https://koreal6803.github.io/%E8%85%A6%E5%8A%9B%E6%BF%80%E7%9B%AA%E7%9A%84%E5%A4%96%E8%B3%87%E7%AD%96%E7%95%A5%EF%BC%81/</loc>
+    <lastmod>2017-12-08T13:04:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>腦力激盪的外資策略！</title>
+        <pubTime>2017-12-08T12:13:29.000Z</pubTime>
+        
+        <tag>外資</tag>
+         
+         
+           
+             
+              <breadCrumb title="指標分析" url="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+          
+             
+              <breadCrumb title="籌碼面" url="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E7%B1%8C%E7%A2%BC%E9%9D%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://koreal6803.github.io/%E5%88%A9%E7%94%A8Machine-Learning-%E9%81%B8%E8%82%A1%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2017-12-08T12:45:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>利用Machine Learning 選股新手教學</title>
+        <pubTime>2017-10-20T10:58:23.000Z</pubTime>
+        
+        <tag>機器學習</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Pyhton教學" url="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://koreal6803.github.io/Python-%E7%B0%A1%E5%96%AE%E9%81%B8%E8%82%A1%E5%92%8C%E5%9B%9E%E6%B8%AC/</loc>
     <lastmod>2017-11-30T15:37:08.000Z</lastmod>
     <data>
@@ -33,11 +80,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T16:46:51.000Z</pubTime>
         
-        <tag>選股</tag>
-         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>選股</tag>
          
         <tag>市值營收比</tag>
          
@@ -132,9 +179,9 @@
         
         <tag>python</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>KD</tag>
+         
+        <tag>程式設計</tag>
          
          
            
@@ -345,30 +392,6 @@
           
              
               <breadCrumb title="籌碼面" url="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E7%B1%8C%E7%A2%BC%E9%9D%A2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://koreal6803.github.io/%E5%88%A9%E7%94%A8Machine-Learning-%E9%81%B8%E8%82%A1%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2017-10-28T22:03:41.000Z</lastmod>
-    <data>
-        <display>
-        <title>利用Machine Learning 選股新手教學</title>
-        <pubTime>2017-10-20T10:58:23.000Z</pubTime>
-        
-        <tag>機器學習</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Pyhton教學" url="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Pyhton%E6%95%99%E5%AD%B8/"/>
           
         </display>
     </data>
