@@ -7,10 +7,10 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="python,KD,程式設計">
+        <meta name="keywords" content="python,程式設計,KD">
     
     <meta name="description" content="之前我們介紹了很多爬蟲，可以爬每天、每月、每季的資料，今天就是要交爬完了之後要怎麼運用。這篇文章會教如何將爬下來的資料整理成 time series （時間序列）    每日爬蟲首先，我們將之前一篇：超簡單台股每日爬蟲教學 所分享的程式碼變成以下的function，方便我們多次呼叫，才能爬每一天的股價。 每日股價爬蟲12345678910111213141516171819202122232425">
-<meta name="keywords" content="python,KD,程式設計">
+<meta name="keywords" content="python,程式設計,KD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 時間序列實做！">
 <meta property="og:url" content="https://koreal6803.github.io/Python-時間序列實作！/index.html">
@@ -209,7 +209,7 @@ ga('send', 'pageview');
 <p>現在整張表都只剩 收盤價 了，而且還是按照日期排列，超讚的！我也覺得很開心，竟然兩行就處理完，我還以為要五行之類的，可見pandas真的很厲害！</p>
 
             <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
-            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python-簡單158種技術指標計算/" title="Python 簡單158種技術指標計算" rel="bookmark">Python 簡單158種技術指標計算</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python-簡單選股和回測/" title="Python 簡單選股和回測" rel="bookmark">Python 簡單選股和回測</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python-財報爬蟲-1-綜合損益表/" title="Python 財報爬蟲" rel="bookmark">Python 財報爬蟲</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python：利用Pandas輕鬆選股/" title="Python：利用Pandas輕鬆選股" rel="bookmark">Python：利用Pandas輕鬆選股</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/超簡單台股每日爬蟲教學/" title="超簡單台股每日爬蟲教學" rel="bookmark">超簡單台股每日爬蟲教學</a></h3></div></li></ul>
+            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python-簡單158種技術指標計算/" title="Python 簡單158種技術指標計算" rel="bookmark">Python 簡單158種技術指標計算</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python-財報爬蟲-1-綜合損益表/" title="Python 財報爬蟲" rel="bookmark">Python 財報爬蟲</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python-簡單選股和回測/" title="Python 簡單選股和回測" rel="bookmark">Python 簡單選股和回測</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/Python：利用Pandas輕鬆選股/" title="Python：利用Pandas輕鬆選股" rel="bookmark">Python：利用Pandas輕鬆選股</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/超簡單台股每日爬蟲教學/" title="超簡單台股每日爬蟲教學" rel="bookmark">超簡單台股每日爬蟲教學</a></h3></div></li></ul>
         </div>
         <footer class="article-footer">
             
@@ -372,17 +372,17 @@ ga('send', 'pageview');
         }
         .btn:focus { outline: none; }
     </style>
-    <!--
+    
     <div class="widget-wrap">
         <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=Finlab', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
             <h3 class="widget-title">訂閱內容</h3>
-            <input class="css-input" placeholder="您的email" type="text" name="email" autocomplete="off"/>
-            <input type="hidden" value="Finlab" name="uri"/>
-            <input type="hidden" name="loc" value="en_US"/>
-            <input class="btn" type="submit" value="訂閱" />
+            <input class="css-input" placeholder="您的email" type="text" name="email" autocomplete="off">
+            <input type="hidden" value="Finlab" name="uri">
+            <input type="hidden" name="loc" value="en_US">
+            <input class="btn" type="submit" value="訂閱">
         </form>
         <p style="color: gray;text-align: center;margin-top:10px">當新文章發佈時，以email通知您！</p>
-    </div>-->
+    </div>
     <div class="widget-wrap">
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
