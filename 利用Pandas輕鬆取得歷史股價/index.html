@@ -18,7 +18,7 @@
 <meta property="og:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg">
-<meta property="og:updated_time" content="2017-12-11T22:35:49.000Z">
+<meta property="og:updated_time" content="2017-12-11T22:41:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Pandas輕鬆取得股價並回測">
 <meta name="twitter:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是">
@@ -209,7 +209,7 @@ ga('send', 'pageview');
 <p>第五行跟第六行是畫圖，因為我們不想畫整整18年的圖，畫最近三年就好了，所以利用 <code>[start:end]</code> 來選擇時間，我們希望從 <code>2015</code>年到此資料的最後一筆，所以<code>end</code>放空白（跟python array一樣的選取方式，只是改用日期）。</p>
 <h3 id="用pandas算出買入訊號"><a href="#用pandas算出買入訊號" class="headerlink" title="用pandas算出買入訊號"></a>用pandas算出買入訊號</h3><p>假如當日收盤 &gt; 近60日收盤，則當日收盤瞬間買，不然則空手</p>
 <p>這樣子的回測要怎麼寫呢？三行解決，有沒有比multichart還簡單！？</p>
-<figure class="highlight python"><figcaption><span>get data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 進60日收盤</span></div><div class="line">c60 = c.rolling(<span class="number">60</span>, min_periods=<span class="number">1</span>).mean()</div><div class="line"></div><div class="line"><span class="comment"># 買入訊號</span></div><div class="line">signal = (c &gt; c60)</div><div class="line"></div><div class="line"><span class="comment"># 回測並跟大盤比較</span></div><div class="line">(c.shift(<span class="number">-1</span>) / c)[signal].cumprod().plot(color=<span class="string">'red'</span>)</div><div class="line">(c.shift(<span class="number">-1</span>) / c).cumprod().plot(color=<span class="string">'blue'</span>)</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>backtest</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 進60日收盤</span></div><div class="line">c60 = c.rolling(<span class="number">60</span>, min_periods=<span class="number">1</span>).mean()</div><div class="line"></div><div class="line"><span class="comment"># 買入訊號</span></div><div class="line">signal = (c &gt; c60)</div><div class="line"></div><div class="line"><span class="comment"># 回測並跟大盤比較</span></div><div class="line">(c.shift(<span class="number">-1</span>) / c)[signal].cumprod().plot(color=<span class="string">'red'</span>)</div><div class="line">(c.shift(<span class="number">-1</span>) / c).cumprod().plot(color=<span class="string">'blue'</span>)</div><div class="line"></div></pre></td></tr></table></figure>
 <center><img src="/利用Pandas輕鬆取得歷史股價/eq.png" alt="紅色是策略的權益函數，藍色是大盤" title="紅色是策略的權益函數，藍色是大盤"></center>
 
 
@@ -218,7 +218,7 @@ ga('send', 'pageview');
 </li>
 <li><h3 id="為何我們用一行（line-8）就可以回測呢？"><a href="#為何我們用一行（line-8）就可以回測呢？" class="headerlink" title="為何我們用一行（line 8）就可以回測呢？"></a>為何我們用一行（line 8）就可以回測呢？</h3><p>首先，我們將數值變成成長率 <code>c.shift(-1)/c</code>，其中<code>c.shift(-1)</code>代表明天的收盤價，而<code>c</code>代表今天的收盤價。這個成長率是一個近似於 1 的數值，大於1代表明天漲，小於1代表明天跌。我們將所有的成長率照著時間乘起來，就會還原成原本的大盤 <code>c</code>，然而我們只有在 <code>signal = True</code> 的時候持有大盤，資產才會隨著增長率變動。<code>xx[signal]</code>的意思就是選取一個 <code>sub-series</code>，將<code>signal = False</code>的天給去除。所以我們只選 <code>signal = True</code> 的每一天相對應的成長率乘起來（<code>cumprod()</code>），就會是回測結果了！</p>
 </li>
-<li><h3 id="最後一行是做什麼的？"><a href="#最後一行是做什麼的？" class="headerlink" title="最後一行是做什麼的？"></a>最後一行是做什麼的？</h3><p>用來畫出大盤的，假設我們沒有用<code>xx[signal]</code>篩選，等於每天都買入的狀況，利用 <code>cumprod</code> 把每一天的成長率都乘起來。其實這行也可以寫成 <code>(c/c[0]).plot(color=&#39;blue&#39;)</code> 都是互通的，各位可以試試看。</p>
+<li><h3 id="最後一行（line-9）是做什麼的？"><a href="#最後一行（line-9）是做什麼的？" class="headerlink" title="最後一行（line 9）是做什麼的？"></a>最後一行（line 9）是做什麼的？</h3><p>用來畫出大盤的，假設我們沒有用<code>xx[signal]</code>篩選，等於每天都買入的狀況，利用 <code>cumprod</code> 把每一天的成長率都乘起來。其實這行也可以寫成 <code>(c/c[0]).plot(color=&#39;blue&#39;)</code> 都是互通的，各位可以試試看。</p>
 </li>
 </ul>
 <p>這邊比較複雜，建議把 <code>c</code>、<code>(c.shift(-1)/c)</code>、<code>signal</code>，這些數值都print出來比較一番吧！<br><figure class="highlight python"><figcaption><span>get data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.DataFrame(&#123;<span class="string">'c'</span>:c, <span class="string">'c.shift(-1)/c'</span>:c.shift(<span class="number">-1</span>)/c, <span class="string">'signal'</span>:signal&#125;).head()</div></pre></td></tr></table></figure></p>
@@ -226,11 +226,11 @@ ga('send', 'pageview');
 
 <h3 id="小總結"><a href="#小總結" class="headerlink" title="小總結"></a>小總結</h3><ul>
 <li>我沒有考慮手續費喔！考慮了以後，這個方法應該不會太好，這篇主要是帶大家練習pandas！</li>
-<li>利用 Pandas 來攝取資料</li>
-<li>利用 Pandas 簡易回測</li>
+<li>利用 Pandas 來攝取資料 1 行</li>
+<li>利用 Pandas 簡易回測 3 行</li>
 <li>學習 <code>series</code> 的操作</li>
 </ul>
-<p>這篇就到這邊囉！喜歡我們的文章的話，可以按一下左上方的 email 訂閱！這樣每次有新文章時，就能收到訊息喔～且隨時可以取消訂閱，不用擔心我會寄垃圾信，這個是第三方軟體，只有blog更新時才會通知你啦！</p>
+<p>第一次看，應該會覺得pandas怎麼這麼厲害，但又很無奈自己無法玩轉操弄它。不用擔心，只要常常看這個系列，就會慢慢對pandas有感覺囉！這篇就到這邊～喜歡我們的文章的話，可以按一下左上方的 email 訂閱，這樣每次有新文章時，就能收到訊息喔～隨時可以取消訂閱，不用擔心我會寄垃圾信，這個是第三方軟體，只有blog更新時才會通知你啦！</p>
 
             <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
             <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/大盤要跌了嗎？利用企業本益比分佈來判斷！/" title="大盤要跌了嗎？利用企業本益比分佈來判斷！" rel="bookmark">大盤要跌了嗎？利用企業本益比分佈來判斷！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用股價淨值比來判斷大盤漲跌/" title="用股價淨值比來判斷大盤漲跌" rel="bookmark">用股價淨值比來判斷大盤漲跌</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/過濾大盤的簡單方法！/" title="避開大盤大跌的方法！" rel="bookmark">避開大盤大跌的方法！</a></h3></div></li></ul>
