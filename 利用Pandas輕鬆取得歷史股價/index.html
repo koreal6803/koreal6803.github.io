@@ -9,20 +9,20 @@
     
         <meta name="keywords" content="Python,大盤">
     
-    <meta name="description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝） 跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下市的">
+    <meta name="description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下">
 <meta name="keywords" content="Python,大盤">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用Pandas輕鬆取得股價並回測">
 <meta property="og:url" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝） 跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下市的">
+<meta property="og:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/twii.png">
-<meta property="og:updated_time" content="2017-12-11T22:19:29.000Z">
+<meta property="og:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg">
+<meta property="og:updated_time" content="2017-12-11T22:25:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Pandas輕鬆取得股價並回測">
-<meta name="twitter:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝） 跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下市的">
-<meta name="twitter:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/twii.png">
+<meta name="twitter:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下">
+<meta name="twitter:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg">
     
 
     
@@ -185,6 +185,8 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <p>我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 <code>pandas_datareader</code> 這個 package（可以用<code>pip install pandas_datareader</code>來安裝）</p>
+<center><img src="/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg" alt="真的很簡單！" title="真的很簡單！"></center>
+
 <h3 id="跟之前股價爬蟲的比較"><a href="#跟之前股價爬蟲的比較" class="headerlink" title="跟之前股價爬蟲的比較"></a>跟之前股價爬蟲的比較</h3><p>之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下市的股票的股價沒有辦法取得，會有生存者偏差，而且資料比較不齊全，但偶爾玩玩，練習一下 <code>pandas</code> 是很不錯的！</p>
 <h3 id="首先先用-pandas-datareader-取得資料"><a href="#首先先用-pandas-datareader-取得資料" class="headerlink" title="首先先用 pandas_datareader 取得資料"></a>首先先用 pandas_datareader 取得資料</h3><p>取得資料又更簡單了！先匯入要用的包</p>
 <figure class="highlight python"><figcaption><span>import</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pandas_datareader <span class="keyword">import</span> data <span class="comment"># pip install pandas_datareader</span></div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt    <span class="comment"># pip install matplotlib</span></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd                <span class="comment"># pip install pandas</span></div><div class="line">%matplotlib inline <span class="comment"># show figures in jupyter notebook</span></div></pre></td></tr></table></figure>
@@ -192,7 +194,8 @@ ga('send', 'pageview');
 <figure class="highlight python"><figcaption><span>get data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data = data.DataReader(<span class="string">"^TWII"</span>, <span class="string">"yahoo"</span>, <span class="string">"2000-01-01"</span>,<span class="string">"2018-01-01"</span>)</div><div class="line">c = data[<span class="string">'Close'</span>]</div><div class="line">c.plot()</div></pre></td></tr></table></figure>
 <center><img src="/利用Pandas輕鬆取得歷史股價/twii.png" alt="台股 2000～2018 每天收盤價" title="台股 2000～2018 每天收盤價"></center>
 
-<p>就這樣，真的超簡單吧！假如你不會…現再跟你講了，別打我XDD這個方法爬到的資料真的比較不齊全啦！</p>
+<p>就這樣，真的超簡單吧！假如你之前不會…現再跟你講了，別打我XDD</p>
+<p>這個方法爬到的資料真的比較不齊全啦！</p>
 <h3 id="用-pandas-計算-60日收盤價格"><a href="#用-pandas-計算-60日收盤價格" class="headerlink" title="用 pandas 計算 60日收盤價格"></a>用 pandas 計算 60日收盤價格</h3><p>如何用 pandas 快速算出平均線呢？<br><figure class="highlight python"><figcaption><span>get data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 進60日收盤</span></div><div class="line">c60 = c.rolling(<span class="number">60</span>, min_periods=<span class="number">1</span>).mean()</div><div class="line"></div><div class="line"><span class="comment"># 畫圖</span></div><div class="line">c[<span class="string">'2015'</span>:].plot()</div><div class="line">c60[<span class="string">'2015'</span>:].plot()</div></pre></td></tr></table></figure></p>
 <center><img src="/利用Pandas輕鬆取得歷史股價/avg.png" alt="台股 2000～2018 每天收盤價" title="台股 2000～2018 每天收盤價"></center>
 
@@ -404,7 +407,7 @@ ga('send', 'pageview');
                             <a href="/利用Pandas輕鬆取得歷史股價/" class="thumbnail">
     
     
-        <span style="background-image:url(/利用Pandas輕鬆取得歷史股價/twii.png)" alt="利用Pandas輕鬆取得股價並回測" class="thumbnail-image"></span>
+        <span style="background-image:url(/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg)" alt="利用Pandas輕鬆取得股價並回測" class="thumbnail-image"></span>
     
     
 </a>
