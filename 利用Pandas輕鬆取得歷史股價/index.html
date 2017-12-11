@@ -3,21 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>記錄: 2017 | FinLab 量化實驗室</title>
+    <title>利用Pandas輕鬆取得股價並回測 | FinLab 量化實驗室</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
-<meta name="keywords" content="股市,投資,股票,選股,分析,策略,財報,stock,finance,market,公司體質,策略,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FinLab 量化實驗室">
-<meta property="og:url" content="https://koreal6803.github.io/archives/2017/page/2/index.html">
+        <meta name="keywords" content="Python,大盤">
+    
+    <meta name="description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝） 跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下市的">
+<meta name="keywords" content="Python,大盤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用Pandas輕鬆取得股價並回測">
+<meta property="og:url" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta property="og:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝） 跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下市的">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/twii.png">
+<meta property="og:updated_time" content="2017-12-11T22:19:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FinLab 量化實驗室">
-<meta name="twitter:description" content="新手如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我會利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta name="twitter:title" content="利用Pandas輕鬆取得股價並回測">
+<meta name="twitter:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝） 跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下市的">
+<meta name="twitter:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/twii.png">
     
 
     
@@ -143,542 +148,160 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>記錄: 2017
+    <a class="page-title-link" href="/categories/財經Python教學/">財經Python教學</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-利用Pandas輕鬆取得歷史股價" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/Python：利用Pandas輕鬆選股/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/Python：利用Pandas輕鬆選股/df.png)" alt="Python：利用Pandas輕鬆選股" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/Python：利用Pandas輕鬆選股/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/財經Pyhton教學/">財經Pyhton教學</a>
-            </div>
-            <div class="date"><time datetime="2017-11-08T14:16:44.000Z" itemprop="datePublished">2017-11-08</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/Python：利用Pandas輕鬆選股/">Python：利用Pandas輕鬆選股</a>
+        利用Pandas輕鬆取得股價並回測
         </h1>
     
 
-        <p class="article-excerpt">
-            上一篇的Python教學中，我們學會了怎麼爬財報，但是爬完的資料要怎麼運用呢？這篇會給大家一些方向。那篇有點不好意思，好像有兩個package沒有import，下次發現的話，可以在下方留言告訴我，我會盡快更正。
-今天這篇的前置作業，請參考連結把當中的function給copy過來，然後就開始吧！
-資料處理首先，我們要先使用這個function，可以直接在jupyter視窗內輸入，來取得爬取今天的主
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/利用Pandas輕鬆取得歷史股價/" class="article-date">
+            <time datetime="2017-12-11T21:19:49.000Z" itemprop="datePublished">2017-12-11</time>
+        </a>
     </div>
-</article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/超短線上影黑密技！/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/超短線上影黑密技！/pp.png)" alt="超短線上影黑密技！" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/超短線上影黑密技！/">0</span>
-    
-</span>
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Python/">Python</a>, <a class="tag-link" href="/tags/大盤/">大盤</a>
+    </div>
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/技術面/">技術面</a>
             </div>
-            <div class="date"><time datetime="2017-11-03T17:44:31.000Z" itemprop="datePublished">2017-11-03</time></div>
-        </div>
         
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/超短線上影黑密技！/">超短線上影黑密技！</a>
-        </h1>
-    
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 <code>pandas_datareader</code> 這個 package（可以用<code>pip install pandas_datareader</code>來安裝）</p>
+<h3 id="跟之前股價爬蟲的比較"><a href="#跟之前股價爬蟲的比較" class="headerlink" title="跟之前股價爬蟲的比較"></a>跟之前股價爬蟲的比較</h3><p>之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，有些下市的股票的股價沒有辦法取得，會有生存者偏差，而且資料比較不齊全，但偶爾玩玩，練習一下 <code>pandas</code> 是很不錯的！</p>
+<h3 id="首先先用-pandas-datareader-取得資料"><a href="#首先先用-pandas-datareader-取得資料" class="headerlink" title="首先先用 pandas_datareader 取得資料"></a>首先先用 pandas_datareader 取得資料</h3><p>取得資料又更簡單了！先匯入要用的包</p>
+<figure class="highlight python"><figcaption><span>import</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pandas_datareader <span class="keyword">import</span> data <span class="comment"># pip install pandas_datareader</span></div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt    <span class="comment"># pip install matplotlib</span></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd                <span class="comment"># pip install pandas</span></div><div class="line">%matplotlib inline <span class="comment"># show figures in jupyter notebook</span></div></pre></td></tr></table></figure>
+<p>然後：</p>
+<figure class="highlight python"><figcaption><span>get data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data = data.DataReader(<span class="string">"^TWII"</span>, <span class="string">"yahoo"</span>, <span class="string">"2000-01-01"</span>,<span class="string">"2018-01-01"</span>)</div><div class="line">c = data[<span class="string">'Close'</span>]</div><div class="line">c.plot()</div></pre></td></tr></table></figure>
+<center><img src="/利用Pandas輕鬆取得歷史股價/twii.png" alt="台股 2000～2018 每天收盤價" title="台股 2000～2018 每天收盤價"></center>
 
-        <p class="article-excerpt">
-            很多來拜訪本blog的人，都是搜尋 “財報狗” 來的，大部分都是價值投資策略，而沒有使用技術分析，或曾經使用技術分析，因為太難用了而放棄。價值投資跟技術分析最大的差異是，價值投資看的財報是經過嚴格審核的精確數字，而技術分析是在看雜訊中找規律。
-有人會說價值投資，是學會看一家公司的價值，而不像技術分析，是在玩股票。我覺得各有各的好，都是在一堆數字裡面找規律，只要不要被股票玩，哪一種策略我都願意接受X
-        </p>
+<p>就這樣，真的超簡單吧！假如你不會…現再跟你講了，別打我XDD這個方法爬到的資料真的比較不齊全啦！</p>
+<h3 id="用-pandas-計算-60日收盤價格"><a href="#用-pandas-計算-60日收盤價格" class="headerlink" title="用 pandas 計算 60日收盤價格"></a>用 pandas 計算 60日收盤價格</h3><p>如何用 pandas 快速算出平均線呢？<br><figure class="highlight python"><figcaption><span>get data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 進60日收盤</span></div><div class="line">c60 = c.rolling(<span class="number">60</span>, min_periods=<span class="number">1</span>).mean()</div><div class="line"></div><div class="line"><span class="comment"># 畫圖</span></div><div class="line">c[<span class="string">'2015'</span>:].plot()</div><div class="line">c60[<span class="string">'2015'</span>:].plot()</div></pre></td></tr></table></figure></p>
+<center><img src="/利用Pandas輕鬆取得歷史股價/avg.png" alt="台股 2000～2018 每天收盤價" title="台股 2000～2018 每天收盤價"></center>
+
+<p>這邊的 <code>c</code> 其實就是收盤價 <code>close</code> 的簡稱，是一個 <code>series</code> 物件，這個 <code>series</code> 可以上 <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html" rel="external nofollow noopener noreferrer" target="_blank">pandas 官網上查詢</a> ，裡面有各種 <code>series</code> 相關的用法，其中有一個好用的 function 叫做 <code>rolling</code> 其實它的含意就是隨時間移動窗格，將窗格中的收盤價取：</p>
+<ul>
+<li>60天最大值（<code>c.rolling(60).max()</code>）</li>
+<li>60天平均（<code>c.rolling(60).mean()</code>）</li>
+<li>60天最小值（<code>c.rolling(60).min()</code>）</li>
+</ul>
+<p>那為何我們還需要一個<code>min_periods=1</code>這個參數呢？因為照原本的設定，只要60天內有一個值是<code>NaN</code>，則結果就是<code>NaN</code>，隨便放一個假，你就有60天算不出平均值，所以 <code>min_periods=1</code> 就是在說，只要60天裡面有一天不是 <code>NaN</code> 那就直接算平均的意思。</p>
+<h3 id="用pandas算出買入訊號"><a href="#用pandas算出買入訊號" class="headerlink" title="用pandas算出買入訊號"></a>用pandas算出買入訊號</h3><p>假如當日收盤 &gt; 進60日收盤，則當日收盤瞬間買，不然則空手</p>
+<p>這樣子的回測要怎麼寫呢？三行解決，有沒有比multichart還簡單！？</p>
+<figure class="highlight python"><figcaption><span>get data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 進60日收盤</span></div><div class="line">c60 = c.rolling(<span class="number">60</span>, min_periods=<span class="number">1</span>).mean()</div><div class="line"></div><div class="line"><span class="comment"># 買入訊號</span></div><div class="line">signal = (c &gt; c60)</div><div class="line"></div><div class="line"><span class="comment"># 回測並跟大盤比較</span></div><div class="line">(c.shift(<span class="number">-1</span>) / c)[signal].cumprod().plot(color=<span class="string">'red'</span>)</div><div class="line">(c.shift(<span class="number">-1</span>) / c).cumprod().plot(color=<span class="string">'blue'</span>)</div><div class="line"></div></pre></td></tr></table></figure>
+<center><img src="/利用Pandas輕鬆取得歷史股價/eq.png" alt="紅色是策略的權益函數，藍色是大盤" title="紅色是策略的權益函數，藍色是大盤"></center>
+
+
+<ul>
+<li><h3 id="買入訊號（line-5）是如何建立的呢？"><a href="#買入訊號（line-5）是如何建立的呢？" class="headerlink" title="買入訊號（line 5）是如何建立的呢？"></a>買入訊號（line 5）是如何建立的呢？</h3><p>原本的 <code>c</code> 和 <code>c60</code> 都是 <code>float series</code>，然而這邊的 <code>signal</code> 是一個 <code>boolean series</code>。每一天都會有一個布林值，<code>True</code> 代表要在收盤價買入，而 <code>False</code> 代表在收盤價空手</p>
+</li>
+<li><h3 id="為何我們用一行（line-8）就可以回測呢？"><a href="#為何我們用一行（line-8）就可以回測呢？" class="headerlink" title="為何我們用一行（line 8）就可以回測呢？"></a>為何我們用一行（line 8）就可以回測呢？</h3><p>首先，我們將數值變成成長率 <code>c.shift(-1)/c</code>，其中<code>c.shift(-1)</code>代表明天的收盤價，而<code>c</code>代表今天的收盤價。這個成長率是一個近似於 1 的數值，大於1代表明天漲，小於1代表明天跌。我們將所有的成長率照著時間乘起來，就會還原成原本的大盤 <code>c</code>，然而我們只有在 <code>signal = True</code> 的時候持有大盤，資產才會隨著增長率變動。<code>xx[signal]</code>的意思就是選取一個 <code>sub-series</code>，將<code>signal = False</code>的天給去除。所以我們只選 <code>signal = True</code> 的每一天相對應的成長率乘起來（<code>cumprod()</code>），就會是回測結果了！</p>
+</li>
+<li><h3 id="最後一行是做什麼的？"><a href="#最後一行是做什麼的？" class="headerlink" title="最後一行是做什麼的？"></a>最後一行是做什麼的？</h3><p>用來畫出大盤的，假設我們沒有用<code>xx[signal]</code>篩選，等於每天都買入的狀況，利用 <code>cumprod</code> 把每一天的成長率都乘起來。其實這行也可以寫成 <code>(c/c[0]).plot(color=&#39;blue&#39;)</code> 都是互通的，各位可以試試看。</p>
+</li>
+</ul>
+<p>這邊比較複雜，建議把 <code>c</code>、<code>(c.shift(-1)/c)</code>、<code>signal</code>，這些數值都print出來比較一番吧！<br><figure class="highlight python"><figcaption><span>get data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pd.DataFrame(&#123;<span class="string">'c'</span>:c, <span class="string">'c.shift(-1)/c'</span>:c.shift(<span class="number">-1</span>)/c, <span class="string">'signal'</span>:signal&#125;).head()</div></pre></td></tr></table></figure></p>
+<center><img src="/利用Pandas輕鬆取得歷史股價/tb.png" alt="印出來比較一下！" title="印出來比較一下！"></center>
+
+<h3 id="小總結"><a href="#小總結" class="headerlink" title="小總結"></a>小總結</h3><ul>
+<li>我沒有考慮手續費喔！考慮了以後，這個方法應該不會太好，這篇主要是帶大家練習pandas！</li>
+<li>利用 Pandas 來攝取資料</li>
+<li>利用 Pandas 簡易回測</li>
+<li>學習 <code>series</code> 的操作</li>
+</ul>
+<p>這篇就到這邊囉！喜歡我們的文章的話，可以按一下左上方的 email 訂閱！這樣每次有新文章時，就能收到訊息喔～且隨時可以取消訂閱，不用擔心我會寄垃圾信，這個是第三方軟體，只有blog更新時才會通知你啦！</p>
+
+            <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
+            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/大盤要跌了嗎？利用企業本益比分佈來判斷！/" title="大盤要跌了嗎？利用企業本益比分佈來判斷！" rel="bookmark">大盤要跌了嗎？利用企業本益比分佈來判斷！</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/用股價淨值比來判斷大盤漲跌/" title="用股價淨值比來判斷大盤漲跌" rel="bookmark">用股價淨值比來判斷大盤漲跌</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/過濾大盤的簡單方法！/" title="避開大盤大跌的方法！" rel="bookmark">避開大盤大跌的方法！</a></h3></div></li></ul>
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share" rel="external nofollow noopener noreferrer" target="_blank">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
     </div>
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/Python-財報爬蟲-1-綜合損益表/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/Python-財報爬蟲-1-綜合損益表/thumbnail.png)" alt="Python 財報爬蟲" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/Python-財報爬蟲-1-綜合損益表/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/財經Pyhton教學/">財經Pyhton教學</a>
-            </div>
-            <div class="date"><time datetime="2017-11-02T21:19:27.000Z" itemprop="datePublished">2017-11-02</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/Python-財報爬蟲-1-綜合損益表/">Python 財報爬蟲</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            本系列已經介紹了各式各樣的爬蟲，從每天、每月，現在終於要季了，在尋找了各式各樣的網站，交叉比對之下，發現公開資訊觀測站的總報表還滿好抓的，所以就從這個網站下手。
-
-
-Python中有個非常好用的package，叫做pandas，利用它我們就可以簡潔的把網頁上的表格，轉換成dataframe，也就是整理成程式看的懂的表格，我們幾乎不需要做太多的處理！這也是我喜歡用python一點。
-這邊我用的是py
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
 
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/跟著外資買股票/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/跟著外資買股票/color.png)" alt="外資大賣，反而要買！？" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/跟著外資買股票/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/籌碼面/">籌碼面</a>
-            </div>
-            <div class="date"><time datetime="2017-10-30T13:57:49.000Z" itemprop="datePublished">2017-10-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/跟著外資買股票/">外資大賣，反而要買！？</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            外資近年來幾乎稱霸台股，每天台股上上下下，都得看它臉色，今天我們來進行簡單的參數優化，看看跟隨外資買賣有沒有搞頭！
-最佳化外資買賣策略假設 n 天內外資總買賣超超過 a 張，則買入，而低於 -a 張，就賣出，我們可以得到一下這張表：
-
-
-
-在上圖中，跑了25種不同的回測，每一次回測，n跟a的值都不一樣，紅色代表獲利較多的策略，而藍色代表獲利較少的策略，我們發現 a = 0 的時候結果普遍比較好，另
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/超簡單用python抓取每月營收/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/超簡單用python抓取每月營收/table.png)" alt="超簡單用python抓取每月營收" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/超簡單用python抓取每月營收/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/財經Pyhton教學/">財經Pyhton教學</a>
-            </div>
-            <div class="date"><time datetime="2017-10-28T18:30:39.000Z" itemprop="datePublished">2017-10-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/超簡單用python抓取每月營收/">超簡單用python抓取每月營收</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天承接上次的超簡單python系列，教大家如何得到每家企業每個月的營收。這個系列的最終目的就是讓大家可以創造自己的投資自動化程式，甚至擁有自己的看盤軟體。
-真的不要把程式設計想像的很難，感覺爬2000多支股票，並整理資料，好像是一件很累很痛苦的是情，但真的只需要30行，你可能會覺得這些代碼真的太短了，但真的就是這麼短，然而這必須係建立在python或是R，這些package豐富的腳本語言才有可能
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/比本益比更好用的本益比成長率！/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/比本益比更好用的本益比成長率！/dis.png)" alt="本益成長比真的越低越好！？" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/比本益比更好用的本益比成長率！/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/基本面/">基本面</a>
-            </div>
-            <div class="date"><time datetime="2017-10-26T13:58:56.000Z" itemprop="datePublished">2017-10-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/比本益比更好用的本益比成長率！/">本益成長比真的越低越好！？</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            很久之前有寫過 本益比 如何使用，本益比 就是看企業股價和獲利之間的關係，選擇小一點的本益比是可以幫助我們選到好股票的，但是每一家公司的本益比都有著天壤之別，所以必須要校正， 本益成長比 就是一個本益比的進化版。本益成長比 不只可以看當下，還考慮了一家公司未來是否能繼續盈利一個指標。
-以下是 本益成長比 的公式：
-近4季稅後淨利年增率：(近4季稅後淨利總和 / 去年同期近4季稅後淨利總和 - 1)
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/超簡單台股每日爬蟲教學/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/超簡單台股每日爬蟲教學/magnet1.png)" alt="超簡單台股每日爬蟲教學" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/超簡單台股每日爬蟲教學/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/財經Pyhton教學/">財經Pyhton教學</a>
-            </div>
-            <div class="date"><time datetime="2017-10-24T22:17:06.000Z" itemprop="datePublished">2017-10-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/超簡單台股每日爬蟲教學/">超簡單台股每日爬蟲教學</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天教大家如何下載今日的股價，並從中篩選本益比較低的股票，重點是超簡單，只要15行以內就可以辦到！以後這個blog會偶爾釋放一些程式片段，讓大家組裝成一個功能健全的回測＋當日選股的架構。
-大家最終最終會學到：
-
-如何爬取每日資訊
-如何爬取財報
-利用上述資料來篩選股票
-觀察篩選後的股票在歷史回測中是否能獲利
-每日計算當天獲利與明天操作
-
-只要長期追蹤這個blog，當我某天心血來潮就會放上一些code
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/絕無僅有的超強指標！/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/絕無僅有的超強指標！/example.png)" alt="絕無僅有的超強指標！" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/絕無僅有的超強指標！/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/基本面/">基本面</a>
-            </div>
-            <div class="date"><time datetime="2017-10-23T18:24:24.000Z" itemprop="datePublished">2017-10-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/絕無僅有的超強指標！/">絕無僅有的超強指標！</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            今天介紹一個滿常使用的指標，這套指標是我個人發明的，外面絕對看不到，然而我只講個大概，可以自己去實做，或是去拿來衡量個股。
-上一篇中，機器學習發現月收入是一個很好的指標，而且不能只看最近一個月，要一次看好幾個月，其實跟我做出來的實驗結論一致。月收入真的非常好用！
-今天介紹的這個指標，其概念是：希望某股月營收越來越高，之後股價越容易上漲。但是很難定義越來越高，因為有時候會有一些不規則的地方，我們必須
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/利用Machine-Learning-選股新手教學/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/利用Machine-Learning-選股新手教學/thumbnail.png)" alt="利用Machine Learning 選股新手教學" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/利用Machine-Learning-選股新手教學/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/財經Pyhton教學/">財經Pyhton教學</a>
-            </div>
-            <div class="date"><time datetime="2017-10-20T10:58:23.000Z" itemprop="datePublished">2017-10-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/利用Machine-Learning-選股新手教學/">利用Machine Learning 選股新手教學</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            最近一直在弄Machine Learning，都快忘記寫blog了，哈！
-其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！這邊只是給大家一個簡單的架構，可以自己去嘗試優化，讓它更聰明！以下是用mac或是linux的command line完成的，假如有任何錯誤或不懂的地方歡迎聯絡我喔～
-
-
-1. 取得資料只要寄到我的信箱，
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/Machine-Learning-表示：看季線最無用！/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/Machine-Learning-表示：看季線最無用！/thumbnail.jpeg)" alt="Machine Learning 表示：看季線最無用！" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://koreal6803.github.io/Machine-Learning-表示：看季線最無用！/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/AI看股票/">AI看股票</a>
-            </div>
-            <div class="date"><time datetime="2017-10-15T16:10:12.000Z" itemprop="datePublished">2017-10-15</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/Machine-Learning-表示：看季線最無用！/">Machine Learning 表示：看季線最無用！</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            最近喜歡做 machine learning 的預測，發現機器學習看財報，預測下季收盤價還滿準的。
-Alpha Go 讓人類的圍棋可以到達新境界，機器學習中學習到一些它判斷財報的方法，今天來剖開上一篇教學中，機器學習的大腦，來看一下機器人如何選股！
-
-
-Machine Learning：季線無用！機器學習的模型就像是一個黑盒子，很難知道他其中的工作原理，只能看到線性化後，每個feature的權重。
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">第 2 頁，共 5 頁</span>
-        <a class="extend prev" rel="prev" href="/archives/2017/">&laquo;</a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2017/page/3/">3</a><a class="page-number" href="/archives/2017/page/4/">4</a><a class="page-number" href="/archives/2017/page/5/">5</a><a class="extend next" rel="next" href="/archives/2017/page/3/">&raquo;</a>
-    </nav>
+    </section>
 
 
                         </div>
@@ -723,6 +346,19 @@ Machine Learning：季線無用！機器學習的模型就像是一個黑盒子�
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/坊間沒在教的RSI-選股技巧/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">坊間沒在教的RSI選股技巧</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -944,11 +580,13 @@ Machine Learning：季線無用！機器學習的模型就像是一個黑盒子�
     var disqus_shortname = 'koreal6803';
     
     
+    var disqus_url = 'https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
