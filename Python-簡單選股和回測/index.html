@@ -18,7 +18,7 @@
 <meta property="og:description" content="最近在看一些比較古典而學術的策略文章，雖然已經眾所皆知，但是好像很少人用，所以今天來介紹一下，如何利用 python 實做 portfolio trading。   Portfolio Trading 的意思就是選擇一籃子股票，並且照著一定的比例買入，今天我就不介紹太詳細，先用最簡單的篩選法，選出一些股票，並觀察買入一兩年後的變化。 首先，大家必須要把之前的 Python-時間序列實作！ 那一篇複">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/Python-簡單選股和回測/thumbnail.jpeg">
-<meta property="og:updated_time" content="2017-12-12T09:56:22.000Z">
+<meta property="og:updated_time" content="2017-12-12T10:19:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 簡單選股和回測">
 <meta name="twitter:description" content="最近在看一些比較古典而學術的策略文章，雖然已經眾所皆知，但是好像很少人用，所以今天來介紹一下，如何利用 python 實做 portfolio trading。   Portfolio Trading 的意思就是選擇一籃子股票，並且照著一定的比例買入，今天我就不介紹太詳細，先用最簡單的篩選法，選出一些股票，並觀察買入一兩年後的變化。 首先，大家必須要把之前的 Python-時間序列實作！ 那一篇複">
@@ -207,7 +207,7 @@ ga('send', 'pageview');
 
 <p>Portfolio Trading 的意思就是選擇一籃子股票，並且照著一定的比例買入，今天我就不介紹太詳細，先用最簡單的篩選法，選出一些股票，並觀察買入一兩年後的變化。</p>
 <p>首先，大家必須要把之前的 <a href="/Python-時間序列實作！/">Python-時間序列實作！</a> 那一篇複習下，我們會用到當中的 close 這個成品，最好是跑五年以上的資料，會比較有可靠性。</p>
-<h3 id="先寫好策略框架"><a href="#先寫好策略框架" class="headerlink" title="先寫好策略框架"></a>先寫好策略框架</h3><p>在開始寫策略時，先用簡單的兩三句話，來闡述所有的code在做什麼，並且逐段闊寫：</p>
+<h3 id="先寫好策略框架"><a href="#先寫好策略框架" class="headerlink" title="先寫好策略框架"></a>先寫好策略框架</h3><p>在開始寫策略時，先用簡單的兩三句話，來闡述所有的code在做什麼，並且逐段擴寫：</p>
 <figure class="highlight python"><figcaption><span>pseudo code</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> 每年:</div><div class="line">    <span class="number">1.</span> 先看前三年每個股票的表現</div><div class="line">    <span class="number">2.</span> 篩選股票</div><div class="line">    <span class="number">3.</span> 回測當年的狀況</div></pre></td></tr></table></figure>
 <p>於是接下來我們就依照這三點來建構回測。</p>
 <h3 id="前三年股票的狀況"><a href="#前三年股票的狀況" class="headerlink" title="前三年股票的狀況"></a>前三年股票的狀況</h3><p>假設我們目前在第<code>year</code>年，，我們把最近<code>lookback_period</code>年所有股票的股價選取出來</p>
