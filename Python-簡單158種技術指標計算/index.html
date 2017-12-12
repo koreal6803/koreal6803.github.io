@@ -18,7 +18,7 @@
 <meta property="og:description" content="這篇接續著Python時間序列實做，先複習一下，上回合結束，我們有一個最重要的成果：close，它的columns是所有的股票代號，而index是日期。 123close = pd.DataFrame(&amp;#123;k:d[&apos;收盤價&apos;] for k,d in data.items()&amp;#125;).transpose()close.index = pd.to_datetime(close.index">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/Python-簡單158種技術指標計算/tsmc.png">
-<meta property="og:updated_time" content="2017-12-12T09:56:14.000Z">
+<meta property="og:updated_time" content="2017-12-12T10:22:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 簡單158種技術指標計算">
 <meta name="twitter:description" content="這篇接續著Python時間序列實做，先複習一下，上回合結束，我們有一個最重要的成果：close，它的columns是所有的股票代號，而index是日期。 123close = pd.DataFrame(&amp;#123;k:d[&apos;收盤價&apos;] for k,d in data.items()&amp;#125;).transpose()close.index = pd.to_datetime(close.index">
@@ -202,7 +202,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>這篇接續著<a href="/Python時間序列實做/">Python時間序列實做</a>，先複習一下，上回合結束，我們有一個最重要的成果：close，它的columns是所有的股票代號，而index是日期。</p>
+            <p>這篇接續著<a href="/Python-時間序列實作！/">Python時間序列實做</a>，先複習一下，上回合結束，我們有一個最重要的成果：close，它的columns是所有的股票代號，而index是日期。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">close = pd.DataFrame(&#123;k:d[<span class="string">'收盤價'</span>] <span class="keyword">for</span> k,d <span class="keyword">in</span> data.items()&#125;).transpose()</div><div class="line">close.index = pd.to_datetime(close.index)</div><div class="line">close</div></pre></td></tr></table></figure>
 <p>還記得嗎？上方式是上次的code，將data，把每個股票的收盤價拿出來。因為很重要所以說三遍：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">open = pd.DataFrame(&#123;k:d[<span class="string">'開盤價'</span>] <span class="keyword">for</span> k,d <span class="keyword">in</span> data.items()&#125;).transpose()</div><div class="line">open.index = pd.to_datetime(open.index)</div><div class="line"></div><div class="line">high = pd.DataFrame(&#123;k:d[<span class="string">'最高價'</span>] <span class="keyword">for</span> k,d <span class="keyword">in</span> data.items()&#125;).transpose()</div><div class="line">high.index = pd.to_datetime(high.index)</div><div class="line"></div><div class="line">low = pd.DataFrame(&#123;k:d[<span class="string">'最低價'</span>] <span class="keyword">for</span> k,d <span class="keyword">in</span> data.items()&#125;).transpose()</div><div class="line">low.index = pd.to_datetime(low.index)</div><div class="line"></div><div class="line">volume = pd.DataFrame(&#123;k:d[<span class="string">'成交量'</span>] <span class="keyword">for</span> k,d <span class="keyword">in</span> data.items()&#125;).transpose()</div><div class="line">volume.index = pd.to_datetime(volume.index)</div><div class="line"></div></pre></td></tr></table></figure>
