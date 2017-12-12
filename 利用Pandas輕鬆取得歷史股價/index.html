@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="python,大盤">
     
-    <meta name="description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是">
+    <meta name="description" content="我們之前有教過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是">
 <meta name="keywords" content="python,大盤">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用Pandas輕鬆取得股價並回測">
 <meta property="og:url" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是">
+<meta property="og:description" content="我們之前有教過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg">
-<meta property="og:updated_time" content="2017-12-12T02:59:10.000Z">
+<meta property="og:updated_time" content="2017-12-12T22:58:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Pandas輕鬆取得股價並回測">
-<meta name="twitter:description" content="我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是">
+<meta name="twitter:description" content="我們之前有教過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 pandas_datareader 這個 package（可以用pip install pandas_datareader來安裝）   跟之前股價爬蟲的比較之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是">
 <meta name="twitter:image" content="https://koreal6803.github.io/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg">
     
 
@@ -202,7 +202,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>我們之前有交過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 <code>pandas_datareader</code> 這個 package（可以用<code>pip install pandas_datareader</code>來安裝）</p>
+            <p>我們之前有教過怎麼樣取當日所有股票股價的方法，但是假如我們想要做歷史回測，除了慢慢一天天抓，也可以使用 <code>pandas_datareader</code> 這個 package（可以用<code>pip install pandas_datareader</code>來安裝）</p>
 <center><img src="/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg" alt="真的很簡單！" title="真的很簡單！"></center>
 
 <h3 id="跟之前股價爬蟲的比較"><a href="#跟之前股價爬蟲的比較" class="headerlink" title="跟之前股價爬蟲的比較"></a>跟之前股價爬蟲的比較</h3><p>之前我們教的股價爬蟲，是採取一天天下載的方式，今天教的方法是幾支股票，一次下載全部歷史股價！這個方法的優點是超簡單，而且下載速度又快，缺點是有些下市的股票的股價沒有辦法取得，會有生存者偏差，而且資料比較不齊全，但偶爾玩玩，練習一下 <code>pandas</code> 是很不錯的！</p>
@@ -223,7 +223,7 @@ ga('send', 'pageview');
 <li>60天平均（<code>c.rolling(60).mean()</code>）</li>
 <li>60天最小值（<code>c.rolling(60).min()</code>）</li>
 </ul>
-<p>那為何我們還需要一個<code>min_periods=1</code>這個參數呢？因為照原本的設定，60天內只要有一個值是<code>NaN</code>，則平均值就是<code>NaN</code>，隨便放一個假，你就有60天算不出平均值，所以 <code>min_periods=1</code> 就是在說，只要60天裡面有一天不是 <code>NaN</code> 就算平均的意思。</p>
+<p>那為何我們還需要一個<code>min_periods=1</code>這個參數呢？因為照原本的設定，60天內只要有一個值是<code>NaN</code>，則平均值就是<code>NaN</code>，只要一筆資料有問題，你就有60天算不出平均值，所以 <code>min_periods=1</code> 就是在說，只要60天裡面有一天不是 <code>NaN</code> 就強制算的意思。</p>
 <p>第五行跟第六行是畫圖，因為我們不想畫整整18年的圖，畫最近三年就好了，所以利用 <code>[start:end]</code> 來選擇時間，我們希望從 <code>2015</code>年到此資料的最後一筆，所以<code>end</code>放空白（跟python array一樣的選取方式，只是改用日期）。</p>
 <h3 id="用pandas算出買入訊號"><a href="#用pandas算出買入訊號" class="headerlink" title="用pandas算出買入訊號"></a>用pandas算出買入訊號</h3><p>假如當日收盤 &gt; 近60日收盤，則當日收盤瞬間買，不然則空手</p>
 <p>這樣子的回測要怎麼寫呢？三行解決，有沒有比multichart還簡單！？</p>
@@ -276,7 +276,7 @@ ga('send', 'pageview');
 
 
             <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
-            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/利用Machine-Learning-選股新手教學/" title="利用Machine Learning 選股新手教學" rel="bookmark">利用Machine Learning 選股新手教學</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/Python-時間序列實作！/" title="Python 時間序列實做！" rel="bookmark">Python 時間序列實做！</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/Python-簡單選股和回測/" title="Python 簡單選股和回測" rel="bookmark">Python 簡單選股和回測</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/Python-簡單158種技術指標計算/" title="Python 簡單158種技術指標計算" rel="bookmark">Python 簡單158種技術指標計算</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/Python-財報爬蟲-1-綜合損益表/" title="Python 財報爬蟲" rel="bookmark">Python 財報爬蟲</a></p></div></li></ul>        
+            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/利用Machine-Learning-選股新手教學/" title="利用Machine Learning 選股新手教學" rel="bookmark">利用Machine Learning 選股新手教學</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/Machine-Learning-表示：看季線最無用！/" title="Machine Learning 表示：看季線最無用！" rel="bookmark">Machine Learning 表示：看季線最無用！</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/Python-簡單158種技術指標計算/" title="Python 簡單158種技術指標計算" rel="bookmark">Python 簡單158種技術指標計算</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/Python-簡單選股和回測/" title="Python 簡單選股和回測" rel="bookmark">Python 簡單選股和回測</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/Python-財報爬蟲-1-綜合損益表/" title="Python 財報爬蟲" rel="bookmark">Python 財報爬蟲</a></p></div></li></ul>        
             </div>
         <footer class="article-footer">
             
