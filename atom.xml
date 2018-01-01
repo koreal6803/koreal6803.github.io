@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2018-01-01T16:22:12.000Z</updated>
+  <updated>2018-01-01T21:20:32.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://koreal6803.github.io/%E6%8A%95%E4%BF%A1%E8%B7%9F%E7%9B%A4%E6%B3%95%EF%BC%81/"/>
     <id>https://koreal6803.github.io/投信跟盤法！/</id>
     <published>2018-01-01T14:55:40.000Z</published>
-    <updated>2018-01-01T16:22:12.000Z</updated>
+    <updated>2018-01-01T21:20:32.000Z</updated>
     
-    <content type="html"><![CDATA[<p>大家好！新年快樂，很久沒有寫文章了，我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣東西，買了才發現不但品質差，價錢還是別人的好幾倍。他們的話術真的很強，出去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。</p><center><img src="/投信跟盤法！/thumbnail.png" alt="2018 新年快樂！" title="2018 新年快樂！"></center><p>今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！</p><h3 id="投信就是基金"><a href="#投信就是基金" class="headerlink" title="投信就是基金"></a>投信就是基金</h3><p>投信簡單說，就是我們口中的基金公司啦！很多人懶得自己投資，就將錢交給高手，讓他們去操盤。</p><p>但是基金公司的缺點，在於管理費用太高了，賺的錢都進了基金公司的口袋，所以假如你要將資產交給基金公司的話，最好是大金額，才能藉由談判，壓低手續和管理費。</p><p>假如你想要省下管理費，假如你不止想投資，也想投資自己的腦袋，那就常常來看一下我們的文章吧！我們的目標就是想要讓大家用很低的成本，學會如何穩定的獲利。</p><h3 id="投信買賣資料"><a href="#投信買賣資料" class="headerlink" title="投信買賣資料"></a>投信買賣資料</h3><p>台灣有很多獨特的數據，投信買賣數據就是台灣獨有的，證券交易所每天公布三大法人的當日買賣狀況，有外資、投信、自營商。</p><p>投信最重要的數據就是當日某支股票的總買賣張數，當某公司表現良好，基金公司通常會比散戶更快掌握狀況並買入，就會反映在這個數據上，我們就藉由這個原理，跟隨投信來買賣。</p><h3 id="策略思路"><a href="#策略思路" class="headerlink" title="策略思路"></a>策略思路</h3><p>投信擁有投資人大筆的金額，所以假如公司的市值比較小，投信就可以操弄其股票，迫使股票上漲，並出場結算。所以我們選取市值較小，投信又買入的股票，當</p><ul><li>市值（千） &lt; 10000</li><li>投信當日買賣 &gt; 200 張</li></ul><p>我們買入該股30天。</p><p>以上的條件都可以用 <a href="https://goodinfo.tw/StockInfo/StockList.asp?MARKET_CAT=%E8%87%AA%E8%A8%82%E7%AF%A9%E9%81%B8&amp;INDUSTRY_CAT=%E6%88%91%E7%9A%84%E6%A2%9D%E4%BB%B6&amp;FILTER_ITEM0=%E5%B9%B4%E5%BA%A6%E2%80%93ROE%28%25%29&amp;FILTER_VAL_S0=30&amp;FILTER_VAL_E0=&amp;FILTER_SHEET=%E5%B9%B4%E7%8D%B2%E5%88%A9%E8%83%BD%E5%8A%9B&amp;WITH_ROTC=F&amp;FILTER_QUERY=%E6%9F%A5++%E8%A9%A2" rel="external nofollow noopener noreferrer" target="_blank">GoodInfo 股票篩選功能</a> 來達成喔！</p><p>我們回測採用手續費6折，證交稅千分之三，由100萬當起始資金，平均分配到每日持有的標的。</p><h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><p>以下就是這個方法的權益曲線，也就是你資產的增加幅度（獲利金額持續投資）</p><center><img src="/投信跟盤法！/eq1.png" alt="權益曲線" title="權益曲線"></center><p>由圖可見，紅色的是策略，灰色的是大盤，這個策略在2008跟2011年的回檔都非常嚴重！但近五年的獲利超好，感覺投信的投資技巧有越來越進步的趨勢。</p><center><img src="/投信跟盤法！/md.png" alt="金融海嘯時，最大虧損來到了60％" title="金融海嘯時，最大虧損來到了60％"></center><p>為什麼大盤回檔時，投信會很慘呢？由於法規規定投信持股要70% 以上，所以當金融海嘯時，無法退出市場，所以虧損是無可避免的。</p><h3 id="策略再優化"><a href="#策略再優化" class="headerlink" title="策略再優化"></a>策略再優化</h3><p>既然這篇是新年賀禮，怎麼可能報酬率就只有這樣呢？我的讀者一定都知道，如何<a href="/過濾大盤的簡單方法！/">避開大盤大跌</a> ！假如你還沒看過那一篇的話，可以去看看！最近滿常用這個方法，很好用。</p><p>賣出條件（賣出所有持股）：</p><ul><li>大盤在25日均線下 且 25日均線上升（比昨日高）</li></ul><p><center><img src="/投信跟盤法！/eq2.png" alt="權益曲線" title="權益曲線"></center><br>可以看到策略很好的躲過了金融海嘯，且在金融海嘯一結束馬上啟動獲利！且14年獲利來到了16倍！</p><p><center><img src="/投信跟盤法！/ns2.png" alt="持股張數" title="持股張數"></center><br>持股都還算滿多的，但有時候會瞬間歸0，是由於要避開大盤大跌時，一次性的全部賣出導致的。</p><p><center><img src="/投信跟盤法！/md2.png" alt="權益曲線" title="權益曲線"></center><br>最大虧損降低到-30％以內，算是滿優秀的！</p><h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>到此為止，投信跟隨策略就算差不多了！我們利用了幾個概念：</p><ol><li>市值小的公司，較容易被投信操控</li><li>避開大盤大跌</li></ol><p>簡單的構成了這個策略，不但條件少，而且獲利效果是<strong>目前為止最好的</strong>，可以直接用GoodInfo或類似的選股軟體篩選持股。</p><h3 id="謝謝大家的支持！2018繼續努力！"><a href="#謝謝大家的支持！2018繼續努力！" class="headerlink" title="謝謝大家的支持！2018繼續努力！"></a>謝謝大家的支持！2018繼續努力！</h3><p>部落格累積了很多留言，今天也一一回覆完了，有很多網友給我很好建議！之後都會最更詳細研究看看：</p><ul><li>凱利公式做資產配置</li><li>技術指標的回測模組</li><li>回測報表教學</li><li>營業現金流選股</li><li>外資跟隨買賣優化（有點難，還在想）</li></ul><p>假如大家有什麼感興趣的，想要我研究看看，都可以在下面留言喔！</p><p>祝大家2018投資順利！</p>]]></content>
+    <content type="html"><![CDATA[<p>大家好！新年快樂，很久沒有寫文章了，我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣東西，買了才發現不但品質差，價錢還是別人的好幾倍。他們的話術真的很強，出去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。</p><center><img src="/投信跟盤法！/thumbnail.png" alt="2018 新年快樂！" title="2018 新年快樂！"></center><p>今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！</p><h3 id="投信就是基金"><a href="#投信就是基金" class="headerlink" title="投信就是基金"></a>投信就是基金</h3><p>投信簡單說，就是我們口中的基金公司啦！很多人懶得自己投資，就將錢交給高手，讓他們去操盤。</p><p>但是基金公司的缺點，在於管理費用太高了，賺的錢都進了基金公司的口袋，所以假如你要將資產交給基金公司的話，最好是大金額，才能藉由談判，壓低手續和管理費。</p><p>假如你想要省下管理費，假如你不止想投資，也想投資自己的腦袋，那就常常來看一下我們的文章吧！我們的目標就是想要讓大家用很低的成本，學會如何穩定的獲利。</p><h3 id="投信買賣資料"><a href="#投信買賣資料" class="headerlink" title="投信買賣資料"></a>投信買賣資料</h3><p>台灣有很多獨特的數據，投信買賣數據就是台灣獨有的，證券交易所每天公布三大法人的當日買賣狀況，有外資、投信、自營商。</p><p>投信最重要的數據就是當日某支股票的總買賣張數，當某公司表現良好，基金公司通常會比散戶更快掌握狀況並買入，就會反映在這個數據上，我們就藉由這個原理，跟隨投信來買賣。</p><h3 id="策略思路"><a href="#策略思路" class="headerlink" title="策略思路"></a>策略思路</h3><p>投信擁有投資人大筆的金額，所以假如公司的市值比較小，投信就可以操弄其股票，迫使股票上漲，並出場結算。所以我們選取市值較小，投信又買入的股票，當</p><ul><li>市值（千） &lt; 10000</li><li>投信當日買賣 &gt; 200 張</li></ul><p>我們買入該股30天。</p><p>以上的條件都可以用 <a href="https://goodinfo.tw/StockInfo/StockList.asp?MARKET_CAT=%E8%87%AA%E8%A8%82%E7%AF%A9%E9%81%B8&amp;INDUSTRY_CAT=%E6%88%91%E7%9A%84%E6%A2%9D%E4%BB%B6&amp;FILTER_ITEM0=%E5%B9%B4%E5%BA%A6%E2%80%93ROE%28%25%29&amp;FILTER_VAL_S0=30&amp;FILTER_VAL_E0=&amp;FILTER_SHEET=%E5%B9%B4%E7%8D%B2%E5%88%A9%E8%83%BD%E5%8A%9B&amp;WITH_ROTC=F&amp;FILTER_QUERY=%E6%9F%A5++%E8%A9%A2" rel="external nofollow noopener noreferrer" target="_blank">GoodInfo 股票篩選功能</a> 來達成喔！</p><p>我們回測採用手續費6折，證交稅千分之三，由100萬當起始資金，平均分配到每日持有的標的。</p><h3 id="結果"><a href="#結果" class="headerlink" title="結果"></a>結果</h3><p>以下就是這個方法的權益曲線，也就是你資產的增加幅度（獲利金額持續投資）</p><center><img src="/投信跟盤法！/eq1.png" alt="權益曲線" title="權益曲線"></center><p>由圖可見，紅色的是策略，灰色的是大盤，這個策略在2008跟2011年的回檔都非常嚴重！但近五年的獲利超好，感覺投信的投資技巧有越來越進步的趨勢。</p><center><img src="/投信跟盤法！/md.png" alt="金融海嘯時，最大虧損來到了60％" title="金融海嘯時，最大虧損來到了60％"></center><p>為什麼大盤回檔時，投信會很慘呢？由於法規規定投信持股要70% 以上，所以當金融海嘯時，無法退出市場，所以虧損是無可避免的。</p><h3 id="策略再優化"><a href="#策略再優化" class="headerlink" title="策略再優化"></a>策略再優化</h3><p>既然這篇是新年賀禮，怎麼可能報酬率就只有這樣呢？我的讀者一定都知道，如何<a href="/過濾大盤的簡單方法！/">避開大盤大跌</a> ！假如你還沒看過那一篇的話，可以去看看！最近滿常用這個方法，很好用。</p><p>賣出條件（賣出所有持股）：</p><ul><li>大盤在均線下 且 均線比昨日低 （25日均線）</li></ul><p><center><img src="/投信跟盤法！/eq2.png" alt="權益曲線" title="權益曲線"></center><br>可以看到策略很好的躲過了金融海嘯，且在金融海嘯一結束馬上啟動獲利！且14年獲利來到了16倍！</p><p><center><img src="/投信跟盤法！/ns2.png" alt="持股張數" title="持股張數"></center><br>持股都還算滿多的，但有時候會瞬間歸0，是由於要避開大盤大跌時，一次性的全部賣出導致的。</p><p><center><img src="/投信跟盤法！/md2.png" alt="權益曲線" title="權益曲線"></center><br>最大虧損降低到-30％以內，算是滿優秀的！</p><h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>到此為止，投信跟隨策略就算差不多了！我們利用了幾個概念：</p><ol><li>市值小的公司，較容易被投信操控</li><li>避開大盤大跌</li></ol><p>簡單的構成了這個策略，不但條件少，而且獲利效果是<strong>目前為止最好的</strong>，可以直接用GoodInfo或類似的選股軟體篩選持股。</p><h3 id="謝謝大家的支持！2018繼續努力！"><a href="#謝謝大家的支持！2018繼續努力！" class="headerlink" title="謝謝大家的支持！2018繼續努力！"></a>謝謝大家的支持！2018繼續努力！</h3><p>部落格累積了很多留言，今天也一一回覆完了，有很多網友給我很好建議！之後都會最更詳細研究看看：</p><ul><li>凱利公式做資產配置</li><li>技術指標的回測模組</li><li>回測報表教學</li><li>營業現金流選股</li><li>外資跟隨買賣優化（有點難，還在想）</li></ul><p>假如大家有什麼感興趣的，想要我研究看看，都可以在下面留言喔！</p><p>祝大家2018投資順利！</p>]]></content>
     
     <summary type="html">
     
@@ -39,6 +39,8 @@
     
       <category term="籌碼面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E7%B1%8C%E7%A2%BC%E9%9D%A2/"/>
     
+    
+      <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="投信" scheme="https://koreal6803.github.io/tags/%E6%8A%95%E4%BF%A1/"/>
     
@@ -182,11 +184,11 @@
       <category term="選股策略" scheme="https://koreal6803.github.io/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="市值營收比" scheme="https://koreal6803.github.io/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
