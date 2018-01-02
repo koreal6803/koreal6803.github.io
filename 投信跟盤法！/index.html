@@ -7,21 +7,21 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="歷史回測,投信,量化投資,股票分析">
+        <meta name="keywords" content="選股策略,歷史回測,投信,量化投資,股票分析">
     
-    <meta name="description" content="大家好！新年快樂，很久沒有寫文章了，我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣東西，買了才發現不但品質差，價錢還是別人的好幾倍。他們的話術真的很強，出去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。   今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！ 投信就是">
-<meta name="keywords" content="歷史回測,投信,量化投資,股票分析">
+    <meta name="description" content="大家好！新年快樂，很久沒有寫文章了，今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！   我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣我東西，買了才發現不但品質差，價錢還是正常的好幾倍。他們的話術真的很強，去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。廢話不多說">
+<meta name="keywords" content="選股策略,歷史回測,投信,量化投資,股票分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="新年賀禮 ─ 投信跟盤法！">
 <meta property="og:url" content="https://koreal6803.github.io/投信跟盤法！/index.html">
 <meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="大家好！新年快樂，很久沒有寫文章了，我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣東西，買了才發現不但品質差，價錢還是別人的好幾倍。他們的話術真的很強，出去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。   今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！ 投信就是">
+<meta property="og:description" content="大家好！新年快樂，很久沒有寫文章了，今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！   我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣我東西，買了才發現不但品質差，價錢還是正常的好幾倍。他們的話術真的很強，去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。廢話不多說">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://koreal6803.github.io/投信跟盤法！/thumbnail.png">
-<meta property="og:updated_time" content="2018-01-01T21:20:32.000Z">
+<meta property="og:updated_time" content="2018-01-02T00:16:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="新年賀禮 ─ 投信跟盤法！">
-<meta name="twitter:description" content="大家好！新年快樂，很久沒有寫文章了，我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣東西，買了才發現不但品質差，價錢還是別人的好幾倍。他們的話術真的很強，出去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。   今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！ 投信就是">
+<meta name="twitter:description" content="大家好！新年快樂，很久沒有寫文章了，今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！   我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣我東西，買了才發現不但品質差，價錢還是正常的好幾倍。他們的話術真的很強，去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。廢話不多說">
 <meta name="twitter:image" content="https://koreal6803.github.io/投信跟盤法！/thumbnail.png">
     
 
@@ -197,23 +197,23 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/投信/">投信</a>, <a class="tag-link" href="/tags/歷史回測/">歷史回測</a>, <a class="tag-link" href="/tags/股票分析/">股票分析</a>, <a class="tag-link" href="/tags/量化投資/">量化投資</a>
+        <a class="tag-link" href="/tags/投信/">投信</a>, <a class="tag-link" href="/tags/歷史回測/">歷史回測</a>, <a class="tag-link" href="/tags/股票分析/">股票分析</a>, <a class="tag-link" href="/tags/選股策略/">選股策略</a>, <a class="tag-link" href="/tags/量化投資/">量化投資</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>大家好！新年快樂，很久沒有寫文章了，我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣東西，買了才發現不但品質差，價錢還是別人的好幾倍。他們的話術真的很強，出去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。</p>
+            <p>大家好！新年快樂，很久沒有寫文章了，今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！</p>
 <center><img src="/投信跟盤法！/thumbnail.png" alt="2018 新年快樂！" title="2018 新年快樂！"></center>
 
-<p>今天要介紹的是投信的跟隨買賣，算是2018年送給大家的新年賀禮！這是一個完整的策略，方法非常簡單，看完這篇就可以直接使用，手動操作該策略喔！</p>
+<p>我趁著歐洲聖誕假期，跑去土耳其玩，土耳其真的很多商人，到處跟我裝熟、賣我東西，買了才發現不但品質差，價錢還是正常的好幾倍。他們的話術真的很強，去玩一定要小心。雖然被坑很多錢，但股票有賺一些XD，心沒有這麼痛。廢話不多說，開始介紹這個選股方法吧！</p>
 <h3 id="投信就是基金"><a href="#投信就是基金" class="headerlink" title="投信就是基金"></a>投信就是基金</h3><p>投信簡單說，就是我們口中的基金公司啦！很多人懶得自己投資，就將錢交給高手，讓他們去操盤。</p>
-<p>但是基金公司的缺點，在於管理費用太高了，賺的錢都進了基金公司的口袋，所以假如你要將資產交給基金公司的話，最好是大金額，才能藉由談判，壓低手續和管理費。</p>
-<p>假如你想要省下管理費，假如你不止想投資，也想投資自己的腦袋，那就常常來看一下我們的文章吧！我們的目標就是想要讓大家用很低的成本，學會如何穩定的獲利。</p>
+<p>但是基金公司的缺點，在於管理費用太高了，賺的錢都進了基金公司的口袋，假如你要將資產交給基金公司的話，最好是大金額，才能藉由談判，壓低手續和管理費。</p>
+<p>假如你想要省下管理費，假如你不止想投資理財，也想投資自己的腦袋，那就常來看一下我們的文章吧！我們的目標就是想要讓大家用很低的成本，學會如何穩定的獲利。</p>
 <h3 id="投信買賣資料"><a href="#投信買賣資料" class="headerlink" title="投信買賣資料"></a>投信買賣資料</h3><p>台灣有很多獨特的數據，投信買賣數據就是台灣獨有的，證券交易所每天公布三大法人的當日買賣狀況，有外資、投信、自營商。</p>
-<p>投信最重要的數據就是當日某支股票的總買賣張數，當某公司表現良好，基金公司通常會比散戶更快掌握狀況並買入，就會反映在這個數據上，我們就藉由這個原理，跟隨投信來買賣。</p>
-<h3 id="策略思路"><a href="#策略思路" class="headerlink" title="策略思路"></a>策略思路</h3><p>投信擁有投資人大筆的金額，所以假如公司的市值比較小，投信就可以操弄其股票，迫使股票上漲，並出場結算。所以我們選取市值較小，投信又買入的股票，當</p>
+<p>投信最重要的數據就是某支股票的當日總買賣張數，當某公司表現良好，基金公司通常會比散戶更快掌握狀況並買入，就會反映在這個數據上，我們就藉由這個原理，跟隨投信來買賣。</p>
+<h3 id="策略思路"><a href="#策略思路" class="headerlink" title="策略思路"></a>策略思路</h3><p>投信擁有投資人大筆的金額，所以假如公司的市值比較小，投信就可以操弄其股價，迫使股價上漲，並出場結算。所以我們選取市值較小，投信又買入的股票，當</p>
 <ul>
 <li>市值（千） &lt; 10000</li>
 <li>投信當日買賣 &gt; 200 張</li>
@@ -228,12 +228,12 @@ ga('send', 'pageview');
 <center><img src="/投信跟盤法！/md.png" alt="金融海嘯時，最大虧損來到了60％" title="金融海嘯時，最大虧損來到了60％"></center>
 
 <p>為什麼大盤回檔時，投信會很慘呢？由於法規規定投信持股要70% 以上，所以當金融海嘯時，無法退出市場，所以虧損是無可避免的。</p>
-<h3 id="策略再優化"><a href="#策略再優化" class="headerlink" title="策略再優化"></a>策略再優化</h3><p>既然這篇是新年賀禮，怎麼可能報酬率就只有這樣呢？我的讀者一定都知道，如何<a href="/過濾大盤的簡單方法！/">避開大盤大跌</a> ！假如你還沒看過那一篇的話，可以去看看！最近滿常用這個方法，很好用。</p>
+<h3 id="策略再優化"><a href="#策略再優化" class="headerlink" title="策略再優化"></a>策略再優化</h3><p>既然這篇是新年賀禮，怎麼可能報酬率就只有這樣呢？我的讀者一定都知道，如何<a href="/過濾大盤的簡單方法！/">避開大盤大跌</a> ！假如你還沒看過那一篇的話，可以去看看！最近滿常用這個方法，有時候還滿好用的。</p>
 <p>賣出條件（賣出所有持股）：</p>
 <ul>
 <li>大盤在均線下 且 均線比昨日低 （25日均線）</li>
 </ul>
-<p><center><img src="/投信跟盤法！/eq2.png" alt="權益曲線" title="權益曲線"></center><br>可以看到策略很好的躲過了金融海嘯，且在金融海嘯一結束馬上啟動獲利！且14年獲利來到了16倍！</p>
+<p><center><img src="/投信跟盤法！/eq2.png" alt="權益曲線" title="權益曲線"></center><br>可以看到策略躲過了金融海嘯，且在金融海嘯一結束馬上啟動獲利！且14年獲利來到了16倍！</p>
 <p><center><img src="/投信跟盤法！/ns2.png" alt="持股張數" title="持股張數"></center><br>持股都還算滿多的，但有時候會瞬間歸0，是由於要避開大盤大跌時，一次性的全部賣出導致的。</p>
 <p><center><img src="/投信跟盤法！/md2.png" alt="權益曲線" title="權益曲線"></center><br>最大虧損降低到-30％以內，算是滿優秀的！</p>
 <h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>到此為止，投信跟隨策略就算差不多了！我們利用了幾個概念：</p>
@@ -279,7 +279,7 @@ ga('send', 'pageview');
             <!--End mc_embed_signup-->
 
             <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
-            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/用杜邦分析加強你的選股技巧（下）回測/" title="用杜邦分析加強你的選股技巧（下）回測" rel="bookmark">用杜邦分析加強你的選股技巧（下）回測</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/KD1/" title="如何定義KD鈍化" rel="bookmark">如何定義KD鈍化</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/小資族也可以使用的選股法！/" title="小資族也可以使用的選股法！" rel="bookmark">小資族也可以使用的選股法！</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/威廉．納葛維茲-價值型選股策略/" title="威廉．納葛維茲-價值型選股策略" rel="bookmark">威廉．納葛維茲-價值型選股策略</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/本益比能幫你選出優質股？/" title="本益比能幫你選出優質股？" rel="bookmark">本益比能幫你選出優質股？</a></p></div></li></ul>        
+            <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/KD1/" title="如何定義KD鈍化" rel="bookmark">如何定義KD鈍化</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/小資族也可以使用的選股法！/" title="小資族也可以使用的選股法！" rel="bookmark">小資族也可以使用的選股法！</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/威廉．納葛維茲-價值型選股策略/" title="威廉．納葛維茲-價值型選股策略" rel="bookmark">威廉．納葛維茲-價值型選股策略</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/比策略狗還要安全的選股策略！/" title="14年14倍的選股策略！" rel="bookmark">14年14倍的選股策略！</a></p></div></li><li class="popular-posts-item"><div class="popular-posts-title"><p><a href="/用杜邦分析加強你的選股技巧（下）回測/" title="用杜邦分析加強你的選股技巧（下）回測" rel="bookmark">用杜邦分析加強你的選股技巧（下）回測</a></p></div></li></ul>        
             </div>
         <footer class="article-footer">
             
@@ -559,7 +559,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">標籤雲</h3>
         <div class="widget tagcloud">
-            <a href="/tags/EPS/" style="font-size: 10px;">EPS</a> <a href="/tags/KD/" style="font-size: 10px;">KD</a> <a href="/tags/Machine-Learning/" style="font-size: 12.22px;">Machine Learning</a> <a href="/tags/PEG/" style="font-size: 10px;">PEG</a> <a href="/tags/ROE/" style="font-size: 11.11px;">ROE</a> <a href="/tags/RSI/" style="font-size: 10px;">RSI</a> <a href="/tags/python/" style="font-size: 17.78px;">python</a> <a href="/tags/一行/" style="font-size: 10px;">一行</a> <a href="/tags/價值股/" style="font-size: 10px;">價值股</a> <a href="/tags/入門教學/" style="font-size: 13.33px;">入門教學</a> <a href="/tags/分佈圖/" style="font-size: 10px;">分佈圖</a> <a href="/tags/外資/" style="font-size: 10px;">外資</a> <a href="/tags/大盤/" style="font-size: 13.33px;">大盤</a> <a href="/tags/如何買股票/" style="font-size: 18.89px;">如何買股票</a> <a href="/tags/市值營收比/" style="font-size: 11.11px;">市值營收比</a> <a href="/tags/投信/" style="font-size: 10px;">投信</a> <a href="/tags/指標/" style="font-size: 12.22px;">指標</a> <a href="/tags/本益成長比/" style="font-size: 10px;">本益成長比</a> <a href="/tags/本益比/" style="font-size: 14.44px;">本益比</a> <a href="/tags/杜邦分析/" style="font-size: 14.44px;">杜邦分析</a> <a href="/tags/機器學習/" style="font-size: 12.22px;">機器學習</a> <a href="/tags/歷史回測/" style="font-size: 20px;">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size: 10px;">每股盈餘</a> <a href="/tags/生活/" style="font-size: 11.11px;">生活</a> <a href="/tags/程式設計/" style="font-size: 15.56px;">程式設計</a> <a href="/tags/策略狗/" style="font-size: 12.22px;">策略狗</a> <a href="/tags/簡易策略/" style="font-size: 14.44px;">簡易策略</a> <a href="/tags/統計/" style="font-size: 10px;">統計</a> <a href="/tags/總資產轉換率/" style="font-size: 10px;">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size: 14.44px;">股價淨值比</a> <a href="/tags/股票分析/" style="font-size: 10px;">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size: 12.22px;">自由現金報酬率</a> <a href="/tags/選股/" style="font-size: 16.67px;">選股</a> <a href="/tags/選股策略/" style="font-size: 17.78px;">選股策略</a> <a href="/tags/量化投資/" style="font-size: 10px;">量化投資</a>
+            <a href="/tags/EPS/" style="font-size: 10px;">EPS</a> <a href="/tags/KD/" style="font-size: 10px;">KD</a> <a href="/tags/Machine-Learning/" style="font-size: 12px;">Machine Learning</a> <a href="/tags/PEG/" style="font-size: 10px;">PEG</a> <a href="/tags/ROE/" style="font-size: 11px;">ROE</a> <a href="/tags/RSI/" style="font-size: 10px;">RSI</a> <a href="/tags/python/" style="font-size: 17px;">python</a> <a href="/tags/一行/" style="font-size: 10px;">一行</a> <a href="/tags/價值股/" style="font-size: 10px;">價值股</a> <a href="/tags/入門教學/" style="font-size: 13px;">入門教學</a> <a href="/tags/分佈圖/" style="font-size: 10px;">分佈圖</a> <a href="/tags/外資/" style="font-size: 10px;">外資</a> <a href="/tags/大盤/" style="font-size: 13px;">大盤</a> <a href="/tags/如何買股票/" style="font-size: 19px;">如何買股票</a> <a href="/tags/市值營收比/" style="font-size: 11px;">市值營收比</a> <a href="/tags/投信/" style="font-size: 10px;">投信</a> <a href="/tags/指標/" style="font-size: 12px;">指標</a> <a href="/tags/本益成長比/" style="font-size: 10px;">本益成長比</a> <a href="/tags/本益比/" style="font-size: 14px;">本益比</a> <a href="/tags/杜邦分析/" style="font-size: 14px;">杜邦分析</a> <a href="/tags/機器學習/" style="font-size: 12px;">機器學習</a> <a href="/tags/歷史回測/" style="font-size: 20px;">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size: 10px;">每股盈餘</a> <a href="/tags/生活/" style="font-size: 11px;">生活</a> <a href="/tags/程式設計/" style="font-size: 15px;">程式設計</a> <a href="/tags/策略狗/" style="font-size: 12px;">策略狗</a> <a href="/tags/簡易策略/" style="font-size: 14px;">簡易策略</a> <a href="/tags/統計/" style="font-size: 10px;">統計</a> <a href="/tags/總資產轉換率/" style="font-size: 10px;">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size: 14px;">股價淨值比</a> <a href="/tags/股票分析/" style="font-size: 10px;">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size: 12px;">自由現金報酬率</a> <a href="/tags/選股/" style="font-size: 16px;">選股</a> <a href="/tags/選股策略/" style="font-size: 18px;">選股策略</a> <a href="/tags/量化投資/" style="font-size: 10px;">量化投資</a>
         </div>
     </div>
 
