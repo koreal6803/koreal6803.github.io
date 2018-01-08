@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2018-01-05T15:23:12.000Z</updated>
+  <updated>2018-01-08T16:12:23.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自動下單（1）用Python爬取交易記錄</title>
+    <link href="https://koreal6803.github.io/%E7%94%A8python%E7%8D%B2%E5%8F%96%E6%8C%81%E8%82%A1%E6%90%8D%E7%9B%8A%E8%A1%A8/"/>
+    <id>https://koreal6803.github.io/用python獲取持股損益表/</id>
+    <published>2018-01-08T14:07:16.000Z</published>
+    <updated>2018-01-08T16:12:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>量化投資原來分為以下兩個步驟：</p><ol><li>用數學模型，運算出買賣股票清單</li><li>清單自動與看盤軟體對接，實現自動買賣</li></ol><p>今天就教你怎麼將自己的帳戶與python做連接，讓電腦得知你實際持股的部位。</p><center><img src="/用python獲取持股損益表/thumbnail.jpeg" alt="連接帳戶" title="連接帳戶"></center><h3 id="打開券商看盤軟體（網站）"><a href="#打開券商看盤軟體（網站）" class="headerlink" title="打開券商看盤軟體（網站）"></a>打開券商看盤軟體（網站）</h3><p>首先，我們針對新光證券來進行對接，其它證券的朋友就不好意思了，我只有新光XDD，但每一家的網站設計不會差太多，可以舉一反三，做出其它證券的對接系統。</p><p>雖然我是新光的用戶，但新光的網站真的很瞎！介面老舊不說，每天早上9點開盤必當機…好在我都是直接下開盤漲停買入，我是可憐窮散戶金額小所以沒差XDD。</p><h3 id="打開網頁，監控network"><a href="#打開網頁，監控network" class="headerlink" title="打開網頁，監控network"></a>打開網頁，監控network</h3><p>接下來我們要來查看登入機制是如何運作的，知道了內部的機制，才能用python來模擬登入的動作喔！</p><ol><li>用無痕視窗<a href="https://w.sk88.com.tw/Cross/Pc/Login.aspx" rel="external nofollow noopener noreferrer" target="_blank">登入頁面</a></li><li>對著網頁任何一處按右鍵，選擇inspect（中文忘記是什麼了，反正就是最下方那個XD）</li><li>選擇network（一樣請自己對照中文）</li></ol><p>做完這三步驟你應該會看到以下節圖：</p><center><img src="/用python獲取持股損益表/1.png" alt="螢幕節圖" title="螢幕節圖"></center><h1 id="這個-Network-列表是做什麼的？"><a href="#這個-Network-列表是做什麼的？" class="headerlink" title="這個 Network 列表是做什麼的？"></a>這個 Network 列表是做什麼的？</h1><p>network這個列表，最主要就是會紀錄網頁所用到的 get 跟 post 的請求，什麼是 get 跟 post 呢？籠統的說，這些就是你的瀏覽器跟網站主機互動時的通信方式，平常瀏覽網頁，將網頁從網路上下載到瀏覽器中，這個動作通常是用get，而隱私性比較高的（登入、修改網路上的資料），就會用 post。</p><p>輸入你的帳號密碼按下登入，你會看到network的列表出現了很多東西，大部分的都不重要，請點選其中的 Login.aspx，裡面紀錄著用來登入的通訊過程。</p><center><img src="/用python獲取持股損益表/2.png" alt="螢幕節圖" title="螢幕節圖"></center><p>你應該會看到以上的節圖，裡面有些重要的資訊，我們先把登入當作是一封寫給新光主機的信，上圖中包含了幾個重要的資訊：</p><ol><li>信寄到：<a href="https://w.sk88.com.tw/Cross/Pc/Login.aspx" rel="external nofollow noopener noreferrer" target="_blank">https://w.sk88.com.tw/Cross/Pc/Login.aspx</a> 這個地方</li><li>這是一個 POST request</li><li>server 回覆代號是 302 （通常是2XX、或3XX。4XX、5XX代表有問題）</li></ol><h3 id="查看-Request-內容"><a href="#查看-Request-內容" class="headerlink" title="查看 Request 內容"></a>查看 Request 內容</h3><p>目前知道的訊息有：信的種類為 post，而地址也有了。但信中的內容要寫什麼呢？無非就是跟登入有關的訊息吧！例如帳號密碼之類的，所以我們將視窗往下拉，看到form data這裡：</p><center><img src="/用python獲取持股損益表/3.png" alt="螢幕節圖" title="螢幕節圖"></center><p>你可以看到信封裡的內容：</p><ol><li>__EVENTTARGET: 欄位為空</li><li>__EVENTARGUMENT: 欄位為空</li><li>__VIEWSTATE: 亂碼</li><li>__VIEWSTATEGENERATOR: 亂碼</li><li>__EVENTVALIDATION: 亂碼</li><li>TxtIDNo: 你的身份證字號,</li><li>TxtPass: 你的密碼,</li><li>HiddenIDNo: 你的生份正字號,</li><li>Button1: 登入,</li></ol><p>我們可以發現除了帳號密碼外，還有很多怪東西，例如：「__EVENTTARGET」等等，這些東西我們不能亂填，我們得找到這些欄位的正確內容，登入才會生效。<br>我們可以到原本的登入網頁找：</p><ol><li>回到登入頁面（inspect依然開啟）</li><li>點選 inspect 中的 Element，打開網站的原始碼，並搜尋（Ctrl-F 或 Cmd-F），’__VIEWSTATE’，就可以找到一它的value是多少了！</li><li>其它如「<code>__EVENTARGUMENT</code>」、「<code>__VIEWSTATE</code>」、「<code>__VIEWSTATEGENERATOR</code>」、「<code>__EVENTVALIDATION</code>」也是用一樣的方式找</li></ol><p>以下是節圖：</p><center><img src="/用python獲取持股損益表/4.png" alt="螢幕節圖" title="螢幕節圖"></center><p>當然自己慢慢輸入肯定很蠢，所以這一切都要用python自動化才行！<br>以後真的只要1秒就可以下載好，省去網站慢吞吞填入帳密。。。</p><h3 id="寫code時間"><a href="#寫code時間" class="headerlink" title="寫code時間"></a>寫code時間</h3><p>所以你已經瞭解了原理了，接下來就是實做！<br>首先，我們要得到網頁，找尋當中的「__VIEWSTATE」等驗證碼：<br><figure class="highlight python"><figcaption><span>得到網頁、驗證碼</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</div><div class="line"></div><div class="line"><span class="comment"># 開啟瀏覽器</span></div><div class="line">ses = requests.Session()</div><div class="line"></div><div class="line"><span class="comment"># 打開登入網頁</span></div><div class="line">d = ses.get(<span class="string">'https://w.sk88.com.tw/Cross/Pc/Login.aspx'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 此函式會找特定的value，如「__VIEWSTATE」等</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_value</span><span class="params">(name, web)</span>:</span></div><div class="line">    reg = <span class="string">'name="'</span> + name + <span class="string">'".+value="(.*)" /&gt;'</span></div><div class="line">    pattern = re.compile(reg)</div><div class="line">    result  = pattern.findall(web.text)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">return</span> result[<span class="number">0</span>]</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">return</span> <span class="string">""</span></div><div class="line"></div><div class="line"><span class="comment"># 使用方式</span></div><div class="line">find_value(<span class="string">'__VIEWSTATE'</span>, d)</div><div class="line"></div></pre></td></tr></table></figure></p><p>我特別寫好了一個 <code>find_value</code> 的函式，它會幫你找出網頁中的怪碼，大家有興趣可以去研究 <a href="http://webber-pypyso.blogspot.fr/2011/02/10-1-1.html" rel="external nofollow noopener noreferrer" target="_blank">regex</a> ，用來解析字串用的。</p><center><img src="/用python獲取持股損益表/find_value.png" alt="find_value的用法" title="find_value的用法"></center><p>於是<code>__VIEWSTATEGENERATOR</code>、  <code>__EVENTVALIDATION</code>，這些怪東西的驗證碼就被找到了！</p><h3 id="寫信封的內容"><a href="#寫信封的內容" class="headerlink" title="寫信封的內容"></a>寫信封的內容</h3><p>接下來我們再來實際的登入：</p><figure class="highlight python"><figcaption><span>用python模擬登入</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">data = &#123;</div><div class="line">    <span class="string">'__EVENTTARGET'</span>: find_value(<span class="string">'__EVENTTARGET'</span>, d),</div><div class="line">    <span class="string">'__EVENTARGUMENT'</span>: find_value(<span class="string">'__EVENTARGUMENT'</span>, d),</div><div class="line">    <span class="string">'__VIEWSTATE'</span>: find_value(<span class="string">'__VIEWSTATE'</span>, d),</div><div class="line">    <span class="string">'__VIEWSTATEGENERATOR'</span>: find_value(<span class="string">'__VIEWSTATEGENERATOR'</span>, d),</div><div class="line">    <span class="string">'__EVENTVALIDATION'</span>: find_value(<span class="string">'__EVENTVALIDATION'</span>, d),</div><div class="line">    <span class="string">'TxtIDNo'</span>:<span class="string">'你的身份證字號（帳號）'</span>,</div><div class="line">    <span class="string">'TxtPass'</span>:<span class="string">'密碼'</span>,</div><div class="line">    <span class="string">'HiddenIDNo'</span>:<span class="string">'你的身份證字號（帳號）'</span>,</div><div class="line">    <span class="string">'Button1'</span>:<span class="string">'登入'</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line">login = ses.post(<span class="string">'https://w.sk88.com.tw/Cross/Pc/Login.aspx'</span>, data=data)</div></pre></td></tr></table></figure><p>以上的code，就是創建信封的內容 data，並發送「POST」，請求登入。記得要修改改帳號密碼才能用喔！</p><h3 id="下載持股部位"><a href="#下載持股部位" class="headerlink" title="下載持股部位"></a>下載持股部位</h3><p>接下來，由於已經登入了，我們就去相對應的網址，下載自己的持股部位：<br><figure class="highlight python"><figcaption><span>下載持股部位</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># 下載持股</span></div><div class="line">data = ses.get(<span class="string">'https://w.sk88.com.tw/Cross/Pc/QueryPositionRealTime.aspx'</span>)</div><div class="line">data.encoding = <span class="string">'utf-8'</span></div><div class="line"></div><div class="line"><span class="comment"># 用 pandas 整理</span></div><div class="line">df = pd.read_html(StringIO(data.text))[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment"># 設定第一行row 為 欄位名稱</span></div><div class="line">df.columns = df.iloc[<span class="number">0</span>]</div><div class="line"></div><div class="line"><span class="comment"># 刪除第一行row</span></div><div class="line">df = df.iloc[<span class="number">1</span>:]</div><div class="line">df</div></pre></td></tr></table></figure></p><center><img src="/用python獲取持股損益表/df.png" alt="持股記錄" title="持股記錄"></center><p>以上是我的持股記錄，趁最近表現不錯放一下XDD，這只是表面績效很好，實際上沒那麼好，因為最近賣了很多虧損股，只剩好的股票，所以才看起來光鮮亮麗。絕對不能只看持股獲利，還必須考慮銀行帳戶中的存款才行喔！不然很有可能發現，持股獲利很高，但帳戶餘額慢慢變少的情況喔！</p><p>以上就是今天的教學，有以下幾個小重點：</p><ol><li>學習用chrome來找 get post 的方法</li><li>利用python 模擬登入帳號</li><li>下載自己的持股狀況</li></ol><p>下次會介紹如何串接自動化買賣，敬請期待！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;量化投資原來分為以下兩個步驟：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用數學模型，運算出買賣股票清單&lt;/li&gt;
+&lt;li&gt;清單自動與看盤軟體對接，實現自動買賣&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;今天就教你怎麼將自己的帳戶與python做連接，讓電腦得知你實際持股的部位。&lt;/p&gt;
+&lt;center
+      
+    
+    </summary>
+    
+      <category term="財經Python教學" scheme="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
+      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+      <category term="爬蟲" scheme="https://koreal6803.github.io/tags/%E7%88%AC%E8%9F%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>新年賀禮 ─ 投信跟盤法！</title>
@@ -308,9 +343,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
       <category term="KD" scheme="https://koreal6803.github.io/tags/KD/"/>
+    
+      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   
@@ -371,9 +406,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   
@@ -434,9 +469,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   
@@ -498,9 +533,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   
@@ -565,9 +600,9 @@
     
       <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
     
-      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   
@@ -598,36 +633,6 @@
       <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="指標" scheme="https://koreal6803.github.io/tags/%E6%8C%87%E6%A8%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用Machine Learning 選股新手教學</title>
-    <link href="https://koreal6803.github.io/%E5%88%A9%E7%94%A8Machine-Learning-%E9%81%B8%E8%82%A1%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/"/>
-    <id>https://koreal6803.github.io/利用Machine-Learning-選股新手教學/</id>
-    <published>2017-10-20T10:58:23.000Z</published>
-    <updated>2017-12-15T01:51:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近一直在弄Machine Learning，都快忘記寫blog了，哈！</p><p>其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！這邊只是給大家一個簡單的架構，可以自己去嘗試優化，讓它更聰明！以下是用mac或是linux的command line完成的，假如有任何錯誤或不懂的地方歡迎聯絡我喔～</p><center><img src="/利用Machine-Learning-選股新手教學/thumbnail.png" alt="我們今天用的是random forest model!" title="我們今天用的是random forest model!"></center><h3 id="1-取得資料"><a href="#1-取得資料" class="headerlink" title="1. 取得資料"></a>1. 取得資料</h3><p>只要寄到我的信箱，就會免費傳給你一個data.csv檔案，裡面就是training的資料，這個只能用於學術研究，請勿用於商業用途。</p><p>為什麼要這麼麻煩？！不能直接把連結公布於網站上就好了嗎？絕對沒有要收集email的意思，最主要是因為這資料的來源比較複雜。</p><h3 id="2-架設環境"><a href="#2-架設環境" class="headerlink" title="2. 架設環境"></a>2. 架設環境</h3><p>假如你已經會使用python了，那可以直接跳過這個步驟，假如不會的話，可以照著下面的步驟完成：</p><ol><li>到<a href="https://www.python.org/downloads/" rel="external nofollow noopener noreferrer" target="_blank">官網</a>下載<strong>Python3</strong>，並且安裝</li><li>安裝<a href="https://pip.pypa.io/en/stable/" rel="external nofollow noopener noreferrer" target="_blank">pip</a></li><li>安裝<a href="https://virtualenv.pypa.io/en/stable/" rel="external nofollow noopener noreferrer" target="_blank">virtualenv</a></li></ol><h4 id="為何要安裝pip呢？"><a href="#為何要安裝pip呢？" class="headerlink" title="為何要安裝pip呢？"></a>為何要安裝pip呢？</h4><p>pip可以幫我們下載Machine Learning所需要的package（也就是python的libraries）。</p><h4 id="為何要安裝-virtualenv-呢？"><a href="#為何要安裝-virtualenv-呢？" class="headerlink" title="為何要安裝 virtualenv 呢？"></a>為何要安裝 <strong>virtualenv</strong> 呢？</h4><p><strong>virtualenv</strong>可以幫你產生project的環境，每一個project用自己的libraries，這樣比較不容易有衝突。</p><h3 id="3-建置project"><a href="#3-建置project" class="headerlink" title="3. 建置project"></a>3. 建置project</h3><p>首先，先用<strong>virtualenv</strong>創建project<br><figure class="highlight bash"><figcaption><span>create project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">virtualenv finance_ml</div><div class="line"><span class="built_in">cd</span> finance_ml</div></pre></td></tr></table></figure></p><p>接下來必須要開啟工作環境：<br><figure class="highlight plain"><figcaption><span>activate and deactivate project</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">source bin/activate</div><div class="line">deactivate</div></pre></td></tr></table></figure></p><p>這邊有兩行，一行是開啟環境，一行是結束環境！假如你還要繼續，先不要輸入第二行。<br>將data.csv複製到當前資料夾，並且安裝python packages</p><figure class="highlight plain"><figcaption><span>install python packages</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pip install jupyter</div><div class="line">pip install pandas</div><div class="line">pip install sklearn</div><div class="line">pip install matplotlib</div></pre></td></tr></table></figure><h3 id="4-開工！"><a href="#4-開工！" class="headerlink" title="4. 開工！"></a>4. 開工！</h3><p>首先就是開啟jupyter notebook，並開一個python的環境<br><figure class="highlight plain"><figcaption><span>start notebook</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook</div></pre></td></tr></table></figure><br>這樣會開啟一個網頁版的GUI介面，只要新增python的notebook就可以用了！<br>接下來進入我們的主題：機器學習程式碼！</p><h4 id="A-讀入資料"><a href="#A-讀入資料" class="headerlink" title="A. 讀入資料"></a>A. 讀入資料</h4><p>這邊我們用 pandas 讀入所需要的資料，index_col可以設定要哪一個columns當作index。這邊的index選擇在 data.csv 中，第一個未命名的column。<br><figure class="highlight python"><figcaption><span>read data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line">data = pd.read_csv(<span class="string">'data.csv'</span>, index_col=<span class="string">'Unnamed: 0'</span>)</div></pre></td></tr></table></figure></p><h4 id="B-處理資料"><a href="#B-處理資料" class="headerlink" title="B.處理資料"></a>B.處理資料</h4><p>我們將資料分成三類，一類是跑回測用的dbacktest，另一類是機器學習用的dtraning，另外一個是traning完用來評估的dtest。</p><figure class="highlight python"><figcaption><span>process data</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</div><div class="line"></div><div class="line"><span class="comment"># clear data 將爛資料去掉</span></div><div class="line">data.dropna(how=<span class="string">'any'</span>, inplace=<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="comment"># 選擇2015年以後的資料作為回測用</span></div><div class="line">dbacktest = data[data[<span class="string">'buy_date'</span>] &gt; <span class="string">'2015'</span>]</div><div class="line"></div><div class="line"><span class="comment"># 將其於的資料再分成兩類：dtrain 跟 dtest</span></div><div class="line">dataTrainTest = data[data[<span class="string">'sell_date'</span>] &lt; <span class="string">'2015'</span>]</div><div class="line">dtrain, dtest = train_test_split(dataTrainTest, test_size=<span class="number">0.10</span>, random_state=<span class="number">42</span>)</div><div class="line"></div><div class="line"><span class="comment"># 設定我們的feature要用哪些</span></div><div class="line">features = data.columns[<span class="number">5</span>:<span class="number">-1</span>]</div></pre></td></tr></table></figure><h4 id="C-機器學習訓練資料"><a href="#C-機器學習訓練資料" class="headerlink" title="C. 機器學習訓練資料"></a>C. 機器學習訓練資料</h4><p>這邊我們用很簡單的<a href="https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm" rel="external nofollow noopener noreferrer" target="_blank">隨機森林</a>，來完成的，可以參考連結來學習怎麼樣調整參數，這應該算是機器學習中，前置作業最少的模型了！</p><figure class="highlight python"><figcaption><span>learning</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</div><div class="line"></div><div class="line"><span class="comment"># 創建機器學習的model</span></div><div class="line">rf = RandomForestClassifier(n_estimators=<span class="number">10</span>, criterion=<span class="string">'gini'</span>, </div><div class="line">                            max_depth=<span class="keyword">None</span>, min_samples_split=<span class="number">2</span>, </div><div class="line">                            min_samples_leaf=<span class="number">1</span>, min_weight_fraction_leaf=<span class="number">0.0</span>, </div><div class="line">                            max_features=<span class="string">'auto'</span>, max_leaf_nodes=<span class="keyword">None</span>, </div><div class="line">                            bootstrap=<span class="keyword">True</span>, oob_score=<span class="keyword">False</span>, n_jobs=<span class="number">1</span>, </div><div class="line">                            random_state=<span class="keyword">None</span>, verbose=<span class="number">0</span>, warm_start=<span class="keyword">False</span>, </div><div class="line">                            class_weight=<span class="keyword">None</span>)</div><div class="line"><span class="comment"># 分類能獲利的股票</span></div><div class="line">rf.fit(dtrain[features], dtrain[<span class="string">'獲利'</span>] &gt; <span class="number">1</span>)</div><div class="line"></div></pre></td></tr></table></figure><h4 id="D-結果"><a href="#D-結果" class="headerlink" title="D. 結果"></a>D. 結果</h4><p>你說這樣就結束了！？對呀結束了。其實machine learning要簡單真的就只是這樣而已！<br>接下來我們來看一下它預測的准不準：</p><figure class="highlight python"><figcaption><span>predict</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">result = rf.predict(dtest[features])</div><div class="line"></div><div class="line">print(<span class="string">'test data'</span>)</div><div class="line">print(<span class="string">'gain before filtered'</span>, dtest[<span class="string">'獲利'</span>].mean())</div><div class="line">print(<span class="string">'gain after filtered'</span>, dtest[<span class="string">'獲利'</span>][result].mean())</div><div class="line">print(<span class="string">'num stocks'</span>, sum(result), <span class="string">'/'</span>, len(dtest))</div><div class="line"></div><div class="line">result = rf.predict(dbacktest[features])</div><div class="line"></div><div class="line">print(<span class="string">'backtest data'</span>)</div><div class="line">print(<span class="string">'gain before filtered'</span>, dbacktest[<span class="string">'獲利'</span>].mean())</div><div class="line">print(<span class="string">'gain after filtered'</span>, dbacktest[<span class="string">'獲利'</span>][result].mean())</div><div class="line">print(<span class="string">'num stocks'</span>, sum(result), <span class="string">'/'</span>, len(dbacktest))</div><div class="line"></div></pre></td></tr></table></figure><p>假如一切順利就會看到以下結果：</p><center><img src="/利用Machine-Learning-選股新手教學/result.png" alt="結果" title="結果"></center><br>這邊的gain是指平均的報酬率，也就是所有股票的價格在賣出時是否賺錢，小於一就是虧，大於一就是賺。<br><br>結果看起來還滿猛的！竟然有接近7%的報酬率！<br><br>但真的是如此嗎？我們把它畫成隨著時間，本金成長的獲利圖：<br><br><figure class="highlight python"><figcaption><span>backtest</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">%matplotlib inline</div><div class="line"></div><div class="line">dbacktest[<span class="string">'預測'</span>] = pd.Series(result, index=dbacktest.index)</div><div class="line">dates = list(set(dbacktest[<span class="string">'buy_date'</span>]))</div><div class="line">dates.sort()</div><div class="line"></div><div class="line">history = []</div><div class="line"><span class="keyword">for</span> d <span class="keyword">in</span> dates:</div><div class="line">    history.append(dbacktest[(dbacktest[<span class="string">'buy_date'</span>] == d) &amp; (dbacktest[<span class="string">'預測'</span>])][<span class="string">'獲利'</span>].mean())</div><div class="line">    </div><div class="line">pd.Series(history, index=dates).cumprod().plot()</div></pre></td></tr></table></figure><br><br><center><img src="/利用Machine-Learning-選股新手教學/eq.png" alt="權益曲線" title="權益曲線"></center><p>發現其實沒有想像中那麼好。這是意料之中的結果，畢竟我們的learning時間才幾秒鐘，假如增加n_estimator這個變數，是否可以讓結果更好？假如使用Regression會不會更好？假如改變一下機器學習的參數、或修改一下features，是否可以選到更好的股票呢？就留給各位慢慢玩！以下是可以改進的地方：</p><ol><li>feature engineering：將features做修正、刪除、normalize等</li><li>篩選能獲利X%的股票</li><li>classification vs regression：可以兩種都試試看</li><li>不同的model，可以試試SVM、NN、XGBoost等等</li><li>不同的model都有可以調整超多參數來達到優化</li><li>利用early stop 來預防overfitting。</li></ol><p>我只是列出最基本的，還有很多可以玩的，這也是我這禮拜正在弄的東西，害我都沒時間寫網誌XDD</p><p>假如你有意外的發現，可以聯絡我，我可以幫你架設一個選股平台，我們再來討論怎麼分潤之類的，但前提是結果必須要比我的好才行XDDD。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最近一直在弄Machine Learning，都快忘記寫blog了，哈！&lt;/p&gt;
-&lt;p&gt;其實要machine選股真的很簡單！這篇blog就會帶大家從頭開始，用最簡單的方式，將Machine Learning實做！這邊只是給大家一個簡單的架構，可以自己去嘗試優化，讓它更聰明！
-      
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
-      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
-    
-      <category term="機器學習" scheme="https://koreal6803.github.io/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
-    
-      <category term="Machine Learning" scheme="https://koreal6803.github.io/tags/Machine-Learning/"/>
     
   </entry>
   
