@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>FinLab 量化實驗室</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="description" content=".large {         margin: 0;       }            .scards {         display: flex;         flex-wrap: wrap;         justify-content: space-between;         width: 100%;         over">
+<meta name="keywords" content="python,股票,選股,分析,策略,財報,stock,finance,market,公司體質,策略,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FinLab 量化實驗室">
+<meta property="og:url" content="https://koreal6803.github.io/績效追蹤/index.html">
+<meta property="og:site_name" content="FinLab 量化實驗室">
+<meta property="og:description" content=".large {         margin: 0;       }            .scards {         display: flex;         flex-wrap: wrap;         justify-content: space-between;         width: 100%;         over">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://koreal6803.github.io/績效追蹤/images/logo_img.png">
+<meta property="og:updated_time" content="2018-01-17T11:47:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FinLab 量化實驗室">
+<meta name="twitter:description" content=".large {         margin: 0;       }            .scards {         display: flex;         flex-wrap: wrap;         justify-content: space-between;         width: 100%;         over">
+<meta name="twitter:image" content="https://koreal6803.github.io/績效追蹤/images/logo_img.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="FinLab 量化實驗室" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png# path to favicon">
+    
+
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106968614-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">用統計、回測的方式教你如何買股票</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">首頁</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/AI看股票/">AI看股票</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/大盤漲跌/">大盤漲跌</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/">指標分析</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/基本面/">基本面</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/技術面/">技術面</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/籌碼面/">籌碼面</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/財報狗分析/">財報狗分析</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/財經Python教學/">財經Python教學</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/選股策略/">選股策略</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/關於/index.html">關於</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字(股票,量化...)">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    FinLab 量化實驗室
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <style>
+        .css-input { margin-left: 25%;padding-left:10px;height: 40px; width: 40%; font-size:12px; text-align:left; border-style:solid; border-color:#006bde; text-shadow:0px 0px 0px rgba(42,42,42,.75); box-shadow: 0px 0px 42px 0px rgba(0,0,0,0.2); border-radius:3px; background-color:rgba(0,0,0,0); color: #006bde; border-width: 0; } 
+        .css-input:focus { outline: none } 
+        .btn {
+            width: calc(15% - 20px);
+            height: 40px;
+            font-size: 14px;
+            border-radius:3px;
+            box-shadow: 0px 0px 42px 0px rgba(0,0,0,0.2);
+            border: 0;
+            color: white;
+            background-color: #006bde;
+            margin-left: 10px;
+        }
+        .btn:hover {
+            cursor: pointer;
+        }
+        .btn:focus { outline: none; }
+</style>
+<article id="page-" class="article article-single article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <!--
+        
+            <a style="margin-bottom: 10px" src='helo'>by 韓承佑</a>
+        
+        -->
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons" rel="stylesheet" type="text/css">
+  <style>
+
+      .large {
+        margin: 0;
+      }
+    
+      .scards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      .effect7
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect7:before, .effect7:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.7);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.7);
+    box-shadow:0 0 20px rgba(0,0,0,0.7);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.effect7:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+
+      .scard {
+        border:1px solid #EEE;
+        background: rgba(255,255,255,1);
+        flex: 0 1 calc(50% - 45px);
+        margin: 20px;
+        color: rgb(122, 122, 122);
+      }
+    
+      .scard>div {
+        padding: 10px;
+        margin: 0;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    
+      .small-panel {
+        flex: 1;
+        vertical-align: middle;
+      }
+    
+      .small-panel>i {
+        font-size: 3em;
+      }
+    
+      @media only screen and (max-width: 40em) {
+    
+        .scard>div {
+          width: 100%;
+        }
+    
+        .scard {
+          flex: 0 1 calc(100% - 10px);
+        }
+    
+        .scards {
+          padding: 10px;
+        }
+      }
+      
+
+    </style>
+</head>
+
+
+<body>
+    <div id="bg">
+      
+    <div>
+      <h1 style="margin-top: 20px;margin-buttom: 20px">來看看FinLab選股最近的績效吧！</h1>
+      <p>此頁可以追蹤FinLab策略股票觀察清單，並且瞭解其歷史績效。</p>
+      <p>用來玩股市大富翁遊戲使用，請勿用於股票投資！～</p>
+      <div class="scards">
+        
+        
+            <div class="scard effect7">
+
+              <div style="text-align:center">
+                <a href="/strategies/投信小市值跟買_finlab.html">
+                  <h3 style="color: rgba(77,77,255,1)">投信小市值跟買</h3>
+                </a>
+                <div style="display:flex;">
+                  <div class="small-panel">
+                    <i class="material-icons">history</i><br>
+                    <p style="margin:0">25.9 %</p>年均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">timeline</i><br>
+                      <p style="margin:0">9.6 %</p>季均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">security</i><br>
+                      <p style="margin:0">-26.6 %</p>最大跌幅
+                  </div>
+                </div>
+              </div>
+              <!--
+              <div class="timeseries">
+                  <div id="524e30f4-d6ae-49c4-8191-f0673814e282" style="height: 360px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("524e30f4-d6ae-49c4-8191-f0673814e282", [{"type": "scatter", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 3.2027237080375803, -3.259180865846978, 10.939736158300594, 20.458730439876184, 27.066844012779367, 42.42591479141695, 36.9854371372043, 52.026815041309746, 60.02168853749239, 59.76706593024834, 62.38249905446502, 84.61365064101234], "name": "\u5831\u916c\u7387\uff08\u542b\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 6.4172983479504175, 1.6169837124000663, 22.493088147598648, 37.29246614577699, 49.57688049144684, 75.0907596066529, 72.05740117025017, 98.78067870488331, 115.59775836309444, 123.2753450192817, 136.1401071754673, 177.19210252812704], "name": "\u5831\u916c\u7387\uff08\u7121\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 1.068089098050029, -10.729882063115681, -10.813756024682187, -12.47259336529215, -10.656909305455075, -4.516028495386093, -2.8126094335489515, 1.691875995295944, 5.96533660624039, 10.406560136145915, 12.387715702958157, 14.874451140227606], "name": "\u5927\u76e4", "line": {"color": "gray"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "bar", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [16, 19, 24, 37, 24, 19, 24, 28, 22, 20, 19, 24, 10], "name": "\u80a1\u7968\u6578\u91cf\uff08\u5168\u8cb7\uff09", "marker": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}, {"type": "bar", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [16, 19, 24, 37, 24, 19, 24, 28, 22, 20, 19, 24, 10], "name": "\u80a1\u7968\u6578\u91cf\uff08\u771f\u5be6\u72c0\u6cc1\uff09", "marker": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}], {"yaxis1": {"domain": [0.4444444444444444, 1], "anchor": "free", "position": 0.0, "title": "\u7372\u5229 (%)", "fixedrange": true}, "xaxis1": {"domain": [0.0, 1.0], "anchor": "y2"}, "yaxis2": {"domain": [0.0, 0.41666666666666663], "anchor": "x1", "title": "Amount", "fixedrange": true}, "showlegend": false, "xaxis": {"fixedrange": true}, "height": 360, "shapes": [], "annotations": [], "margin": {"l": 60, "r": 20, "b": 20, "t": 20, "pad": 4}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)"}, {"showLink": false, "linkText": "Export to plot.ly", "displayModeBar": false})</script>
+              </div>
+              -->
+            </div>
+          
+        
+        
+            <div class="scard effect7">
+
+              <div style="text-align:center">
+                <a href="/strategies/PEB策略_finlab.html">
+                  <h3 style="color: rgba(77,77,255,1)">PEB策略</h3>
+                </a>
+                <div style="display:flex;">
+                  <div class="small-panel">
+                    <i class="material-icons">history</i><br>
+                    <p style="margin:0">8.0 %</p>年均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">timeline</i><br>
+                      <p style="margin:0">0 %</p>季均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">security</i><br>
+                      <p style="margin:0">-13.1 %</p>最大跌幅
+                  </div>
+                </div>
+              </div>
+              <!--
+              <div class="timeseries">
+                  <div id="373ae5a8-5b9f-4934-b506-c244ff897394" style="height: 360px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("373ae5a8-5b9f-4934-b506-c244ff897394", [{"type": "scatter", "x": ["2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 3.227200661025109, 3.055266187834249, 5.878211142621592, 8.222572860302325, 13.267852489334487, 28.81943711942334, 27.022343974104345, 26.01478097676462, 26.01478097676462, 26.014780976764484], "name": "\u5831\u916c\u7387\uff08\u542b\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 4.622771833619144, 5.63983020619192, 8.580165854535915, 11.965117913525525, 18.36185621358968, 36.89620496182424, 35.02805660653472, 34.37229556485162, 34.372295564851576, 34.37229556485153], "name": "\u5831\u916c\u7387\uff08\u7121\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 1.9994496578074283, 0.1022905414210129, 2.178830225131523, 9.201958850377512, 11.150104652908354, 16.301740311664716, 21.189160288351736, 26.268445340237513, 28.534229484676565, 31.37822912789787], "name": "\u5927\u76e4", "line": {"color": "gray"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "bar", "x": ["2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [19, 19, 52, 50, 29, 21, 27, 12, 0, 0, 0], "name": "\u80a1\u7968\u6578\u91cf\uff08\u5168\u8cb7\uff09", "marker": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}, {"type": "bar", "x": ["2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [19, 19, 52, 49, 29, 21, 27, 12, 0, 0, 0], "name": "\u80a1\u7968\u6578\u91cf\uff08\u771f\u5be6\u72c0\u6cc1\uff09", "marker": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}], {"yaxis1": {"domain": [0.4444444444444444, 1], "anchor": "free", "position": 0.0, "title": "\u7372\u5229 (%)", "fixedrange": true}, "xaxis1": {"domain": [0.0, 1.0], "anchor": "y2"}, "yaxis2": {"domain": [0.0, 0.41666666666666663], "anchor": "x1", "title": "Amount", "fixedrange": true}, "showlegend": false, "xaxis": {"fixedrange": true}, "height": 360, "shapes": [], "annotations": [], "margin": {"l": 60, "r": 20, "b": 20, "t": 20, "pad": 4}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)"}, {"showLink": false, "linkText": "Export to plot.ly", "displayModeBar": false})</script>
+              </div>
+              -->
+            </div>
+          
+        
+        
+            <div class="scard effect7">
+
+              <div style="text-align:center">
+                <a href="/strategies/綜合大雜燴_finlab.html">
+                  <h3 style="color: rgba(77,77,255,1)">綜合大雜燴</h3>
+                </a>
+                <div style="display:flex;">
+                  <div class="small-panel">
+                    <i class="material-icons">history</i><br>
+                    <p style="margin:0">11.4 %</p>年均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">timeline</i><br>
+                      <p style="margin:0">3.0 %</p>季均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">security</i><br>
+                      <p style="margin:0">-7.1 %</p>最大跌幅
+                  </div>
+                </div>
+              </div>
+              <!--
+              <div class="timeseries">
+                  <div id="52388200-d7e5-4fd5-bad4-d2f8fa69be78" style="height: 360px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("52388200-d7e5-4fd5-bad4-d2f8fa69be78", [{"type": "scatter", "x": ["2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 0.9079838335025903, 9.71587679499384, 11.549998403493111, 19.631206495826127, 21.41041455465953, 28.7960879894519, 30.59334080888656, 35.08067646049475], "name": "\u5831\u916c\u7387\uff08\u542b\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 0.3122538300868616, 12.11672925196623, 15.371398443408468, 25.79128648725113, 30.020646013732822, 41.98177320003826, 46.65855398939007, 54.68626972774868], "name": "\u5831\u916c\u7387\uff08\u7121\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, -2.713754763444365, 3.9730884139353106, 5.827951988748148, 10.732914092570379, 15.386311840209377, 20.222387670157495, 22.379680246744282, 25.087501878030217], "name": "\u5927\u76e4", "line": {"color": "gray"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "bar", "x": ["2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [30, 69, 59, 60, 53, 66, 26, 58, 32], "name": "\u80a1\u7968\u6578\u91cf\uff08\u5168\u8cb7\uff09", "marker": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}, {"type": "bar", "x": ["2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [28, 65, 55, 57, 47, 59, 26, 55, 29], "name": "\u80a1\u7968\u6578\u91cf\uff08\u771f\u5be6\u72c0\u6cc1\uff09", "marker": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}], {"yaxis1": {"domain": [0.4444444444444444, 1], "anchor": "free", "position": 0.0, "title": "\u7372\u5229 (%)", "fixedrange": true}, "xaxis1": {"domain": [0.0, 1.0], "anchor": "y2"}, "yaxis2": {"domain": [0.0, 0.41666666666666663], "anchor": "x1", "title": "Amount", "fixedrange": true}, "showlegend": false, "xaxis": {"fixedrange": true}, "height": 360, "shapes": [], "annotations": [], "margin": {"l": 60, "r": 20, "b": 20, "t": 20, "pad": 4}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)"}, {"showLink": false, "linkText": "Export to plot.ly", "displayModeBar": false})</script>
+              </div>
+              -->
+            </div>
+          
+        
+        
+            <div class="scard effect7">
+
+              <div style="text-align:center">
+                <a href="/strategies/杜邦分析策略_finlab.html">
+                  <h3 style="color: rgba(77,77,255,1)">杜邦分析策略</h3>
+                </a>
+                <div style="display:flex;">
+                  <div class="small-panel">
+                    <i class="material-icons">history</i><br>
+                    <p style="margin:0">18.5 %</p>年均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">timeline</i><br>
+                      <p style="margin:0">6.6 %</p>季均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">security</i><br>
+                      <p style="margin:0">-15.2 %</p>最大跌幅
+                  </div>
+                </div>
+              </div>
+              <!--
+              <div class="timeseries">
+                  <div id="f2789700-6ddf-4175-92d9-1e21e59d047c" style="height: 360px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("f2789700-6ddf-4175-92d9-1e21e59d047c", [{"type": "scatter", "x": ["2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 3.0981336669644977, 15.85954762761974, 17.962089845751517, 18.943975132555103, 19.435226122124185, 14.6023457513204, 29.073280538925772, 36.064553051553695, 52.882394004496746, 59.876826271354375, 65.9787851886194], "name": "\u5831\u916c\u7387\uff08\u542b\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 4.0950814229485655, 18.37927083320372, 21.666667985411614, 24.919655062836487, 29.425723788508783, 26.051470737087467, 40.45349684463324, 47.850147652289074, 67.3066480497813, 76.77449832753109, 85.8079696922727], "name": "\u5831\u916c\u7387\uff08\u7121\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, -11.030241903699745, -11.113833661430217, -12.767089648159446, -10.957514671488921, -4.837295579179301, -3.1396078716820597, 1.3497216846649618, 5.6088037333591245, 10.03508424288706, 12.009573978131316, 14.487942500729044], "name": "\u5927\u76e4", "line": {"color": "gray"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "bar", "x": ["2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [15, 20, 20, 17, 37, 18, 26, 18, 32, 9, 19, 18], "name": "\u80a1\u7968\u6578\u91cf\uff08\u5168\u8cb7\uff09", "marker": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}, {"type": "bar", "x": ["2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [13, 18, 19, 17, 35, 18, 25, 17, 32, 9, 19, 18], "name": "\u80a1\u7968\u6578\u91cf\uff08\u771f\u5be6\u72c0\u6cc1\uff09", "marker": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}], {"yaxis1": {"domain": [0.4444444444444444, 1], "anchor": "free", "position": 0.0, "title": "\u7372\u5229 (%)", "fixedrange": true}, "xaxis1": {"domain": [0.0, 1.0], "anchor": "y2"}, "yaxis2": {"domain": [0.0, 0.41666666666666663], "anchor": "x1", "title": "Amount", "fixedrange": true}, "showlegend": false, "xaxis": {"fixedrange": true}, "height": 360, "shapes": [], "annotations": [], "margin": {"l": 60, "r": 20, "b": 20, "t": 20, "pad": 4}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)"}, {"showLink": false, "linkText": "Export to plot.ly", "displayModeBar": false})</script>
+              </div>
+              -->
+            </div>
+          
+        
+        
+            <div class="scard effect7">
+
+              <div style="text-align:center">
+                <a href="/strategies/PETER的外資買賣策略_finlab.html">
+                  <h3 style="color: rgba(77,77,255,1)">PETER的外資買賣策略</h3>
+                </a>
+                <div style="display:flex;">
+                  <div class="small-panel">
+                    <i class="material-icons">history</i><br>
+                    <p style="margin:0">11.5 %</p>年均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">timeline</i><br>
+                      <p style="margin:0">0.0 %</p>季均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">security</i><br>
+                      <p style="margin:0">-10.1 %</p>最大跌幅
+                  </div>
+                </div>
+              </div>
+              <!--
+              <div class="timeseries">
+                  <div id="67bcb909-ba3d-412d-9d49-2fe4b0bed614" style="height: 360px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("67bcb909-ba3d-412d-9d49-2fe4b0bed614", [{"type": "scatter", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 4.978329774893386, 5.419902371342533, 13.998029288345503, 15.955988428790292, 17.667994441651413, 27.27241482448999, 23.658247036236624, 33.41010595121499, 32.736868361552936, 35.77178011084978, 35.93486145186149, 35.86451362152068], "name": "\u5831\u916c\u7387\uff08\u542b\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 8.779751954146953, 11.422797707121601, 23.90122279803226, 29.1006475445204, 33.97957655225421, 49.894987327947035, 53.49702029968344, 73.67522414287566, 78.816819389308, 87.49023551573801, 94.0543009325497, 98.75508834212958], "name": "\u5831\u916c\u7387\uff08\u7121\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 0.3335620246577964, -11.378665660933063, -11.461930056254932, -13.108711554631148, -11.306223243428281, -5.209972179995692, -3.518932964551391, 0.9528154596789351, 5.195218072556673, 9.604164362921864, 11.570921592796957, 14.039584317706467], "name": "\u5927\u76e4", "line": {"color": "gray"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "bar", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [30, 55, 22, 67, 52, 50, 58, 53, 46, 50, 51, 19, 23], "name": "\u80a1\u7968\u6578\u91cf\uff08\u5168\u8cb7\uff09", "marker": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}, {"type": "bar", "x": ["2015-03-31", "2015-06-30", "2015-09-30", "2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [30, 55, 22, 67, 52, 49, 57, 53, 46, 50, 51, 19, 23], "name": "\u80a1\u7968\u6578\u91cf\uff08\u771f\u5be6\u72c0\u6cc1\uff09", "marker": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}], {"yaxis1": {"domain": [0.4444444444444444, 1], "anchor": "free", "position": 0.0, "title": "\u7372\u5229 (%)", "fixedrange": true}, "xaxis1": {"domain": [0.0, 1.0], "anchor": "y2"}, "yaxis2": {"domain": [0.0, 0.41666666666666663], "anchor": "x1", "title": "Amount", "fixedrange": true}, "showlegend": false, "xaxis": {"fixedrange": true}, "height": 360, "shapes": [], "annotations": [], "margin": {"l": 60, "r": 20, "b": 20, "t": 20, "pad": 4}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)"}, {"showLink": false, "linkText": "Export to plot.ly", "displayModeBar": false})</script>
+              </div>
+              -->
+            </div>
+          
+        
+        
+            <div class="scard effect7">
+
+              <div style="text-align:center">
+                <a href="/strategies/獲利高淨值低股票_finlab.html">
+                  <h3 style="color: rgba(77,77,255,1)">獲利高淨值低股票</h3>
+                </a>
+                <div style="display:flex;">
+                  <div class="small-panel">
+                    <i class="material-icons">history</i><br>
+                    <p style="margin:0">15.2 %</p>年均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">timeline</i><br>
+                      <p style="margin:0">3.7 %</p>季均報酬
+                  </div>
+                  <div class="small-panel">
+                      <i class="material-icons">security</i><br>
+                      <p style="margin:0">-22.5 %</p>最大跌幅
+                  </div>
+                </div>
+              </div>
+              <!--
+              <div class="timeseries">
+                  <div id="afb6353b-9e68-4cd4-b9a2-2f4cd7e9b481" style="height: 360px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("afb6353b-9e68-4cd4-b9a2-2f4cd7e9b481", [{"type": "scatter", "x": ["2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, -0.07944678072971945, 1.533314928045848, -0.5948862352877837, 8.43937942104034, 35.43406211769913, 39.02076904553296, 46.9216538547152, 51.064135755252195, 52.39135269358386], "name": "\u5831\u916c\u7387\uff08\u542b\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, 1.5842579151236214, 4.356982140099119, 5.17825673223633, 16.859150897342268, 52.58383819825805, 57.00801008656693, 68.38990824259457, 75.41041026254504, 78.46703766882554], "name": "\u5831\u916c\u7387\uff08\u7121\u624b\u7e8c\u8cbb\uff09", "line": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "scatter", "x": ["2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [0.0, -1.2132668296245153, 0.8359826984621899, 7.76681245041797, 9.689355466473803, 14.773287656836365, 19.596476522117754, 24.60900894673088, 26.845015860136634, 29.651639288751298], "name": "\u5927\u76e4", "line": {"color": "gray"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y1"}, {"type": "bar", "x": ["2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [15, 16, 11, 9, 21, 9, 9, 9, 18, 9], "name": "\u80a1\u7968\u6578\u91cf\uff08\u5168\u8cb7\uff09", "marker": {"color": "#4D4DFF"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}, {"type": "bar", "x": ["2015-12-31", "2016-03-31", "2016-06-30", "2016-09-30", "2016-12-31", "2017-03-31", "2017-06-30", "2017-09-30", "2017-12-31", "2018-03-31"], "y": [15, 16, 11, 8, 20, 9, 9, 9, 18, 9], "name": "\u80a1\u7968\u6578\u91cf\uff08\u771f\u5be6\u72c0\u6cc1\uff09", "marker": {"color": "#F4537E"}, "stream": {"maxpoints": 100}, "xaxis": "x1", "yaxis": "y2"}], {"yaxis1": {"domain": [0.4444444444444444, 1], "anchor": "free", "position": 0.0, "title": "\u7372\u5229 (%)", "fixedrange": true}, "xaxis1": {"domain": [0.0, 1.0], "anchor": "y2"}, "yaxis2": {"domain": [0.0, 0.41666666666666663], "anchor": "x1", "title": "Amount", "fixedrange": true}, "showlegend": false, "xaxis": {"fixedrange": true}, "height": 360, "shapes": [], "annotations": [], "margin": {"l": 60, "r": 20, "b": 20, "t": 20, "pad": 4}, "paper_bgcolor": "rgba(0,0,0,0)", "plot_bgcolor": "rgba(0,0,0,0)"}, {"showLink": false, "linkText": "Export to plot.ly", "displayModeBar": false})</script>
+              </div>
+              -->
+            </div>
+          
+        
+    </div>
+  </div>
+
+
+  </div>
+</body>
+
+
+            
+            <!-- Begin MailChimp Signup Form -->
+            <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                #mc_embed_signup{text-align: left;background:#fff; clear:left; width:100%;margin: 0}
+                #mc_embed_signup form {text-align:left;}
+                /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+            </style>
+            <hr>
+            <form action="https://github.us17.list-manage.com/subscribe/post?u=d8cd009ba8ad9a1188c6e206e&amp;id=a7714d56c6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+                <div id="mc_embed_signup_scroll">
+                <p>喜歡我們的文章的話，可以在下方用 email 訂閱，這樣每次有新文章時，就能收到訊息喔～隨時可以取消訂閱，不用擔心我會寄垃圾信，這個是第三方軟體，只有blog更新時才會通知你啦！</p>
+                <div>
+                <input autocomplete="off" type="email" value="" name="EMAIL" class="css-input" id="mce-EMAIL" placeholder="email 地址" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d8cd009ba8ad9a1188c6e206e_a7714d56c6" tabindex="-1" value=""></div>
+                <input type="submit" class="btn" value="訂閱" name="subscribe" id="mc-embedded-subscribe">
+                </div>
+                </div>
+            </form>
+
+            <!--End mc_embed_signup-->
+
+            <div><h3 class="article-title" style="font-size: 20px;">相關文章</h3></div>
+                    
+            </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share" rel="external nofollow noopener noreferrer" target="_blank">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>作者的相關連結 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://linkedin.com/in/cheng-yu-han-4b845aa2" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100000709225894" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="envelope" href="mailto:finlabstaff@gmail.com" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-envelope"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="widgets-container">
+        
+            
+                
+    <!--
+    <div class="widget-wrap">
+        <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=Finlab', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+            <h3 class="widget-title">訂閱內容</h3>
+            <input class="css-input" placeholder="您的email" type="text" name="email" autocomplete="off"/>
+            <input type="hidden" value="Finlab" name="uri"/>
+            <input type="hidden" name="loc" value="zh_TW"/>
+            <input class="btn" type="submit" value="訂閱" />
+        </form>
+        <p style="color: gray;text-align: center;margin-top:10px">當新文章發佈時，以email通知您！</p>
+    </div>-->
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/用數學計算日馳何時崩盤！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/用數學計算日馳何時崩盤！/thumbnail.png)" alt="用數學計算日馳何時崩盤！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/財經Python教學/">財經Python教學</a></p>
+                            <p class="item-title"><a href="/用數學計算日馳何時崩盤！/" class="title">用數學計算日馳何時崩盤！</a></p>
+                            <p class="item-date"><time datetime="2018-01-10T15:18:47.000Z" itemprop="datePublished">2018-01-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/用python獲取持股損益表/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/用python獲取持股損益表/thumbnail.jpeg)" alt="自動下單（1）用Python爬取交易記錄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/財經Python教學/">財經Python教學</a></p>
+                            <p class="item-title"><a href="/用python獲取持股損益表/" class="title">自動下單（1）用Python爬取交易記錄</a></p>
+                            <p class="item-date"><time datetime="2018-01-08T14:07:16.000Z" itemprop="datePublished">2018-01-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/投信跟盤法！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/投信跟盤法！/thumbnail.png)" alt="新年賀禮 ─ 投信跟盤法！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/籌碼面/">籌碼面</a></p>
+                            <p class="item-title"><a href="/投信跟盤法！/" class="title">新年賀禮 ─ 投信跟盤法！</a></p>
+                            <p class="item-date"><time datetime="2018-01-01T14:55:40.000Z" itemprop="datePublished">2018-01-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/利用Pandas輕鬆取得歷史股價/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/利用Pandas輕鬆取得歷史股價/thumbnail.jpeg)" alt="利用Pandas輕鬆取得股價並回測" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/財經Python教學/">財經Python教學</a></p>
+                            <p class="item-title"><a href="/利用Pandas輕鬆取得歷史股價/" class="title">利用Pandas輕鬆取得股價並回測</a></p>
+                            <p class="item-date"><time datetime="2017-12-11T21:19:49.000Z" itemprop="datePublished">2017-12-11</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/坊間沒在教的RSI-選股技巧/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/坊間沒在教的RSI-選股技巧/RS.png)" alt="坊間沒在教的RSI選股技巧" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/技術面/">技術面</a></p>
+                            <p class="item-title"><a href="/坊間沒在教的RSI-選股技巧/" class="title">坊間沒在教的RSI選股技巧</a></p>
+                            <p class="item-date"><time datetime="2017-12-10T19:35:51.000Z" itemprop="datePublished">2017-12-10</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI看股票/">AI看股票</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大盤漲跌/">大盤漲跌</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/指標分析/">指標分析</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/指標分析/基本面/">基本面</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/指標分析/技術面/">技術面</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/指標分析/籌碼面/">籌碼面</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/財報狗分析/">財報狗分析</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/財經Python教學/">財經Python教學</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/選股策略/">選股策略</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">記錄</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/EPS/" style="font-size: 10px;">EPS</a> <a href="/tags/KD/" style="font-size: 10px;">KD</a> <a href="/tags/Machine-Learning/" style="font-size: 12.22px;">Machine Learning</a> <a href="/tags/PEG/" style="font-size: 10px;">PEG</a> <a href="/tags/ROE/" style="font-size: 11.11px;">ROE</a> <a href="/tags/RSI/" style="font-size: 10px;">RSI</a> <a href="/tags/python/" style="font-size: 18.89px;">python</a> <a href="/tags/一行/" style="font-size: 10px;">一行</a> <a href="/tags/價值股/" style="font-size: 10px;">價值股</a> <a href="/tags/入門教學/" style="font-size: 13.33px;">入門教學</a> <a href="/tags/分佈圖/" style="font-size: 10px;">分佈圖</a> <a href="/tags/外資/" style="font-size: 10px;">外資</a> <a href="/tags/大盤/" style="font-size: 13.33px;">大盤</a> <a href="/tags/如何買股票/" style="font-size: 18.89px;">如何買股票</a> <a href="/tags/市值營收比/" style="font-size: 11.11px;">市值營收比</a> <a href="/tags/投信/" style="font-size: 10px;">投信</a> <a href="/tags/指標/" style="font-size: 12.22px;">指標</a> <a href="/tags/本益成長比/" style="font-size: 10px;">本益成長比</a> <a href="/tags/本益比/" style="font-size: 14.44px;">本益比</a> <a href="/tags/杜邦分析/" style="font-size: 14.44px;">杜邦分析</a> <a href="/tags/機器學習/" style="font-size: 12.22px;">機器學習</a> <a href="/tags/歷史回測/" style="font-size: 20px;">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size: 10px;">每股盈餘</a> <a href="/tags/爬蟲/" style="font-size: 10px;">爬蟲</a> <a href="/tags/生活/" style="font-size: 11.11px;">生活</a> <a href="/tags/程式設計/" style="font-size: 15.56px;">程式設計</a> <a href="/tags/策略狗/" style="font-size: 12.22px;">策略狗</a> <a href="/tags/簡易策略/" style="font-size: 14.44px;">簡易策略</a> <a href="/tags/統計/" style="font-size: 10px;">統計</a> <a href="/tags/總資產轉換率/" style="font-size: 10px;">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size: 14.44px;">股價淨值比</a> <a href="/tags/股票分析/" style="font-size: 10px;">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size: 12.22px;">自由現金報酬率</a> <a href="/tags/選股/" style="font-size: 16.67px;">選股</a> <a href="/tags/選股策略/" style="font-size: 17.78px;">選股策略</a> <a href="/tags/量化投資/" style="font-size: 10px;">量化投資</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 koreal6803</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+                <span id="busuanzi_container_site_pv">
+                    本站總訪問量<span id="busuanzi_value_site_pv"></span>次
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'koreal6803';
+    
+    
+    var disqus_url = 'https://koreal6803.github.io/績效追蹤/index.html';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <!-- Edit here -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+
