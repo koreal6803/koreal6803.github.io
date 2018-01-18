@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://koreal6803.github.io/"/>
-  <updated>2018-01-18T18:01:43.000Z</updated>
+  <updated>2018-01-11T16:30:07.000Z</updated>
   <id>https://koreal6803.github.io/</id>
   
   <author>
@@ -15,36 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>三種看月營收的方法！</title>
-    <link href="https://koreal6803.github.io/%E4%B8%89%E7%A8%AE%E7%9C%8B%E6%9C%88%E7%87%9F%E6%94%B6%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%81/"/>
-    <id>https://koreal6803.github.io/三種看月營收的方法！/</id>
-    <published>2018-01-17T23:27:48.000Z</published>
-    <updated>2018-01-18T18:01:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>說到台股基本面，就不得不提更新最快的<strong>月營收</strong>，每個月更新一次，讓投資人措手不及，今天就來教你怎麼看月營收！並比較這三種方法的獲利～</p><h3 id="均線法"><a href="#均線法" class="headerlink" title="均線法"></a>均線法</h3><p>這個方法是有網友跟我講的，好像是財報狗的收費功能，其實還滿簡單計算的！</p><p>當近三個月營收平均 &gt; 近一年月營收平均，則持有60天。</p><p>代表公司最近一季表現比較好，可能會有較亮眼的財報！但可能會有一些怪異的營建股，月營收突然暴增被選進來。</p><p>### </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;說到台股基本面，就不得不提更新最快的&lt;strong&gt;月營收&lt;/strong&gt;，每個月更新一次，讓投資人措手不及，今天就來教你怎麼看月營收！並比較這三種方法的獲利～&lt;/p&gt;
-&lt;h3 id=&quot;均線法&quot;&gt;&lt;a href=&quot;#均線法&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-      <category term="指標分析" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-    
-      <category term="基本面" scheme="https://koreal6803.github.io/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
-    
-    
-      <category term="如何買股票" scheme="https://koreal6803.github.io/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
-      <category term="月營收" scheme="https://koreal6803.github.io/tags/%E6%9C%88%E7%87%9F%E6%94%B6/"/>
-    
-  </entry>
   
   <entry>
     <title>用數學計算日馳何時崩盤！</title>
@@ -278,11 +248,11 @@
       <category term="選股策略" scheme="https://koreal6803.github.io/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
-      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="選股策略" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://koreal6803.github.io/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="市值營收比" scheme="https://koreal6803.github.io/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
@@ -628,6 +598,38 @@
       <category term="PEG" scheme="https://koreal6803.github.io/tags/PEG/"/>
     
       <category term="本益成長比" scheme="https://koreal6803.github.io/tags/%E6%9C%AC%E7%9B%8A%E6%88%90%E9%95%B7%E6%AF%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超簡單台股每日爬蟲教學</title>
+    <link href="https://koreal6803.github.io/%E8%B6%85%E7%B0%A1%E5%96%AE%E5%8F%B0%E8%82%A1%E6%AF%8F%E6%97%A5%E7%88%AC%E8%9F%B2%E6%95%99%E5%AD%B8/"/>
+    <id>https://koreal6803.github.io/超簡單台股每日爬蟲教學/</id>
+    <published>2017-10-24T22:17:06.000Z</published>
+    <updated>2017-12-14T11:06:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天教大家如何下載今日的股價，並從中篩選本益比較低的股票，重點是超簡單，只要15行以內就可以辦到！以後這個blog會偶爾釋放一些程式片段，讓大家組裝成一個功能健全的回測＋當日選股的架構。</p><p>大家最終最終會學到：</p><ol><li>如何爬取每日資訊</li><li>如何爬取財報</li><li>利用上述資料來篩選股票</li><li>觀察篩選後的股票在歷史回測中是否能獲利</li><li>每日計算當天獲利與明天操作</li></ol><p>只要長期追蹤這個blog，當我某天心血來潮就會放上一些code，讓大家能夠自行學習並拼裝成自己的系統，以下是我的系統的截圖：</p><center><img src="/超簡單台股每日爬蟲教學/magnet1.png" alt="磁力回測" title="磁力回測"></center><p>可以看到我的系統內每天都有數個選股策略在運行，選股策略每天會公布隔天的操作方式，也可以利用這個介面編寫回測，並驗證策略的效果。磁力回測是我們之前黑客松比賽用的名字，其實我們是台大黑客松第一名得獎團隊，後來又於中信金控黑客松得到第一名，才開始了量化回測之路，現在由於大家比較忙，目前只剩我還在使用這套系統而已XDD。</p><p>這套系統非常完善，我們編寫了幾套策略在上面，獲利還算OK，當然我不可能直接把這套系統公布出來，畢竟這是大家一起做的心血，然而有一些簡單卻重要的功能，我會在這個blog上面分享給大家。只要持續關注本blog，最後大家可以拼裝出自己的系統！</p><p>那就廢話不多說，來看看如何使用 python 爬取當天大盤，首先，我們得先安裝 python 的 package：</p><ol><li><a href="http://docs.python-requests.org/en/master/" rel="external nofollow noopener noreferrer" target="_blank">requests</a> ：幫我們抓取 csv 檔</li><li><a href="https://pandas.pydata.org/pandas-docs/stable/index.html" rel="external nofollow noopener noreferrer" target="_blank">pandas</a>：幫我們選股</li></ol><p>然後就可以開始了，首先抓取台股的資料表：</p><figure class="highlight python"><figcaption><span>crawler</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">r = requests.post(<span class="string">'http://app.twse.com.tw/ch/trading/exchange/MI_INDEX/MI_INDEX.php'</span>, data=&#123;</div><div class="line">    <span class="string">'download'</span>: <span class="string">'csv'</span>,</div><div class="line">    <span class="string">'qdate'</span>:<span class="string">'106/10/24'</span>,</div><div class="line">    <span class="string">'selectType'</span>:<span class="string">'ALL'</span>,</div><div class="line">&#125;)</div><div class="line">r.encoding = <span class="string">'big5'</span></div><div class="line">df = pd.read_csv(StringIO(<span class="string">"\n"</span>.join([i.translate(&#123;ord(c): <span class="keyword">None</span> <span class="keyword">for</span> c <span class="keyword">in</span> <span class="string">' '</span>&#125;) </div><div class="line">                                     <span class="keyword">for</span> i <span class="keyword">in</span> r.text.split(<span class="string">'\n'</span>) </div><div class="line">                                     <span class="keyword">if</span> len(i.split(<span class="string">'",'</span>)) == <span class="number">16</span> <span class="keyword">and</span> i[<span class="number">0</span>] != <span class="string">'='</span>])), header=<span class="number">0</span>)</div></pre></td></tr></table></figure><p>基本上這個 code 可以直接複製貼上就可以用了！我們可以把df印出來：</p><center><img src="/超簡單台股每日爬蟲教學/allstock.png" alt="台股當天所有上市上櫃公司資訊" title="台股當天所有上市上櫃公司資訊"></center><p>可以看到我們有了所有上市上櫃的股票，當天所有的資料！</p><p>接下來就是選股時間，我們想要選擇 本益比 &lt; 15 的所有股票：</p><figure class="highlight python"><figcaption><span>select stocks</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df[df[<span class="string">'本益比'</span>] &lt; <span class="number">15</span>]</div></pre></td></tr></table></figure><center><img src="/超簡單台股每日爬蟲教學/pe15.png" alt="當天本益比 < 15的股票" title="當天本益比 < 15的股票"></center><p>搭拉！是不是發現選股好簡單！<br>我們之後還會有更多的教學，讓大家不只是選取本益比，還有更多更多的財報數據喔！</p><p>敬請期待！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天教大家如何下載今日的股價，並從中篩選本益比較低的股票，重點是超簡單，只要15行以內就可以辦到！以後這個blog會偶爾釋放一些程式片段，讓大家組裝成一個功能健全的回測＋當日選股的架構。&lt;/p&gt;
+&lt;p&gt;大家最終最終會學到：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如何爬取每日資訊&lt;/li
+      
+    
+    </summary>
+    
+      <category term="財經Python教學" scheme="https://koreal6803.github.io/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="python" scheme="https://koreal6803.github.io/tags/python/"/>
+    
+      <category term="選股" scheme="https://koreal6803.github.io/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="程式設計" scheme="https://koreal6803.github.io/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   
