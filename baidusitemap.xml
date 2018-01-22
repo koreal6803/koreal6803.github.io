@@ -10,6 +10,30 @@
     
     
     
+  <url>
+    <loc>https://www.finlab.tw/%E8%B6%85%E7%B0%A1%E5%96%AE%E7%94%A8python%E6%8A%93%E5%8F%96%E6%AF%8F%E6%9C%88%E7%87%9F%E6%94%B6/</loc>
+    <lastmod>2018-01-22T13:01:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>超簡單用python抓取每月營收</title>
+        <pubTime>2017-10-28T18:30:39.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>選股</tag>
+         
+        <tag>程式設計</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://www.finlab.tw/%E4%B8%89%E7%A8%AE%E6%9C%88%E7%87%9F%E6%94%B6%E9%80%B2%E9%9A%8E%E7%9C%8B%E6%B3%95/</loc>
@@ -44,11 +68,11 @@
         <title>利用Machine Learning 選股新手教學</title>
         <pubTime>2017-10-20T10:58:23.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -68,11 +92,11 @@
         <title>Machine Learning 表示：看季線最無用！</title>
         <pubTime>2017-10-15T16:10:12.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
          
         <tag>選股</tag>
          
@@ -94,11 +118,11 @@
         <title>讓Machine Learning幫你看財報！</title>
         <pubTime>2017-10-13T10:07:13.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -189,30 +213,6 @@
         <tag>python</tag>
          
         <tag>程式設計</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/%E8%B6%85%E7%B0%A1%E5%96%AE%E7%94%A8python%E6%8A%93%E5%8F%96%E6%AF%8F%E6%9C%88%E7%87%9F%E6%94%B6/</loc>
-    <lastmod>2018-01-08T16:54:47.000Z</lastmod>
-    <data>
-        <display>
-        <title>超簡單用python抓取每月營收</title>
-        <pubTime>2017-10-28T18:30:39.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>程式設計</tag>
-         
-        <tag>選股</tag>
          
          
            
@@ -335,9 +335,9 @@
         
         <tag>python</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>選股</tag>
+         
+        <tag>程式設計</tag>
          
          
            
@@ -724,9 +724,9 @@
         
         <tag>python</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>選股</tag>
+         
+        <tag>程式設計</tag>
          
          
            
@@ -748,9 +748,9 @@
         
         <tag>python</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>選股</tag>
+         
+        <tag>程式設計</tag>
          
          
            
@@ -842,11 +842,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T16:46:51.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>市值營收比</tag>
          
