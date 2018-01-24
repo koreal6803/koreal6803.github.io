@@ -3,6 +3,42 @@
 
 
     
+  <url>
+    <loc>https://www.finlab.tw/%E7%94%A8%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%B9%AB%E4%BD%A0%E8%A7%A3%E6%9E%90K%E7%B7%9A%E5%9C%96%EF%BC%81/</loc>
+    <lastmod>2018-01-24T13:58:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>用深度學習幫你解析K線圖！</title>
+        <pubTime>2018-01-23T19:50:05.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式設計</tag>
+         
+        <tag>Deep-Learning</tag>
+         
+        <tag>深度學習</tag>
+         
+        <tag>K線圖</tag>
+         
+        <tag>K棒</tag>
+         
+        <tag>型態學</tag>
+         
+        <tag>Candlesticks</tag>
+         
+        <tag>LSTM</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI看股票" url="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
     
@@ -23,40 +59,6 @@
         <tag>Machine Learning</tag>
          
         <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="AI看股票" url="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/%E7%94%A8%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%B9%AB%E4%BD%A0%E8%A7%A3%E6%9E%90K%E7%B7%9A%E5%9C%96%EF%BC%81/</loc>
-    <lastmod>2018-01-24T11:57:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>用深度學習幫你解析K線圖！</title>
-        <pubTime>2018-01-23T19:50:05.000Z</pubTime>
-        
-        <tag>Deep-Learning</tag>
-         
-        <tag>深度學習</tag>
-         
-        <tag>K線圖</tag>
-         
-        <tag>K棒</tag>
-         
-        <tag>型態學</tag>
-         
-        <tag>Candlesticks</tag>
-         
-        <tag>LSTM</tag>
-         
-        <tag>Python</tag>
          
          
            
@@ -170,16 +172,14 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/Python-%E8%B2%A1%E5%A0%B1%E7%88%AC%E8%9F%B2-1-%E7%B6%9C%E5%90%88%E6%90%8D%E7%9B%8A%E8%A1%A8/</loc>
+    <loc>https://www.finlab.tw/Python-%E7%B0%A1%E5%96%AE%E9%81%B8%E8%82%A1%E5%92%8C%E5%9B%9E%E6%B8%AC/</loc>
     <lastmod>2018-01-24T11:42:38.000Z</lastmod>
     <data>
         <display>
-        <title>Python 財報爬蟲</title>
-        <pubTime>2017-11-02T21:19:27.000Z</pubTime>
+        <title>Python 簡單選股和回測</title>
+        <pubTime>2017-11-30T12:21:38.000Z</pubTime>
         
         <tag>python</tag>
-         
-        <tag>選股</tag>
          
         <tag>程式設計</tag>
          
@@ -194,14 +194,16 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/Python-%E7%B0%A1%E5%96%AE%E9%81%B8%E8%82%A1%E5%92%8C%E5%9B%9E%E6%B8%AC/</loc>
+    <loc>https://www.finlab.tw/Python-%E8%B2%A1%E5%A0%B1%E7%88%AC%E8%9F%B2-1-%E7%B6%9C%E5%90%88%E6%90%8D%E7%9B%8A%E8%A1%A8/</loc>
     <lastmod>2018-01-24T11:42:38.000Z</lastmod>
     <data>
         <display>
-        <title>Python 簡單選股和回測</title>
-        <pubTime>2017-11-30T12:21:38.000Z</pubTime>
+        <title>Python 財報爬蟲</title>
+        <pubTime>2017-11-02T21:19:27.000Z</pubTime>
         
         <tag>python</tag>
+         
+        <tag>選股</tag>
          
         <tag>程式設計</tag>
          
@@ -341,6 +343,33 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/</loc>
+    <lastmod>2018-01-24T11:42:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>市值營收比-幫你找到便宜獲利股</title>
+        <pubTime>2017-11-24T09:19:11.000Z</pubTime>
+        
+        <tag>選股</tag>
+         
+        <tag>市值營收比</tag>
+         
+        <tag>指標</tag>
+         
+         
+           
+             
+              <breadCrumb title="指標分析" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+          
+             
+              <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E6%8A%95%E4%BF%A1%E8%B7%9F%E7%9B%A4%E6%B3%95%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:32.000Z</lastmod>
     <data>
@@ -365,33 +394,6 @@
           
              
               <breadCrumb title="籌碼面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E7%B1%8C%E7%A2%BC%E9%9D%A2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/</loc>
-    <lastmod>2018-01-24T11:42:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>市值營收比-幫你找到便宜獲利股</title>
-        <pubTime>2017-11-24T09:19:11.000Z</pubTime>
-        
-        <tag>選股</tag>
-         
-        <tag>市值營收比</tag>
-         
-        <tag>指標</tag>
-         
-         
-           
-             
-              <breadCrumb title="指標分析" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-          
-             
-              <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
           
         </display>
     </data>
@@ -554,28 +556,6 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%94%A8%E6%95%B8%E5%AD%B8%E8%A8%88%E7%AE%97%E6%97%A5%E9%A6%B3%E4%BD%95%E6%99%82%E5%B4%A9%E7%9B%A4%EF%BC%81/</loc>
-    <lastmod>2018-01-24T11:42:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>用數學計算日馳何時崩盤！</title>
-        <pubTime>2018-01-10T15:18:47.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>程式設計</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.finlab.tw/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%8A%EF%BC%89/</loc>
     <lastmod>2018-01-24T11:42:26.000Z</lastmod>
     <data>
@@ -594,6 +574,28 @@
           
              
               <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.finlab.tw/%E7%94%A8%E6%95%B8%E5%AD%B8%E8%A8%88%E7%AE%97%E6%97%A5%E9%A6%B3%E4%BD%95%E6%99%82%E5%B4%A9%E7%9B%A4%EF%BC%81/</loc>
+    <lastmod>2018-01-24T11:42:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>用數學計算日馳何時崩盤！</title>
+        <pubTime>2018-01-10T15:18:47.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式設計</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
           
         </display>
     </data>
@@ -1148,9 +1150,9 @@
         
         <tag>簡易策略</tag>
          
-        <tag>大盤</tag>
-         
         <tag>本益比</tag>
+         
+        <tag>大盤</tag>
          
          
            
