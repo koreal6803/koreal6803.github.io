@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-control" content="public">
+    <meta http-equiv="Cache-Control" content="max-age=604800">
+    
+    <title>標籤：: 型態學 | FinLab 量化實驗室</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="description" content="如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我們利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta name="keywords" content="python,股票,選股,分析,策略,財報,stock,finance,market,公司體質,策略,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FinLab 量化實驗室">
+<meta property="og:url" content="https://www.finlab.tw/tags/型態學/index.html">
+<meta property="og:site_name" content="FinLab 量化實驗室">
+<meta property="og:description" content="如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我們利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://www.finlab.tw/images/logo_img.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FinLab 量化實驗室">
+<meta name="twitter:description" content="如何買股票？網路上一堆教學，到底誰說了算？股海茫茫如何撈股票？我們利用財報、股價等統計資訊幫助投資人在買股票時做出正確的判斷！">
+<meta name="twitter:image" content="https://www.finlab.tw/images/logo_img.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="FinLab 量化實驗室" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png# path to favicon">
+    
+
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106968614-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">用統計、回測的方式教你如何買股票</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">首頁</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/AI看股票/">AI看股票</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/大盤漲跌/">大盤漲跌</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/">指標分析</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/基本面/">基本面</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/技術面/">技術面</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/籌碼面/">籌碼面</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/財報狗分析/">財報狗分析</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/財經Python教學/">財經Python教學</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/選股策略/">選股策略</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/關於/index.html">關於</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字(股票,量化...)">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <i class="icon fa fa-tag"></i>標籤：: <em>型態學</em>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            
+
+    <!--post.date.year(); -->
+    
+        
+        
+        <section class="archives-wrap">
+            <!--
+            <div class="archive-year-wrap">
+                <a href="/archives/0" class="archive-year"><i class="icon fa fa-calendar-o"></i>0</a>
+            </div>-->
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/用深度學習幫你解析K線圖！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/用深度學習幫你解析K線圖！/K-trends.jpg)" alt="用深度學習幫你解析K線圖！" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://www.finlab.tw/用深度學習幫你解析K線圖！/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/AI看股票/">AI看股票</a>
+            </div>
+            <div class="date"><time datetime="2018-01-23T19:50:05.000Z" itemprop="datePublished">2018-01-23</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/用深度學習幫你解析K線圖！/">用深度學習幫你解析K線圖！</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            現今在股市裡有三大分析方法，即：技術面、基本面、籌碼面等，而各流派似乎也都有自己能自圓其說的選股策略。這三種方法並無法直接說出孰好孰壞，分析方法的選擇跟操作者的心態、個性、紀律都有很大的關係。而我個人覺得買股票除了要買得好（投報率高）以外，賣得快（IRR高）也是很重要的，畢竟投報率會因為時間的流逝而漸漸下降。
+因為重視時間對股價影響的我，日K線裡藏有的奧妙便是我想一探究竟的。K線型態學主要就是在探
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+
+    </div></section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>作者的相關連結 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://linkedin.com/in/cheng-yu-han-4b845aa2" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/profile.php?id=100000709225894" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="envelope" href="mailto:finlabstaff@gmail.com" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-envelope"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+    <div class="widgets-container">
+        
+            
+                
+    <!--
+    <div class="widget-wrap">
+        <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=Finlab', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+            <h3 class="widget-title">訂閱內容</h3>
+            <input class="css-input" placeholder="您的email" type="text" name="email" autocomplete="off"/>
+            <input type="hidden" value="Finlab" name="uri"/>
+            <input type="hidden" name="loc" value="zh_TW"/>
+            <input class="btn" type="submit" value="訂閱" />
+        </form>
+        <p style="color: gray;text-align: center;margin-top:10px">當新文章發佈時，以email通知您！</p>
+    </div>-->
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/用深度學習幫你解析K線圖！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/用深度學習幫你解析K線圖！/K-trends.jpg)" alt="用深度學習幫你解析K線圖！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/AI看股票/">AI看股票</a></p>
+                            <p class="item-title"><a href="/用深度學習幫你解析K線圖！/" class="title">用深度學習幫你解析K線圖！</a></p>
+                            <p class="item-date"><time datetime="2018-01-23T19:50:05.000Z" itemprop="datePublished">2018-01-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Python-簡單用月營收選股！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/Python-簡單用月營收選股！/thumbnail.png)" alt="Python-簡單的月營收選股！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/財經Python教學/">財經Python教學</a></p>
+                            <p class="item-title"><a href="/Python-簡單用月營收選股！/" class="title">Python-簡單的月營收選股！</a></p>
+                            <p class="item-date"><time datetime="2018-01-22T14:10:47.000Z" itemprop="datePublished">2018-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/三種月營收進階看法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/三種月營收進階看法/thumbnail.png)" alt="三種看月營收的進階方法！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/基本面/">基本面</a></p>
+                            <p class="item-title"><a href="/三種月營收進階看法/" class="title">三種看月營收的進階方法！</a></p>
+                            <p class="item-date"><time datetime="2018-01-17T23:27:48.000Z" itemprop="datePublished">2018-01-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/用數學計算日馳何時崩盤！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/用數學計算日馳何時崩盤！/thumbnail.png)" alt="用數學計算日馳何時崩盤！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/財經Python教學/">財經Python教學</a></p>
+                            <p class="item-title"><a href="/用數學計算日馳何時崩盤！/" class="title">用數學計算日馳何時崩盤！</a></p>
+                            <p class="item-date"><time datetime="2018-01-10T15:18:47.000Z" itemprop="datePublished">2018-01-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/用python獲取持股損益表/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/用python獲取持股損益表/thumbnail.jpeg)" alt="自動下單（1）用Python爬取交易記錄" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/財經Python教學/">財經Python教學</a></p>
+                            <p class="item-title"><a href="/用python獲取持股損益表/" class="title">自動下單（1）用Python爬取交易記錄</a></p>
+                            <p class="item-date"><time datetime="2018-01-08T14:07:16.000Z" itemprop="datePublished">2018-01-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI看股票/">AI看股票</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大盤漲跌/">大盤漲跌</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/指標分析/">指標分析</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/指標分析/基本面/">基本面</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/指標分析/技術面/">技術面</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/指標分析/籌碼面/">籌碼面</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/財報狗分析/">財報狗分析</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/財經Python教學/">財經Python教學</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/選股策略/">選股策略</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">記錄</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Candlesticks/" style="font-size: 10px;">Candlesticks</a> <a href="/tags/Deep-Learning/" style="font-size: 10px;">Deep-Learning</a> <a href="/tags/EPS/" style="font-size: 10px;">EPS</a> <a href="/tags/KD/" style="font-size: 10px;">KD</a> <a href="/tags/K棒/" style="font-size: 10px;">K棒</a> <a href="/tags/K線圖/" style="font-size: 10px;">K線圖</a> <a href="/tags/LSTM/" style="font-size: 10px;">LSTM</a> <a href="/tags/Machine-Learning/" style="font-size: 12.5px;">Machine Learning</a> <a href="/tags/PEG/" style="font-size: 10px;">PEG</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROE/" style="font-size: 11.25px;">ROE</a> <a href="/tags/RSI/" style="font-size: 10px;">RSI</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/一行/" style="font-size: 10px;">一行</a> <a href="/tags/價值股/" style="font-size: 10px;">價值股</a> <a href="/tags/入門教學/" style="font-size: 13.75px;">入門教學</a> <a href="/tags/分佈圖/" style="font-size: 10px;">分佈圖</a> <a href="/tags/型態學/" style="font-size: 10px;">型態學</a> <a href="/tags/外資/" style="font-size: 10px;">外資</a> <a href="/tags/大盤/" style="font-size: 13.75px;">大盤</a> <a href="/tags/如何買股票/" style="font-size: 20px;">如何買股票</a> <a href="/tags/市值營收比/" style="font-size: 11.25px;">市值營收比</a> <a href="/tags/投信/" style="font-size: 10px;">投信</a> <a href="/tags/指標/" style="font-size: 12.5px;">指標</a> <a href="/tags/月營收/" style="font-size: 12.5px;">月營收</a> <a href="/tags/本益成長比/" style="font-size: 10px;">本益成長比</a> <a href="/tags/本益比/" style="font-size: 15px;">本益比</a> <a href="/tags/杜邦分析/" style="font-size: 15px;">杜邦分析</a> <a href="/tags/機器學習/" style="font-size: 12.5px;">機器學習</a> <a href="/tags/歷史回測/" style="font-size: 20px;">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size: 10px;">每股盈餘</a> <a href="/tags/深度學習/" style="font-size: 10px;">深度學習</a> <a href="/tags/爬蟲/" style="font-size: 10px;">爬蟲</a> <a href="/tags/生活/" style="font-size: 11.25px;">生活</a> <a href="/tags/程式設計/" style="font-size: 17.5px;">程式設計</a> <a href="/tags/策略狗/" style="font-size: 12.5px;">策略狗</a> <a href="/tags/簡易策略/" style="font-size: 15px;">簡易策略</a> <a href="/tags/統計/" style="font-size: 10px;">統計</a> <a href="/tags/總資產轉換率/" style="font-size: 10px;">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size: 15px;">股價淨值比</a> <a href="/tags/股票分析/" style="font-size: 10px;">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size: 12.5px;">自由現金報酬率</a> <a href="/tags/選股/" style="font-size: 16.25px;">選股</a> <a href="/tags/選股策略/" style="font-size: 18.75px;">選股策略</a> <a href="/tags/量化投資/" style="font-size: 10px;">量化投資</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://stasistw.blogspot.fr" rel="external nofollow noopener noreferrer" target="_blank">市場求生手冊</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://investarter.blogspot.fr" rel="external nofollow noopener noreferrer" target="_blank">阿升理財筆記</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 koreal6803</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+                <span id="busuanzi_container_site_pv">
+                    本站總訪問量<span id="busuanzi_value_site_pv"></span>次
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'koreal6803';
+    
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <!-- Edit here -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+
