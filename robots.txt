@@ -4,5 +4,5 @@ Allow: /
 Allow: /archives/
 Allow: /js/
 Allow: /css/
-Sitemap: http://koreal6803.github.io/sitemap.xml
-Sitemap: http://koreal6803.github.io/baidusitemap.xml
+Sitemap: https://www.finlab.tw/sitemap.xml
+Sitemap: https://www.finlab.tw/baidusitemap.xml
