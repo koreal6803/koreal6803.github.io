@@ -12,7 +12,7 @@
         <meta name="keywords" content="">
     
     <meta name="description" content="每次回測的時候，大家一定會有疑問，雖然已經寫了選股的條件，但實際上到底是怎麼運作的？這篇文章會介紹這個回測的方式。這篇比較數學一點，但用這種方法表示會比較明確，有線性代數的基礎就夠了。 首先我們先假設營業日，從1到$n^{d}$天，代表所有回測的天數： $$d=1,…,n^{d}$$  另外還有一群股票，是我們可能買入的對象 $$s=1,…,n^{s}$$ 另外，而選股條件(constraints">
-<meta name="keywords" content="python,股票,選股,分析,策略,財報,stock,finance,market,公司體質,策略,">
+<meta name="keywords" content="python,股票,選股,策略,回測,量化,分析">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回測框架介紹">
 <meta property="og:url" content="https://www.finlab.tw/回測框架介紹/index.html">
@@ -35,7 +35,7 @@
         <link rel="icon" href="/css/images/favicon.png# path to favicon">
     
 
-
+    <link rel="canonical" href="https://www.finlab.tw/回測框架介紹/index.html">
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/libs/titillium-web/styles.css">
     <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
@@ -75,11 +75,11 @@ ga('send', 'pageview');
             <div class="container-inner">
                 <div id="header-title">
                     <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
+                        <a href="/" class="logo" title="FinLab"></a>
                     </h1>
                     
                         <h2 class="subtitle-wrap">
-                            <p class="subtitle">用統計、回測的方式教你如何買股票</p>
+                            <p class="subtitle">利用python回測與統計分析，教你如何買股票！</p>
                         </h2>
                     
                 </div>
@@ -149,10 +149,10 @@ ga('send', 'pageview');
                 <div class="main-body-inner">
                     <section id="main">
                         <div class="main-body-header">
-    <h1 class="header">
+    <h2 class="header">
     
     <a class="page-title-link" href="/categories/選股策略/">選股策略</a>
-    </h1>
+    </h2>
 </div>
                         <div class="main-body-content">
                             <style>
@@ -616,9 +616,9 @@ $$\boldsymbol{h}_{d+1}^{*}=\left[\left\lfloor \frac{h_{d+1,1}}{1.1p_{d,1}}\right
         <div class="container-inner">
             <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
             <div class="credit">
-                <h1 class="logo-wrap">
+                <h2 class="logo-wrap">
                     <a href="/" class="logo"></a>
-                </h1>
+                </h2>
                 <p>&copy; 2018 koreal6803</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
                 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>FinLab 量化實驗室</title>
   
-  <subtitle>用統計、回測的方式教你如何買股票</subtitle>
+  <subtitle>利用python回測與統計分析，教你如何買股票！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
