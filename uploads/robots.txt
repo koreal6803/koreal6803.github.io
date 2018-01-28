@@ -1,0 +1,8 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /js/
+Allow: /css/
+Sitemap: https://www.finlab.tw/sitemap.xml
+Sitemap: https://www.finlab.tw/baidusitemap.xml
