@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.finlab.tw/%E7%94%A8%E6%95%B8%E5%AD%B8%E8%A8%88%E7%AE%97%E6%97%A5%E9%A6%B3%E4%BD%95%E6%99%82%E5%B4%A9%E7%9B%A4%EF%BC%81/</loc>
+    <loc>https://www.finlab.tw/%E8%82%A1%E7%A5%A8%E5%85%A5%E9%96%80%E6%87%B6%E4%BA%BA%E5%8C%85/</loc>
     
-    <lastmod>2018-01-28T12:46:28.000Z</lastmod>
+    <lastmod>2018-01-31T20:04:48.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.finlab.tw/%E8%AE%93Machine-Learning%E5%B9%AB%E4%BD%A0%E7%9C%8B%E8%B2%A1%E5%A0%B1%EF%BC%81/</loc>
     
-    <lastmod>2018-01-28T03:26:35.000Z</lastmod>
+    <lastmod>2018-01-31T17:57:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/%E7%94%A8%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%B9%AB%E4%BD%A0%E8%A7%A3%E6%9E%90K%E7%B7%9A%E5%9C%96%EF%BC%81/</loc>
+    
+    <lastmod>2018-01-31T17:57:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/%E8%B6%85%E7%B0%A1%E5%96%AE%E5%8F%B0%E8%82%A1%E6%AF%8F%E6%97%A5%E7%88%AC%E8%9F%B2%E6%95%99%E5%AD%B8/</loc>
+    
+    <lastmod>2018-01-31T11:10:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/%E7%94%A8%E6%95%B8%E5%AD%B8%E8%A8%88%E7%AE%97%E6%97%A5%E9%A6%B3%E4%BD%95%E6%99%82%E5%B4%A9%E7%9B%A4%EF%BC%81/</loc>
+    
+    <lastmod>2018-01-28T12:46:28.000Z</lastmod>
     
   </url>
   
@@ -44,6 +65,20 @@
   </url>
   
   <url>
+    <loc>https://www.finlab.tw/strategies/%E7%8D%B2%E5%88%A9%E9%AB%98%E6%B7%A8%E5%80%BC%E4%BD%8E%E8%82%A1%E7%A5%A8_finlab.html</loc>
+    
+    <lastmod>2018-01-26T11:59:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/strategies/PETER%E7%9A%84%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B3%A3%E7%AD%96%E7%95%A5_finlab.html</loc>
+    
+    <lastmod>2018-01-26T11:59:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.finlab.tw/strategies/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E7%AD%96%E7%95%A5_finlab.html</loc>
     
     <lastmod>2018-01-26T11:59:08.000Z</lastmod>
@@ -61,27 +96,6 @@
     <loc>https://www.finlab.tw/strategies/PEB%E7%AD%96%E7%95%A5_finlab.html</loc>
     
     <lastmod>2018-01-26T11:59:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/strategies/PETER%E7%9A%84%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B3%A3%E7%AD%96%E7%95%A5_finlab.html</loc>
-    
-    <lastmod>2018-01-26T11:59:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/strategies/%E7%8D%B2%E5%88%A9%E9%AB%98%E6%B7%A8%E5%80%BC%E4%BD%8E%E8%82%A1%E7%A5%A8_finlab.html</loc>
-    
-    <lastmod>2018-01-26T11:59:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/%E7%94%A8%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%B9%AB%E4%BD%A0%E8%A7%A3%E6%9E%90K%E7%B7%9A%E5%9C%96%EF%BC%81/</loc>
-    
-    <lastmod>2018-01-24T20:30:25.000Z</lastmod>
     
   </url>
   
@@ -121,14 +135,14 @@
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/Python-%E8%B2%A1%E5%A0%B1%E7%88%AC%E8%9F%B2-1-%E7%B6%9C%E5%90%88%E6%90%8D%E7%9B%8A%E8%A1%A8/</loc>
+    <loc>https://www.finlab.tw/Python-%E7%B0%A1%E5%96%AE%E9%81%B8%E8%82%A1%E5%92%8C%E5%9B%9E%E6%B8%AC/</loc>
     
     <lastmod>2018-01-24T11:42:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/Python-%E7%B0%A1%E5%96%AE%E9%81%B8%E8%82%A1%E5%92%8C%E5%9B%9E%E6%B8%AC/</loc>
+    <loc>https://www.finlab.tw/Python-%E8%B2%A1%E5%A0%B1%E7%88%AC%E8%9F%B2-1-%E7%B6%9C%E5%90%88%E6%90%8D%E7%9B%8A%E8%A1%A8/</loc>
     
     <lastmod>2018-01-24T11:42:38.000Z</lastmod>
     
@@ -275,14 +289,14 @@
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
     
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
     
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     
@@ -296,14 +310,14 @@
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
     
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
+    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
     
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     
@@ -325,13 +339,6 @@
   
   <url>
     <loc>https://www.finlab.tw/%E8%B6%85%E7%9F%AD%E7%B7%9A%E4%B8%8A%E5%BD%B1%E9%BB%91%E5%AF%86%E6%8A%80%EF%BC%81/</loc>
-    
-    <lastmod>2018-01-24T11:42:14.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/%E8%B6%85%E7%B0%A1%E5%96%AE%E5%8F%B0%E8%82%A1%E6%AF%8F%E6%97%A5%E7%88%AC%E8%9F%B2%E6%95%99%E5%AD%B8/</loc>
     
     <lastmod>2018-01-24T11:42:14.000Z</lastmod>
     
