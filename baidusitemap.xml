@@ -5,10 +5,10 @@
     
   <url>
     <loc>https://www.finlab.tw/%E8%82%A1%E7%A5%A8%E5%85%A5%E9%96%80%E6%87%B6%E4%BA%BA%E5%8C%85/</loc>
-    <lastmod>2018-02-02T09:12:33.000Z</lastmod>
+    <lastmod>2018-02-03T02:09:42.000Z</lastmod>
     <data>
         <display>
-        <title>股票入門SOP</title>
+        <title>股票入門SOP懶人包</title>
         <pubTime>2018-01-28T17:00:27.000Z</pubTime>
         
         <tag>如何買股票</tag>
@@ -456,33 +456,6 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/</loc>
-    <lastmod>2018-01-24T11:42:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>市值營收比-幫你找到便宜獲利股</title>
-        <pubTime>2017-11-24T09:19:11.000Z</pubTime>
-        
-        <tag>選股</tag>
-         
-        <tag>市值營收比</tag>
-         
-        <tag>指標</tag>
-         
-         
-           
-             
-              <breadCrumb title="指標分析" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-          
-             
-              <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.finlab.tw/%E6%8A%95%E4%BF%A1%E8%B7%9F%E7%9B%A4%E6%B3%95%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:32.000Z</lastmod>
     <data>
@@ -507,6 +480,33 @@
           
              
               <breadCrumb title="籌碼面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E7%B1%8C%E7%A2%BC%E9%9D%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.finlab.tw/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/</loc>
+    <lastmod>2018-01-24T11:42:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>市值營收比-幫你找到便宜獲利股</title>
+        <pubTime>2017-11-24T09:19:11.000Z</pubTime>
+        
+        <tag>選股</tag>
+         
+        <tag>市值營收比</tag>
+         
+        <tag>指標</tag>
+         
+         
+           
+             
+              <breadCrumb title="指標分析" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+          
+             
+              <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
           
         </display>
     </data>
@@ -1192,11 +1192,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T16:46:51.000Z</pubTime>
         
-        <tag>選股</tag>
-         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>選股</tag>
          
         <tag>市值營收比</tag>
          
