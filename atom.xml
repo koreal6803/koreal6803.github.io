@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-02-03T02:09:42.000Z</updated>
+  <updated>2018-02-06T16:37:56.000Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大跌後：用python找出強勢股！</title>
+    <link href="https://www.finlab.tw/%E5%A4%A7%E8%B7%8C%E5%BE%8C%EF%BC%9A%E6%89%BE%E5%87%BA%E5%BC%B7%E5%8B%A2%E8%82%A1%EF%BC%81/"/>
+    <id>https://www.finlab.tw/大跌後：找出強勢股！/</id>
+    <published>2018-02-06T13:57:08.000Z</published>
+    <updated>2018-02-06T16:37:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天台股真的太誇張了，這波由美股帶頭的狂跌，真的很難預料，然而事情已經發生，我們能做的就是養精蓄銳，將自己的能力培養起來，等到盤勢穩定的時候，再持之以恒的投資！海浪退潮，你看的出誰穿褲子游泳，今天就帶大家來找出大跌中的強勢股～（長下影線）</p><center><img src="/大跌後：找出強勢股！/thumbnail.jpg" alt="今天好綠！" title="今天好綠！"></center><h3 id="災情分享"><a href="#災情分享" class="headerlink" title="災情分享"></a>災情分享</h3><p>我自己的持股在禮拜一開盤就清空了，因為當時美股已經倒地<br>我可以承受少賺一個禮拜，但不想賠光好幾個月的獲利。<br>雖然統計說<a href="http://rich01.com/87-2/" rel="external nofollow noopener noreferrer" target="_blank">開盤跟美股高連動</a>，盤中相關性反而低，最好在盤中或盤末賣，比較不受影響，<br>但我在法國，沒辦法看盤，所以還是開盤賣…損失了3%左右。</p><h3 id="持之以恒"><a href="#持之以恒" class="headerlink" title="持之以恒"></a>持之以恒</h3><p>投資最重要的就是持之以恒，並不是說一直持有股票，是一直持續學習！<br>我從來都沒有推薦哪支股票，看多或看空，只推薦你不斷的學習！</p><h3 id="程式"><a href="#程式" class="headerlink" title="程式"></a>程式</h3><p>首先先複製<a href="/超簡單台股每日爬蟲教學/">今日股價爬蟲</a>，找出今天崩壞的可憐股票們：<br><figure class="highlight python"><figcaption><span>每日爬蟲</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line">datestr = <span class="string">'20180205'</span></div><div class="line">r = requests.post(<span class="string">'http://www.twse.com.tw/exchangeReport/MI_INDEX?response=csv&amp;date='</span> + datestr + <span class="string">'&amp;type=ALL'</span>)</div><div class="line">df = pd.read_csv(StringIO(<span class="string">"\n"</span>.join([i.translate(&#123;ord(c): <span class="keyword">None</span> <span class="keyword">for</span> c <span class="keyword">in</span> <span class="string">' '</span>&#125;) </div><div class="line">                                     <span class="keyword">for</span> i <span class="keyword">in</span> r.text.split(<span class="string">'\n'</span>) </div><div class="line">                                     <span class="keyword">if</span> len(i.split(<span class="string">'",'</span>)) == <span class="number">17</span> <span class="keyword">and</span> i[<span class="number">0</span>] != <span class="string">'='</span>])), header=<span class="number">0</span>)</div><div class="line"></div></pre></td></tr></table></figure></p><p>接下來做一些處裡：</p><ol><li>設定股票名稱為index，讓每個股票可以對應到一樣的數值</li><li>將df中的字串轉換成float（有小數點的數字）</li></ol><figure class="highlight python"><figcaption><span>資料整理</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df.index = df[<span class="string">'證券名稱'</span>]</div><div class="line"><span class="keyword">for</span> i,v <span class="keyword">in</span> df.items():</div><div class="line">    df[i] = pd.to_numeric(df[i], errors=<span class="string">'coerce'</span>)</div></pre></td></tr></table></figure><p>再來，就可以用條件篩選出今天逆勢上漲的股票們！或是下影線長值得期待的股票們：</p><figure class="highlight python"><figcaption><span>找出今天很猛的股票</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">strongIndex = (df[<span class="string">'收盤價'</span>] - df[<span class="string">'最低價'</span>]) / (df[<span class="string">'最高價'</span>] - df[<span class="string">'最低價'</span>])</div><div class="line">strongIndex[(strongIndex &gt; <span class="number">0.8</span>) &amp; ((df[<span class="string">'最高價'</span>] / df[<span class="string">'最低價'</span>] &gt; <span class="number">1.02</span>))].sort_values(ascending=<span class="keyword">False</span>)</div></pre></td></tr></table></figure><center><img src="/大跌後：找出強勢股！/list.png" alt="今日強勢股票們" title="今日強勢股票們"></center><h3 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h3><p>雖然分析出了強勢股，可以持續追蹤，但別衝動。<br>現在最重要的就是找買點了，最近有時間的話，我想分析台股大跌的歷史紀錄，找出辨別好買點指標！</p><p>大家在投資的路上繼續努力！共勉之～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天台股真的太誇張了，這波由美股帶頭的狂跌，真的很難預料，然而事情已經發生，我們能做的就是養精蓄銳，將自己的能力培養起來，等到盤勢穩定的時候，再持之以恒的投資！海浪退潮，你看的出誰穿褲子游泳，今天就帶大家來找出大跌中的強勢股～（長下影線）&lt;/p&gt;
+&lt;center&gt;&lt;img 
+      
+    
+    </summary>
+    
+      <category term="指標分析" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="技術面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
+    
+    
+      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="大盤" scheme="https://www.finlab.tw/tags/%E5%A4%A7%E7%9B%A4/"/>
+    
+      <category term="大跌" scheme="https://www.finlab.tw/tags/%E5%A4%A7%E8%B7%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>股票入門SOP懶人包</title>
@@ -375,11 +407,11 @@
       <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="市值營收比" scheme="https://www.finlab.tw/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
@@ -597,35 +629,6 @@
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 財報爬蟲</title>
-    <link href="https://www.finlab.tw/Python-%E8%B2%A1%E5%A0%B1%E7%88%AC%E8%9F%B2-1-%E7%B6%9C%E5%90%88%E6%90%8D%E7%9B%8A%E8%A1%A8/"/>
-    <id>https://www.finlab.tw/Python-財報爬蟲-1-綜合損益表/</id>
-    <published>2017-11-02T21:19:27.000Z</published>
-    <updated>2018-01-24T11:42:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本系列已經介紹了各式各樣的爬蟲，從每天、每月，現在終於要季了，在尋找了各式各樣的網站，交叉比對之下，發現<a href="http://mops.twse.com.tw/mops/web/t163sb04" rel="external nofollow noopener noreferrer" target="_blank">公開資訊觀測站的總報表</a>還滿好抓的，所以就從這個網站下手。</p><center><img src="/Python-財報爬蟲-1-綜合損益表/thumbnail.png" alt="我爬我爬我爬爬爬" title="我爬我爬我爬爬爬"></center><p>Python中有個非常好用的package，叫做pandas，利用它我們就可以簡潔的把網頁上的表格，轉換成dataframe，也就是整理成程式看的懂的表格，我們幾乎不需要做太多的處理！這也是我喜歡用python一點。</p><p>這邊我用的是python3 喔～可能要注意一下，另外pandas的版本不一樣，可能會導致網頁轉dataframe的時候，有點小不一樣，可能要稍微檢查一下，我是用0.20.3這個版本。</p><figure class="highlight python"><figcaption><span>財報爬蟲</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">financial_statement</span><span class="params">(year, season, type=<span class="string">'綜合損益彙總表'</span>)</span>:</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span> year &gt;= <span class="number">1000</span>:</div><div class="line">        year -= <span class="number">1911</span></div><div class="line">        </div><div class="line">    <span class="keyword">if</span> type == <span class="string">'綜合損益彙總表'</span>:</div><div class="line">        url = <span class="string">'http://mops.twse.com.tw/mops/web/ajax_t163sb04'</span></div><div class="line">    <span class="keyword">elif</span> type == <span class="string">'資產負債彙總表'</span>:</div><div class="line">        url = <span class="string">'http://mops.twse.com.tw/mops/web/ajax_t163sb05'</span></div><div class="line">    <span class="keyword">elif</span> type == <span class="string">'營益分析彙總表'</span>:</div><div class="line">        url = <span class="string">'http://mops.twse.com.tw/mops/web/ajax_t163sb06'</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        print(<span class="string">'type does not match'</span>)</div><div class="line"></div><div class="line">    r = requests.post(url, &#123;</div><div class="line">        <span class="string">'encodeURIComponent'</span>:<span class="number">1</span>,</div><div class="line">        <span class="string">'step'</span>:<span class="number">1</span>,</div><div class="line">        <span class="string">'firstin'</span>:<span class="number">1</span>,</div><div class="line">        <span class="string">'off'</span>:<span class="number">1</span>,</div><div class="line">        <span class="string">'TYPEK'</span>:<span class="string">'sii'</span>,</div><div class="line">        <span class="string">'year'</span>:<span class="string">'103'</span>,</div><div class="line">        <span class="string">'season'</span>:<span class="string">'01'</span>,</div><div class="line">    &#125;)</div><div class="line">    </div><div class="line">    r.encoding = <span class="string">'utf8'</span></div><div class="line">    dfs = pd.read_html(r.text)</div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="keyword">for</span> i, df <span class="keyword">in</span> enumerate(dfs):</div><div class="line">        df.columns = df.iloc[<span class="number">0</span>]</div><div class="line">        dfs[i] = df.iloc[<span class="number">1</span>:]</div><div class="line">        </div><div class="line">    df = pd.concat(dfs).applymap(<span class="keyword">lambda</span> x: x <span class="keyword">if</span> x != <span class="string">'--'</span> <span class="keyword">else</span> np.nan)</div><div class="line">    df = df[df[<span class="string">'公司代號'</span>] != <span class="string">'公司代號'</span>]</div><div class="line">    df = df[~df[<span class="string">'公司代號'</span>].isnull()]</div><div class="line">    <span class="keyword">return</span> df</div><div class="line"></div></pre></td></tr></table></figure><p>這個function的用法，就跟月爬蟲是一樣的，可以直接輸入西元或國曆，然後第n季，只能輸入1～4季喔～不然會當掉，最後還要輸入哪一種財報：</p><ul><li>綜合損益彙總表</li><li>資產負債彙總表</li><li>營益分析彙總表</li></ul><p>都可以爬取喔！以下就是利用這個function所爬取的資料</p><center><img src="/Python-財報爬蟲-1-綜合損益表/result.png" alt="使用function的方法截圖" title="使用function的方法截圖"></center><p>大家可以看到有些columns怪怪的，例如 “合計：共 808 家” 這個是什麼鬼XDD，由於我一次爬了三個表，這一點小問題應該還好啦！XDD，可以再寫一行code刪除該列就好了。</p><p>基本上資料都是對齊的，不用太擔心。</p><p>爬完之後就交給大家自由發揮囉～～可以做很多事情。<br>總算各種股價、財報、月報的爬蟲都分享完了～</p><p>接下來就是真的利用這些資料來選股囉！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;本系列已經介紹了各式各樣的爬蟲，從每天、每月，現在終於要季了，在尋找了各式各樣的網站，交叉比對之下，發現&lt;a href=&quot;http://mops.twse.com.tw/mops/web/t163sb04&quot; rel=&quot;external nofollow noopener n
-      
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-      <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
   </entry>
   
