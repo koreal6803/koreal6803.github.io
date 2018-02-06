@@ -1,1 +1,743 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="Cache-control" content="public"><meta http-equiv="Cache-Control" content="max-age=604800"><title>威廉．納葛維茲-價值型選股策略 | FinLab 量化實驗室</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="keywords" content="選股,選股策略,歷史回測,市值營收比"><meta name="description" content="最近偶然看到了TEJ網頁中，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。 今天要介紹的是裡面的 威廉．納葛維茲-價值型選股策略 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路： 營運合格的小市值股票這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊"><meta name="keywords" content="選股,選股策略,歷史回測,市值營收比"><meta property="og:type" content="article"><meta property="og:title" content="威廉．納葛維茲-價值型選股策略"><meta property="og:url" content="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/index.html"><meta property="og:site_name" content="FinLab 量化實驗室"><meta property="og:description" content="最近偶然看到了TEJ網頁中，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。 今天要介紹的是裡面的 威廉．納葛維茲-價值型選股策略 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路： 營運合格的小市值股票這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊"><meta property="og:locale" content="zh-TW"><meta property="og:image" content="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/eq.png"><meta property="og:updated_time" content="2018-01-24T11:39:50.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="威廉．納葛維茲-價值型選股策略"><meta name="twitter:description" content="最近偶然看到了TEJ網頁中，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。 今天要介紹的是裡面的 威廉．納葛維茲-價值型選股策略 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路： 營運合格的小市值股票這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊"><meta name="twitter:image" content="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/eq.png"><link rel="alternate" href="/atom.xml" title="FinLab 量化實驗室" type="application/atom+xml"><link rel="icon" href="/css/images/favicon.png"><link rel="canonical" href="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/index.html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style>@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:400;src:local('Source Code Pro'),local('SourceCodePro-Regular'),url(fonts/mrl8jkM18OlOQN8JLgasDy2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:400;src:local('Source Code Pro'),local('SourceCodePro-Regular'),url(fonts/mrl8jkM18OlOQN8JLgasD9V_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}</style><link rel="stylesheet" href="/css/style.css"><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.finlab.com\/","name":"FinLab 量化實驗室","}</script></head></html><body><div id="wrap"><header id="header" style="background-image:url(/css/images/background-img.jpeg);background-size:100%;background-position:center"><div id="fb-root"></div><script>!function(e,t,n){var o,s=e.getElementsByTagName(t)[0];e.getElementById(n)||((o=e.createElement(t)).id=n,o.src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=1987856528129472&autoLogAppEvents=1",s.parentNode.insertBefore(o,s))}(document,"script","facebook-jssdk")</script><div id="header-outer" class="outer"><div class="container"><div class="container-inner"><div id="header-title"><h1 class="logo-wrap"><a href="/" class="logo" title="FinLab"></a></h1><h2 class="subtitle-wrap"><p class="subtitle">回測與選股教學部落格</p></h2></div><div id="header-inner" class="nav-container"><a id="main-nav-toggle" class="nav-icon fa fa-bars"></a><div class="nav-container-inner"><ul id="main-nav"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/">Home</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/財經Python教學/">Python財經</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/股票入門懶人包/">股票入門</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/AI看股票/">AI看選股</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/選股策略/">股票策略</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/">指標分析</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/關於/">關於FinLab</a></li></ul><nav id="sub-nav"><div id="search-form-wrap"><form class="search-form"><input type="text" class="ins-search-input search-form-input" placeholder="搜尋"> <button type="submit" class="search-form-submit"></button></form><div class="ins-search"><div class="ins-search-mask"></div><div class="ins-search-container"><div class="ins-input-wrapper"><input type="text" class="ins-search-input" placeholder="輸入關鍵字(股票,量化...)"> <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>window.INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(未命名)"},ROOT_URL:"/",CONTENT_URL:"/content.json"}</script><script src="/js/insight.js" defer="defer"></script></div></nav></div></div></div></div></div></header><div class="container"><div class="main-body container-inner"><div class="main-body-inner"><section id="main"><div class="main-body-header"><h2 class="header"><a class="page-title-link" href="/categories/選股策略/">選股策略</a></h2></div><div class="main-body-content"><article id="post-威廉．納葛維茲-價值型選股策略" class="article article-single article-type-post" itemscope="" itemprop="blogPost"><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">威廉．納葛維茲-價值型選股策略</h1></header><div class="article-meta"><div class="article-date"><a href="/威廉．納葛維茲-價值型選股策略/" class="article-date"><time datetime="2017-11-28T16:46:51.000Z" itemprop="datePublished">2017-11-28</time></a></div><div class="article-tag"><i class="fa fa-tag"></i> <a class="tag-link" href="/tags/市值營收比/">市值營收比</a>, <a class="tag-link" href="/tags/歷史回測/">歷史回測</a>, <a class="tag-link" href="/tags/選股/">選股</a>, <a class="tag-link" href="/tags/選股策略/">選股策略</a></div></div><div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="right:20px;bottom:20px"><a style="color:#000;font-size:16px">分享</a> <a class="a2a_button_facebook"></a> <a class="a2a_button_google_plus"></a> <a class="a2a_dd" href="https://www.addtoany.com/share" rel="external nofollow noopener noreferrer" target="_blank"></a></div><style type="text/css">@media screen and (max-width:800px){.a2a_floating_style.a2a_vertical_style{display:none}}.a2a_count,.a2a_svg{border-radius:0!important}</style><script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script><style>.a2a_menu{border-radius:4px}.a2a_menu a{margin:2px 0;font-size:16px;line-height:16px;border-radius:4px;color:inherit!important}#a2apage_dropdown{margin:10px 0}.a2a_mini_services{padding:10px}a.a2a_i,i.a2a_i{width:122px;line-height:16px}a.a2a_i .a2a_svg,a.a2a_more .a2a_svg{width:16px;height:16px;line-height:16px;vertical-align:top;background-size:16px}a.a2a_i{border:none!important}a.a2a_menu_show_more_less{margin:0;padding:10px 0;line-height:16px}.a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}</style><div class="article-entry" itemprop="articleBody"><p>最近偶然看到了<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ網頁中</a>，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。</p><p>今天要介紹的是裡面的 <strong>威廉．納葛維茲-價值型選股策略</strong> 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路：</p><h3 id="營運合格的小市值股票"><a href="#營運合格的小市值股票" class="headerlink" title="營運合格的小市值股票"></a>營運合格的小市值股票</h3><p>這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊以下，然而小市值的公司通常風險比較高，所以此策略利用了 <strong>自由現金流</strong> 跟 <strong>負債比率</strong>，來觀察此公司的營運狀況，營運狀況不用到非常好，只求不要太差就可以了：</p><ul><li><a href="https://zh.wikipedia.org/wiki/%E5%B8%82%E5%80%BC" rel="external nofollow noopener noreferrer" target="_blank">市值</a> &lt; 10000（千）</li><li>近四季<a href="http://www.cmoney.tw/learn/course/0520/topic/696" rel="external nofollow noopener noreferrer" target="_blank">自由現金流量</a>&gt; 0</li><li><a href="http://statementdog.com/explain/debt-ratio.html" rel="external nofollow noopener noreferrer" target="_blank">負債比率</a> &lt; 70</li></ul><p>很多網站都會說 <strong>負債比率</strong> 是個很重要的指標，但我多次測試，發現它在很多策略中都無法增加獲利，甚至還會減少…，然而這只是我的經驗，不代表 <strong>負債比率</strong> 真的不用看，還是請各位自行斟酌。除了我這麼說外，原來Mr. Market跟我看法有志一同：<a href="http://www.rich01.com/2015/03/blog-post_25.html" rel="external nofollow noopener noreferrer" target="_blank">你覺得「負債比率」越低越好嗎？其實，它沒有想像中這麼有效！</a></p><h3 id="營收高是王道！"><a href="#營收高是王道！" class="headerlink" title="營收高是王道！"></a>營收高是王道！</h3><p>以上的條件看起來都挺保守的，接下來才是比較積極的指標，以下的指標都是用來觀察一家公司的營收跟淨利！假如一家正常營運的公司獲利比其它公司好，那沒理由不投資呀！所以這個策略用了 <strong>市值營收比</strong> 、 <strong>本益比</strong> 、<strong>營業利益成長率</strong>，來觀察公司是否持續獲利，並且獲利越來越高。</p><ul><li><a href="/市值營收比/">市值營收比</a> = 市值 / 月營收 &gt; 3</li><li><a href="/本益比能幫你選出優質股？/">本益比</a> &lt; 20</li><li><a href="http://ifund.tcbbank.com.tw/z/glossary/glexp_4902.djhtm" rel="external nofollow noopener noreferrer" target="_blank">營業利益成長率</a> &gt; 0</li></ul><p>市值營收比也是一個很好用的財務指標，可以參考<a href="/市值營收比/">我的文章</a>。</p><h3 id="稅後淨利要考慮！"><a href="#稅後淨利要考慮！" class="headerlink" title="稅後淨利要考慮！"></a>稅後淨利要考慮！</h3><p>一家獲利良好的公司，獲利持續成長，固然是好事，但不能只是獲利表面上成長，而稅後淨利卻很少，那也不行！所以這邊就用了額外的一個指標，來判斷稅後淨利的大小：</p><ul><li>股東權益報酬率 = 稅後淨利 / 股東權益總額 &gt; 市場均值</li></ul><p>這邊的 除 <strong>股東權益總額</strong> 是用來對整個市場做一個公平的比較，例如某公司發行很多股票，且股價很高，那就更應該有很好的 <strong>稅後淨利</strong> ，不然投資人為何要拿錢給你呢？</p><h3 id="思路總結："><a href="#思路總結：" class="headerlink" title="思路總結："></a>思路總結：</h3><p>這個策略基本上就是找小巧、獲利高的股票，我覺得其中很棒的概念是</p><ol><li>用市值營收比，而不是單純的營收</li><li>用股東權益報酬率，而不是單純的毛利率或稅後淨利</li></ol><p>利用上述兩個指標，才能將每家公司更公平的做比較，進而找出小而美的股票！</p><h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>符合上述條件，持有60天，每60天換一輪股票：</p><center><img src="/威廉．納葛維茲-價值型選股策略/eq.png" alt="權益曲線" title="權益曲線"></center><p>由於很久沒有介紹回測結果了，這邊在重新複習一下，藍色的就是不含手續費，紅色的是有含手續費，灰色的是台股。看起來領先台股非常多，代表這個TEJ策略裡面真的有些黃金可以挖寶，然而調整參數還是滿必要的就是了，照著TEJ直接使用，效果沒那麼好。</p><h3 id="買股數量"><a href="#買股數量" class="headerlink" title="買股數量"></a>買股數量</h3><center><img src="/威廉．納葛維茲-價值型選股策略/ns.png" alt="股票每次買入張數" title="股票每次買入張數"></center><p>每次換股的時候，我們就盡量平均自己的資產，當然每張股票價格都不一樣，所以不可能會超級平均，只求盡量。另外我們可以看到，金融海嘯的時候，藍色線買了將近150支股票，而紅色線只買了80種不同的股票，為什麼會這樣呢？因為藍色曲線是最理想的狀況，也就是全部都買，全部超級平均分散，而紅色的就是只看現有資產是多少，盡量分散，買不起就放棄。</p><p>為何金融海嘯時，有那麼多股票？因為金融海嘯不管好股壞股，都跌到了很低的價位，於是市值變小，此策略就會撈出比較多股票。</p><h3 id="跌幅"><a href="#跌幅" class="headerlink" title="跌幅"></a>跌幅</h3><center><img src="/威廉．納葛維茲-價值型選股策略/dd.png" alt="下跌幅度" title="下跌幅度"></center><p>此策略在金融海嘯時讓你的資產虧損一半多，但一般狀況表現非常傑出，約有20％的回撤，但不算太大，算是滿傑出的。</p><h3 id="總結："><a href="#總結：" class="headerlink" title="總結："></a>總結：</h3><ul><li>用自由現金流來、負債比率來看公司體質</li><li>用營收增長率及股東報酬率來衡量公司的獲利能力</li><li>分享<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ</a>網站中的策略</li></ul><h3 id="外部延伸閱讀："><a href="#外部延伸閱讀：" class="headerlink" title="外部延伸閱讀："></a>外部延伸閱讀：</h3><p>黃國華：<a href="http://bonddealerbook.pixnet.net/blog/post/202548719-%E5%B8%82%E5%80%BC%E8%88%87%E7%87%9F%E6%94%B6%E4%B9%8B%E9%96%93%E7%9A%84%E5%90%88%E7%90%86%E9%97%9C%E4%BF%82" rel="external nofollow noopener noreferrer" target="_blank">市值跟營收之間的合理關係</a></p><p>今天介紹了<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ網頁中</a>的策略，發現滿有用的，想在多寫點，不知到大家最有興趣的是其中的哪一個策略呢？</p><p>文章結束，幫我們分享一下，或按個 <span class="fb-like" style="position:relative;top:-5px" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></span> 鼓勵一下吧！</p><p></p><div><ul class="popular-posts" style="padding-left:0"><h3 class="article-title">猜你也喜歡：</h3><div><div style="margin-right:20px;background:url(/投信跟盤法！/thumbnail.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden"><div class="popular-posts-title"><p><a href="/投信跟盤法！/" title="新年賀禮 ─ 投信跟盤法！" rel="bookmark">新年賀禮 ─ 投信跟盤法！</a></p></div></div></div><div><div style="margin-right:20px;background:url(/市值營收比/thumb.jpeg) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden"><div class="popular-posts-title"><p><a href="/市值營收比/" title="市值營收比-幫你找到便宜獲利股" rel="bookmark">市值營收比-幫你找到便宜獲利股</a></p></div></div></div><div><div style="margin-right:20px;background:url(/KD1/tsmc.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden"><div class="popular-posts-title"><p><a href="/KD1/" title="如何定義KD鈍化" rel="bookmark">如何定義KD鈍化</a></p></div></div></div><div><div style="margin-right:20px;background:url(/價值股回測/eq.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden"><div class="popular-posts-title"><p><a href="/價值股回測/" title="價值股策略" rel="bookmark">價值股策略</a></p></div></div></div><div><div style="margin-right:20px;background:url(/小資族也可以使用的選股法！/distri.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden"><div class="popular-posts-title"><p><a href="/小資族也可以使用的選股法！/" title="小資族也可以使用的選股法！" rel="bookmark">小資族也可以使用的選股法！</a></p></div></div></div></ul></div><p></p></div></div></article><section id="comments"><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div></section><script src="/libs/jquery/2.0.3/jquery.min.js"></script><link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css"><link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject=g,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script",0,"ga"),ga("create","UA-106968614-1","auto"),ga("send","pageview")</script></div></section><aside id="sidebar"><a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a><div class="sidebar-top" style="background:rgba(76,180,228,.9)"><p>相關連結 :</p><ul class="social-links"><li><a class="social-tooltip" title="envelope" href="mailto:finlabstaff@gmail.com" target="_blank" rel="external nofollow noopener noreferrer"><i class="icon fa fa-envelope"></i></a></li><li><a class="social-tooltip" title="rss" href="/atom.xml" target="_blank"><i class="icon fa fa-rss"></i></a></li><li><a class="social-tooltip" title="linkedin" href="https://linkedin.com/in/cheng-yu-han-4b845aa2" target="_blank" rel="external nofollow noopener noreferrer"><i class="icon fa fa-linkedin"></i></a></li><li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/finlab.tw" target="_blank" rel="external nofollow noopener noreferrer"><i class="icon fa fa-facebook"></i></a></li></ul></div><nav id="article-nav"><a href="/Python-簡單選股和回測/" id="article-nav-newer" class="article-nav-link-wrap"><strong class="article-nav-caption">下一篇</strong><p class="article-nav-title">Python 簡單選股和回測</p><i class="icon fa fa-chevron-right" id="icon-chevron-right"></i> </a><a href="/市值營收比/" id="article-nav-older" class="article-nav-link-wrap"><strong class="article-nav-caption">上一篇</strong><p class="article-nav-title">市值營收比-幫你找到便宜獲利股</p><i class="icon fa fa-chevron-left" id="icon-chevron-left"></i></a></nav><style type="text/css">#mc_embed_signup form{text-align:center;padding-top:20px}.mc-field-group{display:inline-block}#mc_embed_signup input.email{font-family:"Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;font-size:15px;border:1px solid #b8bec0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#343434;background-color:#fff;box-sizing:border-box;height:32px;padding:0 .4em;display:inline-block;margin:0;vertical-align:top}#mc_embed_signup label{display:block;font-size:16px;padding-bottom:10px;font-weight:700}#mc_embed_signup .clear{display:inline-block}#mc_embed_signup .button{font-size:13px;border:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;letter-spacing:.03em;color:#fff;background-color:#4dbeff;box-sizing:border-box;height:32px;line-height:32px;padding:0 18px;display:inline-block;margin:0;transition:all .23s ease-in-out 0s}#mc_embed_signup .button:hover{background-color:#777;cursor:pointer}#mc_embed_signup div#mce-responses{float:left;top:-1.4em;padding:0 .5em 0 .5em;overflow:hidden;width:90%;margin:0 5%;clear:both}#mc_embed_signup div.response{margin:1em 0;padding:1em .5em .5em 0;font-weight:700;float:left;top:-1.5em;z-index:1;width:80%}#mc_embed_signup #mce-error-response{display:none}#mc_embed_signup #mce-success-response{color:#529214;display:none}#mc_embed_signup label.error{display:block;float:none;width:auto;margin-left:1.05em;text-align:left;padding:.5em 0}@media (max-width:768px){#mc_embed_signup input.email{width:100%;margin-bottom:5px}#mc_embed_signup .clear{display:block;width:100%}#mc_embed_signup .button{width:100%;margin:0}}#mc_embed_signup{clear:left;font:14px Helvetica,Arial,sans-serif;width:100%}</style><div id="mc_embed_signup"><form action="https://github.us17.list-manage.com/subscribe/post?u=d8cd009ba8ad9a1188c6e206e&amp;id=a7714d56c6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate=""><div id="mc_embed_signup_scroll"><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required><div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_d8cd009ba8ad9a1188c6e206e_a7714d56c6" tabindex="-1" value=""></div><div class="clear"><input type="submit" value="立即訂閱" name="subscribe" id="mc-embedded-subscribe" class="button"></div></div></form></div><div class="widgets-container"><div class="widget-wrap"><h3 class="widget-title">最新文章</h3><div class="widget"><ul id="recent-post" class=""><li><div class="item-thumbnail"><a href="/大跌後：找出強勢股！/" class="thumbnail"><span style="background-image:url(/大跌後：找出強勢股！/thumbnail.jpg)" alt="大跌後：用python找出強勢股！" class="thumbnail-image"></span></a></div><div class="item-inner"><p class="item-category"><a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/技術面/">技術面</a></p><p class="item-title"><a href="/大跌後：找出強勢股！/" class="title">大跌後：用python找出強勢股！</a></p><p class="item-date"><time datetime="2018-02-06T13:57:08.000Z" itemprop="datePublished">2018-02-06</time></p></div></li><li><div class="item-thumbnail"><a href="/股票入門懶人包/" class="thumbnail"><span style="background-image:url(/股票入門懶人包/overview.png)" alt="股票入門SOP懶人包" class="thumbnail-image"></span></a></div><div class="item-inner"><p class="item-category"></p><p class="item-title"><a href="/股票入門懶人包/" class="title">股票入門SOP懶人包</a></p><p class="item-date"><time datetime="2018-01-28T17:00:27.000Z" itemprop="datePublished">2018-01-28</time></p></div></li><li><div class="item-thumbnail"><a href="/用深度學習幫你解析K線圖！/" class="thumbnail"><span style="background-image:url(/用深度學習幫你解析K線圖！/K-trends.jpg)" alt="用深度學習幫你解析K線圖！" class="thumbnail-image"></span></a></div><div class="item-inner"><p class="item-category"><a class="article-category-link" href="/categories/AI看股票/">AI看股票</a></p><p class="item-title"><a href="/用深度學習幫你解析K線圖！/" class="title">用深度學習幫你解析K線圖！</a></p><p class="item-date"><time datetime="2018-01-23T19:50:05.000Z" itemprop="datePublished">2018-01-23</time></p></div></li><li><div class="item-thumbnail"><a href="/Python-簡單用月營收選股！/" class="thumbnail"><span style="background-image:url(/Python-簡單用月營收選股！/thumbnail.png)" alt="Python-簡單的月營收選股！" class="thumbnail-image"></span></a></div><div class="item-inner"><p class="item-category"><a class="article-category-link" href="/categories/財經Python教學/">財經Python教學</a></p><p class="item-title"><a href="/Python-簡單用月營收選股！/" class="title">Python-簡單的月營收選股！</a></p><p class="item-date"><time datetime="2018-01-22T14:10:47.000Z" itemprop="datePublished">2018-01-22</time></p></div></li><li><div class="item-thumbnail"><a href="/三種月營收進階看法/" class="thumbnail"><span style="background-image:url(/三種月營收進階看法/thumbnail.png)" alt="三種看月營收的進階方法！" class="thumbnail-image"></span></a></div><div class="item-inner"><p class="item-category"><a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/基本面/">基本面</a></p><p class="item-title"><a href="/三種月營收進階看法/" class="title">三種看月營收的進階方法！</a></p><p class="item-date"><time datetime="2018-01-17T23:27:48.000Z" itemprop="datePublished">2018-01-18</time></p></div></li></ul></div></div><div class="widget-wrap widget-list"><h3 class="widget-title">記錄</h3><div class="widget"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">12</span></li></ul></div></div><div class="widget-wrap widget-float"><h3 class="widget-title">標籤雲</h3><div class="widget tagcloud"><a href="/tags/Candlesticks/" style="font-size:10px">Candlesticks</a> <a href="/tags/Deep-Learning/" style="font-size:10px">Deep-Learning</a> <a href="/tags/EPS/" style="font-size:10px">EPS</a> <a href="/tags/KD/" style="font-size:10px">KD</a> <a href="/tags/K棒/" style="font-size:10px">K棒</a> <a href="/tags/K線圖/" style="font-size:10px">K線圖</a> <a href="/tags/LSTM/" style="font-size:10px">LSTM</a> <a href="/tags/Machine-Learning/" style="font-size:12.5px">Machine Learning</a> <a href="/tags/PEG/" style="font-size:10px">PEG</a> <a href="/tags/ROE/" style="font-size:11.25px">ROE</a> <a href="/tags/RSI/" style="font-size:10px">RSI</a> <a href="/tags/python/" style="font-size:20px">python</a> <a href="/tags/一行/" style="font-size:10px">一行</a> <a href="/tags/價值股/" style="font-size:10px">價值股</a> <a href="/tags/入門教學/" style="font-size:13.75px">入門教學</a> <a href="/tags/分佈圖/" style="font-size:10px">分佈圖</a> <a href="/tags/型態學/" style="font-size:10px">型態學</a> <a href="/tags/外資/" style="font-size:10px">外資</a> <a href="/tags/大盤/" style="font-size:13.75px">大盤</a> <a href="/tags/大跌/" style="font-size:10px">大跌</a> <a href="/tags/如何買股票/" style="font-size:20px">如何買股票</a> <a href="/tags/市值營收比/" style="font-size:11.25px">市值營收比</a> <a href="/tags/投信/" style="font-size:10px">投信</a> <a href="/tags/指標/" style="font-size:12.5px">指標</a> <a href="/tags/月營收/" style="font-size:12.5px">月營收</a> <a href="/tags/本益成長比/" style="font-size:10px">本益成長比</a> <a href="/tags/本益比/" style="font-size:13.75px">本益比</a> <a href="/tags/杜邦分析/" style="font-size:13.75px">杜邦分析</a> <a href="/tags/機器學習/" style="font-size:12.5px">機器學習</a> <a href="/tags/歷史回測/" style="font-size:18.75px">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size:10px">每股盈餘</a> <a href="/tags/深度學習/" style="font-size:10px">深度學習</a> <a href="/tags/爬蟲/" style="font-size:10px">爬蟲</a> <a href="/tags/生活/" style="font-size:11.25px">生活</a> <a href="/tags/程式設計/" style="font-size:16.25px">程式設計</a> <a href="/tags/策略狗/" style="font-size:12.5px">策略狗</a> <a href="/tags/簡易策略/" style="font-size:13.75px">簡易策略</a> <a href="/tags/統計/" style="font-size:10px">統計</a> <a href="/tags/總資產轉換率/" style="font-size:10px">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size:13.75px">股價淨值比</a> <a href="/tags/股票分析/" style="font-size:10px">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size:12.5px">自由現金報酬率</a> <a href="/tags/選股/" style="font-size:15px">選股</a> <a href="/tags/選股策略/" style="font-size:17.5px">選股策略</a> <a href="/tags/量化投資/" style="font-size:10px">量化投資</a></div></div><div class="widget-wrap widget-list"><h3 class="widget-title">連結</h3><div class="widget"><ul><li><a href="https://stasistw.blogspot.fr" rel="external nofollow noopener noreferrer" target="_blank">市場求生手冊</a></li><li><a href="http://investarter.blogspot.fr" rel="external nofollow noopener noreferrer" target="_blank">阿升理財筆記</a></li><li><a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a></li></ul></div></div><div style="margin:30px"><div style="background-color:#413e37;text-align:center;height:50px;line-height:50px"><h3 style="font-size:16px;color:#ff0">門可羅雀的粉專～</h3></div><div class="fb-page" data-href="https://www.facebook.com/finlab.tw" data-width="380" data-hide-cover="false" data-show-facepile="false"></div></div></div></aside></div></div></div><footer id="footer"><div class="container"><div class="container-inner"><a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a><div class="credit"><h2 class="logo-wrap"><a href="/" class="logo"></a></h2><p>&copy; 2018 koreal6803</p><p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_pv">本站總訪問量<span id="busuanzi_value_site_pv"></span>次</span></div></div></div></footer><script>var disqus_shortname="koreal6803",disqus_url="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}()</script><script src="/libs/lightgallery/js/lightgallery.min.js"></script><script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script><script src="/libs/lightgallery/js/lg-pager.min.js"></script><script src="/libs/lightgallery/js/lg-autoplay.min.js"></script><script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script><script src="/libs/lightgallery/js/lg-zoom.min.js"></script><script src="/libs/lightgallery/js/lg-hash.min.js"></script><script src="/libs/lightgallery/js/lg-share.min.js"></script><script src="/libs/lightgallery/js/lg-video.min.js"></script><script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script><script src="/js/main.js"></script></div></body>
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="Cache-control" content="public">
+    <meta http-equiv="Cache-Control" content="max-age=604800">
+    
+    <title>威廉．納葛維茲-價值型選股策略 | FinLab 量化實驗室</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="選股,選股策略,歷史回測,市值營收比">
+    
+    <meta name="description" content="最近偶然看到了TEJ網頁中，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。 今天要介紹的是裡面的 威廉．納葛維茲-價值型選股策略 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路： 營運合格的小市值股票這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊">
+<meta name="keywords" content="選股,選股策略,歷史回測,市值營收比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="威廉．納葛維茲-價值型選股策略">
+<meta property="og:url" content="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/index.html">
+<meta property="og:site_name" content="FinLab 量化實驗室">
+<meta property="og:description" content="最近偶然看到了TEJ網頁中，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。 今天要介紹的是裡面的 威廉．納葛維茲-價值型選股策略 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路： 營運合格的小市值股票這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/eq.png">
+<meta property="og:updated_time" content="2018-01-24T11:39:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="威廉．納葛維茲-價值型選股策略">
+<meta name="twitter:description" content="最近偶然看到了TEJ網頁中，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。 今天要介紹的是裡面的 威廉．納葛維茲-價值型選股策略 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路： 營運合格的小市值股票這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊">
+<meta name="twitter:image" content="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/eq.png">
+    
+
+    
+        <link rel="alternate" href="/atom.xml" title="FinLab 量化實驗室" type="application/atom+xml">
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png">
+    
+
+    <link rel="canonical" href="https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/index.html">
+
+    <!--defer-->
+    <!--<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="/libs/titillium-web/styles.css">-->
+    <style>
+        /* latin-ext */
+        @font-face {
+        font-family: 'Source Code Pro';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(fonts/mrl8jkM18OlOQN8JLgasDy2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+        font-family: 'Source Code Pro';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(fonts/mrl8jkM18OlOQN8JLgasD9V_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+    <!--enddefer-->
+
+    <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.finlab.com\/","name":"FinLab 量化實驗室","}</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header" style="background-image:url('/css/images/background-img.jpeg');background-size: 100%;background-position:center">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=1987856528129472&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo" title="FinLab"></a>
+                    </h1>
+                    
+                        
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">回測與選股教學部落格</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/categories/財經Python教學/">Python財經</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/股票入門懶人包/">股票入門</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/categories/AI看股票/">AI看選股</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/categories/選股策略/">股票策略</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/categories/指標分析/">指標分析</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/關於/">關於FinLab</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字(股票,量化...)">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js" defer></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    
+    <h2 class="header">
+    
+    <a class="page-title-link" href="/categories/選股策略/">選股策略</a>
+    </h2>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-威廉．納葛維茲-價值型選股策略" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
+
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        威廉．納葛維茲-價值型選股策略
+        </h1>
+    
+
+            </header>
+        
+
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/威廉．納葛維茲-價值型選股策略/" class="article-date">
+            <time datetime="2017-11-28T16:46:51.000Z" itemprop="datePublished">2017-11-28</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/市值營收比/">市值營收比</a>, <a class="tag-link" href="/tags/歷史回測/">歷史回測</a>, <a class="tag-link" href="/tags/選股/">選股</a>, <a class="tag-link" href="/tags/選股策略/">選股策略</a>
+    </div>
+
+            </div>
+        
+        
+
+
+    <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="right:20px; bottom:20px;">
+    <a style="color:black;font-size: 16px">分享</a>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_dd" href="https://www.addtoany.com/share" rel="external nofollow noopener noreferrer" target="_blank"></a>
+</div>
+<style type="text/css">
+
+@media screen and (max-width: 800px) {
+    .a2a_floating_style.a2a_vertical_style { display: none; }
+}
+
+    .a2a_svg, .a2a_count { border-radius: 0 !important; }
+</style>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 16px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>最近偶然看到了<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ網頁中</a>，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。</p>
+<p>今天要介紹的是裡面的 <strong>威廉．納葛維茲-價值型選股策略</strong> 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路：</p>
+<h3 id="營運合格的小市值股票"><a href="#營運合格的小市值股票" class="headerlink" title="營運合格的小市值股票"></a>營運合格的小市值股票</h3><p>這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊以下，然而小市值的公司通常風險比較高，所以此策略利用了 <strong>自由現金流</strong> 跟 <strong>負債比率</strong>，來觀察此公司的營運狀況，營運狀況不用到非常好，只求不要太差就可以了：</p>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%B8%82%E5%80%BC" rel="external nofollow noopener noreferrer" target="_blank">市值</a> &lt; 10000（千）</li>
+<li>近四季<a href="http://www.cmoney.tw/learn/course/0520/topic/696" rel="external nofollow noopener noreferrer" target="_blank">自由現金流量</a>&gt; 0</li>
+<li><a href="http://statementdog.com/explain/debt-ratio.html" rel="external nofollow noopener noreferrer" target="_blank">負債比率</a> &lt; 70</li>
+</ul>
+<p>很多網站都會說 <strong>負債比率</strong> 是個很重要的指標，但我多次測試，發現它在很多策略中都無法增加獲利，甚至還會減少…，然而這只是我的經驗，不代表 <strong>負債比率</strong> 真的不用看，還是請各位自行斟酌。除了我這麼說外，原來Mr. Market跟我看法有志一同：<a href="http://www.rich01.com/2015/03/blog-post_25.html" rel="external nofollow noopener noreferrer" target="_blank">你覺得「負債比率」越低越好嗎？其實，它沒有想像中這麼有效！</a></p>
+<h3 id="營收高是王道！"><a href="#營收高是王道！" class="headerlink" title="營收高是王道！"></a>營收高是王道！</h3><p>以上的條件看起來都挺保守的，接下來才是比較積極的指標，以下的指標都是用來觀察一家公司的營收跟淨利！假如一家正常營運的公司獲利比其它公司好，那沒理由不投資呀！所以這個策略用了 <strong>市值營收比</strong> 、 <strong>本益比</strong> 、<strong>營業利益成長率</strong>，來觀察公司是否持續獲利，並且獲利越來越高。</p>
+<ul>
+<li><a href="/市值營收比/">市值營收比</a> = 市值 / 月營收 &gt; 3</li>
+<li><a href="/本益比能幫你選出優質股？/">本益比</a> &lt; 20</li>
+<li><a href="http://ifund.tcbbank.com.tw/z/glossary/glexp_4902.djhtm" rel="external nofollow noopener noreferrer" target="_blank">營業利益成長率</a> &gt; 0</li>
+</ul>
+<p>市值營收比也是一個很好用的財務指標，可以參考<a href="/市值營收比/">我的文章</a>。</p>
+<h3 id="稅後淨利要考慮！"><a href="#稅後淨利要考慮！" class="headerlink" title="稅後淨利要考慮！"></a>稅後淨利要考慮！</h3><p>一家獲利良好的公司，獲利持續成長，固然是好事，但不能只是獲利表面上成長，而稅後淨利卻很少，那也不行！所以這邊就用了額外的一個指標，來判斷稅後淨利的大小：</p>
+<ul>
+<li>股東權益報酬率 = 稅後淨利 / 股東權益總額 &gt; 市場均值</li>
+</ul>
+<p>這邊的 除 <strong>股東權益總額</strong> 是用來對整個市場做一個公平的比較，例如某公司發行很多股票，且股價很高，那就更應該有很好的 <strong>稅後淨利</strong> ，不然投資人為何要拿錢給你呢？</p>
+<h3 id="思路總結："><a href="#思路總結：" class="headerlink" title="思路總結："></a>思路總結：</h3><p>這個策略基本上就是找小巧、獲利高的股票，我覺得其中很棒的概念是</p>
+<ol>
+<li>用市值營收比，而不是單純的營收</li>
+<li>用股東權益報酬率，而不是單純的毛利率或稅後淨利</li>
+</ol>
+<p>利用上述兩個指標，才能將每家公司更公平的做比較，進而找出小而美的股票！</p>
+<h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>符合上述條件，持有60天，每60天換一輪股票：</p>
+<center><img src="/威廉．納葛維茲-價值型選股策略/eq.png" alt="權益曲線" title="權益曲線"></center>
+
+<p>由於很久沒有介紹回測結果了，這邊在重新複習一下，藍色的就是不含手續費，紅色的是有含手續費，灰色的是台股。看起來領先台股非常多，代表這個TEJ策略裡面真的有些黃金可以挖寶，然而調整參數還是滿必要的就是了，照著TEJ直接使用，效果沒那麼好。</p>
+<h3 id="買股數量"><a href="#買股數量" class="headerlink" title="買股數量"></a>買股數量</h3><center><img src="/威廉．納葛維茲-價值型選股策略/ns.png" alt="股票每次買入張數" title="股票每次買入張數"></center>
+
+<p>每次換股的時候，我們就盡量平均自己的資產，當然每張股票價格都不一樣，所以不可能會超級平均，只求盡量。另外我們可以看到，金融海嘯的時候，藍色線買了將近150支股票，而紅色線只買了80種不同的股票，為什麼會這樣呢？因為藍色曲線是最理想的狀況，也就是全部都買，全部超級平均分散，而紅色的就是只看現有資產是多少，盡量分散，買不起就放棄。</p>
+<p>為何金融海嘯時，有那麼多股票？因為金融海嘯不管好股壞股，都跌到了很低的價位，於是市值變小，此策略就會撈出比較多股票。</p>
+<h3 id="跌幅"><a href="#跌幅" class="headerlink" title="跌幅"></a>跌幅</h3><center><img src="/威廉．納葛維茲-價值型選股策略/dd.png" alt="下跌幅度" title="下跌幅度"></center>
+
+<p>此策略在金融海嘯時讓你的資產虧損一半多，但一般狀況表現非常傑出，約有20％的回撤，但不算太大，算是滿傑出的。</p>
+<h3 id="總結："><a href="#總結：" class="headerlink" title="總結："></a>總結：</h3><ul>
+<li>用自由現金流來、負債比率來看公司體質</li>
+<li>用營收增長率及股東報酬率來衡量公司的獲利能力</li>
+<li>分享<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ</a>網站中的策略</li>
+</ul>
+<h3 id="外部延伸閱讀："><a href="#外部延伸閱讀：" class="headerlink" title="外部延伸閱讀："></a>外部延伸閱讀：</h3><p>黃國華：<a href="http://bonddealerbook.pixnet.net/blog/post/202548719-%E5%B8%82%E5%80%BC%E8%88%87%E7%87%9F%E6%94%B6%E4%B9%8B%E9%96%93%E7%9A%84%E5%90%88%E7%90%86%E9%97%9C%E4%BF%82" rel="external nofollow noopener noreferrer" target="_blank">市值跟營收之間的合理關係</a></p>
+<p>今天介紹了<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ網頁中</a>的策略，發現滿有用的，想在多寫點，不知到大家最有興趣的是其中的哪一個策略呢？</p>
+
+
+            <p>文章結束，幫我們分享一下，或按個  <span class="fb-like" style="position:relative;top:-5px" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></span>  鼓勵一下吧！</p><p>
+
+            
+                <!--<div style="text-align: center;background-color: white;">
+                    <div style="margin: auto;height:75px;width:75px;background: url('/images/authors/韓承佑.jpg');background-size: 100%;border-radius: 37px"></div>
+                    <a href="mailto:koreal6803@gmail.com"><p style="font-size: 90%;margin:0;margin-top: 1em;color: black">韓承佑</p></a>
+                    <p style="font-size: 80%;margin:0">FinLab博主</p>
+                </div>-->
+            
+            <div>
+                <ul class="popular-posts" style="padding-left:0"><h3 class="article-title">猜你也喜歡：</h3><div><div style="margin-right:20px;background: url('/投信跟盤法！/thumbnail.png') no-repeat center;width:40px;height:40px;background-size: auto 100%;border-radius: 20px;float:left"></div><div style="margin-left: 60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/投信跟盤法！/" title="新年賀禮 ─ 投信跟盤法！" rel="bookmark">新年賀禮 ─ 投信跟盤法！</a></p></div></div></div><div><div style="margin-right:20px;background: url('/跟著外資買股票/color.png') no-repeat center;width:40px;height:40px;background-size: auto 100%;border-radius: 20px;float:left"></div><div style="margin-left: 60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/跟著外資買股票/" title="外資大賣，反而要買！？" rel="bookmark">外資大賣，反而要買！？</a></p></div></div></div><div><div style="margin-right:20px;background: url('/KD1/tsmc.png') no-repeat center;width:40px;height:40px;background-size: auto 100%;border-radius: 20px;float:left"></div><div style="margin-left: 60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/KD1/" title="如何定義KD鈍化" rel="bookmark">如何定義KD鈍化</a></p></div></div></div><div><div style="margin-right:20px;background: url('/價值股回測/eq.png') no-repeat center;width:40px;height:40px;background-size: auto 100%;border-radius: 20px;float:left"></div><div style="margin-left: 60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/價值股回測/" title="價值股策略" rel="bookmark">價值股策略</a></p></div></div></div><div><div style="margin-right:20px;background: url('/小資族也可以使用的選股法！/distri.png') no-repeat center;width:40px;height:40px;background-size: auto 100%;border-radius: 20px;float:left"></div><div style="margin-left: 60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/小資族也可以使用的選股法！/" title="小資族也可以使用的選股法！" rel="bookmark">小資族也可以使用的選股法！</a></p></div></div></div></ul>        
+            </div>
+            <!--<footer class="article-footer">
+            </footer>-->
+        </p></div>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+<script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106968614-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+
+    <div class="sidebar-top" style="background: rgba(76, 180, 228, 0.9)">
+        <p>相關連結 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="envelope" href="mailto:finlabstaff@gmail.com" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-envelope"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://linkedin.com/in/cheng-yu-han-4b845aa2" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/finlab.tw" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+
+    
+        
+<nav id="article-nav">
+    
+        <a href="/Python-簡單選股和回測/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Python 簡單選股和回測
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/市值營收比/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">市值營收比-幫你找到便宜獲利股</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+
+<!-- Begin MailChimp Signup Form -->
+<style type="text/css">
+    /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
+    Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
+
+    #mc_embed_signup form {text-align:center; padding-top: 20px}
+    .mc-field-group { display: inline-block; } /* positions input field horizontally */
+    #mc_embed_signup input.email {font-family:"Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif; font-size: 15px; border: 1px solid rgb(184, 190, 192);  -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; color: #343434; background-color: #fff; box-sizing:border-box; height:32px; padding: 0px 0.4em; display: inline-block; margin: 0; vertical-align:top;}
+    #mc_embed_signup label {display:block; font-size:16px; padding-bottom:10px; font-weight:bold;}
+    #mc_embed_signup .clear {display: inline-block;} /* positions button horizontally in line with input */
+    #mc_embed_signup .button {font-size: 13px; border: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; letter-spacing: .03em; color: #fff; background-color: rgb(77, 190, 255); box-sizing:border-box; height:32px; line-height:32px; padding:0 18px; display: inline-block; margin: 0; transition: all 0.23s ease-in-out 0s;}
+    #mc_embed_signup .button:hover {background-color:#777; cursor:pointer;}
+    #mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%;margin: 0 5%; clear: both;}
+    #mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
+    #mc_embed_signup #mce-error-response {display:none;}
+    #mc_embed_signup #mce-success-response {color:#529214; display:none;}
+    #mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
+    @media (max-width: 768px) {
+        #mc_embed_signup input.email {width:100%; margin-bottom:5px;}
+        #mc_embed_signup .clear {display: block; width: 100% }
+        #mc_embed_signup .button {width: 100%; margin:0; }
+    }
+
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us17.list-manage.com/subscribe/post?u=d8cd009ba8ad9a1188c6e206e&amp;id=a7714d56c6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d8cd009ba8ad9a1188c6e206e_a7714d56c6" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="立即訂閱" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+
+
+<!--End mc_embed_signup-->    
+
+    <div class="widgets-container">
+
+        
+            
+                
+    <!--
+    <div class="widget-wrap">
+        <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=Finlab', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+            <h3 class="widget-title">訂閱內容</h3>
+            <input class="css-input" placeholder="您的email" type="text" name="email" autocomplete="off"/>
+            <input type="hidden" value="Finlab" name="uri"/>
+            <input type="hidden" name="loc" value="zh_TW"/>
+            <input class="btn" type="submit" value="訂閱" />
+        </form>
+        <p style="color: gray;text-align: center;margin-top:10px">當新文章發佈時，以email通知您！</p>
+    </div>-->
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/大跌後：找出強勢股！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/大跌後：找出強勢股！/thumbnail.jpg)" alt="大跌後：用python找出強勢股！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/技術面/">技術面</a></p>
+                            <p class="item-title"><a href="/大跌後：找出強勢股！/" class="title">大跌後：用python找出強勢股！</a></p>
+                            <p class="item-date"><time datetime="2018-02-06T13:57:08.000Z" itemprop="datePublished">2018-02-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/股票入門懶人包/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/股票入門懶人包/overview.png)" alt="股票入門SOP懶人包" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/股票入門懶人包/" class="title">股票入門SOP懶人包</a></p>
+                            <p class="item-date"><time datetime="2018-01-28T17:00:27.000Z" itemprop="datePublished">2018-01-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/用深度學習幫你解析K線圖！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/用深度學習幫你解析K線圖！/K-trends.jpg)" alt="用深度學習幫你解析K線圖！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/AI看股票/">AI看股票</a></p>
+                            <p class="item-title"><a href="/用深度學習幫你解析K線圖！/" class="title">用深度學習幫你解析K線圖！</a></p>
+                            <p class="item-date"><time datetime="2018-01-23T19:50:05.000Z" itemprop="datePublished">2018-01-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/Python-簡單用月營收選股！/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/Python-簡單用月營收選股！/thumbnail.png)" alt="Python-簡單的月營收選股！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/財經Python教學/">財經Python教學</a></p>
+                            <p class="item-title"><a href="/Python-簡單用月營收選股！/" class="title">Python-簡單的月營收選股！</a></p>
+                            <p class="item-date"><time datetime="2018-01-22T14:10:47.000Z" itemprop="datePublished">2018-01-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/三種月營收進階看法/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/三種月營收進階看法/thumbnail.png)" alt="三種看月營收的進階方法！" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/指標分析/">指標分析</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/指標分析/基本面/">基本面</a></p>
+                            <p class="item-title"><a href="/三種月營收進階看法/" class="title">三種看月營收的進階方法！</a></p>
+                            <p class="item-date"><time datetime="2018-01-17T23:27:48.000Z" itemprop="datePublished">2018-01-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">記錄</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">12</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Candlesticks/" style="font-size: 10px;">Candlesticks</a> <a href="/tags/Deep-Learning/" style="font-size: 10px;">Deep-Learning</a> <a href="/tags/EPS/" style="font-size: 10px;">EPS</a> <a href="/tags/KD/" style="font-size: 10px;">KD</a> <a href="/tags/K棒/" style="font-size: 10px;">K棒</a> <a href="/tags/K線圖/" style="font-size: 10px;">K線圖</a> <a href="/tags/LSTM/" style="font-size: 10px;">LSTM</a> <a href="/tags/Machine-Learning/" style="font-size: 12.5px;">Machine Learning</a> <a href="/tags/PEG/" style="font-size: 10px;">PEG</a> <a href="/tags/ROE/" style="font-size: 11.25px;">ROE</a> <a href="/tags/RSI/" style="font-size: 10px;">RSI</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/一行/" style="font-size: 10px;">一行</a> <a href="/tags/價值股/" style="font-size: 10px;">價值股</a> <a href="/tags/入門教學/" style="font-size: 13.75px;">入門教學</a> <a href="/tags/分佈圖/" style="font-size: 10px;">分佈圖</a> <a href="/tags/型態學/" style="font-size: 10px;">型態學</a> <a href="/tags/外資/" style="font-size: 10px;">外資</a> <a href="/tags/大盤/" style="font-size: 13.75px;">大盤</a> <a href="/tags/大跌/" style="font-size: 10px;">大跌</a> <a href="/tags/如何買股票/" style="font-size: 20px;">如何買股票</a> <a href="/tags/市值營收比/" style="font-size: 11.25px;">市值營收比</a> <a href="/tags/投信/" style="font-size: 10px;">投信</a> <a href="/tags/指標/" style="font-size: 12.5px;">指標</a> <a href="/tags/月營收/" style="font-size: 12.5px;">月營收</a> <a href="/tags/本益成長比/" style="font-size: 10px;">本益成長比</a> <a href="/tags/本益比/" style="font-size: 13.75px;">本益比</a> <a href="/tags/杜邦分析/" style="font-size: 13.75px;">杜邦分析</a> <a href="/tags/機器學習/" style="font-size: 12.5px;">機器學習</a> <a href="/tags/歷史回測/" style="font-size: 18.75px;">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size: 10px;">每股盈餘</a> <a href="/tags/深度學習/" style="font-size: 10px;">深度學習</a> <a href="/tags/爬蟲/" style="font-size: 10px;">爬蟲</a> <a href="/tags/生活/" style="font-size: 11.25px;">生活</a> <a href="/tags/程式設計/" style="font-size: 16.25px;">程式設計</a> <a href="/tags/策略狗/" style="font-size: 12.5px;">策略狗</a> <a href="/tags/簡易策略/" style="font-size: 13.75px;">簡易策略</a> <a href="/tags/統計/" style="font-size: 10px;">統計</a> <a href="/tags/總資產轉換率/" style="font-size: 10px;">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size: 13.75px;">股價淨值比</a> <a href="/tags/股票分析/" style="font-size: 10px;">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size: 12.5px;">自由現金報酬率</a> <a href="/tags/選股/" style="font-size: 15px;">選股</a> <a href="/tags/選股策略/" style="font-size: 17.5px;">選股策略</a> <a href="/tags/量化投資/" style="font-size: 10px;">量化投資</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://stasistw.blogspot.fr" rel="external nofollow noopener noreferrer" target="_blank">市場求生手冊</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://investarter.blogspot.fr" rel="external nofollow noopener noreferrer" target="_blank">阿升理財筆記</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io" rel="external nofollow noopener noreferrer" target="_blank">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+
+        <div style="margin: 30px">
+            <div style="background-color:rgb(65, 62, 55);text-align:center;height:50px;line-height: 50px">
+                    <h3 style="font-size: 16px;color: yellow">門可羅雀的粉專～</h3>
+            </div>
+            
+            <div class="fb-page" data-href="https://www.facebook.com/finlab.tw" data-width="380" data-hide-cover="false" data-show-facepile="false">
+        </div>
+    </div>
+    </div>
+
+    
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h2 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h2>
+                <p>&copy; 2018 koreal6803</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+                <span id="busuanzi_container_site_pv">
+                    本站總訪問量<span id="busuanzi_value_site_pv"></span>次
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'koreal6803';
+    
+    
+    var disqus_url = 'https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
