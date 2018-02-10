@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-02-06T16:37:56.000Z</updated>
+  <updated>2018-02-10T20:01:12.000Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python上櫃資料爬蟲輕鬆做</title>
+    <link href="https://www.finlab.tw/%E7%B0%A1%E5%96%AEpython%E4%B8%8A%E6%AB%83%E8%B3%87%E6%96%99%E7%88%AC%E8%9F%B2%E5%AF%A6%E5%81%9A/"/>
+    <id>https://www.finlab.tw/簡單python上櫃資料爬蟲實做/</id>
+    <published>2018-02-10T19:22:15.000Z</published>
+    <updated>2018-02-10T20:01:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>謝謝各位的支持，有很多人寄信來問各式各樣不同的研究！<br>但因為討論熱烈，我目前先挑比較簡單的做，其它的在清單中，依序補上～<br>最近發現上櫃的股票也滿多人在看的，今天教大家如何用python抓取上櫃公司的收盤價！</p><center><img src="/簡單python上櫃資料爬蟲實做/thumbnail.jpeg" alt="輕鬆做爬蟲" title="輕鬆做爬蟲"></center><p>首先，我們只要從這個網址，把資料get下來就行了！</p><figure class="highlight python"><figcaption><span>爬取上櫃股價網址</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">link = <span class="string">'http://www.tpex.org.tw/web/stock/aftertrading/daily_close_quotes/stk_quote_download.php?l=zh-tw&amp;d=107/02/09&amp;s=0,asc,0'</span></div><div class="line">r = requests.get(link)</div><div class="line">r.ok</div></pre></td></tr></table></figure><center><img src="/簡單python上櫃資料爬蟲實做/get.png" alt="爬取上櫃股價網址" title="爬取上櫃股價網址"></center><p>可以看到網址中，包含了日期：107/02/09，這個字樣，可以改成其它日期。<br>get下來就是csv檔了！直接丟進pandas：</p><figure class="highlight python"><figcaption><span>使用pandas讀取</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">lines = r.text.replace(<span class="string">'\r'</span>, <span class="string">''</span>).split(<span class="string">'\n'</span>)</div><div class="line"></div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</div><div class="line">df = pd.read_csv(StringIO(<span class="string">"\n"</span>.join(lines[<span class="number">3</span>:])), sep=<span class="string">','</span>, delimiter=<span class="string">','</span>, header=<span class="keyword">None</span>)</div><div class="line">df.head()</div></pre></td></tr></table></figure><p>但我發現一個小問題：</p><ul><li>在csv檔中，第一行是：”a”,”b”,”c”</li><li>但是在其它行，則顯示：a,b,c</li></ul><p>有沒有雙引號很重要，會讓pandas沒辦法直接讀進來，所以我們前面幾行先去除（上段code中<code>lines[3:]</code>）</p><p>就可以得到下圖：</p><center><img src="/簡單python上櫃資料爬蟲實做/unindex.png" alt="用pandas讀取" title="用pandas讀取"></center><p>但我們的index跟column都還沒設定好（都是數字），要把它轉換成有意義的label：</p><figure class="highlight python"><figcaption><span>整理index跟columns</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">df.columns = list(map(<span class="keyword">lambda</span> l: l.replace(<span class="string">' '</span>,<span class="string">''</span>), lines[<span class="number">2</span>].split(<span class="string">','</span>)))</div><div class="line">df.index = df[<span class="string">'代號'</span>]</div><div class="line">df = df.drop([<span class="string">'代號'</span>], axis=<span class="number">1</span>)</div><div class="line">df.head()</div></pre></td></tr></table></figure><p>首先先來換column，裡面有些複雜的程式（第一行）慢慢講解：</p><ol><li><code>lambda l: l.replace(&#39; &#39;,&#39;&#39;)</code> 是一個函式，但是我懶得命名，所以就用 <code>lambda</code> 賴省略函式名稱，它會讀入，這個函式讀入 <code>l</code>，並將<code>l</code>裡面的空白刪除並outpu出來。</li><li>其中的<code>map(func, array)</code>就指：將<code>array</code>裡面所有元素，都用<code>func</code>處理一遍。</li><li><code>line[2].split(&#39;,&#39;)</code>：將字串依照 “,” 分割成好幾個小字串。</li></ol><p>總體來說，就是將資串分割-&gt;針對每個子字串刪除空白。</p><p>另外針對<code>index</code>，我們就單純用<code>df.index = df[&#39;代號&#39;]</code>來設定，並用<code>df.drop</code>將原本的 <code>column</code>刪除，<br>其實知道pandas有<code>df.set_index()</code>這個函式，但是發現存檔怪怪的，所以改用途法煉鋼（第2、3行）</p><p>這樣差不多就完成了：</p><center><img src="/簡單python上櫃資料爬蟲實做/index.png" alt="整理index跟columns" title="整理index跟columns"></center><p>那要如何把檔案存起來呢？</p><p>我們可以利用</p><figure class="highlight python"><figcaption><span>save file</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df.to_csv(<span class="string">'test.csv'</span>)</div><div class="line">pd.read_csv(<span class="string">'test.csv'</span>, index_col=<span class="string">'代號'</span>).head()</div></pre></td></tr></table></figure><p>來存檔跟讀檔喔！跑出來會是一模一樣的！</p><center><img src="/簡單python上櫃資料爬蟲實做/save.png" alt="存檔跟讀檔" title="存檔跟讀檔"></center><p>今天的簡易教學就到這邊！<a href="/簡單python上櫃資料爬蟲實做/上櫃資料.ipynb">附件</a> 是 jupyter notebook 檔案</p><p>可以下載下來玩玩看喔！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;謝謝各位的支持，有很多人寄信來問各式各樣不同的研究！&lt;br&gt;但因為討論熱烈，我目前先挑比較簡單的做，其它的在清單中，依序補上～&lt;br&gt;最近發現上櫃的股票也滿多人在看的，今天教大家如何用python抓取上櫃公司的收盤價！&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/簡單py
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>大跌後：用python找出強勢股！</title>
@@ -592,43 +616,9 @@
     
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
-      <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
       <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
-  </entry>
-  
-  <entry>
-    <title>超短線上影黑密技！</title>
-    <link href="https://www.finlab.tw/%E8%B6%85%E7%9F%AD%E7%B7%9A%E4%B8%8A%E5%BD%B1%E9%BB%91%E5%AF%86%E6%8A%80%EF%BC%81/"/>
-    <id>https://www.finlab.tw/超短線上影黑密技！/</id>
-    <published>2017-11-03T17:44:31.000Z</published>
-    <updated>2018-01-24T11:42:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>很多來拜訪本blog的人，都是搜尋 “財報狗” 來的，大部分都是價值投資策略，而沒有使用技術分析，或曾經使用技術分析，因為太難用了而放棄。價值投資跟技術分析最大的差異是，價值投資看的財報是經過嚴格審核的精確數字，而技術分析是在看雜訊中找規律。</p><p>有人會說價值投資，是學會看一家公司的價值，而不像技術分析，是在玩股票。我覺得各有各的好，都是在一堆數字裡面找規律，只要不要被股票玩，哪一種策略我都願意接受XDD。</p><p>今天想當一下標題黨，我幫這個策略取了一個超級中二的名字：”超短線上影黑密技”，無論看幾眼都覺得很彆扭，但是還是讓我一一的解釋每個字的用意：</p><h2 id="超短線"><a href="#超短線" class="headerlink" title="超短線"></a>超短線</h2><p>這個絕對是 “日” 週期裡面，最短的策略了，因為這個策略持股一天隔天直接賣出，適合不想要跟某支股票產生愛恨情仇，喜歡斬釘截鐵，無情操作的人。</p><h2 id="上影"><a href="#上影" class="headerlink" title="上影"></a>上影</h2><p>這絕對不是火影忍者裡的上忍、火影，其實是個上影線策略，也就是當看到上影線，那代表這支股票可以空，當然也沒這麼簡單，要有一層層過濾。</p><h2 id="黑"><a href="#黑" class="headerlink" title="黑"></a>黑</h2><p>黑就是指下跌的意思，這是一個空股票的策略，我不常寫空股票的策略，因為本身沒有在融資融券，但就是因為很少有人空股票，這個策略才沒有因為被挖掘而失效，放空有時候比看多的策略好寫。</p><h2 id="密技"><a href="#密技" class="headerlink" title="密技"></a>密技</h2><p>好啦，其實這也不算什麼密技，上影線大家也不是不知道：</p><center><img src="/超短線上影黑密技！/pp.png" alt="橘色為權益曲線" title="橘色為權益曲線"></center><p>大家都說看到上影線，代表要下跌了，但是這是很不負責任的介紹，因為沒人跟你講會跌多少？上影線多長算長？什麼時候買賣？完全沒有數據，頂多是附圖說，你看這支股票，上影線出現後一路跌。</p><h2 id="策略人多口雜，沒有回測看看就好"><a href="#策略人多口雜，沒有回測看看就好" class="headerlink" title="策略人多口雜，沒有回測看看就好"></a>策略人多口雜，沒有回測看看就好</h2><p>同樣上影線，可以找到100張K線圖，驗證之後真的會跌，反過來，也可以找到100張K線圖，驗證之後其實會漲。</p><p>看過很多自稱是技術分析高手，分享一些方法，KD、MACD、OBV什麼都用上了，回測起來績效不太好，也不知道他是靠投資掙錢，還是靠嘴掙錢。也看過一些人，突然PO文說自己打開多年投資經驗的任督二脈，把blog加密起來，付費觀看，火紅一時。然而過了半年，那個人不見了，消失在茫茫股海中，應該是他的策略就好這麼幾個月，之後就爛掉了XDD。</p><h2 id="回測的重要性"><a href="#回測的重要性" class="headerlink" title="回測的重要性"></a>回測的重要性</h2><p>所以我覺得回測很重要，才能知道是否安穩的獲利，而且還不用每天盯盤。可能有人會反問： W 底要怎麼回測？有些型態學根本不可能寫程式怎麼辦？要是我的話，就會選擇不用，反正還有其它的策略可以用，我比較膽小，只用有驗證過的策略XD。</p><h2 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h2><p>突然啪啦啪啦寫了一堆，不好意思讓各位眼睛痛了，以下就是本篇策略：</p><ul><li>上影線佔 60% （（高 - max(收, 開)）／（高 - 低）&gt; 0.6）</li><li>突然放量 （成交量 &gt; 十日均量 * 4）</li><li>流動率高 （十日均量 &gt; 1000）</li><li>股票不在高檔 （收盤 - 120日最低價）/ (（120日最高價 - 120日最低價）&lt; 0.7</li></ul><p>第四條拿出來說明一下，高檔的股票，有時候會被主力炒作，太飆了，還是不要拿來放空比較好XD。</p><p>以下的權益曲線是空1天，即回補，我另外有測試n天的，基本上獲利更高，但曲線比較不好看。</p><center><img src="/超短線上影黑密技！/eq.png" alt="橘色為權益曲線" title="橘色為權益曲線"></center><p>但這個策略沒有加上手續費，槓桿是調整成0，但假如考慮融券手續費，效果可能就沒那麼好就是了，當沖手續費低會更好？滿有可能的。</p><p>下圖是 賣出/買入 價格的漲跌分佈圖：</p><center><img src="/超短線上影黑密技！/ratio.png" alt="漲跌分佈圖" title="漲跌分佈圖"></center><p>我們可以看到，這些股票下跌（小於1）的數目真的比較多（橘色），然而加上手續費（約千分之8），後，就沒有這麼明顯了（淺藍色），手續費多少是關鍵！像我這種散戶，手續費太高自然是無法使用這個策略QQ。</p><center><img src="/超短線上影黑密技！/ns.png" alt="每日股票持有數量" title="每日股票持有數量"></center><p>可以看到每年都只買了超少次，而且快進快出，大部分時候是空手狀態，很輕鬆。</p><center><img src="/超短線上影黑密技！/md.png" alt="dropdown" title="dropdown"></center><p>可以看到最大虧損也不是很嚴重，尤其時近期，幾乎很少虧損到20%的投資資產。</p><p>當然，大部分的策略看看就好，這個策略也是（由於手續費的關係），重點應該是學到一些東西，以下列舉此篇的重點：</p><ul><li>用簡單的公式看股價高檔低檔（條件4）</li><li>股票不再高檔、近期上影線放量，假如想放空，可以空n天，(n&lt;10)回測獲利都是很可觀，持有時間長，股價漲跌波動大，可以淡化手續費的影響，但持有時間越長，權益曲線越不美。</li><li>股票不在高檔、近期上影線放量，假如想買多，隔幾天再買入較可能買到更好的價格！（假如你用的是長線策略）</li></ul><p>假如大家有興趣，我想找時間來跑一些統計結果，看看上影線對於股價的影響。假如覺得本blog還可以的話，可以定期來觀看～我每個禮拜都會更新幾篇喔！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;很多來拜訪本blog的人，都是搜尋 “財報狗” 來的，大部分都是價值投資策略，而沒有使用技術分析，或曾經使用技術分析，因為太難用了而放棄。價值投資跟技術分析最大的差異是，價值投資看的財報是經過嚴格審核的精確數字，而技術分析是在看雜訊中找規律。&lt;/p&gt;
-&lt;p&gt;有人會說價值投資
-      
-    
-    </summary>
-    
-      <category term="指標分析" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-    
-      <category term="技術面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
-    
-    
-      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+      <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   
