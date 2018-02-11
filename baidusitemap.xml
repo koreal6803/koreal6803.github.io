@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/Python-%E6%99%82%E9%96%93%E5%BA%8F%E5%88%97%E5%AF%A6%E4%BD%9C%EF%BC%81/</loc>
+    <lastmod>2018-02-11T15:17:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python 時間序列實做！</title>
+        <pubTime>2017-11-15T13:03:03.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式設計</tag>
+         
+        <tag>KD</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E7%B0%A1%E5%96%AEpython%E4%B8%8A%E6%AB%83%E8%B3%87%E6%96%99%E7%88%AC%E8%9F%B2%E5%AF%A6%E5%81%9A/</loc>
     <lastmod>2018-02-10T20:10:10.000Z</lastmod>
     <data>
@@ -28,9 +52,9 @@
         <title>三種看月營收的進階方法！</title>
         <pubTime>2018-01-17T23:27:48.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>月營收</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
@@ -55,33 +79,9 @@
         
         <tag>python</tag>
          
+        <tag>程式設計</tag>
+         
         <tag>選股</tag>
-         
-        <tag>程式設計</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/Python-%E6%99%82%E9%96%93%E5%BA%8F%E5%88%97%E5%AF%A6%E4%BD%9C%EF%BC%81/</loc>
-    <lastmod>2018-02-10T14:04:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>Python 時間序列實做！</title>
-        <pubTime>2017-11-15T13:03:03.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>KD</tag>
-         
-        <tag>程式設計</tag>
          
          
            
@@ -191,11 +191,11 @@
         <title>讓Machine Learning幫你看財報！</title>
         <pubTime>2017-10-13T10:07:13.000Z</pubTime>
         
+        <tag>python</tag>
+         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
-         
-        <tag>python</tag>
          
          
            
@@ -304,11 +304,11 @@
         <title>利用Machine Learning 選股新手教學</title>
         <pubTime>2017-10-20T10:58:23.000Z</pubTime>
         
+        <tag>python</tag>
+         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
-         
-        <tag>python</tag>
          
          
            
@@ -330,9 +330,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>選股策略</tag>
-         
         <tag>歷史回測</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>簡易策略</tag>
          
@@ -357,11 +357,11 @@
         <title>Machine Learning 表示：看季線最無用！</title>
         <pubTime>2017-10-15T16:10:12.000Z</pubTime>
         
+        <tag>python</tag>
+         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
-         
-        <tag>python</tag>
          
         <tag>選股</tag>
          
@@ -385,9 +385,9 @@
         
         <tag>python</tag>
          
-        <tag>選股</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>選股</tag>
          
          
            
@@ -409,9 +409,9 @@
         
         <tag>python</tag>
          
-        <tag>選股</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>選股</tag>
          
          
            
@@ -433,11 +433,11 @@
         
         <tag>如何買股票</tag>
          
-        <tag>選股策略</tag>
+        <tag>價值股</tag>
          
         <tag>歷史回測</tag>
          
-        <tag>價值股</tag>
+        <tag>選股策略</tag>
          
          
            
@@ -481,9 +481,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>選股策略</tag>
-         
         <tag>歷史回測</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>本益比</tag>
          
@@ -507,9 +507,9 @@
         <title>新年賀禮 ─ 投信跟盤法！</title>
         <pubTime>2018-01-01T14:55:40.000Z</pubTime>
         
-        <tag>選股策略</tag>
-         
         <tag>歷史回測</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>投信</tag>
          
@@ -670,9 +670,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>選股策略</tag>
-         
         <tag>歷史回測</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>本益比</tag>
          
@@ -747,9 +747,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>選股策略</tag>
-         
         <tag>歷史回測</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>杜邦分析</tag>
          
@@ -885,12 +885,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬2。何時買股才對？</title>
-        <pubTime>2017-09-22T13:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
+        <pubTime>2017-09-21T13:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -907,12 +907,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
-        <pubTime>2017-09-21T13:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬2。何時買股才對？</title>
+        <pubTime>2017-09-22T13:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -953,16 +953,18 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
+    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     <data>
         <display>
-        <title>絕無僅有的超強指標！</title>
-        <pubTime>2017-10-23T18:24:24.000Z</pubTime>
+        <title>股價淨值比有這麼神？</title>
+        <pubTime>2017-09-24T11:09:52.000Z</pubTime>
         
-        <tag>選股</tag>
+        <tag>如何買股票</tag>
          
-        <tag>指標</tag>
+        <tag>歷史回測</tag>
+         
+        <tag>股價淨值比</tag>
          
          
            
@@ -978,18 +980,16 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     <data>
         <display>
-        <title>股價淨值比有這麼神？</title>
-        <pubTime>2017-09-24T11:09:52.000Z</pubTime>
+        <title>絕無僅有的超強指標！</title>
+        <pubTime>2017-10-23T18:24:24.000Z</pubTime>
         
-        <tag>如何買股票</tag>
+        <tag>選股</tag>
          
-        <tag>歷史回測</tag>
-         
-        <tag>股價淨值比</tag>
+        <tag>指標</tag>
          
          
            
@@ -1034,13 +1034,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T11:28:20.000Z</pubTime>
         
-        <tag>ROE</tag>
-         
         <tag>如何買股票</tag>
          
-        <tag>選股策略</tag>
+        <tag>ROE</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>股價淨值比</tag>
          
@@ -1067,9 +1067,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>選股策略</tag>
-         
         <tag>歷史回測</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>簡易策略</tag>
          
@@ -1120,9 +1120,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>選股策略</tag>
-         
         <tag>歷史回測</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>簡易策略</tag>
          
@@ -1214,9 +1214,9 @@
         
         <tag>簡易策略</tag>
          
-        <tag>大盤</tag>
-         
         <tag>本益比</tag>
+         
+        <tag>大盤</tag>
          
          
            
@@ -1236,11 +1236,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T16:46:51.000Z</pubTime>
         
-        <tag>選股策略</tag>
+        <tag>選股</tag>
          
         <tag>歷史回測</tag>
          
-        <tag>選股</tag>
+        <tag>選股策略</tag>
          
         <tag>市值營收比</tag>
          
@@ -1262,13 +1262,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T11:51:12.000Z</pubTime>
         
+        <tag>如何買股票</tag>
+         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
-         
-        <tag>如何買股票</tag>
          
          
            
