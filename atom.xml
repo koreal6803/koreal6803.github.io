@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-02-10T20:10:10.000Z</updated>
+  <updated>2018-02-15T12:35:11.000Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的量化投資黑歷史</title>
+    <link href="https://www.finlab.tw/%E6%88%91%E7%9A%84%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87%E9%BB%91%E6%AD%B7%E5%8F%B2/"/>
+    <id>https://www.finlab.tw/我的量化投資黑歷史/</id>
+    <published>2018-02-15T12:12:15.000Z</published>
+    <updated>2018-02-15T12:35:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我以前很喜歡寫程式，<br>剛開始接觸投資時，就希望能夠用程式超越99%的投資人<br>我以為程式交易是好棒棒，<br>有了這個絕密的武器，在投資市場上就能夠輕而一舉超越絕大部分投資者。<br>現在真的覺得自己好傻好天真呀！</p><center><img src="/我的量化投資黑歷史/thumbnail.jpeg" alt="翻開黑歷史" title="翻開黑歷史"></center><h3 id="我錯了，量化投資不是聖杯"><a href="#我錯了，量化投資不是聖杯" class="headerlink" title="我錯了，量化投資不是聖杯"></a>我錯了，量化投資不是聖杯</h3><p>後來不斷的研究發現，量化投資也是有其極限<br>歷史年化報酬率最高也就10～20％，上線後還不保證可以跟歷史績效一樣<br>這個時候才瞭解，操盤手每天看線，不是看假的，投資還是得花很多時間磨練。</p><h3 id="於是，我開始主觀交易，但後果是？"><a href="#於是，我開始主觀交易，但後果是？" class="headerlink" title="於是，我開始主觀交易，但後果是？"></a>於是，我開始主觀交易，但後果是？</h3><p>想建構一個超強的回測平台，真的不容易。<br>還沒建好前，我手已經很癢，就開始投資了，<br>那個時候我真的很蠢，直接上網搜尋，大家最近講哪些股票、看看KD值，就直接買了！？</p><p>可想而知，結果就是慘賠（幾千塊XD我很膽小），<br>但心情很差！尤其是每天要顧著那些股票，<br>不知道它明天又要如何震盪，心情隨之擺盪。</p><p>於是，我又參考了一個很有名的老師，<br>照著它的明牌買，發現怎麼買怎麼跌，心情更差！<br>總覺得股市茫茫無所適從，</p><p>突然發現，我這不是在”投資”，而是在”賭”！</p><h3 id="有了好策略，還是高買低賣"><a href="#有了好策略，還是高買低賣" class="headerlink" title="有了好策略，還是高買低賣"></a>有了好策略，還是高買低賣</h3><p>我的回測平台終於建好了，開始找好的策略，也有幾個不錯的選股方法，<br>用股市大富翁模擬，跑得好棒棒，於是決定將策略上線，<br>上線後覺得好奇怪，怎麼開始策略不管用了？連續兩個月都在震盪，</p><p>當時又是暑假，我就丟棄此策略，跑去到處玩。</p><p>九月開學，回頭才發現自己的策略漲了20%<br>我竟然都沒有跟到，於是投入真錢，又開始賠…。</p><p>原來這就是傳說中，有了策略還是高買低賣呀XD。</p><h3 id="終於，下定決心每天投資"><a href="#終於，下定決心每天投資" class="headerlink" title="終於，下定決心每天投資"></a>終於，下定決心每天投資</h3><p>開始使用策略，策略會跑出來的股票清單，<br>但我還是不相信它，喜歡自己研究半天，少買幾檔，</p><p>後來發現沒買的都漲，買的都跌，<br>跑出來跟策略的報酬率不太一樣，我的實際報酬率輸策略的報酬率…</p><h3 id="於是，下定決心按表操課？"><a href="#於是，下定決心按表操課？" class="headerlink" title="於是，下定決心按表操課？"></a>於是，下定決心按表操課？</h3><p>沒有，最後我還是沒按表操課，因為我慢慢的跟策略產生了一些默契，<br>現在我每天只看10分鐘，搭配一些額外的籌碼面（券商分點），<br>我發現主觀甚至可以稍微優化策略，當然沒有歷史績效輔助，說不定我只是最近運氣好罷了。</p><p>以防有人跟我一樣濛濛懂懂誤打誤撞過來，可以參考<a href="/股票入門懶人包/">新手選股SOP懶人包</a><br>雖然不一定是最好，但假如你是剛開始接觸股票的話，應該可以避免你走一些冤枉路。</p><h3 id="人與量化條件搭配，相輔相成"><a href="#人與量化條件搭配，相輔相成" class="headerlink" title="人與量化條件搭配，相輔相成"></a>人與量化條件搭配，相輔相成</h3><p>從最初，策略帶我找標的，<br>最後，我用更多數據來篩選策略給我的股票，</p><p>學習選股的路上，像是互相提拔的感覺。<br>人與量化策略一起買賣股票，目前看來是可行的，<br>缺點就是要額外的時間，考慮額外的因素來買賣，<br>而且遇到策略不靈光時，有交易手法變形的可能。</p><p>平常不太會去更動策略的選股，<br>但最近躲過全球慘跌是我自己主觀判斷，</p><p>大家在交易的時候，應該也有量化（機械式的篩選）和主觀（自己查個股資料判斷）的部分，<br>很好奇大家在這兩個部分各佔了多少呢？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我以前很喜歡寫程式，&lt;br&gt;剛開始接觸投資時，就希望能夠用程式超越99%的投資人&lt;br&gt;我以為程式交易是好棒棒，&lt;br&gt;有了這個絕密的武器，在投資市場上就能夠輕而一舉超越絕大部分投資者。&lt;br&gt;現在真的覺得自己好傻好天真呀！&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/我
+      
+    
+    </summary>
+    
+    
+      <category term="投資" scheme="https://www.finlab.tw/tags/%E6%8A%95%E8%B3%87/"/>
+    
+      <category term="股票" scheme="https://www.finlab.tw/tags/%E8%82%A1%E7%A5%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>python上櫃資料爬蟲輕鬆做</title>
@@ -589,36 +615,6 @@
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python：利用Pandas輕鬆選股</title>
-    <link href="https://www.finlab.tw/Python%EF%BC%9A%E5%88%A9%E7%94%A8Pandas%E8%BC%95%E9%AC%86%E9%81%B8%E8%82%A1/"/>
-    <id>https://www.finlab.tw/Python：利用Pandas輕鬆選股/</id>
-    <published>2017-11-08T14:16:44.000Z</published>
-    <updated>2018-01-24T11:42:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>上一篇的Python教學中，我們學會了怎麼爬財報，但是爬完的資料要怎麼運用呢？這篇會給大家一些方向。<br>那篇有點不好意思，好像有兩個package沒有import，下次發現的話，可以在下方留言告訴我，我會盡快更正。</p><p>今天這篇的前置作業，請參考<a href="/Python-財報爬蟲-1-綜合損益表/">連結</a>把當中的function給copy過來，然後就開始吧！</p><h3 id="資料處理"><a href="#資料處理" class="headerlink" title="資料處理"></a>資料處理</h3><p>首先，我們要先使用這個function，可以直接在jupyter視窗內輸入，來取得爬取今天的主角：”營益分析彙總表”</p><figure class="highlight python"><figcaption><span>利用上次的爬蟲取得資料</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">df = financial_statement(<span class="number">107</span>, <span class="number">2</span>, <span class="string">'營益分析彙總表'</span>)</div><div class="line">df</div></pre></td></tr></table></figure><p>第一行，我們將 “營益分析彙總表” 儲存在 df 這個變數之中，<br>第二行，我們希望將 df 給顯示出來，看一下它長什麼樣子<br>第二行的功能是只有在jupyter 這個IDE才看的到喔～假如是寫在python script的話，就要用 print(df) 。<br>假如一切OK就會是以下的樣子：</p><center><img src="/Python：利用Pandas輕鬆選股/df.png" alt="成功取得報表" title="成功取得報表"></center><p>我們觀察一下這張表，有一行真的詭異：”合計：共 808 家” ，這行完全沒有任何可以用的資料，所以我們將它刪除：</p><figure class="highlight python"><figcaption><span>刪除其中一行</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = df.drop([<span class="string">'合計：共 808 家'</span>], axis=<span class="number">1</span>)</div></pre></td></tr></table></figure><p>接下來我們發現 index （每一列）的命名很怪，怎麼用 1,2,3… 來命名呢，應該要用股票名稱！？<br>我們將股票的名稱當成新的 index：</p><figure class="highlight python"><figcaption><span>將index換成股票名稱</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = df.set_index([<span class="string">'股票名稱'</span>])</div></pre></td></tr></table></figure><p>最後一步，我們希望資料欄位中，所有的元素都是 float ，所以要做一次轉換：</p><figure class="highlight python"><figcaption><span>轉換成數值</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = df.astype(float)</div></pre></td></tr></table></figure><center><img src="/Python：利用Pandas輕鬆選股/processed.png" alt="處理完後的資料" title="處理完後的資料"></center><h3 id="資料處理一行版"><a href="#資料處理一行版" class="headerlink" title="資料處理一行版"></a>資料處理一行版</h3><p>這樣就沒問題了！其實有個更快速的寫法，將以上三件事情寫成一行：</p><figure class="highlight python"><figcaption><span>一行直接處理</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df = df.drop([<span class="string">'合計：共 808 家'</span>], axis=<span class="number">1</span>).set_index([<span class="string">'公司名稱'</span>]).astype(float)</div></pre></td></tr></table></figure><p>這樣就可以一次處理好！</p><h3 id="簡單的取出行列："><a href="#簡單的取出行列：" class="headerlink" title="簡單的取出行列："></a>簡單的取出行列：</h3><p>我想單選出毛利率：</p><figure class="highlight python"><figcaption><span>取得毛利率</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df[<span class="string">'毛利率(%)(營業毛利)/(營業收入)'</span>]</div></pre></td></tr></table></figure><center><img src="/Python：利用Pandas輕鬆選股/series.png" alt="單欄毛利率" title="單欄毛利率"></center><p>假如今天我只想看 台積電 表現如何：</p><figure class="highlight python"><figcaption><span>取得台積電資料</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.loc[<span class="string">'台積電'</span>]</div></pre></td></tr></table></figure><p>取每一欄，跟取每一列，語法不太一樣喔！要小小注意一下。</p><center><img src="/Python：利用Pandas輕鬆選股/tsmc.png" alt="台積電資料" title="台積電資料"></center><p>假如我想同時看 台積電 跟 聯發科：</p><figure class="highlight python"><figcaption><span>取得TSMC跟MTK的資料</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.loc[[<span class="string">'台積電'</span>, <span class="string">'聯發科'</span>]]</div></pre></td></tr></table></figure><center><img src="/Python：利用Pandas輕鬆選股/tsmcmtk.png" alt="台積電跟聯發科的資料" title="台積電跟聯發科的資料"></center><h3 id="數值分析"><a href="#數值分析" class="headerlink" title="數值分析"></a>數值分析</h3><p>接下來我們稍微分析一下這個表中的數字：<br><figure class="highlight python"><figcaption><span>數值分析</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df.describe()</div></pre></td></tr></table></figure><br>這樣簡單一行，就可以得到每一欄的數值分析，當初我知道這個 df.describe() 也覺得很神。</p><center><img src="/Python：利用Pandas輕鬆選股/describe.png" alt="數值分析" title="數值分析"></center><h3 id="毛利率分佈圖"><a href="#毛利率分佈圖" class="headerlink" title="毛利率分佈圖"></a>毛利率分佈圖</h3><p>只要簡單一行，我們就可以看到全台灣的上市公司，毛利率分佈圖：</p><figure class="highlight python"><figcaption><span>毛利率分佈圖</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">％matplotlib inline</div><div class="line">df[<span class="string">'毛利率(%)(營業毛利)/(營業收入)'</span>].hist(bins=range(<span class="number">-100</span>,<span class="number">100</span>))</div></pre></td></tr></table></figure><center><img src="/Python：利用Pandas輕鬆選股/dis.png" alt="毛利率分佈圖" title="毛利率分佈圖"></center><h3 id="選股"><a href="#選股" class="headerlink" title="選股"></a>選股</h3><p>選股也很簡單，只要寫成以下條件：</p><figure class="highlight python"><figcaption><span>條件</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cond1 = df[<span class="string">'毛利率(%)(營業毛利)/(營業收入)'</span>].astype(float) &gt; <span class="number">20</span></div><div class="line">cond2 = df[<span class="string">'營業利益率(%)(營業利益)/(營業收入)'</span>].astype(float) &gt; <span class="number">5</span></div></pre></td></tr></table></figure><p>就是說 第一個欄位：毛利率，我們希望找出大於20的 股票<br>另外呢 第二個欄位：營業利益率，我們希望找出大於5的 股票</p><p>那我們就可以用這兩個條件來選股：</p><figure class="highlight python"><figcaption><span>選股</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df[cond1 &amp; cond2]</div></pre></td></tr></table></figure><center><img src="/Python：利用Pandas輕鬆選股/select.png" alt="篩選出來的股票" title="篩選出來的股票"></center><p>搭啦！其實外面的選股軟體也就這樣而已啦！還收費這麼貴XDD 如果你覺得觀賞這個blog有點收穫，記得存到我的最愛定期觀看喔！我每個禮拜都會有一些更新。</p><p>這次教學的檔案：<a href="/Python：利用Pandas輕鬆選股/選股.ipynb" title="notebook.ipynb檔">notebook.ipynb檔</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;上一篇的Python教學中，我們學會了怎麼爬財報，但是爬完的資料要怎麼運用呢？這篇會給大家一些方向。&lt;br&gt;那篇有點不好意思，好像有兩個package沒有import，下次發現的話，可以在下方留言告訴我，我會盡快更正。&lt;/p&gt;
-&lt;p&gt;今天這篇的前置作業，請參考&lt;a href
-      
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
-    
-      <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
   </entry>
   
