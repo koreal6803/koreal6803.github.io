@@ -3,6 +3,39 @@
 
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <url>
+    <loc>https://www.finlab.tw/%E8%AE%93Machine-Learning%E5%B9%AB%E4%BD%A0%E7%9C%8B%E8%B2%A1%E5%A0%B1%EF%BC%81/</loc>
+    <lastmod>2018-02-19T16:14:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>讓Machine Learning幫你看財報！</title>
+        <pubTime>2017-10-13T10:07:13.000Z</pubTime>
+        
+        <tag>機器學習</tag>
+         
+        <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI看股票" url="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://www.finlab.tw/%E5%9B%9E%E6%B8%AC%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%B4%B9/</loc>
     <lastmod>2018-02-19T13:36:12.000Z</lastmod>
@@ -221,30 +254,6 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E8%AE%93Machine-Learning%E5%B9%AB%E4%BD%A0%E7%9C%8B%E8%B2%A1%E5%A0%B1%EF%BC%81/</loc>
-    <lastmod>2018-01-31T17:57:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>讓Machine Learning幫你看財報！</title>
-        <pubTime>2017-10-13T10:07:13.000Z</pubTime>
-        
-        <tag>機器學習</tag>
-         
-        <tag>Machine Learning</tag>
-         
-        <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="AI看股票" url="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.finlab.tw/%E7%94%A8%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%B9%AB%E4%BD%A0%E8%A7%A3%E6%9E%90K%E7%B7%9A%E5%9C%96%EF%BC%81/</loc>
     <lastmod>2018-01-31T17:57:05.000Z</lastmod>
     <data>
@@ -325,13 +334,6 @@
     </data>
     </url>
 
-    
-    
-    
-    
-    
-    
-    
     
   <url>
     <loc>https://www.finlab.tw/%E5%88%A9%E7%94%A8Machine-Learning-%E9%81%B8%E8%82%A1%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/</loc>
@@ -537,6 +539,33 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/</loc>
+    <lastmod>2018-01-24T11:42:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>市值營收比-幫你找到便宜獲利股</title>
+        <pubTime>2017-11-24T09:19:11.000Z</pubTime>
+        
+        <tag>選股</tag>
+         
+        <tag>市值營收比</tag>
+         
+        <tag>指標</tag>
+         
+         
+           
+             
+              <breadCrumb title="指標分析" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+          
+             
+              <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E6%8A%95%E4%BF%A1%E8%B7%9F%E7%9B%A4%E6%B3%95%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:32.000Z</lastmod>
     <data>
@@ -561,33 +590,6 @@
           
              
               <breadCrumb title="籌碼面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E7%B1%8C%E7%A2%BC%E9%9D%A2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/</loc>
-    <lastmod>2018-01-24T11:42:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>市值營收比-幫你找到便宜獲利股</title>
-        <pubTime>2017-11-24T09:19:11.000Z</pubTime>
-        
-        <tag>選股</tag>
-         
-        <tag>市值營收比</tag>
-         
-        <tag>指標</tag>
-         
-         
-           
-             
-              <breadCrumb title="指標分析" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-          
-             
-              <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
           
         </display>
     </data>
@@ -922,12 +924,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬2。何時買股才對？</title>
-        <pubTime>2017-09-22T13:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
+        <pubTime>2017-09-21T13:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -944,12 +946,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
-        <pubTime>2017-09-21T13:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬2。何時買股才對？</title>
+        <pubTime>2017-09-22T13:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
