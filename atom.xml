@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-02-22T11:24:15.000Z</updated>
+  <updated>2018-02-27T23:11:23.804Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>創新高有多高？</title>
+    <link href="https://www.finlab.tw/%E5%89%B5%E6%96%B0%E9%AB%98%E6%9C%89%E5%A4%9A%E9%AB%98%EF%BC%9F/"/>
+    <id>https://www.finlab.tw/創新高有多高？/</id>
+    <published>2018-02-27T20:10:59.000Z</published>
+    <updated>2018-02-27T23:11:23.804Z</updated>
+    
+    <content type="html"><![CDATA[<p>創多少天新高，才叫創新高？今天用非常紮實的回測，來分析一下多少天創新高，才是真正的創新高。<br>看到很多名師選股，都是用創新高的思路，然而買在創新高就是會讓人怕怕的，這麼高了！真的可以買嗎？尤其是對於價值型投資者來說，看到創新高的股票，有些本益比都快噴發60倍，避之唯恐不及，怎麼可能還買呢！？</p><center><img src="/創新高有多高？/thumbnail.jpeg" alt="創新高真的不危險嗎？" title="創新高真的不危險嗎？"></center><p>今天分享給大家，創新高真的沒問題嗎？<br>越創越高難道真的越好？（真的越好）<br>究竟為何會發生這種現象？</p><p>股價突破某個歷史高點，事出必有因，<br>以下歸納一下原因：</p><ul><li>題材股：豬，站在風頭也會飛，可能是最近一波題材股的關係！</li><li>獲利股：財務結構重大改變，獲利暴增。</li><li>利多股：未來獲利預估會暴增的股票。</li></ul><p>當然還可能有更多原因，就請大大們補充了！<br>總之股價突破了某個歷史高點，接下來必定就是兩條路：</p><ul><li>沾了一下高點，又跌了回去</li><li>繼續噴高，一去不復返</li></ul><p>究竟怎麼分別這兩種股票呢？我發現，創新高，多久的新高非常關鍵！<br>所以我做了以下的回測分析：</p><ul><li>當股價創 n 天新高時，分配金額，隔天開盤買入</li><li>持有20天後賣出</li></ul><p>不算手續費，會有以下的結果：</p><center><img src="/創新高有多高？/eq.png" alt="n天創新高時買入20天" title="n天創新高時買入20天"></center><p>超級漂亮的一字排開！而最紅的曲線，就是600天創新高才買入，而最黑的那條線，則是60天創新高就買入了！<br>事實證明，創新高真的有用！而且創新高天數（n）設定越高，創新高就越有用。</p><p>然而這個沒有考慮手續費喔！考慮100萬起始資金，手續費(6折)，和證交稅的話，獲利會降低，<br>600天創新高的績效變成2.75倍，比照同期大盤1.2倍，加權報酬1.59倍。</p><p>接下來來分析一下，不考慮手續費：</p><h3 id="勝率分析"><a href="#勝率分析" class="headerlink" title="勝率分析"></a>勝率分析</h3><p>接下來我們再來分析一下勝率：<br>下圖中的 x 軸是不同的策略，採取x天創新高，<br>y軸則是該交易的勝率（就是一支股票獲利的機率）：</p><center><img src="/創新高有多高？/prob.png" alt="n天創新高 vs 勝率" title="n天創新高 vs 勝率"></center><p>大部分都落在46到47％左右<br>只能說創新高勝率不高…，會讓你心情不太好，<br>而且常常集體一起爛掉（個人使用的感覺），<br>尤其是大盤有點漲不上去的時候，（如最近XDD）。</p><h3 id="飆股機率"><a href="#飆股機率" class="headerlink" title="飆股機率"></a>飆股機率</h3><p>但偶爾會有飆股！讓我們來分析一下買到飆股的機率，我們先定義飆股為漲40％以上<br>來看看所有的買賣當中，飆股比例是否跟 n 天創新高有關：</p><center><img src="/創新高有多高？/good_stock.png" alt="n天創新高 vs 勝率" title="n天創新高 vs 勝率"></center><p>y軸為買到飆股的機率，大約是1％左右，平均就是100檔裡面有一檔飆股啦XDD。<br>但飆股與n天創新高有明顯的關連，可見，n 越大，越有可能買到飆股！這真是一個好現象呀！</p><h3 id="平均獲利比較"><a href="#平均獲利比較" class="headerlink" title="平均獲利比較"></a>平均獲利比較</h3><p>所以就選擇那些越久創新高的，會比較好囉？<br>先別急，不能只看大飆股，應該要考慮每檔股票買賣的平均獲利比較準！<br>所以我們也分析了一下：</p><center><img src="/創新高有多高？/mean.png" alt="n天創新高 vs 平均獲利" title="n天創新高 vs 平均獲利"></center><p>上圖的y軸，大於1代表獲利，小於1代表虧損，每支股票平均的獲利可以在1％左右，<br>算上摩擦成本（0.7%），就看起來沒這麼多了對吧XD。</p><p>發現，以平均來說，雖然似乎n有越大越好的趨勢，但是120日創新高也不能忽略，<br>我的感覺是，很多人都用120創新高這個參數在買股票，<br>所以很多圖都在120日有奇怪的反應（勝率跟獲利，都異常的高，詳見上圖）。</p><p>所以這篇文章對創新高的天數做了分析，也讓大家有一個策略的原型，<br>可以將此策略再多觀察、多分析，結合不同指標，相信可以篩選出更好的買點賣點！</p><p>不好意思讓大家久等了，最近一直在忙課程的東西，我覺得對長期支持blog的大家覺得虧欠。<br>我的理想目標是blog的發文頻率不要因為課程拍攝影片而被影響！<br>然而，事情畢竟沒有這麼簡單！<br>目前呈現蠟燭幾頭燒的狀態。<br>但我會盡力的！<br>也謝謝各位的長期支持！<br>我們會秉持初衷，維持文章的品質！讓FinLab的理念可以被更多人看到～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;創多少天新高，才叫創新高？今天用非常紮實的回測，來分析一下多少天創新高，才是真正的創新高。&lt;br&gt;看到很多名師選股，都是用創新高的思路，然而買在創新高就是會讓人怕怕的，這麼高了！真的可以買嗎？尤其是對於價值型投資者來說，看到創新高的股票，有些本益比都快噴發60倍，避之唯恐不
+      
+    
+    </summary>
+    
+      <category term="指標分析" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="技術面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
+    
+    
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="型態學" scheme="https://www.finlab.tw/tags/%E5%9E%8B%E6%85%8B%E5%AD%B8/"/>
+    
+      <category term=" 量化投資" scheme="https://www.finlab.tw/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+    
+      <category term="指標" scheme="https://www.finlab.tw/tags/%E6%8C%87%E6%A8%99/"/>
+    
+  </entry>
   
   <entry>
     <title>我的量化投資史</title>
@@ -149,6 +186,8 @@
     
       <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
     
+      <category term="型態學" scheme="https://www.finlab.tw/tags/%E5%9E%8B%E6%85%8B%E5%AD%B8/"/>
+    
       <category term="Deep-Learning" scheme="https://www.finlab.tw/tags/Deep-Learning/"/>
     
       <category term="深度學習" scheme="https://www.finlab.tw/tags/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92/"/>
@@ -156,8 +195,6 @@
       <category term="K線圖" scheme="https://www.finlab.tw/tags/K%E7%B7%9A%E5%9C%96/"/>
     
       <category term="K棒" scheme="https://www.finlab.tw/tags/K%E6%A3%92/"/>
-    
-      <category term="型態學" scheme="https://www.finlab.tw/tags/%E5%9E%8B%E6%85%8B%E5%AD%B8/"/>
     
       <category term="Candlesticks" scheme="https://www.finlab.tw/tags/Candlesticks/"/>
     
@@ -219,9 +256,9 @@
       <category term="基本面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
     
     
-      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
       <category term="月營收" scheme="https://www.finlab.tw/tags/%E6%9C%88%E7%87%9F%E6%94%B6/"/>
+    
+      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
   </entry>
   
@@ -311,9 +348,9 @@
       <category term="籌碼面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E7%B1%8C%E7%A2%BC%E9%9D%A2/"/>
     
     
-      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="投信" scheme="https://www.finlab.tw/tags/%E6%8A%95%E4%BF%A1/"/>
     
@@ -457,11 +494,11 @@
       <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
-      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="市值營收比" scheme="https://www.finlab.tw/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
@@ -493,9 +530,9 @@
     
       <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
-      <category term="市值營收比" scheme="https://www.finlab.tw/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
-    
       <category term="指標" scheme="https://www.finlab.tw/tags/%E6%8C%87%E6%A8%99/"/>
+    
+      <category term="市值營收比" scheme="https://www.finlab.tw/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
   </entry>
   
@@ -582,39 +619,6 @@
       <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
     
       <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何定義KD鈍化</title>
-    <link href="https://www.finlab.tw/KD1/"/>
-    <id>https://www.finlab.tw/KD1/</id>
-    <published>2017-11-14T14:22:16.000Z</published>
-    <updated>2018-01-24T11:42:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！</p><p>今天先來看一下KD值好了，畢竟都還沒有看到太多指標相關的文章，其實KD值是非常簡單的，但在這邊我不想要介紹公式，因為太無聊了，而且每次看每次忘，我只想介紹如何看KD，以及參數如何設定：</p><h3 id="KD-的意義"><a href="#KD-的意義" class="headerlink" title="KD 的意義"></a>KD 的意義</h3><p>KD就是像坊間說的，兩條線，K跟D，一條反應較快，一條慢，都介於0～100之間。其意義在於股票在n天之內的相對位置，相對位置就是指n天內的最高最低，將當前的股價做normalize。</p><p>給一個簡單的例子，例如今天全班考試，有人拿30分，請問他考的好不好？</p><p>答案是：不知道，因為沒有辦法比較，說不定考卷很難，30分就是全班最高分了！要是考卷出太難，大家的成績介於10～30之間，那老師就可以做 normalize 讓成績分佈好看一點：</p><p>新成績 = ( 成績 - 10 ) / (30 - 10)</p><p>這樣子，考最好的人就是100分，而考最爛的人就是0分，這個就是KD指標的意義，而每個學生的成績，就是每日的收盤價。</p><p>最後我們將 新成績 對時間平滑一次，變成K值，再對K值平滑一次，變成D值。</p><h3 id="KD-的參數"><a href="#KD-的參數" class="headerlink" title="KD 的參數"></a>KD 的參數</h3><p>介紹完之後，K D 指標的參數就很好理解了：</p><ol><li>9天：只考慮9天內的最高最低</li><li>3天：K的平滑</li><li>3天：D的平滑</li></ol><p>平滑數字越大，數字變動越慢，雜訊越少<br>平滑數字越小，數字變動越快，雜訊越多</p><p>我們用台積電為例子：</p><center><img src="/KD1/tsmc.png" alt="KD（9、3、3）" title="KD（9、3、3）"></center><p>以上就是用正統的參數：9、3、3的KD指標（橘色、綠色），紫色是股價，可以看到KD值低檔交叉，算是好買點，最近就等著台積點低於20 XDD，（隨便說的，不是投資建議），我們試著換一個參數（9、6、6）看看：</p><center><img src="/KD1/tsmc2.png" alt="KD（9、6、6）" title="KD（9、6、6）"></center><p>可以看到曲線比較平滑一點，且K跟D差距比較明顯，相較於第一張圖，8月初比較不會有雜訊，但是反應變慢很多。</p><h3 id="KD-坊間策略"><a href="#KD-坊間策略" class="headerlink" title="KD 坊間策略"></a>KD 坊間策略</h3><p>大家都說<br>K超越D時，代表黃金交叉，可以買進<br>K落於D時，代表死亡交叉，可以賣出</p><p>真的是這樣嗎？讓我們來看看：</p><p>黃金交叉買，死亡交叉賣：</p><p>參數（9,3,3）勝率：0.386<br>參數（45,15,15）勝率：0.407<br>參數（180,60,60）勝率：0.364</p><p>以下是這三個參數的獲利曲線：</p><center><img src="/KD1/summary.png" alt="坊間策略歷史績效圖" title="坊間策略歷史績效圖"></center><p>結果好像不太好，看來真的不太能直接用，尤其短週期的KD，進出太平凡，導致手續費飆高，根本就是一直賠錢（紅色），用長週期的KD才稍微好轉。而藍線（不考慮手續費），則是中間的（類似週KD）表現比較好，但總之效果都不太好XD。</p><h3 id="KD-鈍化"><a href="#KD-鈍化" class="headerlink" title="KD 鈍化"></a>KD 鈍化</h3><p>另外一個網路上的偏方：KD鈍化，但大家沒有定義什麼時候賣，也沒有數據顯示幾天賣比較好，於是我們就來做個實驗：</p><p>買入條件：k, d （參數為 9，9，3）都大於80，至少 n 天則買入<br>賣出條件：m 天賣出</p><p>當然還有很多種買法我沒測過，有興趣的話可以在下面留言，我幫你測！</p><center><img src="/KD1/kdbest.png" alt="獲利高低圖" title="獲利高低圖"></center><p>色溫越暖，代表10年獲利越高，這張圖的 x軸 為 m 天， y軸 為 KD大於80 至少 n 天，可以發現，幾乎十幾個交易日賣出是最保險的，而5~6天連續高檔，代表鈍化，會有比較好的效果，第十天突然異軍突起，超紅，可能有些股票末路狂飆吧。。。</p><p>然而上述是不考慮手續費的情況，所以當我們將最好的一組參數(10,12)拿來跑回測，會是這個樣子：</p><center><img src="/KD1/kdbesteq.png" alt="獲利高低圖" title="獲利高低圖"></center><p>藍線代表沒有考慮手續費，一飛沖天<br>紅現代表考慮手續費，完全沒賺到什麼錢</p><p>看來手續費真的差很大，短線選股真的是比較困難，但滿有潛力的就是了。</p><p>以下是我調整後覺得最好的參數：</p><p>KD（5、3、3）連續10天大於75時買進 30 天</p><center><img src="/KD1/bestforself.png" alt="最後的成果" title="最後的成果"></center><p>扣除手續費後終於贏過大盤！不知道KD拿來加入其它策略效果如何？<br>另外，也可以跟我說想要看到哪一類的文章，或有什麼技術上的問題，都歡迎留言喔！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;謝謝大家的鼓勵，最近有點太忙了，加上懶惰蟲上身，上禮拜中斷了XD，這禮拜會繼續加油！希望可以知道大家最想要看什麼，有看到留言說希望可以增加 python 有關的教學文！收到了，甚至可以更仔細說明，例如爬哪個網站之類的，我都可以幫你寫喔！大家想要看什麼可以在下面留言！&lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="指標分析" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-    
-      <category term="技術面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
-    
-    
-      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
   </entry>
   
