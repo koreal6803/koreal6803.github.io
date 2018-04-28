@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-04-27T23:38:03.824Z</updated>
+  <updated>2018-04-27T23:55:40.668Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="https://www.finlab.tw/ETF%E9%A0%90%E6%B8%AC%E5%A4%A7%E8%B3%BD-%E5%AF%A6%E9%A9%97%E5%88%86%E4%BA%AB/"/>
     <id>https://www.finlab.tw/ETF預測大賽-實驗分享/</id>
     <published>2018-04-27T14:04:15.000Z</published>
-    <updated>2018-04-27T23:38:03.824Z</updated>
+    <updated>2018-04-27T23:55:40.668Z</updated>
     
-    <content type="html"><![CDATA[<p>大家最近應該有看到<a href="https://tbrain.trendmicro.com.tw/Competitions/Details/2" rel="external nofollow noopener noreferrer" target="_blank">「ETF價格預測競賽」</a><br>我最近真的很忙，加上不是ML專業，所以也是志在參加，<br>但有Jeffery的相助，相信能有不錯的成果！<br>之前他的文章<a href="/用深度學習幫你解析K線圖！/">LSTM來預測股價</a>，可以去參考看看，讓你有個不錯的開始！</p><center><img src="/ETF預測大賽-實驗分享/thumbnail.png" alt="一個很有趣的比賽！" title="一個很有趣的比賽！"></center><h3 id="究竟ML（機器學習）能不能預測股價？"><a href="#究竟ML（機器學習）能不能預測股價？" class="headerlink" title="究竟ML（機器學習）能不能預測股價？"></a>究竟ML（機器學習）能不能預測股價？</h3><p>最近看到網路上很多文章，紛紛說ML不夠成熟，還沒辦法用於實戰，<br>身為一個技術的研究者，有點不以為然，<br>首先，要說ML沒有用，也是工程師團隊出來說，<br>假如平常沒有coding做實驗，也沒有看相關paper，<br>就跑來評論ML有沒有用，會不會有點太果斷了呢？<br>這個世界上有很多種專業，沒有人能都學會，<br>因此尊重其它人的專業<br>也是非常重要的呀！</p><h3 id="所以這次的ETF大賽，能證明ML有用囉！"><a href="#所以這次的ETF大賽，能證明ML有用囉！" class="headerlink" title="所以這次的ETF大賽，能證明ML有用囉！"></a>所以這次的ETF大賽，能證明ML有用囉！</h3><p>要我猜的話，我覺得不能XDD，（我只是猜的，不敢斷言）<br>最後的優勝隊伍，很有可能，就是從這幾百隊中，<br>隨機選出一隊…</p><p>原因是因為，這個比賽的評分設計，<br>幾乎是去叫人去預測雜訊的等級了，<br>另外，衡量時間也不夠久，<br>贏的機率真的跟擲杯差不多呀XD</p><h3 id="那為何還要參加？"><a href="#那為何還要參加？" class="headerlink" title="那為何還要參加？"></a>那為何還要參加？</h3><p>原因很簡單呀！這是個期望值大於0的比賽！<br>就像參加抽獎一樣，有報有機會XD</p><p>另一個原因是，萬一我們真的能做出什麼<br>也是一件很開心的事情！<br>基本上個人是非常樂觀的，<br>只是以這種評分標準下，比較難突顯出好作品的優勢</p><h3 id="為何對於ML策略很樂觀？"><a href="#為何對於ML策略很樂觀？" class="headerlink" title="為何對於ML策略很樂觀？"></a>為何對於ML策略很樂觀？</h3><p>首先我們先來看看一個能力分佈圖：</p><p>亂猜 ─────── 操盤手等級 ────── 神的等級</p><p>首先，我們很明顯的就能夠知道，ML絕對不是亂猜等級的<br>因為ML可以統計每個月、每週，或是某個pattern，發生的規律<br>並以這些規律作買賣的話<br>雖然效果不一定很好，但很明顯就跳脫了亂猜的等級</p><p>而這邊的亂猜，聽起來好像很廢<br>但新手散戶不就是在亂猜嗎？</p><p>所以個人覺得ML是一定能夠做到比新手散戶還要厲害的！<br>而電腦對於股價的認知，<br>有時候是可以比人還要更敏銳的，<br>下面就是個例子：</p><h3 id="請問：哪張圖示隨機生成的股價，哪張是實際股價？"><a href="#請問：哪張圖示隨機生成的股價，哪張是實際股價？" class="headerlink" title="請問：哪張圖示隨機生成的股價，哪張是實際股價？"></a>請問：哪張圖示隨機生成的股價，哪張是實際股價？</h3><center><img src="/ETF預測大賽-實驗分享/random.png" alt="一張是股價圖，另一支是隨機生成的，你分辨的出來嗎？" title="一張是股價圖，另一支是隨機生成的，你分辨的出來嗎？"></center><p>藉由一些演算，電腦能夠輕易藉由統計，分辨出來，<br>究竟哪一個時間序列是有規律的，<br>而哪一個又是隨機漫步的序列，<br>例如：我們可以把這兩張圖的漲跌，進一步畫出時間差的圖<br>也就是X軸是今天股價漲跌，Y軸是明天股價漲跌：</p><center><img src="/ETF預測大賽-實驗分享/yt.png" alt="右邊的隨機生成的圖，露出了馬腳" title="右邊的隨機生成的圖，露出了馬腳"></center><p>先來看右邊的圖<br>右邊的圖可以看出股價的漲跌是隨機的出現在一個框框中，<br>其中的y(t)跟y(t+1)，看起來沒有任何關係<br>代表右邊的圖是用隨機生成出來的！</p><p>左邊的圖中有一點恐慌心理的線索，<br>也就是當y(t)很負的時候，y(t+1)幾乎都是偏正<br>代表當今天大盤狂跌的時候，明天比較不容易在續跌。</p><p>還有各式各樣的方法，可以判斷是不是隨機序列<br>但都得靠電腦去做一系列的演算，<br>人就不一定分辨得出來了，</p><p>所以我個人認為，ML是有潛力的，<br>只是目前，公開的成果，大部分都遜色於專業操盤手罷了。</p><h3 id="講了這麼多，終於要分享實驗了！"><a href="#講了這麼多，終於要分享實驗了！" class="headerlink" title="講了這麼多，終於要分享實驗了！"></a>講了這麼多，終於要分享實驗了！</h3><p>以下就是ETF的回測實驗，<br>我發現，假如股價超過60日買入，跌破20日賣出，會產生很不錯的績效！<br>回測眾多的ETF都能得到有明顯獲利的這個結論<br>這可以說明，股價跟均線之間，是有關係的！甚至是非常有關係！</p><p>下圖中，藍色為持有訊號，1為持有，─1為空手，<br>而紅色的，就是持有的時候，資產與ETF連動獲利的狀況！</p><center><img src="/ETF預測大賽-實驗分享/eq1.png" alt="ETF回測" title="ETF回測"></center><br><center><img src="/ETF預測大賽-實驗分享/eq2.png" alt="ETF回測" title="ETF回測"></center><p>這麼簡單的策略，都有辦法獲利，代表市場的效率沒有被填滿<br>人類交易股票這麼久了（有沒有100年了？），市場還是沒有效率，<br>是不是該給ML一次機會了呢？</p><p>希望幫助到大家，能夠更準確的預測ETF漲跌囉！<br>大家一起打破ML不能拿來投資的謠言吧！</p>]]></content>
+    <content type="html"><![CDATA[<p>本篇文章，教您一個簡單的策略，買賣ETF獲得不錯的績效！<br>另外也討論最近很夯的ML，究竟能不能拿來投資呢？<br>假如想研究ML參加比賽，這篇文章可以當作是一個開頭喔！</p><center><img src="/ETF預測大賽-實驗分享/thumbnail.png" alt="一個很有趣的比賽！" title="一個很有趣的比賽！"></center><h3 id="其實我們也參加了"><a href="#其實我們也參加了" class="headerlink" title="其實我們也參加了"></a>其實我們也參加了</h3><p>大家最近應該有看到<a href="https://tbrain.trendmicro.com.tw/Competitions/Details/2" rel="external nofollow noopener noreferrer" target="_blank">「ETF價格預測競賽」</a><br>我最近真的很忙，加上不是ML專業，所以也是志在參加，<br>但有Jeffery的相助，相信能有不錯的成果！<br>之前他的文章<a href="/用深度學習幫你解析K線圖！/">LSTM來預測股價</a>，可以去參考看看，讓你有個不錯的開始！</p><h3 id="究竟ML（機器學習）能不能預測股價？"><a href="#究竟ML（機器學習）能不能預測股價？" class="headerlink" title="究竟ML（機器學習）能不能預測股價？"></a>究竟ML（機器學習）能不能預測股價？</h3><p>最近看到網路上很多文章，紛紛說ML不夠成熟，還沒辦法用於實戰，<br>身為一個技術的研究者，有點不以為然，<br>首先，要說ML沒有用，也是工程師團隊出來說，<br>假如平常沒有coding做實驗，也沒有看相關paper，<br>就跑來評論ML有沒有用，會不會有點太果斷了呢？<br>這個世界上有很多種專業，沒有人能都學會，<br>因此尊重其它人的專業<br>也是非常重要的呀！</p><h3 id="所以這次的ETF大賽，能證明ML有用囉！"><a href="#所以這次的ETF大賽，能證明ML有用囉！" class="headerlink" title="所以這次的ETF大賽，能證明ML有用囉！"></a>所以這次的ETF大賽，能證明ML有用囉！</h3><p>要我猜的話，我覺得不能XDD，（我只是猜的，不敢斷言）<br>最後的優勝隊伍，很有可能，就是從這幾百隊中，<br>隨機選出一隊…</p><p>原因是因為，這個比賽的評分設計，<br>幾乎是去叫人去預測雜訊的等級了，<br>另外，衡量時間也不夠久，<br>贏的機率真的跟擲杯差不多呀XD</p><h3 id="那為何還要參加？"><a href="#那為何還要參加？" class="headerlink" title="那為何還要參加？"></a>那為何還要參加？</h3><p>原因很簡單呀！這是個期望值大於0的比賽！<br>就像參加抽獎一樣，有報有機會XD</p><p>另一個原因是，萬一我們真的能做出什麼<br>也是一件很開心的事情！<br>基本上個人是非常樂觀的，<br>只是以這種評分標準下，比較難突顯出好作品的優勢</p><h3 id="為何對於ML策略很樂觀？"><a href="#為何對於ML策略很樂觀？" class="headerlink" title="為何對於ML策略很樂觀？"></a>為何對於ML策略很樂觀？</h3><p>首先我們先來看看一個能力分佈圖：</p><p>亂猜 ─────── 操盤手等級 ────── 神的等級</p><p>首先，我們很明顯的就能夠知道，ML絕對不是亂猜等級的<br>因為ML可以統計每個月、每週，或是某個pattern，發生的規律<br>並以這些規律作買賣的話<br>雖然效果不一定很好，但很明顯就跳脫了亂猜的等級</p><p>而這邊的亂猜，聽起來好像很廢<br>但新手散戶不就是在亂猜嗎？</p><p>所以個人覺得ML是一定能夠做到比新手散戶還要厲害的！<br>而電腦對於股價的認知，<br>有時候是可以比人還要更敏銳的，<br>下面就是個例子：</p><h3 id="請問：哪張圖示隨機生成的股價，哪張是實際股價？"><a href="#請問：哪張圖示隨機生成的股價，哪張是實際股價？" class="headerlink" title="請問：哪張圖示隨機生成的股價，哪張是實際股價？"></a>請問：哪張圖示隨機生成的股價，哪張是實際股價？</h3><center><img src="/ETF預測大賽-實驗分享/random.png" alt="一張是股價圖，另一支是隨機生成的，你分辨的出來嗎？" title="一張是股價圖，另一支是隨機生成的，你分辨的出來嗎？"></center><p>藉由一些演算，電腦能夠輕易藉由統計，分辨出來，<br>究竟哪一個時間序列是有規律的，<br>而哪一個又是隨機漫步的序列，<br>例如：我們可以把這兩張圖的漲跌，進一步畫出時間差的圖<br>也就是X軸是今天股價漲跌，Y軸是明天股價漲跌：</p><center><img src="/ETF預測大賽-實驗分享/yt.png" alt="右邊的隨機生成的圖，露出了馬腳" title="右邊的隨機生成的圖，露出了馬腳"></center><p>先來看右邊的圖<br>右邊的圖可以看出股價的漲跌是隨機的出現在一個框框中，<br>其中的y(t)跟y(t+1)，看起來沒有任何關係<br>代表右邊的圖是用隨機生成出來的！</p><p>左邊的圖中有一點恐慌心理的線索，<br>也就是當y(t)很負的時候，y(t+1)幾乎都是偏正<br>代表當今天大盤狂跌的時候，明天比較不容易在續跌。</p><p>還有各式各樣的方法，可以判斷是不是隨機序列<br>但都得靠電腦去做一系列的演算，<br>人就不一定分辨得出來了，</p><p>所以我個人認為，ML是有潛力的，<br>只是目前，公開的成果，大部分都遜色於專業操盤手罷了。</p><h3 id="講了這麼多，終於要分享實驗了！"><a href="#講了這麼多，終於要分享實驗了！" class="headerlink" title="講了這麼多，終於要分享實驗了！"></a>講了這麼多，終於要分享實驗了！</h3><p>以下就是ETF的回測實驗，<br>我發現，假如股價超過60日買入，跌破20日賣出，會產生很不錯的績效！<br>回測眾多的ETF都能得到有明顯獲利的這個結論<br>這可以說明，股價跟均線之間，是有關係的！甚至是非常有關係！</p><p>下圖中，藍色為持有訊號，1為持有，─1為空手，<br>而紅色的，就是持有的時候，資產與ETF連動獲利的狀況！</p><center><img src="/ETF預測大賽-實驗分享/eq1.png" alt="ETF回測" title="ETF回測"></center><br><center><img src="/ETF預測大賽-實驗分享/eq2.png" alt="ETF回測" title="ETF回測"></center><p>這麼簡單的策略，都有辦法獲利，代表市場的效率沒有被填滿<br>人類交易股票這麼久了（有沒有100年了？），市場還是沒有效率，<br>是不是該給ML一次機會了呢？</p><p>希望幫助到大家，能夠更準確的預測ETF漲跌囉！<br>大家一起打破ML不能拿來投資的謠言吧！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;大家最近應該有看到&lt;a href=&quot;https://tbrain.trendmicro.com.tw/Competitions/Details/2&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;「E
+        &lt;p&gt;本篇文章，教您一個簡單的策略，買賣ETF獲得不錯的績效！&lt;br&gt;另外也討論最近很夯的ML，究竟能不能拿來投資呢？&lt;br&gt;假如想研究ML參加比賽，這篇文章可以當作是一個開頭喔！&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/ETF預測大賽-實驗分享/thumbnail.png
       
     
     </summary>
@@ -147,9 +148,9 @@
     
       <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
       <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="型態學" scheme="https://www.finlab.tw/tags/%E5%9E%8B%E6%85%8B%E5%AD%B8/"/>
     
@@ -600,11 +601,11 @@
       <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="市值營收比" scheme="https://www.finlab.tw/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
