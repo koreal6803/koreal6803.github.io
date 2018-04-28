@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-04-28T01:30:06.012Z</updated>
+  <updated>2018-04-20T03:11:36.777Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,34 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>ETF預測競賽-獲利策略分享</title>
-    <link href="https://www.finlab.tw/ETF%E9%A0%90%E6%B8%AC%E5%A4%A7%E8%B3%BD-%E5%AF%A6%E9%A9%97%E5%88%86%E4%BA%AB/"/>
-    <id>https://www.finlab.tw/ETF預測大賽-實驗分享/</id>
-    <published>2018-04-27T14:04:15.000Z</published>
-    <updated>2018-04-28T01:30:06.012Z</updated>
-    
-    <content type="html"><![CDATA[<p>本篇文章，教您一個簡單的策略，買賣ETF獲得不錯的績效！<br>另外也討論最近很夯的ML，究竟能不能拿來投資呢？<br>假如想研究ML參加比賽，這篇文章可以當作是一個開頭喔！</p><center><img src="/ETF預測大賽-實驗分享/thumbnail2.png" alt="一個很有趣的比賽！" title="一個很有趣的比賽！"></center><h3 id="其實我們也參加了"><a href="#其實我們也參加了" class="headerlink" title="其實我們也參加了"></a>其實我們也參加了</h3><p>大家最近應該有看到<a href="https://tbrain.trendmicro.com.tw/Competitions/Details/2" rel="external nofollow noopener noreferrer" target="_blank">「ETF價格預測競賽」</a><br>我最近真的很忙，加上不是ML專業，所以也是志在參加，<br>但有Jeffrey的相助，相信能有不錯的成果！<br>之前他的文章<a href="/用深度學習幫你解析K線圖！/">LSTM來預測股價</a>，可以去參考看看，讓你有個不錯的開始！</p><h3 id="究竟ML（機器學習）能不能預測股價？"><a href="#究竟ML（機器學習）能不能預測股價？" class="headerlink" title="究竟ML（機器學習）能不能預測股價？"></a>究竟ML（機器學習）能不能預測股價？</h3><p>最近看到網路上很多文章，紛紛說ML不夠成熟，還沒辦法用於實戰，<br>身為一個技術的研究者，有點不以為然，<br>首先，要說ML沒有用，也是工程師團隊出來說，<br>假如平常沒有coding做實驗，也沒有看相關paper，<br>就跑來評論ML有沒有用，會不會有點太果斷了呢？<br>這個世界上有很多種專業，沒有人能都學會，<br>因此尊重其它人的專業<br>也是非常重要的呀！</p><h3 id="所以這次的ETF大賽，能證明ML有用囉！"><a href="#所以這次的ETF大賽，能證明ML有用囉！" class="headerlink" title="所以這次的ETF大賽，能證明ML有用囉！"></a>所以這次的ETF大賽，能證明ML有用囉！</h3><p>要我猜的話，我覺得不能XDD，（我只是猜的，不敢斷言）<br>最後的優勝隊伍，很有可能，就是從這幾百隊中，<br>隨機選出一隊…</p><p>原因是因為，這個比賽的評分設計，<br>幾乎是去叫人去預測雜訊的等級了，<br>另外，衡量時間也不夠久，<br>贏的機率真的跟擲杯差不多呀XD</p><h3 id="那為何還要參加？"><a href="#那為何還要參加？" class="headerlink" title="那為何還要參加？"></a>那為何還要參加？</h3><p>原因很簡單呀！這是個期望值大於0的比賽！<br>就像參加抽獎一樣，有報有機會XD</p><p>另一個原因是，萬一我們真的能做出什麼<br>也是一件很開心的事情！<br>基本上個人是非常樂觀的，<br>只是以這種評分標準下，比較難突顯出好作品的優勢</p><h3 id="為何對於ML策略很樂觀？"><a href="#為何對於ML策略很樂觀？" class="headerlink" title="為何對於ML策略很樂觀？"></a>為何對於ML策略很樂觀？</h3><p>首先我們先來看看一個能力分佈圖：</p><p>亂猜 ─────── 操盤手等級 ────── 神的等級</p><p>首先，我們很明顯的就能夠知道，ML絕對不是亂猜等級的<br>因為ML可以統計每個月、每週，或是某個pattern，發生的規律<br>並以這些規律作買賣的話<br>雖然效果不一定很好，但很明顯就跳脫了亂猜的等級</p><p>而這邊的亂猜，聽起來好像很廢<br>但新手散戶不就是在亂猜嗎？</p><p>所以個人覺得ML是一定能夠做到比新手散戶還要厲害的！<br>而電腦對於股價的認知，<br>有時候是可以比人還要更敏銳的，<br>下面就是個例子：</p><h3 id="請問：哪張圖示隨機生成的股價，哪張是實際股價？"><a href="#請問：哪張圖示隨機生成的股價，哪張是實際股價？" class="headerlink" title="請問：哪張圖示隨機生成的股價，哪張是實際股價？"></a>請問：哪張圖示隨機生成的股價，哪張是實際股價？</h3><center><img src="/ETF預測大賽-實驗分享/random.png" alt="一張是股價圖，另一支是隨機生成的，你分辨的出來嗎？" title="一張是股價圖，另一支是隨機生成的，你分辨的出來嗎？"></center><p>藉由一些演算，電腦能夠輕易藉由統計，分辨出來，<br>究竟哪一個時間序列是有規律的，<br>而哪一個又是隨機漫步的序列，<br>例如：我們可以把這兩張圖的漲跌，進一步畫出時間差的圖<br>也就是X軸是今天股價漲跌，Y軸是明天股價漲跌：</p><center><img src="/ETF預測大賽-實驗分享/yt.png" alt="右邊的隨機生成的圖，露出了馬腳" title="右邊的隨機生成的圖，露出了馬腳"></center><p>先來看右邊的圖<br>右邊的圖可以看出股價的漲跌是隨機的出現在一個框框中，<br>其中的y(t)跟y(t+1)，看起來沒有任何關係<br>代表右邊的圖是用隨機生成出來的！</p><p>左邊的圖中有一點恐慌心理的線索，<br>也就是當y(t)很負的時候，y(t+1)幾乎都是偏正<br>代表當今天大盤狂跌的時候，明天比較不容易在續跌。</p><p>還有各式各樣的方法，可以判斷是不是隨機序列<br>但都得靠電腦去做一系列的演算，<br>人就不一定分辨得出來了，</p><p>所以我個人認為，ML是有潛力的，<br>只是目前，公開的成果，大部分都遜色於專業操盤手罷了。</p><h3 id="講了這麼多，終於要分享實驗了！"><a href="#講了這麼多，終於要分享實驗了！" class="headerlink" title="講了這麼多，終於要分享實驗了！"></a>講了這麼多，終於要分享實驗了！</h3><p>以下就是ETF的回測實驗，<br>我發現，假如股價超過60日買入，跌破20日賣出，會產生很不錯的績效！<br>回測眾多的ETF都能得到有明顯獲利的這個結論<br>這可以說明，股價跟均線之間，是有關係的！甚至是非常有關係！</p><p>下圖中，藍色為持有訊號，1為持有，─1為空手，<br>而紅色的，就是持有的時候，資產與ETF連動獲利的狀況！</p><center><img src="/ETF預測大賽-實驗分享/eq1.png" alt="ETF回測" title="ETF回測"></center><br><center><img src="/ETF預測大賽-實驗分享/eq2.png" alt="ETF回測" title="ETF回測"></center><p>這麼簡單的策略，都有辦法獲利，代表市場的效率沒有被填滿<br>人類交易股票這麼久了（有沒有100年了？），市場還是沒有效率，<br>是不是該給ML一次機會了呢？</p><p>希望幫助到大家，能夠更準確的預測ETF漲跌囉！<br>大家一起打破ML不能拿來投資的謠言吧！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;本篇文章，教您一個簡單的策略，買賣ETF獲得不錯的績效！&lt;br&gt;另外也討論最近很夯的ML，究竟能不能拿來投資呢？&lt;br&gt;假如想研究ML參加比賽，這篇文章可以當作是一個開頭喔！&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;/ETF預測大賽-實驗分享/thumbnail2.pn
-      
-    
-    </summary>
-    
-      <category term="股票策略" scheme="https://www.finlab.tw/categories/%E8%82%A1%E7%A5%A8%E7%AD%96%E7%95%A5/"/>
-    
-    
-      <category term="ETF" scheme="https://www.finlab.tw/tags/ETF/"/>
-    
-      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
-    
-  </entry>
   
   <entry>
     <title>股票投資組合系列（一）</title>
@@ -606,6 +578,38 @@
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="市值營收比" scheme="https://www.finlab.tw/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>市值營收比-幫你找到便宜獲利股</title>
+    <link href="https://www.finlab.tw/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
+    <id>https://www.finlab.tw/市值營收比/</id>
+    <published>2017-11-24T09:19:11.000Z</published>
+    <updated>2018-01-24T11:42:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我才疏學淺，最近才發現這個指標，一用之下大為驚嘆，回測的效果還滿好的，今天分享給大家。網路上有各種算法，究竟要用財報上的營收總額算，還是直接用月營收算？用月營收算的話，要加總幾個月比較好？在這篇做簡單的分析。</p><center><img src="/市值營收比/thumb.jpeg" alt="計算市值營收比" title="計算市值營收比"></center><p>市值營收比的計算方式如下：</p><p>$$ 市值營收比 = 市值 / n個月營收總和 $$</p><p>一般來說，我們都是希望 <strong>市值營收比</strong> 越小越好，因為 <strong>市值營收比</strong> 越小代表市值越小，而營收越高，也代表較便宜的高營收股。<strong>市值營收比</strong> 有很多好處，它的變化速度非常快，市值是每個交易日都會變動，而月營收也是每個月都有新的數字，讓它的反應速度比其它的基本面指數再快一些。</p><p>也有人會把分母換成每季的營收總額，但我實測後發現效果沒有用月營收好。</p><p>分母中的 n 是個使用者決定的數字，例如你想計算每一季的 <strong>市值營收比</strong>，那就帶入4，這邊以4為例子。</p><p>首先我們來看 <strong>市值營收比</strong> 分佈圖：</p><center><img src="/市值營收比/hist.png" alt="市值營收比分佈圖" title="市值營收比分佈圖"></center><p>可以發現這又是一個類似於1/x曲線的分佈圖，我們將其照高低分成四組去持有，每60天換一次股，不計算手續費：</p><center><img src="/市值營收比/pr-half-y.png" alt="半年市值營收比分佈圖" title="半年市值營收比分佈圖"></center><p>很漂亮的一字排開！我發現120天換一次股，效果比60天或是240天都還要好（無論n＝4，6，12，24，36）。<br>然而這邊的回測只是建立在一次持有幾百種不同股票的狀況下，真實的情況，我們沒有那麼多錢去分散投資時，不能只看 <strong>市值營收比</strong> 來選股，不然<strong>漲跌機率還是跟擲銅板的機率沒兩樣</strong>，還必須做更多的篩選。</p><p> <strong>市值營收比</strong> 的缺點是，營收不代表稅後淨利，可能有些公司表面上賣出很多產品，但都是賠本生意，這種公司沒辦法被過濾，所以下一篇我們就來看看 <strong>市值營收比</strong> 搭配其它指標來做回測吧！</p><ul><li>計算 <strong>市值營收比</strong> 時，用月營收計算獲利效果比較好！</li><li>市值營收比（季）還滿好用的，是我認為排名前十的基本面指標</li><li>市值營收比找出來的股票，小型股偏多</li><li>可以用 3.77（50％）當作 <strong>市值營收比</strong> 的中位數，作為選股的依據，越低越好。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我才疏學淺，最近才發現這個指標，一用之下大為驚嘆，回測的效果還滿好的，今天分享給大家。網路上有各種算法，究竟要用財報上的營收總額算，還是直接用月營收算？用月營收算的話，要加總幾個月比較好？在這篇做簡單的分析。&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/市值營收比/thu
+      
+    
+    </summary>
+    
+      <category term="指標分析" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+    
+      <category term="基本面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
+    
+    
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="指標" scheme="https://www.finlab.tw/tags/%E6%8C%87%E6%A8%99/"/>
     
       <category term="市值營收比" scheme="https://www.finlab.tw/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
