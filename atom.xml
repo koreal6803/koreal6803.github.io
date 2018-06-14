@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-06-11T14:15:17.665Z</updated>
+  <updated>2018-06-14T13:12:51.295Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>回測績效檢討</title>
+    <link href="https://www.finlab.tw/%E5%9B%9E%E6%B8%AC%E7%B8%BE%E6%95%88%E6%AA%A2%E8%A8%8E/"/>
+    <id>https://www.finlab.tw/回測績效檢討/</id>
+    <published>2018-06-14T11:24:11.000Z</published>
+    <updated>2018-06-14T13:12:51.295Z</updated>
+    
+    <content type="html"><![CDATA[<p>因為你的疏忽，錯過了遇見聖杯的機會！回測的時候，究竟要注意哪些重點？發現策略效果不好，要怎麼優化呢？<br><a id="more"></a></p><center><img src="/回測績效檢討/eq2.png" alt="第二次回測（同策略不同時間段）" title="第二次回測（同策略不同時間段）"></center><p>跟長期關注blog的朋友們說聲抱歉，最近真的有點久沒更新了！<br>我想說先把Hahow上的課程照顧好，所以之前的心力都在上面，<br>不過目前課程代碼已經穩定許多，問題變少<br>終於有時間來寫寫blog了！</p><h3 id="一個有趣的問題"><a href="#一個有趣的問題" class="headerlink" title="一個有趣的問題"></a>一個有趣的問題</h3><p>有同學於論壇中問我，為何他的策略，差幾天選股跑出來差這麼多？<br>請大家先看數據，從數據中找出原因吧！看你想的跟我想的是不是一樣的！</p><p>以下是策略一的獲利狀況</p><table><thead><tr><th>其間</th><th>報酬率(%)</th><th>股票檔數</th></tr></thead><tbody><tr><td>2017-06-11 - 2017-08-10</td><td>-0.88</td><td>15</td></tr><tr><td>2017-08-10 - 2017-10-09</td><td>+9.06</td><td>6</td></tr><tr><td>2017-10-09 - 2017-12-08</td><td>+8.84</td><td>10</td></tr><tr><td>2017-12-08 - 2018-02-06</td><td>-10.43</td><td>8</td></tr><tr><td>2018-02-06 - 2018-04-07</td><td>-13.09</td><td>1</td></tr><tr><td>2018-04-07 - 2018-06-06</td><td>+14.84</td><td>13</td></tr><tr><td>2018-06-06 - 2018-08-05</td><td>+0.03</td><td>13</td></tr></tbody></table><center><img src="/回測績效檢討/eq1.png" alt="第一次回測" title="第一次回測"></center><p>看起來不是非常理想，但同學做了一點點的修改，<br>把起始日期從原本的 <code>2017/6/11</code> 換成 <code>2017/6/1</code> 號，<br>結果變成了超好的策略：</p><table><thead><tr><th>其間</th><th>報酬率(%)</th><th>股票檔數</th></tr></thead><tbody><tr><td>2017-06-01 - 2017-07-31</td><td>-2.36</td><td>20</td></tr><tr><td>2017-07-31 - 2017-09-29</td><td>8.76</td><td>7</td></tr><tr><td>2017-09-29 - 2017-11-28</td><td>17.26</td><td>6</td></tr><tr><td>2017-11-28 - 2018-01-27</td><td>3.04</td><td>15</td></tr><tr><td>2018-01-27 - 2018-03-28</td><td>8.21</td><td>9</td></tr><tr><td>2018-03-28 - 2018-05-27</td><td>5.45</td><td>16</td></tr><tr><td>2018-05-27 - 2018-07-26</td><td>4.07</td><td>6</td></tr></tbody></table><center><img src="/回測績效檢討/eq2.png" alt="第二次回測（同策略不同時間段）" title="第二次回測（同策略不同時間段）"></center><p>究竟相隔十天，什麼造成了策略產生極大的差異呢？<br>大家先不要看我的答案，看看能不能用上面的數據，自己找出原因吧！</p><h3 id="——公佈答案——"><a href="#——公佈答案——" class="headerlink" title="——公佈答案——"></a>——公佈答案——</h3><p>同學最初覺得跟換股時間對報酬率有極大的影響，<br>但追根究底的原因，是股票個數對於報酬率影響很大！</p><p>我們就第一張圖進行檢討，<br>其實仔細看的話，<br>會發現其實每個時間段表現，除了紫色（2/6～4/7），其它時間都有穩定上升<br>代表策略能夠發揮功效</p><p>那圖1紫色時間段的問題再哪？<br>其實最主要的原因，紫色的時間區見內（2018-02-06 - 2018-04-07）<br>策略只選擇了一檔股票而已<br>沒有平均分散風險，造成毀滅性的虧損<br>解決的方法很簡單<br>讓策略每個時間段都選到一些股票，就不會有此問題囉～</p><p>股票檔數是非常非常重要的一個數據！<br>它代表了策略的潛力～<br>例如策略每次都選了很多檔股票進行持有，而長期績效勝過大盤<br>代表這個策略非常有潛力！</p><p>我們課程上的「資優生策略」就算是非常有潛力的璞玉，一次會選出非常多檔股票<br>這些股票並不是拿來讓同學們直接買入，而是可以再進一步根據條件作篩選，選出數10～20檔股票！<br>不但股票檔數變少，績效也有可能上升很多！</p><p>策略製作最重要的關鍵就在於：股票檔數<br>假如條件太嚴苛，則可能導致選出太少檔股票，無法分散風險</p><p>我們課程中教的是以「條件來篩選」，例如 某某值大於多少 這樣子<br>有時候篩選不到股票，要預防這樣的問題，可以用以下的方式</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">condition1 = ...(課堂中的條件)</div><div class="line">condition2 = ...</div><div class="line">condition3 = ...</div><div class="line">...</div><div class="line">conditionn = ...</div></pre></td></tr></table></figure><p>以上是上課用程式寫出來的條件，或是可以添加一些自己的條件，利用這些條件，幫股票做評分：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">score = condition1 * <span class="number">1</span> + condition2 * <span class="number">1</span> + condition * <span class="number">1</span> ... + conditionn * <span class="number">1</span></div><div class="line">selected_stocks = score.nlargest(<span class="number">20</span>)</div><div class="line"></div></pre></td></tr></table></figure><p>這邊的數字「1」都可以改成其它的權重，來代表該參數的重要性<br>這樣我們就可以很穩定的每次都選出20檔股票囉～</p><p>財報狗的選股清單就是用類似的方式選出來的～<br>有興趣的話可以試試看喔！<br>假如您沒有買課程的話也沒關係，概念上是一樣的喔～希望這篇文章能帶給您一些啟發～</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因為你的疏忽，錯過了遇見聖杯的機會！回測的時候，究竟要注意哪些重點？發現策略效果不好，要怎麼優化呢？&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>你最該避開的三個疲勞陷阱！</title>
@@ -144,9 +162,9 @@
     
       <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="型態學" scheme="https://www.finlab.tw/tags/%E5%9E%8B%E6%85%8B%E5%AD%B8/"/>
     
@@ -573,37 +591,6 @@
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>威廉．納葛維茲-價值型選股策略</title>
-    <link href="https://www.finlab.tw/%E5%A8%81%E5%BB%89%EF%BC%8E%E7%B4%8D%E8%91%9B%E7%B6%AD%E8%8C%B2-%E5%83%B9%E5%80%BC%E5%9E%8B%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    <id>https://www.finlab.tw/威廉．納葛維茲-價值型選股策略/</id>
-    <published>2017-11-28T16:46:51.000Z</published>
-    <updated>2018-01-24T11:39:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近偶然看到了<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ網頁中</a>，有很多策略，公式都寫好了，只要無腦回測！好開心XD，但裡面策略也太多了吧！有些有用，有些沒用，還是要慢慢撈珍，原本在大海裡撈珍，現在在河川裡撈珍，輕鬆多了。</p><p>今天要介紹的是裡面的 <strong>威廉．納葛維茲-價值型選股策略</strong> 然而為了讓回測更有用，我有做了一些小調整，條件做了一些更動，以下是這篇策略的思路：</p><h3 id="營運合格的小市值股票"><a href="#營運合格的小市值股票" class="headerlink" title="營運合格的小市值股票"></a>營運合格的小市值股票</h3><p>這個價值型策略，尋找的標的是小而美的股票，價格都在五十塊以下，然而小市值的公司通常風險比較高，所以此策略利用了 <strong>自由現金流</strong> 跟 <strong>負債比率</strong>，來觀察此公司的營運狀況，營運狀況不用到非常好，只求不要太差就可以了：</p><ul><li><a href="https://zh.wikipedia.org/wiki/%E5%B8%82%E5%80%BC" rel="external nofollow noopener noreferrer" target="_blank">市值</a> &lt; 10000（千）</li><li>近四季<a href="http://www.cmoney.tw/learn/course/0520/topic/696" rel="external nofollow noopener noreferrer" target="_blank">自由現金流量</a>&gt; 0</li><li><a href="http://statementdog.com/explain/debt-ratio.html" rel="external nofollow noopener noreferrer" target="_blank">負債比率</a> &lt; 70</li></ul><p>很多網站都會說 <strong>負債比率</strong> 是個很重要的指標，但我多次測試，發現它在很多策略中都無法增加獲利，甚至還會減少…，然而這只是我的經驗，不代表 <strong>負債比率</strong> 真的不用看，還是請各位自行斟酌。除了我這麼說外，原來Mr. Market跟我看法有志一同：<a href="http://www.rich01.com/2015/03/blog-post_25.html" rel="external nofollow noopener noreferrer" target="_blank">你覺得「負債比率」越低越好嗎？其實，它沒有想像中這麼有效！</a></p><h3 id="營收高是王道！"><a href="#營收高是王道！" class="headerlink" title="營收高是王道！"></a>營收高是王道！</h3><p>以上的條件看起來都挺保守的，接下來才是比較積極的指標，以下的指標都是用來觀察一家公司的營收跟淨利！假如一家正常營運的公司獲利比其它公司好，那沒理由不投資呀！所以這個策略用了 <strong>市值營收比</strong> 、 <strong>本益比</strong> 、<strong>營業利益成長率</strong>，來觀察公司是否持續獲利，並且獲利越來越高。</p><ul><li><a href="/市值營收比/">市值營收比</a> = 市值 / 月營收 &gt; 3</li><li><a href="/本益比能幫你選出優質股？/">本益比</a> &lt; 20</li><li><a href="http://ifund.tcbbank.com.tw/z/glossary/glexp_4902.djhtm" rel="external nofollow noopener noreferrer" target="_blank">營業利益成長率</a> &gt; 0</li></ul><p>市值營收比也是一個很好用的財務指標，可以參考<a href="/市值營收比/">我的文章</a>。</p><h3 id="稅後淨利要考慮！"><a href="#稅後淨利要考慮！" class="headerlink" title="稅後淨利要考慮！"></a>稅後淨利要考慮！</h3><p>一家獲利良好的公司，獲利持續成長，固然是好事，但不能只是獲利表面上成長，而稅後淨利卻很少，那也不行！所以這邊就用了額外的一個指標，來判斷稅後淨利的大小：</p><ul><li>股東權益報酬率 = 稅後淨利 / 股東權益總額 &gt; 市場均值</li></ul><p>這邊的 除 <strong>股東權益總額</strong> 是用來對整個市場做一個公平的比較，例如某公司發行很多股票，且股價很高，那就更應該有很好的 <strong>稅後淨利</strong> ，不然投資人為何要拿錢給你呢？</p><h3 id="思路總結："><a href="#思路總結：" class="headerlink" title="思路總結："></a>思路總結：</h3><p>這個策略基本上就是找小巧、獲利高的股票，我覺得其中很棒的概念是</p><ol><li>用市值營收比，而不是單純的營收</li><li>用股東權益報酬率，而不是單純的毛利率或稅後淨利</li></ol><p>利用上述兩個指標，才能將每家公司更公平的做比較，進而找出小而美的股票！</p><h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>符合上述條件，持有60天，每60天換一輪股票：</p><center><img src="/威廉．納葛維茲-價值型選股策略/eq.png" alt="權益曲線" title="權益曲線"></center><p>由於很久沒有介紹回測結果了，這邊在重新複習一下，藍色的就是不含手續費，紅色的是有含手續費，灰色的是台股。看起來領先台股非常多，代表這個TEJ策略裡面真的有些黃金可以挖寶，然而調整參數還是滿必要的就是了，照著TEJ直接使用，效果沒那麼好。</p><h3 id="買股數量"><a href="#買股數量" class="headerlink" title="買股數量"></a>買股數量</h3><center><img src="/威廉．納葛維茲-價值型選股策略/ns.png" alt="股票每次買入張數" title="股票每次買入張數"></center><p>每次換股的時候，我們就盡量平均自己的資產，當然每張股票價格都不一樣，所以不可能會超級平均，只求盡量。另外我們可以看到，金融海嘯的時候，藍色線買了將近150支股票，而紅色線只買了80種不同的股票，為什麼會這樣呢？因為藍色曲線是最理想的狀況，也就是全部都買，全部超級平均分散，而紅色的就是只看現有資產是多少，盡量分散，買不起就放棄。</p><p>為何金融海嘯時，有那麼多股票？因為金融海嘯不管好股壞股，都跌到了很低的價位，於是市值變小，此策略就會撈出比較多股票。</p><h3 id="跌幅"><a href="#跌幅" class="headerlink" title="跌幅"></a>跌幅</h3><center><img src="/威廉．納葛維茲-價值型選股策略/dd.png" alt="下跌幅度" title="下跌幅度"></center><p>此策略在金融海嘯時讓你的資產虧損一半多，但一般狀況表現非常傑出，約有20％的回撤，但不算太大，算是滿傑出的。</p><h3 id="總結："><a href="#總結：" class="headerlink" title="總結："></a>總結：</h3><ul><li>用自由現金流來、負債比率來看公司體質</li><li>用營收增長率及股東報酬率來衡量公司的獲利能力</li><li>分享<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ</a>網站中的策略</li></ul><h3 id="外部延伸閱讀："><a href="#外部延伸閱讀：" class="headerlink" title="外部延伸閱讀："></a>外部延伸閱讀：</h3><p>黃國華：<a href="http://bonddealerbook.pixnet.net/blog/post/202548719-%E5%B8%82%E5%80%BC%E8%88%87%E7%87%9F%E6%94%B6%E4%B9%8B%E9%96%93%E7%9A%84%E5%90%88%E7%90%86%E9%97%9C%E4%BF%82" rel="external nofollow noopener noreferrer" target="_blank">市值跟營收之間的合理關係</a></p><p>今天介紹了<a href="http://www.tej.com.tw/twsite/Default.aspx?TabId=389" rel="external nofollow noopener noreferrer" target="_blank">TEJ網頁中</a>的策略，發現滿有用的，想在多寫點，不知到大家最有興趣的是其中的哪一個策略呢？</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最近偶然看到了&lt;a href=&quot;http://www.tej.com.tw/twsite/Default.aspx?TabId=389&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;TEJ網頁中&lt;/
-      
-    
-    </summary>
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-    
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="市值營收比" scheme="https://www.finlab.tw/tags/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/"/>
     
   </entry>
   
