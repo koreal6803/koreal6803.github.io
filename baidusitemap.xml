@@ -4,16 +4,45 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/%E7%B0%A1%E6%98%93%E7%9A%84%E5%A4%96%E8%B3%87-%E5%9F%BA%E6%9C%AC%E9%9D%A2%E7%AD%96%E7%95%A5/</loc>
+    <lastmod>2018-08-29T02:46:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>簡單又有效：股價加速度選股指標</title>
+        <pubTime>2018-07-14T16:04:31.000Z</pubTime>
+        
+        <tag>外資</tag>
+         
+        <tag>技術指標</tag>
+         
+        <tag>指標</tag>
+         
+        <tag>財經Python教學</tag>
+         
+         
+           
+             
+              <breadCrumb title="指標分析" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
+          
+             
+              <breadCrumb title="技術面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E8%B6%85%E7%B0%A1%E5%96%AE-Machine-Learning-%E9%A0%90%E6%B8%AC%E8%82%A1%E5%83%B9/</loc>
-    <lastmod>2018-08-28T03:09:04.511Z</lastmod>
+    <lastmod>2018-08-28T03:09:04.000Z</lastmod>
     <data>
         <display>
         <title>超簡單用Python預測股價</title>
         <pubTime>2018-08-27T23:55:29.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
          
         <tag>股價預測</tag>
          
@@ -29,7 +58,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E7%94%A8%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E5%8A%A0%E5%BC%B7%E4%BD%A0%E7%9A%84%E9%81%B8%E8%82%A1%E6%8A%80%E5%B7%A7%EF%BC%88%E4%B8%8A%EF%BC%89/</loc>
-    <lastmod>2018-08-21T22:04:56.399Z</lastmod>
+    <lastmod>2018-08-21T22:04:56.000Z</lastmod>
     <data>
         <display>
         <title>用杜邦分析加強你的選股技巧（上）</title>
@@ -53,37 +82,8 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%B0%A1%E6%98%93%E7%9A%84%E5%A4%96%E8%B3%87-%E5%9F%BA%E6%9C%AC%E9%9D%A2%E7%AD%96%E7%95%A5/</loc>
-    <lastmod>2018-08-13T09:16:57.736Z</lastmod>
-    <data>
-        <display>
-        <title>簡單又有效：股價加速度選股指標</title>
-        <pubTime>2018-07-14T16:04:31.000Z</pubTime>
-        
-        <tag>外資</tag>
-         
-        <tag>技術指標</tag>
-         
-        <tag>指標</tag>
-         
-        <tag>財經Python教學</tag>
-         
-         
-           
-             
-              <breadCrumb title="技術分析" url="https://www.finlab.tw/categories/%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90/"/>
-          
-             
-              <breadCrumb title="技術面" url="https://www.finlab.tw/categories/%E6%8A%80%E8%A1%93%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.finlab.tw/python%EF%BC%9A%E8%A8%88%E7%AE%97%E5%A4%96%E8%B3%87%E8%B2%B7%E5%85%A5%E6%88%90%E6%9C%AC/</loc>
-    <lastmod>2018-08-13T08:36:34.377Z</lastmod>
+    <lastmod>2018-08-13T08:36:34.000Z</lastmod>
     <data>
         <display>
         <title>Python：外資買入成本選股</title>
@@ -105,7 +105,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E4%B8%89%E5%A4%A7%E6%B3%95%E4%BA%BA%E7%88%AC%E8%9F%B2/</loc>
-    <lastmod>2018-07-03T14:36:35.011Z</lastmod>
+    <lastmod>2018-07-03T14:36:35.000Z</lastmod>
     <data>
         <display>
         <title>三大法人爬蟲</title>
@@ -129,7 +129,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E6%8A%95%E8%B3%87%E7%90%86%E8%B2%A1%E8%AA%B2%E7%A8%8B%E7%9A%84%E5%A5%BD%E5%A3%9E/</loc>
-    <lastmod>2018-07-02T12:13:47.688Z</lastmod>
+    <lastmod>2018-07-02T12:13:47.000Z</lastmod>
     <data>
         <display>
         <title>如何判斷投資理財課程的好壞？</title>
@@ -146,7 +146,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E7%82%BA%E4%BD%95%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86%E7%B8%BD%E6%98%AF%E5%A4%B1%E6%95%97%EF%BC%9F/</loc>
-    <lastmod>2018-06-17T12:02:56.503Z</lastmod>
+    <lastmod>2018-06-17T12:02:56.000Z</lastmod>
     <data>
         <display>
         <title>為何時間管理總是失敗？</title>
@@ -170,7 +170,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E5%9B%9E%E6%B8%AC%E7%B8%BE%E6%95%88%E6%AA%A2%E8%A8%8E/</loc>
-    <lastmod>2018-06-14T14:21:01.656Z</lastmod>
+    <lastmod>2018-06-14T14:21:01.000Z</lastmod>
     <data>
         <display>
         <title>回測績效檢討</title>
@@ -185,7 +185,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E4%BD%A0%E6%9C%80%E8%A9%B2%E9%81%BF%E9%96%8B%E7%9A%84%E4%B8%89%E5%80%8B%E7%96%B2%E5%8B%9E%E9%99%B7%E9%98%B1%EF%BC%81/</loc>
-    <lastmod>2018-06-11T14:15:17.665Z</lastmod>
+    <lastmod>2018-06-11T14:15:17.000Z</lastmod>
     <data>
         <display>
         <title>你最該避開的三個疲勞陷阱！</title>
@@ -207,7 +207,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E8%B6%85%E7%B0%A1%E5%96%AE%E7%94%A8python%E6%8A%93%E5%8F%96%E6%AF%8F%E6%9C%88%E7%87%9F%E6%94%B6/</loc>
-    <lastmod>2018-05-20T17:31:55.543Z</lastmod>
+    <lastmod>2018-05-20T17:31:55.000Z</lastmod>
     <data>
         <display>
         <title>超簡單用python抓取每月營收</title>
@@ -231,17 +231,17 @@
     
   <url>
     <loc>https://www.finlab.tw/%E5%88%A9%E7%94%A8Machine-Learning-%E9%81%B8%E8%82%A1%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2018-04-28T10:49:13.536Z</lastmod>
+    <lastmod>2018-04-28T10:49:13.000Z</lastmod>
     <data>
         <display>
         <title>利用Machine Learning 選股新手教學</title>
         <pubTime>2017-10-20T10:58:23.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -255,7 +255,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B3%87%E7%B5%84%E5%90%88%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2018-04-20T03:11:36.777Z</lastmod>
+    <lastmod>2018-04-20T03:11:36.000Z</lastmod>
     <data>
         <display>
         <title>股票投資組合系列（一）</title>
@@ -272,7 +272,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E9%80%9A%E7%94%A8%E8%87%AA%E5%8B%95%E4%B8%8B%E5%96%AE%E6%B3%95%EF%BC%88%E4%B8%8B%EF%BC%89/</loc>
-    <lastmod>2018-04-16T22:29:00.351Z</lastmod>
+    <lastmod>2018-04-16T22:29:00.000Z</lastmod>
     <data>
         <display>
         <title>Python簡單自動下單</title>
@@ -292,7 +292,7 @@
     
   <url>
     <loc>https://www.finlab.tw/Python-%E8%B2%A1%E5%A0%B1%E7%88%AC%E8%9F%B2-1-%E7%B6%9C%E5%90%88%E6%90%8D%E7%9B%8A%E8%A1%A8/</loc>
-    <lastmod>2018-04-02T16:58:01.741Z</lastmod>
+    <lastmod>2018-04-02T16:58:01.000Z</lastmod>
     <data>
         <display>
         <title>Python 財報爬蟲</title>
@@ -300,9 +300,9 @@
         
         <tag>python</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>選股</tag>
+         
+        <tag>程式設計</tag>
          
          
            
@@ -316,7 +316,7 @@
     
   <url>
     <loc>https://www.finlab.tw/Python%EF%BC%9A%E5%88%A9%E7%94%A8Pandas%E8%BC%95%E9%AC%86%E9%81%B8%E8%82%A1/</loc>
-    <lastmod>2018-03-22T11:54:43.090Z</lastmod>
+    <lastmod>2018-03-22T11:54:43.000Z</lastmod>
     <data>
         <display>
         <title>Python：利用Pandas輕鬆選股</title>
@@ -324,9 +324,9 @@
         
         <tag>python</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>選股</tag>
+         
+        <tag>程式設計</tag>
          
          
            
@@ -340,7 +340,7 @@
     
   <url>
     <loc>https://www.finlab.tw/ROE%E5%88%B0%E5%BA%95%E9%AB%98%E6%88%96%E4%BD%8E%E6%89%8D%E5%A5%BD%EF%BC%9F/</loc>
-    <lastmod>2018-03-19T11:41:58.351Z</lastmod>
+    <lastmod>2018-03-19T11:41:58.000Z</lastmod>
     <data>
         <display>
         <title>ROE到底高或低才好？</title>
@@ -365,7 +365,7 @@
     
   <url>
     <loc>https://www.finlab.tw/Python-%E7%B0%A1%E5%96%AE%E7%94%A8%E6%9C%88%E7%87%9F%E6%94%B6%E9%81%B8%E8%82%A1%EF%BC%81/</loc>
-    <lastmod>2018-03-05T14:38:20.235Z</lastmod>
+    <lastmod>2018-03-05T14:38:20.000Z</lastmod>
     <data>
         <display>
         <title>Python-簡單的月營收選股！</title>
@@ -389,7 +389,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E8%B2%B7%E8%82%A1%E7%A5%A8%E5%8F%AA%E8%80%83%E6%85%AEROE%E6%98%AF%E4%B8%8D%E5%A4%A0%E7%9A%84%EF%BC%81/</loc>
-    <lastmod>2018-03-04T21:59:45.005Z</lastmod>
+    <lastmod>2018-03-04T21:59:45.000Z</lastmod>
     <data>
         <display>
         <title>買股票只考慮ROE是不夠的！</title>
@@ -421,7 +421,7 @@
     
   <url>
     <loc>https://www.finlab.tw/%E5%89%B5%E6%96%B0%E9%AB%98%E6%9C%89%E5%A4%9A%E9%AB%98%EF%BC%9F/</loc>
-    <lastmod>2018-02-27T23:59:05.128Z</lastmod>
+    <lastmod>2018-02-27T23:59:05.000Z</lastmod>
     <data>
         <display>
         <title>創新高有多高？</title>
@@ -429,9 +429,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>選股</tag>
-         
         <tag>歷史回測</tag>
+         
+        <tag>選股</tag>
          
         <tag>型態學</tag>
          
@@ -556,11 +556,11 @@
         <title>讓Machine Learning幫你看財報！</title>
         <pubTime>2017-10-13T10:07:13.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -642,9 +642,9 @@
         
         <tag>python</tag>
          
-        <tag>程式設計</tag>
-         
         <tag>選股</tag>
+         
+        <tag>程式設計</tag>
          
          
            
@@ -843,13 +843,13 @@
         <title>Machine Learning 表示：看季線最無用！</title>
         <pubTime>2017-10-15T16:10:12.000Z</pubTime>
         
-        <tag>python</tag>
-         
-        <tag>選股</tag>
-         
         <tag>機器學習</tag>
          
         <tag>Machine Learning</tag>
+         
+        <tag>python</tag>
+         
+        <tag>選股</tag>
          
          
            
@@ -1298,12 +1298,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬2。何時買股才對？</title>
-        <pubTime>2017-09-22T13:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
+        <pubTime>2017-09-21T13:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -1320,12 +1320,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
-        <pubTime>2017-09-21T13:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬2。何時買股才對？</title>
+        <pubTime>2017-09-22T13:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -1532,9 +1532,9 @@
         
         <tag>簡易策略</tag>
          
-        <tag>本益比</tag>
-         
         <tag>大盤</tag>
+         
+        <tag>本益比</tag>
          
          
            
@@ -1554,11 +1554,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T16:46:51.000Z</pubTime>
         
-        <tag>選股</tag>
-         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>選股</tag>
          
         <tag>市值營收比</tag>
          
