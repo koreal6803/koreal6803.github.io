@@ -11,11 +11,11 @@
         <title>加速度指標：歷史年報酬20％的策略</title>
         <pubTime>2018-11-25T03:11:28.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -37,11 +37,11 @@
         
         <tag>機器學習</tag>
          
+        <tag>量化投資</tag>
+         
         <tag>Machine Learning</tag>
          
         <tag>程式設計</tag>
-         
-        <tag>量化投資</tag>
          
          
            
@@ -85,9 +85,9 @@
         <title>Python：如何獲得上市上櫃股票清單</title>
         <pubTime>2018-11-19T22:55:04.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
         <tag>入門教學</tag>
          
@@ -211,9 +211,9 @@
         <title>三大法人爬蟲</title>
         <pubTime>2018-07-02T15:59:30.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
         <tag>爬蟲</tag>
          
@@ -313,9 +313,9 @@
         <title>超簡單用python抓取每月營收</title>
         <pubTime>2017-10-28T18:30:39.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
         <tag>月營收</tag>
          
@@ -398,11 +398,11 @@
         <title>Python 財報爬蟲</title>
         <pubTime>2017-11-02T21:19:27.000Z</pubTime>
         
+        <tag>程式設計</tag>
+         
         <tag>python</tag>
          
         <tag>選股</tag>
-         
-        <tag>程式設計</tag>
          
          
            
@@ -422,11 +422,11 @@
         <title>Python：利用Pandas輕鬆選股</title>
         <pubTime>2017-11-08T14:16:44.000Z</pubTime>
         
+        <tag>程式設計</tag>
+         
         <tag>python</tag>
          
         <tag>選股</tag>
-         
-        <tag>程式設計</tag>
          
          
            
@@ -471,9 +471,9 @@
         <title>Python-簡單的月營收選股！</title>
         <pubTime>2018-01-22T14:10:47.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
         <tag>月營收</tag>
          
@@ -527,11 +527,11 @@
         <title>創新高有多高？</title>
         <pubTime>2018-02-27T20:10:59.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>型態學</tag>
          
@@ -560,9 +560,9 @@
         <title>Python 簡單158種技術指標計算</title>
         <pubTime>2017-11-19T18:46:09.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -582,11 +582,11 @@
         <title>Python 時間序列實做！</title>
         <pubTime>2017-11-15T13:03:03.000Z</pubTime>
         
+        <tag>程式設計</tag>
+         
         <tag>python</tag>
          
         <tag>KD</tag>
-         
-        <tag>程式設計</tag>
          
          
            
@@ -740,11 +740,11 @@
         <title>超簡單台股每日爬蟲教學</title>
         <pubTime>2017-10-24T22:17:06.000Z</pubTime>
         
+        <tag>程式設計</tag>
+         
         <tag>python</tag>
          
         <tag>選股</tag>
-         
-        <tag>程式設計</tag>
          
          
            
@@ -810,9 +810,9 @@
         <title>Python 簡單選股和回測</title>
         <pubTime>2017-11-30T12:21:38.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -832,9 +832,9 @@
         <title>用深度學習幫你解析K線圖！</title>
         <pubTime>2018-01-23T19:50:05.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
         <tag>型態學</tag>
          
@@ -868,9 +868,9 @@
         <title>用數學計算日馳何時崩盤！</title>
         <pubTime>2018-01-10T15:18:47.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -914,13 +914,13 @@
         <title>如何定義KD鈍化</title>
         <pubTime>2017-11-14T14:22:16.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -1072,13 +1072,13 @@
         <title>新年賀禮 ─ 投信跟盤法！</title>
         <pubTime>2018-01-01T14:55:40.000Z</pubTime>
         
+        <tag>量化投資</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
          
         <tag>投信</tag>
-         
-        <tag>量化投資</tag>
          
         <tag>股票分析</tag>
          
@@ -1149,6 +1149,25 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/%E6%AF%8F%E5%A4%A9%E8%87%B3%E5%B0%91%E5%AF%AB%E4%B8%80%E8%A1%8C/</loc>
+    <lastmod>2018-01-24T11:42:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何戰勝惰性？</title>
+        <pubTime>2017-09-20T11:09:42.000Z</pubTime>
+        
+        <tag>生活</tag>
+         
+        <tag>一行</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E6%AF%94%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%88%90%E9%95%B7%E7%8E%87%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:29.000Z</lastmod>
     <data>
@@ -1174,25 +1193,6 @@
              
               <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/%E6%AF%8F%E5%A4%A9%E8%87%B3%E5%B0%91%E5%AF%AB%E4%B8%80%E8%A1%8C/</loc>
-    <lastmod>2018-01-24T11:42:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何戰勝惰性？</title>
-        <pubTime>2017-09-20T11:09:42.000Z</pubTime>
-        
-        <tag>生活</tag>
-         
-        <tag>一行</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -1234,9 +1234,9 @@
         <title>自動下單（1）用Python爬取交易記錄</title>
         <pubTime>2018-01-08T14:07:16.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式設計</tag>
+         
+        <tag>python</tag>
          
         <tag>爬蟲</tag>
          
@@ -1547,13 +1547,13 @@
         <title>超短線上影黑密技！</title>
         <pubTime>2017-11-03T17:44:31.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -1576,13 +1576,13 @@
         <title>外資大賣，反而要買！？</title>
         <pubTime>2017-10-30T13:57:49.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -1654,11 +1654,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T16:46:51.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>市值營收比</tag>
          

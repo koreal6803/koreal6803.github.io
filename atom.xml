@@ -39,11 +39,11 @@
     
       <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
+      <category term="量化投資" scheme="https://www.finlab.tw/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+    
       <category term="Machine Learning" scheme="https://www.finlab.tw/tags/Machine-Learning/"/>
     
       <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
-      <category term="量化投資" scheme="https://www.finlab.tw/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
   </entry>
   
@@ -69,11 +69,11 @@
       <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
+      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
   </entry>
   
@@ -125,9 +125,9 @@
       <category term="python財經" scheme="https://www.finlab.tw/categories/python%E8%B2%A1%E7%B6%93/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="入門教學" scheme="https://www.finlab.tw/tags/%E5%85%A5%E9%96%80%E6%95%99%E5%AD%B8/"/>
     
@@ -245,9 +245,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式設計" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -447,11 +447,11 @@
       <category term="技術面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
     
     
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
       <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="型態學" scheme="https://www.finlab.tw/tags/%E5%9E%8B%E6%85%8B%E5%AD%B8/"/>
     
