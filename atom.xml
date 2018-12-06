@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-12-05T18:06:47.862Z</updated>
+  <updated>2018-12-06T08:40:59.583Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.finlab.tw/Machine-learning%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E9%A0%90%E6%B8%AC%E5%A4%A7%E7%9B%A4/"/>
     <id>https://www.finlab.tw/Machine-learning：使用技術指標預測大盤/</id>
     <published>2018-12-04T22:58:25.000Z</published>
-    <updated>2018-12-05T18:06:47.862Z</updated>
+    <updated>2018-12-06T08:40:59.583Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://www.sciencedirect.com/science/article/pii/S0957417414004473" rel="external nofollow noopener noreferrer" target="_blank">這篇文章是印度指數預測</a>，2015年發表的就能有191個citation，算是很有名的paper之一，全文特點是只使用了技術指標，來預測大盤每天漲跌，提出了一個有效的優化方式。</p><center><img src="/Machine-learning：使用技術指標預測大盤/thumbnail.png" title="技術指標機器學習"></center><p>這篇paper的作者非常的認真，總共訓練四種不同的模型：Artificial Neural Network (ANN), support vector machine (SVM), random forest (RF) 和 Naive-Bayes (NB)。</p><p>這邊假如看不懂沒有關係，可以想像「模型」就是「電腦的大腦」，負責學習每種指標怎麼對應到未來的漲跌。之後有空或有時間在來慢慢介紹這些不同的「大腦」背後的數學原理。</p><p>此論文主要建構製作兩組traning data：</p><ul><li>包含十種技術指標</li><li>為這十種技術指標的看漲看跌<br>前者為 float （被normalize成-1～1）<br>而後者為 boolean （也就是只有輸入True和False）。</li></ul><p>究竟這些排列組合會迸出什麼樣的火花呢？</p><h3 id="選擇模型"><a href="#選擇模型" class="headerlink" title="選擇模型"></a>選擇模型</h3><p>研究發現Random Forest的表現是最好的，而ANN差了一點，<br>這是滿正常的，畢竟data set還是太小，神經網路很難訓練的非常好。<br>SVM的缺點就是對於多維度的data效果會比較差一點，<br>至於傳統的NB則是最差的。</p><p>其實也可以考慮一下LSTM，說不定效果也不錯？<br>（但因為LSTM還是基於ANN，所以有可能遇到traning set太小的問題）</p><h3 id="選擇traning-data"><a href="#選擇traning-data" class="headerlink" title="選擇traning data"></a>選擇traning data</h3><p>如同上面所述，此篇論文總共先用了十種技術指標，以下是這十種常見的指標，為了讓文章不會太冗長，我就不一一解釋了，之後有空再來介紹每種指標的用法。</p><center><img src="/Machine-learning：使用技術指標預測大盤/p1.png" title="十種技術指標"></center><p>￼<br>這篇paper會將這些技術指標的數值，每一項做normalize在-1～1之間，這樣的優化主要是為了ANN。以下是這個model的架構：</p><center><img src="/Machine-learning：使用技術指標預測大盤/p2.png" title="最初的架構"></center><p>￼<br>另外，全文的特點是使用了提出了 「Trend Deterministic Data Preparation」，看起來非常的厲害，簡單講就是將這些指標的數值究竟是「看漲」還是「看跌」拿來訓練，而不是續練指標本身的數值。</p><p>例如均線好了，與其拿均線的值來訓練，不如看「股價跟均線的關係」，假如股價在均線之上，就是「看漲」（True），反之則「看跌」（False）。其他指標都能以此類推！</p><p>以下就是新增了一層資料的修改的架構：</p><p><center><img src="/Machine-learning：使用技術指標預測大盤/p3.png" title="優化後的架構"></center><br>￼</p><p>最後發現使用了「Trend Deterministic Data Preparation」<br>效果好很多！</p><h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>這篇文章中，可以大概知道每一種model對於技術性指標的數據的效果如何。並且了解了用「Trend Deterministic Data Preparation」來進行優化。經過了非常多參數的比對，發現使用RF model做出來的策略效果最好。然而這只限於頻率為「天」的股價，假如頻率不是「天」，則可能會不一樣～。</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.sciencedirect.com/science/article/pii/S0957417414004473" rel="external nofollow noopener noreferrer" target="_blank">這篇文章是印度指數預測</a>，2015年發表的就能有191個citation，算是很有名的paper之一，全文特點是只使用了技術指標，來預測大盤每天漲跌，提出了一個有效的優化方式。</p><center><img src="/Machine-learning：使用技術指標預測大盤/thumbnail.png" title="技術指標機器學習"></center><p>這篇paper的作者非常的認真，總共訓練四種不同的模型：Artificial Neural Network (ANN), support vector machine (SVM), random forest (RF) 和 Naive-Bayes (NB)。</p><p>這邊假如看不懂沒有關係，可以想像「模型」就是「電腦的大腦」，負責學習每種指標怎麼對應到未來的漲跌。之後有空或有時間在來慢慢介紹這些不同的「大腦」背後的數學原理。</p><p>此論文主要建構製作兩組traning data：</p><ul><li>包含十種技術指標</li><li>為這十種技術指標的看漲看跌<br>前者為 float （被normalize成-1～1）<br>而後者為 boolean （也就是只有輸入True和False）。</li></ul><p>究竟這些排列組合會迸出什麼樣的火花呢？</p><h3 id="選擇模型"><a href="#選擇模型" class="headerlink" title="選擇模型"></a>選擇模型</h3><p>研究發現Random Forest的表現是最好的，而ANN差了一點，<br>這是滿正常的，畢竟data set還是太小，神經網路很難訓練的非常好。<br>至於傳統的NB則是最差的。</p><p>其實也可以考慮一下LSTM，說不定效果也不錯？<br>（但因為LSTM還是基於ANN，所以有可能遇到traning set太小的問題）</p><h3 id="選擇traning-data"><a href="#選擇traning-data" class="headerlink" title="選擇traning data"></a>選擇traning data</h3><p>如同上面所述，此篇論文總共先用了十種技術指標，以下是這十種常見的指標，為了讓文章不會太冗長，我就不一一解釋了，之後有空再來介紹每種指標的用法。</p><center><img src="/Machine-learning：使用技術指標預測大盤/p1.png" title="十種技術指標"></center><p>￼<br>這篇paper會將這些技術指標的數值，每一項做normalize在-1～1之間，這樣的優化主要是為了ANN。以下是這個model的架構：</p><center><img src="/Machine-learning：使用技術指標預測大盤/p2.png" title="最初的架構"></center><p>￼<br>另外，全文的特點是使用了提出了 「Trend Deterministic Data Preparation」，看起來非常的厲害，簡單講就是將這些指標的數值究竟是「看漲」還是「看跌」拿來訓練，而不是續練指標本身的數值。</p><p>例如均線好了，與其拿均線的值來訓練，不如看「股價跟均線的關係」，假如股價在均線之上，就是「看漲」（True），反之則「看跌」（False）。其他指標都能以此類推！</p><p>以下就是新增了一層資料的修改的架構：</p><p><center><img src="/Machine-learning：使用技術指標預測大盤/p3.png" title="優化後的架構"></center><br>￼</p><p>最後發現使用了「Trend Deterministic Data Preparation」<br>效果好很多！</p><h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>這篇文章中，可以大概知道每一種model對於技術性指標的數據的效果如何。並且了解了用「Trend Deterministic Data Preparation」來進行優化。經過了非常多參數的比對，發現使用RF model做出來的策略效果最好。然而這只限於頻率為「天」的股價，假如頻率不是「天」，則可能會不一樣～。</p>]]></content>
     
     <summary type="html">
     
@@ -160,9 +160,9 @@
     
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
-      <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
     
       <category term="技術指標" scheme="https://www.finlab.tw/tags/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99/"/>
     
@@ -516,9 +516,9 @@
     
       <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
       <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
