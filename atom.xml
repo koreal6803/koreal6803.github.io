@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-12-13T16:58:30.429Z</updated>
+  <updated>2018-12-13T17:02:13.149Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.finlab.tw/ROE%E6%80%8E%E9%BA%BC%E7%9C%8B-%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%91%8A%E8%A8%B4%E4%BD%A0/"/>
     <id>https://www.finlab.tw/ROE怎麼看-機器學習告訴你/</id>
     <published>2018-12-11T15:49:55.000Z</published>
-    <updated>2018-12-13T16:58:30.429Z</updated>
+    <updated>2018-12-13T17:02:13.149Z</updated>
     
-    <content type="html"><![CDATA[<p>機器學習究竟能不能輔助人類買賣股票？答案一定是可以的，我們可以藉由機器學習歸納出結果，來優化我們的選股方式，今天這篇文章沒有非常高深的數學，也沒有困難的程式，只會有做完研究的心得，幫助大家選股更順利！<br><a id="more"></a></p><center><img src="/ROE怎麼看-機器學習告訴你/thumbnail.png" title="SVM教你怎麼選股"></center><p>這篇文章中，我把市值跟ROE拿來做比較，並且利用SVM來訓練判斷，<br>看看市值跟ROE對於股價漲跌的關連</p><h3 id="什麼是SVM？"><a href="#什麼是SVM？" class="headerlink" title="什麼是SVM？"></a>什麼是SVM？</h3><p>SVM的全名叫做 <a href="https://en.wikipedia.org/wiki/Support_vector_machine" rel="external nofollow noopener noreferrer" target="_blank">Support Vector Machine</a>，而這類的機器學習，會用 hyperplane 將空間切開，進而將空間中的座標進行分類，所以當我們有2個features時，就可以將第一個feature當作 x 軸，第二個 feature 當作 y 軸，然後顏色代表漲跌，畫出一張圖：</p><center><img src="/ROE怎麼看-機器學習告訴你/svm.png" title="svm的簡單範例"></center><p>其中的綠色點，就是代表下跌的股票，而紅色的點，則代表了上漲的股票，而hyperplane 就是黃色的時線，將這個平面上畫出精準的一刀，切成兩個部分，右半部份，代表SVM覺得未來會上漲，左半部份代表SVM覺得未來會下跌的股票。</p><p>以上是由視覺的方式來說明SVM，數學的部分，其實大家國中高中都有學過，其實就是點與 hyperplane 的長度，SVM會計算「點到線」之間的長度，來決定誤差。當有越多點歸類錯誤的時候，SVM就會將這些「點到線的距離加總」，當作是錯誤總分，越大越不好，於是演算法不斷的移動這個切割線（hyperplane），來達到最完美的狀態，使得錯誤總分最低。</p><h3 id="SVM-的-Kernel-Trick"><a href="#SVM-的-Kernel-Trick" class="headerlink" title="SVM 的 Kernel Trick"></a>SVM 的 Kernel Trick</h3><p>我們上述的都是一條直線的 hyperplane ，但其實它不一定得是直的，只要能夠切分出不同的區域來分類即可。下圖就是使用linear的kernel跟曲線的kernel的範例：</p><center><img src="/ROE怎麼看-機器學習告訴你/kernel.png" title="不同的kernel結果也不一樣"></center><p>接下來，我們就來使用不同的kernel，來將股票做歸類，看它們究竟會上漲還是下跌？<br>我們所使用的 features 只有：<br>ROE、市值<br>方便我們以圖形化的方式呈現並理解，以下是結果</p><h3 id="使用線性的kernel"><a href="#使用線性的kernel" class="headerlink" title="使用線性的kernel"></a>使用線性的kernel</h3><p>此時 hyperplane 就是很簡單的一條線。雖然是簡單的一條線，但它還是非常有用處，我們可以藉由這條線的斜率，來瞭解 ROE 跟市值的關係：</p><center><img src="/ROE怎麼看-機器學習告訴你/linear.png" title="linearKernel成果"></center><p>程式自動最佳化後，上圖就是程式找到一刀最完美的切法，<br>這邊的市值跟ROE都已經經過preprocessing，所以跟我們平常看到的數值不太一樣，<br>我們由上圖可以看出程式在想什麼：</p><h4 id="機器學習：市值越高的股票，ROE也要越高"><a href="#機器學習：市值越高的股票，ROE也要越高" class="headerlink" title="機器學習：市值越高的股票，ROE也要越高"></a>機器學習：市值越高的股票，ROE也要越高</h4><p>可以看到上圖中，斜率是正的，代表當市值越高時，SVM 會傾向於選擇 ROE 高一點的股票，而且此條線偏上方，代表ROE比較高比較好，所以我們可以做一些歸納；</p><h4 id="假如有一檔股票「市值高，但是ROE低」，不會被選進來"><a href="#假如有一檔股票「市值高，但是ROE低」，不會被選進來" class="headerlink" title="假如有一檔股票「市值高，但是ROE低」，不會被選進來"></a>假如有一檔股票「市值高，但是ROE低」，不會被選進來</h4><p>這樣的想法算滿合理的，因為大家對市值高的股票期望比較高，或是公司的規模比較大，但此公司坐擁資源竟然還沒辦法為股東賺錢，於是期望可能轉換為失望，所以SVM表示看跌。</p><p>當然這個理由是我自己加的，SVM 是無情的最佳化結果而已。<br>另外我們也可以看到：</p><h4 id="對於「市值低，ROE低」的公司，SVM會比較寬容"><a href="#對於「市值低，ROE低」的公司，SVM會比較寬容" class="headerlink" title="對於「市值低，ROE低」的公司，SVM會比較寬容"></a>對於「市值低，ROE低」的公司，SVM會比較寬容</h4><p>一檔「市值低，ROE低」的公司，SVM會比較寬容一些些（但還是有一定的門檻）只是不如市值高的公司那麼嚴苛罷了。</p><p>我們來看一下以此種邏輯回測的結果，紅色為預測會漲的股票，綠色為預測會跌的股票，每季獲利的平均</p><center><img src="/ROE怎麼看-機器學習告訴你/eq1.png" title="回測結果"></center><p>效果很不錯<br>但是這個邏輯是否是完美的呢？<br>我們再來使用不同的kernel，試試看</p><h3 id="使用曲線的kernel"><a href="#使用曲線的kernel" class="headerlink" title="使用曲線的kernel"></a>使用曲線的kernel</h3><p>下圖為使用不同的kernel，所做出來的分類結果，我們使用2次多項式來對股票進行分類</p><center><img src="/ROE怎麼看-機器學習告訴你/poly.png" title="回測結果"></center><p>怎麼分出來完全不一樣呀！我們來看第二個實驗，SVM又告訴了我們什麼：</p><h4 id="市值高的股票-ROE-不要太高"><a href="#市值高的股票-ROE-不要太高" class="headerlink" title="市值高的股票 ROE 不要太高"></a>市值高的股票 ROE 不要太高</h4><p>這其實還是有些道理的，ROE 太高的股票不要買，這個是很多實驗都有做出來的結果，因為大公司的獲利，好歹也是龐大而穩定的系統，ROE高是會有上限的，不可能一直成長，當今天ROE已經很高時，代表接下來不會更高了，甚至還有可能會衰退。</p><p>所以買市值高的股票時，SVM傾向「 ROE 不要太高」</p><h4 id="市值低的股票-ROE-越高越好"><a href="#市值低的股票-ROE-越高越好" class="headerlink" title="市值低的股票 ROE 越高越好"></a>市值低的股票 ROE 越高越好</h4><p>然而本實驗的另一個特點，就是SVM統計出來，發現市值低的股票ROE高是沒有關係的，至於原因可能是因為，市值低的股票，大家對於該公司期望並不高，在此狀況下，高 ROE 的數值跌破大家的眼鏡，所以造成長期的後市看好。（只是推測）</p><p>所以買市值低的股票時，SVM傾向「ROE 盡量高一點」 </p><h4 id="市值中間的股票，不要買"><a href="#市值中間的股票，不要買" class="headerlink" title="市值中間的股票，不要買"></a>市值中間的股票，不要買</h4><p>這個條件是最詭異的一個，我還是不要亂解釋好了XDD。</p><h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>這樣的邏輯可以獲利嗎？我們可以看以下的結果，紅色為預測會漲的股票，綠色為預測會跌的股票，每季獲利的平均：</p><center><img src="/ROE怎麼看-機器學習告訴你/eq2.png" title="回測結果"></center><p>也是有不錯的獲利！<br>利用 SVM 來分辨漲跌的股票，真的還滿有趣的，本文利用了兩種不同的 kernel：</p><ul><li>linear</li><li>polynomial<br>來進行分類，結果顯示 linear 的分類，跑出來的回測獲利比較優秀，但由這兩種不同的kernel，製作出來的模型，都可以拿來獲利。</li></ul><p>雖然兩個模型的闡述「相互矛盾」「有點道理、但又有點詭異」<br>就像是投資界眾說紛紜的理論一樣，<br>所以以後看到相互矛盾的論點，<br>其實不一定誰好誰壞，甚至說不定都能夠獲利，<br>這就是股票市場的有趣之處。</p>]]></content>
+    <content type="html"><![CDATA[<p>機器學習究竟能不能輔助人類買賣股票？答案一定是可以的，我們可以藉由機器學習歸納出結果，來優化我們的選股方式，今天這篇文章沒有非常高深的數學，也沒有困難的程式，只會有做完研究的心得，幫助大家選股更順利！<br><a id="more"></a></p><center><img src="/ROE怎麼看-機器學習告訴你/thumbnail.png" title="SVM教你怎麼選股"></center><p>這篇文章中，我把市值跟ROE拿來做比較，並且利用SVM來訓練判斷，<br>看看市值跟ROE對於股價漲跌的關連</p><h3 id="什麼是SVM？"><a href="#什麼是SVM？" class="headerlink" title="什麼是SVM？"></a>什麼是SVM？</h3><p>SVM的全名叫做 <a href="https://en.wikipedia.org/wiki/Support_vector_machine" rel="external nofollow noopener noreferrer" target="_blank">Support Vector Machine</a>，而這類的機器學習，會用 hyperplane 將空間切開，進而將空間中的座標進行分類，所以當我們有2個features時，就可以將第一個feature當作 x 軸，第二個 feature 當作 y 軸，然後顏色代表漲跌，畫出一張圖：</p><center><img src="/ROE怎麼看-機器學習告訴你/svm.png" title="svm的簡單範例"></center><p>其中的綠色點，就是代表下跌的股票，而紅色的點，則代表了上漲的股票，而hyperplane 就是黃色的時線，將這個平面上畫出精準的一刀，切成兩個部分，右半部份，代表SVM覺得未來會上漲，左半部份代表SVM覺得未來會下跌的股票。</p><p>以上是由視覺的方式來說明SVM，數學的部分，其實大家國中高中都有學過，其實就是點與 hyperplane 的長度，SVM會計算「點到線」之間的長度，來決定誤差。當有越多點歸類錯誤的時候，SVM就會將這些「點到線的距離加總」，當作是錯誤總分，越大越不好，於是演算法不斷的移動這個切割線（hyperplane），來達到最完美的狀態，使得錯誤總分最低。</p><h3 id="SVM-的-Kernel-Trick"><a href="#SVM-的-Kernel-Trick" class="headerlink" title="SVM 的 Kernel Trick"></a>SVM 的 Kernel Trick</h3><p>我們上述的都是一條直線的 hyperplane ，但其實它不一定得是直的，只要能夠切分出不同的區域來分類即可。下圖就是使用linear的kernel跟曲線的kernel的範例：</p><center><img src="/ROE怎麼看-機器學習告訴你/kernel.png" title="不同的kernel結果也不一樣"></center><p>接下來，我們就來使用不同的kernel，來將股票做歸類，看它們究竟會上漲還是下跌？<br>我們所使用的 features 只有：<br>ROE、市值<br>方便我們以圖形化的方式呈現並理解，以下是結果</p><h3 id="使用線性的kernel"><a href="#使用線性的kernel" class="headerlink" title="使用線性的kernel"></a>使用線性的kernel</h3><p>此時 hyperplane 就是很簡單的一條線。雖然是簡單的一條線，但它還是非常有用處，我們可以藉由這條線的斜率，來瞭解 ROE 跟市值的關係：</p><center><img src="/ROE怎麼看-機器學習告訴你/linear.png" title="linearKernel成果"></center><p>程式自動最佳化後，上圖就是程式找到一刀最完美的切法，</p><ul><li>黃色三角形為上漲的股票</li><li>藍色正方形為下跌的股票</li><li>黃色平面是SVM認為會上漲的股票</li><li>藍色平面是SVM認為會下跌的股票</li></ul><p>這邊的市值跟ROE都已經經過preprocessing，所以跟我們平常看到的數值不太一樣，<br>我們由上圖可以看出程式在想什麼：</p><h4 id="機器學習：市值越高的股票，ROE也要越高"><a href="#機器學習：市值越高的股票，ROE也要越高" class="headerlink" title="機器學習：市值越高的股票，ROE也要越高"></a>機器學習：市值越高的股票，ROE也要越高</h4><p>可以看到上圖中，斜率是正的，代表當市值越高時，SVM 會傾向於選擇 ROE 高一點的股票，而且此條線偏上方，代表ROE比較高比較好，所以我們可以做一些歸納；</p><h4 id="假如有一檔股票「市值高，但是ROE低」，不會被選進來"><a href="#假如有一檔股票「市值高，但是ROE低」，不會被選進來" class="headerlink" title="假如有一檔股票「市值高，但是ROE低」，不會被選進來"></a>假如有一檔股票「市值高，但是ROE低」，不會被選進來</h4><p>這樣的想法算滿合理的，因為大家對市值高的股票期望比較高，或是公司的規模比較大，但此公司坐擁資源竟然還沒辦法為股東賺錢，於是期望可能轉換為失望，所以SVM表示看跌。</p><p>當然這個理由是我自己加的，SVM 是無情的最佳化結果而已。<br>另外我們也可以看到：</p><h4 id="對於「市值低，ROE低」的公司，SVM會比較寬容"><a href="#對於「市值低，ROE低」的公司，SVM會比較寬容" class="headerlink" title="對於「市值低，ROE低」的公司，SVM會比較寬容"></a>對於「市值低，ROE低」的公司，SVM會比較寬容</h4><p>一檔「市值低，ROE低」的公司，SVM會比較寬容一些些（但還是有一定的門檻）只是不如市值高的公司那麼嚴苛罷了。</p><p>我們來看一下以此種邏輯回測的結果，紅色為預測會漲的股票，綠色為預測會跌的股票，每季獲利的平均</p><center><img src="/ROE怎麼看-機器學習告訴你/eq1.png" title="回測結果"></center><p>效果很不錯<br>但是這個邏輯是否是完美的呢？<br>我們再來使用不同的kernel，試試看</p><h3 id="使用曲線的kernel"><a href="#使用曲線的kernel" class="headerlink" title="使用曲線的kernel"></a>使用曲線的kernel</h3><p>下圖為使用不同的kernel，所做出來的分類結果，我們使用2次多項式來對股票進行分類</p><center><img src="/ROE怎麼看-機器學習告訴你/poly.png" title="回測結果"></center><p>怎麼分出來完全不一樣呀！我們來看第二個實驗，SVM又告訴了我們什麼：</p><h4 id="市值高的股票-ROE-不要太高"><a href="#市值高的股票-ROE-不要太高" class="headerlink" title="市值高的股票 ROE 不要太高"></a>市值高的股票 ROE 不要太高</h4><p>這其實還是有些道理的，ROE 太高的股票不要買，這個是很多實驗都有做出來的結果，因為大公司的獲利，好歹也是龐大而穩定的系統，ROE高是會有上限的，不可能一直成長，當今天ROE已經很高時，代表接下來不會更高了，甚至還有可能會衰退。</p><p>所以買市值高的股票時，SVM傾向「ROE 不要太高」</p><h4 id="市值低的股票-ROE-越高越好"><a href="#市值低的股票-ROE-越高越好" class="headerlink" title="市值低的股票 ROE 越高越好"></a>市值低的股票 ROE 越高越好</h4><p>然而本實驗的另一個特點，就是SVM統計出來，發現市值低的股票ROE高是沒有關係的，至於原因可能是因為，市值低的股票，大家對於該公司期望並不高，在此狀況下，高 ROE 的數值跌破大家的眼鏡，所以造成長期的後市看好。（只是推測）</p><p>所以買市值低的股票時，SVM傾向「ROE 盡量高一點」 </p><h4 id="市值中間的股票，不要買"><a href="#市值中間的股票，不要買" class="headerlink" title="市值中間的股票，不要買"></a>市值中間的股票，不要買</h4><p>這個條件是最詭異的一個，我還是不要亂解釋好了XDD。</p><h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>這樣的邏輯可以獲利嗎？我們可以看以下的結果，紅色為預測會漲的股票，綠色為預測會跌的股票，每季獲利的平均：</p><center><img src="/ROE怎麼看-機器學習告訴你/eq2.png" title="回測結果"></center><p>也是有不錯的獲利！<br>利用 SVM 來分辨漲跌的股票，真的還滿有趣的，本文利用了兩種不同的 kernel：</p><ul><li>linear</li><li>polynomial<br>來進行分類，結果顯示 linear 的分類，跑出來的回測獲利比較優秀，但由這兩種不同的kernel，製作出來的模型，都可以拿來獲利。</li></ul><p>雖然兩個模型的闡述「相互矛盾」「有點道理、但又有點詭異」<br>就像是投資界眾說紛紜的理論一樣，<br>所以以後看到相互矛盾的論點，<br>其實不一定誰好誰壞，甚至說不定都能夠獲利，<br>這就是股票市場的有趣之處。</p>]]></content>
     
     <summary type="html">
     
@@ -156,11 +156,11 @@
       <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
+      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
@@ -186,9 +186,9 @@
     
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
-      <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
     
       <category term="技術指標" scheme="https://www.finlab.tw/tags/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99/"/>
     
@@ -542,9 +542,9 @@
     
       <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
       <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
+      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
