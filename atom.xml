@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-12-13T17:03:42.895Z</updated>
+  <updated>2018-12-17T15:38:55.388Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python：免費加速度指標選股實做</title>
+    <link href="https://www.finlab.tw/%E5%8A%A0%E9%80%9F%E5%BA%A6%E6%8C%87%E6%A8%99%E5%AF%A6%E5%81%9A/"/>
+    <id>https://www.finlab.tw/加速度指標實做/</id>
+    <published>2018-12-17T12:49:03.000Z</published>
+    <updated>2018-12-17T15:38:55.388Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天終於要來介紹加速度指標，這個指標的用處，在於可以篩選出「止跌回升」或「加速往上漲」的股票，經過<a href="/加速度指標-加速你的獲利">回測驗證</a>是有效的。搭配其他指標，可以獲得約20％的年報酬率。接下來我們就來用 python 實做它吧！</p><center><img src="/加速度指標實做/thumbnail.png" title="時間序列dataframe"></center><p>這個 blog 會永久推出免費的教學，讓大家可以免費的學習 python 又賺錢，學習程式語言是很多人憧憬的目標，但是常常會有學了不知道拿來做什麼？要是寫程式不只能在工作上增加效率，還能幫你挑股票賺錢，那還有什麼理由不學習呢？</p><p>我喜歡寫程式，也希望可以做出很好的工具，幫助到大家，帶著這個初衷，我創立了finlab 並且持續到了現在（不過中間因為博士班論文所以暫停了一段時間）。與其販賣選股軟體，我們分享代碼，讓大家自己零成本 DIY，假如想要支持我們，可以考慮我們的<a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank">影音課程</a>，獲得完整的 python 選股知識跟大量實用代碼。</p><p>好了廢話不多說，開始今天的 python 程式碼吧！</p><h3 id="製作時間序列"><a href="#製作時間序列" class="headerlink" title="製作時間序列"></a>製作時間序列</h3><p>首先我們必須先做出時間序列，時間序列其實就是一條條股價隨時間的變化圖，有點像是K線圖，我們習慣將這些資料整理成以下的樣貌：</p><center><img src="/加速度指標實做/close.png" title="時間序列dataframe"></center><p>要如何獲得此資料結構呢？</p><ol><li>假如您沒有購買課程的話，可以參考<a href="/Python-時間序列實作！">這篇文章來免費獲得時間序列資料</a>，調整當中的參數，獲得至少200天的收盤價喔！</li><li>假如您已經有課程中的代碼，就變得很簡單，只需要：</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> finlab.data <span class="keyword">import</span> Data</span><br><span class="line">data = Data()</span><br><span class="line"></span><br><span class="line">close = data.get(<span class="string">'收盤價'</span>, <span class="number">200</span>)</span><br></pre></td></tr></table></figure><p>就可以獲得兩百天內的所有上市股價資料。</p><p>在這個階段完成後，我們會有一個 <code>close</code> 的 variable，裡面的資料結構就如上圖一樣，是一個 <code>dataframe</code> 而其中就是一條條時間序列，每一檔股票的收盤價。</p><h3 id="撰寫加速度指標"><a href="#撰寫加速度指標" class="headerlink" title="撰寫加速度指標"></a>撰寫加速度指標</h3><p>加速度指標的原理，可以參考</p><ul><li><a href="/簡易的外資-基本面策略/">加速度指標解說</a></li><li><a href="/加速度指標-加速你的獲利">加速度指標回測</a></li></ul><p>簡單來說，加速度指標，其實就是看均線的曲率是正負，來決定是否買賣，但是由於股價的雜訊太大了，與其用微分的，我們提供一個比較簡單的方式，來判斷曲率的正負：</p><p>(n天前 + 當天)/2 &gt; n/2天前 的k天均線</p><p>我們把以上這個判斷式寫成代碼：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">close60 = close.rolling(<span class="number">60</span>, min_periods=<span class="number">10</span>).mean()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rising_curve</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (close60.iloc[-n] + close60.iloc[<span class="number">-1</span>]) / <span class="number">2</span> &gt; close60.iloc[-int((n+<span class="number">1</span>)/<span class="number">2</span>)]</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>以上的代碼中，第一行，我們創建了<code>close60</code>這個<code>variable</code>，裡面的資料就是每檔股票60天的均線的數值。</p><p>接下來，在第三行中，我們定義了一個<code>function</code>叫做<code>rising_curve</code>，來判斷條件是否符合，<br>第四行，就是最重要的判斷式：</p><p>其中我們只用到了<code>iloc(k)</code>這個<code>method</code>，這個<code>method</code>是將<code>close60</code>中第<code>k</code>條<code>row</code>給拿出來的意思。而<code>k</code>可以是正的，代表從<code>dataframe</code>的第0條row開始數，也可以是負的，代表從 <code>dataframe</code>的最後一條row倒著數。</p><h3 id="試用看看"><a href="#試用看看" class="headerlink" title="試用看看"></a>試用看看</h3><p>接下來我們就可以呼叫這個rising_curve，來看哪些股票符合這個條件：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rising_curve(<span class="number">10</span>)</span><br></pre></td></tr></table></figure><br>以上這行就是判斷10日內的取率是多少，會得出以下的結果：</p><center><img src="/加速度指標實做/rising_curve.png" title="獲得符合條件的股票"></center><p>代表哪些檔股票符合條件，而哪些不符合條件。</p><h3 id="組裝策略"><a href="#組裝策略" class="headerlink" title="組裝策略"></a>組裝策略</h3><p>接下來就到了多個策略組合的時候了，<a href="/加速度指標-加速你的獲利">前一篇文章</a>有說過，必須要用多次的rising_curve來判斷不同週期下，是否都是符合條件！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rising = (</span><br><span class="line">    rising_curve(<span class="number">5</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">10</span>) &amp; </span><br><span class="line">    rising_curve(<span class="number">20</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">60</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">30</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">40</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">50</span>) &amp;</span><br><span class="line">    (close.iloc[<span class="number">-1</span>] &gt; close60.iloc[<span class="number">-1</span>])</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">print(rising[rising])</span><br></pre></td></tr></table></figure><p>以上，第2～9行，我們將所有的條件做交集（&amp;），代表必須要全部的條件都符合，才能被選入清單，我們以非常嚴苛的方式，來判斷股價的曲率。<br>最後一行，我們使用<code>rising[rising]</code>，這個意思是，從<code>rising</code>這條序列中，選取<code>rising</code>為 <code>True</code>的股票，忽略<code>False</code>的股票。</p><p>最後得出了一串清單，代表符合所有條件的股票代號：</p><center><img src="/加速度指標實做/and.png" title="獲得符合條件的股票"></center><h3 id="選股個股概覽"><a href="#選股個股概覽" class="headerlink" title="選股個股概覽"></a>選股個股概覽</h3><p>我們將選出來的股票畫出來，來瞭解這些股票的特性，下圖中，黃色的為股價，而藍色的為均線，我們可以發現這些股票的特性，就是均線會呈現圓弧型：</p><center><img src="/加速度指標實做/stocks.png" title="符合條件的股票"></center><p>可以看到大部分都是抓出止跌回漲的股票居多，加速度指標可以抓出兩種股票：</p><ol><li>止跌</li><li>起漲<br>至於要更細部的設定，就留給各位看官來實做了。</li></ol><p>假如將以上代碼的不等式反過來用，也可以抓出股票的賣點，進而抓出止漲的股票，我發現加速度指標拿來抓賣點，搭配一些技術指標效果非常好，可以試試看！</p><h3 id="今天的重點整理"><a href="#今天的重點整理" class="headerlink" title="今天的重點整理"></a>今天的重點整理</h3><ol><li>加速度指標實做</li><li>利用「iloc」選取特定的row</li><li>利用「&amp;」來做條件交集，篩選股票</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天終於要來介紹加速度指標，這個指標的用處，在於可以篩選出「止跌回升」或「加速往上漲」的股票，經過&lt;a href=&quot;/加速度指標-加速你的獲利&quot;&gt;回測驗證&lt;/a&gt;是有效的。搭配其他指標，可以獲得約20％的年報酬率。接下來我們就來用 python 實做它吧！&lt;/p&gt;
+&lt;cen
+      
+    
+    </summary>
+    
+      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
   
   <entry>
     <title>ROE怎麼看?機器學習告訴你</title>
@@ -156,11 +188,11 @@
       <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
@@ -511,9 +543,9 @@
       <category term="基本面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
     
     
-      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
       <category term="ROE" scheme="https://www.finlab.tw/tags/ROE/"/>
+    
+      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
   </entry>
   
@@ -540,11 +572,11 @@
       <category term="技術面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
     
     
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
@@ -553,32 +585,6 @@
       <category term=" 量化投資" scheme="https://www.finlab.tw/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
       <category term="指標" scheme="https://www.finlab.tw/tags/%E6%8C%87%E6%A8%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的量化投資史</title>
-    <link href="https://www.finlab.tw/%E6%88%91%E7%9A%84%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87%E9%BB%91%E6%AD%B7%E5%8F%B2/"/>
-    <id>https://www.finlab.tw/我的量化投資黑歷史/</id>
-    <published>2018-02-15T12:12:15.000Z</published>
-    <updated>2018-02-22T11:24:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>我以前很喜歡寫程式，<br>剛開始接觸投資時，就希望能夠用程式超越99%的投資人<br>我以為程式交易是好棒棒，<br>有了這個絕密的武器，在投資市場上就能夠輕而一舉超越絕大部分投資者。<br>現在真的覺得自己好傻好天真呀！</p><center><img src="/我的量化投資黑歷史/thumbnail.jpeg" title="翻開黑歷史"></center><h3 id="我錯了，量化投資不是聖杯"><a href="#我錯了，量化投資不是聖杯" class="headerlink" title="我錯了，量化投資不是聖杯"></a>我錯了，量化投資不是聖杯</h3><p>後來不斷的研究發現，量化投資也是有其極限<br>歷史年化報酬率最高也就10～20％，上線後還不保證可以跟歷史績效一樣<br>這個時候才瞭解，操盤手每天看線，不是看假的，投資還是得花很多時間磨練。</p><h3 id="於是，我開始主觀交易，但後果是？"><a href="#於是，我開始主觀交易，但後果是？" class="headerlink" title="於是，我開始主觀交易，但後果是？"></a>於是，我開始主觀交易，但後果是？</h3><p>想建構一個超強的回測平台，真的不容易。<br>還沒建好前，我手已經很癢，就開始投資了，<br>那個時候我真的很蠢，直接上網搜尋，大家最近講哪些股票、看看KD值，就直接買了！？</p><p>可想而知，結果就是慘賠（幾千塊XD我很膽小），<br>但心情很差！尤其是每天要顧著那些股票，<br>不知道它明天又要如何震盪，心情隨之擺盪。</p><p>於是，我又參考了一個很有名的老師，<br>照著它的明牌買，發現怎麼買怎麼跌，心情更差！<br>總覺得股市茫茫無所適從，</p><p>突然發現，我這不是在”投資”，而是在”賭”！</p><h3 id="有了好策略，還是高買低賣"><a href="#有了好策略，還是高買低賣" class="headerlink" title="有了好策略，還是高買低賣"></a>有了好策略，還是高買低賣</h3><p>我的回測平台終於建好了，開始找好的策略，也有幾個不錯的選股方法，<br>用股市大富翁模擬，跑得好棒棒，於是決定將策略上線，<br>上線後覺得好奇怪，怎麼開始策略不管用了？連續兩個月都在震盪，</p><p>當時又是暑假，我就丟棄此策略，跑去到處玩。</p><p>九月開學，回頭才發現自己的策略漲了20%<br>我竟然都沒有跟到，於是投入真錢，又開始賠…。</p><p>原來這就是傳說中，有了策略還是高買低賣呀XD。</p><h3 id="終於，下定決心每天投資"><a href="#終於，下定決心每天投資" class="headerlink" title="終於，下定決心每天投資"></a>終於，下定決心每天投資</h3><p>開始使用策略，策略會跑出來的股票清單，<br>但我還是不相信它，喜歡自己研究半天，少買幾檔，</p><p>後來發現沒買的都漲，買的都跌，<br>跑出來跟策略的報酬率不太一樣，我的實際報酬率輸策略的報酬率…</p><h3 id="於是，下定決心按表操課？"><a href="#於是，下定決心按表操課？" class="headerlink" title="於是，下定決心按表操課？"></a>於是，下定決心按表操課？</h3><p>沒有，最後我還是沒按表操課，因為我慢慢的跟策略產生了一些默契，<br>現在我每天只看10分鐘，搭配一些額外的籌碼面（券商分點），<br>我發現主觀甚至可以稍微優化策略，當然沒有歷史績效輔助，說不定我只是最近運氣好罷了。</p><p>當初我就是沒有個方向，才學習的如此緩慢，所以撰寫<a href="/股票入門懶人包/">新手選股SOP懶人包</a><br>雖然不一定是最好，但假如你是剛開始接觸股票的話，應該可以避免你走一些冤枉路。</p><h3 id="人與量化條件搭配，相輔相成"><a href="#人與量化條件搭配，相輔相成" class="headerlink" title="人與量化條件搭配，相輔相成"></a>人與量化條件搭配，相輔相成</h3><p>從最初，策略帶我找標的，<br>最後，我用更多數據來篩選策略給我的股票，</p><p>學習選股的路上，像是互相提拔的感覺。<br>人與量化策略一起買賣股票，目前看來是可行的，<br>缺點就是要額外的時間，考慮額外的因素來買賣，<br>而且遇到策略不靈光時，有交易手法變形的可能。</p><p>平常不太會去更動策略的選股，<br>但最近躲過全球慘跌是我自己主觀判斷，</p><p>大家在交易的時候，應該也有量化（機械式的篩選）和主觀（自己查個股資料判斷）的部分，<br>很好奇大家在這兩個部分各佔了多少呢？</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;我以前很喜歡寫程式，&lt;br&gt;剛開始接觸投資時，就希望能夠用程式超越99%的投資人&lt;br&gt;我以為程式交易是好棒棒，&lt;br&gt;有了這個絕密的武器，在投資市場上就能夠輕而一舉超越絕大部分投資者。&lt;br&gt;現在真的覺得自己好傻好天真呀！&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;/我
-      
-    
-    </summary>
-    
-    
-      <category term="投資" scheme="https://www.finlab.tw/tags/%E6%8A%95%E8%B3%87/"/>
-    
-      <category term="股票" scheme="https://www.finlab.tw/tags/%E8%82%A1%E7%A5%A8/"/>
     
   </entry>
   

@@ -4,8 +4,58 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/Python-%E6%99%82%E9%96%93%E5%BA%8F%E5%88%97%E5%AF%A6%E4%BD%9C%EF%BC%81/</loc>
+    <lastmod>2018-12-17T15:45:09.217Z</lastmod>
+    <data>
+        <display>
+        <title>Python 時間序列實做！</title>
+        <pubTime>2017-11-15T13:03:03.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>KD</tag>
+         
+        <tag>程式交易</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.finlab.tw/%E5%8A%A0%E9%80%9F%E5%BA%A6%E6%8C%87%E6%A8%99%E5%AF%A6%E5%81%9A/</loc>
+    <lastmod>2018-12-17T15:38:55.388Z</lastmod>
+    <data>
+        <display>
+        <title>Python：免費加速度指標選股實做</title>
+        <pubTime>2018-12-17T12:49:03.000Z</pubTime>
+        
+        <tag>選股策略</tag>
+         
+        <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
+         
+        <tag>程式交易</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E8%B6%85%E7%B0%A1%E5%96%AE%E5%8F%B0%E8%82%A1%E6%AF%8F%E6%97%A5%E7%88%AC%E8%9F%B2%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2018-12-16T01:25:08.648Z</lastmod>
+    <lastmod>2018-12-17T12:53:34.178Z</lastmod>
     <data>
         <display>
         <title>超簡單台股每日爬蟲教學</title>
@@ -127,13 +177,13 @@
         <title>外資大賣，反而要買！？</title>
         <pubTime>2017-10-30T13:57:49.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -187,11 +237,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T16:46:51.000Z</pubTime>
         
-        <tag>選股</tag>
-         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -215,11 +265,11 @@
         <title>創新高有多高？</title>
         <pubTime>2018-02-27T20:10:59.000Z</pubTime>
         
-        <tag>選股</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -541,30 +591,6 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/Python-%E6%99%82%E9%96%93%E5%BA%8F%E5%88%97%E5%AF%A6%E4%BD%9C%EF%BC%81/</loc>
-    <lastmod>2018-11-29T17:06:25.585Z</lastmod>
-    <data>
-        <display>
-        <title>Python 時間序列實做！</title>
-        <pubTime>2017-11-15T13:03:03.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>KD</tag>
-         
-        <tag>程式交易</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.finlab.tw/%E8%B6%85%E7%B0%A1%E5%96%AE-Machine-Learning-%E9%A0%90%E6%B8%AC%E8%82%A1%E5%83%B9/</loc>
     <lastmod>2018-11-29T17:05:14.311Z</lastmod>
     <data>
@@ -651,11 +677,11 @@
         <title>加速度指標：歷史年報酬20％的策略</title>
         <pubTime>2018-11-25T03:11:28.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -863,9 +889,9 @@
         <title>ROE到底高或低才好？</title>
         <pubTime>2018-03-18T13:15:20.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
@@ -888,13 +914,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T11:28:20.000Z</pubTime>
         
+        <tag>ROE</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -1106,13 +1132,13 @@
         <title>如何定義KD鈍化</title>
         <pubTime>2017-11-14T14:22:16.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
          
            
@@ -1715,13 +1741,13 @@
         <title>超短線上影黑密技！</title>
         <pubTime>2017-11-03T17:44:31.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
          
            
@@ -1768,13 +1794,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T11:51:12.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            

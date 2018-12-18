@@ -1,0 +1,383 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta http-equiv="Cache-control" content="public"><meta http-equiv="Cache-Control" content="max-age=604800"><title>Python：免費加速度指標選股實做 | FinLab 量化實驗室</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="keywords" content="選股策略,歷史回測,簡易策略,程式交易"><meta name="description" content="今天終於要來介紹加速度指標，這個指標的用處，在於可以篩選出「止跌回升」或「加速往上漲」的股票，經過回測驗證是有效的。搭配其他指標，可以獲得約20％的年報酬率。接下來我們就來用 python 實做它吧！   這個 blog 會永久推出免費的教學，讓大家可以免費的學習 python 又賺錢，學習程式語言是很多人憧憬的目標，但是常常會有學了不知道拿來做什麼？要是寫程式不只能在工作上增加效率，還能幫你挑股"><meta name="keywords" content="選股策略,歷史回測,簡易策略,程式交易"><meta property="og:type" content="article"><meta property="og:title" content="Python：免費加速度指標選股實做"><meta property="og:url" content="https://www.finlab.tw/加速度指標實做/index.html"><meta property="og:site_name" content="FinLab 量化實驗室"><meta property="og:description" content="今天終於要來介紹加速度指標，這個指標的用處，在於可以篩選出「止跌回升」或「加速往上漲」的股票，經過回測驗證是有效的。搭配其他指標，可以獲得約20％的年報酬率。接下來我們就來用 python 實做它吧！   這個 blog 會永久推出免費的教學，讓大家可以免費的學習 python 又賺錢，學習程式語言是很多人憧憬的目標，但是常常會有學了不知道拿來做什麼？要是寫程式不只能在工作上增加效率，還能幫你挑股"><meta property="og:locale" content="zh-TW"><meta property="og:image" content="https://www.finlab.tw/加速度指標實做/thumbnail.png"><meta property="og:updated_time" content="2018-12-17T15:38:55.388Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Python：免費加速度指標選股實做"><meta name="twitter:description" content="今天終於要來介紹加速度指標，這個指標的用處，在於可以篩選出「止跌回升」或「加速往上漲」的股票，經過回測驗證是有效的。搭配其他指標，可以獲得約20％的年報酬率。接下來我們就來用 python 實做它吧！   這個 blog 會永久推出免費的教學，讓大家可以免費的學習 python 又賺錢，學習程式語言是很多人憧憬的目標，但是常常會有學了不知道拿來做什麼？要是寫程式不只能在工作上增加效率，還能幫你挑股"><meta name="twitter:image" content="https://www.finlab.tw/加速度指標實做/thumbnail.png"><link rel="alternate" href="/atom.xml" title="FinLab 量化實驗室" type="application/atom+xml"><link rel="icon" href="/css/images/favicon.png"><link rel="canonical" href="https://www.finlab.tw/加速度指標實做/index.html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style>@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:400;src:local('Source Code Pro'),local('SourceCodePro-Regular'),url(fonts/mrl8jkM18OlOQN8JLgasDy2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:400;src:local('Source Code Pro'),local('SourceCodePro-Regular'),url(fonts/mrl8jkM18OlOQN8JLgasD9V_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}.gutter pre{background:#222}.code pre{background:#222;color:#eee}.category-link{background:#5acdda;color:#fff;padding:5px;font-size:1em}a{color:#3a8088}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/css/uikit.min.css"><link rel="stylesheet" href="/css/style.css"></head></html><body><div id="wrap" style="background:#ddd"><header id="header" class="uk-background-muted" style="background:0 0;height:100%"><div id="fb-root"></div><script>!function(e,t,n){var o,s=e.getElementsByTagName(t)[0];e.getElementById(n)||((o=e.createElement(t)).id=n,o.src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=1987856528129472&autoLogAppEvents=1",s.parentNode.insertBefore(o,s))}(document,"script","facebook-jssdk")</script><div class="container"><nav class="container-inner uk-navbar-container uk-light" style="background:#5acdda" uk-navbar=""><div class="uk-navbar-left" style="padding:0 15px"><a class="uk-navbar-item" style="font-family:Righteous,cursive" href="/"><img src="/css/images/logoWhite.png" style="height:40px" alt="logo"> </a><a class="uk-logo" style="font-family:Righteous,cursive" href="/"><h1>finlab 部落格</h1></a><ul class="uk-navbar-nav"><li><a href="https://ai.finlab.tw/stock/1101" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">智慧診股</button></a></li><li><a href="https://ai.finlab.tw/strategies" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">選股機器人</button></a></li><li><a href="https://ai.finlab.tw/mylab" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">我的實驗室</button></a></li></ul></div></nav></div><div id="header-outer" class="outer"><div class="container"><div class="container-inner"><div id="header-inner" class="nav-container"><a id="main-nav-toggle" class="nav-icon fa fa-bars"></a><div class="nav-container-inner"><ul id="main-nav"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/">Home</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/財經Python教學/">Python財經</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/股票入門懶人包/">股票入門</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/AI看股票/">AI看選股</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/選股策略/">股票策略</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/">指標分析</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/關於/">關於FinLab</a></li></ul><nav id="sub-nav"><div id="search-form-wrap"><form class="search-form"><input type="text" class="ins-search-input search-form-input" placeholder="搜尋"> <button type="submit" class="search-form-submit"></button></form><div class="ins-search"><div class="ins-search-mask"></div><div class="ins-search-container"><div class="ins-input-wrapper"><input type="text" class="ins-search-input" placeholder="輸入關鍵字(股票,量化...)"> <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>window.INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(未命名)"},ROOT_URL:"/",CONTENT_URL:"/content.json"}</script><script src="/js/insight.js" defer="defer"></script><style>::-webkit-input-placeholder{color:#fff}:-ms-input-placeholder{color:#fff}::-moz-placeholder{color:#fff;opacity:1}:-moz-placeholder{color:#fff;opacity:1}</style></div></nav></div></div></div></div></div></header><div class="container"><div class="main-body container-inner"><div class="main-body-inner" style="background:#eee"><section id="main" style="background:#fff"><div class="main-body-header"><h2 class="header"><a class="page-title-link" href="/categories/財經Python教學/">財經Python教學</a></h2></div><div class="main-body-content"><article id="post-加速度指標實做" class="article article-single article-type-post" itemscope="" itemprop="blogPost"><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">Python：免費加速度指標選股實做</h1></header><div class="article-meta"><div class="article-date"><a href="/加速度指標實做/" class="article-date"><time datetime="2018-12-17T12:49:03.000Z" itemprop="datePublished">2018-12-17</time></a></div><div class="article-tag"><i class="fa fa-tag"></i> <a class="tag-link" href="/tags/歷史回測/">歷史回測</a>, <a class="tag-link" href="/tags/程式交易/">程式交易</a>, <a class="tag-link" href="/tags/簡易策略/">簡易策略</a>, <a class="tag-link" href="/tags/選股策略/">選股策略</a></div></div><div class="article-entry" itemprop="articleBody"><p>今天終於要來介紹加速度指標，這個指標的用處，在於可以篩選出「止跌回升」或「加速往上漲」的股票，經過<a href="/加速度指標-加速你的獲利">回測驗證</a>是有效的。搭配其他指標，可以獲得約20％的年報酬率。接下來我們就來用 python 實做它吧！</p><center><img src="/加速度指標實做/thumbnail.png" title="時間序列dataframe"></center><p>這個 blog 會永久推出免費的教學，讓大家可以免費的學習 python 又賺錢，學習程式語言是很多人憧憬的目標，但是常常會有學了不知道拿來做什麼？要是寫程式不只能在工作上增加效率，還能幫你挑股票賺錢，那還有什麼理由不學習呢？</p><p>我喜歡寫程式，也希望可以做出很好的工具，幫助到大家，帶著這個初衷，我創立了finlab 並且持續到了現在（不過中間因為博士班論文所以暫停了一段時間）。與其販賣選股軟體，我們分享代碼，讓大家自己零成本 DIY，假如想要支持我們，可以考慮我們的<a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank">影音課程</a>，獲得完整的 python 選股知識跟大量實用代碼。</p><p>好了廢話不多說，開始今天的 python 程式碼吧！</p><h3 id="製作時間序列"><a href="#製作時間序列" class="headerlink" title="製作時間序列"></a>製作時間序列</h3><p>首先我們必須先做出時間序列，時間序列其實就是一條條股價隨時間的變化圖，有點像是K線圖，我們習慣將這些資料整理成以下的樣貌：</p><center><img src="/加速度指標實做/close.png" title="時間序列dataframe"></center><p>要如何獲得此資料結構呢？</p><ol><li>假如您沒有購買課程的話，可以參考<a href="/Python-時間序列實作！">這篇文章來免費獲得時間序列資料</a>，調整當中的參數，獲得至少200天的收盤價喔！</li><li>假如您已經有課程中的代碼，就變得很簡單，只需要：</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> finlab.data <span class="keyword">import</span> Data</span><br><span class="line">data = Data()</span><br><span class="line"></span><br><span class="line">close = data.get(<span class="string">'收盤價'</span>, <span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+<p>就可以獲得兩百天內的所有上市股價資料。</p>
+<p>在這個階段完成後，我們會有一個 <code>close</code> 的 variable，裡面的資料結構就如上圖一樣，是一個 <code>dataframe</code> 而其中就是一條條時間序列，每一檔股票的收盤價。</p>
+<h3 id="撰寫加速度指標"><a href="#撰寫加速度指標" class="headerlink" title="撰寫加速度指標"></a>撰寫加速度指標</h3><p>加速度指標的原理，可以參考</p>
+<ul>
+<li><a href="/簡易的外資-基本面策略/">加速度指標解說</a></li>
+<li><a href="/加速度指標-加速你的獲利">加速度指標回測</a></li>
+</ul>
+<p>簡單來說，加速度指標，其實就是看均線的曲率是正負，來決定是否買賣，但是由於股價的雜訊太大了，與其用微分的，我們提供一個比較簡單的方式，來判斷曲率的正負：</p>
+<p>(n天前 + 當天)/2 &gt; n/2天前 的k天均線</p>
+<p>我們把以上這個判斷式寫成代碼：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">close60 = close.rolling(<span class="number">60</span>, min_periods=<span class="number">10</span>).mean()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rising_curve</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (close60.iloc[-n] + close60.iloc[<span class="number">-1</span>]) / <span class="number">2</span> &gt; close60.iloc[-int((n+<span class="number">1</span>)/<span class="number">2</span>)]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>以上的代碼中，第一行，我們創建了<code>close60</code>這個<code>variable</code>，裡面的資料就是每檔股票60天的均線的數值。</p>
+<p>接下來，在第三行中，我們定義了一個<code>function</code>叫做<code>rising_curve</code>，來判斷條件是否符合，<br>第四行，就是最重要的判斷式：</p>
+<p>其中我們只用到了<code>iloc(k)</code>這個<code>method</code>，這個<code>method</code>是將<code>close60</code>中第<code>k</code>條<code>row</code>給拿出來的意思。而<code>k</code>可以是正的，代表從<code>dataframe</code>的第0條row開始數，也可以是負的，代表從 <code>dataframe</code>的最後一條row倒著數。</p>
+<h3 id="試用看看"><a href="#試用看看" class="headerlink" title="試用看看"></a>試用看看</h3><p>接下來我們就可以呼叫這個rising_curve，來看哪些股票符合這個條件：<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rising_curve(<span class="number">10</span>)</span><br></pre></td></tr></table></figure><br>以上這行就是判斷10日內的取率是多少，會得出以下的結果：<p></p>
+<center><img src="/加速度指標實做/rising_curve.png" title="獲得符合條件的股票"></center>
+
+<p>代表哪些檔股票符合條件，而哪些不符合條件。</p>
+<h3 id="組裝策略"><a href="#組裝策略" class="headerlink" title="組裝策略"></a>組裝策略</h3><p>接下來就到了多個策略組合的時候了，<a href="/加速度指標-加速你的獲利">前一篇文章</a>有說過，必須要用多次的rising_curve來判斷不同週期下，是否都是符合條件！</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rising = (</span><br><span class="line">    rising_curve(<span class="number">5</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">10</span>) &amp; </span><br><span class="line">    rising_curve(<span class="number">20</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">60</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">30</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">40</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">50</span>) &amp;</span><br><span class="line">    (close.iloc[<span class="number">-1</span>] &gt; close60.iloc[<span class="number">-1</span>])</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">print(rising[rising])</span><br></pre></td></tr></table></figure>
+<p>以上，第2～9行，我們將所有的條件做交集（&amp;），代表必須要全部的條件都符合，才能被選入清單，我們以非常嚴苛的方式，來判斷股價的曲率。<br>最後一行，我們使用<code>rising[rising]</code>，這個意思是，從<code>rising</code>這條序列中，選取<code>rising</code>為 <code>True</code>的股票，忽略<code>False</code>的股票。</p>
+<p>最後得出了一串清單，代表符合所有條件的股票代號：</p>
+<center><img src="/加速度指標實做/and.png" title="獲得符合條件的股票"></center>
+
+<h3 id="選股個股概覽"><a href="#選股個股概覽" class="headerlink" title="選股個股概覽"></a>選股個股概覽</h3><p>我們將選出來的股票畫出來，來瞭解這些股票的特性，下圖中，黃色的為股價，而藍色的為均線，我們可以發現這些股票的特性，就是均線會呈現圓弧型：</p>
+<center><img src="/加速度指標實做/stocks.png" title="符合條件的股票"></center>
+
+<p>可以看到大部分都是抓出止跌回漲的股票居多，加速度指標可以抓出兩種股票：</p>
+<ol>
+<li>止跌</li>
+<li>起漲<br>至於要更細部的設定，就留給各位看官來實做了。</li>
+</ol>
+<p>假如將以上代碼的不等式反過來用，也可以抓出股票的賣點，進而抓出止漲的股票，我發現加速度指標拿來抓賣點，搭配一些技術指標效果非常好，可以試試看！</p>
+<h3 id="今天的重點整理"><a href="#今天的重點整理" class="headerlink" title="今天的重點整理"></a>今天的重點整理</h3><ol>
+<li>加速度指標實做</li>
+<li>利用「iloc」選取特定的row</li>
+<li>利用「&amp;」來做條件交集，篩選股票</li>
+</ol>
+
+
+            
+                <p>假如覺得文章不錯，那更不能錯過我們的<a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank">影音課程</a>喔！<br>
+                    或我們按個  <span class="fb-like" style="position:relative;top:-5px" data-href="https://www.finlab.tw" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="false"></span>  鼓勵一下吧！</p>
+            
+            <div>
+                <ul class="popular-posts" style="padding-left:0"><h3 class="article-title">猜你也喜歡：</h3><div><div style="margin-right:20px;background:url(/加速度指標-加速你的獲利/cases.jpg) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/加速度指標-加速你的獲利/" title="加速度指標：歷史年報酬20％的策略" rel="bookmark">加速度指標：歷史年報酬20％的策略</a></p></div></div></div><div><div style="margin-right:20px;background:url(/跟著外資買股票/color.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/跟著外資買股票/" title="外資大賣，反而要買！？" rel="bookmark">外資大賣，反而要買！？</a></p></div></div></div><div><div style="margin-right:20px;background:url(/KD1/tsmc.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/KD1/" title="如何定義KD鈍化" rel="bookmark">如何定義KD鈍化</a></p></div></div></div><div><div style="margin-right:20px;background:url(/威廉．納葛維茲-價值型選股策略/eq.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/威廉．納葛維茲-價值型選股策略/" title="威廉．納葛維茲-價值型選股策略" rel="bookmark">威廉．納葛維茲-價值型選股策略</a></p></div></div></div><div><div style="margin-right:20px;background:url(/超短線上影黑密技！/pp.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/超短線上影黑密技！/" title="超短線上影黑密技！" rel="bookmark">超短線上影黑密技！</a></p></div></div></div></ul>        
+            </div>
+            
+        </div>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+<script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject=g,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script",0,"ga"),ga("create","UA-106968614-1","auto"),ga("send","pageview")</script>
+    
+    
+
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar" style="background-color:transparent">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+
+    <div class="sidebar-top" style="height:26px">
+        <p>相關連結 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="envelope" href="mailto:finlabstaff@gmail.com" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-envelope"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/atom.xml" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://linkedin.com/in/cheng-yu-han-4b845aa2" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/finlab.tw" target="_blank" rel="external nofollow noopener noreferrer">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/ROE怎麼看-機器學習告訴你/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">ROE怎麼看?機器學習告訴你</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+
+
+<style type="text/css">#mc_embed_signup form{text-align:center;padding-top:20px}.mc-field-group{display:inline-block}#mc_embed_signup input.email{font-family:"Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;font-size:15px;border:1px solid #b8bec0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#343434;background-color:#fff;box-sizing:border-box;height:32px;padding:0 .4em;display:inline-block;margin:0;vertical-align:top}#mc_embed_signup label{display:block;font-size:16px;padding-bottom:10px;font-weight:700}#mc_embed_signup .clear{display:inline-block}#mc_embed_signup .button{font-size:13px;border:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;letter-spacing:.03em;color:#fff;background-color:#4dbeff;box-sizing:border-box;height:32px;line-height:32px;padding:0 18px;display:inline-block;margin:0;transition:all .23s ease-in-out 0s}#mc_embed_signup .button:hover{background-color:#777;cursor:pointer}#mc_embed_signup div#mce-responses{float:left;top:-1.4em;padding:0 .5em 0 .5em;overflow:hidden;width:90%;margin:0 5%;clear:both}#mc_embed_signup div.response{margin:1em 0;padding:1em .5em .5em 0;font-weight:700;float:left;top:-1.5em;z-index:1;width:80%}#mc_embed_signup #mce-error-response{display:none}#mc_embed_signup #mce-success-response{color:#529214;display:none}#mc_embed_signup label.error{display:block;float:none;width:auto;margin-left:1.05em;text-align:left;padding:.5em 0}@media (max-width:768px){#mc_embed_signup input.email{width:100%;margin-bottom:5px}#mc_embed_signup .clear{display:block;width:100%}#mc_embed_signup .button{width:100%;margin:0}}#mc_embed_signup{clear:left;font:14px Helvetica,Arial,sans-serif;width:100%}</style>
+<div id="mc_embed_signup">
+<form action="https://github.us17.list-manage.com/subscribe/post?u=d8cd009ba8ad9a1188c6e206e&amp;id=a7714d56c6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email信箱" style="background:#ccc" required>
+    
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_d8cd009ba8ad9a1188c6e206e_a7714d56c6" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="立即訂閱" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+
+
+    
+
+
+
+
+    <div class="widgets-container">
+
+        
+            
+                
+    
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
+                        
+                        <div class="item-thumbnail uk-width-1-3">
+                            <a href="/加速度指標實做/" class="thumbnail">
+    
+    
+        <div style="background-image:url(/加速度指標實做/thumbnail.png);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="Python：免費加速度指標選股實做" class="thumbnail-image"></div>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner uk-width-expand">
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/加速度指標實做/" class="title">Python：免費加速度指標選股實做
+                                <time datetime="2018-12-17T12:49:03.000Z" itemprop="datePublished">2018-12-17</time>
+
+                            </a></p>
+                        </div>
+                    </div>
+                
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
+                        
+                        <div class="item-thumbnail uk-width-1-3">
+                            <a href="/ROE怎麼看-機器學習告訴你/" class="thumbnail">
+    
+    
+        <div style="background-image:url(/ROE怎麼看-機器學習告訴你/thumbnail.png);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="ROE怎麼看?機器學習告訴你" class="thumbnail-image"></div>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner uk-width-expand">
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/ROE怎麼看-機器學習告訴你/" class="title">ROE怎麼看?機器學習告訴你
+                                <time datetime="2018-12-11T15:49:55.000Z" itemprop="datePublished">2018-12-11</time>
+
+                            </a></p>
+                        </div>
+                    </div>
+                
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
+                        
+                        <div class="item-thumbnail uk-width-1-3">
+                            <a href="/Machine-learning：使用技術指標預測大盤/" class="thumbnail">
+    
+    
+        <div style="background-image:url(/Machine-learning：使用技術指標預測大盤/thumbnail.png);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="用Machine learning 學習看技術指標" class="thumbnail-image"></div>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner uk-width-expand">
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/Machine-learning：使用技術指標預測大盤/" class="title">用Machine learning 學習看技術指標
+                                <time datetime="2018-12-04T22:58:25.000Z" itemprop="datePublished">2018-12-04</time>
+
+                            </a></p>
+                        </div>
+                    </div>
+                
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
+                        
+                        <div class="item-thumbnail uk-width-1-3">
+                            <a href="/機器學習-總體經濟/" class="thumbnail">
+    
+    
+        <div style="background-image:url(/機器學習-總體經濟/data.png);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="機器學習-總體經濟" class="thumbnail-image"></div>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner uk-width-expand">
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/機器學習-總體經濟/" class="title">機器學習-總體經濟
+                                <time datetime="2018-11-27T15:53:00.000Z" itemprop="datePublished">2018-11-27</time>
+
+                            </a></p>
+                        </div>
+                    </div>
+                
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
+                        
+                        <div class="item-thumbnail uk-width-1-3">
+                            <a href="/機器學習與基因演算法選股/" class="thumbnail">
+    
+    
+        <div style="background-image:url(/機器學習與基因演算法選股/thumbnail.jpg);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="論文導讀：機器學習與基因演算法選股" class="thumbnail-image"></div>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner uk-width-expand">
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/機器學習與基因演算法選股/" class="title">論文導讀：機器學習與基因演算法選股
+                                <time datetime="2018-11-27T13:41:15.000Z" itemprop="datePublished">2018-11-27</time>
+
+                            </a></p>
+                        </div>
+                    </div>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/量化投資/" style="font-size:10px"> 量化投資</a> <a href="/tags/Candlesticks/" style="font-size:10px">Candlesticks</a> <a href="/tags/Deep-Learning/" style="font-size:10px">Deep-Learning</a> <a href="/tags/EPS/" style="font-size:10px">EPS</a> <a href="/tags/KD/" style="font-size:10.83px">KD</a> <a href="/tags/K棒/" style="font-size:10px">K棒</a> <a href="/tags/K線圖/" style="font-size:10px">K線圖</a> <a href="/tags/LSTM/" style="font-size:10px">LSTM</a> <a href="/tags/Machine-Learning/" style="font-size:15.83px">Machine Learning</a> <a href="/tags/PEG/" style="font-size:10px">PEG</a> <a href="/tags/ROE/" style="font-size:11.67px">ROE</a> <a href="/tags/RSI/" style="font-size:10px">RSI</a> <a href="/tags/python/" style="font-size:19.17px">python</a> <a href="/tags/一行/" style="font-size:10px">一行</a> <a href="/tags/個人優化/" style="font-size:10.83px">個人優化</a> <a href="/tags/價值股/" style="font-size:10px">價值股</a> <a href="/tags/入門教學/" style="font-size:14.17px">入門教學</a> <a href="/tags/分佈圖/" style="font-size:10px">分佈圖</a> <a href="/tags/型態學/" style="font-size:10.83px">型態學</a> <a href="/tags/外資/" style="font-size:11.67px">外資</a> <a href="/tags/大盤/" style="font-size:13.33px">大盤</a> <a href="/tags/大跌/" style="font-size:10px">大跌</a> <a href="/tags/如何投資/" style="font-size:10px">如何投資</a> <a href="/tags/如何買股票/" style="font-size:18.33px">如何買股票</a> <a href="/tags/市值營收比/" style="font-size:10.83px">市值營收比</a> <a href="/tags/技術指標/" style="font-size:11.67px">技術指標</a> <a href="/tags/投信/" style="font-size:10px">投信</a> <a href="/tags/投資/" style="font-size:10px">投資</a> <a href="/tags/指標/" style="font-size:13.33px">指標</a> <a href="/tags/時間管理/" style="font-size:10px">時間管理</a> <a href="/tags/月營收/" style="font-size:11.67px">月營收</a> <a href="/tags/本益成長比/" style="font-size:10px">本益成長比</a> <a href="/tags/本益比/" style="font-size:13.33px">本益比</a> <a href="/tags/杜邦分析/" style="font-size:13.33px">杜邦分析</a> <a href="/tags/機器學習/" style="font-size:15px">機器學習</a> <a href="/tags/歷史回測/" style="font-size:18.33px">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size:10px">每股盈餘</a> <a href="/tags/深度學習/" style="font-size:10px">深度學習</a> <a href="/tags/爬蟲/" style="font-size:11.67px">爬蟲</a> <a href="/tags/生活/" style="font-size:10.83px">生活</a> <a href="/tags/生產力/" style="font-size:10.83px">生產力</a> <a href="/tags/程式交易/" style="font-size:20px">程式交易</a> <a href="/tags/策略狗/" style="font-size:11.67px">策略狗</a> <a href="/tags/簡易策略/" style="font-size:15px">簡易策略</a> <a href="/tags/統計/" style="font-size:10px">統計</a> <a href="/tags/總資產轉換率/" style="font-size:10px">總資產轉換率</a> <a href="/tags/股價淨值比/" style="font-size:13.33px">股價淨值比</a> <a href="/tags/股價預測/" style="font-size:10px">股價預測</a> <a href="/tags/股票/" style="font-size:10px">股票</a> <a href="/tags/股票分析/" style="font-size:10px">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size:11.67px">自由現金報酬率</a> <a href="/tags/財經Python教學/" style="font-size:10px">財經Python教學</a> <a href="/tags/選股/" style="font-size:16.67px">選股</a> <a href="/tags/選股策略/" style="font-size:17.5px">選股策略</a> <a href="/tags/量化投資/" style="font-size:12.5px">量化投資</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://white5168.blogspot.fr/" rel="external nofollow noopener noreferrer" target="_blank">iInfo資訊交流</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://stasistw.blogspot.fr" rel="external nofollow noopener noreferrer" target="_blank">市場求生手冊</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://investarter.blogspot.fr" rel="external nofollow noopener noreferrer" target="_blank">阿升理財筆記</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+
+
+    
+        <div style="padding:30px" id="moving">
+            <div class="sticky">
+                <p style="font-size:1.2em;margin-bottom:5px">文章不錯，但課程更讚！</p>
+                <a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank"><div style="background:url(/images/course4.png) no-repeat center;background-size:120%;width:100%;height:100%;border-radius:10px">
+                </div>
+            </a></div>
+        </div>
+        <script>$(document).ready(function(){if(console.log("document ready!"),!($(window).width()<600)){var o=$(".sticky"),t=$(".sticky-stopper"),i=$("#moving").width();if(o.offset()){var s=o.innerHeight(),e=o.offset().top,n=200;t.offset().top;$(window).scroll(function(){var d=$(window).scrollTop(),f=t.offset().top-s-n,c=f+n;f<d?o.css({position:"absolute",top:c,width:i,height:9*i/16}):e<d+n?o.css({position:"fixed",top:n,width:i,height:9*i/16}):o.css({position:"absolute",top:"initial",width:i,height:9*i/16})})}}})</script>
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" class="sticky-stopper">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h2 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h2>
+                <p>&copy; 2018 koreal6803</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+                <p>此部落格所有股票分析皆為統計結果，然而過去績效並不等於未來績效，投資本來就有賺有賠，請投資人自行斟酌參考喔！</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>var disqus_shortname="koreal6803",disqus_url="https://www.finlab.tw/加速度指標實做/";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}()</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+
+<script src="/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit-icons.min.js"></script></div></body>
