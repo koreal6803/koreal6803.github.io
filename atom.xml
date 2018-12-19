@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2018-12-17T15:38:55.388Z</updated>
+  <updated>2018-12-19T09:00:00.964Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>你錯過的選股策略！</title>
+    <link href="https://www.finlab.tw/%E4%BD%A0%E9%8C%AF%E9%81%8E%E7%9A%84%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5%E6%80%9D%E8%B7%AF/"/>
+    <id>https://www.finlab.tw/你錯過的選股策略思路/</id>
+    <published>2018-12-19T06:45:46.000Z</published>
+    <updated>2018-12-19T09:00:00.964Z</updated>
+    
+    <content type="html"><![CDATA[<p>一年前，我曾經跟大家分享一個<a href="/比策略狗還要安全的選股策略！/">懶人選股策略</a>，不知道各位有沒有看？看了後有沒有實做？實做了有沒有追蹤？追蹤了有沒有實際操作？假如以上答案都是「有」，那你目前應該獲利狀況不錯！假如沒有，這篇文章將帶你分析原因，並且如何不再一次與獲利擦身而過。</p><a id="more"></a><p>我們先來看看「錯過」有多麼可怕！</p><h3 id="「錯過不是錯了，而是過了」"><a href="#「錯過不是錯了，而是過了」" class="headerlink" title="「錯過不是錯了，而是過了」"></a>「錯過不是錯了，而是過了」</h3><p>下圖中，橘紅色的為「加權指數」的歷史股價，而藍色的也是，差別在於藍色的股價剔除了10個一分鐘「最大漲幅」，來模擬一個人在14年中，除了有總共有10分鐘沒投資，其餘時間每天投資大盤，然而那10分鐘漲幅剛好非常大。</p><p>你可能會覺得結果應該差不多，但最後的結果，竟然有 50％ 的差距！</p><center><img src="/你錯過的選股策略思路/benchmark.png" title="錯過十分鐘漲幅的大盤"></center><p>這十分鐘就足以造成50％的差距，更何況一般人沒有紀律的投資了！<br>如此可見，錯過真的是非常可怕的一件事情！</p><h3 id="你錯過的一個策略"><a href="#你錯過的一個策略" class="headerlink" title="你錯過的一個策略"></a>你錯過的一個策略</h3><p>一年前，我介紹了一個<a href="/比策略狗還要安全的選股策略！/">策略</a>，這個策略屬於懶人投資，標榜歷史績效14年14倍，算是本blog滿早期的選股策略，其特色是，可以避開行情過熱的時段，它的特色是</p><h3 id="「假如你知道行情過熱，就休息個一年半載，放個長假」"><a href="#「假如你知道行情過熱，就休息個一年半載，放個長假」" class="headerlink" title="「假如你知道行情過熱，就休息個一年半載，放個長假」"></a>「假如你知道行情過熱，就休息個一年半載，放個長假」</h3><p>策略思路也滿清晰的，邏輯很簡單，我們現在就來看一下它今年的獲利狀況：</p><center><img src="/你錯過的選股策略思路/eq.png" title="此策略績效"></center><p>此策略今年大部分時間都沒有持股，反而是後期大跌之後，才開始持股，而且穩定勝過大盤！<br>雖然年漲幅只有9％，但相信已經勝過非常多的人，而且從十一月開始算，其實這個策略才執行了兩個月，每個月有4.5％，算是很不錯！</p><p>然而我相信，真正使用的人應該不多，甚至一隻手數的出來的那種，<br>因為就連我自己也沒有使用這個策略XD，接下來我們就來分析為什麼沒人用</p><h3 id="到底為什麼總是跟策略擦身而過？"><a href="#到底為什麼總是跟策略擦身而過？" class="headerlink" title="到底為什麼總是跟策略擦身而過？"></a>到底為什麼總是跟策略擦身而過？</h3><p>原因有很多層面，就跟切洋蔥一樣，依照每個人的等級不同，可能停留在不同的地方。先從最簡單的講起：</p><h3 id="1-不確定該策略的效果，不敢使用"><a href="#1-不確定該策略的效果，不敢使用" class="headerlink" title="1. 不確定該策略的效果，不敢使用"></a>1. 不確定該策略的效果，不敢使用</h3><p>這類的人應該是佔大多數，<br>畢竟當時finlab是個小部落格，而且網路名師多如牛毛。<br>假如沒有自己的驗證方法，早就已經眼花繚亂，<br>看完那篇文章，當下覺得有理，隔天就忘記。</p><p>這種應該可以篩掉80％的人了<br>剩下的20％呢？</p><h3 id="2-策略當時沒有篩選出股票，漸漸忘記"><a href="#2-策略當時沒有篩選出股票，漸漸忘記" class="headerlink" title="2. 策略當時沒有篩選出股票，漸漸忘記"></a>2. 策略當時沒有篩選出股票，漸漸忘記</h3><p>剩下的人20%，可能想試試看這個策略如何，<br>可惜的是，當時策略根本沒有持股，所以暫時將策略封存在倉庫，<br>看看之後什麼時候啟動，再開始追蹤，<br>然而過了好幾個月，就又忘記了</p><p>然而獲利是不等人的，這時候懊悔已經來不及</p><p>這20％的人在此時已經只剩5％</p><h3 id="3-追蹤了但是不敢使用"><a href="#3-追蹤了但是不敢使用" class="headerlink" title="3. 追蹤了但是不敢使用"></a>3. 追蹤了但是不敢使用</h3><p>接下來，就是這5％的人全軍覆沒的時候了XD<br>該策略竟然買在股市大跌的隔天，2018年10月11號當晚…<br>剛好是跌破近一年支撐線的隔天！<br>我也不敢使用XD</p><p>以上三種應該是大家最容易錯過策略，究竟要怎麼預防呢？</p><h3 id="如何不要錯過獲利？"><a href="#如何不要錯過獲利？" class="headerlink" title="如何不要錯過獲利？"></a>如何不要錯過獲利？</h3><p>我覺得要在多重策略上，建構一個更大的框架，在適當的時候更換策略，<br>但不是隨意更換策略，而是當某個條件發生的時候，才會更換，我回測過有效的方式是：</p><p>每隔一季或半年，挑選10日績效最強的三個策略，並將所有持股換成這三個策略的持股</p><p>用講的當然很容易，不過實行起來一定是有難度的。<br>以上只是我分享自己的看法，不知道你覺得如何？<br>歡迎下方留言分享你的「多策略搭配的方法」喔！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一年前，我曾經跟大家分享一個&lt;a href=&quot;/比策略狗還要安全的選股策略！/&quot;&gt;懶人選股策略&lt;/a&gt;，不知道各位有沒有看？看了後有沒有實做？實做了有沒有追蹤？追蹤了有沒有實際操作？假如以上答案都是「有」，那你目前應該獲利狀況不錯！假如沒有，這篇文章將帶你分析原因，並且如何不再一次與獲利擦身而過。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+    
+      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
+    
+      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="本益比" scheme="https://www.finlab.tw/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
+    
+      <category term="股價淨值比" scheme="https://www.finlab.tw/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
+    
+  </entry>
   
   <entry>
     <title>Python：免費加速度指標選股實做</title>
@@ -218,9 +248,9 @@
     
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
       <category term="技術指標" scheme="https://www.finlab.tw/tags/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99/"/>
     
@@ -543,48 +573,9 @@
       <category term="基本面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
     
     
-      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
       <category term="ROE" scheme="https://www.finlab.tw/tags/ROE/"/>
     
-  </entry>
-  
-  <entry>
-    <title>創新高有多高？</title>
-    <link href="https://www.finlab.tw/%E5%89%B5%E6%96%B0%E9%AB%98%E6%9C%89%E5%A4%9A%E9%AB%98%EF%BC%9F/"/>
-    <id>https://www.finlab.tw/創新高有多高？/</id>
-    <published>2018-02-27T20:10:59.000Z</published>
-    <updated>2018-11-29T17:09:41.907Z</updated>
-    
-    <content type="html"><![CDATA[<p>創多少天新高，才叫創新高？今天用非常紮實的回測，來分析一下多少天創新高，才是真正的創新高。<br>看到很多名師選股，都是用創新高的思路，然而買在創新高就是會讓人怕怕的，這麼高了！真的可以買嗎？尤其是對於價值型投資者來說，看到創新高的股票，有些本益比都快噴發60倍，避之唯恐不及，怎麼可能還買呢！？</p><center><img src="/創新高有多高？/thumbnail.png" title="創新高真的不危險嗎？"></center><p>今天分享給大家，創新高真的沒問題嗎？<br>越創越高難道真的越好？（真的越好）<br>究竟為何會發生這種現象？</p><p>股價突破某個歷史高點，事出必有因，<br>以下歸納一下原因：</p><ul><li>題材股：豬，站在風頭也會飛，可能是最近一波題材股的關係！</li><li>獲利股：財務結構重大改變，獲利暴增。</li><li>利多股：未來獲利預估會暴增的股票。</li></ul><p>當然還可能有更多原因，就請大大們補充了！<br>總之股價突破了某個歷史高點，接下來必定就是兩條路：</p><ul><li>沾了一下高點，又跌了回去</li><li>繼續噴高，一去不復返</li></ul><p>究竟怎麼分別這兩種股票呢？我發現，創新高，多久的新高非常關鍵！<br>所以我做了以下的回測分析：</p><ul><li>當股價創 n 天新高時，分配金額，隔天開盤買入</li><li>持有20天後賣出</li></ul><p>不算手續費，會有以下的結果：</p><center><img src="/創新高有多高？/eq.png" title="n天創新高時買入20天"></center><p>超級漂亮的一字排開！而最紅的曲線，就是600天創新高才買入，而最黑的那條線，則是60天創新高就買入了！<br>事實證明，創新高真的有用！而且創新高天數（n）設定越高，創新高就越有用。</p><p>然而這個沒有考慮手續費喔！考慮100萬起始資金，手續費(6折)，和證交稅的話，獲利會降低，<br>600天創新高的績效變成2.75倍，比照同期大盤1.2倍，加權報酬1.59倍。</p><p>接下來來分析一下，不考慮手續費：</p><h3 id="勝率分析"><a href="#勝率分析" class="headerlink" title="勝率分析"></a>勝率分析</h3><p>接下來我們再來分析一下勝率：<br>下圖中的 x 軸是不同的策略，採取x天創新高，<br>y軸則是該交易的勝率（就是一支股票獲利的機率）：</p><center><img src="/創新高有多高？/prob.png" title="n天創新高 vs 勝率"></center><p>大部分都落在46到47％左右，<br>然而這是沒有加上手續費的，假如加上手續費，勝率更低…。<br>只能說創新高勝率不高…，會讓你心情不太好，<br>而且常常集體一起爛掉（個人使用的感覺），<br>尤其是大盤有點漲不上去的時候，（如最近XDD）。</p><p>但是整體來講還是會獲利喔！就像是一百次小輸，但贏的那次大贏。<br>所以接下來我們就來研究選到飆股的機率吧！</p><h3 id="選到飆股機率"><a href="#選到飆股機率" class="headerlink" title="選到飆股機率"></a>選到飆股機率</h3><p>但偶爾會有飆股！讓我們來分析一下買到飆股的機率，我們先定義飆股為漲40％以上<br>來看看所有的買賣當中，飆股比例是否跟 n 天創新高有關：</p><center><img src="/創新高有多高？/good_stock.png" title="n天創新高 vs 勝率"></center><p>y軸為買到飆股的機率，大約是1％左右，平均就是100檔裡面有一檔飆股啦XDD。<br>但飆股與n天創新高有明顯的關連，可見，n 越大，越有可能買到飆股，這真是一個好現象呀！</p><h3 id="平均獲利比較"><a href="#平均獲利比較" class="headerlink" title="平均獲利比較"></a>平均獲利比較</h3><p>所以就選擇那些越久創新高的，會比較好囉？<br>先別急，不能只看大飆股，應該要考慮每檔股票買賣的平均獲利比較準！<br>所以我們也分析了一下：</p><center><img src="/創新高有多高？/mean.png" title="n天創新高 vs 平均獲利"></center><p>上圖的y軸，大於1代表獲利，小於1代表虧損，每支股票平均的獲利可以在1％左右，<br>算上摩擦成本（0.7%），就看起來沒這麼多了對吧XD。</p><p>發現，以平均來說，雖然似乎n有越大越好的趨勢，但是120日創新高也不能忽略，<br>我的感覺是，很多人都用120創新高這個參數在買股票，<br>所以很多圖都在120日有奇怪的反應（勝率跟獲利，都異常的高，詳見上圖）。</p><p>所以這篇文章對創新高的天數做了分析，也讓大家有一個策略的原型，<br>可以將此策略再多觀察、多分析，結合不同指標，相信可以篩選出更好的買點賣點！</p><p>不好意思讓大家久等了，最近一直在忙課程的東西，我覺得對長期支持blog的大家覺得虧欠。<br>我的理想目標是blog的發文頻率不要因為課程拍攝影片而被影響！<br>然而，事情畢竟沒有這麼簡單，<br>目前呈現蠟燭幾頭燒的狀態。<br>但我會盡力的！<br>也謝謝各位的長期支持！<br>我們會秉持初衷，維持文章的品質！讓FinLab的理念可以被更多人看到～</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;創多少天新高，才叫創新高？今天用非常紮實的回測，來分析一下多少天創新高，才是真正的創新高。&lt;br&gt;看到很多名師選股，都是用創新高的思路，然而買在創新高就是會讓人怕怕的，這麼高了！真的可以買嗎？尤其是對於價值型投資者來說，看到創新高的股票，有些本益比都快噴發60倍，避之唯恐不
-      
-    
-    </summary>
-    
-      <category term="指標分析" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-    
-      <category term="技術面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E6%8A%80%E8%A1%93%E9%9D%A2/"/>
-    
-    
-      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
-    
       <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="型態學" scheme="https://www.finlab.tw/tags/%E5%9E%8B%E6%85%8B%E5%AD%B8/"/>
-    
-      <category term=" 量化投資" scheme="https://www.finlab.tw/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
-    
-      <category term="指標" scheme="https://www.finlab.tw/tags/%E6%8C%87%E6%A8%99/"/>
     
   </entry>
   
