@@ -65,9 +65,9 @@
         
         <tag>python</tag>
          
-        <tag>KD</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>KD</tag>
          
          
            
@@ -181,9 +181,9 @@
         
         <tag>選股策略</tag>
          
-        <tag>KD</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>KD</tag>
          
         <tag>技術指標</tag>
          
@@ -265,11 +265,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T16:46:51.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -295,9 +295,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>歷史回測</tag>
-         
         <tag>選股</tag>
+         
+        <tag>歷史回測</tag>
          
         <tag>程式交易</tag>
          
@@ -1688,16 +1688,18 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
+    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     <data>
         <display>
-        <title>絕無僅有的超強指標！</title>
-        <pubTime>2017-10-23T18:24:24.000Z</pubTime>
+        <title>股價淨值比有這麼神？</title>
+        <pubTime>2017-09-24T11:09:52.000Z</pubTime>
         
-        <tag>選股</tag>
+        <tag>如何買股票</tag>
          
-        <tag>指標</tag>
+        <tag>歷史回測</tag>
+         
+        <tag>股價淨值比</tag>
          
          
            
@@ -1713,18 +1715,16 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     <data>
         <display>
-        <title>股價淨值比有這麼神？</title>
-        <pubTime>2017-09-24T11:09:52.000Z</pubTime>
+        <title>絕無僅有的超強指標！</title>
+        <pubTime>2017-10-23T18:24:24.000Z</pubTime>
         
-        <tag>如何買股票</tag>
+        <tag>選股</tag>
          
-        <tag>歷史回測</tag>
-         
-        <tag>股價淨值比</tag>
+        <tag>指標</tag>
          
          
            
