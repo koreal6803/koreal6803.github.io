@@ -68,11 +68,11 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
@@ -218,11 +218,11 @@
       <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
     
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
@@ -248,9 +248,9 @@
     
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
-      <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
     
       <category term="技術指標" scheme="https://www.finlab.tw/tags/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99/"/>
     
@@ -313,6 +313,34 @@
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
       <category term="股價預測" scheme="https://www.finlab.tw/tags/%E8%82%A1%E5%83%B9%E9%A0%90%E6%B8%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用python投資股票的第一部</title>
+    <link href="https://www.finlab.tw/Python%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B3%87/"/>
+    <id>https://www.finlab.tw/Python股票投資/</id>
+    <published>2018-07-20T16:55:21.000Z</published>
+    <updated>2018-12-20T19:04:05.777Z</updated>
+    
+    <content type="html"><![CDATA[<p>你有想過用python分析股票、選股並追蹤績效嗎？這篇文章從python初學開始，帶你慢慢進入python投資的世界！</p><center><img src="/Python股票投資/thumbnail.png" title="python程式語言"></center><p>Python 用在理財上，能做的事情非常多！首先，Python最大的用處在於：可以分析財經數據，並且分析哪些策略有效果，不需要擔心網路上五花撩亂的方法，也不用擔心名師報名牌。再來，Python甚至還能幫你下單！讓您在上班時，還能做交易！</p><p>而 Python 是所有程式語言中，最受歡迎的，功能也是最齊全的！</p><h3 id="重點是全部都免費！"><a href="#重點是全部都免費！" class="headerlink" title="重點是全部都免費！"></a>重點是全部都免費！</h3><p>假如要學程式語言，當然還是使用 Python 最好囉～<br>那我們就開始利用 Python 投資吧！</p><h2 id="安裝-Python3"><a href="#安裝-Python3" class="headerlink" title="安裝 Python3"></a>安裝 Python3</h2><p>安裝Python最簡單的方式，就是直接安裝 <a href="https://www.anaconda.com/download" rel="external nofollow noopener noreferrer" target="_blank">Anaconda</a> Anaconda 其實就是一個完整的Python生態系，包含了Python 和所有的基本需要的程式。</p><p>安裝好 Anaconda 後，就可以開始寫程式了！</p><h2 id="開啟-Python-IDE"><a href="#開啟-Python-IDE" class="headerlink" title="開啟 Python IDE"></a>開啟 Python IDE</h2><p>Anaconda的好處是，除了安裝了python，它還幫我們安裝了jupyter，是一個程式編輯器。要打開這個編輯器，windows跟mac有點不一樣：</p><p>windows：直接從開始工具列打開jupyter notebook<br>mac：打開anaconda navigator，並且找到jupyter notebook的按鈕</p><p>打開後你應該會看到以下的介面：</p><center><img src="/Python股票投資/jupyter.png" title="JupyterIDE"></center><p>按右邊「New」─&gt;「Python 3」來打開一個新的寫程式的地方，<br>我們可以輸入「hello world!」來開寫入我們的第一句程式，<br>並且按下「Run」來執行（或是按下ctrl-enter）<br>你就會得到以下的狀況喔！代表你已經完成了第一階段了！</p><center><img src="/Python股票投資/helloworld.png" title="JupyterIDE"></center><p>我們目前可以執行python的基礎的功能，<br>但是有一些進階的功能，必須要額外下載，<br>例如機器學習、數學計算等等。<br>這些進階功能通常會被包裝成 packges，我們必須要額外下載這些 packages。</p><h2 id="尋找-packages"><a href="#尋找-packages" class="headerlink" title="尋找 packages"></a>尋找 packages</h2><p>有些非常有名的 package，<br>例如繪圖的 Matplotlib、資料處理的 Pandas，<br>這些都在剛剛我們安裝的Anaconda已經包含。<br>那我們要怎麼知道要去哪下載額外的 packages 呢？</p><h4 id="方法1：google"><a href="#方法1：google" class="headerlink" title="方法1：google"></a>方法1：google</h4><p>首先，例如我們想要進行機器學習（machine learning），我們可以直接 google：「<a href="https://www.google.com/search?q=machine+lenaring+python+package&amp;oq=machine+lenaring+python+package&amp;aqs=chrome..69i57.730j0j9&amp;sourceid=chrome&amp;ie=UTF-8" rel="external nofollow noopener noreferrer" target="_blank">machine lenaring python package</a>」<br>就會看到很多的網頁都有推薦非常多machine learning 的package</p><h4 id="方法2：官網"><a href="#方法2：官網" class="headerlink" title="方法2：官網"></a>方法2：官網</h4><p>除了上網google外，也可以上<a href="https://pypi.org/" rel="external nofollow noopener noreferrer" target="_blank">pip官方網站</a>，上面也有很多的package清單，可以看最近最紅的packages。</p><p>要如何安裝這些 packages 呢？通常都會用以下的方法：</p><h3 id="使用-pip-來安裝-packages"><a href="#使用-pip-來安裝-packages" class="headerlink" title="使用 pip 來安裝 packages"></a>使用 pip 來安裝 packages</h3><p>安裝 packages 非常的簡單！而且這幾乎是唯一的方法：</p><p>假如你的作業系統是 windows，則可以打開 Anaconda Prompt，<br>這個是個黑白畫面，可以在這裡面輸入一些指令，來下載額外的packages。</p><p>假如你的作業系統是 Mac 則可以打開內建的 terminal 就可以輸入指令了。</p><p>指令就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install xxx</span><br></pre></td></tr></table></figure></p><p>其中的 <code>xxx</code> 就是 package 的名稱。<br>通常你也會看到「pip install xxx」，可以把其中的「pip」換成「conda」就可以了！</p><p>接下來就可以到<a href="/超簡單台股每日爬蟲教學">超簡單台股每日爬蟲教學</a><br>來複製當中的代碼，下載所有上市公司的股價吧！（但是code先不用看懂沒關係）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;你有想過用python分析股票、選股並追蹤績效嗎？這篇文章從python初學開始，帶你慢慢進入python投資的世界！&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/Python股票投資/thumbnail.png&quot; title=&quot;python程式語言&quot;&gt;&lt;/center&gt;
+      
+    
+    </summary>
+    
+      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -547,35 +575,6 @@
     
     
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ROE到底高或低才好？</title>
-    <link href="https://www.finlab.tw/ROE%E5%88%B0%E5%BA%95%E9%AB%98%E6%88%96%E4%BD%8E%E6%89%8D%E5%A5%BD%EF%BC%9F/"/>
-    <id>https://www.finlab.tw/ROE到底高或低才好？/</id>
-    <published>2018-03-18T13:15:20.000Z</published>
-    <updated>2018-03-19T11:41:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>我曾經在<a href="/EPS跟ROE哪個比較好用？">EPS跟ROE的比較文章</a>中，說明了「ROE越高越好」，但後來隔了幾個月，財報狗發佈了一篇文章「<a href="http://statementdog.com/blog/archives/10552" rel="external nofollow noopener noreferrer" target="_blank">為什麼ROE 不是越高越好？</a>」，瞬間被打臉，雙方都有回測做依據，究竟誰的回測系統有問題，我們來看個究竟！</p><center><img src="/ROE到底高或低才好？/thumbnail.png" title="搞的我好亂呀！XD"></center><h3 id="FinLab說：為何ROE越高越好？"><a href="#FinLab說：為何ROE越高越好？" class="headerlink" title="FinLab說：為何ROE越高越好？"></a>FinLab說：為何ROE越高越好？</h3><p>ROE就是一個考慮了公司可用資金與報酬的指標：</p><p>股東權益 = 總資產 - 總負債<br>ROE = 稅後盈餘 / 股東權益 * 100%</p><p>所以從公式上，我們應該要選擇稅後盈餘高，且股東權益低的公司，<br>代表公司很會賺錢！</p><p>簡單的策略：</p><ul><li>每60天（約兩個月）換一次ROE大於10％的股票（ROE高的股票）</li><li>結果：ROE高比ROE較低的股票群，來的更有優勢！</li></ul><h3 id="財報狗說：為何ROE越高不會越好，甚至越低越好？"><a href="#財報狗說：為何ROE越高不會越好，甚至越低越好？" class="headerlink" title="財報狗說：為何ROE越高不會越好，甚至越低越好？"></a>財報狗說：為何ROE越高不會越好，甚至越低越好？</h3><p>因為從統計來說，企業無法維持高ROE是常態，<br>通常擁有較高ROE的產業，必定伴隨很多競爭者、效訪者，所以到至於利潤下滑，<br>產業之間的競爭是非常激烈的喔！<br>而且當企業競爭優勢不再，ROE開始下滑時，股價也會反映出來！</p><p>簡單的策略：</p><ul><li>每年換一次ROE高股票</li><li>結果：ROE高效果甚至比ROE低的股票，績效更差！</li></ul><h3 id="所以到底誰說的對？"><a href="#所以到底誰說的對？" class="headerlink" title="所以到底誰說的對？"></a>所以到底誰說的對？</h3><p>這兩套立場各說各話時，背後其實是想要說明一個數據的特性，<br>就像是ROE跟股價之間的變化，</p><p>同樣的故事，不同的解讀方式，造成投資變得非常的撲朔迷離！</p><p>撲朔迷離的問題，資料的分析才是解決之道，就我個人的感覺，<br>應該是資料為本，而說詞當輔助，幫助記憶，<br>我覺得很多投資課程，都太強調說詞的傳授，反而沒有全面的真實資料的佐證！</p><h3 id="所以FinLab跟財報狗誰的故事是對的？"><a href="#所以FinLab跟財報狗誰的故事是對的？" class="headerlink" title="所以FinLab跟財報狗誰的故事是對的？"></a>所以FinLab跟財報狗誰的故事是對的？</h3><p>兩個都對，或者，嚴格說兩個都錯了！<br>就算有數據佐證，故事沒說清楚，也會導致大家理解上有很多誤區</p><p>剛剛仔細看文章的讀者，應該會發現，我們在回測時，更換持股的頻率不同！<br>沒錯，就是因為換股的頻率不同，所以導致績效有非常大的差距！</p><ul><li>高ROE的公司股價上升，是正確的！</li><li>ROE無法維持高檔，會有回歸的趨勢，造成股價又下跌，也是正確的！</li></ul><p>所以接下來我們就來觀看不同頻率持有高ROE的公司，會得到怎麼樣的報酬率：</p><ul><li>當ROE大於10％則持有 n 天，每 n 天換一次股票</li><li>不考慮手續費</li></ul><center><img src="/ROE到底高或低才好？/eq.png" title="歷史績效圖"></center><p>可以發現，換股頻率高的時候，獲利情況也會跟著變好，基本上也是一字排開的狀況！<br>財報狗只看到了金黃色那條曲線圖，所以他們說ROE高獲利不高<br>而FinLab只看到了深咖啡色的曲線圖，所以說ROE高獲利也高</p><h3 id="正解："><a href="#正解：" class="headerlink" title="正解："></a>正解：</h3><p>ROE在高檔時，可以買進，但是最好要密切觀察，當ROE下跌時，盡早賣出！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;我曾經在&lt;a href=&quot;/EPS跟ROE哪個比較好用？&quot;&gt;EPS跟ROE的比較文章&lt;/a&gt;中，說明了「ROE越高越好」，但後來隔了幾個月，財報狗發佈了一篇文章「&lt;a href=&quot;http://statementdog.com/blog/archives/10552&quot; re
-      
-    
-    </summary>
-    
-      <category term="指標分析" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/"/>
-    
-      <category term="基本面" scheme="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
-    
-    
-      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
-      <category term="ROE" scheme="https://www.finlab.tw/tags/ROE/"/>
     
   </entry>
   
