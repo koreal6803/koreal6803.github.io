@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/Python%EF%BC%9AVIX%E7%BE%8E%E8%82%A1%E5%A4%A7%E8%B7%8C%E6%8A%95%E8%B3%87%E6%B3%95/</loc>
+    <lastmod>2018-12-26T21:47:03.379Z</lastmod>
+    <data>
+        <display>
+        <title>Python：VIX美股大跌投資法</title>
+        <pubTime>2018-12-26T10:43:05.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+        <tag>美股</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/Python%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B3%87/</loc>
     <lastmod>2018-12-20T19:15:17.712Z</lastmod>
     <data>
@@ -87,9 +111,9 @@
         
         <tag>python</tag>
          
-        <tag>KD</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>KD</tag>
          
          
            
@@ -109,11 +133,11 @@
         <title>Python：免費加速度指標選股實做</title>
         <pubTime>2018-12-17T12:49:03.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -203,9 +227,9 @@
         
         <tag>選股策略</tag>
          
-        <tag>KD</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>KD</tag>
          
         <tag>技術指標</tag>
          
@@ -227,13 +251,13 @@
         <title>外資大賣，反而要買！？</title>
         <pubTime>2017-10-30T13:57:49.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -727,11 +751,11 @@
         <title>加速度指標：歷史年報酬20％的策略</title>
         <pubTime>2018-11-25T03:11:28.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -939,9 +963,9 @@
         <title>ROE到底高或低才好？</title>
         <pubTime>2018-03-18T13:15:20.000Z</pubTime>
         
-        <tag>ROE</tag>
-         
         <tag>如何買股票</tag>
+         
+        <tag>ROE</tag>
          
          
            
@@ -964,13 +988,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T11:28:20.000Z</pubTime>
         
-        <tag>ROE</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -1182,13 +1206,13 @@
         <title>如何定義KD鈍化</title>
         <pubTime>2017-11-14T14:22:16.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -1791,13 +1815,13 @@
         <title>超短線上影黑密技！</title>
         <pubTime>2017-11-03T17:44:31.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -1844,13 +1868,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T11:51:12.000Z</pubTime>
         
+        <tag>如何買股票</tag>
+         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
-         
-        <tag>如何買股票</tag>
          
          
            
