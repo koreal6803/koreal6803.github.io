@@ -4,12 +4,36 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/%E7%94%A8%E7%88%AC%E8%9F%B2%E7%88%AC%E5%85%A8%E4%B8%96%E7%95%8C%E8%82%A1%E5%83%B9/</loc>
+    <lastmod>2019-02-03T06:30:08.570Z</lastmod>
+    <data>
+        <display>
+        <title>Python新手教學(1)用爬蟲爬全球股價!</title>
+        <pubTime>2019-02-03T05:06:16.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+        <tag>月營收</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E5%88%A9%E7%94%A8MI-LSTM%E9%A0%90%E6%B8%AC%E8%82%A1%E5%83%B9/</loc>
     <lastmod>2019-01-09T17:50:46.179Z</lastmod>
     <data>
         <display>
         <title>論文導讀：利用MI-LSTM預測股價</title>
-        <pubTime>2019-01-09T14:13:01.000Z</pubTime>
+        <pubTime>2019-01-09T07:13:01.000Z</pubTime>
         
         <tag>機器學習</tag>
          
@@ -35,7 +59,7 @@
     <data>
         <display>
         <title>Python：VIX美股大跌投資法</title>
-        <pubTime>2018-12-26T10:43:05.000Z</pubTime>
+        <pubTime>2018-12-26T03:43:05.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -59,7 +83,7 @@
     <data>
         <display>
         <title>超簡單安裝Python教學</title>
-        <pubTime>2018-07-20T16:55:21.000Z</pubTime>
+        <pubTime>2018-07-20T10:55:21.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -81,7 +105,7 @@
     <data>
         <display>
         <title>你錯過的選股策略！</title>
-        <pubTime>2018-12-19T06:45:46.000Z</pubTime>
+        <pubTime>2018-12-18T23:45:46.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -109,7 +133,7 @@
     <data>
         <display>
         <title>超簡單台股每日爬蟲教學</title>
-        <pubTime>2017-10-24T22:17:06.000Z</pubTime>
+        <pubTime>2017-10-24T16:17:06.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -133,7 +157,7 @@
     <data>
         <display>
         <title>Python 時間序列實做！</title>
-        <pubTime>2017-11-15T13:03:03.000Z</pubTime>
+        <pubTime>2017-11-15T06:03:03.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -157,13 +181,13 @@
     <data>
         <display>
         <title>Python：免費加速度指標選股實做</title>
-        <pubTime>2018-12-17T12:49:03.000Z</pubTime>
+        <pubTime>2018-12-17T05:49:03.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -183,7 +207,7 @@
     <data>
         <display>
         <title>用Machine learning 學習看技術指標</title>
-        <pubTime>2018-12-04T22:58:25.000Z</pubTime>
+        <pubTime>2018-12-04T15:58:25.000Z</pubTime>
         
         <tag>機器學習</tag>
          
@@ -207,7 +231,7 @@
     <data>
         <display>
         <title>ROE怎麼看?機器學習告訴你</title>
-        <pubTime>2018-12-11T15:49:55.000Z</pubTime>
+        <pubTime>2018-12-11T08:49:55.000Z</pubTime>
         
         <tag>機器學習</tag>
          
@@ -231,7 +255,7 @@
     <data>
         <display>
         <title>回測框架介紹</title>
-        <pubTime>2017-10-12T11:39:12.000Z</pubTime>
+        <pubTime>2017-10-12T05:39:12.000Z</pubTime>
         
          
            
@@ -249,7 +273,7 @@
     <data>
         <display>
         <title>用KD值選股：還需搭配這三種指標</title>
-        <pubTime>2018-11-21T23:13:35.000Z</pubTime>
+        <pubTime>2018-11-21T16:13:35.000Z</pubTime>
         
         <tag>選股策略</tag>
          
@@ -275,15 +299,15 @@
     <data>
         <display>
         <title>外資大賣，反而要買！？</title>
-        <pubTime>2017-10-30T13:57:49.000Z</pubTime>
+        <pubTime>2017-10-30T06:57:49.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -306,7 +330,7 @@
     <data>
         <display>
         <title>簡單又有效：股價加速度選股指標</title>
-        <pubTime>2018-07-14T16:04:31.000Z</pubTime>
+        <pubTime>2018-07-14T10:04:31.000Z</pubTime>
         
         <tag>外資</tag>
          
@@ -335,7 +359,7 @@
     <data>
         <display>
         <title>威廉．納葛維茲-價值型選股策略</title>
-        <pubTime>2017-11-28T16:46:51.000Z</pubTime>
+        <pubTime>2017-11-28T09:46:51.000Z</pubTime>
         
         <tag>選股策略</tag>
          
@@ -363,7 +387,7 @@
     <data>
         <display>
         <title>創新高有多高？</title>
-        <pubTime>2018-02-27T20:10:59.000Z</pubTime>
+        <pubTime>2018-02-27T13:10:59.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -398,7 +422,7 @@
     <data>
         <display>
         <title>超簡單用python抓取每月營收</title>
-        <pubTime>2017-10-28T18:30:39.000Z</pubTime>
+        <pubTime>2017-10-28T12:30:39.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -422,7 +446,7 @@
     <data>
         <display>
         <title>用深度學習幫你解析K線圖！</title>
-        <pubTime>2018-01-23T19:50:05.000Z</pubTime>
+        <pubTime>2018-01-23T12:50:05.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -458,7 +482,7 @@
     <data>
         <display>
         <title>用數學計算日馳何時崩盤！</title>
-        <pubTime>2018-01-10T15:18:47.000Z</pubTime>
+        <pubTime>2018-01-10T08:18:47.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -480,7 +504,7 @@
     <data>
         <display>
         <title>自動下單（1）用Python爬取交易記錄</title>
-        <pubTime>2018-01-08T14:07:16.000Z</pubTime>
+        <pubTime>2018-01-08T07:07:16.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -504,7 +528,7 @@
     <data>
         <display>
         <title>三大法人爬蟲</title>
-        <pubTime>2018-07-02T15:59:30.000Z</pubTime>
+        <pubTime>2018-07-02T09:59:30.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -528,7 +552,7 @@
     <data>
         <display>
         <title>Python：如何獲得上市上櫃股票清單</title>
-        <pubTime>2018-11-19T22:55:04.000Z</pubTime>
+        <pubTime>2018-11-19T15:55:04.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -554,7 +578,7 @@
     <data>
         <display>
         <title>Python：利用Pandas輕鬆選股</title>
-        <pubTime>2017-11-08T14:16:44.000Z</pubTime>
+        <pubTime>2017-11-08T07:16:44.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -578,7 +602,7 @@
     <data>
         <display>
         <title>Python 財報爬蟲</title>
-        <pubTime>2017-11-02T21:19:27.000Z</pubTime>
+        <pubTime>2017-11-02T14:19:27.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -602,7 +626,7 @@
     <data>
         <display>
         <title>Python 簡單選股和回測</title>
-        <pubTime>2017-11-30T12:21:38.000Z</pubTime>
+        <pubTime>2017-11-30T05:21:38.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -624,7 +648,7 @@
     <data>
         <display>
         <title>Python-簡單的月營收選股！</title>
-        <pubTime>2018-01-22T14:10:47.000Z</pubTime>
+        <pubTime>2018-01-22T07:10:47.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -648,7 +672,7 @@
     <data>
         <display>
         <title>機器學習-總體經濟</title>
-        <pubTime>2018-11-27T15:53:00.000Z</pubTime>
+        <pubTime>2018-11-27T08:53:00.000Z</pubTime>
         
         <tag>機器學習</tag>
          
@@ -674,7 +698,7 @@
     <data>
         <display>
         <title>Python 簡單158種技術指標計算</title>
-        <pubTime>2017-11-19T18:46:09.000Z</pubTime>
+        <pubTime>2017-11-19T11:46:09.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -696,7 +720,7 @@
     <data>
         <display>
         <title>超簡單用Python預測股價</title>
-        <pubTime>2018-08-27T23:55:29.000Z</pubTime>
+        <pubTime>2018-08-27T17:55:29.000Z</pubTime>
         
         <tag>Machine Learning</tag>
          
@@ -722,7 +746,7 @@
     <data>
         <display>
         <title>論文導讀：機器學習與基因演算法選股</title>
-        <pubTime>2018-11-27T13:41:15.000Z</pubTime>
+        <pubTime>2018-11-27T06:41:15.000Z</pubTime>
         
         <tag>機器學習</tag>
          
@@ -748,7 +772,7 @@
     <data>
         <display>
         <title>坊間沒在教的RSI選股技巧</title>
-        <pubTime>2017-12-10T19:35:51.000Z</pubTime>
+        <pubTime>2017-12-10T12:35:51.000Z</pubTime>
         
         <tag>選股</tag>
          
@@ -775,13 +799,13 @@
     <data>
         <display>
         <title>加速度指標：歷史年報酬20％的策略</title>
-        <pubTime>2018-11-25T03:11:28.000Z</pubTime>
+        <pubTime>2018-11-24T20:11:28.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -801,7 +825,7 @@
     <data>
         <display>
         <title>用杜邦分析加強你的選股技巧（上）</title>
-        <pubTime>2017-10-01T14:01:09.000Z</pubTime>
+        <pubTime>2017-10-01T08:01:09.000Z</pubTime>
         
         <tag>入門教學</tag>
          
@@ -826,7 +850,7 @@
     <data>
         <display>
         <title>Python：外資買入成本選股</title>
-        <pubTime>2018-07-07T15:59:32.000Z</pubTime>
+        <pubTime>2018-07-07T09:59:32.000Z</pubTime>
         
         <tag>外資</tag>
          
@@ -848,7 +872,7 @@
     <data>
         <display>
         <title>如何判斷投資理財課程的好壞？</title>
-        <pubTime>2018-07-01T15:59:30.000Z</pubTime>
+        <pubTime>2018-07-01T09:59:30.000Z</pubTime>
         
         <tag>如何投資</tag>
          
@@ -865,7 +889,7 @@
     <data>
         <display>
         <title>為何時間管理總是失敗？</title>
-        <pubTime>2018-06-17T12:01:51.000Z</pubTime>
+        <pubTime>2018-06-17T06:01:51.000Z</pubTime>
         
         <tag>生產力</tag>
          
@@ -889,7 +913,7 @@
     <data>
         <display>
         <title>回測績效檢討</title>
-        <pubTime>2018-06-14T11:24:11.000Z</pubTime>
+        <pubTime>2018-06-14T05:24:11.000Z</pubTime>
         
          
            
@@ -904,7 +928,7 @@
     <data>
         <display>
         <title>你最該避開的三個疲勞陷阱！</title>
-        <pubTime>2018-06-11T13:59:06.000Z</pubTime>
+        <pubTime>2018-06-11T07:59:06.000Z</pubTime>
         
         <tag>生產力</tag>
          
@@ -926,7 +950,7 @@
     <data>
         <display>
         <title>利用Machine Learning 選股新手教學</title>
-        <pubTime>2017-10-20T10:58:23.000Z</pubTime>
+        <pubTime>2017-10-20T04:58:23.000Z</pubTime>
         
         <tag>機器學習</tag>
          
@@ -950,7 +974,7 @@
     <data>
         <display>
         <title>股票投資組合系列（一）</title>
-        <pubTime>2018-04-19T10:24:42.000Z</pubTime>
+        <pubTime>2018-04-19T04:24:42.000Z</pubTime>
         
         <tag>量化投資</tag>
          
@@ -967,7 +991,7 @@
     <data>
         <display>
         <title>Python簡單自動下單</title>
-        <pubTime>2018-04-13T07:10:52.000Z</pubTime>
+        <pubTime>2018-04-13T01:10:52.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -987,7 +1011,7 @@
     <data>
         <display>
         <title>ROE到底高或低才好？</title>
-        <pubTime>2018-03-18T13:15:20.000Z</pubTime>
+        <pubTime>2018-03-18T06:15:20.000Z</pubTime>
         
         <tag>ROE</tag>
          
@@ -1012,7 +1036,7 @@
     <data>
         <display>
         <title>買股票只考慮ROE是不夠的！</title>
-        <pubTime>2017-09-30T11:28:20.000Z</pubTime>
+        <pubTime>2017-09-30T05:28:20.000Z</pubTime>
         
         <tag>ROE</tag>
          
@@ -1045,7 +1069,7 @@
     <data>
         <display>
         <title>我的量化投資史</title>
-        <pubTime>2018-02-15T12:12:15.000Z</pubTime>
+        <pubTime>2018-02-15T05:12:15.000Z</pubTime>
         
         <tag>投資</tag>
          
@@ -1064,7 +1088,7 @@
     <data>
         <display>
         <title>避開大盤大跌的方法！</title>
-        <pubTime>2017-11-21T13:37:34.000Z</pubTime>
+        <pubTime>2017-11-21T06:37:34.000Z</pubTime>
         
         <tag>歷史回測</tag>
          
@@ -1094,7 +1118,7 @@
     <data>
         <display>
         <title>讓Machine Learning幫你看財報！</title>
-        <pubTime>2017-10-13T10:07:13.000Z</pubTime>
+        <pubTime>2017-10-13T04:07:13.000Z</pubTime>
         
         <tag>機器學習</tag>
          
@@ -1118,7 +1142,7 @@
     <data>
         <display>
         <title>python上櫃資料爬蟲輕鬆做</title>
-        <pubTime>2018-02-10T19:22:15.000Z</pubTime>
+        <pubTime>2018-02-10T12:22:15.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -1135,7 +1159,7 @@
     <data>
         <display>
         <title>三種看月營收的進階方法！</title>
-        <pubTime>2018-01-17T23:27:48.000Z</pubTime>
+        <pubTime>2018-01-17T16:27:48.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1160,7 +1184,7 @@
     <data>
         <display>
         <title>大跌後：用python找出強勢股！</title>
-        <pubTime>2018-02-06T13:57:08.000Z</pubTime>
+        <pubTime>2018-02-06T06:57:08.000Z</pubTime>
         
         <tag>選股策略</tag>
          
@@ -1187,7 +1211,7 @@
     <data>
         <display>
         <title>股票入門SOP懶人包</title>
-        <pubTime>2018-01-28T17:00:27.000Z</pubTime>
+        <pubTime>2018-01-28T10:00:27.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1207,7 +1231,7 @@
     <data>
         <display>
         <title>腦力激盪的外資策略！</title>
-        <pubTime>2017-12-08T12:13:29.000Z</pubTime>
+        <pubTime>2017-12-08T05:13:29.000Z</pubTime>
         
         <tag>外資</tag>
          
@@ -1230,15 +1254,15 @@
     <data>
         <display>
         <title>如何定義KD鈍化</title>
-        <pubTime>2017-11-14T14:22:16.000Z</pubTime>
+        <pubTime>2017-11-14T07:22:16.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -1259,7 +1283,7 @@
     <data>
         <display>
         <title>Machine Learning 表示：看季線最無用！</title>
-        <pubTime>2017-10-15T16:10:12.000Z</pubTime>
+        <pubTime>2017-10-15T10:10:12.000Z</pubTime>
         
         <tag>機器學習</tag>
          
@@ -1285,7 +1309,7 @@
     <data>
         <display>
         <title>價值股策略</title>
-        <pubTime>2017-10-09T14:31:56.000Z</pubTime>
+        <pubTime>2017-10-09T08:31:56.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1311,7 +1335,7 @@
     <data>
         <display>
         <title>利用Pandas輕鬆取得股價並回測</title>
-        <pubTime>2017-12-11T21:19:49.000Z</pubTime>
+        <pubTime>2017-12-11T14:19:49.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -1333,7 +1357,7 @@
     <data>
         <display>
         <title>小資族也可以使用的選股法！</title>
-        <pubTime>2017-10-04T09:40:42.000Z</pubTime>
+        <pubTime>2017-10-04T03:40:42.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1361,7 +1385,7 @@
     <data>
         <display>
         <title>市值營收比-幫你找到便宜獲利股</title>
-        <pubTime>2017-11-24T09:19:11.000Z</pubTime>
+        <pubTime>2017-11-24T02:19:11.000Z</pubTime>
         
         <tag>選股</tag>
          
@@ -1388,15 +1412,15 @@
     <data>
         <display>
         <title>新年賀禮 ─ 投信跟盤法！</title>
-        <pubTime>2018-01-01T14:55:40.000Z</pubTime>
+        <pubTime>2018-01-01T07:55:40.000Z</pubTime>
         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
          
-        <tag>投信</tag>
-         
         <tag>量化投資</tag>
+         
+        <tag>投信</tag>
          
         <tag>股票分析</tag>
          
@@ -1419,7 +1443,7 @@
     <data>
         <display>
         <title>教你用財報狗巴菲特免費選股</title>
-        <pubTime>2017-10-10T21:51:50.000Z</pubTime>
+        <pubTime>2017-10-10T15:51:50.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1441,7 +1465,7 @@
     <data>
         <display>
         <title>本益比能幫你選出優質股？</title>
-        <pubTime>2017-09-26T13:32:28.000Z</pubTime>
+        <pubTime>2017-09-26T07:32:28.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1472,7 +1496,7 @@
     <data>
         <display>
         <title>如何戰勝惰性？</title>
-        <pubTime>2017-09-20T11:09:42.000Z</pubTime>
+        <pubTime>2017-09-20T05:09:42.000Z</pubTime>
         
         <tag>生活</tag>
          
@@ -1491,7 +1515,7 @@
     <data>
         <display>
         <title>本益成長比真的越低越好！？</title>
-        <pubTime>2017-10-26T13:58:56.000Z</pubTime>
+        <pubTime>2017-10-26T07:58:56.000Z</pubTime>
         
         <tag>選股</tag>
          
@@ -1522,7 +1546,7 @@
     <data>
         <display>
         <title>14年14倍的選股策略！</title>
-        <pubTime>2017-09-28T12:05:16.000Z</pubTime>
+        <pubTime>2017-09-28T06:05:16.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1550,7 +1574,7 @@
     <data>
         <display>
         <title>用杜邦分析加強你的選股技巧（下）回測</title>
-        <pubTime>2017-10-07T02:45:40.000Z</pubTime>
+        <pubTime>2017-10-06T20:45:40.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1579,7 +1603,7 @@
     <data>
         <display>
         <title>拆解ROE用杜邦分析加強你的選股技巧（中）權益乘數</title>
-        <pubTime>2017-10-02T13:53:41.000Z</pubTime>
+        <pubTime>2017-10-02T07:53:41.000Z</pubTime>
         
         <tag>入門教學</tag>
          
@@ -1604,7 +1628,7 @@
     <data>
         <display>
         <title>用杜邦分析加強你的選股技巧（中）淨利率</title>
-        <pubTime>2017-10-05T21:07:14.000Z</pubTime>
+        <pubTime>2017-10-05T15:07:14.000Z</pubTime>
         
         <tag>入門教學</tag>
          
@@ -1629,7 +1653,7 @@
     <data>
         <display>
         <title>用杜邦分析加強你的選股技巧（中）總資產週轉率</title>
-        <pubTime>2017-10-03T10:42:44.000Z</pubTime>
+        <pubTime>2017-10-03T04:42:44.000Z</pubTime>
         
         <tag>入門教學</tag>
          
@@ -1656,7 +1680,7 @@
     <data>
         <display>
         <title>用股價淨值比來判斷大盤漲跌</title>
-        <pubTime>2017-09-25T18:52:40.000Z</pubTime>
+        <pubTime>2017-09-25T12:52:40.000Z</pubTime>
         
         <tag>簡易策略</tag>
          
@@ -1680,7 +1704,7 @@
     <data>
         <display>
         <title>立誓：每天都寫吧！</title>
-        <pubTime>2017-09-19T18:14:58.000Z</pubTime>
+        <pubTime>2017-09-19T12:14:58.000Z</pubTime>
         
         <tag>生活</tag>
          
@@ -1697,7 +1721,7 @@
     <data>
         <display>
         <title>策略狗。績優股獵犬1。如何找到優質股？</title>
-        <pubTime>2017-09-21T13:47:06.000Z</pubTime>
+        <pubTime>2017-09-21T07:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -1719,7 +1743,7 @@
     <data>
         <display>
         <title>策略狗。績優股獵犬2。何時買股才對？</title>
-        <pubTime>2017-09-22T13:47:06.000Z</pubTime>
+        <pubTime>2017-09-22T07:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -1741,7 +1765,7 @@
     <data>
         <display>
         <title>策略狗。績優股獵犬3。簡單回測</title>
-        <pubTime>2017-09-23T09:34:35.000Z</pubTime>
+        <pubTime>2017-09-23T03:34:35.000Z</pubTime>
         
         <tag>歷史回測</tag>
          
@@ -1765,7 +1789,7 @@
     <data>
         <display>
         <title>絕無僅有的超強指標！</title>
-        <pubTime>2017-10-23T18:24:24.000Z</pubTime>
+        <pubTime>2017-10-23T12:24:24.000Z</pubTime>
         
         <tag>選股</tag>
          
@@ -1790,7 +1814,7 @@
     <data>
         <display>
         <title>股價淨值比有這麼神？</title>
-        <pubTime>2017-09-24T11:09:52.000Z</pubTime>
+        <pubTime>2017-09-24T05:09:52.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1817,7 +1841,7 @@
     <data>
         <display>
         <title>財報狗選股讓你免費取得價值4000元/年的策略</title>
-        <pubTime>2017-10-11T17:17:45.000Z</pubTime>
+        <pubTime>2017-10-11T11:17:45.000Z</pubTime>
         
         <tag>如何買股票</tag>
          
@@ -1839,15 +1863,15 @@
     <data>
         <display>
         <title>超短線上影黑密技！</title>
-        <pubTime>2017-11-03T17:44:31.000Z</pubTime>
+        <pubTime>2017-11-03T10:44:31.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -1868,7 +1892,7 @@
     <data>
         <display>
         <title>大盤要跌了嗎？利用企業本益比分佈來判斷！</title>
-        <pubTime>2017-09-27T12:52:52.000Z</pubTime>
+        <pubTime>2017-09-27T06:52:52.000Z</pubTime>
         
         <tag>簡易策略</tag>
          
@@ -1892,7 +1916,7 @@
     <data>
         <display>
         <title>EPS跟ROE哪個比較好用？</title>
-        <pubTime>2017-09-29T11:51:12.000Z</pubTime>
+        <pubTime>2017-09-29T05:51:12.000Z</pubTime>
         
         <tag>EPS</tag>
          
