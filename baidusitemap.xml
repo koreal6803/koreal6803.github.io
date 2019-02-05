@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B80%E7%82%BA%E4%BD%95%E7%94%A8Python%E6%8A%95%E8%B3%87/</loc>
+    <lastmod>2019-02-05T12:36:08.357Z</lastmod>
+    <data>
+        <display>
+        <title>Python新手教學(0)為何用Python投資？</title>
+        <pubTime>2019-02-05T10:24:05.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E7%94%A8%E7%88%AC%E8%9F%B2%E7%88%AC%E5%85%A8%E4%B8%96%E7%95%8C%E8%82%A1%E5%83%B9/</loc>
     <lastmod>2019-02-04T16:56:11.705Z</lastmod>
     <data>
@@ -361,11 +383,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T09:46:51.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -391,9 +413,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>歷史回測</tag>
-         
         <tag>選股</tag>
+         
+        <tag>歷史回測</tag>
          
         <tag>程式交易</tag>
          
@@ -1013,9 +1035,9 @@
         <title>ROE到底高或低才好？</title>
         <pubTime>2018-03-18T06:15:20.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
@@ -1038,13 +1060,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T05:28:20.000Z</pubTime>
         
+        <tag>ROE</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -1918,13 +1940,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T05:51:12.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
