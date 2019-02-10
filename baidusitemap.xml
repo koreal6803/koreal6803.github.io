@@ -4,8 +4,78 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B82%E5%85%A8%E7%90%83%E6%8C%87%E6%95%B8%E4%B8%80%E6%AC%A1%E6%8A%93/</loc>
+    <lastmod>2019-02-10T14:22:48.908Z</lastmod>
+    <data>
+        <display>
+        <title>Python新手教學(2)全球指數一次抓</title>
+        <pubTime>2019-02-05T14:55:54.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+        <tag>爬蟲</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.finlab.tw/%E7%94%A8%E7%88%AC%E8%9F%B2%E7%88%AC%E5%85%A8%E4%B8%96%E7%95%8C%E8%82%A1%E5%83%B9/</loc>
+    <lastmod>2019-02-10T14:22:45.510Z</lastmod>
+    <data>
+        <display>
+        <title>Python新手教學(1)用爬蟲爬全球股價!</title>
+        <pubTime>2019-02-03T05:06:16.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+        <tag>月營收</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B80%E7%82%BA%E4%BD%95%E7%94%A8Python%E6%8A%95%E8%B3%87/</loc>
+    <lastmod>2019-02-10T14:21:06.253Z</lastmod>
+    <data>
+        <display>
+        <title>Python新手教學(0)為何用Python投資？</title>
+        <pubTime>2019-02-05T10:24:05.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B84%E7%9B%B8%E9%97%9C%E6%80%A7%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2019-02-10T05:11:56.680Z</lastmod>
+    <lastmod>2019-02-10T14:20:43.652Z</lastmod>
     <data>
         <display>
         <title>Python新手教學(4)台股跟哪國指數最相關？</title>
@@ -29,7 +99,7 @@
     
   <url>
     <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B83%E5%85%A8%E7%90%83%E6%8C%87%E6%95%B8%E6%AD%B7%E5%8F%B2%E6%95%B8%E6%93%9A/</loc>
-    <lastmod>2019-02-09T09:23:21.754Z</lastmod>
+    <lastmod>2019-02-10T14:20:31.973Z</lastmod>
     <data>
         <display>
         <title>Python新手教學(3)全球指數歷史數據</title>
@@ -40,76 +110,6 @@
         <tag>程式交易</tag>
          
         <tag>爬蟲</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B82%E5%85%A8%E7%90%83%E6%8C%87%E6%95%B8%E4%B8%80%E6%AC%A1%E6%8A%93/</loc>
-    <lastmod>2019-02-06T02:32:25.222Z</lastmod>
-    <data>
-        <display>
-        <title>Python新手教學(2)全球指數一次抓</title>
-        <pubTime>2019-02-05T14:55:54.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>程式交易</tag>
-         
-        <tag>爬蟲</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B80%E7%82%BA%E4%BD%95%E7%94%A8Python%E6%8A%95%E8%B3%87/</loc>
-    <lastmod>2019-02-05T16:21:52.522Z</lastmod>
-    <data>
-        <display>
-        <title>Python新手教學(0)為何用Python投資？</title>
-        <pubTime>2019-02-05T10:24:05.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>程式交易</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/%E7%94%A8%E7%88%AC%E8%9F%B2%E7%88%AC%E5%85%A8%E4%B8%96%E7%95%8C%E8%82%A1%E5%83%B9/</loc>
-    <lastmod>2019-02-05T16:20:46.898Z</lastmod>
-    <data>
-        <display>
-        <title>Python新手教學(1)用爬蟲爬全球股價!</title>
-        <pubTime>2019-02-03T05:06:16.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>程式交易</tag>
-         
-        <tag>月營收</tag>
          
          
            
@@ -255,9 +255,9 @@
         
         <tag>python</tag>
          
-        <tag>KD</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>KD</tag>
          
          
            
@@ -277,11 +277,11 @@
         <title>Python：免費加速度指標選股實做</title>
         <pubTime>2018-12-17T05:49:03.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -371,9 +371,9 @@
         
         <tag>選股策略</tag>
          
-        <tag>KD</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>KD</tag>
          
         <tag>技術指標</tag>
          
@@ -395,13 +395,13 @@
         <title>外資大賣，反而要買！？</title>
         <pubTime>2017-10-30T06:57:49.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -895,11 +895,11 @@
         <title>加速度指標：歷史年報酬20％的策略</title>
         <pubTime>2018-11-24T20:11:28.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -1350,13 +1350,13 @@
         <title>如何定義KD鈍化</title>
         <pubTime>2017-11-14T07:22:16.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
@@ -1810,12 +1810,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬2。何時買股才對？</title>
-        <pubTime>2017-09-22T07:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
+        <pubTime>2017-09-21T07:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -1832,12 +1832,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
-        <pubTime>2017-09-21T07:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬2。何時買股才對？</title>
+        <pubTime>2017-09-22T07:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -1959,13 +1959,13 @@
         <title>超短線上影黑密技！</title>
         <pubTime>2017-11-03T10:44:31.000Z</pubTime>
         
+        <tag>簡易策略</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>簡易策略</tag>
          
          
            
