@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8%EF%BC%9A%E5%A4%8F%E6%99%AE%E6%8C%87%E6%95%B8%E7%AD%96%E7%95%A5/</loc>
+    <lastmod>2019-02-21T08:25:31.207Z</lastmod>
+    <data>
+        <display>
+        <title>python新手教學：夏普指數策略</title>
+        <pubTime>2019-02-19T12:46:47.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B84%E7%9B%B8%E9%97%9C%E6%80%A7%E5%88%86%E6%9E%90/</loc>
     <lastmod>2019-02-15T04:24:56.639Z</lastmod>
     <data>
@@ -477,11 +499,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T09:46:51.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -505,11 +527,11 @@
         <title>創新高有多高？</title>
         <pubTime>2018-02-27T13:10:59.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -1129,9 +1151,9 @@
         <title>ROE到底高或低才好？</title>
         <pubTime>2018-03-18T06:15:20.000Z</pubTime>
         
-        <tag>ROE</tag>
-         
         <tag>如何買股票</tag>
+         
+        <tag>ROE</tag>
          
          
            
@@ -1154,13 +1176,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T05:28:20.000Z</pubTime>
         
-        <tag>ROE</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -1832,12 +1854,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
-        <pubTime>2017-09-21T07:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬2。何時買股才對？</title>
+        <pubTime>2017-09-22T07:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -1854,12 +1876,12 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC2%E3%80%82%E4%BD%95%E6%99%82%E8%B2%B7%E8%82%A1%E6%89%8D%E5%B0%8D%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%AD%96%E7%95%A5%E7%8B%97%E3%80%82%E7%B8%BE%E5%84%AA%E8%82%A1%E7%8D%B5%E7%8A%AC1%E3%80%82%E5%A6%82%E4%BD%95%E6%89%BE%E5%88%B0%E5%84%AA%E8%B3%AA%E8%82%A1%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:20.000Z</lastmod>
     <data>
         <display>
-        <title>策略狗。績優股獵犬2。何時買股才對？</title>
-        <pubTime>2017-09-22T07:47:06.000Z</pubTime>
+        <title>策略狗。績優股獵犬1。如何找到優質股？</title>
+        <pubTime>2017-09-21T07:47:06.000Z</pubTime>
         
         <tag>策略狗</tag>
          
@@ -2034,13 +2056,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T05:51:12.000Z</pubTime>
         
+        <tag>如何買股票</tag>
+         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
-         
-        <tag>如何買股票</tag>
          
          
            
