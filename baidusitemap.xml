@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/low-risk-fft-spy-strategy/</loc>
+    <lastmod>2019-06-14T07:41:22.776Z</lastmod>
+    <data>
+        <display>
+        <title>Python 低風險高報酬投資組合</title>
+        <pubTime>2019-06-13T14:07:22.000Z</pubTime>
+        
+        <tag>簡易策略</tag>
+         
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.finlab.tw/ffn-intro/</loc>
+    <lastmod>2019-06-13T14:11:05.315Z</lastmod>
+    <data>
+        <display>
+        <title>好用Package：用ffn分析時間序列</title>
+        <pubTime>2019-06-03T04:42:35.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E7%94%A8%E7%88%AC%E8%9F%B2%E7%88%AC%E5%85%A8%E4%B8%96%E7%95%8C%E8%82%A1%E5%83%B9/</loc>
     <lastmod>2019-06-10T02:05:37.728Z</lastmod>
     <data>
@@ -116,21 +162,6 @@
              
               <breadCrumb title="財經Python教學" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/ffn-intro/</loc>
-    <lastmod>2019-06-03T06:25:41.159Z</lastmod>
-    <data>
-        <display>
-        <title>好用Package：用ffn分析時間序列</title>
-        <pubTime>2019-06-03T04:42:35.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -1188,9 +1219,9 @@
         <title>ROE到底高或低才好？</title>
         <pubTime>2018-03-18T06:15:20.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
@@ -1213,13 +1244,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T05:28:20.000Z</pubTime>
         
+        <tag>ROE</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -2093,13 +2124,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T05:51:12.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            

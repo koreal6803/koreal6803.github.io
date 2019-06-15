@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2019-06-03T06:25:41.159Z</updated>
+  <updated>2019-06-14T07:41:22.776Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python 低風險高報酬投資組合</title>
+    <link href="https://www.finlab.tw/low-risk-fft-spy-strategy/"/>
+    <id>https://www.finlab.tw/low-risk-fft-spy-strategy/</id>
+    <published>2019-06-13T14:07:22.000Z</published>
+    <updated>2019-06-14T07:41:22.776Z</updated>
+    
+    <content type="html"><![CDATA[<p>投資可以很複雜，超多的商品選擇，分批持有買賣點設定等等，但也可以很簡單，</p><center><img src="/low-risk-fft-spy-strategy/big.png" title="thumbnail"></center><p>今天就是要來介紹一個簡單的策略，<br>此策略的 sharpe ratio 高達 1.2 非常高，但其實原理並不難，也不需要太多的技巧<br>用一句話就講完了：</p><h3 id="將資產分兩半：SPY-跟-20年公債"><a href="#將資產分兩半：SPY-跟-20年公債" class="headerlink" title="將資產分兩半：SPY 跟 20年公債"></a>將資產分兩半：SPY 跟 20年公債</h3><ul><li>一半投資「標準普爾500指數ETF」</li><li>一半投資「iShares 20年期以上美國公債ETF〈TLT〉」</li></ul><p>這種策略的大致上的原理就是「找兩個相關係數為負，且會隨時間增值的商品」<br>這樣的策略效果究竟如何呢？一半一半？這樣的比例真的好嗎？<br>我們可以用<a href="/ffn-intro/">上一篇文章 fft python package</a>，來做回測看看效果如何</p><p>大家可以點<a href="https://colab.research.google.com/drive/1rR3fvVliWQ1Q93xjO9qpd-nOhzfvWY2a" rel="external nofollow noopener noreferrer" target="_blank">這裡到程式碼，並且線上打扣！</a></p><h3 id="安裝-fft："><a href="#安裝-fft：" class="headerlink" title="安裝 fft："></a>安裝 fft：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install fft</span><br></pre></td></tr></table></figure><h3 id="獲取資料"><a href="#獲取資料" class="headerlink" title="獲取資料"></a>獲取資料</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import ffn</span><br><span class="line">prices = ffn.get(&quot;spy,tlt&quot;, )</span><br><span class="line">prices.plot()</span><br></pre></td></tr></table></figure><center><img src="/low-risk-fft-spy-strategy/spytlt.png" title="spy_and_tlt"></center><p>仔細看這兩個指數確實有呈現一點負相關，特別是 SPY 下跌的時候，TLT會些微的上漲</p><h3 id="將資產分一半，投資回測"><a href="#將資產分一半，投資回測" class="headerlink" title="將資產分一半，投資回測"></a>將資產分一半，投資回測</h3><p>這邊我們只拿「SPY」跟「TLT」，其實有很多的策略組合也會有「石油」、「新興市場」、「黃金」等等<br>大家到時候也可以去自行變化，找出比較好的投資組合</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.rebase().mean(axis=1).plot()</span><br></pre></td></tr></table></figure><center></center><p>雖然比直接投資sp500還要差，但是整體來說看起來更穩定的感覺<br>究竟我們有沒有辦法橫兩，這樣的組合是否是最好的呢？</p><p>不然我們就暴力計算一下，將幾種組合都寫出來：</p><table><thead><tr><th>策略</th><th>配置1</th><th>配置2</th><th>配置3</th><th>…</th><th>配置10</th><th>配置11</th></tr></thead><tbody><tr><td>SPY</td><td>0</td><td>0.1</td><td>0.2</td><td>…</td><td>0.9</td><td>1.0</td></tr><tr><td>TLT</td><td>1.0</td><td>0.9</td><td>0.8</td><td>…</td><td>0.1</td><td>0</td></tr></tbody></table><p>那我們把這幾種配置都回測一次試試看：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">strategies = &#123;&#125;</span><br><span class="line"></span><br><span class="line">for i in np.arange(0, 1.1, 0.1):</span><br><span class="line">    title = &quot;spy: %.1f | tlt: %.1f&quot; % (i, 1-i)</span><br><span class="line">    strategies[title] = (prices.rebase() * [i, 1-i]).mean(axis=1).rebase()</span><br><span class="line"></span><br><span class="line">strategies = pd.DataFrame(strategies)</span><br><span class="line"></span><br><span class="line">strategies.plot()</span><br></pre></td></tr></table></figure><center><img src="/low-risk-fft-spy-strategy/combination.png" title="各種不同的報酬率"></center><p>可以發現TLT比重比較重，則報酬率比較低，<br>SPY比重比較重，則報酬率比較高<br>除了報酬率以外，我們還有哪些指標可以來量化這些策略的績效呢？</p><p>我們可以用 ffn 提供的 <code>calc_stats</code> 來計算：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">stats = strategies.calc_stats()</span><br><span class="line">stats = pd.DataFrame(</span><br><span class="line">    &#123;</span><br><span class="line">        name:pd.Series(&#123;key:getattr(pf, key) for key in dir(pf) if isinstance(getattr(pf, key), float)&#125;, name=name) </span><br><span class="line">        for name,pf in stats.items()</span><br><span class="line">    &#125;).transpose()</span><br><span class="line"></span><br><span class="line">stats.head()</span><br></pre></td></tr></table></figure></p><center><img src="/low-risk-fft-spy-strategy/performance.png" title="績效檢測"></center><p>這樣我們就有一張策略的績效總表了，這張 dataframe 非常大一張，要怎麼看有哪些分析數據呢？<br>我們可以利用 <code>stats.columns</code> 查看可以比較的策略績效指標：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stats.columns</span><br></pre></td></tr></table></figure></p><center><img src="/low-risk-fft-spy-strategy/plist.png" title="量畫清單"></center><p>我們可以利用 <code>.plot</code> 將不同的績效比較給畫出來，例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stats[&apos;daily_sharpe&apos;].plot(rot=10, color=&apos;blue&apos;)</span><br><span class="line">stats[&apos;monthly_vol&apos;].plot(rot=10, color=&apos;red&apos;, secondary_y=True)</span><br></pre></td></tr></table></figure><center><img src="/low-risk-fft-spy-strategy/volsp.png" title="很多sharpeRatio"></center><p>上圖中有兩線，</p><ul><li>藍色的是 <a href="/Python新手教學：風險與報酬/">sharpe ratio</a>，代表 「報酬」/ 「風險」 的比例</li><li>紅色的是「每月報酬」的波動程度，</li></ul><p>可以發現，風險報酬比（藍色）最佳位置，剛好就是在 「一半一半」的資產配置上<br>對應到「每月報酬」最穩定的，也剛好就是在「一半一半」的資產配置上</p><p>這說明了投資好像不用搞太多花俏的東西，直要簡單粗暴就是最好的！<br>上面的 sharpe ratio 是用簡單的「每天」的 sharpe ratio，</p><p>不過假如你是投資長線的話，其實不用太計較每天的 sharpe，應該要看的是每個月，甚至是每年的：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stats[&apos;yearly_sharpe&apos;].plot()</span><br><span class="line">stats[&apos;monthly_sharpe&apos;].plot()</span><br><span class="line">stats[&apos;daily_sharpe&apos;].plot()</span><br></pre></td></tr></table></figure><center><img src="/low-risk-fft-spy-strategy/srs.png" title="很多sharpeRatio"></center><p>假如我們不要「每天」跟報酬率計較，而改成是「每個月」或「每年」的時候，<br>由上圖中可以知道，SPY 比例從 0.5~0.7 都是不錯的配置方式<br>不過這 1.3 以上的 sharpe ratio 其實算是滿驚人的（不過沒算上金融海嘯，所以…稍微不準）<br>我平常可能大費周章，搞了半天也弄不出這麼好的資產配置XD</p><p>接下來看平均年報酬率：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stats[&apos;yearly_mean&apos;]</span><br></pre></td></tr></table></figure></p><center><img src="/low-risk-fft-spy-strategy/returns.png" title="每年報酬率"></center><p>還可以！你想想看完全不看盤得到5%以上的獲利，已經非常爽了！<br>老實說這樣的組合還有很多可以玩的地方，例如加入定期權益平衡，<br>也就是每個月去重新調整持股比例，漲多的賣，跌多的買，重新將權重調整回原點。<br>我們下次會來介紹進化版策略的回測，讓這個簡單的策略再進化<br>可以定期追蹤 FinLab 一起來研究投資這件事情吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;投資可以很複雜，超多的商品選擇，分批持有買賣點設定等等，但也可以很簡單，&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/low-risk-fft-spy-strategy/big.png&quot; title=&quot;thumbnail&quot;&gt;&lt;/center&gt;
+
+&lt;p&gt;今天就是要來介紹一個
+      
+    
+    </summary>
+    
+      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>好用Package：用ffn分析時間序列</title>
     <link href="https://www.finlab.tw/ffn-intro/"/>
     <id>https://www.finlab.tw/ffn-intro/</id>
     <published>2019-06-03T04:42:35.000Z</published>
-    <updated>2019-06-03T06:25:41.159Z</updated>
+    <updated>2019-06-13T14:11:05.315Z</updated>
     
     <content type="html"><![CDATA[<p>Pandas 的 DataFrame 可以很方變得幫我們處理時間序列，只需要短短幾行，就能達到在其他程式語言要寫數十行的功能</p><h1 id="但是DataFrame就夠了嗎？"><a href="#但是DataFrame就夠了嗎？" class="headerlink" title="但是DataFrame就夠了嗎？"></a>但是DataFrame就夠了嗎？</h1><p>當我們在處理財務金融時，常常會需要分析時間序列（例如股價），雖然我們可能都知道什麼是maximum dropdown、什麼是sharp ratio，什麼是daily<br>return，但是有時候用dataframe來計算，還是免不了寫一些數學計算，增加程式碼的複雜度，讓閱讀程式碼變得比較辛苦。</p><h1 id="救星：ffn-Financial-Functions-for-Python"><a href="#救星：ffn-Financial-Functions-for-Python" class="headerlink" title="救星：ffn (Financial Functions for Python)"></a>救星：ffn (Financial Functions for Python)</h1><center><img src="/ffn-intro/th.png" title="info"></center><p>所以這時候，你的救星就出現了，叫做<a href="http://pmorissette.github.io/ffn/" rel="external nofollow noopener noreferrer" target="_blank">ffn</a>，ffn是一個分析時間序列的package，只要一import ffn，你的dataframe就會瞬間多了很多能力！接下來我們就來看看是什麼能力吧！</p><p>這次的程式碼都會在<a href="https://colab.research.google.com/drive/1lzqgK-ERM4bH5GYRyQNPURBhFKhQ9x6q" rel="external nofollow noopener noreferrer" target="_blank">google colab</a>上，大家可以直接打開網頁就開始跟我們一起玩耍吧！</p><p>首先，我們必須要先安裝ffn，安裝的方式非常的直覺：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install ffn</span><br></pre></td></tr></table></figure><br>這樣就安裝好囉！上式中的驚嘆號代表我們將這段command line語法，輸入在jupyter來安裝，這又就不需要額外再開啟terminal了！</p><p>安裝好了之後我們就可以開始寫程式囉！</p><h1 id="利用ffn取得股價"><a href="#利用ffn取得股價" class="headerlink" title="利用ffn取得股價"></a>利用ffn取得股價</h1><p>有了ffn我們可以很輕易的取得多檔股票的股價，ffn的底層是使用yahoo api，所以同樣也可以抓台股或其他國際股市喔！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import ffn</span><br><span class="line"></span><br><span class="line">prices = ffn.get(&apos;2330.TW, 1101.TW&apos;)</span><br><span class="line">prices.head()</span><br></pre></td></tr></table></figure></p><center><img src="/ffn-intro/1.png" title="股價"></center><p>可以發現這個股價的格是就是我們熟悉的dataframe耶！所以我們一樣可以使用一些dataframe既有的功能，例如「.plot」來繪圖：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.plot()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/2.png" title="股價2"></center><p>繪完圖後發現，雖然我們可以比較「2330」台積電，跟「1101」台泥的股價，但是他們的起始股價是不一樣的，所以無從比較報酬率。</p><p>想要比較報酬率，我們可以用「ffn」新增的額外功能「rebase」：</p><h1 id="ffn提供的functions"><a href="#ffn提供的functions" class="headerlink" title="ffn提供的functions"></a>ffn提供的functions</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.rebase().plot()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/3.png" title="dropdown"></center><p>這樣就可以讓股價的起始值相同囉！這是ffn提供的眾多功能之一，但你不用額外學一個新的資料表示法，而是直接對dataframe操作就可以了！所以說ffn有點像是dataframe的補充包，讓我們來看看還有哪些好用的功能吧！</p><h1 id="下跌幅度"><a href="#下跌幅度" class="headerlink" title="下跌幅度"></a>下跌幅度</h1><p>我們可以藉由ffn來計算並比較dropdown，也就是比較虧損的幅度：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.to_drawdown_series().plot()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/4.png" title="heat"></center><p>或是我們之前教過的heatmap，也一行就搞定了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.plot_corr_heatmap()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/5.png" title="heat2"></center><p>最後我們也可以來計算這兩檔股票的歷史數據分析：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stats = prices.calc_stats()</span><br><span class="line">stats.display()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/6.png" title="info"></center><p>這個輕量級的package有很多簡單的語法，可以快速幫助我們進行報酬率的分析<br>而且所有的功能都是使用dataframe擴增，所以不用擔心要學新的結構，滿小巧可愛的！<br>大家可以安裝起來玩玩看喔！  </p>]]></content>
     
@@ -35,6 +67,12 @@
     
     </summary>
     
+      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -536,38 +574,6 @@
       <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
     
       <category term="技術指標" scheme="https://www.finlab.tw/tags/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python：如何獲得上市上櫃股票清單</title>
-    <link href="https://www.finlab.tw/Python%EF%BC%9A%E5%A6%82%E4%BD%95%E7%8D%B2%E5%BE%97%E4%B8%8A%E5%B8%82%E4%B8%8A%E6%AB%83%E8%82%A1%E7%A5%A8%E6%B8%85%E5%96%AE/"/>
-    <id>https://www.finlab.tw/Python：如何獲得上市上櫃股票清單/</id>
-    <published>2018-11-19T15:55:04.000Z</published>
-    <updated>2018-11-29T17:08:14.711Z</updated>
-    
-    <content type="html"><![CDATA[<p>接下來為期幾天，將為大家打下python更深刻的基礎，適合剛學python，但是對pandas不太熟的讀者，這次我們就來把所有的股票代號給爬下來，並整理一番喔！</p><p>Python真的很厲害～可以用少少的語法達到非常多的功能<br>我覺得python搭配excel是沒有必要的，直接使用python替代excel才是最佳的方式！</p><center><img src="/Python：如何獲得上市上櫃股票清單/6.png" title="python基礎教學"></center><p>這禮拜終於比較悠閒一點，開始寫blog了，目前主要還是繼續培養大家的python實力為主，因為有一些同學說明課程有些地方跳的比較快，其實可以參考一些網路上免費的python課程來補齊，不過此blog也會隨時補充一些實用的功能，或是簡單的 python 常用的package和語法，幫助大家熟練 python。</p><p>今天要做的就是取得上市櫃股票代號與分類，首先，我們想要爬的網頁是：<br><a href="http://isin.twse.com.tw/isin/C_public.jsp?strMode=2" rel="external nofollow noopener noreferrer" target="_blank">http://isin.twse.com.tw/isin/C_public.jsp?strMode=2</a></p><p>其中<code>strMode=2</code>就是上市，而<code>strMode=4</code>就是上櫃，接下來我們就來將此網頁下載下來吧！</p><h3 id="爬取網頁"><a href="#爬取網頁" class="headerlink" title="爬取網頁"></a>爬取網頁</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">res = requests.get(<span class="string">"http://isin.twse.com.tw/isin/C_public.jsp?strMode=2"</span>)</span><br></pre></td></tr></table></figure><p>其中，我們使用了常用的 package 叫做 requests，可以模擬網頁瀏覽器，其中 <code>requests.get</code> 就是模擬我們連到該網頁，下載網頁的原始碼～</p><center><img src="/Python：如何獲得上市上櫃股票清單/1.png" title="爬取網頁"></center><h3 id="將網頁轉成-DataFrame"><a href="#將網頁轉成-DataFrame" class="headerlink" title="將網頁轉成 DataFrame"></a>將網頁轉成 DataFrame</h3><p>我們用了上述的程式碼，就可以獲得該網頁的原始碼，瀏覽器就是用這些原始碼渲染成網頁讓您操作的，我們可以從網頁原始碼中萃取出表格，產生 DataFrame</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = pd.read_html(res.text)[<span class="number">0</span>]</span><br><span class="line">df</span><br></pre></td></tr></table></figure><p>第一行：<code>pd</code> 就是我們萃取原始碼的package，全名叫做 <code>pandas</code> ，你可以想像 <code>pandas</code> 就是 python 界的 <code>excel</code> 軟體，可以操作各式各樣的表格，進行運算。</p><p>第三行：我們可以利用 <code>pd.read_html</code> 將我們剛剛爬取到的網頁原始碼 <code>res.text</code> 中的表格給萃取出來，而其中 <code>[0]</code> 是指說，萃取出來的可能有很多張表格，我們只需要第一張表格即可～</p><center><img src="/Python：如何獲得上市上櫃股票清單/2.png" title="將網頁轉成DataFrame"></center><h3 id="整理資料-1-整理column名稱"><a href="#整理資料-1-整理column名稱" class="headerlink" title="整理資料 1 整理column名稱"></a>整理資料 1 整理column名稱</h3><p>可以看到上圖，目前column名稱只是1、2、3、4，一些數字而已，但我們希望它們是有意義的文字，而我們又可以發現，其中第一行row，就是我們所需要的，所以，我們可以將第一行變成columns的名稱：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 設定column名稱</span></span><br><span class="line">df.columns = df.iloc[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># 刪除第一行</span></span><br><span class="line">df = df.iloc[<span class="number">1</span>:]</span><br></pre></td></tr></table></figure><center><img src="/Python：如何獲得上市上櫃股票清單/3.png" title="整理column名稱"></center><h3 id="整理資料-2-刪除冗餘行列"><a href="#整理資料-2-刪除冗餘行列" class="headerlink" title="整理資料 2 刪除冗餘行列"></a>整理資料 2 刪除冗餘行列</h3><p>接下來我們發現整理好column名稱後，還是有一些row很明顯是多餘的，我們必須要把它們刪除，刪除的方式，最簡單就是使用 <code>dropna</code>，並且設定當 <code>row</code> 或是 <code>column</code> 的 <code>NaN</code> 數量大於某個數字（例如3）時，我們就將該 <code>column</code> 或 <code>row</code> 移除：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先移除row，再移除column，超過三個NaN則移除</span></span><br><span class="line">df = df.dropna(thresh=<span class="number">3</span>, axis=<span class="number">0</span>).dropna(thresh=<span class="number">3</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure><center><img src="/Python：如何獲得上市上櫃股票清單/4.png" title="刪除多餘的行列"></center><h3 id="設定index"><a href="#設定index" class="headerlink" title="設定index"></a>設定index</h3><p>我們可以看到index目前也是數字，我們希望它是股票代號，則可以使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = df.set_index(<span class="string">'有價證券代號及名稱'</span>)</span><br></pre></td></tr></table></figure><br>即可！</p><center><img src="/Python：如何獲得上市上櫃股票清單/5.png" title="最後的成果"></center><p>由今天的練習，我們學到了使用 <code>requests</code> 來模擬瀏覽器，用 <code>pandas</code> 解析出網頁中的 table，並且利用 <code>pandas</code> 中的功能，將 table 作整理！</p><p>博士班口試結束了，接下來我會盡力開始維持blog正常出貨！也希望能提供更多的選股、程式上的教學！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;接下來為期幾天，將為大家打下python更深刻的基礎，適合剛學python，但是對pandas不太熟的讀者，這次我們就來把所有的股票代號給爬下來，並整理一番喔！&lt;/p&gt;
-&lt;p&gt;Python真的很厲害～可以用少少的語法達到非常多的功能&lt;br&gt;我覺得python搭配excel是
-      
-    
-    </summary>
-    
-      <category term="python財經" scheme="https://www.finlab.tw/categories/python%E8%B2%A1%E7%B6%93/"/>
-    
-    
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
-    
-      <category term="入門教學" scheme="https://www.finlab.tw/tags/%E5%85%A5%E9%96%80%E6%95%99%E5%AD%B8/"/>
     
   </entry>
   
