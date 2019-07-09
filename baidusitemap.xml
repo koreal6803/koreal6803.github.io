@@ -685,11 +685,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T09:46:51.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -713,11 +713,11 @@
         <title>創新高有多高？</title>
         <pubTime>2018-02-27T13:10:59.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -1697,6 +1697,25 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/%E6%AF%8F%E5%A4%A9%E8%87%B3%E5%B0%91%E5%AF%AB%E4%B8%80%E8%A1%8C/</loc>
+    <lastmod>2018-01-24T11:42:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何戰勝惰性？</title>
+        <pubTime>2017-09-20T05:09:42.000Z</pubTime>
+        
+        <tag>生活</tag>
+         
+        <tag>一行</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E6%AF%94%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%88%90%E9%95%B7%E7%8E%87%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:29.000Z</lastmod>
     <data>
@@ -1722,25 +1741,6 @@
              
               <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/%E6%AF%8F%E5%A4%A9%E8%87%B3%E5%B0%91%E5%AF%AB%E4%B8%80%E8%A1%8C/</loc>
-    <lastmod>2018-01-24T11:42:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何戰勝惰性？</title>
-        <pubTime>2017-09-20T05:09:42.000Z</pubTime>
-        
-        <tag>生活</tag>
-         
-        <tag>一行</tag>
-         
-         
-           
         </display>
     </data>
     </url>
