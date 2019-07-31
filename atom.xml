@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2019-06-17T09:01:41.646Z</updated>
+  <updated>2019-07-30T07:49:52.739Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>論文導讀：利用CNN神經網路來交易ETF</title>
+    <link href="https://www.finlab.tw/cnn-time-series-image-conversion-approach/"/>
+    <id>https://www.finlab.tw/cnn-time-series-image-conversion-approach/</id>
+    <published>2019-07-17T09:25:49.000Z</published>
+    <updated>2019-07-30T07:49:52.739Z</updated>
+    
+    <content type="html"><![CDATA[<p>文章導讀：機器學習用來投資一直都是非常熱門的學問，近年來深度學習模型開始受到非常多的矚目，尤其是在電腦視覺方面，所以接下來導讀的這篇文章，就是提供了一個全新的方式，將目前最火紅的 視覺神經網路：Convolutional Neural Network（CNN）用來預測股票的漲跌。實驗解果表示效果比一般的神經網路要好。</p><center><img src="/cnn-time-series-image-conversion-approach/title.png" title="該方法的示意圖"></center><p>你可能會問，以time series來說，明明神經網路可以使用 LSTM，為何要用 CNN？LSTM應該比較適合處理時間序列呀！（畢竟LSTM是拿來處理文字字串的神經網路，字串也是一種時間序列，所以通常預測股價，大家會用LSTM）。但文章中說明，目前CNN用於圖像處理比起其他的模型，被研究的更透徹，也有大量的研發，所以說不定效果更好，所以採用了 CNN 神經網路來預測股價的漲跌</p><p>他們用15個技術指標 X 15 天，產生出一個 15x15 的影像，將這個影像丟入 CNN 神經網路中做訓練，下圖就是神經網路所「看到」的input：</p><center><img src="/cnn-time-series-image-conversion-approach/input.png" title="用眼睛看訊號"></center><p>想想對於人類來說，這個影像對我們來講沒什麼意義，但是對於電腦來說，就可以拿來判斷股價的漲跌喔！還滿酷的！我只是在想為何是15x15為何不將圖像變的大一點？</p><p>我們會將上面這些圖片稱之為features，也就是電腦用來判斷買賣的資訊，然而我們怎麼定義什麼時候要買賣呢？也就是這個神經網路的label要怎麼設定呢？作者提供了一個簡單的方式，也就是使用rolling window，去找每段時間的最大值最小值，以下是大致上的程式碼，有興趣的話可以深入研究，不過我們在這邊就點到為止。</p><center><img src="/cnn-time-series-image-conversion-approach/label.png" title="生成label的方式"></center><p>上述的方法，會產生（-1, 0, 1）的訊號，分別代表（賣、不做動作、買），但是由上述程式碼產生出來的訊號，必然會有imbalance的問題，也就是三種class的數量不一致，所以本篇文章使用random resampling的方式，隨機取出相同數量的 label 對應到的 testcase，來避免 0 太多的問題。</p><p>此篇 paper 中用了美股的 ETF 和 道瓊 30 檔成分股當訓練的標的。<br>有了 feature 跟 label，很理所當然的，我們就可以開始訓練了！<br>此篇 paper 的神經網路如下：</p><center><img src="/cnn-time-series-image-conversion-approach/cnn.png" title="神經網路"></center><ul><li>input layer (15x15), </li><li>two convolutional layers (15x15x32, 15x15x64),</li><li>max pooling (7x7x64), </li><li>two dropout (0.25, 0.50), </li><li>fully connected layers (128),</li><li>output layer (3)</li></ul><p>上面的架構中，input就是單純的 15 x 15 的圖片，output 有3個，分別是買、賣、不做動作。<br>中間的 convolutional layers 跟 pooling 我就不多做說明了，<br>這神經網路也太小巧可愛了吧！<br>作者說由於training dataset不大的關係，所以神經網路不用太大，不然會造成overfitting的狀況。</p><p>這篇 paper 使用 walk forward 的方式來測試，好處是可以產生時間較長的回測結果，<br>以下就是他們的回測績效（其中兩檔ETF）：</p><center><img src="/cnn-time-series-image-conversion-approach/backtest.png" title="回測結果"></center><p>而他們也有將效果跟其他的神經網路作比較，幾種常用的方法：</p><ul><li>CNN-TAr 作者使用的方法</li><li>BaHr 所謂的 buy and Hold 長期持有</li><li>RSIr 利用 RSI技術指標做出來的策略</li><li>SMAr 均線策略 </li><li>LSTMr 神經網路策略</li><li>MLPr 一般神經網路策略</li></ul><p>下圖就是商品（每一個row）和不同策略（每一個column）所對應到的年報酬率：</p><center><img src="/cnn-time-series-image-conversion-approach/compare.png" title="回測結果"></center><p>可以發現這種神經網路的效果比其他的更好！在大部分的商品都有比較好的年報酬率喔～</p><p>更多內容都可以參考該<a href="https://www.researchgate.net/profile/Omer_Sezer/publication/324802031_Algorithmic_Financial_Trading_with_Deep_Convolutional_Neural_Networks_Time_Series_to_Image_Conversion_Approach/links/5ae4ade9a6fdcc3bea95d2fd/Algorithmic-Financial-Trading-with-Deep-Convolutional-Neural-Networks-Time-Series-to-Image-Conversion-Approach.pdf" rel="external nofollow noopener noreferrer" target="_blank">論文的連結</a>喔！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;文章導讀：機器學習用來投資一直都是非常熱門的學問，近年來深度學習模型開始受到非常多的矚目，尤其是在電腦視覺方面，所以接下來導讀的這篇文章，就是提供了一個全新的方式，將目前最火紅的 視覺神經網路：Convolutional Neural Network（CNN）用來預測股票的
+      
+    
+    </summary>
+    
+      <category term="AI看股票" scheme="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
+    
+    
+      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
+    
+      <category term="Machine Learning" scheme="https://www.finlab.tw/tags/Machine-Learning/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="選股" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 低風險高報酬投資組合</title>
@@ -546,34 +577,6 @@
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用KD值選股：還需搭配這三種指標</title>
-    <link href="https://www.finlab.tw/%E7%94%A8KD%E5%80%BC%E9%81%B8%E8%82%A1%EF%BC%9A%E9%82%84%E9%9C%80%E6%90%AD%E9%85%8D%E9%80%99%E4%B8%89%E7%A8%AE%E6%8C%87%E6%A8%99/"/>
-    <id>https://www.finlab.tw/用KD值選股：還需搭配這三種指標/</id>
-    <published>2018-11-21T16:13:35.000Z</published>
-    <updated>2018-11-29T17:13:37.627Z</updated>
-    
-    <content type="html"><![CDATA[<p>這篇文章將分享一個程式交易策略，以KD值為主，並且搭配其他的指標。<br>有很多人投資是看KD值的，但KD值的看法五花八門，究竟哪一種比較好用？<br>參數這麼多，究竟怎麼調績效比較好？<br>這篇文章示範一個中長期的程式交易策略，並講解製作策略的思路。</p><a id="more"></a><p>寫策略並模擬回測績效是非常重要的，通過回測，就能一眼看出來你的策略有沒有效。有人說歷史不等於未來，我覺得更正確的說，應該是「歷史不完全等於未來」，每年都有很多不同的黑天鵝，不同的國際政治變化，政黨輪替，然而假如你可以找到一個策略，不論環境如何變化，但是績效一直有穩定的成長，就代表你有可能找到了「歷史與未來會相同的某種選股邏輯」！</p><h3 id="KD值"><a href="#KD值" class="headerlink" title="KD值"></a>KD值</h3><p>今天我們就來試驗一下KD值程式交易選股，<br>首先，我傾向於把指標的參數拉長，原因是這樣比較容易抓的到股價的規律（以日K來說）。<br>不過我個人的研究發現趨勢指標型態不一樣，選出來的股票也會不一樣，<br>絕對不是只要股價會漲就好，而是要符合某些特定的數學條件。</p><p>這邊我選擇使用RSV 50, K 20, D 20，當作是參數（台股通常是9、3、3）。<br>當K大於D的時候買入，反之賣出，每天選股並重新平衡資產，可以得到以下的績效：</p><center><img src="/用KD值選股：還需搭配這三種指標/eq1.png" title="績效"></center><br><center><img src="/用KD值選股：還需搭配這三種指標/ns1.png" title="股票檔數"></center><p>紅色的是有考慮手續費，而藍色的則無。</p><p>然而這樣的選法是有一些弊端的！（尤其是手續費很高昂，股票換手率太高）<br>所以接下來我們就想辦法來解決，順便提高一下程式交易的績效～</p><h3 id="長期趨勢漲，可能會買在高點！"><a href="#長期趨勢漲，可能會買在高點！" class="headerlink" title="長期趨勢漲，可能會買在高點！"></a>長期趨勢漲，可能會買在高點！</h3><p>當K &gt; D時，股價會衝的很高，但是這時候買入就會買在高點了！<br>所以我們在使用長線KD值時，可以增加一個條件來確保不會買在高點：</p><p>當天股價 &lt; 10日平均</p><p>除了股價不能太高，同時股價也不能太低！</p><h3 id="股價必須高於年線"><a href="#股價必須高於年線" class="headerlink" title="股價必須高於年線"></a>股價必須高於年線</h3><p>我們在此參數下選出來的股票，假如股價沒有過年線的話，很容易漲到年線附近時，就被彈了回去，所以乾脆我們選股的時候，就直接選高於年線的，就不會有這個問題了XD</p><h3 id="增加一些常用的財務指標"><a href="#增加一些常用的財務指標" class="headerlink" title="增加一些常用的財務指標"></a>增加一些常用的財務指標</h3><p>程式交易除了用技術指標外，我們也可以增加一些財務指標，例如ROE：<br>ROE近1季大於ROE近4季平均</p><p>當然也有很多別的選項，我這邊就選一個好用的入門款XD，</p><h3 id="三種條件依序加上後的結果"><a href="#三種條件依序加上後的結果" class="headerlink" title="三種條件依序加上後的結果"></a>三種條件依序加上後的結果</h3><p>可以發現，從下到上依序就是：</p><ol><li>使用KD值</li><li>除了上述以外，額外增加：股價短線別太高</li><li>除了上述以外，額外增加：股價長線別太低</li><li>除了上述以外，額外增加：財務數據</li></ol><center><img src="/用KD值選股：還需搭配這三種指標/eqall.png" title="條件選股比較"></center><p>不過以上是沒有增加手續費的，因為我的回測系統每天都會重新權益平衡，所以有非常多不必要的摩擦成本，此時手續費折扣就非常的重要了！</p><p>最後我新增了一些不太重要的條件（為了減少股票檔數），整理成下圖，紅色為有手續費，藍色沒有手續費，只能說以人工調配持股應該會有更好的成果～有興趣可以研究看看！</p><center><img src="/用KD值選股：還需搭配這三種指標/eqf.png" title="績效"></center><br><center><img src="/用KD值選股：還需搭配這三種指標/nsf.png" title="股票檔數"></center>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;這篇文章將分享一個程式交易策略，以KD值為主，並且搭配其他的指標。&lt;br&gt;有很多人投資是看KD值的，但KD值的看法五花八門，究竟哪一種比較好用？&lt;br&gt;參數這麼多，究竟怎麼調績效比較好？&lt;br&gt;這篇文章示範一個中長期的程式交易策略，並講解製作策略的思路。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="KD" scheme="https://www.finlab.tw/tags/KD/"/>
-    
-      <category term="技術指標" scheme="https://www.finlab.tw/tags/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99/"/>
     
   </entry>
   
