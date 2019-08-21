@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2019-08-11T18:33:20.308Z</updated>
+  <updated>2019-08-21T03:07:08.638Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用程式分析房地產可行嗎（1）房地產爬蟲</title>
+    <link href="https://www.finlab.tw/real-estate-analysis1/"/>
+    <id>https://www.finlab.tw/real-estate-analysis1/</id>
+    <published>2019-08-21T02:10:05.000Z</published>
+    <updated>2019-08-21T03:07:08.638Z</updated>
+    
+    <content type="html"><![CDATA[<center><img src="/real-estate-analysis1/thumbnail.png" title="投資房產"></center><p>賺了一輩子的錢，還不如買對一戶房！<br>非常誇張，但又滿有道理的<br>假如一定要買房子，要買在哪裡呢？<br>如何找到抗跌的地段？<br>隨著屋齡不同，房價應該要如何變化呢？</p><p>這些問題，可能只有房地產專家一一為你解惑，<br>但一般人要買房，除了相信專家以外，還能怎麼辦呢？</p><p>利用程式來研究，自己當專家<br>現在台灣有實價登入的法規，這些資訊都是公開透明的<br>（雖然實價不等於真的成交價，但應該還是有正相關）</p><p>要爬取這些資訊，只要很短的程式碼：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> zipfile</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">real_estate_crawler</span><span class="params">(year, season)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> year &gt; <span class="number">1000</span>:</span><br><span class="line">    year -= <span class="number">1911</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># download real estate zip content</span></span><br><span class="line">  res = requests.get(<span class="string">"https://plvr.land.moi.gov.tw//DownloadSeason?season="</span>+str(year)+<span class="string">"S"</span>+str(season)+<span class="string">"&amp;type=zip&amp;fileName=lvr_landxml.zip"</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># save content to file</span></span><br><span class="line">  fname = str(year)+str(season)+<span class="string">'.zip'</span></span><br><span class="line">  open(fname, <span class="string">'wb'</span>).write(res.content)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># make additional folder for files to extract</span></span><br><span class="line">  folder = <span class="string">'real_estate'</span> + str(year) + str(season)</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(folder):</span><br><span class="line">    os.mkdir(folder)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># extract files to the folder</span></span><br><span class="line">  <span class="keyword">with</span> zipfile.ZipFile(fname, <span class="string">'r'</span>) <span class="keyword">as</span> zip_ref:</span><br><span class="line">      zip_ref.extractall(folder)</span><br><span class="line"></span><br><span class="line">  time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure><p>然後我們再寫個 for 迴圈，就可以將近 8 年的房價買賣資訊都爬下來</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">real_estate_crawler(<span class="number">101</span>, <span class="number">3</span>)</span><br><span class="line">real_estate_crawler(<span class="number">101</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> year <span class="keyword">in</span> range(<span class="number">102</span>, <span class="number">108</span>):</span><br><span class="line">  <span class="keyword">for</span> season <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>):</span><br><span class="line">    print(year, season)</span><br><span class="line">    real_estate_crawler(year, season)</span><br><span class="line"></span><br><span class="line">real_estate_crawler(<span class="number">108</span>, <span class="number">1</span>)</span><br><span class="line">real_estate_crawler(<span class="number">108</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure><p>這邊就先簡單的放上爬蟲，也有<a href="https://colab.research.google.com/drive/1uDVzXC9e9hXKxoGPK5mryj-B3NSRxNVl" rel="external nofollow noopener noreferrer" target="_blank">線上colab範例直接運行</a></p><p>之後我們會來研究，<br>究竟那邊的房價衰退的比較快？<br>哪裡是比較抗跌的區域？<br>哪裡的房子最便宜又最抗跌？</p><p>假如你對這系列有興趣的話，<br>可以到<a href="https://www.facebook.com/finlab.python/" rel="external nofollow noopener noreferrer" target="_blank">粉絲團</a>的這篇文章按個讚<br>這樣我才知道這是大家想看的<br>才會繼續往下寫喔！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;center&gt;&lt;img src=&quot;/real-estate-analysis1/thumbnail.png&quot; title=&quot;投資房產&quot;&gt;&lt;/center&gt;
+
+&lt;p&gt;賺了一輩子的錢，還不如買對一戶房！&lt;br&gt;非常誇張，但又滿有道理的&lt;br&gt;假如一定要買房子，要買在哪裡呢？&lt;br&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="房地產" scheme="https://www.finlab.tw/tags/%E6%88%BF%E5%9C%B0%E7%94%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>利用機器學習預測漲跌-優化方式（1）</title>
@@ -39,9 +66,9 @@
     
       <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -100,9 +127,9 @@
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -128,9 +155,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -157,9 +184,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -181,9 +208,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -205,9 +232,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -229,9 +256,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -255,9 +282,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -281,9 +308,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -308,9 +335,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -332,9 +359,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="月營收" scheme="https://www.finlab.tw/tags/%E6%9C%88%E7%87%9F%E6%94%B6/"/>
     
@@ -389,9 +416,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="美股" scheme="https://www.finlab.tw/tags/%E7%BE%8E%E8%82%A1/"/>
     
@@ -451,11 +478,11 @@
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -528,38 +555,6 @@
       
       
         &lt;p&gt;今天&lt;a href=&quot;https://pdfs.semanticscholar.org/b68e/8d2f4d2c709bb5919b82effcb6a7bbd3db37.pdf&quot; rel=&quot;external nofollow noopener noreferrer&quot; ta
-      
-    
-    </summary>
-    
-      <category term="AI看股票" scheme="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
-    
-    
-      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
-    
-      <category term="Machine Learning" scheme="https://www.finlab.tw/tags/Machine-Learning/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="量化投資" scheme="https://www.finlab.tw/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>論文導讀：機器學習與基因演算法選股</title>
-    <link href="https://www.finlab.tw/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E8%88%87%E5%9F%BA%E5%9B%A0%E6%BC%94%E7%AE%97%E6%B3%95%E9%81%B8%E8%82%A1/"/>
-    <id>https://www.finlab.tw/機器學習與基因演算法選股/</id>
-    <published>2018-11-27T06:41:15.000Z</published>
-    <updated>2018-11-29T17:04:10.963Z</updated>
-    
-    <content type="html"><![CDATA[<p>feature selection 是機器學習中非常重要的一環，尤其是財經領域的程式交易部分，因為財經領域有各式各樣的指標，又有財報、技術指標，這些指標高達尚千種，要如何選擇features，才能更有效預測股價？</p><p>今天介紹一篇<a href="https://arxiv.org/pdf/1806.01743.pdf" rel="external nofollow noopener noreferrer" target="_blank">論文</a>，使用了基因演算法來幫忙選擇features，以下是更進一步的介紹：</p><center><img src="/機器學習與基因演算法選股/thumbnail.jpg" title="基因演算法"></center><p>對於machine learning的程式交易演算法來說，<br>首先要有features，features可以想像成是指標，每一支股票都會有其features。<br>另外還有labels，也就是我們希望能夠預測的數值，例如股價漲跌的幅度，或是sharp ratio。</p><p>只要有了features跟labels，剩下的就簡單了，只要把這些features跟labels都輸入到一個黑盒子裡面，讓它學習，學成之後，只需要每次給它新的features，它就會預判label是多少。這個黑盒子通常稱為model，model有很多種類，最常見的就是deep neural network或是 random forest ，這些我們待會會簡單的介紹。</p><p>本篇論文在選擇features的階段，使用了基因演算法，由於財報、技術指標的數字有上千種，該如何選擇呢？第一步驟就是就全部都選擇吧！反正基因演算法會找出有用的features並且刪除無用的，至於基因演算法是如何做到的？它是模仿達爾文物競天擇的方式來找出有用的features：</p><h3 id="第一步：決定染色體"><a href="#第一步：決定染色體" class="headerlink" title="第一步：決定染色體"></a>第一步：決定染色體</h3><p>以數學的方式描述，染色體是一條一維向量，其長度為所有features的長度，其數值為0或1，0代表不選入該feature，1代表選入該feature。</p><p>一開始會隨機製作出100條染色體，想必效果就是很隨機的，不是很好。<br>然而生物是會進化的，適者生存、不適者淘汰，要怎麼定義要淘汰的染色體呢？</p><center><img src="/機器學習與基因演算法選股/crossover_bits.png" title="兩條染色體互相結合"></center><h3 id="第二步：決定染色體的成績"><a href="#第二步：決定染色體的成績" class="headerlink" title="第二步：決定染色體的成績"></a>第二步：決定染色體的成績</h3><p>每一種染色體都代表一組features的選擇，單一染色體拿出來，用染色體所選入的features進行機器學習，最後評估機器學習的成果。在論文中，是使用<a href="https://medium.com/greyatom/lets-learn-about-auc-roc-curve-4a94b4d88152" rel="external nofollow noopener noreferrer" target="_blank">AUC</a>來當作每個染色體的成績。</p><p>當然這時就可以進行適者生存、不適者淘汰的步驟，選出100個成績比較好的染色體，成績越好的染色體越有機會被選出來，但是也有可能成績很好但懷才不遇被篩選掉，這邊此文並沒有很明確的說明機制是什麼，實作上也有很多種方法，最簡單就是直接選成績最好的100個染色體。</p><center><img src="/機器學習與基因演算法選股/selection.png" title="模擬物競天擇"></center><p>這個目的在於，基因演算法的最後，我們希望選出一條染色體，其AUC算出來是最高的，代表它能夠很有效的分別出會漲的股票跟會跌的股票。</p><h3 id="第三步：交叉遺傳"><a href="#第三步：交叉遺傳" class="headerlink" title="第三步：交叉遺傳"></a>第三步：交叉遺傳</h3><p>我們會由現有的染色體，藉由排列組合，產生更多的染色體，具體的做法是：產生新的20條染色體，每條染色體皆由某兩條現有染色體的片段所組成，例如染色體的上半部和下半部是由不同染色體所提供的。</p><center><img src="/機器學習與基因演算法選股/crossover.jpg" title="兩條染色體互相結合"></center><h3 id="第四步：變異"><a href="#第四步：變異" class="headerlink" title="第四步：變異"></a>第四步：變異</h3><p>這個步驟中，這120條染色體會稍微的被隨機修改，每條染色體有10％的機率，其當中的一個bit會被反轉（由0變成1，或是1變成0）</p><center><img src="/機器學習與基因演算法選股/mutation.png" title="變異"></center><p>上圖是一個三個bit變異的例子，有很多種的變異方式，本文中一次只更動一個bit而已。</p><h3 id="回到第二步，開始生物演化的循環"><a href="#回到第二步，開始生物演化的循環" class="headerlink" title="回到第二步，開始生物演化的循環"></a>回到第二步，開始生物演化的循環</h3><p>每經過一次2、3、4步驟，就像是完成了一個世代，隨著是帶的變遷，平均來說，AUC的成績應該會越來越好，直到AUC的成績不再進步，就可以停止演化的過程。而其成果就是步驟二中，選出擁有最高的AUC的染色體，代表這些被選到的features組合在一起，預測能力是最強的！</p><center><img src="/機器學習與基因演算法選股/evolution.png" title="利用演算法模擬演化的過程，進而找到最佳解"></center><h2 id="機器學習"><a href="#機器學習" class="headerlink" title="機器學習"></a>機器學習</h2><p>我們剛剛有說的，機器學習的model就像是黑盒子一樣，文中主要使用兩種model：deep neural network和random forest，都是非常常見的model，兩種model都有其優缺點，不一定哪個比較好。所以本文也提出了stacking的方式，將這兩種黑盒子的結果取平均，得出最後的答案，結果發現比單獨使用這兩種model更好。</p><h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>我個人是滿好奇features沒有經過normalize就跑DNN不會有問題嗎？滿奇怪的，感覺DNN應該要額外再preprocessing一下，但是文中並沒有提到，就當作作者忘記說明好了。</p><p>我以前的做法是自己憑經驗找有效的features並且放進去測試，這篇文章使用了基因演算法來幫助大家篩選features，進行程式交易，大量的降低了人工feature engineering的時間，當然電腦也是要算很久，雖然我沒試過，但以普通單機電腦來說，估計要好幾天才能跑出最佳解。個人認為這篇論文實做起來是有效的。</p><p><a href="https://arxiv.org/pdf/1806.01743.pdf" rel="external nofollow noopener noreferrer" target="_blank">論文網址</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;feature selection 是機器學習中非常重要的一環，尤其是財經領域的程式交易部分，因為財經領域有各式各樣的指標，又有財報、技術指標，這些指標高達尚千種，要如何選擇features，才能更有效預測股價？&lt;/p&gt;
-&lt;p&gt;今天介紹一篇&lt;a href=&quot;https://
       
     
     </summary>
