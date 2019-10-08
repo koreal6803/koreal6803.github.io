@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2019-08-29T05:05:21.938Z</updated>
+  <updated>2019-10-08T07:30:49.856Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>只用一行程式碼分析數據!?（實用的 Python Package）</title>
+    <link href="https://www.finlab.tw/one-line-info-dataframe/"/>
+    <id>https://www.finlab.tw/one-line-info-dataframe/</id>
+    <published>2019-09-30T13:46:49.000Z</published>
+    <updated>2019-10-08T07:30:49.856Z</updated>
+    
+    <content type="html"><![CDATA[<p>這篇文章介紹一個好用的 package，只要一行，就可以做出精美、詳細的圖表分析<br>還可以幫你查看資料是否有缺漏和錯誤的情況！</p><center><img src="/one-line-info-dataframe/thumbnail.jpeg" title="thumbnail"></center><p>今天的程式碼成果：</p><center><img src="/one-line-info-dataframe/profile_df.gif" title="profile_df"></center><h1 id="先取得要分析之資料"><a href="#先取得要分析之資料" class="headerlink" title="先取得要分析之資料"></a>先取得要分析之資料</h1><p>今天我們來分析一下股票的本益比、股價淨值比和殖利率，<br>先提供給大家一個爬蟲，讓大家可以直接把資料爬下來：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="keyword">import</span> pandas_profiling</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawler</span><span class="params">(date)</span>:</span></span><br><span class="line">    datestr = date.strftime(<span class="string">'%Y%m%d'</span>)</span><br><span class="line">    url = <span class="string">'https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=csv&amp;date='</span>+datestr+<span class="string">'&amp;selectType=ALL'</span></span><br><span class="line">    res = requests.get(url)</span><br><span class="line">    df = pd.read_csv(StringIO(res.text), header=<span class="number">1</span>)</span><br><span class="line">    df[<span class="string">'本益比'</span>] = pd.to_numeric(df[<span class="string">'本益比'</span>], errors=<span class="string">'coerce'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> df.dropna(thresh=<span class="number">3</span>).dropna(thresh=<span class="number">0.8</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure><p>接下來我們就呼叫 <code>crawler</code> 這個函式，就可以將財務數據資料都爬取下來囉！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = crawler(datetime.date(<span class="number">2019</span>,<span class="number">10</span>,<span class="number">7</span>))</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure><center><img src="/one-line-info-dataframe/head.png" title="df_head"></center><h3 id="1-用舊的方法來分析資料"><a href="#1-用舊的方法來分析資料" class="headerlink" title="1. 用舊的方法來分析資料"></a>1. 用舊的方法來分析資料</h3><p>最簡單的方式，假如有用過 <code>pandas</code> 的大家應該都知道，<br>可以使用 <code>df.describe()</code> 來大致上觀察數據的樣貌<br>假如你對 pandas 不太熟悉，它有點像是拿來處理表格的資料，<br>就像是 python 界的 excel 一樣，雖然它非常好用，但是有點太古老（無聊）了！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.describe()</span><br></pre></td></tr></table></figure><center><img src="/one-line-info-dataframe/describe.png" title="df_describe"></center><h3 id="2-酷炫的方法資料分析"><a href="#2-酷炫的方法資料分析" class="headerlink" title="2. 酷炫的方法資料分析"></a>2. 酷炫的方法資料分析</h3><p>首先我們可以安裝 pandas_profiling</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pandas_profiling</span><br></pre></td></tr></table></figure><p>接下來就可以直接來使用：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas_profiling</span><br><span class="line">df = crawler(datetime.date(<span class="number">2019</span>,<span class="number">10</span>,<span class="number">7</span>))</span><br><span class="line">df.profile_report()</span><br></pre></td></tr></table></figure><p>然後我們就會看到超精美的圖表！</p><h4 id="找出資料的缺漏或問題"><a href="#找出資料的缺漏或問題" class="headerlink" title="找出資料的缺漏或問題"></a>找出資料的缺漏或問題</h4><p>我覺得 <code>pandas_profiling</code> 很棒的地方在於，<br>可以將資料一口氣全部統整給我們，方便我們去做資料前處理，<br>例如下圖中的左下角，就可以看到每一個column有哪些警告，</p><center><img src="/one-line-info-dataframe/profile.png" title="profile"></center><ul><li>本益比有 20.4 % 是缺漏的：這是正常情況，因為本益比小於零不顯示</li><li>殖利率有 20.0 % 是 0：這也是正常情況，因為公司不一定有發股利股息</li><li>財報都是用第 2 季的財報：這也是正常的！</li></ul><p>有了這種檢驗，更能夠讓我們知道資料的可靠程度，真的非常非常棒！<br>除了上述的檢驗外，我們還可以</p><h4 id="輕鬆檢視每一個-column-的資料"><a href="#輕鬆檢視每一個-column-的資料" class="headerlink" title="輕鬆檢視每一個 column 的資料"></a>輕鬆檢視每一個 column 的資料</h4><p>這邊可以看到每一種資料的分佈，可以讓我們更好的掌握數據分佈型態</p><center><img src="/one-line-info-dataframe/hist.png" title="histogram"></center><h4 id="檢視資料相關性"><a href="#檢視資料相關性" class="headerlink" title="檢視資料相關性"></a>檢視資料相關性</h4><p>這邊還可以檢視資料的相關性，這邊有些複雜的名詞，哪天再來跟各位介紹</p><center><img src="/one-line-info-dataframe/corr.png" title="correlation"></center><p><code>pandas_profiling</code> 真的是很不錯的 package，<br>可以幫我們進一步的認識資料，<br>假如你也覺得這個 package 很實用，<br>也歡迎你分享給大家喔！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;這篇文章介紹一個好用的 package，只要一行，就可以做出精美、詳細的圖表分析&lt;br&gt;還可以幫你查看資料是否有缺漏和錯誤的情況！&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/one-line-info-dataframe/thumbnail.jpeg&quot; title=&quot;t
+      
+    
+    </summary>
+    
+      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
+    
+    
+      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
+    
+      <category term="Python" scheme="https://www.finlab.tw/tags/Python/"/>
+    
+      <category term="dataframe" scheme="https://www.finlab.tw/tags/dataframe/"/>
+    
+      <category term="資料分析" scheme="https://www.finlab.tw/tags/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>用程式分析房地產可行嗎（2）房價分析</title>
@@ -93,9 +125,9 @@
     
       <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -154,9 +186,9 @@
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -182,9 +214,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -211,9 +243,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -235,9 +267,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -259,9 +291,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -283,9 +315,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -309,9 +341,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -335,9 +367,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -362,9 +394,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -386,9 +418,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="月營收" scheme="https://www.finlab.tw/tags/%E6%9C%88%E7%87%9F%E6%94%B6/"/>
     
@@ -443,9 +475,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="美股" scheme="https://www.finlab.tw/tags/%E7%BE%8E%E8%82%A1/"/>
     
@@ -525,35 +557,6 @@
     <summary type="html">
     
       &lt;p&gt;機器學習究竟能不能輔助人類買賣股票？答案一定是可以的，我們可以藉由機器學習歸納出結果，來優化我們的選股方式，今天這篇文章沒有非常高深的數學，也沒有困難的程式，只會有做完研究的心得，幫助大家選股更順利！&lt;br&gt;
-    
-    </summary>
-    
-      <category term="AI看股票" scheme="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
-    
-    
-      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
-    
-      <category term="Machine Learning" scheme="https://www.finlab.tw/tags/Machine-Learning/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用Machine learning 學習看技術指標</title>
-    <link href="https://www.finlab.tw/Machine-learning%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E9%A0%90%E6%B8%AC%E5%A4%A7%E7%9B%A4/"/>
-    <id>https://www.finlab.tw/Machine-learning：使用技術指標預測大盤/</id>
-    <published>2018-12-04T15:58:25.000Z</published>
-    <updated>2018-12-13T17:15:58.926Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.sciencedirect.com/science/article/pii/S0957417414004473" rel="external nofollow noopener noreferrer" target="_blank">這篇文章是印度指數預測</a>，2015年發表的就能有191個citation，算是很有名的paper之一，全文特點是只使用了技術指標，來預測大盤每天漲跌，提出了一個有效的優化方式。</p><center><img src="/Machine-learning：使用技術指標預測大盤/thumbnail.png" title="技術指標機器學習"></center><p>這篇paper的作者非常的認真，總共訓練四種不同的模型：Artificial Neural Network (ANN), support vector machine (SVM), random forest (RF) 和 Naive-Bayes (NB)。</p><p>這邊假如看不懂沒有關係，可以想像「模型」就是「電腦的大腦」，負責學習每種指標怎麼對應到未來的漲跌。之後有空再來慢慢介紹這些不同的「大腦」背後的數學原理。</p><p>此論文主要建構製作兩組traning data：</p><ul><li>包含十種技術指標</li><li>為這十種技術指標的看漲看跌<br>前者為 float （被normalize成-1～1）<br>而後者為 boolean （也就是只有輸入True和False）。</li></ul><p>究竟這些排列組合會迸出什麼樣的火花呢？</p><h3 id="選擇模型"><a href="#選擇模型" class="headerlink" title="選擇模型"></a>選擇模型</h3><p>研究發現Random Forest的表現是最好的，而ANN差了一點，<br>這是滿正常的，畢竟data set還是太小，神經網路很難訓練的非常好。<br>至於傳統的NB則是最差的。</p><p>其實也可以考慮一下LSTM，說不定效果也不錯？<br>（但因為LSTM還是基於ANN，所以有可能遇到traning set太小的問題）</p><h3 id="選擇traning-data"><a href="#選擇traning-data" class="headerlink" title="選擇traning data"></a>選擇traning data</h3><p>如同上面所述，此篇論文總共先用了十種技術指標，以下是這十種常見的指標，為了讓文章不會太冗長，我就不一一解釋了，之後有空再來介紹每種指標的用法。</p><center><img src="/Machine-learning：使用技術指標預測大盤/p1.png" title="十種技術指標"></center><p>￼<br>這篇paper會將這些技術指標的數值，每一項做normalize在-1～1之間，這樣的優化主要是為了ANN和SVM。以下是這個model的架構：</p><center><img src="/Machine-learning：使用技術指標預測大盤/p2.png" title="最初的架構"></center><p>￼<br>另外，全文的特點是使用了提出了 「Trend Deterministic Data Preparation」，看起來非常的厲害，簡單講就是將這些指標的數值究竟是「看漲」還是「看跌」拿來訓練，而不是訓練指標本身的數值。</p><p>例如均線好了，與其拿均線的值來訓練，不如看「股價跟均線的關係」，假如股價在均線之上，就是「看漲」（True），反之則「看跌」（False）。其他指標都能以此類推！</p><p>以下就是新增了一層資料的修改的架構：</p><p><center><img src="/Machine-learning：使用技術指標預測大盤/p3.png" title="優化後的架構"></center><br>￼</p><p>最後發現使用了「Trend Deterministic Data Preparation」<br>效果好很多！</p><h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>這篇文章中，可以大概知道每一種model對於技術性指標的數據的效果如何。並且了解了用「Trend Deterministic Data Preparation」來進行優化。經過了非常多參數的比對，發現使用RF model做出來的策略效果最好。然而這只限於頻率為「天」的股價，假如頻率不是「天」，則可能會不一樣～。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S0957417414004473&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;
-      
     
     </summary>
     
