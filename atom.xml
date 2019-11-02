@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2019-10-08T07:30:49.856Z</updated>
+  <updated>2019-11-02T07:00:53.747Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>投資組合 Paper Trading 1分鐘就上手（Cmoney 大富翁股票 API）</title>
+    <link href="https://www.finlab.tw/cmoney-paper-trading/"/>
+    <id>https://www.finlab.tw/cmoney-paper-trading/</id>
+    <published>2019-11-02T05:07:19.000Z</published>
+    <updated>2019-11-02T07:00:53.747Z</updated>
+    
+    <content type="html"><![CDATA[<p>沒有錢投資嗎？想要鍛鍊投資技巧又不虧前嗎？<br>除了回測外，想要有接近真實情況的投資模擬嗎？<br>那你一定要試試看我寫的這個小程式：CmoneyVirtualAccount<br>他可以幫你模擬股票買賣的獲利狀況，讓你在沒有錢的時候，可以拿來做練習。</p><center><img src="/cmoney-paper-trading/thumbnail.png" title="thumbnail"></center><h3 id="為什麼要用-Paper-Trading"><a href="#為什麼要用-Paper-Trading" class="headerlink" title="為什麼要用 Paper Trading"></a>為什麼要用 Paper Trading</h3><p>Paper Trading 可以幫助我們更理解市場上投資的真實狀況，<br>顯示我們「假如」持有某種資產組合的報酬率，<br>我們可以自行設定投資金額，例如100萬，並且測試看看，自己精心研發的策略有沒有用</p><h3 id="為什麼不用回測就好了？"><a href="#為什麼不用回測就好了？" class="headerlink" title="為什麼不用回測就好了？"></a>為什麼不用回測就好了？</h3><p>簡單講，大部分寫Python的人，回測框架要達到非常嚴謹，是非常困難的，<br>所以通常我們都「大概測一測」，比較少考慮的部分有：</p><ol><li>胃納量（有些股票根本沒成交量，怎麼可能買很多張？）</li><li>不小心使用到未來數據（財報、月營收）</li><li>摩擦成本（手續費、證交稅）</li><li>忘記把已下市股票給納入回測中</li><li>太多了…以後再整理給大家</li></ol><p>除了更精密的模擬外，Paper Trading還能夠</p><h3 id="幫助投資人檢視策略的「微觀效果」"><a href="#幫助投資人檢視策略的「微觀效果」" class="headerlink" title="幫助投資人檢視策略的「微觀效果」"></a>幫助投資人檢視策略的「微觀效果」</h3><p>Paper Trading 可以讓你對於投資更有感覺，回測只是看長年下來的獲利績效，<br>雖然你可能覺得長期績效很好，但是這是個宏觀角度（好幾年），也就是最後得到的總報酬率，<br>然而我們真正投資的時候，是深處於微觀的世界（每天），會覺得每天的起伏都很劇烈！<br>有時候會讓你疑神疑鬼，想要調整策略，覺得這個策略可能失效了，<br>變得說常常在優化策略，但是都是無謂的優化<br>Paper Trading 另一個關鍵是，你要把它當成真的$（雖然很難），<br>這樣操作的時候，除了模擬獲利，也模擬自己面對報酬率的心態，</p><p>接下來我們就進行三個步驟來做 Paper Trading 吧！</p><h3 id="1-安裝"><a href="#1-安裝" class="headerlink" title="1. 安裝"></a>1. 安裝</h3><p>這個程式沒什麼特別的安裝方法，可以打開anaconda prompt 輸入以下指令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/koreal6803/CmoneyVirtualAccount.git</span><br><span class="line">mv CmoneyVirtualAccount/cmoneyVirtualAccount ./cmoney</span><br></pre></td></tr></table></figure></p><h3 id="2-申請帳號"><a href="#2-申請帳號" class="headerlink" title="2. 申請帳號"></a>2. 申請帳號</h3><p>我們要到 (Cmoney)[<a href="https://cmoney.tw/vt/]" rel="external nofollow noopener noreferrer" target="_blank">https://cmoney.tw/vt/]</a> 的平台來申請帳號密碼，這邊值得注意的是，假如你有用FB登入，請還是要設定一個密碼，這樣等等才可以使用 Python 操控 Cmoney 的模擬平台喔！(右上角使用者名稱-&gt;基本資料)</p><h3 id="3-用程式操控"><a href="#3-用程式操控" class="headerlink" title="3. 用程式操控"></a>3. 用程式操控</h3><p>然後就可以在此資料夾中，使用 Python 來做 Paper trading 囉！<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> cmoney.stock <span class="keyword">import</span> VirtualStockAccmount</span><br><span class="line"></span><br><span class="line"><span class="comment"># 登入</span></span><br><span class="line">vs = VirtualStockAccount(<span class="string">'your_account'</span>, <span class="string">'your_password'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ------ #</span></span><br><span class="line"><span class="comment"># 查看帳戶</span></span><br><span class="line"><span class="comment"># ------ # </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拿到某檔股票的資料：</span></span><br><span class="line">vs.get_price(<span class="string">'2330'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前帳戶持有的股票</span></span><br><span class="line">vs.status()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看現有資金</span></span><br><span class="line">vs.info()</span><br><span class="line"></span><br><span class="line"><span class="comment"># ------ #</span></span><br><span class="line"><span class="comment"># 操作帳戶</span></span><br><span class="line"><span class="comment"># ------ # </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 買一張台積電（強迫現價或開盤價買入）</span></span><br><span class="line">vs.buy(<span class="string">'2330'</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 賣出一張台積電（強迫現價或開盤賣出）</span></span><br><span class="line">vs.sell(<span class="string">'2330'</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ------ #</span></span><br><span class="line"><span class="comment"># 批次操作</span></span><br><span class="line"><span class="comment"># ------ # </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 買一張台積電、一張聯發科</span></span><br><span class="line">vs.buy(&#123;<span class="string">'2330'</span>: <span class="number">1</span>, <span class="string">'2454'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 出清所有股票</span></span><br><span class="line">vs.sell_all()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 將所有帳戶持股設定成：「一張台積電」、「一張聯發科」</span></span><br><span class="line"><span class="comment"># （會先賣出股票，並且買「一張台積電」、「一張聯發科」)</span></span><br><span class="line">vs.rebalance(&#123;<span class="string">'2330'</span>: <span class="number">1</span>, <span class="string">'2454'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自動分配持股（平均分散總資產）（通常我會用這個）</span></span><br><span class="line">vs.sync([<span class="string">'1101'</span>, <span class="string">'2330'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># ------ #</span></span><br><span class="line"><span class="comment"># 委託操作</span></span><br><span class="line"><span class="comment"># ------ # </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看目前的委託單</span></span><br><span class="line">vs.get_orders()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 刪除所有委託單</span></span><br><span class="line">vs.cancel_all_orders()</span><br><span class="line"></span><br></pre></td></tr></table></figure></p><h3 id="課程同學-Bonus"><a href="#課程同學-Bonus" class="headerlink" title="課程同學 Bonus!"></a>課程同學 Bonus!</h3><p>假如有上「小資族選股策略」的同學，想要paper trade你的策略，配合最後的優等生策略，可以直接使用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vs.sync(strategy(data))</span><br></pre></td></tr></table></figure><p>來 paper trade 任何選股策略喔！</p><p>這支程式放在倉庫裡很久了，最近想要用又把它拿出來，想說修理一下分享給大家！<br>也歡迎大家來 pull 新功能喔～（或 pull unit test）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;沒有錢投資嗎？想要鍛鍊投資技巧又不虧前嗎？&lt;br&gt;除了回測外，想要有接近真實情況的投資模擬嗎？&lt;br&gt;那你一定要試試看我寫的這個小程式：CmoneyVirtualAccount&lt;br&gt;他可以幫你模擬股票買賣的獲利狀況，讓你在沒有錢的時候，可以拿來做練習。&lt;/p&gt;
+&lt;cent
+      
+    
+    </summary>
+    
+      <category term="財經Python教" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+  </entry>
   
   <entry>
     <title>只用一行程式碼分析數據!?（實用的 Python Package）</title>
@@ -540,32 +568,6 @@
       <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
     
       <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ROE怎麼看?機器學習告訴你</title>
-    <link href="https://www.finlab.tw/ROE%E6%80%8E%E9%BA%BC%E7%9C%8B-%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%91%8A%E8%A8%B4%E4%BD%A0/"/>
-    <id>https://www.finlab.tw/ROE怎麼看-機器學習告訴你/</id>
-    <published>2018-12-11T08:49:55.000Z</published>
-    <updated>2018-12-13T17:03:42.895Z</updated>
-    
-    <content type="html"><![CDATA[<p>機器學習究竟能不能輔助人類買賣股票？答案一定是可以的，我們可以藉由機器學習歸納出結果，來優化我們的選股方式，今天這篇文章沒有非常高深的數學，也沒有困難的程式，只會有做完研究的心得，幫助大家選股更順利！<br><a id="more"></a></p><center><img src="/ROE怎麼看-機器學習告訴你/thumbnail.png" title="SVM教你怎麼選股"></center><p>這篇文章中，我把市值跟ROE拿來做比較，並且利用SVM來訓練判斷，<br>看看市值跟ROE對於股價漲跌的關連</p><h3 id="什麼是SVM？"><a href="#什麼是SVM？" class="headerlink" title="什麼是SVM？"></a>什麼是SVM？</h3><p>SVM的全名叫做 <a href="https://en.wikipedia.org/wiki/Support_vector_machine" rel="external nofollow noopener noreferrer" target="_blank">Support Vector Machine</a>，而這類的機器學習，會用 hyperplane 將空間切開，進而將空間中的座標進行分類，所以當我們有2個features時，就可以將第一個feature當作 x 軸，第二個 feature 當作 y 軸，然後顏色代表漲跌，畫出一張圖：</p><center><img src="/ROE怎麼看-機器學習告訴你/svm.png" title="svm的簡單範例"></center><p>其中的綠色點，就是代表下跌的股票，而紅色的點，則代表了上漲的股票，而hyperplane 就是黃色的時線，將這個平面上畫出精準的一刀，切成兩個部分，右半部份，代表SVM覺得未來會上漲，左半部份代表SVM覺得未來會下跌的股票。</p><p>以上是由視覺的方式來說明SVM，數學的部分，其實大家國中高中都有學過，其實就是點與 hyperplane 的長度，SVM會計算「點到線」之間的長度，來決定誤差。當有越多點歸類錯誤的時候，SVM就會將這些「點到線的距離加總」，當作是錯誤總分，越大越不好，於是演算法不斷的移動這個切割線（hyperplane），來達到最完美的狀態，使得錯誤總分最低。</p><h3 id="SVM-的-Kernel-Trick"><a href="#SVM-的-Kernel-Trick" class="headerlink" title="SVM 的 Kernel Trick"></a>SVM 的 Kernel Trick</h3><p>我們上述的都是一條直線的 hyperplane ，但其實它不一定得是直的，只要能夠切分出不同的區域來分類即可。下圖就是使用linear的kernel跟曲線的kernel的範例：</p><center><img src="/ROE怎麼看-機器學習告訴你/kernel.png" title="不同的kernel結果也不一樣"></center><p>接下來，我們就來使用不同的kernel，來將股票做歸類，看它們究竟會上漲還是下跌？<br>我們所使用的 features 只有：<br>ROE、市值<br>方便我們以圖形化的方式呈現並理解，以下是結果</p><h3 id="使用線性的kernel"><a href="#使用線性的kernel" class="headerlink" title="使用線性的kernel"></a>使用線性的kernel</h3><p>此時 hyperplane 就是很簡單的一條線。雖然是簡單的一條線，但它還是非常有用處，我們可以藉由這條線的斜率，來瞭解 ROE 跟市值的關係：</p><center><img src="/ROE怎麼看-機器學習告訴你/linear.png" title="linearKernel成果"></center><p>程式自動最佳化後，上圖就是程式找到一刀最完美的切法，</p><ul><li>黃色三角形為上漲的股票</li><li>藍色正方形為下跌的股票</li><li>黃色平面是SVM認為會上漲的股票</li><li>藍色平面是SVM認為會下跌的股票</li></ul><p>這邊的市值跟ROE都已經經過preprocessing，所以跟我們平常看到的數值不太一樣，<br>我們由上圖可以看出程式在想什麼：</p><h4 id="機器學習：市值越高的股票，ROE也要越高"><a href="#機器學習：市值越高的股票，ROE也要越高" class="headerlink" title="機器學習：市值越高的股票，ROE也要越高"></a>機器學習：市值越高的股票，ROE也要越高</h4><p>可以看到上圖中，斜率是正的，代表當市值越高時，SVM 會傾向於選擇 ROE 高一點的股票，而且此條線偏上方，代表ROE比較高比較好，所以我們可以做一些歸納；</p><h4 id="假如有一檔股票「市值高，但是ROE低」，不會被選進來"><a href="#假如有一檔股票「市值高，但是ROE低」，不會被選進來" class="headerlink" title="假如有一檔股票「市值高，但是ROE低」，不會被選進來"></a>假如有一檔股票「市值高，但是ROE低」，不會被選進來</h4><p>這樣的想法算滿合理的，因為大家對市值高的股票期望比較高，或是公司的規模比較大，但此公司坐擁資源竟然還沒辦法為股東賺錢，於是期望可能轉換為失望，所以SVM表示看跌。</p><p>當然這個理由是我自己加的，SVM 是無情的最佳化結果而已。<br>另外我們也可以看到：</p><h4 id="對於「市值低，ROE低」的公司，SVM會比較寬容"><a href="#對於「市值低，ROE低」的公司，SVM會比較寬容" class="headerlink" title="對於「市值低，ROE低」的公司，SVM會比較寬容"></a>對於「市值低，ROE低」的公司，SVM會比較寬容</h4><p>一檔「市值低，ROE低」的公司，SVM會比較寬容一些些（但還是有一定的門檻）只是不如市值高的公司那麼嚴苛罷了。</p><p>我們來看一下以此種邏輯回測的結果，紅色為預測會漲的股票，綠色為預測會跌的股票，每季獲利的平均</p><center><img src="/ROE怎麼看-機器學習告訴你/eq1.png" title="回測結果"></center><p>效果很不錯<br>但是這個邏輯是否是完美的呢？<br>我們再來使用不同的kernel，試試看</p><h3 id="使用曲線的kernel"><a href="#使用曲線的kernel" class="headerlink" title="使用曲線的kernel"></a>使用曲線的kernel</h3><p>下圖為使用不同的kernel，所做出來的分類結果，我們使用2次多項式來對股票進行分類</p><center><img src="/ROE怎麼看-機器學習告訴你/poly.png" title="回測結果"></center><p>怎麼分出來完全不一樣呀！我們來看第二個實驗，SVM又告訴了我們什麼：</p><h4 id="市值高的股票-ROE-不要太高"><a href="#市值高的股票-ROE-不要太高" class="headerlink" title="市值高的股票 ROE 不要太高"></a>市值高的股票 ROE 不要太高</h4><p>這其實還是有些道理的，ROE 太高的股票不要買，這個是很多實驗都有做出來的結果，因為大公司的獲利，好歹也是龐大而穩定的系統，ROE高是會有上限的，不可能一直成長，當今天ROE已經很高時，代表接下來不會更高了，甚至還有可能會衰退。</p><p>所以買市值高的股票時，SVM傾向「ROE 不要太高」</p><h4 id="市值低的股票-ROE-越高越好"><a href="#市值低的股票-ROE-越高越好" class="headerlink" title="市值低的股票 ROE 越高越好"></a>市值低的股票 ROE 越高越好</h4><p>然而本實驗的另一個特點，就是SVM統計出來，發現市值低的股票ROE高是沒有關係的，至於原因可能是因為，市值低的股票，大家對於該公司期望並不高，在此狀況下，高 ROE 的數值跌破大家的眼鏡，所以造成長期的後市看好。（只是推測）</p><p>所以買市值低的股票時，SVM傾向「ROE 盡量高一點」 </p><h4 id="市值中間的股票，不要買"><a href="#市值中間的股票，不要買" class="headerlink" title="市值中間的股票，不要買"></a>市值中間的股票，不要買</h4><p>這個條件是最詭異的一個，我還是不要亂解釋好了XDD。</p><h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>這樣的邏輯可以獲利嗎？我們可以看以下的結果，紅色為持有預測會漲的股票，綠色為持有預測會跌的股票，每季獲利的平均：</p><center><img src="/ROE怎麼看-機器學習告訴你/eq2.png" title="回測結果"></center><p>也是有不錯的獲利！<br>利用 SVM 來分辨漲跌的股票，真的還滿有趣的，本文利用了兩種不同的 kernel：</p><ul><li>linear</li><li>polynomial<br>來進行分類，結果顯示 linear 的分類，跑出來的回測獲利比較優秀，但由這兩種不同的kernel，製作出來的模型，都可以拿來獲利。</li></ul><p>雖然兩個模型的闡述「相互矛盾」「有點道理、但又有點詭異」<br>就像是投資界眾說紛紜的理論一樣，<br>所以以後看到相互矛盾的論點，<br>其實不一定誰好誰壞，甚至說不定都能夠獲利，<br>這就是股票市場的有趣之處。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;機器學習究竟能不能輔助人類買賣股票？答案一定是可以的，我們可以藉由機器學習歸納出結果，來優化我們的選股方式，今天這篇文章沒有非常高深的數學，也沒有困難的程式，只會有做完研究的心得，幫助大家選股更順利！&lt;br&gt;
-    
-    </summary>
-    
-      <category term="AI看股票" scheme="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
-    
-    
-      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
-    
-      <category term="Machine Learning" scheme="https://www.finlab.tw/tags/Machine-Learning/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
