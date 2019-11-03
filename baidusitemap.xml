@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://www.finlab.tw/cmoney-paper-trading/</loc>
-    <lastmod>2019-11-02T07:29:41.473Z</lastmod>
+    <lastmod>2019-11-03T03:51:43.993Z</lastmod>
     <data>
         <display>
         <title>投資組合 Paper Trading 1分鐘就上手（Cmoney 大富翁股票 API）</title>
@@ -478,11 +478,11 @@
         <title>加速度指標：歷史年報酬20％的策略</title>
         <pubTime>2018-11-24T20:11:28.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -674,11 +674,11 @@
         <title>Python：免費加速度指標選股實做</title>
         <pubTime>2018-12-17T05:49:03.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -792,13 +792,13 @@
         <title>外資大賣，反而要買！？</title>
         <pubTime>2017-10-30T06:57:49.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
         <tag>程式交易</tag>
          
@@ -1379,9 +1379,9 @@
         <title>ROE到底高或低才好？</title>
         <pubTime>2018-03-18T06:15:20.000Z</pubTime>
         
-        <tag>ROE</tag>
-         
         <tag>如何買股票</tag>
+         
+        <tag>ROE</tag>
          
          
            
@@ -1404,13 +1404,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T05:28:20.000Z</pubTime>
         
-        <tag>ROE</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -1622,13 +1622,13 @@
         <title>如何定義KD鈍化</title>
         <pubTime>2017-11-14T07:22:16.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
          
            
@@ -2209,13 +2209,13 @@
         <title>超短線上影黑密技！</title>
         <pubTime>2017-11-03T10:44:31.000Z</pubTime>
         
-        <tag>簡易策略</tag>
-         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
+         
+        <tag>簡易策略</tag>
          
          
            
@@ -2262,13 +2262,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T05:51:12.000Z</pubTime>
         
+        <tag>如何買股票</tag>
+         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
-         
-        <tag>如何買股票</tag>
          
          
            
