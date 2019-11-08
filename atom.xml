@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2019-11-04T03:11:53.204Z</updated>
+  <updated>2019-11-08T04:44:47.693Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>機器學習無法預測股價！</title>
+    <link href="https://www.finlab.tw/ml-can-not-predict-price/"/>
+    <id>https://www.finlab.tw/ml-can-not-predict-price/</id>
+    <published>2019-11-06T19:57:11.000Z</published>
+    <updated>2019-11-08T04:44:47.693Z</updated>
+    
+    <content type="html"><![CDATA[<center><img src="/ml-can-not-predict-price/thumbnail.png" title="delay"></center><p>很多我非常尊敬的前輩，說機器學習有一些缺點，拿來投資很危險，<br>這些我都認同，畢竟要做出好的模型是很有挑戰的，<br>且回測模擬跟實際投資的狀況不一樣，非常認同！</p><h3 id="但有時候真的稍微有那麼一點激烈"><a href="#但有時候真的稍微有那麼一點激烈" class="headerlink" title="但有時候真的稍微有那麼一點激烈"></a>但有時候真的稍微有那麼一點激烈</h3><p>另一位我很尊敬的前輩，暗指用AI投資的人：<br>「他們的想像力都消失了，他們只是在耗著老天爺給他們的天賦，<br>  或是青春給他們能犯錯的空間，在那邊浪費生命。」<br>「很多人都被工具綁架邏輯，沒有一點想像力」<br>「做出來的只是垃圾，臭不可聞」</p><h3 id="嗯…"><a href="#嗯…" class="headerlink" title="嗯…"></a>嗯…</h3><p>「究竟跟AI有多深的怨念？」XD<br>我不知道是不是哪裡有不小心得罪或冒犯，<br>才讓他對於使用 AI 投資的人這麼嗤之以鼻<br>以我來說，我最早之前，是做價值投資的研究，後來加入了點技術指標，價量，到現在研究機器學習，</p><p>我覺得<br>每個人投資方法不同，<br>有價值型投資，技術指標，短線、極短線、中長線、存股<br>不論是哪些方法，都有很多人賺錢，更多人賠錢</p><p>不論如何</p><h4 id="可以長期穩定獲利的就是好工具。"><a href="#可以長期穩定獲利的就是好工具。" class="headerlink" title="可以長期穩定獲利的就是好工具。"></a>可以長期穩定獲利的就是好工具。</h4><p>這些對 AI 不屑前輩的口中，總是有著這麼一句話：</p><h3 id="機器學習無法預測價格"><a href="#機器學習無法預測價格" class="headerlink" title="機器學習無法預測價格"></a>機器學習無法預測價格</h3><p>這句話，以我自己的經驗來說，是舉雙手認同的，<br>但就算是認同，我也絕對不敢斷定，或直接了當的大肆宣揚，<br>畢竟這個世界有太多東西要學習了，</p><p>不過我們就先「假設」機器學習無法預測股價好了</p><h4 id="難道想獲利一定要預測股價嗎？"><a href="#難道想獲利一定要預測股價嗎？" class="headerlink" title="難道想獲利一定要預測股價嗎？"></a>難道想獲利一定要預測股價嗎？</h4><p>你不需要懂機器學習，也知道：</p><h4 id="通常撰寫策略，從來不用預測股價"><a href="#通常撰寫策略，從來不用預測股價" class="headerlink" title="通常撰寫策略，從來不用預測股價"></a>通常撰寫策略，從來不用預測股價</h4><p>只要產生的交易訊號，也就是買賣時機點就可以了，<br>照著操作，被動的投資，而不是主動的預測，<br>對於機器學習也是同樣的道理。</p><p>所以正確的使用機器學習的方法是：</p><h3 id="不要用機器學習預測股價，而是用來直接產生交易訊號！"><a href="#不要用機器學習預測股價，而是用來直接產生交易訊號！" class="headerlink" title="不要用機器學習預測股價，而是用來直接產生交易訊號！"></a>不要用機器學習預測股價，而是用來直接產生交易訊號！</h3><p>既然大家都有這樣的知識，為何還要執著於「機器學習無法預測股價」所以「機器學習沒有用」這件事情上呢？<br>就像是你測量羽毛跟保齡球落下，時間不一樣，難道就說牛頓第二運動定律是錯的了嗎？<br>比較有可能是實驗做錯了啦～</p><p>為何大家都說機器學習無法預測股價，先簡單的說明一下</p><h3 id="最為人所知的機器學習障礙-預測延遲"><a href="#最為人所知的機器學習障礙-預測延遲" class="headerlink" title="最為人所知的機器學習障礙 - 預測延遲"></a>最為人所知的機器學習障礙 - 預測延遲</h3><p>簡單來說，就是下圖中，藍色的為股價，而紅色的是機器學習預測的數值，<br>可以看到紅色永遠比藍色線慢半拍，晚一步才轉折<br>雖然藍色跟紅色非常接近，但離「預測」其實差得很遠，回測後就會發現，是不能拿來交易的，</p><p><center><img src="/ml-can-not-predict-price/delay.png" title="delay"></center><br>這個就是大家所說，機器學習的預測延遲<br>說真的，這類有小瑕疵的文章或論文是真的滿多的，<br>例如 <a href="https://towardsdatascience.com/predicting-stock-price-with-lstm-13af86a74944" rel="external nofollow noopener noreferrer" target="_blank">這篇</a><br>就連我們的部落格，也有<a href="https://www.finlab.tw/%E7%94%A8%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%B9%AB%E4%BD%A0%E8%A7%A3%E6%9E%90K%E7%B7%9A%E5%9C%96%EF%BC%81/">這類的文章</a></p><p>你只要搜尋「machine learning predict stock price」<br>就可以找到滿坑滿谷的文章，都有這個缺點</p><p>之所以會有這樣的問題，不難理解，因為股價並不是stationary time series，所以機器學習直接預測股價很容易失真<br>導致最後落入 overfitting 的窘境，且預測結果常常會有 bias</p><p>所以</p><h3 id="我自己寫的文章，沒有任何一篇是教大家預測股價的"><a href="#我自己寫的文章，沒有任何一篇是教大家預測股價的" class="headerlink" title="我自己寫的文章，沒有任何一篇是教大家預測股價的"></a>我自己寫的文章，沒有任何一篇是教大家預測股價的</h3><p>我想提供大家真的能夠獲利的程式碼，<br>用來展示機器學習真的可以用來投資，<br>我不是蹭AI的熱潮，東拼西湊，只求程式可以跑，<br>而是盡力做出一個希望能夠獲利的模型，又讓大家可以學到新的演算法<br>並把這個模型分享給大家，然而AI不是神，沒有一個策略保證一定賺錢，<br>但我至少做到問心無愧，目前績效看起來也還OK，</p><h3 id="機器學習策略-我認為有效的方法"><a href="#機器學習策略-我認為有效的方法" class="headerlink" title="機器學習策略 - 我認為有效的方法"></a>機器學習策略 - 我認為有效的方法</h3><p>接下來舉一個，我認為有用的方法，<br>首先利用<br>Integrating a Piecewise Linear Representation Method and a Neural Network Model for Stock Trading Points Prediction<br>這篇 paper 當中的方式產生交易訊號<br>並且讓機器學習模型模仿，找出轉折點，以下是簡略的數據：</p><ul><li>商品：台股加權指數，取每15分鐘的收盤價</li><li>製作特徵：利用各種技術指標當作features</li><li>預測訊號：利用上述的 paper 產生交易訊號</li><li>利用2015年以前的資料產生模型，</li></ul><p>用一個最普通的神經網路，就可以有不錯的效果，以下是2019年5月的範例圖，<br>其中</p><ul><li>紅色為股價</li><li>藍色為多方轉折的發生機率</li><li>紫色為空方轉折的發生機率（負值）</li></ul><p>可以看出來，當藍色飆高時，通常是底部的多方轉折<br>而紫色飆高時，則是相反，是頭部的空方轉折</p><p><center><img src="/ml-can-not-predict-price/better.png" title="better"></center><br>2019年五月</p><p><center><img src="/ml-can-not-predict-price/better2.png" title="better2"></center><br>2019年六月<br>看不出有延遲，幾乎都是直接實時反應，<br>看起來還抓的算滿OK的，可以用來逆勢操作</p><p>雖然看似有用，但</p><h3 id="機器學習不適用於所有人，因為很難很複雜"><a href="#機器學習不適用於所有人，因為很難很複雜" class="headerlink" title="機器學習不適用於所有人，因為很難很複雜"></a>機器學習不適用於所有人，因為很難很複雜</h3><h3 id="付出與收穫可能不成正比"><a href="#付出與收穫可能不成正比" class="headerlink" title="付出與收穫可能不成正比"></a>付出與收穫可能不成正比</h3><p>假如你不喜歡折磨自己<br>其實簡單的策略也可以賺錢的，<br>所以說你不一定要用機器學習來投資，</p><h3 id="然而每個人各有喜好，"><a href="#然而每個人各有喜好，" class="headerlink" title="然而每個人各有喜好，"></a>然而每個人各有喜好，</h3><p>以我而言，我喜歡<strong>追求和分享新的科技</strong>，<br>並且幫助大家學習新知識之餘，幸運的話還可以賺點錢，<br>然而走在科技的前沿，特立獨行，本來就是會有很多的支持和反對<br>我不敢說這條路走的正確，但我們能走多遠是多遠，<br>這一切紛擾，只能用對帳單來證明了（XDD努力生產中）<br>（雖然我們早在一年前開始就把模擬結果<a href="https://ai.finlab.tw/strategy/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%20-%20%E8%B2%A1%E5%8B%99%E5%A0%B1%E8%A1%A8%E9%81%B8%E8%82%A1" rel="external nofollow noopener noreferrer" target="_blank">每天都放上網</a>，但看來對帳單還是必須的呀！）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;center&gt;&lt;img src=&quot;/ml-can-not-predict-price/thumbnail.png&quot; title=&quot;delay&quot;&gt;&lt;/center&gt;
+
+&lt;p&gt;很多我非常尊敬的前輩，說機器學習有一些缺點，拿來投資很危險，&lt;br&gt;這些我都認同，畢竟要做出好的模型是很有
+      
+    
+    </summary>
+    
+      <category term="AI看股票" scheme="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
+    
+    
+      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
+    
+      <category term="Machine Learning" scheme="https://www.finlab.tw/tags/Machine-Learning/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="量化投資" scheme="https://www.finlab.tw/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
+    
+  </entry>
   
   <entry>
     <title>投資組合 Paper Trading 1分鐘就上手（Cmoney 大富翁股票 API）</title>
@@ -538,38 +571,6 @@
       <category term="本益比" scheme="https://www.finlab.tw/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
     
       <category term="股價淨值比" scheme="https://www.finlab.tw/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python：免費加速度指標選股實做</title>
-    <link href="https://www.finlab.tw/%E5%8A%A0%E9%80%9F%E5%BA%A6%E6%8C%87%E6%A8%99%E5%AF%A6%E5%81%9A/"/>
-    <id>https://www.finlab.tw/加速度指標實做/</id>
-    <published>2018-12-17T05:49:03.000Z</published>
-    <updated>2018-12-17T15:38:55.388Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天終於要來介紹加速度指標，這個指標的用處，在於可以篩選出「止跌回升」或「加速往上漲」的股票，經過<a href="/加速度指標-加速你的獲利">回測驗證</a>是有效的。搭配其他指標，可以獲得約20％的年報酬率。接下來我們就來用 python 實做它吧！</p><center><img src="/加速度指標實做/thumbnail.png" title="時間序列dataframe"></center><p>這個 blog 會永久推出免費的教學，讓大家可以免費的學習 python 又賺錢，學習程式語言是很多人憧憬的目標，但是常常會有學了不知道拿來做什麼？要是寫程式不只能在工作上增加效率，還能幫你挑股票賺錢，那還有什麼理由不學習呢？</p><p>我喜歡寫程式，也希望可以做出很好的工具，幫助到大家，帶著這個初衷，我創立了finlab 並且持續到了現在（不過中間因為博士班論文所以暫停了一段時間）。與其販賣選股軟體，我們分享代碼，讓大家自己零成本 DIY，假如想要支持我們，可以考慮我們的<a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank">影音課程</a>，獲得完整的 python 選股知識跟大量實用代碼。</p><p>好了廢話不多說，開始今天的 python 程式碼吧！</p><h3 id="製作時間序列"><a href="#製作時間序列" class="headerlink" title="製作時間序列"></a>製作時間序列</h3><p>首先我們必須先做出時間序列，時間序列其實就是一條條股價隨時間的變化圖，有點像是K線圖，我們習慣將這些資料整理成以下的樣貌：</p><center><img src="/加速度指標實做/close.png" title="時間序列dataframe"></center><p>要如何獲得此資料結構呢？</p><ol><li>假如您沒有購買課程的話，可以參考<a href="/Python-時間序列實作！">這篇文章來免費獲得時間序列資料</a>，調整當中的參數，獲得至少200天的收盤價喔！</li><li>假如您已經有課程中的代碼，就變得很簡單，只需要：</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> finlab.data <span class="keyword">import</span> Data</span><br><span class="line">data = Data()</span><br><span class="line"></span><br><span class="line">close = data.get(<span class="string">'收盤價'</span>, <span class="number">200</span>)</span><br></pre></td></tr></table></figure><p>就可以獲得兩百天內的所有上市股價資料。</p><p>在這個階段完成後，我們會有一個 <code>close</code> 的 variable，裡面的資料結構就如上圖一樣，是一個 <code>dataframe</code> 而其中就是一條條時間序列，每一檔股票的收盤價。</p><h3 id="撰寫加速度指標"><a href="#撰寫加速度指標" class="headerlink" title="撰寫加速度指標"></a>撰寫加速度指標</h3><p>加速度指標的原理，可以參考</p><ul><li><a href="/簡易的外資-基本面策略/">加速度指標解說</a></li><li><a href="/加速度指標-加速你的獲利">加速度指標回測</a></li></ul><p>簡單來說，加速度指標，其實就是看均線的曲率是正負，來決定是否買賣，但是由於股價的雜訊太大了，與其用微分的，我們提供一個比較簡單的方式，來判斷曲率的正負：</p><p>(n天前 + 當天)/2 &gt; n/2天前 的k天均線</p><p>我們把以上這個判斷式寫成代碼：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">close60 = close.rolling(<span class="number">60</span>, min_periods=<span class="number">10</span>).mean()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rising_curve</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> (close60.iloc[-n] + close60.iloc[<span class="number">-1</span>]) / <span class="number">2</span> &gt; close60.iloc[-int((n+<span class="number">1</span>)/<span class="number">2</span>)]</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>以上的代碼中，第一行，我們創建了<code>close60</code>這個<code>variable</code>，裡面的資料就是每檔股票60天的均線的數值。</p><p>接下來，在第三行中，我們定義了一個<code>function</code>叫做<code>rising_curve</code>，來判斷條件是否符合，<br>第四行，就是最重要的判斷式：</p><p>其中我們只用到了<code>iloc(k)</code>這個<code>method</code>，這個<code>method</code>是將<code>close60</code>中第<code>k</code>條<code>row</code>給拿出來的意思。而<code>k</code>可以是正的，代表從<code>dataframe</code>的第0條row開始數，也可以是負的，代表從 <code>dataframe</code>的最後一條row倒著數。</p><h3 id="試用看看"><a href="#試用看看" class="headerlink" title="試用看看"></a>試用看看</h3><p>接下來我們就可以呼叫這個rising_curve，來看哪些股票符合這個條件：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rising_curve(<span class="number">10</span>)</span><br></pre></td></tr></table></figure><br>以上這行就是判斷10日內的取率是多少，會得出以下的結果：</p><center><img src="/加速度指標實做/rising_curve.png" title="獲得符合條件的股票"></center><p>代表哪些檔股票符合條件，而哪些不符合條件。</p><h3 id="組裝策略"><a href="#組裝策略" class="headerlink" title="組裝策略"></a>組裝策略</h3><p>接下來就到了多個策略組合的時候了，<a href="/加速度指標-加速你的獲利">前一篇文章</a>有說過，必須要用多次的rising_curve來判斷不同週期下，是否都是符合條件！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rising = (</span><br><span class="line">    rising_curve(<span class="number">5</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">10</span>) &amp; </span><br><span class="line">    rising_curve(<span class="number">20</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">60</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">30</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">40</span>) &amp;</span><br><span class="line">    rising_curve(<span class="number">50</span>) &amp;</span><br><span class="line">    (close.iloc[<span class="number">-1</span>] &gt; close60.iloc[<span class="number">-1</span>])</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">print(rising[rising])</span><br></pre></td></tr></table></figure><p>以上，第2～9行，我們將所有的條件做交集（&amp;），代表必須要全部的條件都符合，才能被選入清單，我們以非常嚴苛的方式，來判斷股價的曲率。<br>最後一行，我們使用<code>rising[rising]</code>，這個意思是，從<code>rising</code>這條序列中，選取<code>rising</code>為 <code>True</code>的股票，忽略<code>False</code>的股票。</p><p>最後得出了一串清單，代表符合所有條件的股票代號：</p><center><img src="/加速度指標實做/and.png" title="獲得符合條件的股票"></center><h3 id="選股個股概覽"><a href="#選股個股概覽" class="headerlink" title="選股個股概覽"></a>選股個股概覽</h3><p>我們將選出來的股票畫出來，來瞭解這些股票的特性，下圖中，黃色的為股價，而藍色的為均線，我們可以發現這些股票的特性，就是均線會呈現圓弧型：</p><center><img src="/加速度指標實做/stocks.png" title="符合條件的股票"></center><p>可以看到大部分都是抓出止跌回漲的股票居多，加速度指標可以抓出兩種股票：</p><ol><li>止跌</li><li>起漲<br>至於要更細部的設定，就留給各位看官來實做了。</li></ol><p>假如將以上代碼的不等式反過來用，也可以抓出股票的賣點，進而抓出止漲的股票，我發現加速度指標拿來抓賣點，搭配一些技術指標效果非常好，可以試試看！</p><h3 id="今天的重點整理"><a href="#今天的重點整理" class="headerlink" title="今天的重點整理"></a>今天的重點整理</h3><ol><li>加速度指標實做</li><li>利用「iloc」選取特定的row</li><li>利用「&amp;」來做條件交集，篩選股票</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今天終於要來介紹加速度指標，這個指標的用處，在於可以篩選出「止跌回升」或「加速往上漲」的股票，經過&lt;a href=&quot;/加速度指標-加速你的獲利&quot;&gt;回測驗證&lt;/a&gt;是有效的。搭配其他指標，可以獲得約20％的年報酬率。接下來我們就來用 python 實做它吧！&lt;/p&gt;
-&lt;cen
-      
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
