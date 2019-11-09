@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/cmoney-paper-trading/</loc>
+    <lastmod>2019-11-09T16:54:10.057Z</lastmod>
+    <data>
+        <display>
+        <title>投資組合 Paper Trading 1分鐘就上手（Cmoney 大富翁股票 API）</title>
+        <pubTime>2019-11-02T05:07:19.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>程式交易</tag>
+         
+         
+           
+             
+              <breadCrumb title="財經Python教" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/ml-can-not-predict-price/</loc>
     <lastmod>2019-11-08T04:44:47.693Z</lastmod>
     <data>
@@ -23,28 +45,6 @@
            
              
               <breadCrumb title="AI看股票" url="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/cmoney-paper-trading/</loc>
-    <lastmod>2019-11-04T03:11:53.204Z</lastmod>
-    <data>
-        <display>
-        <title>投資組合 Paper Trading 1分鐘就上手（Cmoney 大富翁股票 API）</title>
-        <pubTime>2019-11-02T05:07:19.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>程式交易</tag>
-         
-         
-           
-             
-              <breadCrumb title="財經Python教" url="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99/"/>
           
         </display>
     </data>
@@ -1405,9 +1405,9 @@
         <title>ROE到底高或低才好？</title>
         <pubTime>2018-03-18T06:15:20.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
@@ -1430,13 +1430,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T05:28:20.000Z</pubTime>
         
+        <tag>ROE</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -1861,6 +1861,25 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/%E6%AF%8F%E5%A4%A9%E8%87%B3%E5%B0%91%E5%AF%AB%E4%B8%80%E8%A1%8C/</loc>
+    <lastmod>2018-01-24T11:42:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何戰勝惰性？</title>
+        <pubTime>2017-09-20T05:09:42.000Z</pubTime>
+        
+        <tag>生活</tag>
+         
+        <tag>一行</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/%E6%AF%94%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%9B%B4%E5%A5%BD%E7%94%A8%E7%9A%84%E6%9C%AC%E7%9B%8A%E6%AF%94%E6%88%90%E9%95%B7%E7%8E%87%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:29.000Z</lastmod>
     <data>
@@ -1886,25 +1905,6 @@
              
               <breadCrumb title="基本面" url="https://www.finlab.tw/categories/%E6%8C%87%E6%A8%99%E5%88%86%E6%9E%90/%E5%9F%BA%E6%9C%AC%E9%9D%A2/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/%E6%AF%8F%E5%A4%A9%E8%87%B3%E5%B0%91%E5%AF%AB%E4%B8%80%E8%A1%8C/</loc>
-    <lastmod>2018-01-24T11:42:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何戰勝惰性？</title>
-        <pubTime>2017-09-20T05:09:42.000Z</pubTime>
-        
-        <tag>生活</tag>
-         
-        <tag>一行</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -2288,13 +2288,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T05:51:12.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
