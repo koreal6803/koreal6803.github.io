@@ -11,7 +11,6 @@ import math
 
 def get_benchmark(freq="15T"):
     res = requests.get('https://drive.google.com/uc?export=download&id=1iFVLfFS7MgDF2BOJAkFNgDHapD9dFQzb')
-  
     f = open('benchmark.pkl.gz', 'wb')
     f.write(res.content)
     f.close()
@@ -203,7 +202,7 @@ def neural_network_classifier_fit(x, y):
     model.add(keras.layers.Dense(1, activation="sigmoid"))
 
 
-    adam = keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, amsgrad=False)
+    adam = keras.optimizers.Adam(lr=0.0005, beta_1=0.9, beta_2=0.999, amsgrad=False)
 
     model.compile(optimizer=adam, loss="binary_crossentropy", metrics=['accuracy'])
 
