@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2019-11-08T04:44:47.693Z</updated>
+  <updated>2019-11-28T10:11:45.972Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>台北最抗跌公寓在哪？ Python 告訴你 (Part 3)</title>
+    <link href="https://www.finlab.tw/real-state-best-district-old-buildings-taipei/"/>
+    <id>https://www.finlab.tw/real-state-best-district-old-buildings-taipei/</id>
+    <published>2019-11-28T07:24:28.000Z</published>
+    <updated>2019-11-28T10:11:45.972Z</updated>
+    
+    <content type="html"><![CDATA[<p>文末告訴你買哪裡？多少年齡的公寓？比較好<br>（結果滿出乎意料）</p><center><img src="/real-state-best-district-old-buildings-taipei/thumbnail.png" title="投資房產"></center><p>根據專家的說法，<br>由於人口老化的關係，<br>房價未來比較悲觀，<br>假如我們要自住買房怎麼辦？</p><p>有一個家的好處是<br>畢竟每個人生活習慣不同<br>要客制化專屬的生活空間<br>只有擁有房子才辦得到</p><p>但是，房子保值的年代已經過去了<br>幾年前台北的房價被炒的很高<br>有些地方明顯就是太貴了<br>這幾年慢慢的顯現出來</p><p>假如你因為工作需求，<br>需要再台北買一個自己的家<br>要買在哪裡比較保值？<br>對，保值而已，不求上漲，<br>只求不要跌太多</p><p>打開實價登錄，<br>不論是<a href="https://price.houseprice.tw/" rel="external nofollow noopener noreferrer" target="_blank">實價網</a>、<a href="https://www.rakuya.com.tw/realprice/result" rel="external nofollow noopener noreferrer" target="_blank">樂屋網</a>、或其他的網站<br>在功能上，都有很多進步的空間！</p><p>原因在於這些網站，都只提供進幾年的數據，<br>而且無法統計以及繪圖功能，<br>大部分都只提供近一兩年的比較，<br>但一般人自住買房，關心的是10年後的房價，<br>而不只是短期的上漲下跌，</p><p>所以只好來用 Python 做一點功課了</p><p>首先，我們根據之前的介紹，我們可以</p><ul><li><a href="/real-estate-analysis1/">爬到實價登錄歷史資料</a></li><li><a href="/real-estate-analasys-histograms/">將資料整理成 dataframe</a><br>可以先進行以上兩個步驟，然後就可以接著來寫 code 囉！</li></ul><p>這次的主題是「公寓」<br>我們假設某個人想買台北的房子<br>但是由於金錢考量，只能選擇公寓，</p><p>「究竟要怎麼選呢？」</p><h3 id="1-用區域來選"><a href="#1-用區域來選" class="headerlink" title="1. 用區域來選"></a>1. 用區域來選</h3><p>首先我們想要算出，台北市「公寓」的歷史走勢</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># plt.rcParams['font.sans-serif'] = ['Noto Sans TC Regular'] # 有支援中文的字體</span></span><br><span class="line"><span class="comment"># plt.rcParams['axes.unicode_minus']=False</span></span><br><span class="line"></span><br><span class="line">result = &#123;&#125;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> dis <span class="keyword">in</span> set(df[<span class="string">'鄉鎮市區'</span>]):</span><br><span class="line"></span><br><span class="line">    condition1 = df[<span class="string">'土地區段位置/建物區段門牌'</span>].notna()</span><br><span class="line">    condition2 = df[<span class="string">'建物型態'</span>] == <span class="string">'公寓(5樓含以下無電梯)'</span></span><br><span class="line">    condition3 = (df[<span class="string">'鄉鎮市區'</span>] == dis)</span><br><span class="line">    </span><br><span class="line">    df_local = df[condition3 &amp; condition2]</span><br><span class="line">    result[dis] = df_local[<span class="string">'單價元坪'</span>].groupby(df_local.index.year).mean()</span><br><span class="line"></span><br><span class="line">k = pd.DataFrame(result).loc[<span class="number">2012</span>:]</span><br><span class="line">k.plot()</span><br></pre></td></tr></table></figure><center><img src="/real-state-best-district-old-buildings-taipei/dis-price.png" title="投資房產"></center><p>這張圖可以看出很多端倪，<br>自從政府調整法令後，<br>炒房投資客有明顯減少，<br>所以貴的地區房價下跌，</p><p>另外也因為台北交通便利，<br>（ubike、公車、捷運）<br>所以不論房價高低，<br>其實生活便利程度相差無幾<br>使得便宜的區域房價上漲，</p><p>房價差距越來越小，<br>平均來說，各區房價都越來越往 50～60W/坪 的價格趨近。</p><p>另外，除了肉眼來判別外，<br>我們也可以由價格標準差得知，<br>台北市各區，房價差異慢慢縮小，</p><center><img src="/real-state-best-district-old-buildings-taipei/std.png" title="投資房產"></center><p>由上面的分析，我們可以得到一個結論<br>對於「公寓」而言，我們應該選擇<br>「房價目前較低的地區」<br>因為這些地區的房價，會慢慢往平均（50～60W/坪）移動</p><p>所以假如是買公寓的話，要選哪裡呢？<br>以條件來分析的話，可以這樣選</p><ol><li>2019年房價 &lt; 平均的區域（價格低的）</li><li>2019年房價 &gt; 2018年的區域（看近期有漲的）</li></ol><p>以下就是程式碼以及選出來的區域：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p2019 = k.loc[<span class="number">2019</span>]</span><br><span class="line">p2018 = k.loc[<span class="number">2018</span>]</span><br><span class="line"></span><br><span class="line">good_district = (p2019 &gt; p2018) &amp; (p2019 &lt; p2019.mean())</span><br><span class="line">p2019[good_district].sort_values()</span><br></pre></td></tr></table></figure><center><img src="/real-state-best-district-old-buildings-taipei/ranking.png" title="投資房產"></center><p>2. 用屋齡來判斷</p><p>大家都說越老的房子會折舊，<br>越老的房子應該要越便宜，<br>然而事情真的是這樣嗎？</p><p>實價登入的資料令人跌破眼鏡！</p><p>根據數據的分析，每個區域都適用：</p><p>在屋齡「40～50」年的房子，竟然還會往上漲！？</p><p>不論哪一個區域，哪一年，都可以觀察到這個現象！</p><p>舉個例子，以下我們來繪圖「中山區」房價</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2012</span>, <span class="number">2020</span>):</span><br><span class="line">    df_local = df[(df[<span class="string">'鄉鎮市區'</span>] == <span class="string">'中山區'</span>) &amp; (df[<span class="string">'year'</span>] == i)]</span><br><span class="line">    df_local[<span class="string">'房屋年齡'</span>] = ((<span class="number">2019</span> - pd.to_numeric(df_local[<span class="string">'建築完成年月'</span>].str[:<span class="number">3</span>]) - <span class="number">1911</span>)).astype(int, errors=<span class="string">'ignore'</span>)</span><br><span class="line">    df_local[<span class="string">'房屋年齡'</span>] = pd.to_numeric(df_local[<span class="string">'房屋年齡'</span>] /<span class="number">10</span>).round()</span><br><span class="line">    df_local[<span class="string">'單價元坪'</span>].groupby(df_local[<span class="string">'房屋年齡'</span>]).mean().plot()</span><br></pre></td></tr></table></figure><center><img src="/real-state-best-district-old-buildings-taipei/age.png" title="投資房產"></center><p>上圖每一條線的意思是<br>每一年「不同屋齡的公寓價格」<br>我們可以觀察到幾個現象：</p><ol><li>年輕的公寓下跌的比較快</li><li>老公寓在40～50歲時，還會往上漲</li></ol><p>第二點尤其的詭異，<br>可能是因為都更的關係？<br>不只是中山區，<br>台北的任一區都可以觀察到這個現象<br>大家可以回去跑跑看</p><p>總之，至少老公寓折舊的速度，<br>是比想像中還要慢的，<br>（或可能是老公寓都賣不出去，除<br>非特別地段、特別地點，導致樣本有偏差？<br>還需要再研究）</p><h3 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h3><p>這邊還是要提醒大家，<br>這個是針對「老公寓」做的研究，<br>假如是「新成屋」、「華廈」等屋型，<br>還需要額外去研究才能更清楚。</p><p>數據只是一部分的幫助，<br>買到好房子還是必需要做很多其他功課<br>例如：附近的捷運、生活機能、嫌惡設施 等等<br>都很重要<br>另外，看房技巧、談價格 也不能忽略，</p><p>不過以統計的觀點來說</p><p>保值地區首選順序：<br>「萬華區、文山區、內湖區、南港區」</p><p>保值屋齡首選：<br>「20～40歲以上」公寓</p><p>假如你要在台北買房，<br>而且想要買舊公寓重新裝潢，<br>希望這篇文章可以幫助到你！</p><p>也歡迎分享給有在看房的朋友哦！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;文末告訴你買哪裡？多少年齡的公寓？比較好&lt;br&gt;（結果滿出乎意料）&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/real-state-best-district-old-buildings-taipei/thumbnail.png&quot; title=&quot;投資房產&quot;&gt;&lt;/cent
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>機器學習無法預測股價！</title>
@@ -71,9 +93,9 @@
       <category term="財經Python教" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -186,9 +208,9 @@
     
       <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -247,9 +269,9 @@
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -275,9 +297,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -304,9 +326,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -328,9 +350,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -352,9 +374,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -376,9 +398,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -402,9 +424,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -428,9 +450,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -455,9 +477,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
@@ -479,9 +501,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
       <category term="月營收" scheme="https://www.finlab.tw/tags/%E6%9C%88%E7%87%9F%E6%94%B6/"/>
     
@@ -536,41 +558,11 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
       <category term="美股" scheme="https://www.finlab.tw/tags/%E7%BE%8E%E8%82%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>你錯過的選股策略！</title>
-    <link href="https://www.finlab.tw/%E4%BD%A0%E9%8C%AF%E9%81%8E%E7%9A%84%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5%E6%80%9D%E8%B7%AF/"/>
-    <id>https://www.finlab.tw/你錯過的選股策略思路/</id>
-    <published>2018-12-18T23:45:46.000Z</published>
-    <updated>2018-12-20T11:45:47.826Z</updated>
-    
-    <content type="html"><![CDATA[<p>一年前，我曾經跟大家分享一個<a href="/比策略狗還要安全的選股策略！/">懶人選股策略</a>，不知道各位有沒有看？看了後有沒有實做？實做了有沒有追蹤？追蹤了有沒有實際操作？假如以上答案都是「有」，那你目前應該獲利狀況不錯！假如沒有，這篇文章將帶你分析原因，並且分享「如何不再一次與獲利擦身而過」的方法。</p><a id="more"></a><p>我們先來看看「錯過」有多麼可怕！</p><h3 id="「錯過不是錯了，而是過了」"><a href="#「錯過不是錯了，而是過了」" class="headerlink" title="「錯過不是錯了，而是過了」"></a>「錯過不是錯了，而是過了」</h3><p>下圖中，橘紅色的為「加權指數」的歷史股價，而藍色的也是，差別在於藍色的股價剔除了10個一分鐘「最大漲幅」，來模擬一個人在14年中，除了有總共有10分鐘沒投資，其餘時間每天投資大盤，然而那10分鐘漲幅剛好非常大。</p><p>你可能會覺得結果應該差不多，但最後的結果，竟然有 50％ 的差距！</p><center><img src="/你錯過的選股策略思路/benchmark.png" title="錯過十分鐘漲幅的大盤"></center><p>這十分鐘就足以造成50％的差距，更何況一般人沒有紀律的投資了！<br>如此可見，錯過真的是非常可怕的一件事情！</p><h3 id="你錯過的一個策略"><a href="#你錯過的一個策略" class="headerlink" title="你錯過的一個策略"></a>你錯過的一個策略</h3><p>一年前，我介紹了一個<a href="/比策略狗還要安全的選股策略！/">策略</a>，這個策略屬於懶人投資，其歷史績效14年14倍，算是本blog滿早期的選股策略，其特色是，可以避開行情過熱的時段，它的特色是</p><h3 id="「假如你知道行情過熱，就休息個一年半載，放個長假」"><a href="#「假如你知道行情過熱，就休息個一年半載，放個長假」" class="headerlink" title="「假如你知道行情過熱，就休息個一年半載，放個長假」"></a>「假如你知道行情過熱，就休息個一年半載，放個長假」</h3><p>策略思路也滿清晰的，邏輯很簡單，我們現在就來看一下它今年的獲利狀況：</p><center><img src="/你錯過的選股策略思路/eq.png" title="此策略績效"></center><p>此策略今年大部分時間都沒有持股，反而是後期大跌之後，才開始持股，而且穩定勝過大盤！<br>雖然年漲幅只有9％，但相信已經勝過非常多的人，而且從十一月開始算，其實這個策略才執行了兩個月，每個月有4.5％，算是很不錯！</p><p>然而我相信，真正使用的人應該不多，甚至一隻手數的出來的那種，<br>因為就連我自己也沒有使用這個策略XD，接下來我們就來分析為什麼沒人用</p><h3 id="到底為什麼總是跟策略擦身而過？"><a href="#到底為什麼總是跟策略擦身而過？" class="headerlink" title="到底為什麼總是跟策略擦身而過？"></a>到底為什麼總是跟策略擦身而過？</h3><p>原因有很多層面，就跟切洋蔥一樣，依照每個人的等級不同，可能停留在不同的地方。先從最簡單的講起：</p><h3 id="1-不確定該策略的效果，不敢使用"><a href="#1-不確定該策略的效果，不敢使用" class="headerlink" title="1. 不確定該策略的效果，不敢使用"></a>1. 不確定該策略的效果，不敢使用</h3><p>這類的人應該是佔大多數，<br>畢竟當時finlab是個小部落格，而且網路名師多如牛毛。<br>假如沒有自己的驗證方法，早就已經眼花繚亂，<br>看完那篇文章，當下覺得有理，隔天就忘記。</p><p>這種應該可以篩掉80％的人了<br>剩下的20％呢？</p><h3 id="2-策略當時沒有篩選出股票，漸漸忘記"><a href="#2-策略當時沒有篩選出股票，漸漸忘記" class="headerlink" title="2. 策略當時沒有篩選出股票，漸漸忘記"></a>2. 策略當時沒有篩選出股票，漸漸忘記</h3><p>剩下的人20%，可能想試試看這個策略如何，<br>可惜的是，當時策略根本沒有持股，所以暫時將策略封存在倉庫，<br>看看之後什麼時候啟動，再開始追蹤，<br>然而過了好幾個月，就又忘記了</p><p>然而獲利是不等人的，這時候懊悔已經來不及</p><p>這20％的人在此時已經只剩5％</p><h3 id="3-追蹤了但是不敢使用"><a href="#3-追蹤了但是不敢使用" class="headerlink" title="3. 追蹤了但是不敢使用"></a>3. 追蹤了但是不敢使用</h3><p>接下來，就是這5％的人全軍覆沒的時候了XD<br>該策略竟然買在股市大跌的隔天，2018年10月11號當晚…<br>剛好是跌破近一年支撐線的隔天！<br>我也不敢使用XD</p><p>以上三種應該是大家最容易錯過策略，究竟要怎麼預防呢？</p><h3 id="如何不要錯過獲利？"><a href="#如何不要錯過獲利？" class="headerlink" title="如何不要錯過獲利？"></a>如何不要錯過獲利？</h3><p>我覺得要在多重策略上，建構一個更大的框架，在適當的時候更換策略，<br>但不是隨意更換策略，而是當某個條件發生的時候，才會更換，我回測過有效的方式是：</p><p>每隔一季或半年，挑選10日績效最強的三個策略，並將所有持股換成這三個策略的持股</p><p>用講的當然很容易，不過實行起來一定是有難度的。<br>以上只是我分享自己的看法，不知道你覺得如何？<br>歡迎下方留言分享你的「多策略搭配的方法」喔！</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一年前，我曾經跟大家分享一個&lt;a href=&quot;/比策略狗還要安全的選股策略！/&quot;&gt;懶人選股策略&lt;/a&gt;，不知道各位有沒有看？看了後有沒有實做？實做了有沒有追蹤？追蹤了有沒有實際操作？假如以上答案都是「有」，那你目前應該獲利狀況不錯！假如沒有，這篇文章將帶你分析原因，並且分享「如何不再一次與獲利擦身而過」的方法。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-    
-      <category term="如何買股票" scheme="https://www.finlab.tw/tags/%E5%A6%82%E4%BD%95%E8%B2%B7%E8%82%A1%E7%A5%A8/"/>
-    
-      <category term="選股策略" scheme="https://www.finlab.tw/tags/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="歷史回測" scheme="https://www.finlab.tw/tags/%E6%AD%B7%E5%8F%B2%E5%9B%9E%E6%B8%AC/"/>
-    
-      <category term="本益比" scheme="https://www.finlab.tw/tags/%E6%9C%AC%E7%9B%8A%E6%AF%94/"/>
-    
-      <category term="股價淨值比" scheme="https://www.finlab.tw/tags/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94/"/>
     
   </entry>
   
