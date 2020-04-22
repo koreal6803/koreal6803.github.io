@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-04-20T08:11:25.793Z</updated>
+  <updated>2020-04-22T21:23:11.864Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用Python理財：比特幣(2)用爬蟲下載歷史數據</title>
+    <link href="https://www.finlab.tw/btc-crawler-py/"/>
+    <id>https://www.finlab.tw/btc-crawler-py/</id>
+    <published>2020-04-22T20:42:33.000Z</published>
+    <updated>2020-04-22T21:23:11.864Z</updated>
+    
+    <content type="html"><![CDATA[<p>這個單元，<br>分享如何獲取比特幣歷史價格</p><p>可以打開<a href="https://colab.research.google.com/" rel="external nofollow noopener noreferrer" target="_blank">colab</a>線上編輯python跟我們一起做實驗吧！<br>colab 是 google 提供，線上運行 python 的平台<br>打開後，新增一個notebook<br>直接一步步貼上下面的代碼<br>程式就會順利運行了</p><center><img src="/btc-crawler-py/thumbnail.png" title="info"></center><h3 id="獲取-python-函式庫"><a href="#獲取-python-函式庫" class="headerlink" title="獲取 python 函式庫"></a>獲取 python 函式庫</h3><p>首先，我們要先獲取幫大家寫好的 package 可以到github上下載<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!git clone https://github.com/koreal6803/crypto_backtrader.git</span><br><span class="line">cd crypto_backtrader</span><br></pre></td></tr></table></figure></p><p>上面的指令，會先將預先寫好的程式從 github 上下載下來<br>並且將目錄切換到 crypto_backtrader<br>也就是下載下來的資料夾中</p><h3 id="安裝一些必要的packages"><a href="#安裝一些必要的packages" class="headerlink" title="安裝一些必要的packages"></a>安裝一些必要的packages</h3><p>接下來我們來安裝一些必要的 dependencies<br>這樣等會才能順利執行程式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!pip install python-binance</span><br><span class="line">!pip install bitmex</span><br><span class="line">!pip install Backtesting</span><br></pre></td></tr></table></figure><h3 id="加密貨幣命名方法"><a href="#加密貨幣命名方法" class="headerlink" title="加密貨幣命名方法"></a>加密貨幣命名方法</h3><p>這篇文章中，我們爬取 <code>BTCUSDT</code> 的價格<br><code>BTCUSDT</code> 這個 symbol 可以拆逞兩個部分<br>一個是 <code>BTC</code>、另一個是 <code>USDT</code><br><code>BTCUSDT</code> 代表，<code>BTC</code> 的價格，以 <code>USDT</code> 為單位，<br>這邊為什麼我們要用 <code>USDT</code> 呢？因為他是跟 <code>USD</code> 是美元是表兄弟，<br><code>USDT</code> 是一種跟 <code>USD</code> 約略 1:1 兌換的穩定虛擬貨幣<br><code>USDT</code> 的好處是</p><p>在交易時，假如用 加密貨幣 <-> 法定貨幣（美元）<br>這種方式交易，手續費會非常高昂<br>例如我們以 Maicoin 買入跟賣出手續費約高達 1%，</-></p><p>今天我們假如使用 <code>BTCUSDT</code> pair 來交易<br>由於同樣是加密貨幣，所以手續費算是大幅的降低，<br>目前手續費在各平台，一般的標準是0.1%，根據平台的優惠、交易量可以打折，<br>成本算是低很多，</p><p><a href="http://blog.udn.com/mashmoro980727/121661372" rel="external nofollow noopener noreferrer" target="_blank">交易對(trading pair)的相關介紹</a></p><p>那廢話不多說，趕快來下載歷史資料吧！</p><h3 id="使用幫大家寫好的函式庫"><a href="#使用幫大家寫好的函式庫" class="headerlink" title="使用幫大家寫好的函式庫"></a>使用幫大家寫好的函式庫</h3><p>我們可以使用<br><code>from finlab import crypto</code><br>將一些好用的 function 給叫進來</p><p>然後用<br><code>crypto.get_all_binance</code> 這個 function<br>來獲取交易對(trading pair)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from finlab import crypto</span><br><span class="line">df = crypto.get_all_binance(&apos;BTCUSDT&apos;, &apos;4h&apos;)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure><center><img src="/btc-crawler-py/df.png" title="dataframe 結果"></center><p>上述這個 <code>get_all_binance</code><br>除了幫你整理好下載資料外，<br>還會將這些資料資料，存在 <code>crypto_backtrader/history/crypto/</code> 當中<br>以 <code>csv</code> 的方式存起來<br>方便你用 <code>excel</code>、<code>multicharts</code> 等程式來打開</p><p>你也可以輸入不同的 trading pair 名稱，可以<a href="https://www.binance.com/tw/markets" rel="external nofollow noopener noreferrer" target="_blank">binance官網</a>查找</p><p>下一步，我們會分享<br>怎麼用 Python 回測一個簡單的 <code>BTCUSDT</code> 交易策略！<br>敬請期待！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;這個單元，&lt;br&gt;分享如何獲取比特幣歷史價格&lt;/p&gt;
+&lt;p&gt;可以打開&lt;a href=&quot;https://colab.research.google.com/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank
+      
+    
+    </summary>
+    
+      <category term="加密貨幣" scheme="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="比特幣" scheme="https://www.finlab.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/"/>
+    
+      <category term="BTC" scheme="https://www.finlab.tw/tags/BTC/"/>
+    
+  </entry>
   
   <entry>
     <title>用Python理財：比特幣交易自動化(1)</title>
@@ -307,9 +337,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
@@ -546,34 +576,6 @@
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
       <category term="月營收" scheme="https://www.finlab.tw/tags/%E6%9C%88%E7%87%9F%E6%94%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>論文導讀：利用MI-LSTM預測股價</title>
-    <link href="https://www.finlab.tw/%E5%88%A9%E7%94%A8MI-LSTM%E9%A0%90%E6%B8%AC%E8%82%A1%E5%83%B9/"/>
-    <id>https://www.finlab.tw/利用MI-LSTM預測股價/</id>
-    <published>2019-01-09T07:13:01.000Z</published>
-    <updated>2019-01-09T17:50:46.179Z</updated>
-    
-    <content type="html"><![CDATA[<p>這篇文章是2018年剛發表的paper，算是非常新但是滿有趣的方法，針對一般的股票建構一個預測隔日價格的LSTM模型，以下就是他的方法思路。</p><a id="more"></a><h3 id="動機"><a href="#動機" class="headerlink" title="動機"></a>動機</h3><p>股價預測一直都是非常熱門但具有挑戰性的機器學習題目，通常這類的文章不乏是使用各種的資訊，例如股價、技術指標、公司獲利、新聞資訊，並將這些資料餵給一些模型，例如 linear regression, SVM, 或是 NN 來預測未來股價。雖然這些方法被證實是可以使用的，但是預測能力不佳。因為當中有些資訊不但對於預測未來股價沒有幫助，反而會擾亂預測的準確度。</p><h3 id="此篇文章的貢獻"><a href="#此篇文章的貢獻" class="headerlink" title="此篇文章的貢獻"></a>此篇文章的貢獻</h3><p>這篇文章提出了 multi-input LSTM model，來使用額外的神經網路額外架構，從低相關連的資訊找出有價值的，並且濾掉不必要的雜訊。並且利用了額外的LSTM邏輯來建構「mainstream」的結構，並用「mainstream」所計算出來的資訊，來遺忘或記憶有用的資訊（gates）。此架構比原本的LSTM效果要更好。</p><h3 id="MI-LSTM"><a href="#MI-LSTM" class="headerlink" title="MI-LSTM"></a>MI-LSTM</h3><p>這是個特別針對金融股價預測所研發的架構，其原理是先找出想要預測的timeseries，並且找出N條高度正相關的timeseries（以股票而言，就可能是同類型的公司股價），還有N條最負相關的timeseries當作是此預測模型的輸入資料。有了這些資料後，下圖就是MILSTM的整體架構，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">Y</mi></mrow></mrow><annotation encoding="application/x-tex">\bold{Y}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.68611em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord textstyle uncramped"><span class="mord mathbf" style="margin-right:0.02875em;">Y</span></span></span></span></span> 是欲預測的股票的歷史股價，而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mrow><mi mathvariant="bold">X</mi></mrow><mi>p</mi><mi>i</mi></msubsup></mrow><annotation encoding="application/x-tex">\bold{X}_p^i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.824664em;"></span><span class="strut bottom" style="height:1.2077719999999998em;vertical-align:-0.383108em;"></span><span class="base textstyle uncramped"><span class=""><span class="mord textstyle uncramped"><span class="mord mathbf">X</span></span><span class="vlist"><span style="top:0.24700000000000003em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">p</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> 就是第 i 個高度正相關的timeseries，而<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mrow><mi mathvariant="bold">X</mi></mrow><mi>n</mi><mi>i</mi></msubsup></mrow><annotation encoding="application/x-tex">\bold{X}_n^i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.824664em;"></span><span class="strut bottom" style="height:1.071664em;vertical-align:-0.247em;"></span><span class="base textstyle uncramped"><span class=""><span class="mord textstyle uncramped"><span class="mord mathbf">X</span></span><span class="vlist"><span style="top:0.247em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">n</span></span></span><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> 就是高度負相關的 timeseries。最後 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="bold">X</mi></mrow><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\bold{X}_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68611em;"></span><span class="strut bottom" style="height:0.83611em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class=""><span class="mord textstyle uncramped"><span class="mord mathbf">X</span></span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span> 是大盤的 timeseries。</p><center><img src="/利用MI-LSTM預測股價/structure.jpg" title="structure"></center><p>上圖從左到右的解說如下</p><ul><li>LSTM：此圖中的最左邊部分，就是簡單的LSTM計算而已，假如想要知道什麼是LSTM，可以參考<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" rel="external nofollow noopener noreferrer" target="_blank">這篇關於LSTM的詳細解說</a>。</li><li>Average：往右，可以看到高度正負相關的timeseries的LSTM，額外經過平均的運算，至於為什麼要這樣做，相信是效果比較好的緣故，當然實做時也可以拿掉、或是使用不一樣的的計算方式。</li><li><p>Multi-Input LSTM：而比較有趣的地方，在於其中紅色的Multi-Input LSTM這個部分，在於它像是一個變種的LSTM架構，多了很多的 gate（請參考LSTM文章來瞭解什麼是「gate」）。此MILSTM可以額外展開如下圖，可以發現跟一般的LSTM長的差不多，但是多了有顏色的三條資訊流，並且此三條資訊流都有額外的gates來篩選要儲存的資訊。</p><center><img src="/利用MI-LSTM預測股價/MIstructure.jpg" title="MILSTMstructure"></center></li><li><p>接下來是Attention Layer，其實跟LSTM原本的Attention是非常類似的，還是非常建議現瞭解<a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" rel="external nofollow noopener noreferrer" target="_blank">LSTM是什麼</a>，不然到這邊你應該已經頭很昏了XD。</p></li></ul><p>實驗結果</p><p>這篇文章使用了300檔股票的歷史股價進行訓練，單一一檔的股票歷史資料一定不足，但是假如300檔串在一起，則樣本數應該就足夠了，既然都已經發了期刊，當然實驗結果要比別人好，所以以下是實驗的結果，當中的MSE就是誤差（mean square error）的意思：</p><center><img src="/利用MI-LSTM預測股價/table.jpg" title="與其他LSTM比較"></center><p>可以發現MI-LSTM獲得了最小的實驗誤差，相比起其它的model效果更好，而其它的model屬於LSTM的變形，這邊就先不介紹了。可以參考這篇LSTM文章。接下來，他們進一步分析了MI-LSTM中，每一類input的效果，種共有以下四類：</p><ol><li>Mainstream：欲預測的股票其歷史股價</li><li>Positive：高度正相關的一群股票</li><li>Negative：高度付相關的一群股票</li><li>Index：大盤</li></ol><p>下圖就是這四種不同的資訊流在神經網路中，通過softmax的時候的權重隨著訓練次數的變化：</p><center></center><p>最後可以發現Mainstream跟Index的資訊是最有效的，大盤對於股價的影響是非常大的，與投資時的狀況符合一致，大盤漲跌對於個股的影響很大。另外可以發現Positive跟Negative的權重被降低了，代表雖然這些資訊有很價值，但是當中也有很多的雜訊，所以權重被有效的分配。</p><h3 id="選股策略"><a href="#選股策略" class="headerlink" title="選股策略"></a>選股策略</h3><p>這篇文章提出了一種選股的策略，對於所有股票，都判斷明日的漲跌，並且每日選出漲跌最佳的20檔股票，不考慮手續費，可以得到以下每段時間的歷史報酬：</p><center><img src="/利用MI-LSTM預測股價/table2.jpg" title="歷史報酬"></center><p>可以看到MI-LSTM的效果比傳統的LSTM和大盤還要好，當然考慮了手續費後效果可能會打很多折扣，甚至是虧損。要是我的話，會想辦法增加預測時間的長度（但預測難度也可能會增加），從每天變成每個禮拜，這樣手續費可能比較不那麼誇張多。但我猜他們可能也有做過類似的實驗，但沒有成功？或是他們覺得這樣已經很好了？</p><p>實做上建議使用pytorch或是tensorflow會比較簡單，這篇文章只是簡單的介紹其架構，然而要寫程式的話，還是利用paper中的數學公式，會比直接看架構圖更好理解和實做，會比較好喔！</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;這篇文章是2018年剛發表的paper，算是非常新但是滿有趣的方法，針對一般的股票建構一個預測隔日價格的LSTM模型，以下就是他的方法思路。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="AI看股票" scheme="https://www.finlab.tw/categories/AI%E7%9C%8B%E8%82%A1%E7%A5%A8/"/>
-    
-    
-      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
-    
-      <category term="Machine Learning" scheme="https://www.finlab.tw/tags/Machine-Learning/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="量化投資" scheme="https://www.finlab.tw/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B3%87/"/>
     
   </entry>
   
