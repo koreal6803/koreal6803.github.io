@@ -53,9 +53,9 @@
     <link href="https://www.finlab.tw/btc-crawler-py/"/>
     <id>https://www.finlab.tw/btc-crawler-py/</id>
     <published>2020-04-22T20:42:33.000Z</published>
-    <updated>2020-04-22T21:23:11.864Z</updated>
+    <updated>2020-04-24T18:48:45.005Z</updated>
     
-    <content type="html"><![CDATA[<p>這個單元，<br>分享如何獲取比特幣歷史價格</p><p>可以打開<a href="https://colab.research.google.com/" rel="external nofollow noopener noreferrer" target="_blank">colab</a>線上編輯python跟我們一起做實驗吧！<br>colab 是 google 提供，線上運行 python 的平台<br>打開後，新增一個notebook<br>直接一步步貼上下面的代碼<br>程式就會順利運行了</p><center><img src="/btc-crawler-py/thumbnail.png" title="info"></center><h3 id="獲取-python-函式庫"><a href="#獲取-python-函式庫" class="headerlink" title="獲取 python 函式庫"></a>獲取 python 函式庫</h3><p>首先，我們要先獲取幫大家寫好的 package 可以到github上下載<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!git clone https://github.com/koreal6803/crypto_backtrader.git</span><br><span class="line">cd crypto_backtrader</span><br></pre></td></tr></table></figure></p><p>上面的指令，會先將預先寫好的程式從 github 上下載下來<br>並且將目錄切換到 crypto_backtrader<br>也就是下載下來的資料夾中</p><h3 id="安裝一些必要的packages"><a href="#安裝一些必要的packages" class="headerlink" title="安裝一些必要的packages"></a>安裝一些必要的packages</h3><p>接下來我們來安裝一些必要的 dependencies<br>這樣等會才能順利執行程式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!pip install python-binance</span><br><span class="line">!pip install bitmex</span><br><span class="line">!pip install Backtesting</span><br></pre></td></tr></table></figure><h3 id="加密貨幣命名方法"><a href="#加密貨幣命名方法" class="headerlink" title="加密貨幣命名方法"></a>加密貨幣命名方法</h3><p>這篇文章中，我們爬取 <code>BTCUSDT</code> 的價格<br><code>BTCUSDT</code> 這個 symbol 可以拆逞兩個部分<br>一個是 <code>BTC</code>、另一個是 <code>USDT</code><br><code>BTCUSDT</code> 代表，<code>BTC</code> 的價格，以 <code>USDT</code> 為單位，<br>這邊為什麼我們要用 <code>USDT</code> 呢？因為他是跟 <code>USD</code> 是美元是表兄弟，<br><code>USDT</code> 是一種跟 <code>USD</code> 約略 1:1 兌換的穩定虛擬貨幣<br><code>USDT</code> 的好處是</p><p>在交易時，假如用 加密貨幣 <-> 法定貨幣（美元）<br>這種方式交易，手續費會非常高昂<br>例如我們以 Maicoin 買入跟賣出手續費約高達 1%，</-></p><p>今天我們假如使用 <code>BTCUSDT</code> pair 來交易<br>由於同樣是加密貨幣，所以手續費算是大幅的降低，<br>目前手續費在各平台，一般的標準是0.1%，根據平台的優惠、交易量可以打折，<br>成本算是低很多，</p><p><a href="http://blog.udn.com/mashmoro980727/121661372" rel="external nofollow noopener noreferrer" target="_blank">交易對(trading pair)的相關介紹</a></p><p>那廢話不多說，趕快來下載歷史資料吧！</p><h3 id="使用幫大家寫好的函式庫"><a href="#使用幫大家寫好的函式庫" class="headerlink" title="使用幫大家寫好的函式庫"></a>使用幫大家寫好的函式庫</h3><p>我們可以使用<br><code>from finlab import crypto</code><br>將一些好用的 function 給叫進來</p><p>然後用<br><code>crypto.get_all_binance</code> 這個 function<br>來獲取交易對(trading pair)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from finlab import crypto</span><br><span class="line">df = crypto.get_all_binance(&apos;BTCUSDT&apos;, &apos;4h&apos;)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure><center><img src="/btc-crawler-py/df.png" title="dataframe 結果"></center><p>上述這個 <code>get_all_binance</code><br>除了幫你整理好下載資料外，<br>還會將這些資料資料，存在 <code>crypto_backtrader/history/crypto/</code> 當中<br>以 <code>csv</code> 的方式存起來<br>方便你用 <code>excel</code>、<code>multicharts</code> 等程式來打開</p><p>你也可以輸入不同的 trading pair 名稱，可以<a href="https://www.binance.com/tw/markets" rel="external nofollow noopener noreferrer" target="_blank">binance官網</a>查找</p><p>下一步，我們會分享<br>怎麼用 Python 回測一個簡單的 <code>BTCUSDT</code> 交易策略！<br>敬請期待！</p>]]></content>
+    <content type="html"><![CDATA[<p>這個單元，<br>分享如何獲取比特幣歷史價格</p><p>可以打開<a href="https://colab.research.google.com/" rel="external nofollow noopener noreferrer" target="_blank">colab</a>線上編輯python跟我們一起做實驗吧！<br>colab 是 google 提供，線上運行 python 的平台<br>打開後，新增一個notebook<br>直接一步步貼上下面的代碼<br>程式就會順利運行了</p><center><img src="/btc-crawler-py/thumbnail.png" title="info"></center><h3 id="獲取-python-函式庫"><a href="#獲取-python-函式庫" class="headerlink" title="獲取 python 函式庫"></a>獲取 python 函式庫</h3><p>首先，我們要先獲取幫大家寫好的 package 可以到github上下載<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!git clone https://github.com/koreal6803/crypto_backtrader.git</span><br><span class="line">cd crypto_backtrader</span><br></pre></td></tr></table></figure></p><p>上面的指令，會先將預先寫好的程式從 github 上下載下來<br>並且將目錄切換到 crypto_backtrader<br>也就是下載下來的資料夾中</p><h3 id="安裝一些必要的packages"><a href="#安裝一些必要的packages" class="headerlink" title="安裝一些必要的packages"></a>安裝一些必要的packages</h3><p>接下來我們來安裝一些必要的 dependencies<br>這樣等會才能順利執行程式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!pip install python-binance</span><br><span class="line">!pip install bitmex</span><br><span class="line">!pip install Backtesting</span><br><span class="line">!pip install backtrader</span><br></pre></td></tr></table></figure><h3 id="加密貨幣命名方法"><a href="#加密貨幣命名方法" class="headerlink" title="加密貨幣命名方法"></a>加密貨幣命名方法</h3><p>這篇文章中，我們爬取 <code>BTCUSDT</code> 的價格<br><code>BTCUSDT</code> 這個 symbol 可以拆逞兩個部分<br>一個是 <code>BTC</code>、另一個是 <code>USDT</code><br><code>BTCUSDT</code> 代表，<code>BTC</code> 的價格，以 <code>USDT</code> 為單位，<br>這邊為什麼我們要用 <code>USDT</code> 呢？因為他是跟 <code>USD</code> 是美元是表兄弟，<br><code>USDT</code> 是一種跟 <code>USD</code> 約略 1:1 兌換的穩定虛擬貨幣<br><code>USDT</code> 的好處是</p><p>在交易時，假如用 加密貨幣 <-> 法定貨幣（美元）<br>這種方式交易，手續費會非常高昂<br>例如我們以 Maicoin 買入跟賣出手續費約高達 1%，</-></p><p>今天我們假如使用 <code>BTCUSDT</code> pair 來交易<br>由於同樣是加密貨幣，所以手續費算是大幅的降低，<br>目前手續費在各平台，一般的標準是0.1%，根據平台的優惠、交易量可以打折，<br>成本算是低很多，</p><p><a href="http://blog.udn.com/mashmoro980727/121661372" rel="external nofollow noopener noreferrer" target="_blank">交易對(trading pair)的相關介紹</a></p><p>那廢話不多說，趕快來下載歷史資料吧！</p><h3 id="使用幫大家寫好的函式庫"><a href="#使用幫大家寫好的函式庫" class="headerlink" title="使用幫大家寫好的函式庫"></a>使用幫大家寫好的函式庫</h3><p>我們可以使用<br><code>from finlab import crypto</code><br>將一些好用的 function 給叫進來</p><p>然後用<br><code>crypto.get_all_binance</code> 這個 function<br>來獲取交易對(trading pair)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from finlab import crypto</span><br><span class="line">df = crypto.get_all_binance(&apos;BTCUSDT&apos;, &apos;4h&apos;)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure><center><img src="/btc-crawler-py/df.png" title="dataframe 結果"></center><p>上述這個 <code>get_all_binance</code><br>除了幫你整理好下載資料外，<br>還會將這些資料資料，存在 <code>crypto_backtrader/history/crypto/</code> 當中<br>以 <code>csv</code> 的方式存起來<br>方便你用 <code>excel</code>、<code>multicharts</code> 等程式來打開</p><p>你也可以輸入不同的 trading pair 名稱，可以<a href="https://www.binance.com/tw/markets" rel="external nofollow noopener noreferrer" target="_blank">binance官網</a>查找</p><p>下一步，我們會分享<br>怎麼用 Python 回測一個簡單的 <code>BTCUSDT</code> 交易策略！<br>敬請期待！</p>]]></content>
     
     <summary type="html">
     
@@ -191,9 +191,9 @@
       <category term="財經Python教" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -310,9 +310,9 @@
     
       <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -371,9 +371,9 @@
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -399,9 +399,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -428,9 +428,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -452,9 +452,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -476,9 +476,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -500,9 +500,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -526,9 +526,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -552,9 +552,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
@@ -579,9 +579,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   

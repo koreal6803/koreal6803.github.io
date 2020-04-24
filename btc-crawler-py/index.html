@@ -42,7 +42,7 @@
 <meta property="og:description" content="這個單元，分享如何獲取比特幣歷史價格 可以打開colab線上編輯python跟我們一起做實驗吧！colab 是 google 提供，線上運行 python 的平台打開後，新增一個notebook直接一步步貼上下面的代碼程式就會順利運行了   獲取 python 函式庫首先，我們要先獲取幫大家寫好的 package 可以到github上下載12!git clone https://github.co">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://www.finlab.tw/btc-crawler-py/thumbnail.png">
-<meta property="og:updated_time" content="2020-04-22T21:23:11.864Z">
+<meta property="og:updated_time" content="2020-04-24T18:48:45.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Python理財：比特幣(2)用爬蟲下載歷史數據">
 <meta name="twitter:description" content="這個單元，分享如何獲取比特幣歷史價格 可以打開colab線上編輯python跟我們一起做實驗吧！colab 是 google 提供，線上運行 python 的平台打開後，新增一個notebook直接一步步貼上下面的代碼程式就會順利運行了   獲取 python 函式庫首先，我們要先獲取幫大家寫好的 package 可以到github上下載12!git clone https://github.co">
@@ -314,7 +314,7 @@
 <h3 id="獲取-python-函式庫"><a href="#獲取-python-函式庫" class="headerlink" title="獲取 python 函式庫"></a>獲取 python 函式庫</h3><p>首先，我們要先獲取幫大家寫好的 package 可以到github上下載<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!git clone https://github.com/koreal6803/crypto_backtrader.git</span><br><span class="line">cd crypto_backtrader</span><br></pre></td></tr></table></figure></p>
 <p>上面的指令，會先將預先寫好的程式從 github 上下載下來<br>並且將目錄切換到 crypto_backtrader<br>也就是下載下來的資料夾中</p>
 <h3 id="安裝一些必要的packages"><a href="#安裝一些必要的packages" class="headerlink" title="安裝一些必要的packages"></a>安裝一些必要的packages</h3><p>接下來我們來安裝一些必要的 dependencies<br>這樣等會才能順利執行程式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!pip install python-binance</span><br><span class="line">!pip install bitmex</span><br><span class="line">!pip install Backtesting</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">!pip install python-binance</span><br><span class="line">!pip install bitmex</span><br><span class="line">!pip install Backtesting</span><br><span class="line">!pip install backtrader</span><br></pre></td></tr></table></figure>
 <h3 id="加密貨幣命名方法"><a href="#加密貨幣命名方法" class="headerlink" title="加密貨幣命名方法"></a>加密貨幣命名方法</h3><p>這篇文章中，我們爬取 <code>BTCUSDT</code> 的價格<br><code>BTCUSDT</code> 這個 symbol 可以拆逞兩個部分<br>一個是 <code>BTC</code>、另一個是 <code>USDT</code><br><code>BTCUSDT</code> 代表，<code>BTC</code> 的價格，以 <code>USDT</code> 為單位，<br>這邊為什麼我們要用 <code>USDT</code> 呢？因為他是跟 <code>USD</code> 是美元是表兄弟，<br><code>USDT</code> 是一種跟 <code>USD</code> 約略 1:1 兌換的穩定虛擬貨幣<br><code>USDT</code> 的好處是</p>
 <p>在交易時，假如用 加密貨幣 <-> 法定貨幣（美元）<br>這種方式交易，手續費會非常高昂<br>例如我們以 Maicoin 買入跟賣出手續費約高達 1%，</-></p>
 <p>今天我們假如使用 <code>BTCUSDT</code> pair 來交易<br>由於同樣是加密貨幣，所以手續費算是大幅的降低，<br>目前手續費在各平台，一般的標準是0.1%，根據平台的優惠、交易量可以打折，<br>成本算是低很多，</p>
