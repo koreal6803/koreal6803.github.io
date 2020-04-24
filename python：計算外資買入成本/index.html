@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="google-site-verification" content="nMMBwIrTgNyqMzODCbItqRSGcU7H1_zjvtkKhiIBo24">
-    <meta http-equiv="Cache-control" content="public">
-    <meta http-equiv="Cache-Control" content="max-age=604800">
-    
-    <title>Python：外資買入成本選股 | FinLab 量化實驗室</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="keywords" content="外資,技術指標">
-    <script type="application/ld+json">
-        {
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="google-site-verification" content="nMMBwIrTgNyqMzODCbItqRSGcU7H1_zjvtkKhiIBo24"><meta http-equiv="Cache-control" content="public"><meta http-equiv="Cache-Control" content="max-age=604800"><title>Python：外資買入成本選股 | FinLab 量化實驗室</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="keywords" content="外資,技術指標"><script type="application/ld+json">{
             "@context": "http://schema.org/",
             "@type": "Article",
             "author": "韓承佑",
@@ -30,302 +16,7 @@
               "name": "finlab"
             },
             "dateModified":"Sat Jul 07 2018 17:59:32 GMT+0800"
-          }
-    </script>
-    
-    <meta name="description" content="上次已經介紹了如何爬取外資爬蟲～這次我們就用三大法人來製作指標！自己做指標的好處是，數字都可以客製化，也可以搭配其它不同的指標進行選股和回測喔！這次我們要做的指標是「外資買入成本」！    計算指標前，先整理好財務數據(沒上課程的請看這邊，上了課的可以跳過看下一段) 在計算外資買入成本前，我們必須要或得兩個 DataFrame：  「收盤價」 「外資買入張數」  這兩個 DataFrame，其 c">
-<meta name="keywords" content="外資,技術指標">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python：外資買入成本選股">
-<meta property="og:url" content="https://www.finlab.tw/python：計算外資買入成本/index.html">
-<meta property="og:site_name" content="FinLab 量化實驗室">
-<meta property="og:description" content="上次已經介紹了如何爬取外資爬蟲～這次我們就用三大法人來製作指標！自己做指標的好處是，數字都可以客製化，也可以搭配其它不同的指標進行選股和回測喔！這次我們要做的指標是「外資買入成本」！    計算指標前，先整理好財務數據(沒上課程的請看這邊，上了課的可以跳過看下一段) 在計算外資買入成本前，我們必須要或得兩個 DataFrame：  「收盤價」 「外資買入張數」  這兩個 DataFrame，其 c">
-<meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://www.finlab.tw/python：計算外資買入成本/Picture1.png">
-<meta property="og:updated_time" content="2018-08-13T08:36:34.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python：外資買入成本選股">
-<meta name="twitter:description" content="上次已經介紹了如何爬取外資爬蟲～這次我們就用三大法人來製作指標！自己做指標的好處是，數字都可以客製化，也可以搭配其它不同的指標進行選股和回測喔！這次我們要做的指標是「外資買入成本」！    計算指標前，先整理好財務數據(沒上課程的請看這邊，上了課的可以跳過看下一段) 在計算外資買入成本前，我們必須要或得兩個 DataFrame：  「收盤價」 「外資買入張數」  這兩個 DataFrame，其 c">
-<meta name="twitter:image" content="https://www.finlab.tw/python：計算外資買入成本/Picture1.png">
-    
-    
-    
-        <link rel="alternate" href="/atom.xml" title="FinLab 量化實驗室" type="application/atom+xml">
-    
-
-    
-        <link rel="icon" href="/css/images/favicon.png">
-    
-
-    <link rel="canonical" href="https://www.finlab.tw/python：計算外資買入成本/index.html">
-
-    <!--defer-->
-    <!--<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--<link rel="stylesheet" href="/libs/titillium-web/styles.css">-->
-    <style>
-        /* latin-ext */
-        @font-face {
-        font-family: 'Source Code Pro';
-        font-style: normal;
-        font-weight: 400;
-        src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(fonts/mrl8jkM18OlOQN8JLgasDy2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');
-        unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-        }
-        /* latin */
-        @font-face {
-        font-family: 'Source Code Pro';
-        font-style: normal;
-        font-weight: 400;
-        src: local('Source Code Pro'), local('SourceCodePro-Regular'), url(fonts/mrl8jkM18OlOQN8JLgasD9V_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-        }
-        .gutter pre {
-            background: #222;
-        }
-        .code pre {
-            background: #222;
-            color: #eee
-        }
-                    .category-link {
-                        background: #F97352;
-                        color: white;
-                        padding: 5px;
-                        font-size: 1em;
-                    }
-        a {
-            color: #054A91;
-        }
-    </style>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/css/uikit.min.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-    <!--enddefer-->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106968614-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-106968614-1');
-    </script>
-    --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</head>
-
-</html>
-<body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap" style="background:#ddd">
-        
-<header id="header" class="uk-background-muted" style="background:transparent;height:100%">
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=1987856528129472&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="container">
-            <nav class="container-inner uk-navbar-container uk-light" style="background: #08B2E3" uk-navbar="">
-                <div class="uk-navbar-left" style="padding: 0 15px">
-                    <a class="uk-navbar-item" style="font-family: 'Righteous', cursive;" href="/">
-                        <img src="/css/images/logoWhite.png" style="height:40px" alt="logo">
-                    </a>
-                        <a class="uk-logo" style="font-family: 'Righteous', cursive;" href="/">
-                            <h1>finlab 部落格</h1>
-                        </a>
-                            <ul class="uk-navbar-nav">
-                                <li><a href="https://ai.finlab.tw/stock/1101" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">智慧診股</button></a></li>
-                                <li><a href="https://ai.finlab.tw/strategies" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">選股機器人</button></a></li>
-                                <li><a href="https://ai.finlab.tw/mylab" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">我的實驗室</button></a></li>
-                            </ul>
-                </div>
-                </nav>
-    </div>
-
-
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <!--<div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo" title="FinLab" ></a>
-                    </h1>
-                    
-                        
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">回測與選股教學部落格</p>
-                        </h2>
-                    
-                </div>-->
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/categories/財經Python教學/">Python財經</a>
-                                </li>
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/股票入門懶人包/">股票入門</a>
-                                </li>
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/categories/AI看股票/">AI看選股</a>
-                                </li>
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/categories/選股策略/">股票策略</a>
-                                </li>
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/categories/指標分析/">指標分析</a>
-                                </li>
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/關於/">關於FinLab</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋">
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="輸入關鍵字(股票,量化...)">
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '頁面',
-            CATEGORIES: '分類',
-            TAGS: '標籤',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js" defer></script>
-
-<style>
-::-webkit-input-placeholder { /* Chrome */
-  color: white;
-}
-:-ms-input-placeholder { /* IE 10+ */
-  color: white;
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color: white;
-  opacity: 1;
-}
-:-moz-placeholder { /* Firefox 4 - 18 */
-  color: white;
-  opacity: 1;
-}
-</style>
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner" style="background:#f5f5f5">
-                    <section id="main" style="background:#fff">
-                        <div class="main-body-header">
-    
-    <h2 class="header">
-    
-    <a class="page-title-link" href="/categories/財經Python教學/">財經Python教學</a>
-    </h2>
-</div>
-                        <div class="main-body-content">
-                            <article id="post-python：計算外資買入成本" class="article article-single article-type-post" itemscope="" itemprop="blogPost">
-
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-        Python：外資買入成本選股
-        </h1>
-    
-
-            </header>
-        
-
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/python：計算外資買入成本/" class="article-date">
-            <time datetime="2018-07-07T09:59:32.000Z" itemprop="datePublished">2018-07-07</time>
-        </a>
-    </div>
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/外資/">外資</a>, <a class="tag-link" href="/tags/技術指標/">技術指標</a>
-    </div>
-
-            </div>
-        
-        
-
-
-    
-
-
-        
-        <div class="article-entry" itemprop="articleBody">
-            <p>上次已經介紹了如何爬取外資爬蟲～這次我們就用三大法人來製作指標！<br>自己做指標的好處是，數字都可以客製化，也可以搭配其它不同的指標進行選股和回測喔！<br>這次我們要做的指標是「外資買入成本」！</p>
-<center><img src="/python：計算外資買入成本/Picture1.png" title="外資成本線 - 一窺外資的底牌！"></center>
-
-
-<h3 id="計算指標前，先整理好財務數據"><a href="#計算指標前，先整理好財務數據" class="headerlink" title="計算指標前，先整理好財務數據"></a>計算指標前，先整理好財務數據</h3><p>(沒上課程的請看這邊，上了課的可以跳過看下一段)</p>
-<p>在計算外資買入成本前，我們必須要或得兩個 DataFrame：</p>
-<ol>
-<li>「收盤價」</li>
-<li>「外資買入張數」</li>
-</ol>
-<p>這兩個 <code>DataFrame</code>，其 <code>columns</code> 是股票的代號，而 <code>index</code>是每天的日期，<br>這兩個 <code>DataFrame</code> 要怎麼做出來呢？</p>
-<p>首先，可以參考之前的文章，學習爬取股價跟三大法人：</p>
-<ol>
-<li><a href="https://www.finlab.tw/超簡單台股每日爬蟲教學/">爬取股價資訊</a></li>
-<li><a href="https://www.finlab.tw/三大法人爬蟲/">爬取三大法人買賣超</a></li>
-</ol>
-<p>接下來，我們可以將這先每天都有的資料轉換成時間序列的 DataFrame：<br><a href="https://www.finlab.tw/Python-時間序列實作！/">時間序列實做</a><br>以上這篇文章只有教您怎麼整理「收盤價」，沒有教您怎麼整理「三大法人買賣資訊喔！」<br>但原理都是一樣的，所以就依法炮製可以做出「三大法人」的<code>DataFrame</code>喔！</p>
-<h3 id="好麻煩喔！有沒有更快的方式？-利用課堂的工具"><a href="#好麻煩喔！有沒有更快的方式？-利用課堂的工具" class="headerlink" title="好麻煩喔！有沒有更快的方式？(利用課堂的工具)"></a>好麻煩喔！有沒有更快的方式？(利用課堂的工具)</h3><p>假如您有上<a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank">課程</a>的話，利用 <a href="https://www.finlab.tw/三大法人爬蟲/">爬取三大法人買賣超</a> 這篇文章，<br>就可以將三大法人買賣超的資訊整理好喔！</p>
-<p>所以您用我們課程中的code，只需要額外增加：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> finlab.data <span class="keyword">import</span> Data</span><br><span class="line">data = Data()</span><br></pre></td></tr></table></figure></p>
+          }</script><meta name="description" content="上次已經介紹了如何爬取外資爬蟲～這次我們就用三大法人來製作指標！自己做指標的好處是，數字都可以客製化，也可以搭配其它不同的指標進行選股和回測喔！這次我們要做的指標是「外資買入成本」！    計算指標前，先整理好財務數據(沒上課程的請看這邊，上了課的可以跳過看下一段) 在計算外資買入成本前，我們必須要或得兩個 DataFrame：  「收盤價」 「外資買入張數」  這兩個 DataFrame，其 c"><meta name="keywords" content="外資,技術指標"><meta property="og:type" content="article"><meta property="og:title" content="Python：外資買入成本選股"><meta property="og:url" content="https://www.finlab.tw/python：計算外資買入成本/index.html"><meta property="og:site_name" content="FinLab 量化實驗室"><meta property="og:description" content="上次已經介紹了如何爬取外資爬蟲～這次我們就用三大法人來製作指標！自己做指標的好處是，數字都可以客製化，也可以搭配其它不同的指標進行選股和回測喔！這次我們要做的指標是「外資買入成本」！    計算指標前，先整理好財務數據(沒上課程的請看這邊，上了課的可以跳過看下一段) 在計算外資買入成本前，我們必須要或得兩個 DataFrame：  「收盤價」 「外資買入張數」  這兩個 DataFrame，其 c"><meta property="og:locale" content="zh-TW"><meta property="og:image" content="https://www.finlab.tw/python：計算外資買入成本/Picture1.png"><meta property="og:updated_time" content="2018-08-13T08:36:34.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Python：外資買入成本選股"><meta name="twitter:description" content="上次已經介紹了如何爬取外資爬蟲～這次我們就用三大法人來製作指標！自己做指標的好處是，數字都可以客製化，也可以搭配其它不同的指標進行選股和回測喔！這次我們要做的指標是「外資買入成本」！    計算指標前，先整理好財務數據(沒上課程的請看這邊，上了課的可以跳過看下一段) 在計算外資買入成本前，我們必須要或得兩個 DataFrame：  「收盤價」 「外資買入張數」  這兩個 DataFrame，其 c"><meta name="twitter:image" content="https://www.finlab.tw/python：計算外資買入成本/Picture1.png"><link rel="alternate" href="/atom.xml" title="FinLab 量化實驗室" type="application/atom+xml"><link rel="icon" href="/css/images/favicon.png"><link rel="canonical" href="https://www.finlab.tw/python：計算外資買入成本/index.html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style>@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:400;src:local('Source Code Pro'),local('SourceCodePro-Regular'),url(fonts/mrl8jkM18OlOQN8JLgasDy2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Source Code Pro';font-style:normal;font-weight:400;src:local('Source Code Pro'),local('SourceCodePro-Regular'),url(fonts/mrl8jkM18OlOQN8JLgasD9V_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}.gutter pre{background:#222}.code pre{background:#222;color:#eee}.category-link{background:#f97352;color:#fff;padding:5px;font-size:1em}a{color:#054a91}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Righteous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/css/uikit.min.css"><link rel="stylesheet" href="/css/style.css"></head></html><body><div id="wrap" style="background:#ddd"><header id="header" class="uk-background-muted" style="background:0 0;height:100%"><div id="fb-root"></div><script>!function(e,t,n){var o,s=e.getElementsByTagName(t)[0];e.getElementById(n)||((o=e.createElement(t)).id=n,o.src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.12&appId=1987856528129472&autoLogAppEvents=1",s.parentNode.insertBefore(o,s))}(document,"script","facebook-jssdk")</script><div class="container"><nav class="container-inner uk-navbar-container uk-light" style="background:#08b2e3" uk-navbar=""><div class="uk-navbar-left" style="padding:0 15px"><a class="uk-navbar-item" style="font-family:Righteous,cursive" href="/"><img src="/css/images/logoWhite.png" style="height:40px" alt="logo"> </a><a class="uk-logo" style="font-family:Righteous,cursive" href="/"><h1>finlab 部落格</h1></a><ul class="uk-navbar-nav"><li><a href="https://ai.finlab.tw/stock/1101" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">智慧診股</button></a></li><li><a href="https://ai.finlab.tw/strategies" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">選股機器人</button></a></li><li><a href="https://ai.finlab.tw/mylab" rel="external nofollow noopener noreferrer" target="_blank"><button class="uk-button uk-button-default uk-button-small" style="border-radius:5px">我的實驗室</button></a></li></ul></div></nav></div><div id="header-outer" class="outer"><div class="container"><div class="container-inner"><div id="header-inner" class="nav-container"><a id="main-nav-toggle" class="nav-icon fa fa-bars"></a><div class="nav-container-inner"><ul id="main-nav"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/">Home</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/財經Python教學/">Python財經</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/股票入門懶人包/">股票入門</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/AI看股票/">AI看選股</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/選股策略/">股票策略</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/指標分析/">指標分析</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/關於/">關於FinLab</a></li></ul><nav id="sub-nav"><div id="search-form-wrap"><form class="search-form"><input type="text" class="ins-search-input search-form-input" placeholder="搜尋"> <button type="submit" class="search-form-submit"></button></form><div class="ins-search"><div class="ins-search-mask"></div><div class="ins-search-container"><div class="ins-input-wrapper"><input type="text" class="ins-search-input" placeholder="輸入關鍵字(股票,量化...)"> <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>window.INSIGHT_CONFIG={TRANSLATION:{POSTS:"文章",PAGES:"頁面",CATEGORIES:"分類",TAGS:"標籤",UNTITLED:"(未命名)"},ROOT_URL:"/",CONTENT_URL:"/content.json"}</script><script src="/js/insight.js" defer="defer"></script><style>::-webkit-input-placeholder{color:#fff}:-ms-input-placeholder{color:#fff}::-moz-placeholder{color:#fff;opacity:1}:-moz-placeholder{color:#fff;opacity:1}</style></div></nav></div></div></div></div></div></header><div class="container"><div class="main-body container-inner"><div class="main-body-inner" style="background:#f5f5f5"><section id="main" style="background:#fff"><div class="main-body-header"><h2 class="header"><a class="page-title-link" href="/categories/財經Python教學/">財經Python教學</a></h2></div><div class="main-body-content"><article id="post-python：計算外資買入成本" class="article article-single article-type-post" itemscope="" itemprop="blogPost"><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">Python：外資買入成本選股</h1></header><div class="article-meta"><div class="article-date"><a href="/python：計算外資買入成本/" class="article-date"><time datetime="2018-07-07T09:59:32.000Z" itemprop="datePublished">2018-07-07</time></a></div><div class="article-tag"><i class="fa fa-tag"></i> <a class="tag-link" href="/tags/外資/">外資</a>, <a class="tag-link" href="/tags/技術指標/">技術指標</a></div></div><div class="article-entry" itemprop="articleBody"><p>上次已經介紹了如何爬取外資爬蟲～這次我們就用三大法人來製作指標！<br>自己做指標的好處是，數字都可以客製化，也可以搭配其它不同的指標進行選股和回測喔！<br>這次我們要做的指標是「外資買入成本」！</p><center><img src="/python：計算外資買入成本/Picture1.png" title="外資成本線 - 一窺外資的底牌！"></center><h3 id="計算指標前，先整理好財務數據"><a href="#計算指標前，先整理好財務數據" class="headerlink" title="計算指標前，先整理好財務數據"></a>計算指標前，先整理好財務數據</h3><p>(沒上課程的請看這邊，上了課的可以跳過看下一段)</p><p>在計算外資買入成本前，我們必須要或得兩個 DataFrame：</p><ol><li>「收盤價」</li><li>「外資買入張數」</li></ol><p>這兩個 <code>DataFrame</code>，其 <code>columns</code> 是股票的代號，而 <code>index</code>是每天的日期，<br>這兩個 <code>DataFrame</code> 要怎麼做出來呢？</p><p>首先，可以參考之前的文章，學習爬取股價跟三大法人：</p><ol><li><a href="https://www.finlab.tw/超簡單台股每日爬蟲教學/">爬取股價資訊</a></li><li><a href="https://www.finlab.tw/三大法人爬蟲/">爬取三大法人買賣超</a></li></ol><p>接下來，我們可以將這先每天都有的資料轉換成時間序列的 DataFrame：<br><a href="https://www.finlab.tw/Python-時間序列實作！/">時間序列實做</a><br>以上這篇文章只有教您怎麼整理「收盤價」，沒有教您怎麼整理「三大法人買賣資訊喔！」<br>但原理都是一樣的，所以就依法炮製可以做出「三大法人」的<code>DataFrame</code>喔！</p><h3 id="好麻煩喔！有沒有更快的方式？-利用課堂的工具"><a href="#好麻煩喔！有沒有更快的方式？-利用課堂的工具" class="headerlink" title="好麻煩喔！有沒有更快的方式？(利用課堂的工具)"></a>好麻煩喔！有沒有更快的方式？(利用課堂的工具)</h3><p>假如您有上<a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank">課程</a>的話，利用 <a href="https://www.finlab.tw/三大法人爬蟲/">爬取三大法人買賣超</a> 這篇文章，<br>就可以將三大法人買賣超的資訊整理好喔！</p><p>所以您用我們課程中的code，只需要額外增加：<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> finlab.data <span class="keyword">import</span> Data</span><br><span class="line">data = Data()</span><br></pre></td></tr></table></figure><p></p>
 <p>以上的code就是一個可以跟資料庫索取資料的物件，接下來只要把資料讀進來就可以了：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 外資買入（2017-12月後的格式）</span></span><br><span class="line">陸資買進 = data.get(<span class="string">'外陸資買進股數(不含外資自營商)'</span>, <span class="number">250</span>)</span><br><span class="line">外資買進 = data.get(<span class="string">'外資自營商買進股數'</span>, <span class="number">250</span>)</span><br><span class="line"></span><br><span class="line">外資買進 += 陸資買進</span><br><span class="line"></span><br><span class="line"><span class="comment"># 外資買入（2017~12月前的格式）</span></span><br><span class="line">外資買進.fillna(data.get(<span class="string">'外資買進股數'</span>, <span class="number">250</span>))</span><br></pre></td></tr></table></figure>
 <center><img src="/python：計算外資買入成本/buy.png" title="外資買進成本 DataFrame"></center>
@@ -350,12 +41,12 @@
 <p>這邊要注意的是，我們不只算了單一一檔股票，是把所有股票的外資買進成本都算出來囉！</p>
 <h3 id="外資賣出成本"><a href="#外資賣出成本" class="headerlink" title="外資賣出成本"></a>外資賣出成本</h3><p>這邊一模一樣，所以就直接放code：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">外資賣出成本 = (外資賣出 * 收盤價).rolling(<span class="number">60</span>, min_periods=<span class="number">1</span>).sum() / 外資賣出.rolling(<span class="number">60</span>, min_periods=<span class="number">1</span>).sum()</span><br></pre></td></tr></table></figure>
-<h3 id="畫出曲線"><a href="#畫出曲線" class="headerlink" title="畫出曲線"></a>畫出曲線</h3><p>我們可以將 買入、賣出 的成本都畫出來：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">收盤價[<span class="string">'1101'</span>].plot()</span><br><span class="line">外資買進成本[<span class="string">'1101'</span>].plot(color=<span class="string">'red'</span>)</span><br><span class="line">外資賣出成本[<span class="string">'1101'</span>].plot(color=<span class="string">'blue'</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="畫出曲線"><a href="#畫出曲線" class="headerlink" title="畫出曲線"></a>畫出曲線</h3><p>我們可以將 買入、賣出 的成本都畫出來：<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">收盤價[<span class="string">'1101'</span>].plot()</span><br><span class="line">外資買進成本[<span class="string">'1101'</span>].plot(color=<span class="string">'red'</span>)</span><br><span class="line">外資賣出成本[<span class="string">'1101'</span>].plot(color=<span class="string">'blue'</span>)</span><br></pre></td></tr></table></figure><p></p>
 <center><img src="/python：計算外資買入成本/eq.png" title="外資買賣成本 DataFrame"></center>
 
 <p>紅色的線就是外資的買進成本<br>藍色的就是賣出成本</p>
 <p>當買進成本高於賣出成本時，就是可以考慮買進的時機喔！<br>或是當股價上漲後，拉回到買進成本線，也是很好的買點喔！<br>大家可以試著回測看看～～</p>
-<h3 id="選股"><a href="#選股" class="headerlink" title="選股"></a>選股</h3><p>我們也可以選擇股價小於外資成本的股票清單：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cond1 = 收盤價.iloc[<span class="number">-1</span>] &lt; 外資買進成本.iloc[<span class="number">-1</span>]</span><br><span class="line">print(cond1[cond1])</span><br></pre></td></tr></table></figure></p>
+<h3 id="選股"><a href="#選股" class="headerlink" title="選股"></a>選股</h3><p>我們也可以選擇股價小於外資成本的股票清單：<br></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cond1 = 收盤價.iloc[<span class="number">-1</span>] &lt; 外資買進成本.iloc[<span class="number">-1</span>]</span><br><span class="line">print(cond1[cond1])</span><br></pre></td></tr></table></figure><p></p>
 <p>這樣就可以看到所有股價小於外資成本的股票囉！<br>方便您繼續追蹤，看這些股票有沒有突破外資成本，一飛沖天喔！</p>
 
 
@@ -363,13 +54,13 @@
                 <p></p><h3>文章不錯，<b>影音課程</b>更讚：</h3>
                     <div class="uk-child-width-1-2@m" uk-grid="">
                         <div>
-                                <a href="https://hahow.in/cr/python-finance" onclick="ga('send', 'event', 'Link', 'Click', 'hahow1' + 'Python：外資買入成本選股');" rel="external nofollow noopener noreferrer" target="_blank">
+                                <a href="https://hahow.in/cr/python-finance" onclick='ga("send","event","Link","Click","hahow1Python：外資買入成本選股")' rel="external nofollow noopener noreferrer" target="_blank">
                                     <img src="https://hahow-production.imgix.net/5b04d8952a1203001e89084d?w=300&auto=format&s=601ebb968917e2f24ca9fbbd5b3fbf6b">
                                     <h3 class="uk-text-center">小資族選股策略（初階）</h3>
                                 </a>
                         </div>
                         <div>
-                                <a href="https://hahow.in/cr/finlab-ml" onclick="ga('send', 'event', 'Link', 'Click', 'hahow2' + 'Python：外資買入成本選股');" rel="external nofollow noopener noreferrer" target="_blank">
+                                <a href="https://hahow.in/cr/finlab-ml" onclick='ga("send","event","Link","Click","hahow2Python：外資買入成本選股")' rel="external nofollow noopener noreferrer" target="_blank">
                                     <img src="https://hahow-production.imgix.net/5c8e69c88d1cc80020953710?w=300&auto=format&s=751c391c505726f819943272548b154f">
                                     <h3 class="uk-text-center">人工智慧選股(進階)</h3>
                                 </a>
@@ -380,10 +71,9 @@
                 <p></p>
             
             <div>
-                <ul class="popular-posts" style="padding-left:0"><h3 class="article-title">猜你也喜歡：</h3><div><div style="margin-right:20px;background: url('/簡易的外資-基本面策略/indicator.png') no-repeat center;width:40px;height:40px;background-size: auto 100%;border-radius: 20px;float:left"></div><div style="margin-left: 60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/簡易的外資-基本面策略/" title="簡單又有效：股價加速度選股指標" rel="bookmark">簡單又有效：股價加速度選股指標</a></p></div></div></div><div><div style="margin-right:20px;background: url('/腦力激盪的外資策略！/thumbnail.jpeg') no-repeat center;width:40px;height:40px;background-size: auto 100%;border-radius: 20px;float:left"></div><div style="margin-left: 60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/腦力激盪的外資策略！/" title="腦力激盪的外資策略！" rel="bookmark">腦力激盪的外資策略！</a></p></div></div></div><div><div style="margin-right:20px;background: url('/用KD值選股：還需搭配這三種指標/eq1.png') no-repeat center;width:40px;height:40px;background-size: auto 100%;border-radius: 20px;float:left"></div><div style="margin-left: 60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/用KD值選股：還需搭配這三種指標/" title="用KD值選股：還需搭配這三種指標" rel="bookmark">用KD值選股：還需搭配這三種指標</a></p></div></div></div></ul>        
+                <ul class="popular-posts" style="padding-left:0"><h3 class="article-title">猜你也喜歡：</h3><div><div style="margin-right:20px;background:url(/簡易的外資-基本面策略/indicator.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/簡易的外資-基本面策略/" title="簡單又有效：股價加速度選股指標" rel="bookmark">簡單又有效：股價加速度選股指標</a></p></div></div></div><div><div style="margin-right:20px;background:url(/腦力激盪的外資策略！/thumbnail.jpeg) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/腦力激盪的外資策略！/" title="腦力激盪的外資策略！" rel="bookmark">腦力激盪的外資策略！</a></p></div></div></div><div><div style="margin-right:20px;background:url(/用KD值選股：還需搭配這三種指標/eq1.png) no-repeat center;width:40px;height:40px;background-size:auto 100%;border-radius:20px;float:left"></div><div style="margin-left:60px;height:50px;line-height:40px;text-align:left;float:clear;overflow:hidden">        <div class="popular-posts-title"><p><a href="/用KD值選股：還需搭配這三種指標/" title="用KD值選股：還需搭配這三種指標" rel="bookmark">用KD值選股：還需搭配這三種指標</a></p></div></div></div></ul>        
             </div>
-            <!--<footer class="article-footer">
-            </footer>-->
+            
         </div>
     </div>
 </article>
@@ -410,16 +100,7 @@
         <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
     
     
-        <script type="text/javascript">
-(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-106968614-1', 'auto');
-ga('send', 'pageview');
-
-</script>
+        <script type="text/javascript">!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject=g,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script",0,"ga"),ga("create","UA-106968614-1","auto"),ga("send","pageview")</script>
     
     
 
@@ -495,40 +176,14 @@ ga('send', 'pageview');
 
     
 
-<!-- Begin MailChimp Signup Form -->
-<style type="text/css">
-    /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
-    Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 
-    #mc_embed_signup form {text-align:center; padding-top: 20px}
-    .mc-field-group { display: inline-block; } /* positions input field horizontally */
-    #mc_embed_signup input.email {font-family:"Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif; font-size: 15px; border: 1px solid rgb(184, 190, 192);  -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; color: #343434; background-color: #fff; box-sizing:border-box; height:32px; padding: 0px 0.4em; display: inline-block; margin: 0; vertical-align:top;}
-    #mc_embed_signup label {display:block; font-size:16px; padding-bottom:10px; font-weight:bold;}
-    #mc_embed_signup .clear {display: inline-block;} /* positions button horizontally in line with input */
-    #mc_embed_signup .button {font-size: 13px; border: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; letter-spacing: .03em; color: #fff; background-color: #057391; box-sizing:border-box; height:32px; line-height:32px; padding:0 18px; display: inline-block; margin: 0; transition: all 0.23s ease-in-out 0s;}
-    #mc_embed_signup .button:hover {background-color:#777; cursor:pointer;}
-    #mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%;margin: 0 5%; clear: both;}
-    #mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
-    #mc_embed_signup #mce-error-response {display:none;}
-    #mc_embed_signup #mce-success-response {color:#529214; display:none;}
-    #mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
-    @media (max-width: 768px) {
-        #mc_embed_signup input.email {width:100%; margin-bottom:5px;}
-        #mc_embed_signup .clear {display: block; width: 100% }
-        #mc_embed_signup .button {width: 100%; margin:0; }
-    }
-
-	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-
-	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
+<style type="text/css">#mc_embed_signup form{text-align:center;padding-top:20px}.mc-field-group{display:inline-block}#mc_embed_signup input.email{font-family:"Open Sans","Helvetica Neue",Arial,Helvetica,Verdana,sans-serif;font-size:15px;border:1px solid #b8bec0;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;color:#343434;background-color:#fff;box-sizing:border-box;height:32px;padding:0 .4em;display:inline-block;margin:0;vertical-align:top}#mc_embed_signup label{display:block;font-size:16px;padding-bottom:10px;font-weight:700}#mc_embed_signup .clear{display:inline-block}#mc_embed_signup .button{font-size:13px;border:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;letter-spacing:.03em;color:#fff;background-color:#057391;box-sizing:border-box;height:32px;line-height:32px;padding:0 18px;display:inline-block;margin:0;transition:all .23s ease-in-out 0s}#mc_embed_signup .button:hover{background-color:#777;cursor:pointer}#mc_embed_signup div#mce-responses{float:left;top:-1.4em;padding:0 .5em 0 .5em;overflow:hidden;width:90%;margin:0 5%;clear:both}#mc_embed_signup div.response{margin:1em 0;padding:1em .5em .5em 0;font-weight:700;float:left;top:-1.5em;z-index:1;width:80%}#mc_embed_signup #mce-error-response{display:none}#mc_embed_signup #mce-success-response{color:#529214;display:none}#mc_embed_signup label.error{display:block;float:none;width:auto;margin-left:1.05em;text-align:left;padding:.5em 0}@media (max-width:768px){#mc_embed_signup input.email{width:100%;margin-bottom:5px}#mc_embed_signup .clear{display:block;width:100%}#mc_embed_signup .button{width:100%;margin:0}}#mc_embed_signup{clear:left;font:14px Helvetica,Arial,sans-serif;width:100%}</style>
 <div id="mc_embed_signup">
 <form action="https://github.us17.list-manage.com/subscribe/post?u=d8cd009ba8ad9a1188c6e206e&amp;id=a7714d56c6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
     <div id="mc_embed_signup_scroll">
-	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email信箱" style="background:white;color:#333" required>
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d8cd009ba8ad9a1188c6e206e_a7714d56c6" tabindex="-1" value=""></div>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email信箱" style="background:#fff;color:#333" required>
+    
+    <div style="position:absolute;left:-5000px" aria-hidden="true"><input type="text" name="b_d8cd009ba8ad9a1188c6e206e_a7714d56c6" tabindex="-1" value=""></div>
     <div class="clear"><input type="submit" value="立即訂閱" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
     </div>
 </form>
@@ -536,8 +191,8 @@ ga('send', 'pageview');
 
 
 
-<!--End mc_embed_signup-->    
-<!--ad-->
+    
+
 
 
 
@@ -546,131 +201,116 @@ ga('send', 'pageview');
         
             
                 
-    <!--
-    <div class="widget-wrap">
-        <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=Finlab', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-            <h3 class="widget-title">訂閱內容</h3>
-            <input class="css-input" placeholder="您的email" type="text" name="email" autocomplete="off"/>
-            <input type="hidden" value="Finlab" name="uri"/>
-            <input type="hidden" name="loc" value="zh_TW"/>
-            <input class="btn" type="submit" value="訂閱" />
-        </form>
-        <p style="color: gray;text-align: center;margin-top:10px">當新文章發佈時，以email通知您！</p>
-    </div>-->
+    
     <div class="widget-wrap">
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
-                    <div class=" uk-grid uk-grid-small" style="margin-bottom: 10px" uk-grid="">
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
                         
                         <div class="item-thumbnail uk-width-1-3">
                             <a href="/btc-trading-signal/" class="thumbnail">
     
     
-        <div style="background-image:url(/btc-trading-signal/thumbnail.jpeg);width:100%;height:100%;background-size: 100% auto;background-repeat:no-repeat;border-radius:3px" alt="用Python理財(3)：比特幣交易策略訊號實做" class="thumbnail-image"></div>
+        <div style="background-image:url(/btc-trading-signal/thumbnail.jpeg);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="用Python理財(3)：比特幣交易策略訊號實做" class="thumbnail-image"></div>
     
-    <!--
-    -->
+    
 </a>
 
                         </div>
                         
                         <div class="item-inner uk-width-expand">
-                            <!--<p class="item-category"><a class="article-category-link" href="/categories/加密貨幣/">加密貨幣</a></p>-->
-                            <p class="item-title" style="font-size:1.1em;"><a href="/btc-trading-signal/" class="title">用Python理財(3)：比特幣交易策略訊號實做
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/btc-trading-signal/" class="title">用Python理財(3)：比特幣交易策略訊號實做
                                 <time datetime="2020-04-23T20:20:56.000Z" itemprop="datePublished">2020-04-24</time>
 
                             </a></p>
                         </div>
                     </div>
                 
-                    <div class=" uk-grid uk-grid-small" style="margin-bottom: 10px" uk-grid="">
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
                         
                         <div class="item-thumbnail uk-width-1-3">
                             <a href="/btc-crawler-py/" class="thumbnail">
     
     
-        <div style="background-image:url(/btc-crawler-py/thumbnail.png);width:100%;height:100%;background-size: 100% auto;background-repeat:no-repeat;border-radius:3px" alt="用Python理財：比特幣(2)用爬蟲下載歷史數據" class="thumbnail-image"></div>
+        <div style="background-image:url(/btc-crawler-py/thumbnail.png);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="用Python理財：比特幣(2)用爬蟲下載歷史數據" class="thumbnail-image"></div>
     
-    <!--
-    -->
+    
 </a>
 
                         </div>
                         
                         <div class="item-inner uk-width-expand">
-                            <!--<p class="item-category"><a class="article-category-link" href="/categories/加密貨幣/">加密貨幣</a></p>-->
-                            <p class="item-title" style="font-size:1.1em;"><a href="/btc-crawler-py/" class="title">用Python理財：比特幣(2)用爬蟲下載歷史數據
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/btc-crawler-py/" class="title">用Python理財：比特幣(2)用爬蟲下載歷史數據
                                 <time datetime="2020-04-22T20:42:33.000Z" itemprop="datePublished">2020-04-23</time>
 
                             </a></p>
                         </div>
                     </div>
                 
-                    <div class=" uk-grid uk-grid-small" style="margin-bottom: 10px" uk-grid="">
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
                         
                         <div class="item-thumbnail uk-width-1-3">
                             <a href="/python-bitcoin-trading-why-bitcoin/" class="thumbnail">
     
     
-        <div style="background-image:url(/images/logo_img.png);width:100%;height:100%;background-size: 100% auto;background-repeat:no-repeat;border-radius:3px" alt="用Python理財：比特幣交易自動化(1)" class="thumbnail-image"></div>
+        <div style="background-image:url(/images/logo_img.png);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="用Python理財：比特幣交易自動化(1)" class="thumbnail-image"></div>
     
-    <!--
-    -->
+    
 </a>
 
                         </div>
                         
                         <div class="item-inner uk-width-expand">
-                            <!--<p class="item-category"><a class="article-category-link" href="/categories/加密貨幣/">加密貨幣</a></p>-->
-                            <p class="item-title" style="font-size:1.1em;"><a href="/python-bitcoin-trading-why-bitcoin/" class="title">用Python理財：比特幣交易自動化(1)
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/python-bitcoin-trading-why-bitcoin/" class="title">用Python理財：比特幣交易自動化(1)
                                 <time datetime="2020-04-20T06:09:14.000Z" itemprop="datePublished">2020-04-20</time>
 
                             </a></p>
                         </div>
                     </div>
                 
-                    <div class=" uk-grid uk-grid-small" style="margin-bottom: 10px" uk-grid="">
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
                         
                         <div class="item-thumbnail uk-width-1-3">
                             <a href="/real-state-best-district-old-buildings-taipei/" class="thumbnail">
     
     
-        <div style="background-image:url(/real-state-best-district-old-buildings-taipei/thumbnail.png);width:100%;height:100%;background-size: 100% auto;background-repeat:no-repeat;border-radius:3px" alt="台北最抗跌公寓在哪？ Python 告訴你 (Part 3)" class="thumbnail-image"></div>
+        <div style="background-image:url(/real-state-best-district-old-buildings-taipei/thumbnail.png);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="台北最抗跌公寓在哪？ Python 告訴你 (Part 3)" class="thumbnail-image"></div>
     
-    <!--
-    -->
+    
 </a>
 
                         </div>
                         
                         <div class="item-inner uk-width-expand">
-                            <!--<p class="item-category"><a class="article-category-link" href="/categories/實價登入/">實價登入</a></p>-->
-                            <p class="item-title" style="font-size:1.1em;"><a href="/real-state-best-district-old-buildings-taipei/" class="title">台北最抗跌公寓在哪？ Python 告訴你 (Part 3)
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/real-state-best-district-old-buildings-taipei/" class="title">台北最抗跌公寓在哪？ Python 告訴你 (Part 3)
                                 <time datetime="2019-11-28T07:24:28.000Z" itemprop="datePublished">2019-11-28</time>
 
                             </a></p>
                         </div>
                     </div>
                 
-                    <div class=" uk-grid uk-grid-small" style="margin-bottom: 10px" uk-grid="">
+                    <div class="uk-grid uk-grid-small" style="margin-bottom:10px" uk-grid="">
                         
                         <div class="item-thumbnail uk-width-1-3">
                             <a href="/ml-can-not-predict-price/" class="thumbnail">
     
     
-        <div style="background-image:url(/ml-can-not-predict-price/thumbnail.png);width:100%;height:100%;background-size: 100% auto;background-repeat:no-repeat;border-radius:3px" alt="機器學習無法預測股價！" class="thumbnail-image"></div>
+        <div style="background-image:url(/ml-can-not-predict-price/thumbnail.png);width:100%;height:100%;background-size:100% auto;background-repeat:no-repeat;border-radius:3px" alt="機器學習無法預測股價！" class="thumbnail-image"></div>
     
-    <!--
-    -->
+    
 </a>
 
                         </div>
                         
                         <div class="item-inner uk-width-expand">
-                            <!--<p class="item-category"><a class="article-category-link" href="/categories/AI看股票/">AI看股票</a></p>-->
-                            <p class="item-title" style="font-size:1.1em;"><a href="/ml-can-not-predict-price/" class="title">機器學習無法預測股價！
+                            
+                            <p class="item-title" style="font-size:1.1em"><a href="/ml-can-not-predict-price/" class="title">機器學習無法預測股價！
                                 <time datetime="2019-11-06T19:57:11.000Z" itemprop="datePublished">2019-11-07</time>
 
                             </a></p>
@@ -686,7 +326,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">標籤雲</h3>
         <div class="widget tagcloud">
-            <a href="/tags/量化投資/" style="font-size: 10px;"> 量化投資</a> <a href="/tags/BTC/" style="font-size: 11.82px;">BTC</a> <a href="/tags/Candlesticks/" style="font-size: 10px;">Candlesticks</a> <a href="/tags/Deep-Learning/" style="font-size: 10px;">Deep-Learning</a> <a href="/tags/EPS/" style="font-size: 10px;">EPS</a> <a href="/tags/KD/" style="font-size: 10.91px;">KD</a> <a href="/tags/K棒/" style="font-size: 10px;">K棒</a> <a href="/tags/K線圖/" style="font-size: 10px;">K線圖</a> <a href="/tags/LSTM/" style="font-size: 10px;">LSTM</a> <a href="/tags/Machine-Learning/" style="font-size: 16.36px;">Machine Learning</a> <a href="/tags/PEG/" style="font-size: 10px;">PEG</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/ROE/" style="font-size: 11.82px;">ROE</a> <a href="/tags/RSI/" style="font-size: 10px;">RSI</a> <a href="/tags/dataframe/" style="font-size: 10px;">dataframe</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/一行/" style="font-size: 10px;">一行</a> <a href="/tags/個人優化/" style="font-size: 10.91px;">個人優化</a> <a href="/tags/價值股/" style="font-size: 10px;">價值股</a> <a href="/tags/入門教學/" style="font-size: 14.55px;">入門教學</a> <a href="/tags/分佈圖/" style="font-size: 10px;">分佈圖</a> <a href="/tags/型態學/" style="font-size: 10.91px;">型態學</a> <a href="/tags/外資/" style="font-size: 11.82px;">外資</a> <a href="/tags/大盤/" style="font-size: 13.64px;">大盤</a> <a href="/tags/大跌/" style="font-size: 10px;">大跌</a> <a href="/tags/如何投資/" style="font-size: 10px;">如何投資</a> <a href="/tags/如何買股票/" style="font-size: 19.09px;">如何買股票</a> <a href="/tags/市值營收比/" style="font-size: 10.91px;">市值營收比</a> <a href="/tags/房地產/" style="font-size: 11.82px;">房地產</a> <a href="/tags/技術指標/" style="font-size: 11.82px;">技術指標</a> <a href="/tags/投信/" style="font-size: 10px;">投信</a> <a href="/tags/投資/" style="font-size: 10px;">投資</a> <a href="/tags/指標/" style="font-size: 13.64px;">指標</a> <a href="/tags/時間管理/" style="font-size: 10px;">時間管理</a> <a href="/tags/月營收/" style="font-size: 12.73px;">月營收</a> <a href="/tags/本益成長比/" style="font-size: 10px;">本益成長比</a> <a href="/tags/本益比/" style="font-size: 14.55px;">本益比</a> <a href="/tags/杜邦分析/" style="font-size: 13.64px;">杜邦分析</a> <a href="/tags/機器學習/" style="font-size: 17.27px;">機器學習</a> <a href="/tags/歷史回測/" style="font-size: 19.09px;">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size: 10px;">每股盈餘</a> <a href="/tags/比特幣/" style="font-size: 11.82px;">比特幣</a> <a href="/tags/深度學習/" style="font-size: 10px;">深度學習</a> <a href="/tags/爬蟲/" style="font-size: 14.55px;">爬蟲</a> <a href="/tags/生活/" style="font-size: 10.91px;">生活</a> <a href="/tags/生產力/" style="font-size: 10.91px;">生產力</a> <a href="/tags/程式交易/" style="font-size: 20px;">程式交易</a> <a href="/tags/策略狗/" style="font-size: 11.82px;">策略狗</a> <a href="/tags/簡易策略/" style="font-size: 15.45px;">簡易策略</a> <a href="/tags/統計/" style="font-size: 10px;">統計</a> <a href="/tags/總資產轉換率/" style="font-size: 10px;">總資產轉換率</a> <a href="/tags/美股/" style="font-size: 10px;">美股</a> <a href="/tags/股價淨值比/" style="font-size: 14.55px;">股價淨值比</a> <a href="/tags/股價預測/" style="font-size: 10px;">股價預測</a> <a href="/tags/股票/" style="font-size: 10px;">股票</a> <a href="/tags/股票分析/" style="font-size: 10px;">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size: 11.82px;">自由現金報酬率</a> <a href="/tags/財經Python教學/" style="font-size: 10px;">財經Python教學</a> <a href="/tags/資料分析/" style="font-size: 10px;">資料分析</a> <a href="/tags/選股/" style="font-size: 16.36px;">選股</a> <a href="/tags/選股策略/" style="font-size: 18.18px;">選股策略</a> <a href="/tags/量化投資/" style="font-size: 14.55px;">量化投資</a>
+            <a href="/tags/量化投資/" style="font-size:10px"> 量化投資</a> <a href="/tags/BTC/" style="font-size:11.82px">BTC</a> <a href="/tags/Candlesticks/" style="font-size:10px">Candlesticks</a> <a href="/tags/Deep-Learning/" style="font-size:10px">Deep-Learning</a> <a href="/tags/EPS/" style="font-size:10px">EPS</a> <a href="/tags/KD/" style="font-size:10.91px">KD</a> <a href="/tags/K棒/" style="font-size:10px">K棒</a> <a href="/tags/K線圖/" style="font-size:10px">K線圖</a> <a href="/tags/LSTM/" style="font-size:10px">LSTM</a> <a href="/tags/Machine-Learning/" style="font-size:16.36px">Machine Learning</a> <a href="/tags/PEG/" style="font-size:10px">PEG</a> <a href="/tags/Python/" style="font-size:10px">Python</a> <a href="/tags/ROE/" style="font-size:11.82px">ROE</a> <a href="/tags/RSI/" style="font-size:10px">RSI</a> <a href="/tags/dataframe/" style="font-size:10px">dataframe</a> <a href="/tags/python/" style="font-size:20px">python</a> <a href="/tags/一行/" style="font-size:10px">一行</a> <a href="/tags/個人優化/" style="font-size:10.91px">個人優化</a> <a href="/tags/價值股/" style="font-size:10px">價值股</a> <a href="/tags/入門教學/" style="font-size:14.55px">入門教學</a> <a href="/tags/分佈圖/" style="font-size:10px">分佈圖</a> <a href="/tags/型態學/" style="font-size:10.91px">型態學</a> <a href="/tags/外資/" style="font-size:11.82px">外資</a> <a href="/tags/大盤/" style="font-size:13.64px">大盤</a> <a href="/tags/大跌/" style="font-size:10px">大跌</a> <a href="/tags/如何投資/" style="font-size:10px">如何投資</a> <a href="/tags/如何買股票/" style="font-size:19.09px">如何買股票</a> <a href="/tags/市值營收比/" style="font-size:10.91px">市值營收比</a> <a href="/tags/房地產/" style="font-size:11.82px">房地產</a> <a href="/tags/技術指標/" style="font-size:11.82px">技術指標</a> <a href="/tags/投信/" style="font-size:10px">投信</a> <a href="/tags/投資/" style="font-size:10px">投資</a> <a href="/tags/指標/" style="font-size:13.64px">指標</a> <a href="/tags/時間管理/" style="font-size:10px">時間管理</a> <a href="/tags/月營收/" style="font-size:12.73px">月營收</a> <a href="/tags/本益成長比/" style="font-size:10px">本益成長比</a> <a href="/tags/本益比/" style="font-size:14.55px">本益比</a> <a href="/tags/杜邦分析/" style="font-size:13.64px">杜邦分析</a> <a href="/tags/機器學習/" style="font-size:17.27px">機器學習</a> <a href="/tags/歷史回測/" style="font-size:19.09px">歷史回測</a> <a href="/tags/每股盈餘/" style="font-size:10px">每股盈餘</a> <a href="/tags/比特幣/" style="font-size:11.82px">比特幣</a> <a href="/tags/深度學習/" style="font-size:10px">深度學習</a> <a href="/tags/爬蟲/" style="font-size:14.55px">爬蟲</a> <a href="/tags/生活/" style="font-size:10.91px">生活</a> <a href="/tags/生產力/" style="font-size:10.91px">生產力</a> <a href="/tags/程式交易/" style="font-size:20px">程式交易</a> <a href="/tags/策略狗/" style="font-size:11.82px">策略狗</a> <a href="/tags/簡易策略/" style="font-size:15.45px">簡易策略</a> <a href="/tags/統計/" style="font-size:10px">統計</a> <a href="/tags/總資產轉換率/" style="font-size:10px">總資產轉換率</a> <a href="/tags/美股/" style="font-size:10px">美股</a> <a href="/tags/股價淨值比/" style="font-size:14.55px">股價淨值比</a> <a href="/tags/股價預測/" style="font-size:10px">股價預測</a> <a href="/tags/股票/" style="font-size:10px">股票</a> <a href="/tags/股票分析/" style="font-size:10px">股票分析</a> <a href="/tags/自由現金報酬率/" style="font-size:11.82px">自由現金報酬率</a> <a href="/tags/財經Python教學/" style="font-size:10px">財經Python教學</a> <a href="/tags/資料分析/" style="font-size:10px">資料分析</a> <a href="/tags/選股/" style="font-size:16.36px">選股</a> <a href="/tags/選股策略/" style="font-size:18.18px">選股策略</a> <a href="/tags/量化投資/" style="font-size:14.55px">量化投資</a>
         </div>
     </div>
 
@@ -717,89 +357,27 @@ ga('send', 'pageview');
 
             
         
-<!--
-        <div style="width:100%;text-align:center;margin-top:20px;height:250px">
-            <ins class="clickforceads " style="display:inline-block;" data-ad-zone-max=7696 data-ad-zone-min=7699 data-ad-width-max=300 data-ad-height-max=250 data-ad-width-min=300 data-ad-height-min=250 data-ad-changeMinWidth=1024></ins>
-            <script type="text/javascript" src="//cdn.doublemax.net/js/rwd_cap.js"></script>
-        </div>
--->
-<!--
-        <div style="margin: 30px">
-            <div style="background-color:rgb(65, 62, 55);text-align:center;height:50px;line-height: 50px">
-                    <h3 style="font-size: 16px;color: yellow">按讚～不錯過最新文章！</h3>
-            </div>
-            
-            <div class="fb-page" 
-                data-href="https://www.facebook.com/finlab.tw"
-                data-width="380" 
-                data-hide-cover="false"
-                data-show-facepile="false">
-            </div>
-        </div>
-    -->
+
+
     
         <div style="padding:30px" id="moving">
             <h2 class="uk-text-large">影音課程:</h2>
             <div class="sticky">
-                    <a href="https://hahow.in/cr/python-finance" onclick="ga('send', 'event', 'Link', 'Click', 'hahow1Sidebar');" rel="external nofollow noopener noreferrer" target="_blank">
+                    <a href="https://hahow.in/cr/python-finance" onclick='ga("send","event","Link","Click","hahow1Sidebar")' rel="external nofollow noopener noreferrer" target="_blank">
                         <img src="https://hahow-production.imgix.net/5b04d8952a1203001e89084d?w=300&auto=format&s=601ebb968917e2f24ca9fbbd5b3fbf6b">
                         <h3 class="uk-text-center">小資族選股策略(初階）</h3>
                     </a>
             <br>
-            <a href="https://hahow.in/cr/finlab-ml" onclick="ga('send', 'event', 'Link', 'Click', 'hahow2Sidebar');" rel="external nofollow noopener noreferrer" target="_blank">
+            <a href="https://hahow.in/cr/finlab-ml" onclick='ga("send","event","Link","Click","hahow2Sidebar")' rel="external nofollow noopener noreferrer" target="_blank">
                 <img src="https://hahow-production.imgix.net/5c8e69c88d1cc80020953710?w=300&auto=format&s=751c391c505726f819943272548b154f">
                 <h3 class="uk-text-center">人工智慧選股(進階) </h3>
             </a>
             </div>
         </div>
-        <script>
-/*
-            $( document ).ready(function() {
-            console.log( "document ready!" );
-
-            if ($(window).width() < 600){
-                return
-            }
-
-            var $sticky = $('.sticky');
-            var $stickyrStopper = $('.sticky-stopper');
-            var width_m = $('#moving').width()
-            if (!!$sticky.offset()) { // make sure ".sticky" element exists
-
-                var generalSidebarHeight = $sticky.innerHeight();
-                var stickyTop = $sticky.offset().top;
-                var stickOffset = 200;
-                var stickyStopperPosition = $stickyrStopper.offset().top;
-                var stopPoint = stickyStopperPosition - generalSidebarHeight - stickOffset;
-                var diff = stopPoint + stickOffset;
-
-                $(window).scroll(function(){ // scroll event
-                    var windowTop = $(window).scrollTop(); // returns number
-                    var stickyStopperPosition = $stickyrStopper.offset().top;
-
-                    var stopPoint = stickyStopperPosition - generalSidebarHeight - stickOffset;
-                    var diff = stopPoint + stickOffset;
-
-                    if (stopPoint < windowTop) {
-                        $sticky.css({ position: 'absolute', top: diff, width: width_m, height: width_m * 9 / 16 });
-                    } else if (stickyTop < windowTop+stickOffset) {
-                        $sticky.css({ position: 'fixed', top: stickOffset, width: width_m, height: width_m * 9 / 16 });
-                    } else {
-                        $sticky.css({position: 'absolute', top: 'initial', width: width_m, height: width_m * 9 / 16 });
-                    }
-                });
-
-            }
-            });
-*/
-        </script>
+        <script></script>
     </div>
 </aside>
-<style>
-::placeholder {
-  color: #aaa;
-}
-</style>
+<style>::placeholder{color:#aaa}</style>
                 </div>
             </div>
         </div>
@@ -821,20 +399,7 @@ ga('send', 'pageview');
 
         
     
-    <script>
-    var disqus_shortname = 'koreal6803';
-    
-    
-    var disqus_url = 'https://www.finlab.tw/python：計算外資買入成本/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+    <script>var disqus_shortname="koreal6803",disqus_url="https://www.finlab.tw/python：計算外資買入成本/";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}()</script>
 
 
 
@@ -857,10 +422,7 @@ ga('send', 'pageview');
 
 
 
-<!-- Custom Scripts -->
+
 <script src="/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit-icons.min.js"></script>
-    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-</body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.23/js/uikit-icons.min.js"></script></div></body>
