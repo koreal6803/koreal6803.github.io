@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-04-25T02:20:04.707Z</updated>
+  <updated>2020-04-25T09:08:13.385Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用Python投資加密貨幣(5)：比特幣操作最強指標(原理篇)</title>
+    <link href="https://www.finlab.tw/best-indicator-bitcoin/"/>
+    <id>https://www.finlab.tw/best-indicator-bitcoin/</id>
+    <published>2020-04-25T07:36:15.000Z</published>
+    <updated>2020-04-25T09:08:13.385Z</updated>
+    
+    <content type="html"><![CDATA[<p>這是臨時加開的一篇文章<br>主要是因為<br><strong>就在今天</strong><br>有個非常準的比特幣上漲指標<br>發生了罕見的重磅訊號！</p><center><img src="/best-indicator-bitcoin/thumbnail.jpeg" title="thumbnail"></center><p>近三年，只要這個指標產生買入訊號，<br>平均來說，<strong>比特幣上漲幅度為 5000％</strong></p><p>這個指標的原理是什麼呢？<br>首先我們要介紹幾個名詞：</p><h3 id="1-Miner-挖礦機"><a href="#1-Miner-挖礦機" class="headerlink" title="1. Miner 挖礦機"></a>1. Miner 挖礦機</h3><p>比特幣的運作機制，<br>是讓所有的電腦互相競爭，看誰最快產生一串隨機字串 s，<br>使得以下公式<br><code>hash = sha256(phash + leger + s)</code><br>中 hash 的開頭「 n 個 0 」，</p><p>其中 <code>phash</code> 就是前一個 block（區塊）的 hash<br><code>leger</code> 是待驗證的 BTC 交易帳本，<br><code>sha256</code> 是一個<strong>不可逆的加密函數</strong></p><p>不可逆函數意味著<br>我們不可能反推s是多少，<br>而是必需要用暴力法，硬猜 s 是多少，<br>一個個嘗試，直到成功為止</p><p>專門在嘗試暴力法枚舉的電腦，我們就稱為「挖礦機」</p><h3 id="2-為何要找-s-？-感覺很沒意義"><a href="#2-為何要找-s-？-感覺很沒意義" class="headerlink" title="2. 為何要找 s ？ 感覺很沒意義"></a>2. 為何要找 s ？ 感覺很沒意義</h3><p>因為這樣子，我們就可以驗證此帳本是真的<br>這種驗證機智叫做 <strong>proof-of-work</strong><br>也就是用電腦的勞力<br>來確保紀錄的資料不受串改，</p><p>舉個例子，假如今天某駭客想上傳一個假的block，<br>這個時候，他必須先解出 上述 <code>s</code> 是多少，<br>還必須將下一個block的 <code>s</code> 也算出來，<br>和下下個 block 的 <code>s</code><br>和下下下個 block 的 <code>s</code><br>…等<br>直到其他電腦承認他的那條「假區塊鏈」為止，</p><p>也就是這個駭客的電腦算力，<br>必須跟其他正規礦機的算力總和披敵，<br>並且持續非常長的一段時間都能戰勝<strong>正規礦機的總和</strong><br>才有辦法將假的block驗證成功，</p><h3 id="3-Miner-Capitulation-礦機的投降"><a href="#3-Miner-Capitulation-礦機的投降" class="headerlink" title="3. Miner Capitulation 礦機的投降"></a>3. Miner Capitulation 礦機的投降</h3><p>為什麼會有人想挖礦？<br>因為辛苦挖礦<br>可以獲得新發行的比特幣</p><p>但當今天比特幣價格下降，<br>導致挖礦獲利減少時，<br>礦工挖礦成本 大於 挖到的比特幣價值<br>有些礦工乾脆就不運轉，<br>或是賣掉BTC去添購新的挖礦機型<br>也就是 Miner Capitulation</p><h3 id="4-Miner-Capitulation-是好的買入機會"><a href="#4-Miner-Capitulation-是好的買入機會" class="headerlink" title="4. Miner Capitulation 是好的買入機會"></a>4. Miner Capitulation 是好的買入機會</h3><p>Miner Capitulation<br>通常發生在 BTC 價格下跌時<br>BTC 的價格跌破了挖礦成本開始</p><p>很多的礦機持有者，<br>在這個時候</p><ol><li>賣掉已經挖到的 BTC 來購買新的礦機</li><li>乾脆機器收一收，BTC賣一賣了結出場</li></ol><p>就會引發一系列超賣</p><h3 id="5-如何判斷-Miner-Capitulation？"><a href="#5-如何判斷-Miner-Capitulation？" class="headerlink" title="5. 如何判斷 Miner Capitulation？"></a>5. 如何判斷 Miner Capitulation？</h3><p>我們可以從BTC調整「挖礦的困難程度」<br>來當成 Miner Capitulation 的延遲指標</p><p>因為這個「挖礦難易程度」會動態調整的：<br>根據比特幣白皮書<br>一個 block 的出產時間<br>必須在約10分鐘左右</p><p>所以當礦機很多時，算力上升，<br>這樣用暴力法找 <code>s</code> 的速度就會變快<br>所以找 <code>s</code> 難度也必須提升才行</p><p>還記得 hash 開頭必須包含 n 個 0 嗎？<br>這個 n 就可以用來控制難度，<br>當 n 越大，代表要產生越多開頭為 0 的 hash<br>而難度也會跟著加大</p><h3 id="6-我們可以藉由-n-來推算-hash-rate"><a href="#6-我們可以藉由-n-來推算-hash-rate" class="headerlink" title="6. 我們可以藉由 n 來推算 hash rate"></a>6. 我們可以藉由 n 來推算 hash rate</h3><p>hash rate 就是比特幣網路的算力，<br>每秒可以暴力解 x 次<br>這個 hash rate 降低，也代表著礦工的退出，<br>礦工退出，就會將 BTC 兌現<br>BTC 就會有比較大的跌幅</p><p>而當 hash rate 反轉升高時<br>就代表礦機更新完畢、礦場被整併，新礦機上線<br>近三年，這樣子的狀況，比特幣都有不錯的報酬<br>如今這個訊號也發生了，<br>就不知道接下來歷史會不會重演呢？</p><p>下一集將分享怎麼用 trading view 來開啟<br>hash  rate 訊號買賣點！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;這是臨時加開的一篇文章&lt;br&gt;主要是因為&lt;br&gt;&lt;strong&gt;就在今天&lt;/strong&gt;&lt;br&gt;有個非常準的比特幣上漲指標&lt;br&gt;發生了罕見的重磅訊號！&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/best-indicator-bitcoin/thumbnail.jpe
+      
+    
+    </summary>
+    
+      <category term="加密貨幣" scheme="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="比特幣" scheme="https://www.finlab.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/"/>
+    
+      <category term="BTC" scheme="https://www.finlab.tw/tags/BTC/"/>
+    
+  </entry>
   
   <entry>
     <title>用Python投資加密貨幣(4)：實做回測策略</title>
@@ -401,9 +431,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
@@ -552,32 +582,6 @@
     <summary type="html">
     
       &lt;p&gt;這個單元我們要利用 for 迴圈將所有的歷史數據爬下來，並且繪製所有的歷史股價。我們也會介紹一些 for 迴圈的進階技巧，並且將這些技巧結合起來，完成這次的功能，想要學習python，就慢慢跟著我們一步一步來吧！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python新手教學(2)全球指數一次抓</title>
-    <link href="https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B82%E5%85%A8%E7%90%83%E6%8C%87%E6%95%B8%E4%B8%80%E6%AC%A1%E6%8A%93/"/>
-    <id>https://www.finlab.tw/Python新手教學2全球指數一次抓/</id>
-    <published>2019-02-05T14:55:54.000Z</published>
-    <updated>2020-03-22T13:23:13.679Z</updated>
-    
-    <content type="html"><![CDATA[<p>我們已經知道怎麼抓取任意一檔股票歷史價格了，但有時候我們一次需要很多檔股票，怎麼辦呢？難道每個股票我們都要寫這麼多行，才能抓下來嗎？今天我們教你如何將上一次的功能包裝成 function，然後一次下載全球指數！</p><a id="more"></a><center><img src="/Python新手教學2全球指數一次抓/thumbnail.png" title="全球爬蟲"></center><h3 id="上次的程式碼爬取台積電"><a href="#上次的程式碼爬取台積電" class="headerlink" title="上次的程式碼爬取台積電"></a>上次的程式碼爬取台積電</h3><p>首先，我們上次已經教了怎麼樣爬取一檔股票：「台積電2330」，這次我們重新複習一下，下方的程式，假如有任何一個部分忘記了，都可以去<a href="/用爬蟲爬全世界股價/">前一個單元</a>複習喔！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">url = <span class="string">"https://query1.finance.yahoo.com/v8/finance/chart/2330.TW?period1=0&amp;period2=1549258857&amp;interval=1d&amp;events=history&amp;=hP2rOschxO0"</span></span><br><span class="line"></span><br><span class="line">res = requests.get(url)</span><br><span class="line">data = json.loads(res.text)</span><br><span class="line">df = pd.DataFrame(data[<span class="string">'chart'</span>][<span class="string">'result'</span>][<span class="number">0</span>][<span class="string">'indicators'</span>][<span class="string">'quote'</span>][<span class="number">0</span>], index=pd.to_datetime(np.array(data[<span class="string">'chart'</span>][<span class="string">'result'</span>][<span class="number">0</span>][<span class="string">'timestamp'</span>])*<span class="number">1000</span>*<span class="number">1000</span>*<span class="number">1000</span>))</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學2全球指數一次抓/1.png" title="歷史股價爬蟲"></center><p>但是以上的程式碼只能爬「台積電」的股價，我想要爬其他的指數怎麼辦呢？</p><h3 id="將上述程式碼打包成function"><a href="#將上述程式碼打包成function" class="headerlink" title="將上述程式碼打包成function"></a>將上述程式碼打包成function</h3><p>我們可以用<code>function</code>將上面的程式碼打包起來，方便我們多次使用，變成下面這樣，其實跟之前長的非常像，可以先比較一下：首先，第一行多了<code>def crawl_price(stock_id):</code>，這行的意思就是宣告一個可呼叫的程式區塊，叫做<code>crawl_price(stock_id)</code>，再來，原本的程式碼前方都被加了4個空白格，代表這些功能是同一個<code>function</code>中被執行的代碼。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl_price</span><span class="params">(stock_id)</span>:</span></span><br><span class="line"></span><br><span class="line">    url = <span class="string">"https://query1.finance.yahoo.com/v8/finance/chart/"</span>+stock_id+<span class="string">"?period1=0&amp;period2=1549258857&amp;interval=1d&amp;events=history&amp;=hP2rOschxO0"</span></span><br><span class="line"></span><br><span class="line">    res = requests.get(url)</span><br><span class="line">    data = json.loads(res.text)</span><br><span class="line">    df = pd.DataFrame(data[<span class="string">'chart'</span>][<span class="string">'result'</span>][<span class="number">0</span>][<span class="string">'indicators'</span>][<span class="string">'quote'</span>][<span class="number">0</span>], index=pd.to_datetime(np.array(data[<span class="string">'chart'</span>][<span class="string">'result'</span>][<span class="number">0</span>][<span class="string">'timestamp'</span>])*<span class="number">1000</span>*<span class="number">1000</span>*<span class="number">1000</span>))</span><br><span class="line">    <span class="keyword">return</span> df</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>上面的代碼中，有個特別可以注意的變數：<code>stock_id</code>，當今天<code>stock_id</code>被傳進<code>function</code>中的時候，url就會隨著<code>stock_id</code>的不同，而出現不同的<code>url</code>所以我們就可以爬到不同的股票歷史股價！</p><p>既然我們已經寫好了此<code>function</code>，接下來就可以呼叫它，得到不同股票的歷史股價</p><h3 id="使用function"><a href="#使用function" class="headerlink" title="使用function"></a>使用function</h3><p>假如以後我們需要爬取不同的股票，例如「鴻海2354」，我們就可以寫：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = crawl_price(<span class="string">"2354.TW"</span>)</span><br><span class="line">df.Close.plot()</span><br></pre></td></tr></table></figure><br>就可以順利將鴻海的股票爬取下來喔！</p><center><img src="/Python新手教學2全球指數一次抓/2.png" title="歷史股價爬蟲鴻海"></center><p>接下來我們就來爬取世界上重要的指數吧！</p><h3 id="國際重要指數清單"><a href="#國際重要指數清單" class="headerlink" title="國際重要指數清單"></a>國際重要指數清單</h3><p>首先我們必須要爬取到國際重要指數清單，可以到以下網址來獲取：<br><a href="https://finance.yahoo.com/world-indices/" rel="external nofollow noopener noreferrer" target="_blank">https://finance.yahoo.com/world-indices/</a></p><center><img src="/Python新手教學2全球指數一次抓/3.png" title="yahoo國際指數"></center><p>接下來我們就可以將上述清單給手動複製起來？！<br>不，我們要用更炫的方法，當然是要用程式來爬呀：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"https://finance.yahoo.com/world-indices/"</span></span><br><span class="line">response = requests.get(url)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line">f = io.StringIO(response.text)</span><br><span class="line">dfs = pd.read_html(f)</span><br><span class="line">world_index = dfs[<span class="number">0</span>]</span><br></pre></td></tr></table></figure><p>上述的程式碼，剛開始很簡單，就是用<code>requests.get</code>來獲取此網頁的資料，網頁中的資料都存在<code>response.text</code>中，跟之前一模一樣。</p><p>不過第5行有點不一樣，我們使用<code>io.StringIO(response.text)</code>將資料存成檔案<code>f</code><br>第6行，我們將此文件利用<code>pd.read_html(f)</code>來分析網頁<code>f</code>中的表格，將所有的表格存成 a list of dataframe<br>第7行，我們將第一張dataframe給拿出來。</p><center><img src="/Python新手教學2全球指數一次抓/4.png" title="國際指數清單"></center><p>這樣我們就有了此表格中的symbol和name，以供之後歷史股價的爬取</p><h3 id="最後，終於要爬取全球股價了！"><a href="#最後，終於要爬取全球股價了！" class="headerlink" title="最後，終於要爬取全球股價了！"></a>最後，終於要爬取全球股價了！</h3><p>萬事俱備！只欠東風，不過由於這次的教學已經很多了，所以大家可以自己練習看看，或是前往<a href="/Python新手教學3全球指數歷史數據/">下一個單元</a>，來爬取所有的歷史指數吧！</p><p>這一系列是我們影音課程的化簡版，<br>假如對此教程有興趣，歡迎點選下方影音課程，會豐富到炸裂喔～</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我們已經知道怎麼抓取任意一檔股票歷史價格了，但有時候我們一次需要很多檔股票，怎麼辦呢？難道每個股票我們都要寫這麼多行，才能抓下來嗎？今天我們教你如何將上一次的功能包裝成 function，然後一次下載全球指數！&lt;/p&gt;
     
     </summary>
     
