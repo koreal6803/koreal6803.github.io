@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-04-25T09:08:13.385Z</updated>
+  <updated>2020-04-26T04:15:37.430Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用Python投資加密貨幣(6)：技術指標看盤軟體</title>
+    <link href="https://www.finlab.tw/btc-tradingview-intro/"/>
+    <id>https://www.finlab.tw/btc-tradingview-intro/</id>
+    <published>2020-04-26T03:44:58.000Z</published>
+    <updated>2020-04-26T04:15:37.430Z</updated>
+    
+    <content type="html"><![CDATA[<p>我們當然可以用 Python 來幫我們做分析<br>但是人都是懶惰的，<br>假如有好用的工具，<br>即使不是 Python 也沒關係</p><p>這篇文章接續前一篇，將來一探究竟<br>究竟這個好用的指標怎麼看</p><center><img src="/btc-tradingview-intro/ind.png" title="thumbnail"></center><h3 id="TradingView"><a href="#TradingView" class="headerlink" title="TradingView"></a>TradingView</h3><p>介紹一款我覺得很好用的平台，<a href="https://tw.tradingview.com/" rel="external nofollow noopener noreferrer" target="_blank">TradingView</a><br>這並不是業配，只是真的滿好用的<br>以加密貨幣來說，我都會用它來看盤</p><p>可以在商品代碼中，輸入「BTCUSDT」來搜尋比特幣的價格</p><center><img src="/btc-tradingview-intro/search.png" title="search"></center><br>並且按一下全功能圖表<br><center><img src="/btc-tradingview-intro/panel.png" title="search"></center><p>這時候就會跳出這檔商品的技術分析圖表<br>然後我們再上方功能列表，可以點選「fx」來添加技術指標</p><center><img src="/btc-tradingview-intro/bar.png" title="bar"></center><br>這些是別人已經寫好<br>並且開源的技術指標<br>可以直接拿來用<br><br># <strong>Hash Ribbons 指標</strong><br><br>接下來，搜尋並點選「Hash Ribbon」就可以看到這個指標了！<br>你應該會看到以下的圖表<br><center><img src="/btc-tradingview-intro/ind.png" title="indicator"></center><p>可以看到「Hash Ribbon」這張圖表中<br>綠色像是階梯狀的數值，就是「Hash rate」<br>也就是「所有的挖礦機」的算力總和<br>也就是每秒可以暴力解多少次<br>可以參考<a href="">之前的文章</a><br>瞭解更多原理的部分</p><p>另外有兩條均線，分別是淺綠色，跟灰色，<br>分別是30日和60日均線，<br>這些數字我們不用調整，用它預設的即可</p><p>另外有紅色的區域，<br>從均線的死亡交叉開始出現<br>代表 Miner Capitulation 發生的時刻<br>此時比特幣會進入超跌的狀態，</p><p>最後當紅色區域的末稍，<br>也就是均線黃金交叉時<br>代表礦工恢復運作，<br>通常在這個時候買入<br>近三年的平均來說，會有約5000％的報酬</p><p>當然歷史不代表未來<br>不論部落格提供怎麼樣的訊息<br>你還是得自己做決定</p><p>比特幣波動是非常大的<br>起床發現突然下跌 30％<br>都是可能的</p><p>以長期投資而言，<br>注重風險的讀者，<br>真的不能下注太大呀！</p><p>注：<br>另外假如要看 BTC 的長期價格，<br>可以用 tradingview 搜尋 「BLX」<br>就可以找到了！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我們當然可以用 Python 來幫我們做分析&lt;br&gt;但是人都是懶惰的，&lt;br&gt;假如有好用的工具，&lt;br&gt;即使不是 Python 也沒關係&lt;/p&gt;
+&lt;p&gt;這篇文章接續前一篇，將來一探究竟&lt;br&gt;究竟這個好用的指標怎麼看&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/btc-t
+      
+    
+    </summary>
+    
+      <category term="加密貨幣" scheme="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="比特幣" scheme="https://www.finlab.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/"/>
+    
+      <category term="BTC" scheme="https://www.finlab.tw/tags/BTC/"/>
+    
+  </entry>
   
   <entry>
     <title>用Python投資加密貨幣(5)：比特幣操作最強指標(原理篇)</title>
@@ -431,9 +462,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
@@ -556,32 +587,6 @@
     <summary type="html">
     
       &lt;p&gt;為什麼美股大跌，在台灣的投資人要很緊張？原因就是相關性！想知道台股跟哪國指數最同步嗎？不是S&amp;amp;P 500美國指數，也不是深圳指數，那究竟是哪國呢？這篇文章我們就來研究一下吧！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python新手教學(3)全球指數歷史數據</title>
-    <link href="https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B83%E5%85%A8%E7%90%83%E6%8C%87%E6%95%B8%E6%AD%B7%E5%8F%B2%E6%95%B8%E6%93%9A/"/>
-    <id>https://www.finlab.tw/Python新手教學3全球指數歷史數據/</id>
-    <published>2019-02-06T01:57:32.000Z</published>
-    <updated>2020-03-22T13:24:23.358Z</updated>
-    
-    <content type="html"><![CDATA[<p>這個單元我們要利用 for 迴圈將所有的歷史數據爬下來，並且繪製所有的歷史股價。我們也會介紹一些 for 迴圈的進階技巧，並且將這些技巧結合起來，完成這次的功能，想要學習python，就慢慢跟著我們一步一步來吧！</p><a id="more"></a><center><img src="/Python新手教學3全球指數歷史數據/thumbnail.png" title="全球爬蟲"></center><p>延續上個單元，我們應該已經爬取了<code>world_index</code>這張表格：</p><center><img src="/Python新手教學3全球指數歷史數據/1.png" title="全球指數表格"></center><p>然後還有一個我們寫好的function</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl_price</span><span class="params">(stock_id)</span>:</span></span><br><span class="line"></span><br><span class="line">    url = <span class="string">"https://query1.finance.yahoo.com/v8/finance/chart/"</span>+stock_id+<span class="string">"?period1=0&amp;period2=1549258857&amp;interval=1d&amp;events=history&amp;=hP2rOschxO0"</span></span><br><span class="line"></span><br><span class="line">    res = requests.get(url)</span><br><span class="line">    data = json.loads(res.text)</span><br><span class="line">    df = pd.DataFrame(data[<span class="string">'chart'</span>][<span class="string">'result'</span>][<span class="number">0</span>][<span class="string">'indicators'</span>][<span class="string">'quote'</span>][<span class="number">0</span>], index=pd.to_datetime(np.array(data[<span class="string">'chart'</span>][<span class="string">'result'</span>][<span class="number">0</span>][<span class="string">'timestamp'</span>])*<span class="number">1000</span>*<span class="number">1000</span>*<span class="number">1000</span>))</span><br><span class="line">    <span class="keyword">return</span> df</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>接下來就可以將他們結合，來爬取歷史資料了！在爬取資料之前，有幾個程式的小技巧必須要學會</p><h3 id="1-for-迴圈"><a href="#1-for-迴圈" class="headerlink" title="1. for 迴圈"></a>1. for 迴圈</h3><p>假如我們要執行重複性的動作，通常第一件事情就是想到for 迴圈，例如我們想要印出1～9，不用for迴圈，我們可以寫成</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">1</span>)</span><br><span class="line">print(<span class="number">2</span>)</span><br><span class="line">print(<span class="number">3</span>)</span><br><span class="line">print(<span class="number">4</span>)</span><br><span class="line">print(<span class="number">5</span>)</span><br><span class="line">print(<span class="number">6</span>)</span><br><span class="line">print(<span class="number">7</span>)</span><br><span class="line">print(<span class="number">8</span>)</span><br><span class="line">print(<span class="number">9</span>)</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學3全球指數歷史數據/2.png" title="印出1到9"></center><p>但很明顯我們就已經快要中風了，所以改成for迴圈後<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure></p><center><img src="/Python新手教學3全球指數歷史數據/3.png" title="印出1到9FOR迴圈"></center><p>這樣短短的就寫完了！其中<br>第一行：我們有一個變數i，他會從1～9不斷變換，並且執行下方的print(i)。第二行要記得加上前方四個空白，通常叫做縮排「indent」，當第一行有<code>for</code>這個標示後，之後就必須用縮排indent直到寫完for迴圈裡的內容為止。</p><p>但有時候我們希望同時做兩個迴圈呢？</p><h3 id="使用zip"><a href="#使用zip" class="headerlink" title="使用zip"></a>使用zip</h3><p>我們可以使用zip，一次執行兩個list：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> number, letter <span class="keyword">in</span> zip([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]):</span><br><span class="line">    print(number, letter)</span><br></pre></td></tr></table></figure></p><center><img src="/Python新手教學3全球指數歷史數據/4.png" title="使用zip"></center><p>最後，我們要使用 dictionary 將全球的指數給存起來。</p><h3 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h3><p>這邊先示範最簡單的用法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&#125;</span><br><span class="line">d[<span class="string">'a'</span>] = <span class="number">1</span></span><br><span class="line">d[<span class="string">'b'</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找</span></span><br><span class="line">print(d[<span class="string">'b'</span>]) <span class="comment"># 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 迴圈</span></span><br><span class="line"><span class="comment"># 其中，d.items 有點像是zip的感覺，</span></span><br><span class="line"><span class="comment"># 針對dictionary中的['a', 'b']和[1,2]進行迴圈）</span></span><br><span class="line"><span class="keyword">for</span> letter, number <span class="keyword">in</span> d.items():</span><br><span class="line">    print(letter, number)</span><br><span class="line"><span class="comment"># a 1</span></span><br><span class="line"><span class="comment"># b 2</span></span><br></pre></td></tr></table></figure></p><center><img src="/Python新手教學3全球指數歷史數據/6.png" title="使用zip"></center><p>結合上述的小功能，就可以寫一個程式將世界指數都抓下來了！<br>我建議你自己試試看～<br>寫完之後再往下拉看範例：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">world_index_history = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> symbol, name <span class="keyword">in</span> zip(world_index[<span class="string">'Symbol'</span>], world_index[<span class="string">'Name'</span>]):</span><br><span class="line">    </span><br><span class="line">    print(name)</span><br><span class="line">    </span><br><span class="line">    world_index_history[name] = crawl_price(symbol)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學3全球指數歷史數據/5.png" title="全球歷史股價"></center><p>假如你有認真研究前三點功能，相信這些代碼應該難不倒你！其中沒有教到的是，我們利用<code>time.sleep(5)</code>，來休息一下，不要抓的太頻繁，不然會被封鎖，除此之外，上述代碼非常簡單，寫一個for迴圈，將所有的指數都抓下來，存在<code>world_index_history</code>中。</p><h3 id="繪製指數"><a href="#繪製指數" class="headerlink" title="繪製指數"></a>繪製指數</h3><p>接下來，我們可以用一樣的for迴圈，來將指數給畫出來</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> name, history <span class="keyword">in</span> world_index_history.items():</span><br><span class="line">    history.Close.plot()</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學3全球指數歷史數據/f.png" title="全球歷史股價"></center><h3 id="有了指數，接下來要做什麼呢？"><a href="#有了指數，接下來要做什麼呢？" class="headerlink" title="有了指數，接下來要做什麼呢？"></a>有了指數，接下來要做什麼呢？</h3><p><a href="/Python新手教學4相關性分析/">下個單元</a>，我們要來分析一下這些指數，看看哪些適合投資，哪些不適合，敬請期待～</p><p>這一系列是我們影音課程的化簡版，</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;這個單元我們要利用 for 迴圈將所有的歷史數據爬下來，並且繪製所有的歷史股價。我們也會介紹一些 for 迴圈的進階技巧，並且將這些技巧結合起來，完成這次的功能，想要學習python，就慢慢跟著我們一步一步來吧！&lt;/p&gt;
     
     </summary>
     
