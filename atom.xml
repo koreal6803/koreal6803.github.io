@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-04-26T04:24:22.445Z</updated>
+  <updated>2020-04-26T21:07:38.875Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用Python投資加密貨幣(7)：三年20倍的策略參數最佳化</title>
+    <link href="https://www.finlab.tw/btc-backtesting-optimization/"/>
+    <id>https://www.finlab.tw/btc-backtesting-optimization/</id>
+    <published>2020-04-26T20:23:13.000Z</published>
+    <updated>2020-04-26T21:07:38.875Z</updated>
+    
+    <content type="html"><![CDATA[<p>這篇文章中，<br>我們將承接著之前的單元，<br>來教大家怎麼做最佳化，</p><center><img src="/btc-backtesting-optimization/thumbnail.jpeg" title="thumbnail"></center><a id="more"></a><p>必備的單元提要：</p><ol><li>環境設定：<a href="/btc-crawler-py/">使用 colab 並且安裝相關 packages</a></li><li>簡單回測：<a href="/btc-simple-sma-backtesting/">利用均線相交產生買賣訊號回測</a></li></ol><p>要執行完上述兩個單元的程式碼<br>才能繼續接下來的單元喔！</p><p>我們將上次的回測程式改成以下的樣子<br>請大家來比較一下有什麼不同</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> backtesting <span class="keyword">import</span> Backtest</span><br><span class="line"><span class="keyword">from</span> backtesting.lib <span class="keyword">import</span> SignalStrategy</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Strategy</span><span class="params">(SignalStrategy)</span>:</span></span><br><span class="line">    </span><br><span class="line">    n1 = <span class="number">20</span></span><br><span class="line">    n2 = <span class="number">60</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">init</span><span class="params">(self)</span>:</span></span><br><span class="line">        super().init()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Precompute the two moving averages</span></span><br><span class="line">        close = pd.Series(self.data.Close)</span><br><span class="line">        sma1 = close.rolling(self.n1).mean()</span><br><span class="line">        sma2 = close.rolling(self.n2).mean()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Precompute signal</span></span><br><span class="line">        signal_long = (sma1 &gt; sma2) &amp; (sma1.shift() &lt; sma2.shift())</span><br><span class="line">        signal_short = (sma1 &lt; sma2) &amp; (sma1.shift() &gt; sma2.shift())</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># combine signal</span></span><br><span class="line">        signal = signal_long</span><br><span class="line">        signal[signal_short] = <span class="number">-1</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># add signal</span></span><br><span class="line">        self.set_signal(signal)</span><br><span class="line"></span><br><span class="line">bt = Backtest(df, Strategy)</span><br><span class="line">result1 = bt.run()</span><br><span class="line">bt.plot()</span><br></pre></td></tr></table></figure><p>沒錯，<br>我們新增了7、8行的物件參數，<br>分別代表兩條均線的參數<br>並且在15、16行，<br>製作均線時，使用該參數來製作均線</p><p>另外我們也在倒數第二行，<br>將回測結果存到 <code>result1</code><br>等等可以做比較</p><p>你應該會看到跟上次一樣的結果：</p><center><img src="/btc-backtesting-optimization/before.png" title="優化前的回測結果"></center><p>接下來就可以自動最佳化了</p><h3 id="暴力枚舉"><a href="#暴力枚舉" class="headerlink" title="暴力枚舉"></a>暴力枚舉</h3><p>你可能以為要寫for迴圈，但其實 backtesting 已經幫你寫好了<br>我們只要將參數範圍傳入 <code>bt.optimize</code><br>就可以了，非常方便：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result2 = bt.optimize(n1=range(<span class="number">5</span>, <span class="number">100</span>, <span class="number">5</span>),</span><br><span class="line">                      n2=range(<span class="number">5</span>, <span class="number">100</span>, <span class="number">5</span>))</span><br></pre></td></tr></table></figure></p><h3 id="優化後的結果"><a href="#優化後的結果" class="headerlink" title="優化後的結果"></a>優化後的結果</h3><p>由於策略優化完後，參數會自動更新<br>所以我們可以用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bt.plot()</span><br></pre></td></tr></table></figure><br>來看優化後的績效就可以了！</p><center><img src="/btc-backtesting-optimization/after.png" title="優化後的回測結果"></center><p>三年半 20 倍，是不是很夢幻呀！而且還多空都賺<br>拿量化交易的方式交易比特幣，<br>就像是拿大砲對付刀劍一樣</p><p>我們可以將優化前後的績效比對一下，<br>真的差很多呢！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result1._trade_data.Equity.plot()</span><br><span class="line">result2._trade_data.Equity.plot()</span><br></pre></td></tr></table></figure><center><img src="/btc-backtesting-optimization/compare.png" title="比較不同的績效"></center><p>但隨著期貨市場的開放<br>這樣的績效，或許沒辦法重現，<br>或許市場已經慢慢走向效率化，<br>可以看到2019年以後，賺得比較少</p><p>但是加密貨幣又不是只有 BTC，<br>一定有很多未開發的地帶，<br>等著量化交易去開拓的！<br>所以也不用太擔心！</p><p>這些單元的用意<br>就是在你在開江闢土時<br>提供你豐富的資源，<br>讓你在開發策略事半功倍！</p><p>你可以到<a href="https://www.facebook.com/finlab.python/" rel="external nofollow noopener noreferrer" target="_blank">FinLab粉專</a><br>點選追蹤，或點讚，就可以收到我們的新單元囉！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;這篇文章中，&lt;br&gt;我們將承接著之前的單元，&lt;br&gt;來教大家怎麼做最佳化，&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;/btc-backtesting-optimization/thumbnail.jpeg&quot; title=&quot;thumbnail&quot;&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="加密貨幣" scheme="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="比特幣" scheme="https://www.finlab.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/"/>
+    
+      <category term="BTC" scheme="https://www.finlab.tw/tags/BTC/"/>
+    
+  </entry>
   
   <entry>
     <title>用Python投資加密貨幣(6)：比特幣操作最強指標(看盤篇)</title>
@@ -284,9 +311,9 @@
       <category term="財經Python教" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -403,9 +430,9 @@
     
       <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -464,9 +491,9 @@
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -492,9 +519,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -521,9 +548,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -545,9 +572,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
   </entry>
   
@@ -569,35 +596,9 @@
       <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
     
     
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Python新手教學(4)台股跟哪國指數最相關？</title>
-    <link href="https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B84%E7%9B%B8%E9%97%9C%E6%80%A7%E5%88%86%E6%9E%90/"/>
-    <id>https://www.finlab.tw/Python新手教學4相關性分析/</id>
-    <published>2019-02-10T03:10:58.000Z</published>
-    <updated>2020-03-22T13:26:13.863Z</updated>
-    
-    <content type="html"><![CDATA[<p>為什麼美股大跌，在台灣的投資人要很緊張？原因就是相關性！想知道台股跟哪國指數最同步嗎？不是S&amp;P 500美國指數，也不是深圳指數，那究竟是哪國呢？這篇文章我們就來研究一下吧！</p><a id="more"></a><center><img src="/Python新手教學4相關性分析/last.png" title="全球指數相關性"></center><h3 id="相關性最白話"><a href="#相關性最白話" class="headerlink" title="相關性最白話"></a>相關性最白話</h3><p>首先我們先介紹什麼是相關性，<br>相關性最白話，你可以想像，看到天空烏雲密佈，代表可能要下雨了，<br>代表天空的顏色跟下雨機率有相關，<br>你可以由一個現象，去預測另一個現象，這就是相關性！</p><h3 id="相關性稍微數學一點"><a href="#相關性稍微數學一點" class="headerlink" title="相關性稍微數學一點"></a>相關性稍微數學一點</h3><p>相關性也可以更數值化的方式表示，先用以下例子講解：</p><center><img src="/Python新手教學4相關性分析/2.png" title="天氣溫度相關性"></center><p>這張圖中：</p><ul><li><p>我們可以看上方左側圖，天氣溫度跟買冰棒人數的變化圖，可以想像某人每一天記錄天氣溫度與冰棒人數，每天畫一個黃點，時間久了，就可以看出黃點之間的關係，也就是天氣越熱，越有人會想要買冰棒！</p></li><li><p>同理，上方中間那張圖，某人也可以記錄每天生病的人數，此時就發現，天氣越冷，越多人會感冒！</p></li><li><p>當然某人覺得有趣，於是又記錄了溫度與擲筊的關係，最後發現：沒什麼關連</p></li></ul><p>好了，某人已將觀測值變成數字記錄起來了，但每次都必須畫這麼多點，才能看出相關性，也太累了吧？能不能用一個數字取代呢？</p><p>這時就可以用</p><h3 id="correlation-coefficient-（相關性係數）"><a href="#correlation-coefficient-（相關性係數）" class="headerlink" title="correlation coefficient （相關性係數）"></a>correlation coefficient （相關性係數）</h3><p>有人可能覺得太多點點了，有密集恐懼症，希望可以將上方這三張圖，每張圖用一個數字代表就好，這樣就不需要看到這麼多點點。</p><p>所以某人提出了 correlation coefficient ，從上面第一張圖開始從左而又，分別可以用 1、-1、0來代表：</p><ul><li>1 代表正相關，也就是X越高Y越高，X越低Y越低（成正比）</li><li>─1 代表負相關，也就是X越高Y越低，或X越低Y越高（成反比）</li><li>0 代表無相關性</li></ul><p>上述只是化簡後的例子<br>事實上相關性係數不是整數，而是會介於─1～1間，代表正負相關的程度！</p><p>讀到這裡，你可能會問，</p><h3 id="所以跟投資有什麼關係？"><a href="#所以跟投資有什麼關係？" class="headerlink" title="所以跟投資有什麼關係？"></a>所以跟投資有什麼關係？</h3><p>投資就是預測未來現象與當下現象的相關性！<br>就像你看到天空烏雲密佈，就能預測接下來會下雨，<br>我們也可以將相關性係數用於全球指數，</p><p>為什麼美股大跌，在台灣的投資人要很緊張？原因就是相關性！<br>台股跟美股有正相關。</p><p>我們可以用Python將相關性畫出來，</p><h2 id="首先我們可以看一下上個單元的一些元素："><a href="#首先我們可以看一下上個單元的一些元素：" class="headerlink" title="首先我們可以看一下上個單元的一些元素："></a>首先我們可以看一下上個單元的一些元素：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(world_index_history[<span class="string">'S&amp;P 500'</span>].head())</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學4相關性分析/3.png" title="回顧指數"></center><p>還記得<code>world_index_history</code>嗎？它是一個dictionary，根據不同的字串，例如<code>S&amp;P 500</code>，可以叫出相對應的表格（dataframe）</p><p>有了 <code>world_index_history</code> 我們就可以將國際指數的相關性給畫出來，但首先，我們要先來瞭解</p><h3 id="Adj-Close跟Close的差異？"><a href="#Adj-Close跟Close的差異？" class="headerlink" title="Adj Close跟Close的差異？"></a><code>Adj Close</code>跟<code>Close</code>的差異？</h3><p><code>close</code> 就是收盤價，每天股市休盤瞬間的最後數字。那<code>Adj Close</code>呢？<br>我們用圖會比較好解說，先將 <code>S&amp;P500</code> 指數的 <code>Adj Close</code> 跟 <code>Close</code> 畫出來</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sp500 = world_index_history[<span class="string">'S&amp;P 500'</span>]</span><br><span class="line">sp500[<span class="string">'Close'</span>].plot(color=<span class="string">'red'</span>)</span><br><span class="line">sp500[<span class="string">'Adj Close'</span>].plot(color=<span class="string">'blue'</span>)</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學4相關性分析/4.png" title="收盤價與調整後收盤價"></center><p>上圖中紅色的為<code>Close</code>而藍色的為<code>Adj Close</code>，兩者幾乎重疊，因為<code>Adj Close</code>其實跟<code>Close</code>很像，但是有點不同，台灣叫做「調整後收盤價」，你有時候也會看到「復權收盤價」。這個價格的好處是，它移除了除權息和增減資的價格波動，更準確的反映了「股票價值」的變化。</p><h3 id="簡單的例子"><a href="#簡單的例子" class="headerlink" title="簡單的例子"></a>簡單的例子</h3><p>當除權息、增減資時，一般股價會有大波動，以除權息為例，股票價格瞬間下跌<br>然而帳戶裡的股票張數會變多（例如領股利）<br>或是帳戶資金量變多（領股息）<br>總體來講是不賺不賠的</p><p>所以當除權息時，<br>收盤價 <code>Close</code> 會突然下跌很多，<br>而調整後收盤價 <code>Adj Close</code> 不會因為除權息有巨幅下跌<br>更能夠精確的反映股票價值，跟投資的獲利狀況！<br>所以我們在做相關性分析，可以用 <code>Adj Close</code>！</p><h3 id="Python-終於開始了"><a href="#Python-終於開始了" class="headerlink" title="Python 終於開始了"></a>Python 終於開始了</h3><p>首先我們先將所有指數的 <code>Adj Close</code> 先集合起來，變成一張表格(dataframe)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">adjclose = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> name, price <span class="keyword">in</span> world_index_history.items():</span><br><span class="line">    <span class="keyword">if</span> price.index.is_unique:</span><br><span class="line">        adjclose[name] = price[<span class="string">'Adj Close'</span>]</span><br><span class="line">    </span><br><span class="line">adjclose = pd.DataFrame(adjclose)</span><br><span class="line">adjclose</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學4相關性分析/5.png" title="調整後收盤價的表格"></center><p>接下來就可以來觀察每檔指數的 <code>Adj Close</code> 相關性，</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">corr = adjclose.corr()</span><br><span class="line">print(corr)</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學4相關性分析/6.png" title="相關性matrix"></center><p>上圖可以看到一個二維的表，就是每個指數跟每個指數之間的相關性，<br>上圖中可以發現，指數自己跟自己的相關性一定是1，代表完全正相關！<br>而這張表會是symmetric matrix，也就是做對角線會是對稱的。</p><p>接下來我們可以用更視覺化的方式來表示，假如沒有sns的package，要記得先去安裝<code>pip install sns</code>即可，想瞭解如何安裝，可以到<a href="/Python股票投資/">此安裝教學</a>的下半部分，有簡單的教學喔！<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.heatmap(corr, square=<span class="keyword">True</span> ,vmax=<span class="number">1.0</span>, linecolor=<span class="string">'white'</span>, annot=<span class="keyword">True</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></p><center><img src="/Python新手教學4相關性分析/last.png" title="相關性圖"></center><p>假如你發現圖比我的小，字看不清楚，可以改成以下程式碼</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># set figure size</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line">plt.rcParams[<span class="string">'figure.figsize'</span>] = (<span class="number">18</span>, <span class="number">18</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># original code</span></span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.heatmap(corr, square=<span class="keyword">True</span> ,vmax=<span class="number">1.0</span>, linecolor=<span class="string">'white'</span>, annot=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure><p>有了以上的code，我們就可以知道</p><h3 id="台灣股票跟誰最連動"><a href="#台灣股票跟誰最連動" class="headerlink" title="台灣股票跟誰最連動"></a>台灣股票跟誰最連動</h3><p>我們可以人眼觀察，發現台灣指數<code>TSEC weighted index</code>跟英國前一百大<code>Cboe UK 100</code>超像！相關係數高達0.9，代表非常非常像</p><p>我們可以將這兩個指數畫出來檢查一下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adjclose[<span class="string">'Cboe UK 100 Price Return'</span>][<span class="string">'2015'</span>:].plot()</span><br><span class="line">adjclose[<span class="string">'TSEC weighted index'</span>][<span class="string">'2015'</span>:].plot()</span><br></pre></td></tr></table></figure><center><img src="/Python新手教學4相關性分析/7.png" title="英國指數與台灣指數"></center><p>雖然價格不同，但是趨勢還真的頗像的耶！</p><h3 id="如何用於交易？"><a href="#如何用於交易？" class="headerlink" title="如何用於交易？"></a>如何用於交易？</h3><p>兩個相關性很高的股票，可以拿來做pair trading配對交易，但也不是只看相關性，<br>這個就容我們之後再慢慢分析吧！<br>這個單元會一直帶你從零開始，慢慢學習，直到機器學習的部分喔！敬請期待～<br>下一個單元中，我們來看一下<a href="/Python新手教學：風險與報酬/">要怎麼控制報酬與風險</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;為什麼美股大跌，在台灣的投資人要很緊張？原因就是相關性！想知道台股跟哪國指數最同步嗎？不是S&amp;amp;P 500美國指數，也不是深圳指數，那究竟是哪國呢？這篇文章我們就來研究一下吧！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-      <category term="爬蟲" scheme="https://www.finlab.tw/tags/%E7%88%AC%E8%9F%B2/"/>
     
   </entry>
   
