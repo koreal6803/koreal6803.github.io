@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-04-26T04:15:37.430Z</updated>
+  <updated>2020-04-26T04:24:22.445Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>用Python投資加密貨幣(6)：技術指標看盤軟體</title>
+    <title>用Python投資加密貨幣(6)：比特幣操作最強指標(看盤篇)</title>
     <link href="https://www.finlab.tw/btc-tradingview-intro/"/>
     <id>https://www.finlab.tw/btc-tradingview-intro/</id>
     <published>2020-04-26T03:44:58.000Z</published>
-    <updated>2020-04-26T04:15:37.430Z</updated>
+    <updated>2020-04-26T04:24:22.445Z</updated>
     
     <content type="html"><![CDATA[<p>我們當然可以用 Python 來幫我們做分析<br>但是人都是懶惰的，<br>假如有好用的工具，<br>即使不是 Python 也沒關係</p><p>這篇文章接續前一篇，將來一探究竟<br>究竟這個好用的指標怎麼看</p><center><img src="/btc-tradingview-intro/ind.png" title="thumbnail"></center><h3 id="TradingView"><a href="#TradingView" class="headerlink" title="TradingView"></a>TradingView</h3><p>介紹一款我覺得很好用的平台，<a href="https://tw.tradingview.com/" rel="external nofollow noopener noreferrer" target="_blank">TradingView</a><br>這並不是業配，只是真的滿好用的<br>以加密貨幣來說，我都會用它來看盤</p><p>可以在商品代碼中，輸入「BTCUSDT」來搜尋比特幣的價格</p><center><img src="/btc-tradingview-intro/search.png" title="search"></center><br>並且按一下全功能圖表<br><center><img src="/btc-tradingview-intro/panel.png" title="search"></center><p>這時候就會跳出這檔商品的技術分析圖表<br>然後我們再上方功能列表，可以點選「fx」來添加技術指標</p><center><img src="/btc-tradingview-intro/bar.png" title="bar"></center><br>這些是別人已經寫好<br>並且開源的技術指標<br>可以直接拿來用<br><br># <strong>Hash Ribbons 指標</strong><br><br>接下來，搜尋並點選「Hash Ribbon」就可以看到這個指標了！<br>你應該會看到以下的圖表<br><center><img src="/btc-tradingview-intro/ind.png" title="indicator"></center><p>可以看到「Hash Ribbon」這張圖表中<br>綠色像是階梯狀的數值，就是「Hash rate」<br>也就是「所有的挖礦機」的算力總和<br>也就是每秒可以暴力解多少次<br>可以參考<a href="">之前的文章</a><br>瞭解更多原理的部分</p><p>另外有兩條均線，分別是淺綠色，跟灰色，<br>分別是30日和60日均線，<br>這些數字我們不用調整，用它預設的即可</p><p>另外有紅色的區域，<br>從均線的死亡交叉開始出現<br>代表 Miner Capitulation 發生的時刻<br>此時比特幣會進入超跌的狀態，</p><p>最後當紅色區域的末稍，<br>也就是均線黃金交叉時<br>代表礦工恢復運作，<br>通常在這個時候買入<br>近三年的平均來說，會有約5000％的報酬</p><p>當然歷史不代表未來<br>不論部落格提供怎麼樣的訊息<br>你還是得自己做決定</p><p>比特幣波動是非常大的<br>起床發現突然下跌 30％<br>都是可能的</p><p>以長期投資而言，<br>注重風險的讀者，<br>真的不能下注太大呀！</p><p>注：<br>另外假如要看 BTC 的長期價格，<br>可以用 tradingview 搜尋 「BLX」<br>就可以找到了！</p>]]></content>
     
