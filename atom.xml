@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-05-05T03:00:22.122Z</updated>
+  <updated>2020-05-10T12:08:06.496Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用Python投資加密貨幣(9)：入金加密貨幣</title>
+    <link href="https://www.finlab.tw/btc-deposit-ways/"/>
+    <id>https://www.finlab.tw/btc-deposit-ways/</id>
+    <published>2020-05-07T06:50:43.000Z</published>
+    <updated>2020-05-10T12:08:06.496Z</updated>
+    
+    <content type="html"><![CDATA[<center></center><p>這陣子加密貨幣大漲，<br>大家都躍躍欲試了吧？<br>但我沒有很開心</p><p>因為價格就是漲漲跌跌<br>漲上去的 - 會下來<br>跌下去的 - 會上去</p><p>不開心<br>就不會難過<br>平心靜氣的投資才是最好的方式<br>（果然文章還沒寫完，就跌了15％XD）</p><p>這個階段，<br>在建構<a href="/btc-deposit-how/">初步的買賣的規劃後</a><br>終於要來買入人生中的第一枚加密貨幣了！</p><p>請不要買太多！！！！<br>假如你下的金額，明天歸零你會心疼<br>那就代表下太多了！</p><p>首先，來看一下<br>入金到交易<br>全部過程總覽：</p><center><img src="/btc-deposit-ways/ways.png" title="ways"></center><p>以台幣來說，可以交易的方式就是以下這幾種：</p><ul><li>透過「簡單買賣」來買加密貨幣</li><li>先入金台幣，再「擇時買賣」加密貨幣</li></ul><p>最主要是以下這四個平台，可以用台幣買加密貨幣喔！</p><h3 id="簡單買賣"><a href="#簡單買賣" class="headerlink" title="簡單買賣"></a>簡單買賣</h3><p><a href="https://www.maicoin.com/" rel="external nofollow noopener noreferrer" target="_blank">Maicoin</a>和<a href="https://www.bitoex.com/" rel="external nofollow noopener noreferrer" target="_blank">Bitoex</a>都是可以簡單買入的平台<br>申請帳號其實很簡單，只要提供</p><ol><li>身份證</li><li>第二證件<br>就可以辦了，因為人工審核需要花一點時間，<br>這段時間就可以來學學<a href="/btc-simple-sma-backtesting/">前面所教的投資方式</a></li></ol><h3 id="擇時買賣"><a href="#擇時買賣" class="headerlink" title="擇時買賣"></a>擇時買賣</h3><p>這類的平台有 <a href="https://max.maicoin.com/signup?r=602dff1a" rel="external nofollow noopener noreferrer" target="_blank">MAX</a> 跟 <a href="https://www.bitopro.com/landing_pages/referral?referrer=7971594176" rel="external nofollow noopener noreferrer" target="_blank">BitoPro</a><br>假如用以上連結註冊會員的話，你可以享手續費8折喔！<br>而我也會收到平台的獎勵，<br>當作是這個免費的課程的支持XD</p><p>以上這兩個平台<br>其實就是 Maicoin 跟 BitoEx 的加強版<br>都是以0成本先入金台幣，再做交易，<br>做交易酌收手續費</p><h3 id="Binance-P2P-直接購買-BTC"><a href="#Binance-P2P-直接購買-BTC" class="headerlink" title="Binance P2P 直接購買 BTC"></a>Binance P2P 直接購買 BTC</h3><p>其實<a href="https://www.binance.com/tw/register?ref=23975897" rel="external nofollow noopener noreferrer" target="_blank">Binance</a>也有提供P2P來購買BTC的方式<br>但是現在只限BTC，沒有USDT，且由於是P2P，交易比較沒有保障</p><h3 id="為什麼要提供多家呢？"><a href="#為什麼要提供多家呢？" class="headerlink" title="為什麼要提供多家呢？"></a>為什麼要提供多家呢？</h3><p>因為多方比對，找出最便宜的入金方式，<br>是很重要的<br>以上四個平台的價格，<br>報價都是不一樣的，<br>所以一定要貨比多家！，<br>另外「簡單買賣」那兩家，<br>入金完全是看該加密貨幣的報價，手續費已經算進去了<br>而「擇時買賣」的平台，是台幣入金不用錢，但是交易要扣0.05%手續費</p><p>假如要交易，我建議一次辦好這四個，<br>反正要上傳的東西都是一樣的！</p><h3 id="這四家都辦好了，要買什麼幣呢？"><a href="#這四家都辦好了，要買什麼幣呢？" class="headerlink" title="這四家都辦好了，要買什麼幣呢？"></a>這四家都辦好了，要買什麼幣呢？</h3><p>可以給你個方向，</p><p>假如你有做超長線交易，<br>那就可以直接買 BTC，<br>不過因為長期持有<br>風險就比較高，請自行斟酌</p><p>假如你想交易波段，<br>那就先買入 USDT，<br>在<a href="/btc-crawler-py/">前幾篇</a>有提到<br>這是跟美金 1:1 的加密貨幣</p><p>之後交易時，在來用 USDT 買賣 BTC</p><h3 id="如何自動交易呢？"><a href="#如何自動交易呢？" class="headerlink" title="如何自動交易呢？"></a>如何自動交易呢？</h3><p>我比較喜歡去成交量大一點的交易平台，<br>這邊我以 Binance 為例，<br>我們將購入的 USDT 轉到 Binance，<br>不論金額，這四個平台都差不多，<br>將會有約 100 元台幣的出金手續費</p><p>下圖以 Maicoin為例，講解一次整體的操作過程，<br>主要分成兩個步驟，</p><ol><li>買入 USDT</li><li>將 USDT 存入 Binance</li></ol><h4 id="1-買入-USDT"><a href="#1-買入-USDT" class="headerlink" title="1. 買入 USDT"></a>1. 買入 USDT</h4><p>首先，我們點選「購買」-&gt;「USDT」，<br>然後輸入，購買的數量，通常我會直接輸入台幣，平台自動換算<br>選擇付款方式，然後按購買<br>跟網拍一樣XDDD</p><h3 id="2-存入-Binance"><a href="#2-存入-Binance" class="headerlink" title="2. 存入 Binance"></a>2. 存入 Binance</h3><p>在Maicoin介面，購買後，選擇「發送」-&gt;「USDT」<br>在Binance介面，選擇「收取」-&gt;「USDT」<br>這時候，Binance就會提供一個虛擬位置，請複製起來，<br>並且在Maicoin的介面上貼上</p><p>以上的步驟，要小心，千萬要選擇 USDT 的「發送」和「收取」<br>不然你的$就會丟失喔！<br>請非常小心，再三確認！</p><p>由於交易鏈不會馬上傳送，會先以區塊的方式保留，<br>所以你暫時會看到，你的兩邊存款都是0，XDD<br>但不用擔心，你的轉帳手續正在驗證中，<br>你可以到 <a href="https://www.omniexplorer.info/" rel="external nofollow noopener noreferrer" target="_blank">USDT待驗證區塊的搜尋網站</a><br>輸入帳戶位置，<br>就可以看到正在驗證的交易，<br>所以$沒有丟失啦！</p><p>我建議，假如你想要做波段，並且跟著課程走<br>可以先開戶，<strong>等後面的文章出來了</strong>，<br>先操作小金額，例如500、1000元台幣，測試看看<br>沒錯，小金額就可以架設波段交易程式了！<br>瞭解所有的操作流程，再來考慮增加一點資金。</p><p>下個單元中，我們將教你<br>如何用 Python API<br>在Binance上做 BTC/USDT 的交易！</p><p>可以先申請點下方連結註冊<br><a href="https://www.binance.com/tw/register?ref=HXO25II1" rel="external nofollow noopener noreferrer" target="_blank">https://www.binance.com/tw/register?ref=HXO25II1</a><br>來節省每筆10％的交易手續費，</p><p>我也會收到平台給我的獎勵，<br>來當作是這堂免費課程的收入，<br>那我們就在 Binance 上見囉！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;center&gt;&lt;/center&gt;
+
+&lt;p&gt;這陣子加密貨幣大漲，&lt;br&gt;大家都躍躍欲試了吧？&lt;br&gt;但我沒有很開心&lt;/p&gt;
+&lt;p&gt;因為價格就是漲漲跌跌&lt;br&gt;漲上去的 - 會下來&lt;br&gt;跌下去的 - 會上去&lt;/p&gt;
+&lt;p&gt;不開心&lt;br&gt;就不會難過&lt;br&gt;平心靜氣的投資才是最好的方
+      
+    
+    </summary>
+    
+      <category term="加密貨幣" scheme="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="比特幣" scheme="https://www.finlab.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/"/>
+    
+      <category term="BTC" scheme="https://www.finlab.tw/tags/BTC/"/>
+    
+  </entry>
   
   <entry>
     <title>用Python投資加密貨幣(8)：如何投資(投機) 加密貨幣</title>
@@ -572,30 +605,6 @@
 &lt;p&gt;所以這篇文章將帶介紹如何利用修改參數，來調整策略，進而達到更好的績效&lt;br&gt;但是人工調整參數很浪費時間，所以我們先使用簡單暴力法，來調整參數試試看。&lt;/p&gt;
 
       
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python新手教學(6)：夏普指數策略</title>
-    <link href="https://www.finlab.tw/python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8%EF%BC%9A%E5%A4%8F%E6%99%AE%E6%8C%87%E6%95%B8%E7%AD%96%E7%95%A5/"/>
-    <id>https://www.finlab.tw/python新手教學：夏普指數策略/</id>
-    <published>2019-02-19T12:46:47.000Z</published>
-    <updated>2019-03-11T11:17:28.518Z</updated>
-    
-    <content type="html"><![CDATA[<p>上一集我們介紹了Sharpe ratio，可以用來衡量風險跟報酬的指標（也就是報酬 / 風險），這集我們就利用Sharpe ratio來進行台股的模擬買賣，假裝我們這20年來，都使用sharpe ratio的策略，可以得到多少獲利呢？</p><a id="more"></a><center><img src="/python新手教學：夏普指數策略/6.png" title="績效計算"></center><h3 id="為何Sharpe-ratio幾乎都小於一"><a href="#為何Sharpe-ratio幾乎都小於一" class="headerlink" title="為何Sharpe ratio幾乎都小於一"></a>為何Sharpe ratio幾乎都小於一</h3><p>上次有人問我，夏普指標小於一，代表風險（分母）大於獲利（分子），而為什麼市面上所有的指數，其sharpe ratio都小於一，難道股票都不能賺錢嗎？</p><p>這只是代表，在股市中，我們為了要獲利，往往需要承受很大的風險！但不代表長期投資下來是不能獲利的。我們必須要找到sharpe ratio比較高的策略，才能使風險降低，獲利升高。</p><h3 id="利用Python研發一個策略"><a href="#利用Python研發一個策略" class="headerlink" title="利用Python研發一個策略"></a>利用Python研發一個策略</h3><p>首先，我們得準備台股的歷史紀錄，還有台股的夏普指標，假如之前沒有跟上，可以到<a href="/Python新手教學：風險與報酬/">上一個單元</a>複習一下喔！：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adjclose[<span class="string">'TSEC weighted index'</span>].plot()</span><br><span class="line">sharpe[<span class="string">'TSEC weighted index'</span>].plot(secondary_y=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure><center><img src="/python新手教學：夏普指數策略/1.png" title="台灣指數以及夏普"></center><p>可以發現，當sharpe ratio比較低時，台股也都是在比較低點，<br>可以發現，當sharpe ratio比較高時，台股也都是在比較高點，<br>當sharpe ratio 轉折時，通常也是台股會轉折的時候</p><p>利用這個觀察，我們就可以來編寫一個策略：</p><ol><li>當sharpe ratio往上轉折時，則買入</li><li>當sharpe ratio往下轉折時，則賣出</li></ol><h3 id="利用Python快速編寫"><a href="#利用Python快速編寫" class="headerlink" title="利用Python快速編寫"></a>利用Python快速編寫</h3><p>為了找出轉折點，我們必須做一點資料處理：</p><ol><li>時間序列的平滑</li><li>時間序列的斜率</li><li>找出斜率由正到負，或由負到正的訊號</li></ol><p>為了使用python寫出上述的策略，我們要先將夏普值平滑一下，不然雜訊太多了：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sr = sharpe[<span class="string">'TSEC weighted index'</span>].dropna()</span><br><span class="line"></span><br><span class="line">d = <span class="number">60</span></span><br><span class="line">srsma = sr.rolling(d).mean()</span><br><span class="line">sr.plot()</span><br><span class="line">srsma.plot()</span><br></pre></td></tr></table></figure><center><img src="/python新手教學：夏普指數策略/2.png" title="sma後"></center><p>來色的線是我們就將sharpe ratio做移動窗格的平均，可以發現平均之後，時間序列比較平滑，這樣子我們找轉折點比較方便，所謂的轉折點，就是斜率由正到負，或由負到正的瞬間，所以我們要先找出夏普曲線的斜率。</p><h3 id="夏普曲線的斜率"><a href="#夏普曲線的斜率" class="headerlink" title="夏普曲線的斜率"></a>夏普曲線的斜率</h3><p>斜率非常簡單，可以使用<code>diff</code>這個功能：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">srsma = sr.rolling(d).mean()</span><br><span class="line">srsmadiff = srsma.diff()</span><br><span class="line">srsma.plot()</span><br><span class="line">srsmadiff.plot(secondary_y=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure></p><center><img src="/python新手教學：夏普指數策略/3.png" title="計算斜率"></center><p>可以發現上圖中，橘色的為sharpe ratio，藍色的為斜率，當橘色線由上而下轉折時，藍色的線會快速向下穿越0，有了這個特性，我們就可以來找轉折點了！</p><h3 id="找轉折點"><a href="#找轉折點" class="headerlink" title="找轉折點"></a>找轉折點</h3><p>接下來我們可以來找轉折點了，就是斜率由正到負，或由負到正的瞬間。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">buy = (srsmadiff &gt; <span class="number">0</span>) &amp; (srsmadiff.shift() &lt; <span class="number">0</span>)</span><br><span class="line">sell = (srsmadiff &lt; <span class="number">0</span>) &amp; (srsmadiff.shift() &gt; <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">(buy * <span class="number">1</span>).plot()</span><br><span class="line">(sell * <span class="number">-1</span>).plot()</span><br></pre></td></tr></table></figure><center><img src="/python新手教學：夏普指數策略/4.png" title="找出訊號"></center><p>以上就是簡單的訊號產生</p><h3 id="找出持有的時段"><a href="#找出持有的時段" class="headerlink" title="找出持有的時段"></a>找出持有的時段</h3><p>那我們就可以來看一下，假如天都用一樣的方式來產生這些訊號，當 <code>buy</code>訊號為<code>True</code>時，買入，而當<code>sell=True</code>時空手，如此執行20年的持有加權指數的時段：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">hold = pd.Series(np.nan, index=buy.index)</span><br><span class="line">hold[buy] = <span class="number">1</span></span><br><span class="line">hold[sell] = <span class="number">-1</span></span><br><span class="line">hold.ffill(inplace=<span class="keyword">True</span>)</span><br><span class="line">hold.plot()</span><br></pre></td></tr></table></figure><center><img src="/python新手教學：夏普指數策略/5.png" title="找出持股時間"></center><p>交易頻率似乎有點高，不過沒關係，我們之後還會再做調整<br>接來是回測</p><h3 id="回測"><a href="#回測" class="headerlink" title="回測"></a>回測</h3><p>今天我們先簡單算一算，不考慮手續費，但是真實情況是必須考慮的喔！請謹記在心</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">twii = adjclose[<span class="string">'TSEC weighted index'</span>][buy.index]</span><br><span class="line"></span><br><span class="line">pct_change = twii.pct_change()</span><br><span class="line">pct_ratio = (pct_change.shift(<span class="number">-1</span>)+<span class="number">1</span>) <span class="comment"># 今天到明天的價格變化</span></span><br><span class="line"></span><br><span class="line">pct_ratio.fillna(<span class="number">1</span>)[hold == <span class="number">1</span>].cumprod().plot()</span><br></pre></td></tr></table></figure><p>這段程式碼，有點複雜，當中的<code>pct_change</code>是一個每天獲利上下 x％。<br>而<code>pct_ratio</code>代表買入之後每天的變化（不漲不跌是1，大於1則漲，小於1則跌）<br>我們希望將「持有」時間段的<code>pct_ratio</code>全部都乘起來，代表獲利。</p><center><img src="/python新手教學：夏普指數策略/6.png" title="計算績效"></center><p>可以發現，這個策略效果並不是很好，不過別擔心<br><a href="/Python新手教學：策略優化/">下個單元</a>，我們使用參數最佳化，從5000種組合中，找出最好的策略！</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上一集我們介紹了Sharpe ratio，可以用來衡量風險跟報酬的指標（也就是報酬 / 風險），這集我們就利用Sharpe ratio來進行台股的模擬買賣，假裝我們這20年來，都使用sharpe ratio的策略，可以得到多少獲利呢？&lt;/p&gt;
     
     </summary>
     
