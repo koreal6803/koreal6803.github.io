@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/aws-lambda-initial-setup/</loc>
+    <lastmod>2020-05-19T02:31:01.170Z</lastmod>
+    <data>
+        <display>
+        <title>用Python投資加密貨幣(9)：架設一個簡易的AWS交易系統</title>
+        <pubTime>2020-05-18T06:35:48.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>比特幣</tag>
+         
+        <tag>BTC</tag>
+         
+         
+           
+             
+              <breadCrumb title="加密貨幣" url="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/break-new-high-roe-stock/</loc>
-    <lastmod>2020-05-17T07:05:57.421Z</lastmod>
+    <lastmod>2020-05-17T07:20:29.063Z</lastmod>
     <data>
         <display>
         <title>創新高股票，你還少看了這個因子！</title>
@@ -1115,11 +1139,11 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T09:46:51.000Z</pubTime>
         
+        <tag>選股</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>選股</tag>
          
         <tag>程式交易</tag>
          
@@ -1145,9 +1169,9 @@
         
         <tag>如何買股票</tag>
          
-        <tag>歷史回測</tag>
-         
         <tag>選股</tag>
+         
+        <tag>歷史回測</tag>
          
         <tag>程式交易</tag>
          

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-05-17T07:05:57.421Z</updated>
+  <updated>2020-05-19T02:31:01.170Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -17,21 +17,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>創新高股票，你還少看了這個因子！</title>
-    <link href="https://www.finlab.tw/break-new-high-roe-stock/"/>
-    <id>https://www.finlab.tw/break-new-high-roe-stock/</id>
-    <published>2020-05-17T05:21:38.000Z</published>
-    <updated>2020-05-17T07:05:57.421Z</updated>
+    <title>用Python投資加密貨幣(9)：架設一個簡易的AWS交易系統</title>
+    <link href="https://www.finlab.tw/aws-lambda-initial-setup/"/>
+    <id>https://www.finlab.tw/aws-lambda-initial-setup/</id>
+    <published>2020-05-18T06:35:48.000Z</published>
+    <updated>2020-05-19T02:31:01.170Z</updated>
     
-    <content type="html"><![CDATA[<p>假如你是追高的選股策略，<br>有沒有一種感覺？<br>就是往往創新高的股票，<br>大部分都賠錢，<br>少部分大賺，</p><p>今天我們將介紹一個因子，<br>大幅提昇創新高獲利的效果！</p><center><img src="/break-new-high-roe-stock/thumbnail.jpeg" title="動手做"></center><p>這種追高的策略，<br>有幾個比較難克服的地方，<br>我們將介紹<br>一個可以破解這些課題的策略。</p><h3 id="1-心理因素"><a href="#1-心理因素" class="headerlink" title="1. 心理因素"></a>1. 心理因素</h3><p>一個就是心魔，<br>因為勝率真的很低<br>所以你會覺得<br>怎麼一直輸錢？<br>造成人為干預嚴重</p><p>所以在追高股票時，<br>最好還是讓自己「分心」<br>也就是透過持有多檔股票的方式<br>讓自己不會過度在乎一檔個股</p><h3 id="2-選到亂漲一通的股票"><a href="#2-選到亂漲一通的股票" class="headerlink" title="2. 選到亂漲一通的股票"></a>2. 選到亂漲一通的股票</h3><p>另外，<br>有時候股票市場很感性<br>不能用理性的方式來交易</p><p>有些個股<br>明明股價淨值比都5以上<br>本益比都50了<br>還漲個沒完</p><p>針對這種個股<br>要是去追高<br>很有可能買在高點！</p><p>所以我們可以用「基本面」<br>來分析這檔股票的「創新高」<br>合不合理</p><h3 id="總結以上兩點-製作創新高策略"><a href="#總結以上兩點-製作創新高策略" class="headerlink" title="總結以上兩點 製作創新高策略"></a>總結以上兩點 製作創新高策略</h3><h4 id="1-動態調整-Portfolio"><a href="#1-動態調整-Portfolio" class="headerlink" title="1. 動態調整 Portfolio"></a>1. 動態調整 Portfolio</h4><p>每兩個禮拜調整一次所選的股票，<br>並將資產「平均分配」於所選的股票中，</p><h4 id="2-基本面篩選"><a href="#2-基本面篩選" class="headerlink" title="2. 基本面篩選"></a>2. 基本面篩選</h4><p>我們並不是看到創新高就無條件選這些股票<br>必須搭配基本面的因子，<br>來選出更有可能維持上漲的股票：</p><ol><li>創新高：股價突破60天內股價</li><li>ROE大於3，前一季ROE大於1</li></ol><p>另外由於股價容易受流動性影響，<br>我們希望買入賣出有流動性的股票：</p><ol start="3"><li>股價大於7</li><li>成交量大於100張</li></ol><p>才能更順利<br>在任意時刻買賣股票</p><h4 id="3-新因子研發"><a href="#3-新因子研發" class="headerlink" title="3. 新因子研發"></a>3. 新因子研發</h4><p>最後，最重要的因子<br>忍痛割愛告訴大家<br>我們特別研發一個「成長+價值」的複合因子：</p><p>新因子 = 當季ROE / 前一季ROE / 股價淨值比</p><p>新因子可以拆解成兩個部分：</p><h5 id="第一部份：成長股篩選"><a href="#第一部份：成長股篩選" class="headerlink" title="第一部份：成長股篩選"></a>第一部份：成長股篩選</h5><p>這個新因子當中，成長的部分是<br>「當季ROE / 前一季ROE」<br>這些ROE成長的股票，這個數值會大於1</p><h5 id="第二部分：價值股篩選"><a href="#第二部分：價值股篩選" class="headerlink" title="第二部分：價值股篩選"></a>第二部分：價值股篩選</h5><p>接下來，我們要選 CP 值高的股票<br>股價淨值比<br>就是一個很好的指標<br>可以幫我們判斷股票的價格是否太高，<br>我們希望<br>「1 ／ 股價淨值比」<br>越大越好，<br>可以參考<a href="/股價淨值比有這麼神？/">「股價淨值比」</a>來瞭解更詳細的原理喔！</p><h5 id="將上述兩種因子合併"><a href="#將上述兩種因子合併" class="headerlink" title="將上述兩種因子合併"></a>將上述兩種因子合併</h5><p>用乘法，將這兩種因子合併起來：</p><p>新因子 = 當季ROE / 前一季ROE / 股價淨值比</p><p>我們將每檔股票都算出此因子，並且選出前 3 名的股票，<br>新增到我們的 portfolio 組合裡面</p><h3 id="賣出策略"><a href="#賣出策略" class="headerlink" title="賣出策略"></a>賣出策略</h3><p>當股價收盤價小於 20 日均，則賣出</p><h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>本文章所公佈的「新因子」<br>究竟對於這些創新高有什麼樣子的影響呢？</p><center><img src="/break-new-high-roe-stock/compare.png" title="動手做"></center><br>上圖中<br>藍色的數值為使用「新因子」，<br>每次加入3檔股票的方法<br>而橘色的為，「沒有用新因子」，<br>每次加入數檔股票的方法<br><br><strong>效果差距非常多！</strong><br><br>以下是策略的回測相關數值和風險，<br>假如你希望用 Python<br>跟我們一起研究量化投資，<br>可以參加「<a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank">小資族選股策略</a>」和「<a href="https://hahow.in/cr/finlab-ml" rel="external nofollow noopener noreferrer" target="_blank">AI股票理專</a>」，<br>一起來研發有用的選股邏輯喔！<br><center><img src="/break-new-high-roe-stock/eq.png" title="動手做"></center><br><center><img src="/break-new-high-roe-stock/info.png" title="動手做"></center>]]></content>
+    <content type="html"><![CDATA[<p>延續之前的介紹，<br>這個單元中，<br>我們將架設一個簡單的 <a href="https://aws.amazon.com/tw/lambda/" rel="external nofollow noopener noreferrer" target="_blank">AWS Lambda function</a><br>是 AWS ( Amazon cloud service ) 底下的一個服務</p><center><img src="/aws-lambda-initial-setup/thumbnail.png" title="info"></center><p>AWS Lambda function，<br>是一段可以自定義的程式碼<br>會在 AWS 主機上執行<br>可以經由任意的方式啟動，<br>例如每個整點執行一次</p><p>例如以下的例子，<br>就是當使用者上傳照片後<br>就可以用 Lambda function<br>雲端將照片縮小，然後輸出到網頁上：</p><center><img src="/aws-lambda-initial-setup/usage.png" title="info"></center><p>之後我們的交易系統，<br>就會寫在這樣的 function 裡面</p><p>AWS免費提供40萬秒/月，可以讓我們執行 AWS Lambda function<br>所以假如我們的策略頻率是「小時」的話，是非常充足的！</p><p>首先我們可以打開<a href="https://aws.amazon.com/tw/" rel="external nofollow noopener noreferrer" target="_blank">Amazon Web Service網頁</a>，<br>並且註冊帳號，取得服務，<br>在這個過程中，會需要輸入信用卡，<br>不過並不會額外收費，</p><p>進入了主控台們點選 Lambda</p><center><img src="/aws-lambda-initial-setup/open_lambda.png" title="info"></center><p>新增 Lambda 函數</p><center><img src="/aws-lambda-initial-setup/open_panel.png" title="info"></center><p>並且選擇最簡單的Hello World<br>程式語言設定成「Python3.6」<br>按一下右下角確定，稍等一會就成功了！</p><center><img src="/aws-lambda-initial-setup/new_lambda.png" title="info"></center><p>接下來，<br>我們就會看到lambda的頁面，<br>可以在這個頁面下，<br>它已經預設了一個程式，</p><center><img src="/aws-lambda-initial-setup/code.png" title="info"></center><p>我們之後會來修改它<br>不過先不急，我們先跑跑看</p><p>可以按「測試」並且建立預設的事件，<br>你就會看到測試結果：成功！</p><center><img src="/aws-lambda-initial-setup/test.png" title="info"></center><p>接下來我們就要在這個基礎下，來建構一個交易的邏輯，<br>並且每個小時來執行一次！<br>假如對於我們的新文章有興趣，可以幫我們追蹤<a href="https://www.facebook.com/finlab.python" rel="external nofollow noopener noreferrer" target="_blank">我們的粉絲團</a>喔！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;假如你是追高的選股策略，&lt;br&gt;有沒有一種感覺？&lt;br&gt;就是往往創新高的股票，&lt;br&gt;大部分都賠錢，&lt;br&gt;少部分大賺，&lt;/p&gt;
+        &lt;p&gt;延續之前的介紹，&lt;br&gt;這個單元中，&lt;br&gt;我們將架設一個簡單的 &lt;a href=&quot;https://aws.amazon.com/tw/lambda/&quot; rel=&quot;external nofollow noopener noreferrer&quot; target=&quot;_blank&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="加密貨幣" scheme="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+    
+    
+      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="比特幣" scheme="https://www.finlab.tw/tags/%E6%AF%94%E7%89%B9%E5%B9%A3/"/>
+    
+      <category term="BTC" scheme="https://www.finlab.tw/tags/BTC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>創新高股票，你還少看了這個因子！</title>
+    <link href="https://www.finlab.tw/break-new-high-roe-stock/"/>
+    <id>https://www.finlab.tw/break-new-high-roe-stock/</id>
+    <published>2020-05-17T05:21:38.000Z</published>
+    <updated>2020-05-17T07:20:29.063Z</updated>
+    
+    <content type="html"><![CDATA[<p>假如你是追高的選股策略，<br>有沒有一種感覺？<br>就是往往創新高的股票，<br>大部分都賠錢，<br>只有少部分賺錢，</p><p>今天我們將介紹一個因子，<br>大幅提昇創新高獲利的效果！</p><center><img src="/break-new-high-roe-stock/thumbnail.jpeg" title="動手做"></center><p>這種追高的策略，<br>有幾個比較難克服的地方，<br>我們將介紹<br>一個可以破解這些課題的策略。</p><h3 id="1-心理因素"><a href="#1-心理因素" class="headerlink" title="1. 心理因素"></a>1. 心理因素</h3><p>一個就是心魔，<br>因為勝率真的很低<br>所以你會覺得<br>怎麼一直輸錢？<br>造成人為干預嚴重</p><p>所以在追高股票時，<br>最好還是讓自己「分心」<br>也就是透過持有多檔股票的方式<br>讓自己不會過度在乎一檔個股</p><h3 id="2-選到亂漲一通的股票"><a href="#2-選到亂漲一通的股票" class="headerlink" title="2. 選到亂漲一通的股票"></a>2. 選到亂漲一通的股票</h3><p>另外，<br>有時候股票市場很感性<br>不能用理性的方式來交易</p><p>有些個股<br>明明股價淨值比都5以上<br>本益比都50了<br>還漲個沒完</p><p>針對這種個股<br>要是去追高<br>很有可能買在高點！</p><p>所以我們可以用「基本面」<br>來分析這檔股票的「創新高」<br>合不合理</p><h3 id="總結以上兩點-製作創新高策略"><a href="#總結以上兩點-製作創新高策略" class="headerlink" title="總結以上兩點 製作創新高策略"></a>總結以上兩點 製作創新高策略</h3><h4 id="1-動態調整-Portfolio"><a href="#1-動態調整-Portfolio" class="headerlink" title="1. 動態調整 Portfolio"></a>1. 動態調整 Portfolio</h4><p>每兩個禮拜調整一次所選的股票，<br>並將資產「平均分配」於所選的股票中，</p><h4 id="2-基本面篩選"><a href="#2-基本面篩選" class="headerlink" title="2. 基本面篩選"></a>2. 基本面篩選</h4><p>我們並不是看到創新高就無條件選這些股票<br>必須搭配基本面的因子，<br>來選出更有可能維持上漲的股票：</p><ol><li>創新高：股價突破60天內股價</li><li>ROE大於3，前一季ROE大於1</li></ol><p>另外由於股價容易受流動性影響，<br>我們希望買入賣出有流動性的股票：</p><ol start="3"><li>股價大於7</li><li>成交量大於100張</li></ol><p>才能更順利<br>在任意時刻買賣股票</p><h4 id="3-新因子研發"><a href="#3-新因子研發" class="headerlink" title="3. 新因子研發"></a>3. 新因子研發</h4><p>最後，最重要的因子<br>忍痛割愛告訴大家<br>我們特別研發一個「成長+價值」的複合因子：</p><p>新因子 = 當季ROE / 前一季ROE / 股價淨值比</p><p>新因子可以拆解成兩個部分：</p><h5 id="第一部份：成長股篩選"><a href="#第一部份：成長股篩選" class="headerlink" title="第一部份：成長股篩選"></a>第一部份：成長股篩選</h5><p>這個新因子當中，成長的部分是<br>「當季ROE / 前一季ROE」<br>這些ROE成長的股票，這個數值會大於1</p><h5 id="第二部分：價值股篩選"><a href="#第二部分：價值股篩選" class="headerlink" title="第二部分：價值股篩選"></a>第二部分：價值股篩選</h5><p>接下來，我們要選 CP 值高的股票<br>股價淨值比<br>就是一個很好的指標<br>可以幫我們判斷股票的價格是否太高，<br>我們希望<br>「1 ／ 股價淨值比」<br>越大越好，<br>可以參考<a href="/股價淨值比有這麼神？/">「股價淨值比」</a>來瞭解更詳細的原理喔！</p><h5 id="將上述兩種因子合併"><a href="#將上述兩種因子合併" class="headerlink" title="將上述兩種因子合併"></a>將上述兩種因子合併</h5><p>用乘法，將這兩種因子合併起來：</p><p>新因子 = 當季ROE / 前一季ROE / 股價淨值比</p><p>我們將每檔股票都算出此因子，並且選出前 3 名的股票，<br>新增到我們的 portfolio 組合裡面</p><h3 id="賣出策略"><a href="#賣出策略" class="headerlink" title="賣出策略"></a>賣出策略</h3><p>當股價收盤價小於 20 日均，則賣出</p><h3 id="回測結果"><a href="#回測結果" class="headerlink" title="回測結果"></a>回測結果</h3><p>本文章所公佈的「新因子」<br>究竟對於這些創新高有什麼樣子的影響呢？</p><center><img src="/break-new-high-roe-stock/compare.png" title="動手做"></center><br>上圖中<br>藍色的數值為使用「新因子」，<br>每次加入3檔股票的方法<br>而橘色的為，「沒有用新因子」，<br>每次加入數檔股票的方法<br><br><strong>效果差距非常多！</strong><br><br>以下是策略的回測相關數值和風險，<br>假如你希望用 Python<br>跟我們一起研究量化投資，<br>可以參加「<a href="https://hahow.in/cr/python-finance" rel="external nofollow noopener noreferrer" target="_blank">小資族選股策略</a>」和「<a href="https://hahow.in/cr/finlab-ml" rel="external nofollow noopener noreferrer" target="_blank">AI股票理專</a>」，<br>一起來研發有用的選股邏輯喔！<br><center><img src="/break-new-high-roe-stock/eq.png" title="動手做"></center><br><center><img src="/break-new-high-roe-stock/info.png" title="動手做"></center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;假如你是追高的選股策略，&lt;br&gt;有沒有一種感覺？&lt;br&gt;就是往往創新高的股票，&lt;br&gt;大部分都賠錢，&lt;br&gt;只有少部分賺錢，&lt;/p&gt;
 &lt;p&gt;今天我們將介紹一個因子，&lt;br&gt;大幅提昇創新高獲利的效果！&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;/break-new-high-r
+&lt;center&gt;&lt;img src=&quot;/break-new-high
       
     
     </summary>
@@ -582,34 +611,6 @@
     
     
       <category term="簡易策略" scheme="https://www.finlab.tw/tags/%E7%B0%A1%E6%98%93%E7%AD%96%E7%95%A5/"/>
-    
-      <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
-    
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>好用Package：用ffn分析時間序列</title>
-    <link href="https://www.finlab.tw/ffn-intro/"/>
-    <id>https://www.finlab.tw/ffn-intro/</id>
-    <published>2019-06-03T04:42:35.000Z</published>
-    <updated>2019-06-13T14:11:05.315Z</updated>
-    
-    <content type="html"><![CDATA[<p>Pandas 的 DataFrame 可以很方變得幫我們處理時間序列，只需要短短幾行，就能達到在其他程式語言要寫數十行的功能</p><h1 id="但是DataFrame就夠了嗎？"><a href="#但是DataFrame就夠了嗎？" class="headerlink" title="但是DataFrame就夠了嗎？"></a>但是DataFrame就夠了嗎？</h1><p>當我們在處理財務金融時，常常會需要分析時間序列（例如股價），雖然我們可能都知道什麼是maximum dropdown、什麼是sharp ratio，什麼是daily<br>return，但是有時候用dataframe來計算，還是免不了寫一些數學計算，增加程式碼的複雜度，讓閱讀程式碼變得比較辛苦。</p><h1 id="救星：ffn-Financial-Functions-for-Python"><a href="#救星：ffn-Financial-Functions-for-Python" class="headerlink" title="救星：ffn (Financial Functions for Python)"></a>救星：ffn (Financial Functions for Python)</h1><center><img src="/ffn-intro/th.png" title="info"></center><p>所以這時候，你的救星就出現了，叫做<a href="http://pmorissette.github.io/ffn/" rel="external nofollow noopener noreferrer" target="_blank">ffn</a>，ffn是一個分析時間序列的package，只要一import ffn，你的dataframe就會瞬間多了很多能力！接下來我們就來看看是什麼能力吧！</p><p>這次的程式碼都會在<a href="https://colab.research.google.com/drive/1lzqgK-ERM4bH5GYRyQNPURBhFKhQ9x6q" rel="external nofollow noopener noreferrer" target="_blank">google colab</a>上，大家可以直接打開網頁就開始跟我們一起玩耍吧！</p><p>首先，我們必須要先安裝ffn，安裝的方式非常的直覺：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!pip install ffn</span><br></pre></td></tr></table></figure><br>這樣就安裝好囉！上式中的驚嘆號代表我們將這段command line語法，輸入在jupyter來安裝，這又就不需要額外再開啟terminal了！</p><p>安裝好了之後我們就可以開始寫程式囉！</p><h1 id="利用ffn取得股價"><a href="#利用ffn取得股價" class="headerlink" title="利用ffn取得股價"></a>利用ffn取得股價</h1><p>有了ffn我們可以很輕易的取得多檔股票的股價，ffn的底層是使用yahoo api，所以同樣也可以抓台股或其他國際股市喔！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import ffn</span><br><span class="line"></span><br><span class="line">prices = ffn.get(&apos;2330.TW, 1101.TW&apos;)</span><br><span class="line">prices.head()</span><br></pre></td></tr></table></figure></p><center><img src="/ffn-intro/1.png" title="股價"></center><p>可以發現這個股價的格是就是我們熟悉的dataframe耶！所以我們一樣可以使用一些dataframe既有的功能，例如「.plot」來繪圖：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.plot()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/2.png" title="股價2"></center><p>繪完圖後發現，雖然我們可以比較「2330」台積電，跟「1101」台泥的股價，但是他們的起始股價是不一樣的，所以無從比較報酬率。</p><p>想要比較報酬率，我們可以用「ffn」新增的額外功能「rebase」：</p><h1 id="ffn提供的functions"><a href="#ffn提供的functions" class="headerlink" title="ffn提供的functions"></a>ffn提供的functions</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.rebase().plot()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/3.png" title="dropdown"></center><p>這樣就可以讓股價的起始值相同囉！這是ffn提供的眾多功能之一，但你不用額外學一個新的資料表示法，而是直接對dataframe操作就可以了！所以說ffn有點像是dataframe的補充包，讓我們來看看還有哪些好用的功能吧！</p><h1 id="下跌幅度"><a href="#下跌幅度" class="headerlink" title="下跌幅度"></a>下跌幅度</h1><p>我們可以藉由ffn來計算並比較dropdown，也就是比較虧損的幅度：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.to_drawdown_series().plot()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/4.png" title="heat"></center><p>或是我們之前教過的heatmap，也一行就搞定了</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prices.plot_corr_heatmap()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/5.png" title="heat2"></center><p>最後我們也可以來計算這兩檔股票的歷史數據分析：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stats = prices.calc_stats()</span><br><span class="line">stats.display()</span><br></pre></td></tr></table></figure><center><img src="/ffn-intro/6.png" title="info"></center><p>這個輕量級的package有很多簡單的語法，可以快速幫助我們進行報酬率的分析<br>而且所有的功能都是使用dataframe擴增，所以不用擔心要學新的結構，滿小巧可愛的！<br>大家可以安裝起來玩玩看喔！  </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Pandas 的 DataFrame 可以很方變得幫我們處理時間序列，只需要短短幾行，就能達到在其他程式語言要寫數十行的功能&lt;/p&gt;
-&lt;h1 id=&quot;但是DataFrame就夠了嗎？&quot;&gt;&lt;a href=&quot;#但是DataFrame就夠了嗎？&quot; class=&quot;headerlin
-      
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
     
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
