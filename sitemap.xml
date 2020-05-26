@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.finlab.tw/aws-lambda-initial-setup/</loc>
+    <loc>https://www.finlab.tw/btc-aws-lambda-signal-update/</loc>
     
-    <lastmod>2020-05-19T02:56:35.907Z</lastmod>
+    <lastmod>2020-05-26T17:22:26.151Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-backtesting-optimization/</loc>
+    
+    <lastmod>2020-05-26T16:49:25.695Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.finlab.tw/break-new-high-roe-stock/</loc>
     
-    <lastmod>2020-05-17T07:20:29.063Z</lastmod>
+    <lastmod>2020-05-23T00:26:00.628Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/aws-lambda-initial-setup/</loc>
+    
+    <lastmod>2020-05-19T02:56:35.907Z</lastmod>
     
   </url>
   
@@ -40,13 +54,6 @@
     <loc>https://www.finlab.tw/btc-deposit-how/</loc>
     
     <lastmod>2020-05-05T03:00:22.122Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/btc-backtesting-optimization/</loc>
-    
-    <lastmod>2020-04-26T21:07:38.875Z</lastmod>
     
   </url>
   
@@ -793,14 +800,14 @@
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
+    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
     
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
     
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     

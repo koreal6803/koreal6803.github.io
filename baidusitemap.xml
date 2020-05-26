@@ -4,6 +4,76 @@
 
     
   <url>
+    <loc>https://www.finlab.tw/btc-aws-lambda-signal-update/</loc>
+    <lastmod>2020-05-26T17:22:26.151Z</lastmod>
+    <data>
+        <display>
+        <title>用Python投資加密貨幣(11)：用AWS Lambda即時更新交易訊號</title>
+        <pubTime>2020-05-25T06:35:48.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>比特幣</tag>
+         
+        <tag>BTC</tag>
+         
+         
+           
+             
+              <breadCrumb title="加密貨幣" url="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.finlab.tw/btc-backtesting-optimization/</loc>
+    <lastmod>2020-05-26T16:49:25.695Z</lastmod>
+    <data>
+        <display>
+        <title>用Python投資加密貨幣(7)：三年20倍的策略參數最佳化</title>
+        <pubTime>2020-04-26T20:23:13.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>比特幣</tag>
+         
+        <tag>BTC</tag>
+         
+         
+           
+             
+              <breadCrumb title="加密貨幣" url="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.finlab.tw/break-new-high-roe-stock/</loc>
+    <lastmod>2020-05-23T00:26:00.628Z</lastmod>
+    <data>
+        <display>
+        <title>創新高股票，你還少看了這個因子！</title>
+        <pubTime>2020-05-17T05:21:38.000Z</pubTime>
+        
+        <tag>如何買股票</tag>
+         
+        <tag>量化投資</tag>
+         
+         
+           
+             
+              <breadCrumb title="股票策略" url="https://www.finlab.tw/categories/%E8%82%A1%E7%A5%A8%E7%AD%96%E7%95%A5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.finlab.tw/aws-lambda-initial-setup/</loc>
     <lastmod>2020-05-19T02:56:35.907Z</lastmod>
     <data>
@@ -28,28 +98,6 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/break-new-high-roe-stock/</loc>
-    <lastmod>2020-05-17T07:20:29.063Z</lastmod>
-    <data>
-        <display>
-        <title>創新高股票，你還少看了這個因子！</title>
-        <pubTime>2020-05-17T05:21:38.000Z</pubTime>
-        
-        <tag>如何買股票</tag>
-         
-        <tag>量化投資</tag>
-         
-         
-           
-             
-              <breadCrumb title="股票策略" url="https://www.finlab.tw/categories/%E8%82%A1%E7%A5%A8%E7%AD%96%E7%95%A5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.finlab.tw/Python%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B82%E5%85%A8%E7%90%83%E6%8C%87%E6%95%B8%E4%B8%80%E6%AC%A1%E6%8A%93/</loc>
     <lastmod>2020-05-12T02:39:37.009Z</lastmod>
     <data>
@@ -57,9 +105,9 @@
         <title>Python新手教學(2)全球指數一次抓</title>
         <pubTime>2019-02-05T14:55:54.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>爬蟲</tag>
          
@@ -105,9 +153,9 @@
         <title>Python新手教學(4)台股跟哪國指數最相關？</title>
         <pubTime>2019-02-10T03:10:58.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>爬蟲</tag>
          
@@ -128,30 +176,6 @@
         <display>
         <title>用Python投資加密貨幣(8)：如何投資(投機) 加密貨幣</title>
         <pubTime>2020-05-04T20:23:13.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>比特幣</tag>
-         
-        <tag>BTC</tag>
-         
-         
-           
-             
-              <breadCrumb title="加密貨幣" url="https://www.finlab.tw/categories/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.finlab.tw/btc-backtesting-optimization/</loc>
-    <lastmod>2020-04-26T21:07:38.875Z</lastmod>
-    <data>
-        <display>
-        <title>用Python投資加密貨幣(7)：三年20倍的策略參數最佳化</title>
-        <pubTime>2020-04-26T20:23:13.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -387,9 +411,9 @@
         <title>Python新手教學(3)全球指數歷史數據</title>
         <pubTime>2019-02-06T01:57:32.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>爬蟲</tag>
          
@@ -411,9 +435,9 @@
         <title>Python新手教學(1)用爬蟲爬全球股價!</title>
         <pubTime>2019-02-03T05:06:16.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>月營收</tag>
          
@@ -436,9 +460,9 @@
         <title>投資組合 Paper Trading 1分鐘就上手（Cmoney 大富翁股票 API）</title>
         <pubTime>2019-11-02T05:07:19.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -513,9 +537,9 @@
         
         <tag>機器學習</tag>
          
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -561,9 +585,9 @@
         <title>超簡單用python抓取每月營收</title>
         <pubTime>2017-10-28T12:30:39.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>月營收</tag>
          
@@ -585,9 +609,9 @@
         <title>Python：VIX美股大跌投資法</title>
         <pubTime>2018-12-26T03:43:05.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>美股</tag>
          
@@ -609,11 +633,11 @@
         <title>超簡單台股每日爬蟲教學</title>
         <pubTime>2017-10-24T16:17:06.000Z</pubTime>
         
+        <tag>程式交易</tag>
+         
         <tag>python</tag>
          
         <tag>選股</tag>
-         
-        <tag>程式交易</tag>
          
          
            
@@ -655,11 +679,11 @@
         <title>Python 低風險高報酬投資組合</title>
         <pubTime>2019-06-13T14:07:22.000Z</pubTime>
         
+        <tag>程式交易</tag>
+         
         <tag>簡易策略</tag>
          
         <tag>python</tag>
-         
-        <tag>程式交易</tag>
          
          
            
@@ -679,9 +703,9 @@
         <title>好用Package：用ffn分析時間序列</title>
         <pubTime>2019-06-03T04:42:35.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -701,9 +725,9 @@
         <title>Python 簡單158種技術指標計算</title>
         <pubTime>2017-11-19T11:46:09.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -723,9 +747,9 @@
         <title>Python 時間序列實做！</title>
         <pubTime>2017-11-15T06:03:03.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>KD</tag>
          
@@ -747,11 +771,11 @@
         <title>Python 財報爬蟲</title>
         <pubTime>2017-11-02T14:19:27.000Z</pubTime>
         
+        <tag>程式交易</tag>
+         
         <tag>python</tag>
          
         <tag>選股</tag>
-         
-        <tag>程式交易</tag>
          
          
            
@@ -771,9 +795,9 @@
         <title>Python新手教學(5)如何衡量風險與報酬？</title>
         <pubTime>2019-02-14T05:09:43.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -793,9 +817,9 @@
         <title>python新手教學(6)：夏普指數策略</title>
         <pubTime>2019-02-19T12:46:47.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -815,9 +839,9 @@
         <title>Python新手教學(7)：策略優化</title>
         <pubTime>2019-02-25T08:04:20.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -866,13 +890,13 @@
         <title>加速度指標：歷史年報酬20％的策略</title>
         <pubTime>2018-11-24T20:11:28.000Z</pubTime>
         
+        <tag>程式交易</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
          
         <tag>簡易策略</tag>
-         
-        <tag>程式交易</tag>
          
          
            
@@ -892,9 +916,9 @@
         <title>Python新手教學(0)為何用Python投資？</title>
         <pubTime>2019-02-05T10:24:05.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -940,9 +964,9 @@
         <title>超簡單安裝Python教學</title>
         <pubTime>2018-07-20T10:55:21.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -990,13 +1014,13 @@
         <title>Python：免費加速度指標選股實做</title>
         <pubTime>2018-12-17T05:49:03.000Z</pubTime>
         
+        <tag>程式交易</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
          
         <tag>簡易策略</tag>
-         
-        <tag>程式交易</tag>
          
          
            
@@ -1082,9 +1106,9 @@
         <title>用KD值選股：還需搭配這三種指標</title>
         <pubTime>2018-11-21T16:13:35.000Z</pubTime>
         
-        <tag>選股策略</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>選股策略</tag>
          
         <tag>KD</tag>
          
@@ -1110,13 +1134,13 @@
         
         <tag>如何買股票</tag>
          
+        <tag>程式交易</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
          
         <tag>簡易策略</tag>
-         
-        <tag>程式交易</tag>
          
          
            
@@ -1139,13 +1163,13 @@
         <title>威廉．納葛維茲-價值型選股策略</title>
         <pubTime>2017-11-28T09:46:51.000Z</pubTime>
         
+        <tag>程式交易</tag>
+         
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
          
         <tag>選股</tag>
-         
-        <tag>程式交易</tag>
          
         <tag>市值營收比</tag>
          
@@ -1169,11 +1193,11 @@
         
         <tag>如何買股票</tag>
          
+        <tag>程式交易</tag>
+         
         <tag>歷史回測</tag>
          
         <tag>選股</tag>
-         
-        <tag>程式交易</tag>
          
         <tag>型態學</tag>
          
@@ -1202,9 +1226,9 @@
         <title>用深度學習幫你解析K線圖！</title>
         <pubTime>2018-01-23T12:50:05.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>型態學</tag>
          
@@ -1238,9 +1262,9 @@
         <title>用數學計算日馳何時崩盤！</title>
         <pubTime>2018-01-10T08:18:47.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -1260,9 +1284,9 @@
         <title>自動下單（1）用Python爬取交易記錄</title>
         <pubTime>2018-01-08T07:07:16.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>爬蟲</tag>
          
@@ -1284,9 +1308,9 @@
         <title>三大法人爬蟲</title>
         <pubTime>2018-07-02T09:59:30.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>爬蟲</tag>
          
@@ -1308,9 +1332,9 @@
         <title>Python：如何獲得上市上櫃股票清單</title>
         <pubTime>2018-11-19T15:55:04.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>爬蟲</tag>
          
@@ -1334,11 +1358,11 @@
         <title>Python：利用Pandas輕鬆選股</title>
         <pubTime>2017-11-08T07:16:44.000Z</pubTime>
         
+        <tag>程式交易</tag>
+         
         <tag>python</tag>
          
         <tag>選股</tag>
-         
-        <tag>程式交易</tag>
          
          
            
@@ -1358,9 +1382,9 @@
         <title>Python 簡單選股和回測</title>
         <pubTime>2017-11-30T05:21:38.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -1380,9 +1404,9 @@
         <title>Python-簡單的月營收選股！</title>
         <pubTime>2018-01-22T07:10:47.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>月營收</tag>
          
@@ -1432,9 +1456,9 @@
         
         <tag>Machine Learning</tag>
          
-        <tag>python</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>python</tag>
          
         <tag>股價預測</tag>
          
@@ -1482,9 +1506,9 @@
         <title>坊間沒在教的RSI選股技巧</title>
         <pubTime>2017-12-10T12:35:51.000Z</pubTime>
         
-        <tag>選股</tag>
-         
         <tag>程式交易</tag>
+         
+        <tag>選股</tag>
          
         <tag>RSI</tag>
          
@@ -1695,9 +1719,9 @@
         <title>ROE到底高或低才好？</title>
         <pubTime>2018-03-18T06:15:20.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
@@ -1720,13 +1744,13 @@
         <title>買股票只考慮ROE是不夠的！</title>
         <pubTime>2017-09-30T05:28:20.000Z</pubTime>
         
+        <tag>ROE</tag>
+         
         <tag>如何買股票</tag>
          
         <tag>選股策略</tag>
          
         <tag>歷史回測</tag>
-         
-        <tag>ROE</tag>
          
         <tag>股價淨值比</tag>
          
@@ -2444,16 +2468,18 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
+    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     <data>
         <display>
-        <title>絕無僅有的超強指標！</title>
-        <pubTime>2017-10-23T12:24:24.000Z</pubTime>
+        <title>股價淨值比有這麼神？</title>
+        <pubTime>2017-09-24T05:09:52.000Z</pubTime>
         
-        <tag>選股</tag>
+        <tag>如何買股票</tag>
          
-        <tag>指標</tag>
+        <tag>歷史回測</tag>
+         
+        <tag>股價淨值比</tag>
          
          
            
@@ -2469,18 +2495,16 @@
 
     
   <url>
-    <loc>https://www.finlab.tw/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94%E6%9C%89%E9%80%99%E9%BA%BC%E7%A5%9E%EF%BC%9F/</loc>
+    <loc>https://www.finlab.tw/%E7%B5%95%E7%84%A1%E5%83%85%E6%9C%89%E7%9A%84%E8%B6%85%E5%BC%B7%E6%8C%87%E6%A8%99%EF%BC%81/</loc>
     <lastmod>2018-01-24T11:42:18.000Z</lastmod>
     <data>
         <display>
-        <title>股價淨值比有這麼神？</title>
-        <pubTime>2017-09-24T05:09:52.000Z</pubTime>
+        <title>絕無僅有的超強指標！</title>
+        <pubTime>2017-10-23T12:24:24.000Z</pubTime>
         
-        <tag>如何買股票</tag>
+        <tag>選股</tag>
          
-        <tag>歷史回測</tag>
-         
-        <tag>股價淨值比</tag>
+        <tag>指標</tag>
          
          
            
@@ -2578,13 +2602,13 @@
         <title>EPS跟ROE哪個比較好用？</title>
         <pubTime>2017-09-29T05:51:12.000Z</pubTime>
         
-        <tag>如何買股票</tag>
-         
         <tag>EPS</tag>
          
         <tag>每股盈餘</tag>
          
         <tag>ROE</tag>
+         
+        <tag>如何買股票</tag>
          
          
            
