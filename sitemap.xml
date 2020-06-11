@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.finlab.tw/%E7%94%A8%E7%88%AC%E8%9F%B2%E7%88%AC%E5%85%A8%E4%B8%96%E7%95%8C%E8%82%A1%E5%83%B9/</loc>
+    
+    <lastmod>2020-06-11T17:40:22.441Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-deposit-ways/</loc>
+    
+    <lastmod>2020-06-11T17:36:57.727Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-trading-signal/</loc>
+    
+    <lastmod>2020-06-11T17:35:12.040Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-tradingview-intro/</loc>
+    
+    <lastmod>2020-06-11T17:34:33.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-crawler-py/</loc>
+    
+    <lastmod>2020-06-11T17:32:45.873Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-simple-sma-backtesting/</loc>
+    
+    <lastmod>2020-06-11T17:31:58.107Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-deposit-how/</loc>
+    
+    <lastmod>2020-06-11T17:31:09.885Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-backtesting-optimization/</loc>
+    
+    <lastmod>2020-06-11T17:29:30.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/btc-aws-lambda-signal-update/</loc>
+    
+    <lastmod>2020-06-11T17:28:29.116Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/aws-lambda-initial-setup/</loc>
+    
+    <lastmod>2020-06-11T17:27:49.358Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.finlab.tw/btc-summary/</loc>
     
     <lastmod>2020-06-11T07:11:32.151Z</lastmod>
@@ -33,6 +103,13 @@
     <loc>https://www.finlab.tw/Python-%E7%B0%A1%E5%96%AE158%E7%A8%AE%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E8%A8%88%E7%AE%97/</loc>
     
     <lastmod>2020-06-11T05:06:28.680Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.finlab.tw/Python%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B3%87/</loc>
+    
+    <lastmod>2020-06-11T05:06:04.541Z</lastmod>
     
   </url>
   
@@ -93,55 +170,6 @@
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/btc-tradingview-intro/</loc>
-    
-    <lastmod>2020-06-10T01:49:21.773Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/btc-trading-signal/</loc>
-    
-    <lastmod>2020-06-10T01:49:14.631Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/btc-simple-sma-backtesting/</loc>
-    
-    <lastmod>2020-06-10T01:48:28.607Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/btc-deposit-ways/</loc>
-    
-    <lastmod>2020-06-10T01:48:20.806Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/btc-deposit-how/</loc>
-    
-    <lastmod>2020-06-10T01:48:11.790Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/btc-crawler-py/</loc>
-    
-    <lastmod>2020-06-10T01:47:58.039Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/btc-backtesting-optimization/</loc>
-    
-    <lastmod>2020-06-10T01:47:42.075Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.finlab.tw/best-indicator-bitcoin/</loc>
     
     <lastmod>2020-06-10T01:47:15.733Z</lastmod>
@@ -149,23 +177,9 @@
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/aws-lambda-initial-setup/</loc>
-    
-    <lastmod>2020-06-10T01:47:01.971Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.finlab.tw/btc-aws-signal-trigger-condition/</loc>
     
     <lastmod>2020-06-10T01:46:51.896Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/btc-aws-lambda-signal-update/</loc>
-    
-    <lastmod>2020-06-10T01:46:32.591Z</lastmod>
     
   </url>
   
@@ -387,13 +401,6 @@
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/%E7%94%A8%E7%88%AC%E8%9F%B2%E7%88%AC%E5%85%A8%E4%B8%96%E7%95%8C%E8%82%A1%E5%83%B9/</loc>
-    
-    <lastmod>2020-06-05T07:29:50.314Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.finlab.tw/%E6%8A%95%E4%BF%A1%E8%B7%9F%E7%9B%A4%E6%B3%95%EF%BC%81/</loc>
     
     <lastmod>2020-06-05T07:29:49.987Z</lastmod>
@@ -516,13 +523,6 @@
     <loc>https://www.finlab.tw/%E8%B7%9F%E8%91%97%E5%A4%96%E8%B3%87%E8%B2%B7%E8%82%A1%E7%A5%A8/</loc>
     
     <lastmod>2020-06-05T07:29:48.992Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.finlab.tw/Python%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B3%87/</loc>
-    
-    <lastmod>2020-06-05T07:29:48.967Z</lastmod>
     
   </url>
   
@@ -807,14 +807,14 @@
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/strategies/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E7%AD%96%E7%95%A5_finlab.html</loc>
+    <loc>https://www.finlab.tw/strategies/PETER%E7%9A%84%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B3%A3%E7%AD%96%E7%95%A5_finlab.html</loc>
     
     <lastmod>2018-02-21T12:57:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.finlab.tw/strategies/PETER%E7%9A%84%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B3%A3%E7%AD%96%E7%95%A5_finlab.html</loc>
+    <loc>https://www.finlab.tw/strategies/%E6%9D%9C%E9%82%A6%E5%88%86%E6%9E%90%E7%AD%96%E7%95%A5_finlab.html</loc>
     
     <lastmod>2018-02-21T12:57:00.000Z</lastmod>
     
