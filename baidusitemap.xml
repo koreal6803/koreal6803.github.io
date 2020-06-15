@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.finlab.tw/ai-in-taiwan/</loc>
+    <lastmod>2020-06-15</lastmod>
+  </url>  <url>
+    <loc>https://www.finlab.tw/btc-summary/</loc>
+    <lastmod>2020-06-13</lastmod>
+  </url>  <url>
     <loc>https://www.finlab.tw/%E7%94%A8%E7%88%AC%E8%9F%B2%E7%88%AC%E5%85%A8%E4%B8%96%E7%95%8C%E8%82%A1%E5%83%B9/</loc>
     <lastmod>2020-06-11</lastmod>
   </url>  <url>
@@ -29,9 +35,6 @@
     <lastmod>2020-06-11</lastmod>
   </url>  <url>
     <loc>https://www.finlab.tw/aws-lambda-initial-setup/</loc>
-    <lastmod>2020-06-11</lastmod>
-  </url>  <url>
-    <loc>https://www.finlab.tw/btc-summary/</loc>
     <lastmod>2020-06-11</lastmod>
   </url>  <url>
     <loc>https://www.finlab.tw/Python-%E7%B0%A1%E5%96%AE%E9%81%B8%E8%82%A1%E5%92%8C%E5%9B%9E%E6%B8%AC/</loc>
