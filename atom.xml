@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-06-15T03:53:04.801Z</updated>
+  <updated>2020-06-15T06:00:23.063Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.finlab.tw/ai-in-taiwan/"/>
     <id>https://www.finlab.tw/ai-in-taiwan/</id>
     <published>2020-06-15T03:48:37.000Z</published>
-    <updated>2020-06-15T03:53:04.801Z</updated>
+    <updated>2020-06-15T06:00:23.063Z</updated>
     
     <content type="html"><![CDATA[<center><img src="/ai-in-taiwan/thumbnail.png" title="機器學習"></center><p>書目連結：<br><a href="https://www.books.com.tw/products/0010821934" rel="external nofollow noopener noreferrer" target="_blank">https://www.books.com.tw/products/0010821934</a></p><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>陳昇瑋博士是台灣人工智慧學界名人，除了是中研院院士與台灣人工智慧學校的CEO，也致力於人工智慧的產官學合作、落地化應用，不是純學術的學者，而是入世科學家。不幸的是，陳博士於今年因意外離世，無法繼續完成他的夢想。這本2019年出版的著作說明他對台灣AI產業發展的理想，也以淺顯易懂的文字介紹人工智慧為何？就算完全不懂程式，也能輕鬆理解概論，如果你是開發者，也能從此書了解產業脈絡與實務應用。<br>總結來說是一本人人必讀的AI通識書，以下節錄一些重點和想法。</p><h2 id="AI進程"><a href="#AI進程" class="headerlink" title="AI進程"></a>AI進程</h2><p>AI浪潮在過去發生過兩波，但後來都冷卻掉，新一波在2010年後由圍棋大師：Alpha Go引爆第三波熱潮，受惠於算力強大的晶片、大數據基礎、演算法成熟的天時地利人合，許多以前表現不如預期的項目，如影像辨識、語音辨識，都有突破性的進展，且在產業界有成功應用，如醫療判讀、產品瑕疵檢測，讓許多科學家斷言這波AI浪潮和以前不一樣了，不再空有理論，而是逐步影響人類的生活。</p><p>不過目前的AI仍屬『弱人工智慧』，也就是無創造力的AI，其學習完全依賴人類輸入的資料，具主動思考、感情的『強人工智慧』在短期(50年內)連影子都沒有，且無法用目前機器學習演算法來發展，應該會以另一套新技術來發展，所以科幻片如西部世界或全民公敵的情節、一大堆工作被取代的推想，純屬想像，目前只有重複性高的工作如客服、檢測員、駕駛等重複性高的工作會被逐漸取代，其他行業趨勢為人機合作。</p><h2 id="機器學習簡單分"><a href="#機器學習簡單分" class="headerlink" title="機器學習簡單分"></a>機器學習簡單分</h2><ol><li>監督式學習：人類先標註label，如標註是狗還是貓，讓電腦填鴨式學習，目前90%算法都用這。</li><li>非監督式學習：不先標註label，讓電腦自動去依照變數去分群，資料科學家再判讀分群結果的意義，讓電腦學習自己去分類。</li><li>深度學習：機器學習演算法的一隻，與一般機器學習差異在，不用先人工作特徵擷取(做指標)，讓電腦去找特徵，如不用給電腦看KD值，只丟價量資料讓電腦自己生成指標。在降低人為涉入</li><li><img src="https://i.imgur.com/ZmN336Y.png" alt></li></ol><h2 id="AI產業化的難題"><a href="#AI產業化的難題" class="headerlink" title="AI產業化的難題"></a>AI產業化的難題</h2><p>以前硬體是問題，現在晶片算力強、伺服器便宜，現在比較麻煩的是資料和人材問題。</p><h3 id="技術債-資料處理基礎建設"><a href="#技術債-資料處理基礎建設" class="headerlink" title="技術債-資料處理基礎建設:"></a>技術債-資料處理基礎建設:</h3><p>沒有資料，演算法再強也沒用，大數據不是量多就好，質量更重要，不然做出來的只是自己爽的Trash。<br>陳博士蠻多youtube影音資源可看，有一篇就在說醫學資料label標註的問題，若視網膜影像只給一位醫生標註有無病變，誤差率很高，同一張圖給33位醫生看，只有60%影像是看法全部一致，可見1.資料要給數位專家多數決標註、2.人類判讀不穩定性很高，但要請專家來標註資料，這成本可不低，企業會願意花錢處理資料嗎？</p><p><img src="https://i.imgur.com/IEixQg6.jpg" alt></p><p>截自陳教授演講：<a href="https://www.youtube.com/watch?v=OddYM6aq-zM" rel="external nofollow noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=OddYM6aq-zM</a></p><p>另外具筆者工作經驗，許多企業ERP、CRM、EC外包給多廠商做，資料庫系統與格式都不同，光日期就有好幾種格式，或是沒有埋紀錄使用者操作的程式，在後來想導入AI推薦系統或精準行銷時，會在資料處理和搜集遇到困難，有多少企業願意先花大把時間還完技術債？</p><h3 id="AI人材困境"><a href="#AI人材困境" class="headerlink" title="AI人材困境"></a>AI人材困境</h3><p>現今AI人材供需失衡，且技術迭代太快(畢業3年後，原先技術就偏老)，要找有產業經驗加懂最新演算法的很難，因為剛畢業的新鮮人沒經驗、產業老鳥沒太多時間學新技術(台灣習慣省人力成本，老闆很難放你平日丟下工作去學新技術)，台灣仍以硬體代工為王，純軟工的企業待遇差國外一大截，造成人材不是往豬屎屋跑，就是遠走高飛，上市櫃軟體企業多做代理、維護追求短期獲利，無論是演算法開發、雲平台服務都落後國外甚多。</p><p>作者指出企業計畫導入AI時，必須由上而下的支持，AI專案不能用傳統KPI定義績效，經理人須掃除管理障礙，因為初期會花很多時間還技術債和試誤，應該用投資新創以小博大的視角來評斷，如投入獲利的10%來養AI拚未來趨勢領先權，若成功，報酬率會很高;若失敗，也不影響太多主體獲利。<br>經理人不一定要很懂程式，但一定要對AI適合解決哪些問題、企業待解決問題的優先權、跨部門整合溝通有足夠理解。<br>資料量缺乏、不可知情境多的，機器學習能幫助的就有限。</p><p><img src="https://i.imgur.com/Z4ez8u9.jpg" alt></p><h3 id="團隊工作流"><a href="#團隊工作流" class="headerlink" title="團隊工作流"></a>團隊工作流</h3><p>培養厲害的工程師很重要，培養了解AI的老闆更重要，工程師才能少受點折磨。具我目前在產業的經驗，完整的團隊配置是：</p><ol><li>資料工程師：蒐集與清洗資料</li><li>機器學習工程師：特徵擷取、套用或開發演算法、建模</li><li>資料科學家：領導工程團隊，訂定研究方向、判讀商業價值。</li><li>UX Resercher，沒錢請資料科學家的公司，可能請使用者體驗研究員來設計解決方案，補足工程師弱項。差在其不大懂程式，工程師要花較多時間溝通可行性。</li><li>一組前後端將模型判讀結果刻出API與BI(儀表板)畫面</li><li>PO or PM：經理人與市場部溝通問題優先權、目標、可能情境變數。</li></ol><p>實際是…見&lt;打造第一隻AI團隊,陳教授著&gt;<br><a href="https://www.leadercampus.com.tw/desktop/course/free/960" rel="external nofollow noopener noreferrer" target="_blank">https://www.leadercampus.com.tw/desktop/course/free/960</a><br><img src="https://i.imgur.com/d1g13sa.png" alt></p><h2 id="產業案例"><a href="#產業案例" class="headerlink" title="產業案例"></a>產業案例</h2><p>陳教授最看好醫療應用的成功，原因是台灣有完整的健保資料庫，醫學資料生成也較穩定專業，label標記單純，現在知名的雲象科技(腫瘤檢測)、PTT創世神的AI Lab(基因檢測、病毒基因序)就屬代表。</p><p>再來由於台灣是硬體王國，有不少機器生產管理的數據可作機器故障預測、產品瑕疵檢測，製成優化應用也是看好的方向。如AOI光學檢測升級、布料染色配方、石化業工廠管理等等。以後物聯網更發達後，又有更多數據可導入。</p><p>金融業數據也齊全，陳教授生前也擔任玉山金科技長，將AI導入信用卡管理、洗錢法遵、投資理財等，近來台灣官方剛開放些保守態度，有創立監理沙盒給金融新創試驗金融數據，未來也有潛力。</p><h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>文筆非常好的科普書，未來AI將會影響生活各層面，就算不投入此行，也該思考自己的生活會受何影響？AI會帶來什麼方便與危機？<br>初探AI領域、課程的人在寫程式前最好先看這本書，你才不會覺得AI很抽象，再搭配陳教授生前的網路演講影音，更有成效，你也會敬佩這位科學家的理想與為台灣付出的努力！</p>]]></content>
     
@@ -583,9 +583,9 @@
       <category term="財經Python教" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99/"/>
     
     
-      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
+    
+      <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
     
   </entry>
   
