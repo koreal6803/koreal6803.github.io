@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.finlab.tw/"/>
-  <updated>2020-06-15T06:00:23.063Z</updated>
+  <updated>2020-06-20T08:01:41.823Z</updated>
   <id>https://www.finlab.tw/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>策略優化 - 如何避免過擬合？</title>
+    <link href="https://www.finlab.tw/backtesting-overfitting-probability/"/>
+    <id>https://www.finlab.tw/backtesting-overfitting-probability/</id>
+    <published>2020-06-20T02:40:25.000Z</published>
+    <updated>2020-06-20T08:01:41.823Z</updated>
+    
+    <content type="html"><![CDATA[<center><img src="/backtesting-overfitting-probability/thumbnail.png" title="info"></center><p>當你做回測做久了，就會發現，找到「歷史報酬率」好的策略很簡單，但是找到「未來報酬率」好的策略非常難。原因在於做了過多的參數枚舉與優化，當樣本數夠大，自然會有極端的數據產生，就像是夜路走多了會碰到鬼，人多必有白癡，樹多必有枯枝，就像是量子力學中，波函數坍縮成我們所處的現實，代表著均值，但在極端的多重宇宙樣本中，你也有可能是總統，代表著眾多巧合下的極端事件。</p><h5 id="本文就是用口語的方式，帶你瞭解如何判斷過擬合的演算法"><a href="#本文就是用口語的方式，帶你瞭解如何判斷過擬合的演算法" class="headerlink" title="本文就是用口語的方式，帶你瞭解如何判斷過擬合的演算法"></a>本文就是用口語的方式，帶你瞭解如何判斷過擬合的演算法</h5><p>牛頓從蘋果落地的現象，發現了萬有引力，F=ma，因為實驗的雜訊很小（風、熱能散失等等），才能有經典簡潔的公式，然而把牛頓的實驗，換到財經領域時，可能就不是這麼管用了，當我們在建模時，價格的雜訊遠大於規律，</p><h4 id="我們很有可能是優化雜訊，而非優化價格的規律。"><a href="#我們很有可能是優化雜訊，而非優化價格的規律。" class="headerlink" title="我們很有可能是優化雜訊，而非優化價格的規律。"></a>我們很有可能是優化雜訊，而非優化價格的規律。</h4><h5 id="要怎麼辨別這兩者的不同呢？"><a href="#要怎麼辨別這兩者的不同呢？" class="headerlink" title="要怎麼辨別這兩者的不同呢？"></a>要怎麼辨別這兩者的不同呢？</h5><p>我們可以先從直觀的角度出發，究竟歷史上成功的偉人，Bill Gates、Steve Jobs、Elon Musk，這些科技巨擘，他們之所以能夠有今天的成就，是一連串的巧合，還是他們有一些人格特質，促使他們的成功？另一個極端的例子，假如今天某人中了樂透彩而一夕爆富，那很明顯，他很可能是多重宇宙中，非常成功的一個版本，但他的成功，可能並非來自他的人格特質，而是來自運氣。今天就運氣跟命運，來討論策略模型過擬合的問題。</p><p>模型的過擬合，就像是簽樂透彩，只要參數夠多了，總會中獎。所以策略績效好，究竟是不是運氣好，最重要的事，就是要確保「實驗是有效的」。如何定義實驗是有效的呢？</p><p>樣本內的「最佳參數」在樣本外的「績效」也是顯著的機率是高的</p><h5 id="聽不懂？別走，讓我舉個例子"><a href="#聽不懂？別走，讓我舉個例子" class="headerlink" title="聽不懂？別走，讓我舉個例子"></a>聽不懂？別走，讓我舉個例子</h5><p>這邊的「樣本內」就是指我們現在的現實世界，已經發生了的事情，例如我們知道 Steve Jobs 是頻果創辦人，將科技與時尚結合，促進科技的進步功不可沒，所以他就是我們在樣本內的「最佳人選」。而「樣本外」就是指那些我們沒見過的多重宇宙，在多重宇宙中，假如都有 Steve Jobs 這個人，而他都有一番豐功偉業，那就代表那是他貨真價實的實力。</p><h3 id="回到策略的角度，如何驗證「貨真價實的策略」？"><a href="#回到策略的角度，如何驗證「貨真價實的策略」？" class="headerlink" title="回到策略的角度，如何驗證「貨真價實的策略」？"></a>回到策略的角度，如何驗證「貨真價實的策略」？</h3><p>最簡單的方式，一般我們會使用 hold-out，將歷史資料分成樣本內（in-sample IS）和樣本外（out-of-sampe OOS）並且在 IS 做最佳化後，再用 OOS 驗證，這樣的方法有幾個缺點：</p><ul><li>由於 IS 跟 OOS 都是人為定義，所以當重複優化很多次後，還是會對於 OOS 的績效越來越熟悉，最後不免還是用了 OOS 的資訊來設計模型</li><li>資料量的問題，回測跟驗證都需要一定長度的歷史數據，將歷史數據分成 IS 跟 OOS 顯然有點浪費</li><li>OOS 通常是時間序列的尾端，代表近期的資料，對於策略效能有決定性的影響，然而卻不能拿來開發</li></ul><h3 id="所以比較好的方法是？"><a href="#所以比較好的方法是？" class="headerlink" title="所以比較好的方法是？"></a>所以比較好的方法是？</h3><p><a href="https://poseidon01.ssrn.com/delivery.php?ID=868103003064115117125100064075098092016007037010053025100075080026029100071001025108063043035060033044107114028094094091106006057048087011059012084117121014084068060040064001077111012024029099081115109104017084001102009126127067113118116067099111100&amp;EXT=pdf" rel="external nofollow noopener noreferrer" target="_blank">The probability of backtest overfitting</a>的作者是這樣做的：<br>Bailey, D.H., Borwein, J., Lopez de Prado, M. and Zhu, Q.J., 2016. The probability of backtest overfitting. Journal of Computational Finance, forthcoming.</p><h3 id="1-確定參數效果真的比較好"><a href="#1-確定參數效果真的比較好" class="headerlink" title="1. 確定參數效果真的比較好"></a>1. 確定參數效果真的比較好</h3><p>任何策略都有好與不好的時候，要確定參數效果很好，不是看績效是正的就好，而是要跟其他參數的績效作比較，<br>例如最近台股上漲，雞犬升天，所以任何人投資績效都是正的，但不帶表大家都是投資高手，<br>所以就算績效是正的，還要看績效的排名才行！</p><p>所以論文中的作者，針對所有參數產生出來績效，從「樣本內」找到「最佳參數」，並且將「樣本外的績效」由小到大排名，並且觀察「最佳參數」是否位於前 1/2 的機率</p><h3 id="2-產生多重的-IS-跟-OOS"><a href="#2-產生多重的-IS-跟-OOS" class="headerlink" title="2. 產生多重的 IS 跟 OOS"></a>2. 產生多重的 IS 跟 OOS</h3><p>假如只有一組 IS 跟 OOS 實再是太少了，這樣驗證的樣本會不足，<br>所以作者不使用「歷史數據」來區分 IS 跟 OOS，而是將回測整個跑完後，將績效的時間序列切成 S 份，任選 S/2 份當作 IS，其他當作 OOS，這樣的話可以產生超多種組合</p><h3 id="實驗結果："><a href="#實驗結果：" class="headerlink" title="實驗結果："></a>實驗結果：</h3><p>下圖就是作者使用此方法的實驗範例， x 代表「最佳參數」在「樣本外」的效果，越右邊代表效果越好，而 y 軸是樣本的數量<br>我們會發現，下圖這個例子，整個分佈偏向左邊，也就是 x 軸小於零，代表其實最佳化後，大部分的績效都是比較差的！<br>每100個樣本，就有74個樣本，最佳化後的效果小於績效的中位數，<br>所以 74% 的機率，最佳化後的效果比較差</p><center><img src="/backtesting-overfitting-probability/bad_strategy.png" title="info"></center><p>一個比較好的策略，應該會是如下圖，整個<br>每100個樣本，只有4個樣本，最佳化後的效果小於績效的中位數，<br>所以只有 4% 的機率，有過擬合的風險，<br>算是一個很不錯的參數優化過程</p><center><img src="/backtesting-overfitting-probability/good_strategy.png" title="info"></center><p>結果我上網找了一下，都沒有 python 的程式碼<br>所以假如大家有興趣，我之後可以提供這篇 paper 的程式碼，<br>雖然但我不確定大家有沒有興趣就是了XDDD</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;center&gt;&lt;img src=&quot;/backtesting-overfitting-probability/thumbnail.png&quot; title=&quot;info&quot;&gt;&lt;/center&gt;
+
+&lt;p&gt;當你做回測做久了，就會發現，找到「歷史報酬率」好的策略很簡單，但是找到「未來報酬率」好
+      
+    
+    </summary>
+    
+      <category term="選股策略" scheme="https://www.finlab.tw/categories/%E9%81%B8%E8%82%A1%E7%AD%96%E7%95%A5/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>AI讀書心得：人工智慧在台灣：產業轉型的契機與挑戰</title>
@@ -586,38 +611,6 @@
       <category term="python" scheme="https://www.finlab.tw/tags/python/"/>
     
       <category term="程式交易" scheme="https://www.finlab.tw/tags/%E7%A8%8B%E5%BC%8F%E4%BA%A4%E6%98%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>只用一行程式碼分析數據!?（實用的 Python Package）</title>
-    <link href="https://www.finlab.tw/one-line-info-dataframe/"/>
-    <id>https://www.finlab.tw/one-line-info-dataframe/</id>
-    <published>2019-09-30T13:46:49.000Z</published>
-    <updated>2020-06-05T07:29:50.751Z</updated>
-    
-    <content type="html"><![CDATA[<p>這篇文章介紹一個好用的 package，只要一行，就可以做出精美、詳細的圖表分析<br>還可以幫你查看資料是否有缺漏和錯誤的情況！</p><center><img src="/one-line-info-dataframe/thumbnail.jpeg" title="thumbnail"></center><p>今天的程式碼成果：</p><center><img src="/one-line-info-dataframe/profile_df.gif" title="profile_df"></center><h1 id="先取得要分析之資料"><a href="#先取得要分析之資料" class="headerlink" title="先取得要分析之資料"></a>先取得要分析之資料</h1><p>今天我們來分析一下股票的本益比、股價淨值比和殖利率，<br>先提供給大家一個爬蟲，讓大家可以直接把資料爬下來：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="keyword">import</span> pandas_profiling</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawler</span><span class="params">(date)</span>:</span></span><br><span class="line">    datestr = date.strftime(<span class="string">'%Y%m%d'</span>)</span><br><span class="line">    url = <span class="string">'https://www.twse.com.tw/exchangeReport/BWIBBU_d?response=csv&amp;date='</span>+datestr+<span class="string">'&amp;selectType=ALL'</span></span><br><span class="line">    res = requests.get(url)</span><br><span class="line">    df = pd.read_csv(StringIO(res.text), header=<span class="number">1</span>)</span><br><span class="line">    df[<span class="string">'本益比'</span>] = pd.to_numeric(df[<span class="string">'本益比'</span>], errors=<span class="string">'coerce'</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> df.dropna(thresh=<span class="number">3</span>).dropna(thresh=<span class="number">0.8</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure><p>接下來我們就呼叫 <code>crawler</code> 這個函式，就可以將財務數據資料都爬取下來囉！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = crawler(datetime.date(<span class="number">2019</span>,<span class="number">10</span>,<span class="number">7</span>))</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure><center><img src="/one-line-info-dataframe/head.png" title="df_head"></center><h3 id="1-用舊的方法來分析資料"><a href="#1-用舊的方法來分析資料" class="headerlink" title="1. 用舊的方法來分析資料"></a>1. 用舊的方法來分析資料</h3><p>最簡單的方式，假如有用過 <code>pandas</code> 的大家應該都知道，<br>可以使用 <code>df.describe()</code> 來大致上觀察數據的樣貌<br>假如你對 pandas 不太熟悉，它有點像是拿來處理表格的資料，<br>就像是 python 界的 excel 一樣，雖然它非常好用，但是有點太古老（無聊）了！</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.describe()</span><br></pre></td></tr></table></figure><center><img src="/one-line-info-dataframe/describe.png" title="df_describe"></center><h3 id="2-酷炫的方法資料分析"><a href="#2-酷炫的方法資料分析" class="headerlink" title="2. 酷炫的方法資料分析"></a>2. 酷炫的方法資料分析</h3><p>首先我們可以安裝 pandas_profiling</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pandas_profiling</span><br></pre></td></tr></table></figure><p>接下來就可以直接來使用：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas_profiling</span><br><span class="line">df = crawler(datetime.date(<span class="number">2019</span>,<span class="number">10</span>,<span class="number">7</span>))</span><br><span class="line">df.profile_report()</span><br></pre></td></tr></table></figure><p>然後我們就會看到超精美的圖表！</p><h4 id="找出資料的缺漏或問題"><a href="#找出資料的缺漏或問題" class="headerlink" title="找出資料的缺漏或問題"></a>找出資料的缺漏或問題</h4><p>我覺得 <code>pandas_profiling</code> 很棒的地方在於，<br>可以將資料一口氣全部統整給我們，方便我們去做資料前處理，<br>例如下圖中的左下角，就可以看到每一個column有哪些警告，</p><center><img src="/one-line-info-dataframe/profile.png" title="profile"></center><ul><li>本益比有 20.4 % 是缺漏的：這是正常情況，因為本益比小於零不顯示</li><li>殖利率有 20.0 % 是 0：這也是正常情況，因為公司不一定有發股利股息</li><li>財報都是用第 2 季的財報：這也是正常的！</li></ul><p>有了這種檢驗，更能夠讓我們知道資料的可靠程度，真的非常非常棒！<br>除了上述的檢驗外，我們還可以</p><h4 id="輕鬆檢視每一個-column-的資料"><a href="#輕鬆檢視每一個-column-的資料" class="headerlink" title="輕鬆檢視每一個 column 的資料"></a>輕鬆檢視每一個 column 的資料</h4><p>這邊可以看到每一種資料的分佈，可以讓我們更好的掌握數據分佈型態</p><center><img src="/one-line-info-dataframe/hist.png" title="histogram"></center><h4 id="檢視資料相關性"><a href="#檢視資料相關性" class="headerlink" title="檢視資料相關性"></a>檢視資料相關性</h4><p>這邊還可以檢視資料的相關性，這邊有些複雜的名詞，哪天再來跟各位介紹</p><center><img src="/one-line-info-dataframe/corr.png" title="correlation"></center><p><code>pandas_profiling</code> 真的是很不錯的 package，<br>可以幫我們進一步的認識資料，<br>假如你也覺得這個 package 很實用，<br>也歡迎你分享給大家喔！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;這篇文章介紹一個好用的 package，只要一行，就可以做出精美、詳細的圖表分析&lt;br&gt;還可以幫你查看資料是否有缺漏和錯誤的情況！&lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;/one-line-info-dataframe/thumbnail.jpeg&quot; title=&quot;t
-      
-    
-    </summary>
-    
-      <category term="財經Python教學" scheme="https://www.finlab.tw/categories/%E8%B2%A1%E7%B6%93Python%E6%95%99%E5%AD%B8/"/>
-    
-    
-      <category term="機器學習" scheme="https://www.finlab.tw/tags/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/"/>
-    
-      <category term="Python" scheme="https://www.finlab.tw/tags/Python/"/>
-    
-      <category term="dataframe" scheme="https://www.finlab.tw/tags/dataframe/"/>
-    
-      <category term="資料分析" scheme="https://www.finlab.tw/tags/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90/"/>
     
   </entry>
   

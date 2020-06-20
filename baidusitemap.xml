@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.finlab.tw/backtesting-overfitting-probability/</loc>
+    <lastmod>2020-06-20</lastmod>
+  </url>  <url>
+    <loc>https://www.finlab.tw/real-estate-analysis1/</loc>
+    <lastmod>2020-06-16</lastmod>
+  </url>  <url>
     <loc>https://www.finlab.tw/ai-in-taiwan/</loc>
     <lastmod>2020-06-15</lastmod>
   </url>  <url>
@@ -296,9 +302,6 @@
     <lastmod>2020-06-05</lastmod>
   </url>  <url>
     <loc>https://www.finlab.tw/%E5%B8%82%E5%80%BC%E7%87%9F%E6%94%B6%E6%AF%94/</loc>
-    <lastmod>2020-06-05</lastmod>
-  </url>  <url>
-    <loc>https://www.finlab.tw/real-estate-analysis1/</loc>
     <lastmod>2020-06-05</lastmod>
   </url>  <url>
     <loc>https://www.finlab.tw/Machine-learning%EF%BC%9A%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E9%A0%90%E6%B8%AC%E5%A4%A7%E7%9B%A4/</loc>
